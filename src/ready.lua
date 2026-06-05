@@ -7,9 +7,72 @@
 -- 	so you will most likely want to have it reference
 --	values and functions later defined in `reload.lua`.
 
-function mod.SummonEnemy( functionArgs, triggerArgs)
+-- Config
+local enabled = true
 
+if not enabled then return end
+
+-- Depends
+sjson = rom.mods['SGG_Modding-SJSON']
+modutil = rom.mods['SGG_Modding-ModUtil']
+rom.mods['SGG_Modding-ENVY'].auto()
+
+game = rom.game
+import_as_fallback(game)
+
+function mod.ReleaseHealthReserve( amount, source )
+	local previousMaxHealth = GetHeroMaxAvailableHealth()
+	if CurrentRun.Hero.ReserveHealthSources[source] then
+		if CurrentRun.Hero.ReserveHealthSources[source] > amount then
+			CurrentRun.Hero.ReserveHealthSources[source] = CurrentRun.Hero.ReserveHealthSources[source] - amount	
+		else
+			CurrentRun.Hero.ReserveHealthSources[source] = 0
+		end
+	else
+		return 
+	end
+	local newMaxHealth = GetHeroMaxAvailableHealth()
+
+	if newMaxHealth > previousMaxHealth and CurrentRun.Hero.ReserveHealthExtra > 0 then
+			Heal( CurrentRun.Hero, { HealAmount = newMaxHealth - previousMaxHealth, Silent = true })
+			CurrentRun.Hero.ReserveHealthExtra = CurrentRun.Hero.ReserveHealthExtra - (newMaxHealth - previousMaxHealth)
+	end
+	FrameState.RequestUpdateHealthUI = true
+end
+
+function mod.ReserveHealth( amount, source )
+	DebugAssert({ Condition = ( source ~= nil ), Text = "No source provided to reserve health!", Owner = "Alice" })
+	local HealthMissing = GetHeroMaxAvailableHealth() - CurrentRun.Hero.Health
+	IncrementTableValue(CurrentRun.Hero.ReserveHealthSources, source, amount )
+	if GetHeroMaxAvailableHealth() < CurrentRun.Hero.Health then
+		local extraHealth = CurrentRun.Hero.Health - GetHeroMaxAvailableHealth()
+		SacrificeHealth({ SacrificeHealth = extraHealth+HealthMissing, IgnoreHealthBuffer = true, IgnoreDamageCap = true, ManuallyTriggered = true })
+		CurrentRun.Hero.ReserveHealthExtra = CurrentRun.Hero.ReserveHealthExtra + extraHealth
+	else 
+		SacrificeHealth({ SacrificeHealth = amount, IgnoreHealthBuffer = true, IgnoreDamageCap = true, ManuallyTriggered = true })
+	end
+	FrameState.RequestUpdateHealthUI = true
+end
+
+function mod.SummonEnemy( triggerArgs, functionArgs )
 	IncrementTableValue( SessionMapState, "SpellFired" )
+	--GetHeroTrait("ShovelRaiseDeadNecroMel")
+	
+	local trait = GetHeroTrait("AxeRecoveryAspect")
+	trait.AttackSummons = trait.AttackSummons + 1
+	
+	if trait.AttackSummons > 0 then
+		if CurrentRun.Hero.Health > trait.Reserve then
+			mod.ReserveHealth( functionArgs.Reserve, "Aspect")
+		else
+			local unitId = CurrentRun.Hero.ObjectId
+			PlaySound({ Name = "/Leftovers/Menu Sounds/LevelUpFlash", Id = unitId, ManagerCap = 46 })
+			Flash({ Id = unitId, Speed = 0.85, MinFraction = 0.7, MaxFraction = 0.0, Color = Color.White, Duration = 0.15, ExpireAfterCycle = true })
+			thread( InCombatText, unitId, "Not enough Health!", 0.5 , { SkipShadow = true } )
+			return
+		end
+	end
+
 	local enemyName = functionArgs.enemy
 	local team = functionArgs.team
 	local biome = functionArgs.biome
@@ -62,7 +125,7 @@ function mod.CreateEnemy( enemyName, args )
 		ScaleMultiplier = args.ScaleMultiplier or 1,
 		DamageMultiplier = args.DamageMultiplier or 1,
 	}
-	local enemyData = EnemyData[enemyName] or EnemyData["Zombie"]
+	local enemyData = EnemyData[enemyName]
 	local newEnemy = DeepCopyTable( enemyData )
 	newEnemy.DefaultAIData.TargetClosest = true
 	newEnemy.MaxHealth = newEnemy.MaxHealth
@@ -197,7 +260,32 @@ function mod.CreateEnemy( enemyName, args )
 	return newEnemy
 end
 
+modutil.mod.Path.Wrap("SetupMap", function(base, source, args)
+	if HeroHasTrait("AxeRecoveryAspect") then
+		local trait = GetHeroTrait("AxeRecoveryAspect")
+		trait.AttackSummons = 0
+	end
+	return base(source, args)
+end)
+
+
+
+modutil.mod.Path.Wrap("Kill", function(base, victim, triggerArgs)
+	base(victim, triggerArgs)
+	if victim.AlwaysTraitor == true and HeroHasTrait("AxeRecoveryAspect") and victim.Name == "Zombie" and triggerArgs.Killed == true then
+		local trait = GetHeroTrait("AxeRecoveryAspect")
+		trait.AttackSummons = trait.AttackSummons - 1
+		if trait.AttackSummons > 0 then
+			mod.ReleaseHealthReserve( trait.Reserve, "Aspect" )
+		end
+	end
+end)
+
 modutil.once_loaded.game(function()
+
+
+	
+	--import "SummonData.lua"
 
 	ShovelRaiseDeadNecroMel = {
 		InheritFrom = { "WeaponEnchantmentTrait" },
@@ -205,27 +293,27 @@ modutil.once_loaded.game(function()
 		{
 			Common =
 			{
-				Multiplier = 1.4,
+				Multiplier = 1,
 			},
 			Rare =
 			{
-				Multiplier = 1.8,
+				Multiplier = 0.9,
 			},
 			Epic =
 			{
-				Multiplier = 2.2,
+				Multiplier = 0.8,
 			},
 			Heroic =
 			{
-				Multiplier = 2.6,
+				Multiplier = 0.7,
 			},
 			Legendary =
 			{
-				Multiplier = 3,
+				Multiplier = 0.5,
 			},
 			Perfect =
 			{
-				Multiplier = 3.4,
+				Multiplier = 0.3,
 			},
 		},
 		Icon = "JarlUlsfark-AspectYoungMel\\AxeAspectYoungMelIcon",
@@ -253,17 +341,24 @@ modutil.once_loaded.game(function()
 				team = "player",
 				biome = "Ephyra",
             	type = "regular",
+				Reserve = { BaseValue = 10 },
 			},
 		},
+		OnEnemyDeathFunction = {
+			Name = _PLUGIN.guid .. "." .. "SummonDeadHeal",
+			FunctionArgs = {
+				Reserve = { BaseValue = 10 }
+			},
+		},
+		AttackSummons = 0,
+		Reserve = { BaseValue = 10 },
 		-- Changing special to Block
 		PropertyChanges =
 		{
 			{
 				WeaponName = "WeaponAxe",
 				WeaponProperty = "Projectile",
-				ChangeValue = "ProjectileDaggerSliceLeft",
-				ChangeType = "Absolute",
-				ExcludeLinked = true,
+				ChangeValue = "null",
 			},
 			{
 				WeaponName = "WeaponAxe",
@@ -271,6 +366,8 @@ modutil.once_loaded.game(function()
 					ChargeStartAnimation = "Melinoe_Shovel_FireLoop",
 					FireGraphic = "Melinoe_Shovel_End",
 					SwapOnFire = "WeaponAxe",
+					FireFx = "null",
+					NumProjectiles = 0,
 				},
 				ExcludeLinked = true,
 			},
