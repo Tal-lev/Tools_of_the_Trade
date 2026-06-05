@@ -3,11 +3,11 @@ schemaVersion = "0.0.1"
 
 
 [package]
-namespace = "AuthorName"
-name = "ModName"
+namespace = "JarlUlsfark"
+name = "Tools_of_the_Trade"
 versionNumber = "0.0.1"
-description = "Allows to do some super duper thing."
-websiteUrl = "https://github.com/AuthorName/ModName"
+description = "An inprogress experimental mod replaces Mel's Axe with the shovel. Purely for testing, possibly bug-ridden and certainly not polished or feature complete."
+websiteUrl = "https://github.com/Tal-lev/Tools_of_the_Trade"
 containsNsfwContent = false
 
 [package.dependencies]
