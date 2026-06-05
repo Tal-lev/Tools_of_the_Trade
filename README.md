@@ -1,15 +1,9 @@
-# Mod name
+# Tools of the Trade
 
-Hades II mod allowing to do some super duper thing.
+An inprogress experimental mod replaces Mel's Axe with the shovel.
+Allows Mel to summon Zombies with her attack.
+Summoning Reserves health that is released upon the summon's death or changing rooms.
 
 ## Features
 
-- Wow.
-- Much cool.
-  - Very doge.
-
 ## Install
-
-- Do this.
-- Do that.
-  - Nope, not that.
