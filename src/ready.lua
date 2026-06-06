@@ -33,7 +33,7 @@ function mod.ReleaseHealthReserve( amount, source )
 	end
 	local newMaxHealth = GetHeroMaxAvailableHealth()
 
-	if newMaxHealth > previousMaxHealth and CurrentRun.Hero.ReserveHealthExtra > 0 then
+	if newMaxHealth > previousMaxHealth then
 			Heal( CurrentRun.Hero, { HealAmount = newMaxHealth - previousMaxHealth, Silent = true })
 			CurrentRun.Hero.ReserveHealthExtra = CurrentRun.Hero.ReserveHealthExtra - (newMaxHealth - previousMaxHealth)
 	end
@@ -46,22 +46,79 @@ function mod.ReserveHealth( amount, source )
 	IncrementTableValue(CurrentRun.Hero.ReserveHealthSources, source, amount )
 	if GetHeroMaxAvailableHealth() < CurrentRun.Hero.Health then
 		local extraHealth = CurrentRun.Hero.Health - GetHeroMaxAvailableHealth()
-		SacrificeHealth({ SacrificeHealth = extraHealth+HealthMissing, IgnoreHealthBuffer = true, IgnoreDamageCap = true, ManuallyTriggered = true })
+		SacrificeHealth({ SacrificeHealth = extraHealth+HealthMissing, IgnoreHealthBuffer = true, IgnoreDamageCap = true, ManuallyTriggered = true, Silent = true })
 		CurrentRun.Hero.ReserveHealthExtra = CurrentRun.Hero.ReserveHealthExtra + extraHealth
 	else 
-		SacrificeHealth({ SacrificeHealth = amount, IgnoreHealthBuffer = true, IgnoreDamageCap = true, ManuallyTriggered = true })
+		SacrificeHealth({ SacrificeHealth = amount, IgnoreHealthBuffer = true, IgnoreDamageCap = true, ManuallyTriggered = true, Silent = true })
 	end
 	FrameState.RequestUpdateHealthUI = true
 end
 
+function mod.SummonOrCast ( triggerArgs, functionArgs )
+	if triggerArgs.Name == "WeaponAxe" then
+		mod.SummonEnemy( triggerArgs, functionArgs )
+	elseif triggerArgs.Name == "WeaponCast" then
+		mod.SummonCastTeleport( triggerArgs )
+	end
+end
+
+function mod.SummonCastTeleport( triggerArgs )
+
+	local heroLocation = GetLocation({ Id = CurrentRun.Hero.ObjectId })
+	if not heroLocation.X or not heroLocation.Y then
+		return
+	end
+	if triggerArgs.UnitIdOverride then
+		return
+	end
+	local castProjectilePointId = SpawnObstacle({ Name = "InvisibleTarget", LocationX = heroLocation.X, LocationY = heroLocation.Y, Group = "Scripting" })
+	local testPoint = SpawnObstacle({ Name = "InvisibleTarget", LocationX = heroLocation.X, LocationY = heroLocation.Y, Group = "Scripting" })
+	
+	local teleportEnemies = {}
+	for i, enemy in pairs( MapState.SpellSummons ) do
+		table.insert( teleportEnemies, enemy.ObjectId )
+	end
+	local numTeleportEnemies = #teleportEnemies
+	if numTeleportEnemies > 0 then
+		-- Primary attempt within cast radius
+		local spawnPoints = FindSpawnPointsInCast( castProjectilePointId, 350, numTeleportEnemies )
+		if IsEmpty(spawnPoints) then
+			wait( 0.02 )
+			-- Backup attempt, outside cast radius but still close
+			spawnPoints = FindSpawnPointsInCast( castProjectilePointId, 500, numTeleportEnemies )
+		end
+
+		for i, enemyId in ipairs( teleportEnemies ) do
+			CreateAnimation({ Name = "TeleportDisappearSmall", DestinationId = enemyId, })
+			if not IsEmpty(spawnPoints) then
+				Teleport({ Id = testPoint, DestinationId = spawnPoints[i % #spawnPoints + 1], OffsetX = RandomFloat(-50,50), OffsetY = RandomFloat(-50,50)})
+				if IsLocationBlocked({ Id = testPoint }) then
+					Teleport({ Id = enemyId, DestinationId = spawnPoints[i % #spawnPoints + 1] })
+				else				
+					Teleport({ Id = enemyId, DestinationId = testPoint })
+				end
+			else
+				-- Final attempt because this can cause sorting flickering
+				local generatedPoint = SpawnObstacle({ Name = "InvisibleTarget", LocationX = heroLocation.X + RandomFloat(-150, 150), LocationY = heroLocation.Y + RandomFloat(-100, 100), Group = "Scripting", ForceToValidLocation = true})
+				if not IsLocationBlocked({ Id = generatedPoint }) then
+					Teleport({ Id = enemyId, DestinationId = generatedPoint })
+				end
+				Destroy({Ids = { generatedPoint }})
+			end
+			CreateAnimation({ Name = "TeleportDisappearSmall", DestinationId = enemyId, })
+		end
+	end
+	Destroy({ Ids = {testPoint, castProjectilePointId }})
+end
+
 function mod.SummonEnemy( triggerArgs, functionArgs )
+
 	IncrementTableValue( SessionMapState, "SpellFired" )
 	--GetHeroTrait("ShovelRaiseDeadNecroMel")
-	
-	local trait = GetHeroTrait("AxeRecoveryAspect")
+	local trait = GetHeroTrait("ShovelRaiseDeadNecroMel")
 	trait.AttackSummons = trait.AttackSummons + 1
 	
-	if trait.AttackSummons > 0 then
+	if trait.AttackSummons > 1 then
 		if CurrentRun.Hero.Health > trait.Reserve then
 			mod.ReserveHealth( functionArgs.Reserve, "Aspect")
 		else
@@ -257,23 +314,31 @@ function mod.CreateEnemy( enemyName, args )
 		newEnemy.ImmuneToPolymorph = false
 	end
 
+	MapState.SpellSummons = MapState.SpellSummons or {}
+	MapState.SpellSummons = CollapseTable( MapState.SpellSummons )
+	table.insert( MapState.SpellSummons, newEnemy )
+	GameState.SpellSummons[newEnemy.Name] = (GameState.SpellSummons[newEnemy.Name] or 0) + 1
+
 	return newEnemy
 end
 
-modutil.mod.Path.Wrap("SetupMap", function(base, source, args)
-	if HeroHasTrait("AxeRecoveryAspect") then
-		local trait = GetHeroTrait("AxeRecoveryAspect")
+modutil.mod.Path.Wrap("LeaveRoom", function(base, currentRun, exitDoor)
+	if HeroHasTrait("ShovelRaiseDeadNecroMel") then
+		local trait = GetHeroTrait("ShovelRaiseDeadNecroMel")
+		if trait.AttackSummons > 1 then
+			mod.ReleaseHealthReserve( trait.Reserve * (trait.AttackSummons - 1), "Aspect" )
+		end
 		trait.AttackSummons = 0
 	end
-	return base(source, args)
+	return base(currentRun, exitDoor)
 end)
 
 
 
 modutil.mod.Path.Wrap("Kill", function(base, victim, triggerArgs)
 	base(victim, triggerArgs)
-	if victim.AlwaysTraitor == true and HeroHasTrait("AxeRecoveryAspect") and victim.Name == "Zombie" and triggerArgs.Killed == true then
-		local trait = GetHeroTrait("AxeRecoveryAspect")
+	if victim.AlwaysTraitor == true and HeroHasTrait("ShovelRaiseDeadNecroMel") and victim.Name == "Zombie" and triggerArgs.Killed == true then
+		local trait = GetHeroTrait("ShovelRaiseDeadNecroMel")
 		trait.AttackSummons = trait.AttackSummons - 1
 		if trait.AttackSummons > 0 then
 			mod.ReleaseHealthReserve( trait.Reserve, "Aspect" )
@@ -281,9 +346,72 @@ modutil.mod.Path.Wrap("Kill", function(base, victim, triggerArgs)
 	end
 end)
 
+ModUtil.Path.Wrap("Damage", function(baseFunc, victim, triggerArgs)
+	baseFunc(victim, triggerArgs)
+	if victim ~= CurrentRun.Hero and triggerArgs.AttackerTable.Name == "Zombie" and triggerArgs.AttackerTable.AlwaysTraitor == true then	
+		if HeroHasTrait("PoseidonWeaponBoon") then
+			local trait = GetHeroTrait("PoseidonWeaponBoon")
+			functionArgs = {
+				ProjectileName = "PoseidonSplashSplinter",
+				CooldownName = "PoseidonSpecial",
+				MultihitWeaponWhitelist = 
+				{
+				},
+				MultihitWeaponConditions = 
+				{
+
+				},
+				MultihitProjectileWhitelist =
+				{
+
+				},
+				MultihitProjectileConditions =
+				{
+				},
+				Cooldown = 0.033,
+				DamageMultiplier = 
+				{
+					BaseValue = 25/20 * trait.DamageMultiplier,
+				},
+			}
+			CheckPoseidonSplash(victim, functionArgs, triggerArgs)
+		elseif HeroHasTrait("HeraWeaponBoon") then
+			functionArgs = {
+				EffectName = "DamageShareEffect",
+			}
+			ApplyDamageShare(victim, functionArgs, triggerArgs)
+		elseif HeroHasTrait("DemeterWeaponBoon") then
+			functionArgs = {
+				EffectName = "ChillEffect",
+			}
+			ApplyRoot(victim, functionArgs, triggerArgs)
+		elseif HeroHasTrait("HestiaWeaponBoon") then
+			local trait = GetHeroTrait("HestiaWeaponBoon")
+			functionArgs = {
+				EffectName = "BurnEffect",
+				NumStacks =  trait.ReportedDamage
+			}
+			ApplyBurn( victim, functionArgs, triggerArgs )
+		elseif HeroHasTrait("HephaestusWeaponBoon") then
+			local trait = GetHeroTrait("HephaestusWeaponBoon")
+			functionArgs = {
+				Name = "MassiveAttack",
+				TraitName = "HephaestusWeaponBoon",
+				ProjectileName = "MassiveSlamBlast",
+				Cooldown = trait.ReportedCooldown,
+				MultihitProjectileWhitelist ={},
+				BlastDelay = 0.08,
+				DamageMultiplier = trait.ReportedMultiplier
+			}
+			CheckMassiveAttack( victim, functionArgs, triggerArgs )
+		end
+	end
+end)
+
 modutil.once_loaded.game(function()
 
-
+	-- Changing Aspect text
+	import "TextEn.lua"
 	
 	--import "SummonData.lua"
 
@@ -316,7 +444,7 @@ modutil.once_loaded.game(function()
 				Multiplier = 0.3,
 			},
 		},
-		Icon = "JarlUlsfark-AspectYoungMel\\AxeAspectYoungMelIcon",
+		Icon = "GUI\\Icons\\Shovel",
 		RequiredWeapon = "WeaponAxe",
 		WeaponKitGrannyModel = "ToolShovel_Mesh",
 		ReplacementGrannyModels = 
@@ -329,12 +457,13 @@ modutil.once_loaded.game(function()
 			{
 				SwapAnimations = {
 					["MelinoeIdle"] = "Shovel_Idle",
+					["MelinoeEquip"] = "Shovel_Idle",
 				}
 			},
 		},
 		OnWeaponFiredFunctions = {
-			ValidWeapons = { "WeaponAxe" },
-			FunctionName = _PLUGIN.guid .. "." .. "SummonEnemy",
+			ValidWeapons = { "WeaponAxe", "WeaponCast" },
+			FunctionName = _PLUGIN.guid .. "." .. "SummonOrCast",
 			FunctionArgs = 
 			{
 				enemy = "Zombie",
@@ -342,12 +471,11 @@ modutil.once_loaded.game(function()
 				biome = "Ephyra",
             	type = "regular",
 				Reserve = { BaseValue = 10 },
-			},
-		},
-		OnEnemyDeathFunction = {
-			Name = _PLUGIN.guid .. "." .. "SummonDeadHeal",
-			FunctionArgs = {
-				Reserve = { BaseValue = 10 }
+				ReportValues = 
+				{ 
+					PrimedHealth = "Reserve",
+
+				}
 			},
 		},
 		AttackSummons = 0,
@@ -379,10 +507,23 @@ modutil.once_loaded.game(function()
 		},
 		ExtractValues =
 		{
-
+			{
+				Key = "PrimedHealth",
+				ExtractAs = "PrimedHealth",
+				Format = "Absolute",
+			},
 		},
 		FlavorText = "ShovelRaiseDeadNecroMel_FlavorText",
 	}
 
-	OverwriteTableKeys( TraitSetData.Aspects.AxeRecoveryAspect, ShovelRaiseDeadNecroMel)
+	--OverwriteTableKeys( TraitSetData.Aspects.AxeRecoveryAspect, ShovelRaiseDeadNecroMel)
+	TraitData.ShovelRaiseDeadNecroMel = ShovelRaiseDeadNecroMel
+
+
+	--Adds the new traits to the in-game shop
+	import "WeaponShop.lua"
+
+	--Adds god specific VFX
+	import "GodEffects.lua"
+
 end)
