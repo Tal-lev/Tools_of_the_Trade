@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.0.2] - 2026-06-06
+
 - Added The Silver spade as a new aspect instead of replacing Melinoe's Axe
 - Added WeaponBoon effect for the summons (Hera/Demeter/Hestia/Hephaestus/Poseidon)
 - Cast now teleports summons to the player
@@ -17,5 +19,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - First version of the mod!
 
-[unreleased]: https://github.com/Tal-lev/Tools_of_the_Trade/compare/0.0.1...HEAD
+[unreleased]: https://github.com/Tal-lev/Tools_of_the_Trade/compare/0.0.2...HEAD
+[0.0.2]: https://github.com/Tal-lev/Tools_of_the_Trade/compare/0.0.1...0.0.2
 [0.0.1]: https://github.com/Tal-lev/Tools_of_the_Trade/compare/8e2e98aeddbdcd18c7b2ca3a7a291922707e778d...0.0.1
