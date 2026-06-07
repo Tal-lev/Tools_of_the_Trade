@@ -18,6 +18,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Ares - Grisly Gain
   - Artemis - Support fire
   - Apollo - Dazzling Display
+- Added god dependent textures for zombie summons
 
 ## [0.0.2] - 2026-06-06
 
