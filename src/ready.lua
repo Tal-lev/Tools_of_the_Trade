@@ -165,15 +165,16 @@ function mod.SummonEnemy( triggerArgs, functionArgs )
 	local trait = {}
 	summonArgs.MaxHealthMultiplier = (( GetHeroMaxAvailableHealth() + (CurrentRun.Hero.ReserveHealthSources["Aspect"] or 0)) / 30)
 	if triggerArgs.Name == "WeaponAxe" then
+
 		if HeroHasTrait("ChaosWeaponBlessing") then
 			trait = GetHeroTrait("ChaosWeaponBlessing")
 				summonArgs.DamageMultiplier = summonArgs.DamageMultiplier + trait.ReportedMultiplier - 1
 		end
-		
 		if HeroHasTrait("HermesWeaponBoon") then
 			trait = GetHeroTrait("HermesWeaponBoon")
 			summonArgs.SpeedMultiplier = summonArgs.SpeedMultiplier + trait.ReportedWeaponMultiplier - 1
 		end
+		--Adding Attack outgoing damage modifier boons
 		if HeroHasTrait("ZeusWeaponBoon") then
 			trait = GetHeroTrait("ZeusWeaponBoon")
 			summonArgs.GodVFX = "Zeus"
@@ -206,7 +207,30 @@ function mod.SummonEnemy( triggerArgs, functionArgs )
 			summonArgs.GodVFX = "Ares"
 		end
 	end
-
+	--Adding Attackoutgoing damage modifier boons
+	--if HeroHasTrait("Hydraulic Might") then
+		--if RequiredEffects = { "EncounterStartOffense" },
+	--	summonArgs.DamageMultiplier = summonArgs.DamageMultiplier + trait.ReportedMultiplier - 1
+	--end
+	if HeroHasTrait("HighHealthOffenseBoon") then
+		trait = GetHeroTrait("HighHealthOffenseBoon")
+		summonArgs.DamageMultiplier = summonArgs.DamageMultiplier + (trait.ReportedMultiplier or 1) - 1
+		if CurrentRun.Hero.Health > (GetHeroMaxAvailableHealth() * trait.ReportedThreshold) then
+			summonArgs.DamageMultiplier = summonArgs.DamageMultiplier + (trait.ReportedMultiplier or 1) - 1
+		end
+	end
+	if HeroHasTrait("PerfectDamageBonusBoon") and not SessionMapState.DeactivatePerfectDamageBonus then
+		trait = GetHeroTrait("PerfectDamageBonusBoon")
+		summonArgs.DamageMultiplier = summonArgs.DamageMultiplier + (trait.ReportedMultiplier or 1) - 1
+	end
+	if HeroHasTrait("ElementalUnifiedBoon") and (CurrentRun.Hero.HighestBaseElementCount >= 8) then
+		trait = GetHeroTrait("ElementalUnifiedBoon")
+		summonArgs.DamageMultiplier = summonArgs.DamageMultiplier + (trait.ReportedTotalDamageChange or 1) - 1
+	end
+	if HeroHasTrait("TimedKillBuffBoon") then
+		summonArgs.DamageMultiplier = summonArgs.DamageMultiplier + ((trait.ReportedMultiplier or 0.01)* SessionMapState.TimedBuff)
+	end
+		
 
 	local offset = CalcOffset(math.rad(GetAngle({Id = CurrentRun.Hero.ObjectId})), 100 )
 	local invaderSpawnPoint = SpawnObstacle({ Name = "InvisibleTarget", DestinationId = CurrentRun.Hero.ObjectId, OffsetX = offset.X, OffsetY = offset.Y, ForceToValidLocation = true})
@@ -289,10 +313,6 @@ function mod.CreateEnemy( enemyName, args )
 
 	if args.GodVFX then
 		local TextureName = "GR2/JarlUlsfark-" .. enemyData.Name .. "_Color_" .. args.GodVFX
-		print("!!!!!!!!!!!!!!!!")
-		print(TextureName)
-		print("GR2/JarlUlsfark-Zombie_Color_Zeus")
-		print("JarlUlsfark-Zombie_Color_Demeter")
 		SetThingProperty({ Property = "GrannyTexture", Value = TextureName , DestinationId = newEnemy.ObjectId })
 		--SetThingProperty({ Property = "GrannyTexture", Value = "Harpy_Color" , DestinationId = newEnemy.ObjectId })
 		--	newEnemy.WeaponOptions[1] = newEnemy.WeaponOptions[1] .. "_" .. args.GodVFX
@@ -305,7 +325,7 @@ function mod.CreateEnemy( enemyName, args )
 	thread( UnoccupySpawnPointOnDistance, newEnemy, spawnOnId, 400 )
 	SetThingProperty({ Property = "ElapsedTimeMultiplier", Value = GetGameplayElapsedTimeMultiplier(), ValueChangeType = "Absolute", DataValue = false, DestinationId = newEnemy.ObjectId })
 	AddOutgoingDamageModifier( newEnemy, { NonPlayerMultiplier = weaponDataMultipliers.DamageMultiplier })
-	newEnemy.SpeedMultiplier = ( newEnemy.SpeedMultiplier or 1 ) + (weaponDataMultipliers.SpeedMultiplier - 1)
+	newEnemy.SpeedMultiplier = ( newEnemy.SpeedMultiplier or 1 ) + (weaponDataMultipliers.SpeedMultiplier - 0.6) --Starting speed 1.4 to match fear
 	SetThingProperty({ Property = "ElapsedTimeMultiplier", Value = newEnemy.SpeedMultiplier, ValueChangeType = "Multiply", DataValue = false, DestinationId = newEnemy.ObjectId })
 	RemoveAutoLockTarget({ Id = newEnemy.ObjectId })
 	for i, data in pairs(newEnemy.OutgoingDamageModifiers) do
@@ -415,6 +435,18 @@ modutil.mod.Path.Wrap("Kill", function(base, victim, triggerArgs)
 		if trait.AttackSummons > 0 then
 			mod.ReleaseHealthReserve( trait.Reserve, "Aspect" )
 		end
+	end
+	if HeroHasTrait("ShovelRaiseDeadNecroMel") and HeroHasTrait("TimedKillBuffBoon") and triggerArgs.SourceProjectile == "ZombieMelee" and triggerArgs.AttackerTable.AlwaysTraitor == true and triggerArgs.Killed == true then
+		SessionMapState.TimedBuff = SessionMapState.TimedBuff + 1
+		table.insert( SessionMapState.TimedBuffStartTimes, _worldTime )
+		local FunctionArgs = 
+		{
+			Duration = 45,
+			ReportValues = { ReportedDuration = "Duration" },
+			Fx = "HermesWingsBuff",
+		}
+		thread(ReduceKillBuff, FunctionArgs )	
+		UIScriptsDeferred.KillBuffDirty = true
 	end
 end)
 
