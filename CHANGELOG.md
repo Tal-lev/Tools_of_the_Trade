@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+- Fix unintended speed
+- Fix Hermes weapon boon speed calculation
+
 ## [0.0.3] - 2026-06-07
 
 - These boons now impact your attack summons
