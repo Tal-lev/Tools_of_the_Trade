@@ -36,7 +36,7 @@ Purely for testing, possibly bug-ridden and certainly not polished or feature co
 - Ares - Grisly Gain
 - Hermes - Nimble limbs
 - Hermes - Tall order
-- Hermes - MeanStreak
+- Hermes - Mean Streak
 - Artemis - Support fire
 - Chaos - Attack Blessing
 
