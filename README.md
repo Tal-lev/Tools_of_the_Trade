@@ -12,9 +12,33 @@ Purely for testing, possibly bug-ridden and certainly not polished or feature co
   - Trait reduced the amount of health reserved
 - Cast teleports the summons to Melinoe's location
 - Summoned Zombies are affected by
-  - 8/9 Attack boons
+  - 8.5/9 Attack boons
   - 11 Regular Boons
 
+#### Zombies affected Attack boons
+- Zeus - Heaven Strike
+- Hera -  Sworn Strike
+- Poseidon - Wave Strike
+- Demeter - Ice Strike
+- Apollo - Nova Strike
+- Aphrodite - Flutter Strike
+- Hephaestus - Volcanic Strike
+- Hestia - Flame Strike
+- Ares - Vicious Strike (Partial)
+
+#### Zombies regular boon compatability
+
+- Zeus - Static Shock
+- Zeus - Shocking Loss
+- Apollo - Perfect Image
+- Apollo - Dazzling Display
+- Aphrodite - Shameless Attitude
+- Ares - Grisly Gain
+- Hermes - Nimble limbs
+- Hermes - Tall order
+- Hermes - MeanStreak
+- Artemis - Support fire
+- Chaos - Attack Blessing
 
 ## Installation
 
