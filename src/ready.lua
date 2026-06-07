@@ -179,20 +179,31 @@ function mod.SummonEnemy( triggerArgs, functionArgs )
 			summonArgs.GodVFX = "Zeus"
 		elseif HeroHasTrait("HeraWeaponBoon") then
 			trait = GetHeroTrait("HeraWeaponBoon")
-				summonArgs.DamageMultiplier = summonArgs.DamageMultiplier + trait.ReportedWeaponMultiplier - 1
+			summonArgs.DamageMultiplier = summonArgs.DamageMultiplier + trait.ReportedWeaponMultiplier - 1
+			summonArgs.GodVFX = "Hera"
+		elseif HeroHasTrait("PoseidonWeaponBoon") then
+			summonArgs.GodVFX = "Poseidon"
 		elseif HeroHasTrait("ApolloWeaponBoon") then
 			trait = GetHeroTrait("ApolloWeaponBoon")
-				summonArgs.DamageMultiplier = summonArgs.DamageMultiplier + trait.ReportedWeaponMultiplier - 1
-				summonArgs.ScaleMultiplier = summonArgs.ScaleMultiplier + 0.4
+			summonArgs.DamageMultiplier = summonArgs.DamageMultiplier + trait.ReportedWeaponMultiplier - 1
+			summonArgs.GodVFX = "Apollo"
+			summonArgs.ScaleMultiplier = summonArgs.ScaleMultiplier + 0.4
 		elseif HeroHasTrait("DemeterWeaponBoon") then
 			trait = GetHeroTrait("DemeterWeaponBoon")
-				summonArgs.DamageMultiplier = summonArgs.DamageMultiplier + trait.ReportedWeaponMultiplier - 1
+			summonArgs.DamageMultiplier = summonArgs.DamageMultiplier + trait.ReportedWeaponMultiplier - 1
+			summonArgs.GodVFX = "Demeter"
 		elseif HeroHasTrait("AphroditeWeaponBoon") then 
 			trait = GetHeroTrait("AphroditeWeaponBoon")
-				summonArgs.DamageMultiplier = summonArgs.DamageMultiplier + (trait.ReportedWeaponMultiplier or 1.8) - 1
+			summonArgs.DamageMultiplier = summonArgs.DamageMultiplier + (trait.ReportedWeaponMultiplier or 1.8) - 1
+			summonArgs.GodVFX = "Aphrodite"
+		elseif HeroHasTrait("HephaestusWeaponBoon") then 
+			summonArgs.GodVFX = "Hephaestus"
+		elseif HeroHasTrait("HestiaWeaponBoon") then
+			summonArgs.GodVFX = "Hestia"			
 		elseif HeroHasTrait("AresWeaponBoon") then
 			trait = GetHeroTrait("AresWeaponBoon")
-				summonArgs.DamageMultiplier = summonArgs.DamageMultiplier + trait.ReportedWeaponMultiplier - 1
+			summonArgs.DamageMultiplier = summonArgs.DamageMultiplier + trait.ReportedWeaponMultiplier - 1
+			summonArgs.GodVFX = "Ares"
 		end
 	end
 
@@ -223,9 +234,6 @@ function mod.CreateEnemy( enemyName, args )
 	}
 	local enemyData = EnemyData[enemyName]
 	local newEnemy = DeepCopyTable( enemyData )
-	--if args.GodVFX then
-	--	newEnemy.WeaponOptions[1] = newEnemy.WeaponOptions[1] .. "_" .. args.GodVFX
-	--end
 	newEnemy.DefaultAIData.TargetClosest = true
 	newEnemy.MaxHealth = newEnemy.MaxHealth * weaponDataMultipliers.MaxHealthMultiplier
 	newEnemy.HealthBarOffsetY = (newEnemy.HealthBarOffsetY or -155 ) * weaponDataMultipliers.ScaleMultiplier
@@ -278,7 +286,17 @@ function mod.CreateEnemy( enemyName, args )
 			DestinationId = spawnOnId, OffsetX = 0, OffsetY = 0 })
 	
 	thread( SetupUnit, newEnemy, CurrentRun, { SkipPresentation = false } )
-	
+
+	if args.GodVFX then
+		local TextureName = "GR2/JarlUlsfark-" .. enemyData.Name .. "_Color_" .. args.GodVFX
+		print("!!!!!!!!!!!!!!!!")
+		print(TextureName)
+		print("GR2/JarlUlsfark-Zombie_Color_Zeus")
+		print("JarlUlsfark-Zombie_Color_Demeter")
+		SetThingProperty({ Property = "GrannyTexture", Value = TextureName , DestinationId = newEnemy.ObjectId })
+		--SetThingProperty({ Property = "GrannyTexture", Value = "Harpy_Color" , DestinationId = newEnemy.ObjectId })
+		--	newEnemy.WeaponOptions[1] = newEnemy.WeaponOptions[1] .. "_" .. args.GodVFX
+	end
 	if Enemytype == "boss" then
 		thread( mod.SetupBoss, newEnemy)
 	end
@@ -374,7 +392,20 @@ modutil.mod.Path.Wrap("LeaveRoom", function(base, currentRun, exitDoor)
 	return base(currentRun, exitDoor)
 end)
 
+--Loading the package at every room
+modutil.mod.Path.Wrap("SetupMap", function(base, source, args)
+	LoadPackages({ Name = "JarlUlsfark-Zombie_Color_Zeus" })
+	LoadPackages({ Name = "JarlUlsfark-Zombie_Color_Hera" })
+	LoadPackages({ Name = "JarlUlsfark-Zombie_Color_Poseidon" })
+	LoadPackages({ Name = "JarlUlsfark-Zombie_Color_Demeter" })	
+	LoadPackages({ Name = "JarlUlsfark-Zombie_Color_Apollo" })	
+	LoadPackages({ Name = "JarlUlsfark-Zombie_Color_Aphrodite" })	
+	LoadPackages({ Name = "JarlUlsfark-Zombie_Color_Hephaestus" })
+	LoadPackages({ Name = "JarlUlsfark-Zombie_Color_Hestia" })
+	LoadPackages({ Name = "JarlUlsfark-Zombie_Color_Ares" })
+	return base(source, args)
 
+end)
 
 modutil.mod.Path.Wrap("Kill", function(base, victim, triggerArgs)
 	base(victim, triggerArgs)
@@ -580,16 +611,16 @@ modutil.once_loaded.game(function()
 		{
 			Melinoe_Axe_Mesh1 = "ToolShovel_Mesh",
 		},
-		WeaponDataOverride =
-		{
-			WeaponAxe =
-			{
-				SwapAnimations = {
-					["MelinoeIdle"] = "Shovel_Idle",
-					["MelinoeEquip"] = "Shovel_Idle",
-				}
-			},
-		},
+		--WeaponDataOverride =
+		--{
+		--	WeaponAxe =
+		--	{
+				--SwapAnimations = {
+					--["MelinoeIdle"] = "Shovel_Idle",
+					--["MelinoeEquip"] = "Shovel_Idle",
+		--		}
+		--	},
+		--},
 		OnWeaponFiredFunctions = {
 			ValidWeapons = { "WeaponAxe", "WeaponCast" },
 			FunctionName = _PLUGIN.guid .. "." .. "SummonOrCast",
