@@ -7,6 +7,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+- These boons now impact your attack summons
+  - Zeus - Heaven Strike
+  - Apollo - Nova Strike
+  - Aphrodite - Flutter Strike
+  - Hermes - Nimble limbs
+  - Chaos - Attack Blessing
+  - Zeus - Static Shock
+  - Zeus - Shocking Loss
+  - Ares - Grisly Gain
+  - Artemis - Support fire
+  - Apollo - Dazzling Display
+
 ## [0.0.2] - 2026-06-06
 
 - Added The Silver spade as a new aspect instead of replacing Melinoe's Axe
