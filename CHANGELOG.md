@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.0.4] - 2026-06-07
+
 - Fix unintended speed
 - Fix Hermes weapon boon speed calculation
 
@@ -42,7 +44,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - First version of the mod!
 
-[unreleased]: https://github.com/Tal-lev/Tools_of_the_Trade/compare/0.0.3...HEAD
+[unreleased]: https://github.com/Tal-lev/Tools_of_the_Trade/compare/0.0.4...HEAD
+[0.0.4]: https://github.com/Tal-lev/Tools_of_the_Trade/compare/0.0.3...0.0.4
 [0.0.3]: https://github.com/Tal-lev/Tools_of_the_Trade/compare/0.0.2...0.0.3
 [0.0.2]: https://github.com/Tal-lev/Tools_of_the_Trade/compare/0.0.1...0.0.2
 [0.0.1]: https://github.com/Tal-lev/Tools_of_the_Trade/compare/8e2e98aeddbdcd18c7b2ca3a7a291922707e778d...0.0.1
