@@ -172,7 +172,7 @@ function mod.SummonEnemy( triggerArgs, functionArgs )
 		end
 		if HeroHasTrait("HermesWeaponBoon") then
 			trait = GetHeroTrait("HermesWeaponBoon")
-			summonArgs.SpeedMultiplier = summonArgs.SpeedMultiplier + trait.ReportedWeaponMultiplier - 1
+			summonArgs.SpeedMultiplier = summonArgs.SpeedMultiplier + (1 - trait.ReportedWeaponMultiplier)
 		end
 		--Adding Attack outgoing damage modifier boons
 		if HeroHasTrait("ZeusWeaponBoon") then
@@ -325,7 +325,12 @@ function mod.CreateEnemy( enemyName, args )
 	thread( UnoccupySpawnPointOnDistance, newEnemy, spawnOnId, 400 )
 	SetThingProperty({ Property = "ElapsedTimeMultiplier", Value = GetGameplayElapsedTimeMultiplier(), ValueChangeType = "Absolute", DataValue = false, DestinationId = newEnemy.ObjectId })
 	AddOutgoingDamageModifier( newEnemy, { NonPlayerMultiplier = weaponDataMultipliers.DamageMultiplier })
-	newEnemy.SpeedMultiplier = ( newEnemy.SpeedMultiplier or 1 ) + (weaponDataMultipliers.SpeedMultiplier - 0.6) --Starting speed 1.4 to match fear
+	print("original newEnemy.SpeedMultiplier")
+	print(newEnemy.SpeedMultiplier)
+	newEnemy.SpeedMultiplier = ( newEnemy.SpeedMultiplier or 1 ) + (weaponDataMultipliers.SpeedMultiplier - 1)
+	print("!!!!!!!!!!!!!!!!")
+	print("new newEnemy.SpeedMultiplier")
+	print(newEnemy.SpeedMultiplier)
 	SetThingProperty({ Property = "ElapsedTimeMultiplier", Value = newEnemy.SpeedMultiplier, ValueChangeType = "Multiply", DataValue = false, DestinationId = newEnemy.ObjectId })
 	RemoveAutoLockTarget({ Id = newEnemy.ObjectId })
 	for i, data in pairs(newEnemy.OutgoingDamageModifiers) do
@@ -666,7 +671,6 @@ modutil.once_loaded.game(function()
 				ReportValues = 
 				{ 
 					PrimedHealth = "Reserve",
-
 				}
 			},
 		},
