@@ -155,8 +155,47 @@ function mod.SummonEnemy( triggerArgs, functionArgs )
 	end
 	local enemyData = EnemyData[enemyName]
 	local hasEnemy = false
+	
+	local summonArgs = { 
+		MaxHealthMultiplier = functionArgs.MaxHealthMultiplier or 1, 
+		SpeedMultiplier = functionArgs.SpeedMultiplier or 1, 
+		ScaleMultiplier = functionArgs.ScaleMultiplier or 1, 
+		DamageMultiplier = functionArgs.DamageMultiplier or 1
+	}
+	local trait = {}
+	summonArgs.MaxHealthMultiplier = (( GetHeroMaxAvailableHealth() + (CurrentRun.Hero.ReserveHealthSources["Aspect"] or 0)) / 30)
+	if triggerArgs.Name == "WeaponAxe" then
+		if HeroHasTrait("ChaosWeaponBlessing") then
+			trait = GetHeroTrait("ChaosWeaponBlessing")
+				summonArgs.DamageMultiplier = summonArgs.DamageMultiplier + trait.ReportedMultiplier - 1
+		end
+		
+		if HeroHasTrait("HermesWeaponBoon") then
+			trait = GetHeroTrait("HermesWeaponBoon")
+			summonArgs.SpeedMultiplier = summonArgs.SpeedMultiplier + trait.ReportedWeaponMultiplier - 1
+		end
+		if HeroHasTrait("ZeusWeaponBoon") then
+			trait = GetHeroTrait("ZeusWeaponBoon")
+			summonArgs.GodVFX = "Zeus"
+		elseif HeroHasTrait("HeraWeaponBoon") then
+			trait = GetHeroTrait("HeraWeaponBoon")
+				summonArgs.DamageMultiplier = summonArgs.DamageMultiplier + trait.ReportedWeaponMultiplier - 1
+		elseif HeroHasTrait("ApolloWeaponBoon") then
+			trait = GetHeroTrait("ApolloWeaponBoon")
+				summonArgs.DamageMultiplier = summonArgs.DamageMultiplier + trait.ReportedWeaponMultiplier - 1
+				summonArgs.ScaleMultiplier = summonArgs.ScaleMultiplier + 0.4
+		elseif HeroHasTrait("DemeterWeaponBoon") then
+			trait = GetHeroTrait("DemeterWeaponBoon")
+				summonArgs.DamageMultiplier = summonArgs.DamageMultiplier + trait.ReportedWeaponMultiplier - 1
+		elseif HeroHasTrait("AphroditeWeaponBoon") then 
+			trait = GetHeroTrait("AphroditeWeaponBoon")
+				summonArgs.DamageMultiplier = summonArgs.DamageMultiplier + (trait.ReportedWeaponMultiplier or 1.8) - 1
+		elseif HeroHasTrait("AresWeaponBoon") then
+			trait = GetHeroTrait("AresWeaponBoon")
+				summonArgs.DamageMultiplier = summonArgs.DamageMultiplier + trait.ReportedWeaponMultiplier - 1
+		end
+	end
 
-	local summonArgs = { MaxHealthMultiplier = 1, SpeedMultiplier = 1, ScaleMultiplier = 1, DamageMultiplier = 1}
 
 	local offset = CalcOffset(math.rad(GetAngle({Id = CurrentRun.Hero.ObjectId})), 100 )
 	local invaderSpawnPoint = SpawnObstacle({ Name = "InvisibleTarget", DestinationId = CurrentRun.Hero.ObjectId, OffsetX = offset.X, OffsetY = offset.Y, ForceToValidLocation = true})
@@ -184,9 +223,12 @@ function mod.CreateEnemy( enemyName, args )
 	}
 	local enemyData = EnemyData[enemyName]
 	local newEnemy = DeepCopyTable( enemyData )
+	--if args.GodVFX then
+	--	newEnemy.WeaponOptions[1] = newEnemy.WeaponOptions[1] .. "_" .. args.GodVFX
+	--end
 	newEnemy.DefaultAIData.TargetClosest = true
-	newEnemy.MaxHealth = newEnemy.MaxHealth
-	newEnemy.HealthBarOffsetY = (newEnemy.HealthBarOffsetY or -155 )
+	newEnemy.MaxHealth = newEnemy.MaxHealth * weaponDataMultipliers.MaxHealthMultiplier
+	newEnemy.HealthBarOffsetY = (newEnemy.HealthBarOffsetY or -155 ) * weaponDataMultipliers.ScaleMultiplier
 	newEnemy.HideHealthBar = false
 	if team == "player" then
 		newEnemy.BlocksLootInteraction = false
@@ -244,9 +286,8 @@ function mod.CreateEnemy( enemyName, args )
 	SessionMapState.SpawnPointsUsed[spawnOnId] = newEnemy.ObjectId
 	thread( UnoccupySpawnPointOnDistance, newEnemy, spawnOnId, 400 )
 	SetThingProperty({ Property = "ElapsedTimeMultiplier", Value = GetGameplayElapsedTimeMultiplier(), ValueChangeType = "Absolute", DataValue = false, DestinationId = newEnemy.ObjectId })
-	AddOutgoingDamageModifier( newEnemy, { NonPlayerMultiplier = 1, Multiplicative = true })
-	
-	newEnemy.SpeedMultiplier = ( newEnemy.SpeedMultiplier or 1 )
+	AddOutgoingDamageModifier( newEnemy, { NonPlayerMultiplier = weaponDataMultipliers.DamageMultiplier })
+	newEnemy.SpeedMultiplier = ( newEnemy.SpeedMultiplier or 1 ) + (weaponDataMultipliers.SpeedMultiplier - 1)
 	SetThingProperty({ Property = "ElapsedTimeMultiplier", Value = newEnemy.SpeedMultiplier, ValueChangeType = "Multiply", DataValue = false, DestinationId = newEnemy.ObjectId })
 	RemoveAutoLockTarget({ Id = newEnemy.ObjectId })
 	for i, data in pairs(newEnemy.OutgoingDamageModifiers) do
@@ -348,9 +389,11 @@ end)
 
 ModUtil.Path.Wrap("Damage", function(baseFunc, victim, triggerArgs)
 	baseFunc(victim, triggerArgs)
-	if victim ~= CurrentRun.Hero and triggerArgs.AttackerTable.Name == "Zombie" and triggerArgs.AttackerTable.AlwaysTraitor == true then	
+	local trait = {}
+	if victim ~= CurrentRun.Hero and HeroHasTrait("ShovelRaiseDeadNecroMel") and triggerArgs.AttackerTable.Name == "Zombie" and triggerArgs.AttackerTable.AlwaysTraitor == true then	
+		-- Effect of weapon boons
 		if HeroHasTrait("PoseidonWeaponBoon") then
-			local trait = GetHeroTrait("PoseidonWeaponBoon")
+			trait = GetHeroTrait("PoseidonWeaponBoon")
 			functionArgs = {
 				ProjectileName = "PoseidonSplashSplinter",
 				CooldownName = "PoseidonSpecial",
@@ -375,6 +418,16 @@ ModUtil.Path.Wrap("Damage", function(baseFunc, victim, triggerArgs)
 				},
 			}
 			CheckPoseidonSplash(victim, functionArgs, triggerArgs)
+		elseif HeroHasTrait("ZeusWeaponBoon") then
+			trait = GetHeroTrait("ZeusWeaponBoon")
+			functionArgs = {
+				Modifier = trait.ReportedMultiplier
+			}
+			local dataProperties = MergeAllTables({
+				EffectData["DamageEchoEffect"].EffectData, 
+				functionArgs
+			})
+			ApplyEffect( { DestinationId = victim.ObjectId, Id = CurrentRun.Hero.ObjectId, EffectName = "DamageEchoEffect", DataProperties = dataProperties } )
 		elseif HeroHasTrait("HeraWeaponBoon") then
 			functionArgs = {
 				EffectName = "DamageShareEffect",
@@ -386,14 +439,14 @@ ModUtil.Path.Wrap("Damage", function(baseFunc, victim, triggerArgs)
 			}
 			ApplyRoot(victim, functionArgs, triggerArgs)
 		elseif HeroHasTrait("HestiaWeaponBoon") then
-			local trait = GetHeroTrait("HestiaWeaponBoon")
+			trait = GetHeroTrait("HestiaWeaponBoon")
 			functionArgs = {
 				EffectName = "BurnEffect",
 				NumStacks =  trait.ReportedDamage
 			}
 			ApplyBurn( victim, functionArgs, triggerArgs )
 		elseif HeroHasTrait("HephaestusWeaponBoon") then
-			local trait = GetHeroTrait("HephaestusWeaponBoon")
+			trait = GetHeroTrait("HephaestusWeaponBoon")
 			functionArgs = {
 				Name = "MassiveAttack",
 				TraitName = "HephaestusWeaponBoon",
@@ -405,11 +458,87 @@ ModUtil.Path.Wrap("Damage", function(baseFunc, victim, triggerArgs)
 			}
 			CheckMassiveAttack( victim, functionArgs, triggerArgs )
 		end
+		if HeroHasTrait("FocusLightningBoon") then
+			trait = GetHeroTrait("HephaestusWeaponBoon")
+			functionArgs = 
+			{
+				ProjectileName = "ProjectileZeusSpark",
+				FirstHitOnly = true,
+				WindowCount = 3, -- "clip fire cooldown. no more than Count projectiles every Duration"
+				WindowDuration = 0.75,
+				DamageMultiplier = trait.ReportedMultiplier
+			}
+			CheckZeusProjectile( victim, functionArgs, triggerArgs )
+		end
+		if HeroHasTrait("SpawnKillBoon") then
+			functionArgs = 
+			{
+				Chance = 0.25,
+				Damage = 9999,
+				Vfx = "ZeusLightningIris",
+				ExcludeProjectileName = "MedeaCurse",
+				ReportValues = { ReportedChance = "Chance" },
+			}
+			CheckSpawnZeusDamage( victim , functionArgs, triggerArgs )
+		end
+		if HeroHasTrait("AresManaBoon") then
+			functionArgs = 
+			{
+				Chance = 0.2,
+				Sound = "/Leftovers/Menu Sounds/CoinFlash",
+				Name = "BloodDrop",
+				ReportValues = { ReportedDropChance = "Chance" },
+			}
+			CheckAresManaBloodDrop( victim , functionArgs, triggerArgs )
+		end
+		--if HeroHasTrait("HestiaManaBoon") then
+		--	trait = GetHeroTrait("HestiaManaBoon")
+		--	functionArgs = 
+		--	{
+		--		FirstHitOnly = true,
+		--		IsNotEx = false,
+		--		ValidWeapons = { "ZombieMelee" },
+		--		MultihitProjectileWhitelist = {},
+		--		MultihitProjectileConditions = {},
+		--		ManaGain = trait.ReportedManaRecovery,
+		--		ReportValues = { ReportedManaRecovery = "ManaGain" }
+		--	}
+		--	CheckManaOnHit( victim , functionArgs, triggerArgs )
+		--end
+		if HeroHasTrait("SupportingFireBoon") then
+			trait = GetHeroTrait("SupportingFireBoon")
+			functionArgs = 
+			{
+				ProjectileName = "ArtemisSupportingFire",
+				DamageMultiplier = trait.ReportedMultiplier,
+				Cooldown = 0.167,
+				ProjectileCap = 3,
+				StartAngle = 180,
+				Scatter = 20,
+				MultihitProjectileWhitelistLookup = { ProjectileStaffSingle = { Window = 0.25, Count = 3, }, },
+				MultihitProjectileWhitelist = { "ProjectileStaffSingle", },
+				MultihitProjectileConditions = { ProjectileStaffSingle = { Window = 0.25, Count = 3, }, },
+				ReportValues = 
+				{ 
+					ReportedMultiplier = "DamageMultiplier",
+				}
+			}
+			CheckSupportingFire ( victim, functionArgs, triggerArgs)
+		end
+		if HeroHasTrait("BlindChanceBoon") then
+			trait = GetHeroTrait("BlindChanceBoon")
+			local dataProperties = EffectData["BlindEffect"].EffectData
+			local target = math.random()
+			if trait.ReportedChance > target then
+				ApplyEffect( { DestinationId = victim.ObjectId, Id = CurrentRun.Hero.ObjectId, EffectName = "BlindEffect", DataProperties = dataProperties } )
+			end
+		end
 	end
 end)
 
 modutil.once_loaded.game(function()
-
+	
+	math.randomseed(os.time())
 	-- Changing Aspect text
 	import "TextEn.lua"
 	
@@ -523,7 +652,13 @@ modutil.once_loaded.game(function()
 	--Adds the new traits to the in-game shop
 	import "WeaponShop.lua"
 
-	--Adds god specific VFX
+	--Adds god specific VFX for Mel
 	import "GodEffects.lua"
+
+	--Add god specific attack animations for summon
+	--import "VFXAnimations.lua"
+
+	--Add god specific attacks for summon
+	--import "WeaponData.lua"
 
 end)
