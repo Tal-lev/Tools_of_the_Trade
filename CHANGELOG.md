@@ -13,6 +13,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Fix unintended speed
 - Fix Hermes weapon boon speed calculation
+- These boons now impact your attack summons
+  - Artemis - Pressure Points
+  - Hera - Uncommon Grace
+  - Circe - Word of greater girth
 
 ## [0.0.3] - 2026-06-07
 
