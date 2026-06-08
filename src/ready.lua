@@ -160,7 +160,8 @@ function mod.SummonEnemy( triggerArgs, functionArgs )
 		MaxHealthMultiplier = functionArgs.MaxHealthMultiplier or 1, 
 		SpeedMultiplier = functionArgs.SpeedMultiplier or 1, 
 		ScaleMultiplier = functionArgs.ScaleMultiplier or 1, 
-		DamageMultiplier = functionArgs.DamageMultiplier or 1
+		DamageMultiplier = functionArgs.DamageMultiplier or 1,
+		CritMultiplier = functionArgs.CritMultiplier or 0,
 	}
 	local trait = {}
 	summonArgs.MaxHealthMultiplier = (( GetHeroMaxAvailableHealth() + (CurrentRun.Hero.ReserveHealthSources["Aspect"] or 0)) / 30)
@@ -230,6 +231,20 @@ function mod.SummonEnemy( triggerArgs, functionArgs )
 	if HeroHasTrait("TimedKillBuffBoon") then
 		summonArgs.DamageMultiplier = summonArgs.DamageMultiplier + ((trait.ReportedMultiplier or 0.01)* SessionMapState.TimedBuff)
 	end
+	if HeroHasTrait("CritBonusBoon") then
+		trait = GetHeroTrait("CritBonusBoon")
+		summonArgs.CritMultiplier = summonArgs.CritMultiplier + (trait.ReportedCritBonus or 0.03)
+	end
+	if HeroHasTrait("CommonGlobalDamageBoon") and CurrentRun.Hero.GodBoonRarities.Common <= 0 then
+		trait = GetHeroTrait("CommonGlobalDamageBoon")
+		summonArgs.DamageMultiplier = summonArgs.DamageMultiplier + (trait.ReportedTotalDamageChange or 1.1) -1
+	end
+	if HeroHasTrait("CirceEnlargeTrait") then
+		trait = GetHeroTrait("CirceEnlargeTrait")
+		summonArgs.DamageMultiplier = summonArgs.DamageMultiplier + (trait.ReportedMultiplier or 1.15) -1
+		summonArgs.ScaleMultiplier = summonArgs.ScaleMultiplier + 0.25
+	end
+
 		
 
 	local offset = CalcOffset(math.rad(GetAngle({Id = CurrentRun.Hero.ObjectId})), 100 )
@@ -255,6 +270,7 @@ function mod.CreateEnemy( enemyName, args )
 		SpeedMultiplier = args.SpeedMultiplier or 1,
 		ScaleMultiplier = args.ScaleMultiplier or 1,
 		DamageMultiplier = args.DamageMultiplier or 1,
+		CritMultiplier = args.CritMultiplier or 0,
 	}
 	local enemyData = EnemyData[enemyName]
 	local newEnemy = DeepCopyTable( enemyData )
@@ -325,12 +341,8 @@ function mod.CreateEnemy( enemyName, args )
 	thread( UnoccupySpawnPointOnDistance, newEnemy, spawnOnId, 400 )
 	SetThingProperty({ Property = "ElapsedTimeMultiplier", Value = GetGameplayElapsedTimeMultiplier(), ValueChangeType = "Absolute", DataValue = false, DestinationId = newEnemy.ObjectId })
 	AddOutgoingDamageModifier( newEnemy, { NonPlayerMultiplier = weaponDataMultipliers.DamageMultiplier })
-	print("original newEnemy.SpeedMultiplier")
-	print(newEnemy.SpeedMultiplier)
+	AddOutgoingCritModifier( newEnemy, { Chance = weaponDataMultipliers.CritMultiplier })
 	newEnemy.SpeedMultiplier = ( newEnemy.SpeedMultiplier or 1 ) + (weaponDataMultipliers.SpeedMultiplier - 1)
-	print("!!!!!!!!!!!!!!!!")
-	print("new newEnemy.SpeedMultiplier")
-	print(newEnemy.SpeedMultiplier)
 	SetThingProperty({ Property = "ElapsedTimeMultiplier", Value = newEnemy.SpeedMultiplier, ValueChangeType = "Multiply", DataValue = false, DestinationId = newEnemy.ObjectId })
 	RemoveAutoLockTarget({ Id = newEnemy.ObjectId })
 	for i, data in pairs(newEnemy.OutgoingDamageModifiers) do
@@ -419,7 +431,6 @@ end)
 
 --Loading the package at every room
 modutil.mod.Path.Wrap("SetupMap", function(base, source, args)
-	return base(source, args)
 	LoadPackages({ Name = "JarlUlsfark-Zombie_Color_Zeus" })
 	LoadPackages({ Name = "JarlUlsfark-Zombie_Color_Hera" })
 	LoadPackages({ Name = "JarlUlsfark-Zombie_Color_Poseidon" })
@@ -429,6 +440,7 @@ modutil.mod.Path.Wrap("SetupMap", function(base, source, args)
 	LoadPackages({ Name = "JarlUlsfark-Zombie_Color_Hephaestus" })
 	LoadPackages({ Name = "JarlUlsfark-Zombie_Color_Hestia" })
 	LoadPackages({ Name = "JarlUlsfark-Zombie_Color_Ares" })
+	return base(source, args)
 end)
 
 modutil.mod.Path.Wrap("Kill", function(base, victim, triggerArgs)
