@@ -53,4 +53,4 @@ While the mod has been tested decently well it is recommended to backup your sav
 
 ## Issues
 
-Report any issues on the mod [github](https://github.com/Tal-lev/AspectYoungMel/issues) or [Hades Modding discord](https://discord.gg/KuMbyrN)
+Report any issues on the mod [github](https://github.com/Tal-lev/Tools_of_the_Trade/issues) or [Hades Modding discord](https://discord.gg/KuMbyrN)
