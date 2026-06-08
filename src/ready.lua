@@ -168,11 +168,11 @@ function mod.SummonEnemy( triggerArgs, functionArgs )
 
 		if HeroHasTrait("ChaosWeaponBlessing") then
 			trait = GetHeroTrait("ChaosWeaponBlessing")
-				summonArgs.DamageMultiplier = summonArgs.DamageMultiplier + trait.ReportedMultiplier - 1
+				summonArgs.DamageMultiplier = summonArgs.DamageMultiplier + (trait.ReportedMultiplier or 1.2) - 1
 		end
 		if HeroHasTrait("HermesWeaponBoon") then
 			trait = GetHeroTrait("HermesWeaponBoon")
-			summonArgs.SpeedMultiplier = summonArgs.SpeedMultiplier + (1 - trait.ReportedWeaponMultiplier)
+			summonArgs.SpeedMultiplier = summonArgs.SpeedMultiplier + (1 - (trait.ReportedWeaponMultiplier or 0.9))
 		end
 		--Adding Attack outgoing damage modifier boons
 		if HeroHasTrait("ZeusWeaponBoon") then
@@ -180,18 +180,18 @@ function mod.SummonEnemy( triggerArgs, functionArgs )
 			summonArgs.GodVFX = "Zeus"
 		elseif HeroHasTrait("HeraWeaponBoon") then
 			trait = GetHeroTrait("HeraWeaponBoon")
-			summonArgs.DamageMultiplier = summonArgs.DamageMultiplier + trait.ReportedWeaponMultiplier - 1
+			summonArgs.DamageMultiplier = summonArgs.DamageMultiplier + (trait.ReportedWeaponMultiplier or 1.5 ) - 1
 			summonArgs.GodVFX = "Hera"
 		elseif HeroHasTrait("PoseidonWeaponBoon") then
 			summonArgs.GodVFX = "Poseidon"
 		elseif HeroHasTrait("ApolloWeaponBoon") then
 			trait = GetHeroTrait("ApolloWeaponBoon")
-			summonArgs.DamageMultiplier = summonArgs.DamageMultiplier + trait.ReportedWeaponMultiplier - 1
+			summonArgs.DamageMultiplier = summonArgs.DamageMultiplier + (trait.ReportedWeaponMultiplier or 1.4) - 1
 			summonArgs.GodVFX = "Apollo"
 			summonArgs.ScaleMultiplier = summonArgs.ScaleMultiplier + 0.4
 		elseif HeroHasTrait("DemeterWeaponBoon") then
 			trait = GetHeroTrait("DemeterWeaponBoon")
-			summonArgs.DamageMultiplier = summonArgs.DamageMultiplier + trait.ReportedWeaponMultiplier - 1
+			summonArgs.DamageMultiplier = summonArgs.DamageMultiplier + (trait.ReportedWeaponMultiplier or 1.3) - 1
 			summonArgs.GodVFX = "Demeter"
 		elseif HeroHasTrait("AphroditeWeaponBoon") then 
 			trait = GetHeroTrait("AphroditeWeaponBoon")
@@ -203,7 +203,7 @@ function mod.SummonEnemy( triggerArgs, functionArgs )
 			summonArgs.GodVFX = "Hestia"			
 		elseif HeroHasTrait("AresWeaponBoon") then
 			trait = GetHeroTrait("AresWeaponBoon")
-			summonArgs.DamageMultiplier = summonArgs.DamageMultiplier + trait.ReportedWeaponMultiplier - 1
+			summonArgs.DamageMultiplier = summonArgs.DamageMultiplier + (trait.ReportedWeaponMultiplier or 1.2) - 1
 			summonArgs.GodVFX = "Ares"
 		end
 	end
@@ -214,18 +214,18 @@ function mod.SummonEnemy( triggerArgs, functionArgs )
 	--end
 	if HeroHasTrait("HighHealthOffenseBoon") then
 		trait = GetHeroTrait("HighHealthOffenseBoon")
-		summonArgs.DamageMultiplier = summonArgs.DamageMultiplier + (trait.ReportedMultiplier or 1) - 1
+		summonArgs.DamageMultiplier = summonArgs.DamageMultiplier + (trait.ReportedMultiplier or 1.05) - 1
 		if CurrentRun.Hero.Health > (GetHeroMaxAvailableHealth() * trait.ReportedThreshold) then
-			summonArgs.DamageMultiplier = summonArgs.DamageMultiplier + (trait.ReportedMultiplier or 1) - 1
+			summonArgs.DamageMultiplier = summonArgs.DamageMultiplier + (trait.ReportedMultiplier or 1.10) - 1
 		end
 	end
 	if HeroHasTrait("PerfectDamageBonusBoon") and not SessionMapState.DeactivatePerfectDamageBonus then
 		trait = GetHeroTrait("PerfectDamageBonusBoon")
-		summonArgs.DamageMultiplier = summonArgs.DamageMultiplier + (trait.ReportedMultiplier or 1) - 1
+		summonArgs.DamageMultiplier = summonArgs.DamageMultiplier + (trait.ReportedMultiplier or 1.1) - 1
 	end
 	if HeroHasTrait("ElementalUnifiedBoon") and (CurrentRun.Hero.HighestBaseElementCount >= 8) then
 		trait = GetHeroTrait("ElementalUnifiedBoon")
-		summonArgs.DamageMultiplier = summonArgs.DamageMultiplier + (trait.ReportedTotalDamageChange or 1) - 1
+		summonArgs.DamageMultiplier = summonArgs.DamageMultiplier + (trait.ReportedTotalDamageChange or 1.25) - 1
 	end
 	if HeroHasTrait("TimedKillBuffBoon") then
 		summonArgs.DamageMultiplier = summonArgs.DamageMultiplier + ((trait.ReportedMultiplier or 0.01)* SessionMapState.TimedBuff)
@@ -419,6 +419,7 @@ end)
 
 --Loading the package at every room
 modutil.mod.Path.Wrap("SetupMap", function(base, source, args)
+	return base(source, args)
 	LoadPackages({ Name = "JarlUlsfark-Zombie_Color_Zeus" })
 	LoadPackages({ Name = "JarlUlsfark-Zombie_Color_Hera" })
 	LoadPackages({ Name = "JarlUlsfark-Zombie_Color_Poseidon" })
@@ -428,8 +429,6 @@ modutil.mod.Path.Wrap("SetupMap", function(base, source, args)
 	LoadPackages({ Name = "JarlUlsfark-Zombie_Color_Hephaestus" })
 	LoadPackages({ Name = "JarlUlsfark-Zombie_Color_Hestia" })
 	LoadPackages({ Name = "JarlUlsfark-Zombie_Color_Ares" })
-	return base(source, args)
-
 end)
 
 modutil.mod.Path.Wrap("Kill", function(base, victim, triggerArgs)
@@ -482,14 +481,14 @@ ModUtil.Path.Wrap("Damage", function(baseFunc, victim, triggerArgs)
 				Cooldown = 0.033,
 				DamageMultiplier = 
 				{
-					BaseValue = 25/20 * trait.DamageMultiplier,
+					BaseValue = 25/20 * (trait.DamageMultiplier or 1),
 				},
 			}
 			CheckPoseidonSplash(victim, functionArgs, triggerArgs)
 		elseif HeroHasTrait("ZeusWeaponBoon") then
 			trait = GetHeroTrait("ZeusWeaponBoon")
 			functionArgs = {
-				Modifier = trait.ReportedMultiplier
+				Modifier = (trait.ReportedMultiplier or 1)
 			}
 			local dataProperties = MergeAllTables({
 				EffectData["DamageEchoEffect"].EffectData, 
@@ -510,7 +509,7 @@ ModUtil.Path.Wrap("Damage", function(baseFunc, victim, triggerArgs)
 			trait = GetHeroTrait("HestiaWeaponBoon")
 			functionArgs = {
 				EffectName = "BurnEffect",
-				NumStacks =  trait.ReportedDamage
+				NumStacks =  (trait.ReportedDamage or 30)
 			}
 			ApplyBurn( victim, functionArgs, triggerArgs )
 		elseif HeroHasTrait("HephaestusWeaponBoon") then
@@ -519,22 +518,22 @@ ModUtil.Path.Wrap("Damage", function(baseFunc, victim, triggerArgs)
 				Name = "MassiveAttack",
 				TraitName = "HephaestusWeaponBoon",
 				ProjectileName = "MassiveSlamBlast",
-				Cooldown = trait.ReportedCooldown,
+				Cooldown = (trait.ReportedCooldown or 12),
 				MultihitProjectileWhitelist ={},
 				BlastDelay = 0.08,
-				DamageMultiplier = trait.ReportedMultiplier
+				DamageMultiplier = (trait.ReportedMultiplier or 2)
 			}
 			CheckMassiveAttack( victim, functionArgs, triggerArgs )
 		end
 		if HeroHasTrait("FocusLightningBoon") then
-			trait = GetHeroTrait("HephaestusWeaponBoon")
+			trait = GetHeroTrait("FocusLightningBoon")
 			functionArgs = 
 			{
 				ProjectileName = "ProjectileZeusSpark",
 				FirstHitOnly = true,
 				WindowCount = 3, -- "clip fire cooldown. no more than Count projectiles every Duration"
 				WindowDuration = 0.75,
-				DamageMultiplier = trait.ReportedMultiplier
+				DamageMultiplier = (trait.ReportedMultiplier or 1)
 			}
 			CheckZeusProjectile( victim, functionArgs, triggerArgs )
 		end
@@ -578,7 +577,7 @@ ModUtil.Path.Wrap("Damage", function(baseFunc, victim, triggerArgs)
 			functionArgs = 
 			{
 				ProjectileName = "ArtemisSupportingFire",
-				DamageMultiplier = trait.ReportedMultiplier,
+				DamageMultiplier = (trait.ReportedMultiplier or 1),
 				Cooldown = 0.167,
 				ProjectileCap = 3,
 				StartAngle = 180,
