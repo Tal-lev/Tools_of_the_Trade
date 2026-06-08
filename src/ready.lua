@@ -250,7 +250,7 @@ function mod.SummonEnemy( triggerArgs, functionArgs )
 		summonArgs.SpeedMultiplier = summonArgs.SpeedMultiplier + ((trait.ReportedDodgeChance or 0) * CurrentRun.Hero.OlympianBoonCount)
 		summonArgs.DodgeMultiplier = summonArgs.DodgeMultiplier + ((trait.ReportedDodgeChance or 0) * CurrentRun.Hero.OlympianBoonCount)
 	end
-		if HeroHasTrait("CirceShrinkTrait") then
+	if HeroHasTrait("CirceShrinkTrait") then
 		trait = GetHeroTrait("CirceShrinkTrait")
 		summonArgs.SpeedMultiplier = summonArgs.SpeedMultiplier + (trait.ReportedDodgeChance or 0)
 		summonArgs.DodgeMultiplier = summonArgs.DodgeMultiplier + (trait.ReportedBaseSpeed or 1) -1
