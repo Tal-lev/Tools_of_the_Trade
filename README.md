@@ -13,7 +13,7 @@ Purely for testing, possibly bug-ridden and certainly not polished or feature co
 - Cast teleports the summons to Melinoe's location
 - Summoned Zombies are affected by
   - 8.5/9 Attack boons
-  - 11 Regular Boons
+  - 14 Regular Boons
 
 #### Zombies affected Attack boons
 - Zeus - Heaven Strike
@@ -30,6 +30,7 @@ Purely for testing, possibly bug-ridden and certainly not polished or feature co
 
 - Zeus - Static Shock
 - Zeus - Shocking Loss
+- Hera - Uncommon Grace
 - Apollo - Perfect Image
 - Apollo - Dazzling Display
 - Aphrodite - Shameless Attitude
@@ -38,7 +39,9 @@ Purely for testing, possibly bug-ridden and certainly not polished or feature co
 - Hermes - Tall order
 - Hermes - Mean Streak
 - Artemis - Support fire
+- Artemis - Pressure Points
 - Chaos - Attack Blessing
+- Circe - Word of greater girth
 
 ## Installation
 
