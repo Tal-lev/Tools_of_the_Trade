@@ -162,6 +162,7 @@ function mod.SummonEnemy( triggerArgs, functionArgs )
 		ScaleMultiplier = functionArgs.ScaleMultiplier or 1, 
 		DamageMultiplier = functionArgs.DamageMultiplier or 1,
 		CritMultiplier = functionArgs.CritMultiplier or 0,
+		DodgeMultiplier = functionArgs.DodgeMultiplier or 0,
 	}
 	local trait = {}
 	summonArgs.MaxHealthMultiplier = (( GetHeroMaxAvailableHealth() + (CurrentRun.Hero.ReserveHealthSources["Aspect"] or 0)) / 30)
@@ -244,6 +245,17 @@ function mod.SummonEnemy( triggerArgs, functionArgs )
 		summonArgs.DamageMultiplier = summonArgs.DamageMultiplier + (trait.ReportedMultiplier or 1.15) -1
 		summonArgs.ScaleMultiplier = summonArgs.ScaleMultiplier + 0.25
 	end
+	if HeroHasTrait("DodgeChanceBoon") then
+		trait = GetHeroTrait("DodgeChanceBoon")
+		summonArgs.SpeedMultiplier = summonArgs.SpeedMultiplier + ((trait.ReportedDodgeChance or 0) * CurrentRun.Hero.OlympianBoonCount)
+		summonArgs.DodgeMultiplier = summonArgs.DodgeMultiplier + ((trait.ReportedDodgeChance or 0) * CurrentRun.Hero.OlympianBoonCount)
+	end
+		if HeroHasTrait("CirceShrinkTrait") then
+		trait = GetHeroTrait("CirceShrinkTrait")
+		summonArgs.SpeedMultiplier = summonArgs.SpeedMultiplier + (trait.ReportedDodgeChance or 0)
+		summonArgs.DodgeMultiplier = summonArgs.DodgeMultiplier + (trait.ReportedBaseSpeed or 1) -1
+		summonArgs.ScaleMultiplier = summonArgs.ScaleMultiplier - 0.25
+	end
 
 		
 
@@ -271,6 +283,7 @@ function mod.CreateEnemy( enemyName, args )
 		ScaleMultiplier = args.ScaleMultiplier or 1,
 		DamageMultiplier = args.DamageMultiplier or 1,
 		CritMultiplier = args.CritMultiplier or 0,
+		DodgeMultiplier = args.DodgeMultiplier or 0,
 	}
 	local enemyData = EnemyData[enemyName]
 	local newEnemy = DeepCopyTable( enemyData )
@@ -343,6 +356,12 @@ function mod.CreateEnemy( enemyName, args )
 	AddOutgoingDamageModifier( newEnemy, { NonPlayerMultiplier = weaponDataMultipliers.DamageMultiplier })
 	AddOutgoingCritModifier( newEnemy, { Chance = weaponDataMultipliers.CritMultiplier })
 	newEnemy.SpeedMultiplier = ( newEnemy.SpeedMultiplier or 1 ) + (weaponDataMultipliers.SpeedMultiplier - 1)
+	ApplyUnitPropertyChanges( newEnemy, { {
+				LifeProperty = "DodgeChance",
+				ChangeValue = weaponDataMultipliers.DodgeMultiplier,
+				ChangeType = "Add",
+				DataValue = false,
+			}} )
 	SetThingProperty({ Property = "ElapsedTimeMultiplier", Value = newEnemy.SpeedMultiplier, ValueChangeType = "Multiply", DataValue = false, DestinationId = newEnemy.ObjectId })
 	RemoveAutoLockTarget({ Id = newEnemy.ObjectId })
 	for i, data in pairs(newEnemy.OutgoingDamageModifiers) do
