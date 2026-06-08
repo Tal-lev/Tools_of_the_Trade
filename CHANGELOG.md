@@ -7,7 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
--Fix game crashes when summoning immidiatly after gaining trait
+- Fix game crashes when summoning immidiatly after gaining trait
 - These boons now impact your attack summons
   - Artemis - Pressure Points
   - Hera - Uncommon Grace
