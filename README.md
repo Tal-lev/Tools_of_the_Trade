@@ -42,8 +42,8 @@ Purely for testing, possibly bug-ridden and certainly not polished or feature co
 - Artemis - Support fire
 - Artemis - Pressure Points
 - Chaos - Attack Blessing
-- Circe - Word of greater girth
-- Circe - Word of smaller Stature
+- Circe - Word of Greater Girth
+- Circe - Word of Smaller Stature
 
 ## Installation
 
