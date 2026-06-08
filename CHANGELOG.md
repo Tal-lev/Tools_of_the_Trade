@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+-Fix game crashes when summoning immidiatly after gaining trait
+
 ## [0.0.4] - 2026-06-07
 
 - Fix unintended speed
