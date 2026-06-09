@@ -16,6 +16,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - These boons now impact your attack summons
   - Poseidon - Hydraulic Might
   - Aphrodite - Hearty Appetite
+  - Ares - Blood Spree
 
 ## [0.0.5] - 2026-06-08
 
