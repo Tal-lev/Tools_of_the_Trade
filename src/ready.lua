@@ -116,10 +116,20 @@ function mod.SummonEnemy( triggerArgs, functionArgs )
 	IncrementTableValue( SessionMapState, "SpellFired" )
 	--GetHeroTrait("ShovelRaiseDeadNecroMel")
 	local trait = GetHeroTrait("ShovelRaiseDeadNecroMel")
-	trait.AttackSummons = trait.AttackSummons + 1
+	--Ensures death mini summons don't reserve health
+	local toReserve = 0
+	if (functionArgs.HeraclesCombatMoneyValue or 2) > 0 then
+		trait.AttackSummons = trait.AttackSummons + 1
+		toReserve = 1
+	end
 	
-	if trait.AttackSummons > 1 then
-		if CurrentRun.Hero.Health > trait.Reserve then
+	--Part1 of Double summon trait, double the cost
+	if HeroHasTrait("ShovelNecroMelDoubleSummonTrait") then
+		functionArgs.Reserve = functionArgs.Reserve * 2
+	end
+
+	if trait.AttackSummons > 1 and toReserve > 0 then
+		if CurrentRun.Hero.Health > functionArgs.Reserve then
 			mod.ReserveHealth( functionArgs.Reserve, "Aspect")
 		else
 			local unitId = CurrentRun.Hero.ObjectId
@@ -163,9 +173,10 @@ function mod.SummonEnemy( triggerArgs, functionArgs )
 		DamageMultiplier = functionArgs.DamageMultiplier or 1,
 		CritMultiplier = functionArgs.CritMultiplier or 0,
 		DodgeMultiplier = functionArgs.DodgeMultiplier or 0,
+		HeraclesCombatMoneyValue = functionArgs.HeraclesCombatMoneyValue or 2, --used in deathminisummon trait
 	}
 	local trait = {}
-	summonArgs.MaxHealthMultiplier = (( GetHeroMaxAvailableHealth() + (CurrentRun.Hero.ReserveHealthSources["Aspect"] or 0)) / 30)
+	summonArgs.MaxHealthMultiplier =  summonArgs.MaxHealthMultiplier * (( GetHeroMaxAvailableHealth() + (CurrentRun.Hero.ReserveHealthSources["Aspect"] or 0)) / 30)
 	if triggerArgs.Name == "WeaponAxe" then
 
 		if HeroHasTrait("ChaosWeaponBlessing") then
@@ -268,6 +279,11 @@ function mod.SummonEnemy( triggerArgs, functionArgs )
 	summonArgs.team = team
 	summonArgs.type = Enemytype
 	local newEnemy = mod.CreateEnemy( enemyName, summonArgs)
+	--Part2 of Double summon trait, double the summon
+	if HeroHasTrait("ShovelNecroMelDoubleSummonTrait") then
+		wait(0.1)
+		newEnemy = mod.CreateEnemy( enemyName, summonArgs)
+	end
 	DestroyOnDelay({ invaderSpawnPoint }, 0.1)
 end
 
@@ -284,6 +300,7 @@ function mod.CreateEnemy( enemyName, args )
 		DamageMultiplier = args.DamageMultiplier or 1,
 		CritMultiplier = args.CritMultiplier or 0,
 		DodgeMultiplier = args.DodgeMultiplier or 0,
+		HeraclesCombatMoneyValue = args.HeraclesCombatMoneyValue or 2, --used in deathminisummon trait
 	}
 	local enemyData = EnemyData[enemyName]
 	local newEnemy = DeepCopyTable( enemyData )
@@ -302,6 +319,7 @@ function mod.CreateEnemy( enemyName, args )
 		newEnemy.MoneyDropOnDeath = nil
 		newEnemy.RequiredKill = false
 		newEnemy.BlockPostBossMetaUpgrades = true
+		newEnemy.HeraclesCombatMoneyValue = weaponDataMultipliers.HeraclesCombatMoneyValue
 	else
 		newEnemy.BlocksLootInteraction = true
 		newEnemy.Charmed = false
@@ -466,10 +484,29 @@ modutil.mod.Path.Wrap("Kill", function(base, victim, triggerArgs)
 	base(victim, triggerArgs)
 	if victim.AlwaysTraitor == true and HeroHasTrait("ShovelRaiseDeadNecroMel") and victim.Name == "Zombie" and triggerArgs.Killed == true then
 		local trait = GetHeroTrait("ShovelRaiseDeadNecroMel")
-		trait.AttackSummons = trait.AttackSummons - 1
-		if trait.AttackSummons > 0 then
-			mod.ReleaseHealthReserve( trait.Reserve, "Aspect" )
+		if victim.HeraclesCombatMoneyValue > 0 then --to ensure death mini summons don't release health
+			trait.AttackSummons = trait.AttackSummons - 1
+			if trait.AttackSummons > 0 then
+				mod.ReleaseHealthReserve( trait.Reserve, "Aspect" )
+			end
+			if HeroHasTrait("ShovelNecroMelDeathminiSummonTrait") then
+				local functionArgs = 
+				{
+					enemy = "Zombie",
+					team = "player",
+					biome = "Ephyra",
+					type = "regular",
+					Reserve = 10,
+					MaxHealthMultiplier = 0.5, 
+					ScaleMultiplier = 0.5, 
+					DamageMultiplier = 0.5,
+					HeraclesCombatMoneyValue = 0,
+				} 
+				mod.SummonEnemy( triggerArgs, functionArgs )
+			end
 		end
+	
+		--if victim.ScaleMultiplier > 0.5 then
 	end
 	if HeroHasTrait("ShovelRaiseDeadNecroMel") and HeroHasTrait("TimedKillBuffBoon") and triggerArgs.SourceProjectile == "ZombieMelee" and triggerArgs.AttackerTable.AlwaysTraitor == true and triggerArgs.Killed == true then
 		SessionMapState.TimedBuff = SessionMapState.TimedBuff + 1
@@ -752,6 +789,7 @@ modutil.once_loaded.game(function()
 	--Adds god specific VFX for Mel
 	import "GodEffects.lua"
 
+	import "Hammers.lua"
 	--Add god specific attack animations for summon
 	--import "VFXAnimations.lua"
 
