@@ -3,7 +3,7 @@ OverwriteTableKeys( TraitData, {
 	    ShovelNecroMelDoubleSummonTrait = 
 		{
 			InheritFrom = { "WeaponTrait", "AxeHammerTrait" },
-			Icon = "JarlUlsfark-AspectYoungMel\\TastyVigorIcon",
+			Icon = "JarlUlsfark-Tools_of_the_Trade\\DoubleSummonIcon",
 			GameStateRequirements =
 			{
 				{
@@ -20,7 +20,7 @@ OverwriteTableKeys( TraitData, {
 		ShovelNecroMelDeathminiSummonTrait = 
 		{
 			InheritFrom = { "WeaponTrait", "AxeHammerTrait" },
-			Icon = "JarlUlsfark-AspectYoungMel\\TastyVigorIcon",
+			Icon = "JarlUlsfark-Tools_of_the_Trade\\AriseAgainIcon",
 			GameStateRequirements =
 			{
 				{

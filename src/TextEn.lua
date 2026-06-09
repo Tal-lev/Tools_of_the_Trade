@@ -57,5 +57,25 @@ sjson.hook(file, function(data)
 		TextOrder)
 	)
 
+		table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "ShovelNecroMelDeathminiSummonTrait",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Arise Again",
+			Description = "When an {$Keywords.Attack} Summon dies a {#UpgradeFormat}50% {#Prev} weaker Summon is born.",
+		},
+		TextOrder)
+	)
+
+		table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "ShovelNecroMelDoubleSummonTrait",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Twin Summons",
+			Description = "Your {$Keywords.Attack} summons {#UpgradeFormat}2 {#Prev}minions.",
+		},
+		TextOrder)
+	)
+
     return data
 end)
