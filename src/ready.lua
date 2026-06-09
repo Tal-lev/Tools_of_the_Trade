@@ -267,6 +267,18 @@ function mod.SummonEnemy( triggerArgs, functionArgs )
 		summonArgs.DodgeMultiplier = summonArgs.DodgeMultiplier + (trait.ReportedBaseSpeed or 1) -1
 		summonArgs.ScaleMultiplier = summonArgs.ScaleMultiplier - 0.25
 	end
+	if HeroHasTrait("EncounterStartOffenseBuffBoon") then
+		if CurrentRun.Hero.ActiveEffects and CurrentRun.Hero.ActiveEffects.EncounterStartOffense then
+			trait = GetHeroTrait("EncounterStartOffenseBuffBoon")
+			summonArgs.DamageMultiplier = summonArgs.DamageMultiplier + (trait.ReportedMultiplier or 2) -1
+		end
+	end
+	if HeroHasTrait("MaxHealthDamageBoon") then
+		trait = GetHeroTrait("MaxHealthDamageBoon")
+		local maxhealth = ( GetHeroMaxAvailableHealth() + (CurrentRun.Hero.ReserveHealthSources["Aspect"] or 0))
+		summonArgs.DamageMultiplier = summonArgs.DamageMultiplier + ((trait.ReportedMultiplier or 0.0010) * maxhealth)
+	end
+
 
 		
 
@@ -523,6 +535,8 @@ modutil.mod.Path.Wrap("Kill", function(base, victim, triggerArgs)
 end)
 
 ModUtil.Path.Wrap("Damage", function(baseFunc, victim, triggerArgs)
+	--For Apollo Double attack boon, which is buggy
+	--local originaltriggerArgs = triggerArgs
 	baseFunc(victim, triggerArgs)
 	local trait = {}
 	if victim ~= CurrentRun.Hero and HeroHasTrait("ShovelRaiseDeadNecroMel") and triggerArgs.AttackerTable.Name == "Zombie" and triggerArgs.AttackerTable.AlwaysTraitor == true then	
@@ -593,6 +607,20 @@ ModUtil.Path.Wrap("Damage", function(baseFunc, victim, triggerArgs)
 			}
 			CheckMassiveAttack( victim, functionArgs, triggerArgs )
 		end
+		if HeroHasTrait("AresManaBoon") then
+			functionArgs = 
+			{
+				Chance = 0.2,
+				Sound = "/Leftovers/Menu Sounds/CoinFlash",
+				Name = "BloodDrop",
+				ReportValues = { ReportedDropChance = "Chance" },
+			}
+			CheckAresManaBloodDrop( victim , functionArgs, triggerArgs )
+		elseif HeroHasTrait("HestiaManaBoon") then
+			trait = GetHeroTrait("HestiaManaBoon")
+			local UsedDelta = (trait.ReportedManaRecovery or 4)
+			ManaDelta( UsedDelta )
+		end
 		if HeroHasTrait("FocusLightningBoon") then
 			trait = GetHeroTrait("FocusLightningBoon")
 			functionArgs = 
@@ -616,30 +644,6 @@ ModUtil.Path.Wrap("Damage", function(baseFunc, victim, triggerArgs)
 			}
 			CheckSpawnZeusDamage( victim , functionArgs, triggerArgs )
 		end
-		if HeroHasTrait("AresManaBoon") then
-			functionArgs = 
-			{
-				Chance = 0.2,
-				Sound = "/Leftovers/Menu Sounds/CoinFlash",
-				Name = "BloodDrop",
-				ReportValues = { ReportedDropChance = "Chance" },
-			}
-			CheckAresManaBloodDrop( victim , functionArgs, triggerArgs )
-		end
-		--if HeroHasTrait("HestiaManaBoon") then
-		--	trait = GetHeroTrait("HestiaManaBoon")
-		--	functionArgs = 
-		--	{
-		--		FirstHitOnly = true,
-		--		IsNotEx = false,
-		--		ValidWeapons = { "ZombieMelee" },
-		--		MultihitProjectileWhitelist = {},
-		--		MultihitProjectileConditions = {},
-		--		ManaGain = trait.ReportedManaRecovery,
-		--		ReportValues = { ReportedManaRecovery = "ManaGain" }
-		--	}
-		--	CheckManaOnHit( victim , functionArgs, triggerArgs )
-		--end
 		if HeroHasTrait("SupportingFireBoon") then
 			trait = GetHeroTrait("SupportingFireBoon")
 			functionArgs = 
@@ -663,9 +667,24 @@ ModUtil.Path.Wrap("Damage", function(baseFunc, victim, triggerArgs)
 		if HeroHasTrait("BlindChanceBoon") then
 			trait = GetHeroTrait("BlindChanceBoon")
 			local dataProperties = EffectData["BlindEffect"].EffectData
-			local target = math.random()
+			local target = RandomFloat(0,1) 
 			if trait.ReportedChance > target then
 				ApplyEffect( { DestinationId = victim.ObjectId, Id = CurrentRun.Hero.ObjectId, EffectName = "BlindEffect", DataProperties = dataProperties } )
+			end
+		end
+		-- Currently buggy leads to x10 damage upon repeat
+		--if HeroHasTrait("DoubleStrikeChanceBoon") then
+		--	trait = GetHeroTrait("DoubleStrikeChanceBoon")
+		--	local target = RandomFloat(0,1)
+		--	if (not originaltriggerArgs.AlreadyRepeated) and ((trait.ReportedChance or 0.05) > target) then
+		--		originaltriggerArgs.AlreadyRepeated = 1
+		--		Damage(victim, originaltriggerArgs)
+		--	end
+		--end
+		if HeroHasTrait("LowHealthLifestealBoon") then
+			if CurrentRun.Hero.Health < 40 then
+				trait = GetHeroTrait("LowHealthLifestealBoon")
+				Heal( CurrentRun.Hero, {HealAmount = (trait.ReportedLifeStealAmount or 1), SourceName = "LowHealthLifestealBoon" })
 			end
 		end
 	end
@@ -673,7 +692,6 @@ end)
 
 modutil.once_loaded.game(function()
 	
-	math.randomseed(os.time())
 	-- Changing Aspect text
 	import "TextEn.lua"
 	
