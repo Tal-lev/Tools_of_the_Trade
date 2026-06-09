@@ -9,7 +9,7 @@ Purely for testing, possibly bug-ridden and certainly not polished or feature co
 - Adds Silver Spade (AKA NecroMel) as a new Axe aspect
 - Your Attack summons Zombies.
 - Summoning Reserves health that is released upon the summon's death or changing rooms.
-  - Trait reduced the amount of health reserved
+  - Trait reduces the amount of health reserved
 - Cast teleports the summons to Melinoe's location
 - Adds two Hammers
   - Twin Summons
