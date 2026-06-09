@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+- Fix a bug where the plugin_data folder is not installed
+- Restrict incompatible Axe Hammers.
+- Added two Hammers
+  - Twin Summons
+  - Arise Again
+
 ## [0.0.5] - 2026-06-08
 
 - Fix game crashes when summoning immidiatly after gaining trait
