@@ -16,7 +16,7 @@ Purely for testing, possibly bug-ridden and certainly not polished or feature co
   - Arise Again
 - Summoned Zombies are affected by
   - 8.5/9 Attack boons
-  - 18 Regular Boons
+  - 19 Regular Boons
 
 #### Zombies affected Attack boons
 - Zeus - Heaven Strike
@@ -40,6 +40,7 @@ Purely for testing, possibly bug-ridden and certainly not polished or feature co
 - Aphrodite - Shameless Attitude
 - Aphrodite - Hearty Appetite
 - Ares - Grisly Gain
+- Ares - Blood Spree
 - Hermes - Nimble limbs
 - Hermes - Tall order
 - Hermes - Mean Streak
