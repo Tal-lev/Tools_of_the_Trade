@@ -14,7 +14,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Twin Summons
   - Arise Again
 - These boons now impact your attack summons
-  - Hydraulic Might
+  - Poseidon - Hydraulic Might
+  - Aphrodite - Hearty Appetite
 
 ## [0.0.5] - 2026-06-08
 
