@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 - Fix a bug where the plugin_data folder is not installed
+- Fix crash when other mods are not loaded afterwards
 - Restrict incompatible Axe Hammers.
 - Added two Hammers
   - Twin Summons
