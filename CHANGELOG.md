@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.0.6] - 2026-06-09
+
 - Fix a bug where the plugin_data folder is not installed
 - Fix crash when other mods are not loaded afterwards
 - Restrict incompatible Axe Hammers.
@@ -66,7 +68,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - First version of the mod!
 
-[unreleased]: https://github.com/Tal-lev/Tools_of_the_Trade/compare/0.0.5...HEAD
+[unreleased]: https://github.com/Tal-lev/Tools_of_the_Trade/compare/0.0.6...HEAD
+[0.0.6]: https://github.com/Tal-lev/Tools_of_the_Trade/compare/0.0.5...0.0.6
 [0.0.5]: https://github.com/Tal-lev/Tools_of_the_Trade/compare/0.0.4...0.0.5
 [0.0.4]: https://github.com/Tal-lev/Tools_of_the_Trade/compare/0.0.3...0.0.4
 [0.0.3]: https://github.com/Tal-lev/Tools_of_the_Trade/compare/0.0.2...0.0.3
