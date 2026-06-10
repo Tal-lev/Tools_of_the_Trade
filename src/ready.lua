@@ -322,6 +322,11 @@ function mod.SummonEnemy( triggerArgs, functionArgs )
 				summonArgs.DamageMultiplier = summonArgs.DamageMultiplier + (trait.ExRunDamagedMultiplier or 1.2) -1
 			end
 		end
+		--Chaos: Chant Blessing
+		if HeroHasTrait("ChaosOmegaDamageBlessing") then
+			trait = GetHeroTrait("ChaosOmegaDamageBlessing")
+			summonArgs.DamageMultiplier = summonArgs.DamageMultiplier + (trait.ReportedTotalDamageChange or 1.3) -1
+		end
 	end
 
 
