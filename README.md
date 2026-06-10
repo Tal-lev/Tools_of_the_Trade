@@ -7,7 +7,7 @@ Purely for testing, possibly bug-ridden and certainly not polished or feature co
 ## Features
 
 - Adds Silver Spade (AKA NecroMel) as a new Axe aspect
-- Your Attack summons Zombies.
+- Your Attack summons Zombies and Omega Attack summons Mourners.
 - Summoning Reserves health that is released upon the summon's death or changing rooms.
   - Trait reduces the amount of health reserved
 - Cast teleports the summons to Melinoe's location
@@ -17,8 +17,10 @@ Purely for testing, possibly bug-ridden and certainly not polished or feature co
 - Summoned Zombies are affected by
   - 8.5/9 Attack boons
   - 20 Regular Boons
+  - 4 Keepsakes
+  - 1 Arcana
 
-#### Zombies affected Attack boons
+#### Attack Boons affecting Summons
 - Zeus - Heaven Strike
 - Hera -  Sworn Strike
 - Poseidon - Wave Strike
@@ -29,7 +31,7 @@ Purely for testing, possibly bug-ridden and certainly not polished or feature co
 - Hestia - Flame Strike
 - Ares - Vicious Strike (Partial)
 
-#### Zombies regular boon compatability
+#### Regular boon affecting Summons
 
 - Zeus - Static Shock
 - Zeus - Shocking Loss
@@ -51,6 +53,17 @@ Purely for testing, possibly bug-ridden and certainly not polished or feature co
 - Chaos - Attack Blessing
 - Circe - Word of Greater Girth
 - Circe - Word of Smaller Stature
+
+#### Keepsakes affecting Summons
+
+- Discordant Bell
+- White Antler
+- Lion Fan
+- Blackened Fleece
+
+#### Arcana affecting Summons
+
+-The Huntress
 
 ## Installation
 
