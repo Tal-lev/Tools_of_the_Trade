@@ -64,7 +64,7 @@ Purely for testing, possibly bug-ridden and certainly not polished or feature co
 
 #### Arcana affecting Summons
 
--The Huntress
+- The Huntress
 
 ## Installation
 
