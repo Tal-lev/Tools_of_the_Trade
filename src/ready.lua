@@ -187,8 +187,7 @@ function mod.SummonEnemy( triggerArgs, functionArgs )
 	}
 	local trait = {}
 	summonArgs.MaxHealthMultiplier =  summonArgs.MaxHealthMultiplier * (( GetHeroMaxAvailableHealth() + (CurrentRun.Hero.ReserveHealthSources["Aspect"] or 0)) / 30)
-	if triggerArgs.Name == "WeaponAxe" then
-
+	if triggerArgs.Name == "WeaponAxe" or "WeaponAxeSpin" then
 		if HeroHasTrait("ChaosWeaponBlessing") then
 			trait = GetHeroTrait("ChaosWeaponBlessing")
 				summonArgs.DamageMultiplier = summonArgs.DamageMultiplier + (trait.ReportedMultiplier or 1.2) - 1
@@ -367,12 +366,12 @@ function mod.CreateEnemy( enemyName, args )
 	local enemyData = EnemyData[enemyName]
 	local newEnemy = DeepCopyTable( enemyData )
 	newEnemy.DefaultAIData.TargetClosest = true
-	newEnemy.PostAggroAI = "AttackerAI" ---Testing !!!!!!!!!!!!!!!
+	newEnemy.PostAggroAI = "AttackerAI"
 	newEnemy.StartAggroed = true
 	newEnemy.SkipMapStateAggroTracking = true
 	newEnemy.SurroundAIKey = "SummonedUnit"
 	newEnemy.MaxHealth = newEnemy.MaxHealth * weaponDataMultipliers.MaxHealthMultiplier
-	newEnemy.HealthBarOffsetY = (newEnemy.HealthBarOffsetY or -155 ) * weaponDataMultipliers.ScaleMultiplier
+	newEnemy.HealthBarOffsetY = newEnemy.HealthBarOffsetY * weaponDataMultipliers.ScaleMultiplier
 	newEnemy.HideHealthBar = false
 	if team == "player" then
 		newEnemy.BlocksLootInteraction = false
@@ -425,6 +424,9 @@ function mod.CreateEnemy( enemyName, args )
 	thread( SetupUnit, newEnemy, CurrentRun, { SkipPresentation = false } )
 	if args.GodVFX then
 		local TextureName = "GR2/JarlUlsfark-" .. enemyData.Name .. "_Color_" .. args.GodVFX
+		print("!!!!!!!!!!!!!!!!!!!")
+		print("TextureName")
+		print(TextureName)
 		SetThingProperty({ Property = "GrannyTexture", Value = TextureName , DestinationId = newEnemy.ObjectId })
 	end
 	if Enemytype == "boss" then
@@ -540,6 +542,10 @@ modutil.mod.Path.Wrap("SetupMap", function(base, source, args)
 	LoadPackages({ Name = "JarlUlsfark-Zombie_Color_Hephaestus" })
 	LoadPackages({ Name = "JarlUlsfark-Zombie_Color_Hestia" })
 	LoadPackages({ Name = "JarlUlsfark-Zombie_Color_Ares" })
+	LoadPackages({ Name = "JarlUlsfark-Mourner_Color_Zeus" })
+	LoadPackages({ Name = "JarlUlsfark-Mourner_Color_Demeter" })
+	LoadPackages({ Name = "JarlUlsfark-Mourner_Color_Apollo" })
+	LoadPackages({ Name = "JarlUlsfark-Mourner_Color_Hestia" })
 	return base(source, args)
 end)
 
