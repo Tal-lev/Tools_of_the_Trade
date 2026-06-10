@@ -7,6 +7,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+- Tweaked summon AI
+- Omega attack now summons a Mouner instead of axe spin
+- These Keepsakes now impact your attack summons
+  - Discordant Bell
+  - White Antler
+  - Lion Fang
+  - Blackened Fleece
+- These Arcana now impact your attack summons
+  - The Huntress
+
 ## [0.0.6] - 2026-06-09
 
 - Fix a bug where the plugin_data folder is not installed
