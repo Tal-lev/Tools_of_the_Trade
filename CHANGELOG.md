@@ -8,7 +8,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 - Tweaked summon AI
-- Omega attack now summons a Mouner instead of axe spin
+- Omega attack now summons a Mourner instead of axe spin
+- Added Mourner textures for
+  - Zeus
+  - Demeter
+  - Apollo
+  - Hestia
 - These boons now impact your attack summons
   - Chaos - Chant Blessing
 - These Keepsakes now impact your attack summons
