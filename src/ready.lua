@@ -55,7 +55,7 @@ function mod.ReserveHealth( amount, source )
 end
 
 function mod.SummonOrCast ( triggerArgs, functionArgs )
-	if triggerArgs.Name == "WeaponAxe" then
+	if triggerArgs.Name == "WeaponAxe" or triggerArgs.Name == "WeaponAxeSpin" then
 		mod.SummonEnemy( triggerArgs, functionArgs )
 	elseif triggerArgs.Name == "WeaponCast" then
 		mod.SummonCastTeleport( triggerArgs )
@@ -118,19 +118,32 @@ function mod.SummonEnemy( triggerArgs, functionArgs )
 	local trait = GetHeroTrait("ShovelRaiseDeadNecroMel")
 	--Ensures death mini summons don't reserve health
 	local toReserve = 0
+	local Reserve = functionArgs.Reserve
+	local enemyName = functionArgs.enemy
+	local team = functionArgs.team
+	local biome = functionArgs.biome
+	local Enemytype = functionArgs.type
+
+
 	if (functionArgs.HeraclesCombatMoneyValue or 2) > 0 then
 		trait.AttackSummons = trait.AttackSummons + 1
 		toReserve = 1
 	end
-	
+
+	if triggerArgs.Name == "WeaponAxeSpin" then
+		Reserve = Reserve * 5
+		biome = "Mourning_Fields"
+		enemyName = "Mourner"
+	end
+
 	--Part1 of Double summon trait, double the cost
 	if HeroHasTrait("ShovelNecroMelDoubleSummonTrait") then
-		functionArgs.Reserve = functionArgs.Reserve * 2
+		Reserve = Reserve * 2
 	end
 
 	if trait.AttackSummons > 1 and toReserve > 0 then
-		if CurrentRun.Hero.Health > functionArgs.Reserve then
-			mod.ReserveHealth( functionArgs.Reserve, "Aspect")
+		if CurrentRun.Hero.Health > Reserve then
+			mod.ReserveHealth( Reserve, "Aspect")
 		else
 			local unitId = CurrentRun.Hero.ObjectId
 			PlaySound({ Name = "/Leftovers/Menu Sounds/LevelUpFlash", Id = unitId, ManagerCap = 46 })
@@ -140,10 +153,6 @@ function mod.SummonEnemy( triggerArgs, functionArgs )
 		end
 	end
 
-	local enemyName = functionArgs.enemy
-	local team = functionArgs.team
-	local biome = functionArgs.biome
-	local Enemytype = functionArgs.type
 	if biome == "Erebus" then
 		LoadPackages({ Name = "BiomeF", IgnoreAssert = true })
 	elseif biome == "Oceanus" then
@@ -174,6 +183,7 @@ function mod.SummonEnemy( triggerArgs, functionArgs )
 		CritMultiplier = functionArgs.CritMultiplier or 0,
 		DodgeMultiplier = functionArgs.DodgeMultiplier or 0,
 		HeraclesCombatMoneyValue = functionArgs.HeraclesCombatMoneyValue or 2, --used in deathminisummon trait
+		IncomingDamageMultiplier = functionArgs.IncomingDamageMultiplier or 1, --used in discordant bell
 	}
 	local trait = {}
 	summonArgs.MaxHealthMultiplier =  summonArgs.MaxHealthMultiplier * (( GetHeroMaxAvailableHealth() + (CurrentRun.Hero.ReserveHealthSources["Aspect"] or 0)) / 30)
@@ -278,9 +288,43 @@ function mod.SummonEnemy( triggerArgs, functionArgs )
 		local maxhealth = ( GetHeroMaxAvailableHealth() + (CurrentRun.Hero.ReserveHealthSources["Aspect"] or 0))
 		summonArgs.DamageMultiplier = summonArgs.DamageMultiplier + ((trait.ReportedMultiplier or 0.0010) * maxhealth)
 	end
+	--Keepsake: White Antler
+	if HeroHasTrait("LowHealthCritKeepsake") then
+		trait = GetHeroTrait("LowHealthCritKeepsake")
+		summonArgs.CritMultiplier = summonArgs.CritMultiplier + (trait.ReportedCritBonus or 0.2)
+	end
+	--Keepsake: Lion Fang
+	if HeroHasTrait("DecayingBoostKeepsake") then
+		trait = GetHeroTrait("DecayingBoostKeepsake")
+		summonArgs.DamageMultiplier = summonArgs.DamageMultiplier + (trait.CurrentKeepsakeDamageBonus or 1.3) -1
+	end
+	--Keepsake: Discordant Bell
+	if HeroHasTrait("EscalatingKeepsake") then
+		trait = GetHeroTrait("EscalatingKeepsake")
+		summonArgs.DamageMultiplier = summonArgs.DamageMultiplier + (trait.EscalatingKeepsakeGrowthPerRoom * CurrentRun.EncounterDepth )
+		summonArgs.IncomingDamageMultiplier = summonArgs.IncomingDamageMultiplier + (trait.EscalatingKeepsakeGrowthPerRoom * CurrentRun.EncounterDepth )
+	end
+	--Traits impacting Non EX only
+
+	--Arcana: The Huntress
+	if enemyName == "Zombie" then
+		if HeroHasTrait("LowManaDamageMetaupgrade") and GetHeroMaxAvailableMana() > CurrentRun.Hero.Mana then
+			trait = GetHeroTrait("LowManaDamageMetaupgrade")
+			summonArgs.DamageMultiplier = summonArgs.DamageMultiplier + (trait.ReportedDamageBoost or 1.3) -1
+		end
+
+	-- Traits impacting omega weapon only
+	elseif enemyName == "Mourner" then
+		--Keepsake: Blackened Fleece
+		if HeroHasTrait("DamagedDamageBoostKeepsake") then
+			trait = GetHeroTrait("DamagedDamageBoostKeepsake")
+			if CurrentRun.TotalDamageTaken >= (trait.ExRunDamagedThreshold or 250) then
+				summonArgs.DamageMultiplier = summonArgs.DamageMultiplier + (trait.ExRunDamagedMultiplier or 1.2) -1
+			end
+		end
+	end
 
 
-		
 
 	local offset = CalcOffset(math.rad(GetAngle({Id = CurrentRun.Hero.ObjectId})), 100 )
 	local invaderSpawnPoint = SpawnObstacle({ Name = "InvisibleTarget", DestinationId = CurrentRun.Hero.ObjectId, OffsetX = offset.X, OffsetY = offset.Y, ForceToValidLocation = true})
@@ -313,10 +357,15 @@ function mod.CreateEnemy( enemyName, args )
 		CritMultiplier = args.CritMultiplier or 0,
 		DodgeMultiplier = args.DodgeMultiplier or 0,
 		HeraclesCombatMoneyValue = args.HeraclesCombatMoneyValue or 2, --used in deathminisummon trait
+		IncomingDamageMultiplier = args.IncomingDamageMultiplier or 1,
 	}
 	local enemyData = EnemyData[enemyName]
 	local newEnemy = DeepCopyTable( enemyData )
 	newEnemy.DefaultAIData.TargetClosest = true
+	newEnemy.PostAggroAI = "AttackerAI" ---Testing !!!!!!!!!!!!!!!
+	newEnemy.StartAggroed = true
+	newEnemy.SkipMapStateAggroTracking = true
+	newEnemy.SurroundAIKey = "SummonedUnit"
 	newEnemy.MaxHealth = newEnemy.MaxHealth * weaponDataMultipliers.MaxHealthMultiplier
 	newEnemy.HealthBarOffsetY = (newEnemy.HealthBarOffsetY or -155 ) * weaponDataMultipliers.ScaleMultiplier
 	newEnemy.HideHealthBar = false
@@ -369,12 +418,9 @@ function mod.CreateEnemy( enemyName, args )
 			DestinationId = spawnOnId, OffsetX = 0, OffsetY = 0 })
 	
 	thread( SetupUnit, newEnemy, CurrentRun, { SkipPresentation = false } )
-
 	if args.GodVFX then
 		local TextureName = "GR2/JarlUlsfark-" .. enemyData.Name .. "_Color_" .. args.GodVFX
 		SetThingProperty({ Property = "GrannyTexture", Value = TextureName , DestinationId = newEnemy.ObjectId })
-		--SetThingProperty({ Property = "GrannyTexture", Value = "Harpy_Color" , DestinationId = newEnemy.ObjectId })
-		--	newEnemy.WeaponOptions[1] = newEnemy.WeaponOptions[1] .. "_" .. args.GodVFX
 	end
 	if Enemytype == "boss" then
 		thread( mod.SetupBoss, newEnemy)
@@ -411,7 +457,7 @@ function mod.CreateEnemy( enemyName, args )
 		AddIncomingDamageModifier( newEnemy,
 		{
 			Name = "EnemyDeathDefense",
-			NonPlayerMultiplier = 1,
+			NonPlayerMultiplier = IncomingDamageMultiplier,
 			Multiplicative = true
 		})
 		SetLifeProperty({ DestinationId = newEnemy.ObjectId, Property = "JumpTargetEligible", Value = false })
@@ -494,12 +540,16 @@ end)
 
 modutil.mod.Path.Wrap("Kill", function(base, victim, triggerArgs)
 	base(victim, triggerArgs)
-	if victim.AlwaysTraitor == true and HeroHasTrait("ShovelRaiseDeadNecroMel") and victim.Name == "Zombie" and triggerArgs.Killed == true then
+	if victim.AlwaysTraitor == true and HeroHasTrait("ShovelRaiseDeadNecroMel") and (victim.Name == "Zombie" or victim.Name == "Mourner") and triggerArgs.Killed == true then
 		local trait = GetHeroTrait("ShovelRaiseDeadNecroMel")
 		if victim.HeraclesCombatMoneyValue > 0 then --to ensure death mini summons don't release health
 			trait.AttackSummons = trait.AttackSummons - 1
 			if trait.AttackSummons > 0 then
-				mod.ReleaseHealthReserve( trait.Reserve, "Aspect" )
+				if victim.Name == "Zombie" then
+					mod.ReleaseHealthReserve( trait.Reserve, "Aspect" )
+				elseif victim.Name == "Mourner" then
+					mod.ReleaseHealthReserve( trait.Reserve * 5, "Aspect" )
+				end
 			end
 			if HeroHasTrait("ShovelNecroMelDeathminiSummonTrait") then
 				local functionArgs = 
@@ -520,7 +570,7 @@ modutil.mod.Path.Wrap("Kill", function(base, victim, triggerArgs)
 	
 		--if victim.ScaleMultiplier > 0.5 then
 	end
-	if HeroHasTrait("ShovelRaiseDeadNecroMel") and HeroHasTrait("TimedKillBuffBoon") and triggerArgs.SourceProjectile == "ZombieMelee" and triggerArgs.AttackerTable.AlwaysTraitor == true and triggerArgs.Killed == true then
+	if HeroHasTrait("ShovelRaiseDeadNecroMel") and HeroHasTrait("TimedKillBuffBoon") and (triggerArgs.SourceProjectile == "ZombieMelee" or triggerArgs.SourceProjectile == "MournerRampage") and triggerArgs.AttackerTable.AlwaysTraitor == true and triggerArgs.Killed == true then
 		SessionMapState.TimedBuff = SessionMapState.TimedBuff + 1
 		table.insert( SessionMapState.TimedBuffStartTimes, _worldTime )
 		local FunctionArgs = 
@@ -539,7 +589,7 @@ ModUtil.Path.Wrap("Damage", function(baseFunc, victim, triggerArgs)
 	--local originaltriggerArgs = triggerArgs
 	baseFunc(victim, triggerArgs)
 	local trait = {}
-	if victim ~= CurrentRun.Hero and HeroHasTrait("ShovelRaiseDeadNecroMel") and triggerArgs.AttackerTable.Name == "Zombie" and triggerArgs.AttackerTable.AlwaysTraitor == true then	
+	if victim ~= CurrentRun.Hero and HeroHasTrait("ShovelRaiseDeadNecroMel") and triggerArgs.AttackerTable and triggerArgs.AttackerTable.AlwaysTraitor == true and (triggerArgs.AttackerTable.Name == "Zombie" or triggerArgs.AttackerTable.Name == "Mourner") then	
 		-- Effect of weapon boons
 		if HeroHasTrait("PoseidonWeaponBoon") then
 			trait = GetHeroTrait("PoseidonWeaponBoon")
@@ -733,18 +783,18 @@ modutil.once_loaded.game(function()
 		{
 			Melinoe_Axe_Mesh1 = "ToolShovel_Mesh",
 		},
-		--WeaponDataOverride =
-		--{
-		--	WeaponAxe =
-		--	{
-				--SwapAnimations = {
-					--["MelinoeIdle"] = "Shovel_Idle",
-					--["MelinoeEquip"] = "Shovel_Idle",
-		--		}
-		--	},
-		--},
+		WeaponDataOverride =
+		{
+			WeaponAxeSpin =
+			{
+				ChargeWeaponStages = 
+				{
+					{ ManaCost = 20, WeaponProperties = { NumProjectiles = 0, FireEndGraphic = "Melinoe_Shovel_End" }, Wait = 0.2, ChannelSlowEventOnEnter = true, HideStageReachedFx = true },
+				},
+			},
+		},
 		OnWeaponFiredFunctions = {
-			ValidWeapons = { "WeaponAxe", "WeaponCast" },
+			ValidWeapons = { "WeaponAxe", "WeaponCast", "WeaponAxeSpin" },
 			FunctionName = _PLUGIN.guid .. "." .. "SummonOrCast",
 			FunctionArgs = 
 			{
@@ -780,7 +830,15 @@ modutil.once_loaded.game(function()
 				},
 				ExcludeLinked = true,
 			},
-			
+			{
+				WeaponName = "WeaponAxeSpin",
+				WeaponProperties = {
+					ChargeStartAnimation = "Melinoe_Shovel_FireLoop",
+					FireGraphic = "Melinoe_Shovel_End",
+					FireFx = "DashDustPuffReverseLarge",
+					NumProjectiles = 0,
+				},
+			},
 		},
 		StatLines =
 		{
