@@ -14,6 +14,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Demeter - Weed Killer
   - Hermes - Racing Thoughts
   - Chaos - Chant Blessing
+  - Icarus - Explosive Intent
+  - Circe - Turning to a Simple Form
 - These Keepsakes now impact your attack summons
   - Discordant Bell
   - White Antler
