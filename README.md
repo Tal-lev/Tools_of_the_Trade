@@ -16,7 +16,7 @@ Purely for testing, possibly bug-ridden and certainly not polished or feature co
   - Arise Again
 - Summoned Zombies are affected by
   - 8.5/9 Attack boons
-  - 21 Regular Boons
+  - 23 Regular Boons
   - 4 Keepsakes
   - 1 Arcana
 
