@@ -11,6 +11,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Omega attack now summons a Mourner instead of axe spin
 - Added Mourner god textures
 - These boons now impact your attack summons
+  - Demeter - Weed Killer
+  - Hermes - Racing Thoughts
   - Chaos - Chant Blessing
 - These Keepsakes now impact your attack summons
   - Discordant Bell
