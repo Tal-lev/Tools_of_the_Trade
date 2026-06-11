@@ -691,20 +691,10 @@ ModUtil.Path.Wrap("Damage", function(baseFunc, victim, triggerArgs)
 			functionArgs = {
 				ProjectileName = "PoseidonSplashSplinter",
 				CooldownName = "PoseidonSpecial",
-				MultihitWeaponWhitelist = 
-				{
-				},
-				MultihitWeaponConditions = 
-				{
-
-				},
-				MultihitProjectileWhitelist =
-				{
-
-				},
-				MultihitProjectileConditions =
-				{
-				},
+				MultihitWeaponWhitelist = {},
+				MultihitWeaponConditions = {},
+				MultihitProjectileWhitelist ={},
+				MultihitProjectileConditions ={},
 				Cooldown = 0.033,
 				DamageMultiplier = 
 				{
