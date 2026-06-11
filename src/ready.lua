@@ -434,9 +434,6 @@ function mod.CreateEnemy( enemyName, args )
 	thread( SetupUnit, newEnemy, CurrentRun, { SkipPresentation = false } )
 	if args.GodVFX then
 		local TextureName = "GR2/JarlUlsfark-" .. enemyData.Name .. "_Color_" .. args.GodVFX
-		print("!!!!!!!!!!!!!!!!!!!")
-		print("TextureName")
-		print(TextureName)
 		SetThingProperty({ Property = "GrannyTexture", Value = TextureName , DestinationId = newEnemy.ObjectId })
 	end
 	if Enemytype == "boss" then
@@ -528,6 +525,78 @@ function mod.CreateEnemy( enemyName, args )
 	GameState.SpellSummons[newEnemy.Name] = (GameState.SpellSummons[newEnemy.Name] or 0) + 1
 
 	return newEnemy
+end
+
+--Circe: Turning to a Simple Form
+function mod.CircePolymorph( victim, functionArgs, triggerArgs )
+	if not RandomChance( functionArgs.Chance * GetTotalHeroTraitValue( "LuckMultiplier", { IsMultiplier = true }) ) then
+		return
+	end
+	if victim.ImmuneToPolymorph or victim.IsPolymorphed then
+		return
+	end
+	if not CheckCooldown( "CircePolymorph" , functionArgs.Cooldown ) then
+		return
+	end
+	if victim == CurrentRun.Hero then
+		return
+	end
+	if HeroHasTrait("ExPolymorphBoon") then
+		TraitUIActivateTrait( GetHeroTrait("ExPolymorphBoon"), { FlashOnActive = true, Duration = functionArgs.Cooldown })
+	end
+	-- Kludgey, should move the effect data off of the polymorph projectile and into EffectData.
+	local duration = 0
+	local effectName = "PolymorphTag"
+	local dataProperties = MergeAllTables({
+		EffectData[effectName].DataProperties, 
+		functionArgs.EffectArgs
+	})
+	duration = dataProperties.Duration + GetTotalHeroTraitValue( "PolymorphDuration" )
+	dataProperties.Duration = duration
+
+	SessionMapState.PolymorphIgnores[victim.ObjectId] = true
+	ApplyEffect( { DestinationId = victim.ObjectId, Id = CurrentRun.Hero.ObjectId, EffectName = effectName, DataProperties = dataProperties } )
+	
+	effectName = "PolymorphDamageTaken"
+	local dataProperties = MergeAllTables({
+		EffectData[effectName].DataProperties, 
+		functionArgs.EffectArgs
+	})
+	dataProperties.Duration = duration
+	dataProperties.Modifier = GetTotalHeroTraitValue("PolymorphDamageMultiplier", { IsMultiplier = true })
+	ApplyEffect( { DestinationId = victim.ObjectId, Id = CurrentRun.Hero.ObjectId, EffectName = effectName, DataProperties = dataProperties } )
+end
+
+--Icarus: Explosive Intent
+function mod.CheckIcarusExplosion( victim, functionArgs, triggerArgs )
+	if ProjectileHasUnitHit( triggerArgs.ProjectileId, "IcarusBlast") and (triggerArgs.SourceWeapon == nil or not functionArgs.MultihitWeaponWhitelistLookup[triggerArgs.SourceWeapon])  then
+		return
+	end
+	local passesMultihitCheck = true
+
+	if triggerArgs.SourceWeapon ~= nil and functionArgs.MultihitWeaponWhitelistLookup[triggerArgs.SourceWeapon] and functionArgs.MultihitWeaponConditions[triggerArgs.SourceWeapon] then
+		local conditions = functionArgs.MultihitWeaponConditions[triggerArgs.SourceWeapon]
+		if conditions.Cooldown and not CheckCooldown( "IcarusBlast", conditions.Cooldown ) then
+			return
+		end
+		if conditions.Window and not CheckCountInWindow("IcarusBlast", conditions.Window, conditions.Count ) then
+			return
+		end
+	end
+	
+	ProjectileRecordUnitHit( triggerArgs.ProjectileId, "IcarusBlast" )
+
+	CreateProjectileFromUnit({ 
+		Name = functionArgs.ProjectileName, 
+		Id = CurrentRun.Hero.ObjectId,
+		DestinationId = victim.ObjectId, 
+		DamageMultiplier = functionArgs.DamageMultiplier,
+		FireFromTarget = true,
+		DataProperties = 
+		{
+			ImpactVelocity = force
+		}
+	})
 end
 
 modutil.mod.Path.Wrap("LeaveRoom", function(base, currentRun, exitDoor)
@@ -762,6 +831,29 @@ ModUtil.Path.Wrap("Damage", function(baseFunc, victim, triggerArgs)
 				trait = GetHeroTrait("LowHealthLifestealBoon")
 				Heal( CurrentRun.Hero, {HealAmount = (trait.ReportedLifeStealAmount or 1), SourceName = "LowHealthLifestealBoon" })
 			end
+		end
+		--Circe: Turning to a Simple Form
+		if HeroHasTrait("ExPolymorphBoon") and triggerArgs.AttackerTable.Name == "Mourner" then
+			trait = GetHeroTrait("ExPolymorphBoon")
+			functionArgs = 
+			{
+				Chance = trait.ReportedChance,
+				Cooldown = trait.ReportedCooldown
+			}
+			mod.CircePolymorph( victim, functionArgs, triggerArgs )
+		end
+		--Icarus: Explosive Intent
+		if HeroHasTrait("OmegaExplodeBoon") and triggerArgs.AttackerTable.Name == "Mourner" then
+			trait = GetHeroTrait("OmegaExplodeBoon")
+			functionArgs = 
+			{
+				DamageMultiplier = trait.ReportedMultiplier,
+				ProjectileName = "IcarusExplosion",
+				ExcludeLinked = true,
+				MultihitWeaponWhitelist = {},
+				MultihitWeaponConditions = {},
+			}
+			mod.CheckIcarusExplosion( victim, functionArgs, triggerArgs )
 		end
 	end
 end)
