@@ -37,6 +37,7 @@ Purely for testing, possibly bug-ridden and certainly not polished or feature co
 - Zeus - Shocking Loss
 - Hera - Uncommon Grace
 - Poseidon - Hydraulic Might
+- Demeter - Weed Killer
 - Apollo - Perfect Image
 - Apollo - Dazzling Display
 - Aphrodite - Shameless Attitude
@@ -48,6 +49,7 @@ Purely for testing, possibly bug-ridden and certainly not polished or feature co
 - Hermes - Tall order
 - Hermes - Mean Streak
 - Hermes - Hasty Retreat
+- Hermes - Racing Thoughts
 - Artemis - Support fire
 - Artemis - Pressure Points
 - Chaos - Attack Blessing
