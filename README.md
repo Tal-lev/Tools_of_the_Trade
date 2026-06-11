@@ -16,7 +16,7 @@ Purely for testing, possibly bug-ridden and certainly not polished or feature co
   - Arise Again
 - Summoned Zombies are affected by
   - 8.5/9 Attack boons
-  - 23 Regular Boons
+  - 25 Regular Boons
   - 4 Keepsakes
   - 1 Arcana
 
@@ -54,8 +54,10 @@ Purely for testing, possibly bug-ridden and certainly not polished or feature co
 - Artemis - Pressure Points
 - Chaos - Attack Blessing
 - Chaos - Chant Blessing
+- Icarus - Explosive Intent
 - Circe - Word of Greater Girth
 - Circe - Word of Smaller Stature
+- Circe - Turning to a Simple Form
 
 #### Keepsakes affecting Summons
 
