@@ -326,6 +326,16 @@ function mod.SummonEnemy( triggerArgs, functionArgs )
 			trait = GetHeroTrait("ChaosOmegaDamageBlessing")
 			summonArgs.DamageMultiplier = summonArgs.DamageMultiplier + (trait.ReportedTotalDamageChange or 1.3) -1
 		end
+		--Demeter: Weed Killer
+		if HeroHasTrait("SlowExAttackBoon") then
+			trait = GetHeroTrait("SlowExAttackBoon")
+			summonArgs.DamageMultiplier = summonArgs.DamageMultiplier + (trait.ReportedTotalDamageChange or 1.5) -1
+		end
+		--Hermes: Racing Thoughts
+		if HeroHasTrait("HermesSpecialBoon") then
+			trait = GetHeroTrait("HermesSpecialBoon")
+			summonArgs.SpeedMultiplier = summonArgs.SpeedMultiplier + (1 - (trait.ReportedWeaponMultiplier or 0.85))
+		end
 	end
 
 
