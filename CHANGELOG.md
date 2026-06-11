@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.0.7] - 2026-06-11
+
 - Tweaked summon AI
 - Omega attack now summons a Mourner instead of axe spin
 - Added Mourner god textures
@@ -85,7 +87,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - First version of the mod!
 
-[unreleased]: https://github.com/Tal-lev/Tools_of_the_Trade/compare/0.0.6...HEAD
+[unreleased]: https://github.com/Tal-lev/Tools_of_the_Trade/compare/0.0.7...HEAD
+[0.0.7]: https://github.com/Tal-lev/Tools_of_the_Trade/compare/0.0.6...0.0.7
 [0.0.6]: https://github.com/Tal-lev/Tools_of_the_Trade/compare/0.0.5...0.0.6
 [0.0.5]: https://github.com/Tal-lev/Tools_of_the_Trade/compare/0.0.4...0.0.5
 [0.0.4]: https://github.com/Tal-lev/Tools_of_the_Trade/compare/0.0.3...0.0.4
