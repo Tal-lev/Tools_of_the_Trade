@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+- Ares Attack boon now applies Ares status and base damage
+- These boons now impact your attack summons
+  - Aphrodite - Secret Crush
+  - Hestia - Slow cooker
+
 ## [0.0.7] - 2026-06-11
 
 - Tweaked summon AI
