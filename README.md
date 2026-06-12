@@ -15,8 +15,8 @@ Purely for testing, possibly bug-ridden and certainly not polished or feature co
   - Twin Summons
   - Arise Again
 - Summoned Zombies are affected by
-  - 8.5/9 Attack boons
-  - 25 Regular Boons
+  - 9 Attack boons
+  - 27 Regular Boons
   - 4 Keepsakes
   - 1 Arcana
 
@@ -29,7 +29,7 @@ Purely for testing, possibly bug-ridden and certainly not polished or feature co
 - Aphrodite - Flutter Strike
 - Hephaestus - Volcanic Strike
 - Hestia - Flame Strike
-- Ares - Vicious Strike (Partial)
+- Ares - Vicious Strike
 
 #### Regular boon affecting Summons
 
@@ -42,7 +42,9 @@ Purely for testing, possibly bug-ridden and certainly not polished or feature co
 - Apollo - Dazzling Display
 - Aphrodite - Shameless Attitude
 - Aphrodite - Hearty Appetite
+- Aphrodite - Secret Crush
 - Hestia - Cardio Gain
+- Hestia - Slow cooker
 - Ares - Grisly Gain
 - Ares - Blood Spree
 - Hermes - Nimble limbs
