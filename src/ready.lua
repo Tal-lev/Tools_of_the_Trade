@@ -682,6 +682,43 @@ end)
 ModUtil.Path.Wrap("Damage", function(baseFunc, victim, triggerArgs)
 	--For Apollo Double attack boon, which is buggy
 	--local originaltriggerArgs = triggerArgs
+
+	--For adding base damage directly into the hit
+	if victim ~= CurrentRun.Hero and HeroHasTrait("ShovelRaiseDeadNecroMel") and triggerArgs.AttackerTable and triggerArgs.AttackerTable.AlwaysTraitor == true and (triggerArgs.AttackerTable.Name == "Zombie" or triggerArgs.AttackerTable.Name == "Mourner") then	
+		--Ares: Vicious Strike
+		if HeroHasTrait("AresWeaponBoon") then
+			if (not victim.ActiveEffects) or (not victim.ActiveEffects.AresStatus) then
+				trait = GetHeroTrait("AresWeaponBoon")
+				triggerArgs.DamageAmount = triggerArgs.DamageAmount + 5
+				functionArgs = 
+				{
+					TextStartColor = Color.AresDamageLight,
+					TextColor = Color.AresDamage,
+					HitSimSlowParametersFalseTraitName = "StaffRaiseDeadAspect",
+					SimSlowDistanceThreshold = 180,
+					HitSimSlowCooldown = 0.8,
+					HitSimSlowParameters =
+					{
+						{ ScreenPreWait = 0.02, Fraction = 0.13, LerpTime = 0 },
+						{ ScreenPreWait = 0.10, Fraction = 1.0, LerpTime = 0.05 },
+					},
+				}
+				AresRendApplyPresentation( victim, triggerArgs, functionArgs )
+				local dataProperties = EffectData["AresStatus"].EffectData 
+				ApplyEffect ( { DestinationId = victim.ObjectId, Id = CurrentRun.Hero.ObjectId, EffectName = "AresStatus", ImpactAngle = math.rad(triggerArgs.ImpactAngle), DataProperties = dataProperties } )
+			end
+		end
+		--Aphrodite: Secret Crush
+		if HeroHasTrait("FocusRawDamageBoon") then
+			trait = GetHeroTrait("FocusRawDamageBoon")
+			triggerArgs.DamageAmount = triggerArgs.DamageAmount + (trait.ReportedDamage / 10)
+		end
+		--Hestia: Slow Cooker
+		if HeroHasTrait("ElementalBaseDamageBoon") then
+			trait = GetHeroTrait("ElementalBaseDamageBoon")
+			triggerArgs.DamageAmount = triggerArgs.DamageAmount + ((trait.ReportedTotalDamageChange or 2) * (CurrentRun.Hero.Elements.Fire or 0) / 10 )
+		end	
+	end
 	baseFunc(victim, triggerArgs)
 	local trait = {}
 	if victim ~= CurrentRun.Hero and HeroHasTrait("ShovelRaiseDeadNecroMel") and triggerArgs.AttackerTable and triggerArgs.AttackerTable.AlwaysTraitor == true and (triggerArgs.AttackerTable.Name == "Zombie" or triggerArgs.AttackerTable.Name == "Mourner") then	
