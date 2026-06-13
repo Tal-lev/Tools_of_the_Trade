@@ -16,9 +16,9 @@ Purely for testing, possibly bug-ridden and certainly not polished or feature co
   - Arise Again
 - Summoned Zombies are affected by
   - 9 Attack boons
-  - 27 Regular Boons
+  - 31 Regular Boons
   - 4 Keepsakes
-  - 1 Arcana
+  - 2 Arcana
 
 #### Attack Boons affecting Summons
 - Zeus - Heaven Strike
@@ -43,6 +43,9 @@ Purely for testing, possibly bug-ridden and certainly not polished or feature co
 - Aphrodite - Shameless Attitude
 - Aphrodite - Hearty Appetite
 - Aphrodite - Secret Crush
+- Hephaestus - Molten Touch
+- Hephaestus - Heavy Metal
+- Hephaestus - Martial Art
 - Hestia - Cardio Gain
 - Hestia - Slow cooker
 - Ares - Grisly Gain
@@ -54,6 +57,7 @@ Purely for testing, possibly bug-ridden and certainly not polished or feature co
 - Hermes - Racing Thoughts
 - Artemis - Support fire
 - Artemis - Pressure Points
+- Artemis - Lethal Snare
 - Chaos - Attack Blessing
 - Chaos - Chant Blessing
 - Icarus - Explosive Intent
@@ -71,6 +75,7 @@ Purely for testing, possibly bug-ridden and certainly not polished or feature co
 #### Arcana affecting Summons
 
 - The Huntress
+- The Furies
 
 ## Installation
 
