@@ -10,7 +10,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Ares Attack boon now applies Ares status and base damage
 - These boons now impact your attack summons
   - Aphrodite - Secret Crush
+  - Hephaestus - Molten Touch
+  - Hephaestus - Heavy Metal
+  - Hephaestus - Martial Art
   - Hestia - Slow cooker
+  - Artemis - Lethal Snare
+- These Arcana now impact your attack summons
+  - The Furies
 
 ## [0.0.7] - 2026-06-11
 
