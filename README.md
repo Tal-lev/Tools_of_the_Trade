@@ -16,7 +16,7 @@ Purely for testing, possibly bug-ridden and certainly not polished or feature co
   - Arise Again
 - Summoned Zombies are affected by
   - 9 Attack boons
-  - 33 Regular Boons
+  - 34 Regular Boons
   - 4 Keepsakes
   - 4 Arcana
 
@@ -35,6 +35,7 @@ Purely for testing, possibly bug-ridden and certainly not polished or feature co
 
 - Zeus - Static Shock
 - Zeus - Shocking Loss
+- Zeus - Arc Flash
 - Hera - Uncommon Grace
 - Poseidon - Hydraulic Might
 - Demeter - Weed Killer
