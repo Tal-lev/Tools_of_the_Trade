@@ -34,6 +34,23 @@ OverwriteTableKeys( TraitData, {
 			},
 			-- Death mini summon effect is in the function in ready.lua
 		},
+		ShovelNecroMelRobotSummonTrait = 
+		{
+			InheritFrom = { "WeaponTrait", "AxeHammerTrait" },
+			Icon = "JarlUlsfark-Tools_of_the_Trade\\ScrapMetalIcon",
+			GameStateRequirements =
+			{
+				{
+				Path = { "CurrentRun", "Hero", "Weapons", },
+				HasAll = { "WeaponAxe", },
+				},
+				{
+				Path = { "GameState", "LastWeaponUpgradeName", "WeaponAxe", },
+				IsAny = {"ShovelRaiseDeadNecroMel", }
+				},
+			},
+			-- Robot effect is in the function in ready.lua
+		},
 })
 
 
@@ -61,3 +78,5 @@ table.insert(TraitData.AxeFreeSpinTrait.GameStateRequirements, {
 --Adding Hammers to pool
 table.insert( LootSetData.Loot.WeaponUpgrade.Traits, "ShovelNecroMelDoubleSummonTrait")
 table.insert( LootSetData.Loot.WeaponUpgrade.Traits, "ShovelNecroMelDeathminiSummonTrait")
+table.insert( LootSetData.Loot.WeaponUpgrade.Traits, "ShovelNecroMelRobotSummonTrait")
+

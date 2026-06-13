@@ -77,5 +77,15 @@ sjson.hook(file, function(data)
 		TextOrder)
 	)
 
+			table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "ShovelNecroMelRobotSummonTrait",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Scrap Metal",
+			Description = "Your {$Keywords.Attack} summons a Sentry Bot and your {$Keywords.AttackEX} summons an Automaton Beamer.",
+		},
+		TextOrder)
+	)
+
     return data
 end)

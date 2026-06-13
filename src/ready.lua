@@ -135,6 +135,15 @@ function mod.SummonEnemy( triggerArgs, functionArgs )
 		biome = "Mourning_Fields"
 		enemyName = "Mourner"
 	end
+	
+	--Hammer: Scrap Metal
+	if HeroHasTrait("ShovelNecroMelRobotSummonTrait") then
+		enemyName = "SentryBot"
+		if triggerArgs.Name == "WeaponAxeSpin" then
+			enemyName = "AutomatonBeamer"
+		end
+	end
+
 
 	--Part1 of Double summon trait, double the cost
 	if HeroHasTrait("ShovelNecroMelDoubleSummonTrait") then
@@ -149,6 +158,7 @@ function mod.SummonEnemy( triggerArgs, functionArgs )
 			PlaySound({ Name = "/Leftovers/Menu Sounds/LevelUpFlash", Id = unitId, ManagerCap = 46 })
 			Flash({ Id = unitId, Speed = 0.85, MinFraction = 0.7, MaxFraction = 0.0, Color = Color.White, Duration = 0.15, ExpireAfterCycle = true })
 			thread( InCombatText, unitId, "Not enough Health!", 0.5 , { SkipShadow = true } )
+			trait.AttackSummons = trait.AttackSummons - 1
 			return
 		end
 	end
@@ -306,7 +316,7 @@ function mod.SummonEnemy( triggerArgs, functionArgs )
 	--Traits impacting Non EX only
 
 
-	if enemyName == "Zombie" then
+	if enemyName == "Zombie" or enemyName == "SentryBot" then
 		--Arcana: The Huntress
 		if HeroHasTrait("LowManaDamageMetaupgrade") and GetHeroMaxAvailableMana() > CurrentRun.Hero.Mana then
 			trait = GetHeroTrait("LowManaDamageMetaupgrade")
@@ -318,7 +328,7 @@ function mod.SummonEnemy( triggerArgs, functionArgs )
 			summonArgs.DamageMultiplier = summonArgs.DamageMultiplier + (((trait.ReportedTotalDamageChange or 1.05) -1) * (CurrentRun.Hero.Elements.Earth or 0))  
 		end
 	-- Traits impacting omega weapon only
-	elseif enemyName == "Mourner" then
+	elseif enemyName == "Mourner" or enemyName == "AutomatonBeamer" then
 		--Keepsake: Blackened Fleece
 		if HeroHasTrait("DamagedDamageBoostKeepsake") then
 			trait = GetHeroTrait("DamagedDamageBoostKeepsake")
@@ -640,14 +650,14 @@ end)
 
 modutil.mod.Path.Wrap("Kill", function(base, victim, triggerArgs)
 	base(victim, triggerArgs)
-	if victim.AlwaysTraitor == true and HeroHasTrait("ShovelRaiseDeadNecroMel") and (victim.Name == "Zombie" or victim.Name == "Mourner") and triggerArgs.Killed == true then
+	if victim.AlwaysTraitor == true and HeroHasTrait("ShovelRaiseDeadNecroMel") and (victim.Name == "Zombie" or victim.Name == "Mourner" or victim.Name == "SentryBot" or victim.Name == "AutomatonBeamer") and triggerArgs.Killed == true then
 		local trait = GetHeroTrait("ShovelRaiseDeadNecroMel")
 		if victim.HeraclesCombatMoneyValue > 0 then --to ensure death mini summons don't release health
 			trait.AttackSummons = trait.AttackSummons - 1
 			if trait.AttackSummons > 0 then
-				if victim.Name == "Zombie" then
+				if victim.Name == "Zombie" or victim.Name == "SentryBot" then
 					mod.ReleaseHealthReserve( trait.Reserve, "Aspect" )
-				elseif victim.Name == "Mourner" then
+				elseif victim.Name == "Mourner" or victim.Name == "AutomatonBeamer" then
 					mod.ReleaseHealthReserve( trait.Reserve * 5, "Aspect" )
 				end
 			end
@@ -670,7 +680,7 @@ modutil.mod.Path.Wrap("Kill", function(base, victim, triggerArgs)
 	
 		--if victim.ScaleMultiplier > 0.5 then
 	end
-	if HeroHasTrait("ShovelRaiseDeadNecroMel") and HeroHasTrait("TimedKillBuffBoon") and (triggerArgs.SourceProjectile == "ZombieMelee" or triggerArgs.SourceProjectile == "MournerRampage") and triggerArgs.AttackerTable.AlwaysTraitor == true and triggerArgs.Killed == true then
+	if HeroHasTrait("ShovelRaiseDeadNecroMel") and HeroHasTrait("TimedKillBuffBoon") and (triggerArgs.SourceProjectile == "ZombieMelee" or triggerArgs.SourceProjectile == "MournerRampage" or triggerArgs.SourceProjectile == "SentryBotBolt" or triggerArgs.SourceProjectile == "SentryBotVent" or triggerArgs.SourceProjectile == "AutomatonBeamBolt" or triggerArgs.SourceProjectile == "AutomatonOrbit") and triggerArgs.AttackerTable.AlwaysTraitor == true and triggerArgs.Killed == true then
 		SessionMapState.TimedBuff = SessionMapState.TimedBuff + 1
 		table.insert( SessionMapState.TimedBuffStartTimes, _worldTime )
 		local FunctionArgs = 
@@ -689,7 +699,7 @@ ModUtil.Path.Wrap("Damage", function(baseFunc, victim, triggerArgs)
 	--local originaltriggerArgs = triggerArgs
 
 	--For adding base damage directly into the hit
-	if victim ~= CurrentRun.Hero and HeroHasTrait("ShovelRaiseDeadNecroMel") and triggerArgs.AttackerTable and triggerArgs.AttackerTable.AlwaysTraitor == true and (triggerArgs.AttackerTable.Name == "Zombie" or triggerArgs.AttackerTable.Name == "Mourner") then	
+	if victim ~= CurrentRun.Hero and HeroHasTrait("ShovelRaiseDeadNecroMel") and triggerArgs.AttackerTable and triggerArgs.AttackerTable.AlwaysTraitor == true and (triggerArgs.AttackerTable.Name == "Zombie" or triggerArgs.AttackerTable.Name == "Mourner" or triggerArgs.AttackerTable.Name == "SentryBot" or triggerArgs.AttackerTable.Name == "AutomatonBeamer") then	
 		--Ares: Vicious Strike
 		if HeroHasTrait("AresWeaponBoon") then
 			if (not victim.ActiveEffects) or (not victim.ActiveEffects.AresStatus) then
@@ -750,7 +760,7 @@ ModUtil.Path.Wrap("Damage", function(baseFunc, victim, triggerArgs)
 	--After the damage remove all the temp additions from the Attacker
 	local KeystoRemove = {}
 	local trait = {}
-	if victim ~= CurrentRun.Hero and HeroHasTrait("ShovelRaiseDeadNecroMel") and triggerArgs.AttackerTable and triggerArgs.AttackerTable.AlwaysTraitor == true and (triggerArgs.AttackerTable.Name == "Zombie" or triggerArgs.AttackerTable.Name == "Mourner") then	
+	if victim ~= CurrentRun.Hero and HeroHasTrait("ShovelRaiseDeadNecroMel") and triggerArgs.AttackerTable and triggerArgs.AttackerTable.AlwaysTraitor == true and (triggerArgs.AttackerTable.Name == "Zombie" or triggerArgs.AttackerTable.Name == "Mourner" or triggerArgs.AttackerTable.Name == "SentryBot" or triggerArgs.AttackerTable.Name == "AutomatonBeamer") then	
 			--After the damage remove all the temp additions from the Attacker
 			if triggerArgs.AttackerTable.OutgoingCritModifiers then
 				for key,value in pairs(triggerArgs.AttackerTable.OutgoingCritModifiers) do
