@@ -313,9 +313,13 @@ function mod.SummonEnemy( triggerArgs, functionArgs )
 		summonArgs.DamageMultiplier = summonArgs.DamageMultiplier + (trait.EscalatingKeepsakeGrowthPerRoom * CurrentRun.EncounterDepth )
 		summonArgs.IncomingDamageMultiplier = summonArgs.IncomingDamageMultiplier + (trait.EscalatingKeepsakeGrowthPerRoom * CurrentRun.EncounterDepth )
 	end
+	--Arcana: Strength
+	if HeroHasTrait("LowHealthBuffMetaUpgrade") and not HasLastStand( CurrentRun.Hero ) then
+		trait = GetHeroTrait("LowHealthBuffMetaUpgrade")
+		summonArgs.DamageMultiplier = summonArgs.DamageMultiplier + ((trait.ReportedModifier or 1.2) -1 )
+	end
+
 	--Traits impacting Non EX only
-
-
 	if enemyName == "Zombie" or enemyName == "SentryBot" then
 		--Arcana: The Huntress
 		if HeroHasTrait("LowManaDamageMetaupgrade") and GetHeroMaxAvailableMana() > CurrentRun.Hero.Mana then
@@ -736,12 +740,12 @@ ModUtil.Path.Wrap("Damage", function(baseFunc, victim, triggerArgs)
 		--Artemis: Lethal Snare
 		if HeroHasTrait("InsideCastCritBoon") and victim.ActiveEffects and victim.ActiveEffects.ImpactSlow then
 			trait = GetHeroTrait("InsideCastCritBoon")
-			table.insert(triggerArgs.AttackerTable.OutgoingCritModifiers, {Name = "Del", Chance = trait.ReportedCritBonus})
+			table.insert(triggerArgs.AttackerTable.OutgoingCritModifiers, {Name = "Del", Chance = trait.ReportedCritBonus or 0.1})
 		end
-		--Arcana: The Furies
-		if HeroHasTrait("InsideCastBuffMetaUpgrade") and victim.ActiveEffects and victim.ActiveEffects.ImpactSlow then
-			trait = GetHeroTrait("InsideCastBuffMetaUpgrade")
-			table.insert(triggerArgs.AttackerTable.OutgoingDamageModifiers, {Name = "Del", NonPlayerMultiplier = (trait.ReportedModifier or 1.2) })
+		--Aphrodite: Sweet Surrender
+		if HeroHasTrait("WeakVulnerabilityBoon") and victim.ActiveEffects and HasVulnerabilityGenusEffect( victim, "Weak") then
+			trait = GetHeroTrait("WeakVulnerabilityBoon")
+			table.insert(triggerArgs.AttackerTable.OutgoingDamageModifiers, {Name = "Del", NonPlayerMultiplier = ( trait.ReportedModifier or 1.1 ) })
 		end
 		--Hephaestus: Heavy Metal
 		if HeroHasTrait("HeavyArmorBoon") and CurrentRun.Hero.HealthBuffer then
@@ -752,6 +756,11 @@ ModUtil.Path.Wrap("Damage", function(baseFunc, victim, triggerArgs)
 		if HeroHasTrait("AntiArmorBoon") and victim.HealthBuffer and victim.HealthBuffer > 0 then
 			trait = GetHeroTrait("AntiArmorBoon")
 			table.insert(triggerArgs.AttackerTable.OutgoingDamageModifiers, {Name = "Del", NonPlayerMultiplier = (trait.ReportedWeaponMultiplier or 1.4 )})
+		end
+		--Arcana: The Furies
+		if HeroHasTrait("InsideCastBuffMetaUpgrade") and victim.ActiveEffects and victim.ActiveEffects.ImpactSlow then
+			trait = GetHeroTrait("InsideCastBuffMetaUpgrade")
+			table.insert(triggerArgs.AttackerTable.OutgoingDamageModifiers, {Name = "Del", NonPlayerMultiplier = (trait.ReportedModifier or 1.2) })
 		end
 		--Arcana: Origination
 		if HeroHasTrait("EffectVulnerabilityMetaUpgrade") and victim.VulnerabilityEffects and TableLength( victim.VulnerabilityEffects ) >= 2 then
@@ -910,15 +919,24 @@ ModUtil.Path.Wrap("Damage", function(baseFunc, victim, triggerArgs)
 				ApplyEffect( { DestinationId = victim.ObjectId, Id = CurrentRun.Hero.ObjectId, EffectName = "BlindEffect", DataProperties = dataProperties } )
 			end
 		end
-		-- Currently buggy leads to x10 damage upon repeat
-		--if HeroHasTrait("DoubleStrikeChanceBoon") then
-		--	trait = GetHeroTrait("DoubleStrikeChanceBoon")
-		--	local target = RandomFloat(0,1)
-		--	if (not originaltriggerArgs.AlreadyRepeated) and ((trait.ReportedChance or 0.05) > target) then
-		--		originaltriggerArgs.AlreadyRepeated = 1
-		--		Damage(victim, originaltriggerArgs)
-		--	end
-		--end
+		--Apollo: Extra Dose
+		if HeroHasTrait("DoubleStrikeChanceBoon") then
+			trait = GetHeroTrait("DoubleStrikeChanceBoon")
+			local target = RandomFloat(0,1)
+			if (not triggerArgs.AlreadyRepeated) and ((trait.ReportedChance or 0.05) > target) then
+				triggerArgs.AlreadyRepeated = 1
+				if triggerArgs.AttackerTable.Name == "Zombie" then
+					triggerArgs.DamageAmount = 6
+				elseif triggerArgs.AttackerTable.Name == "Mourner" then
+					triggerArgs.DamageAmount = 7
+				elseif triggerArgs.AttackerTable.Name == "SentryBot" then
+					triggerArgs.DamageAmount = 15
+				elseif triggerArgs.AttackerTable.Name == "AutomatonBeamer" then
+					triggerArgs.DamageAmount = 14
+				end
+				Damage(victim, triggerArgs)
+			end
+		end
 		if HeroHasTrait("LowHealthLifestealBoon") then
 			if CurrentRun.Hero.Health < 40 then
 				trait = GetHeroTrait("LowHealthLifestealBoon")
