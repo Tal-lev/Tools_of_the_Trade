@@ -9,7 +9,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Ares Attack boon now applies Ares status and base damage
 - These boons now impact your attack summons
+  - Apollo - Extra Dose
   - Aphrodite - Secret Crush
+  - Aphrodite - Sweet Surrender
   - Hephaestus - Molten Touch
   - Hephaestus - Heavy Metal
   - Hephaestus - Martial Art
