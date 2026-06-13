@@ -305,13 +305,18 @@ function mod.SummonEnemy( triggerArgs, functionArgs )
 	end
 	--Traits impacting Non EX only
 
-	--Arcana: The Huntress
+
 	if enemyName == "Zombie" then
+		--Arcana: The Huntress
 		if HeroHasTrait("LowManaDamageMetaupgrade") and GetHeroMaxAvailableMana() > CurrentRun.Hero.Mana then
 			trait = GetHeroTrait("LowManaDamageMetaupgrade")
 			summonArgs.DamageMultiplier = summonArgs.DamageMultiplier + (trait.ReportedDamageBoost or 1.3) -1
 		end
-
+		--Hephaestus: Martial Art
+		if HeroHasTrait("ElementalDamageBoon") then
+			trait = GetHeroTrait("ElementalDamageBoon")
+			summonArgs.DamageMultiplier = summonArgs.DamageMultiplier + (((trait.ReportedTotalDamageChange or 1.05) -1) * (CurrentRun.Hero.Elements.Earth or 0))  
+		end
 	-- Traits impacting omega weapon only
 	elseif enemyName == "Mourner" then
 		--Keepsake: Blackened Fleece
@@ -718,10 +723,57 @@ ModUtil.Path.Wrap("Damage", function(baseFunc, victim, triggerArgs)
 			trait = GetHeroTrait("ElementalBaseDamageBoon")
 			triggerArgs.DamageAmount = triggerArgs.DamageAmount + ((trait.ReportedTotalDamageChange or 2) * (CurrentRun.Hero.Elements.Fire or 0) / 10 )
 		end	
+		--Artemis: Lethal Snare
+		if HeroHasTrait("InsideCastCritBoon") and victim.ActiveEffects and victim.ActiveEffects.ImpactSlow then
+			trait = GetHeroTrait("InsideCastCritBoon")
+			table.insert(triggerArgs.AttackerTable.OutgoingCritModifiers, {Name = "Del", Chance = trait.ReportedCritBonus})
+		end
+		--Arcana: The Furies
+		if HeroHasTrait("InsideCastBuffMetaUpgrade") and victim.ActiveEffects and victim.ActiveEffects.ImpactSlow then
+			trait = GetHeroTrait("InsideCastBuffMetaUpgrade")
+			table.insert(triggerArgs.AttackerTable.OutgoingDamageModifiers, {Name = "Del", NonPlayerMultiplier = (trait.ReportedModifier or 1.2) })
+		end
+		--Hephaestus: Heavy Metal
+		if HeroHasTrait("HeavyArmorBoon") and CurrentRun.Hero.HealthBuffer then
+			trait = GetHeroTrait("HeavyArmorBoon")
+			table.insert(triggerArgs.AttackerTable.OutgoingDamageModifiers, {Name = "Del", NonPlayerMultiplier = ((trait.ReportedBonus or 0.2) * ((CurrentRun.Hero.HealthBuffer or 0)/100)  + 1)})
+		end
+		--Hephaestus: Molten Touch
+		if HeroHasTrait("AntiArmorBoon") and victim.HealthBuffer and victim.HealthBuffer > 0 then
+			trait = GetHeroTrait("AntiArmorBoon")
+			table.insert(triggerArgs.AttackerTable.OutgoingDamageModifiers, {Name = "Del", NonPlayerMultiplier = (trait.ReportedWeaponMultiplier or 1.4 )})
+		end
+		
 	end
 	baseFunc(victim, triggerArgs)
+
+	--After the damage remove all the temp additions from the Attacker
+	local KeystoRemove = {}
 	local trait = {}
 	if victim ~= CurrentRun.Hero and HeroHasTrait("ShovelRaiseDeadNecroMel") and triggerArgs.AttackerTable and triggerArgs.AttackerTable.AlwaysTraitor == true and (triggerArgs.AttackerTable.Name == "Zombie" or triggerArgs.AttackerTable.Name == "Mourner") then	
+			--After the damage remove all the temp additions from the Attacker
+			if triggerArgs.AttackerTable.OutgoingCritModifiers then
+				for key,value in pairs(triggerArgs.AttackerTable.OutgoingCritModifiers) do
+					if value.Name == "Del" then
+						table.insert(KeystoRemove, key)	
+					end
+				end
+				for key,value in pairs(KeystoRemove) do
+					table.remove(triggerArgs.AttackerTable.OutgoingCritModifiers, value)
+				end
+			end
+			KeystoRemove = {}
+			if triggerArgs.AttackerTable.OutgoingDamageModifiers then
+				for key,value in pairs(triggerArgs.AttackerTable.OutgoingDamageModifiers) do
+					if value.Name == "Del" then
+						table.insert(KeystoRemove, key)	
+					end
+				end
+				for key,value in pairs(KeystoRemove) do
+					table.remove(triggerArgs.AttackerTable.OutgoingDamageModifiers, value)
+				end
+			end
+		
 		-- Effect of weapon boons
 		if HeroHasTrait("PoseidonWeaponBoon") then
 			trait = GetHeroTrait("PoseidonWeaponBoon")
