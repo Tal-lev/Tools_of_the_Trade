@@ -16,7 +16,7 @@ Purely for testing, possibly bug-ridden and certainly not polished or feature co
   - Arise Again
 - Summoned Zombies are affected by
   - 9 Attack boons
-  - 31 Regular Boons
+  - 33 Regular Boons
   - 4 Keepsakes
   - 4 Arcana
 
@@ -40,9 +40,11 @@ Purely for testing, possibly bug-ridden and certainly not polished or feature co
 - Demeter - Weed Killer
 - Apollo - Perfect Image
 - Apollo - Dazzling Display
+- Apollo - Extra Dose
 - Aphrodite - Shameless Attitude
 - Aphrodite - Hearty Appetite
 - Aphrodite - Secret Crush
+- Aphrodite - Sweet Surrender
 - Hephaestus - Molten Touch
 - Hephaestus - Heavy Metal
 - Hephaestus - Martial Art
