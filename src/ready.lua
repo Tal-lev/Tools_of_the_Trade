@@ -618,6 +618,16 @@ function mod.CheckIcarusExplosion( victim, functionArgs, triggerArgs )
 	})
 end
 
+function mod.CheckOmegaBlitzTrigger ( victim, functionArgs, triggerArgs )
+	if victim and not victim.IsDead and victim.ActiveEchoes and victim.ActiveEffectsAtDamageStart and victim.ActiveEffectsAtDamageStart.DamageEchoEffect then	
+		for effectName, echoData in pairs(victim.ActiveEchoes) do
+			echoData.Amount = echoData.Threshold
+			DamageEchoTrigger( victim, effectName, echoData.Payoff, GetTotalHeroTraitValue( "DamageEchoOmegaDamageBonus", { IsMultiplier = true }), echoData.Cooldown )
+			CheckTriggerAllDamageEcho( victim )
+		end
+	end
+end
+
 modutil.mod.Path.Wrap("LeaveRoom", function(base, currentRun, exitDoor)
 	if HeroHasTrait("ShovelRaiseDeadNecroMel") then
 		local trait = GetHeroTrait("ShovelRaiseDeadNecroMel")
@@ -944,7 +954,7 @@ ModUtil.Path.Wrap("Damage", function(baseFunc, victim, triggerArgs)
 			end
 		end
 		--Circe: Turning to a Simple Form
-		if HeroHasTrait("ExPolymorphBoon") and triggerArgs.AttackerTable.Name == "Mourner" then
+		if HeroHasTrait("ExPolymorphBoon") and (triggerArgs.AttackerTable.Name == "Mourner" or triggerArgs.AttackerTable.Name == "AutomatonBeamer") then
 			trait = GetHeroTrait("ExPolymorphBoon")
 			functionArgs = 
 			{
@@ -954,7 +964,7 @@ ModUtil.Path.Wrap("Damage", function(baseFunc, victim, triggerArgs)
 			mod.CircePolymorph( victim, functionArgs, triggerArgs )
 		end
 		--Icarus: Explosive Intent
-		if HeroHasTrait("OmegaExplodeBoon") and triggerArgs.AttackerTable.Name == "Mourner" then
+		if HeroHasTrait("OmegaExplodeBoon") and (triggerArgs.AttackerTable.Name == "Mourner" or triggerArgs.AttackerTable.Name == "AutomatonBeamer") then
 			trait = GetHeroTrait("OmegaExplodeBoon")
 			functionArgs = 
 			{
@@ -965,6 +975,10 @@ ModUtil.Path.Wrap("Damage", function(baseFunc, victim, triggerArgs)
 				MultihitWeaponConditions = {},
 			}
 			mod.CheckIcarusExplosion( victim, functionArgs, triggerArgs )
+		end
+		--Zeus: ArcFlash
+		if HeroHasTrait("EchoExpirationBoon") and (triggerArgs.AttackerTable.Name == "Mourner" or triggerArgs.AttackerTable.Name == "AutomatonBeamer") then
+			mod.CheckOmegaBlitzTrigger()
 		end
 	end
 end)
