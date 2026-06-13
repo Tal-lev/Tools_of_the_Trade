@@ -753,7 +753,11 @@ ModUtil.Path.Wrap("Damage", function(baseFunc, victim, triggerArgs)
 			trait = GetHeroTrait("AntiArmorBoon")
 			table.insert(triggerArgs.AttackerTable.OutgoingDamageModifiers, {Name = "Del", NonPlayerMultiplier = (trait.ReportedWeaponMultiplier or 1.4 )})
 		end
-		
+		--Arcana: Origination
+		if HeroHasTrait("EffectVulnerabilityMetaUpgrade") and victim.VulnerabilityEffects and TableLength( victim.VulnerabilityEffects ) >= 2 then
+			trait = GetHeroTrait("EffectVulnerabilityMetaUpgrade")	
+			table.insert(triggerArgs.AttackerTable.OutgoingDamageModifiers, {Name = "Del", NonPlayerMultiplier = (trait.ReportedDamageBoost or 1.25 )})
+		end
 	end
 	baseFunc(victim, triggerArgs)
 
