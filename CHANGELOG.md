@@ -20,7 +20,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Origination
 - Added a new Hammer
   - Scrap Metal
--Fix Summoning without enough health count for reserve amount
+- Fix Summoning without enough health count for reserve amount
 
 ## [0.0.7] - 2026-06-11
 
