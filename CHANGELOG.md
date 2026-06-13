@@ -17,6 +17,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Artemis - Lethal Snare
 - These Arcana now impact your attack summons
   - The Furies
+  - Origination
 - Added a new Hammer
   - Scrap Metal
 -Fix Summoning without enough health count for reserve amount
