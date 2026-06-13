@@ -18,7 +18,7 @@ Purely for testing, possibly bug-ridden and certainly not polished or feature co
   - 9 Attack boons
   - 31 Regular Boons
   - 4 Keepsakes
-  - 2 Arcana
+  - 3 Arcana
 
 #### Attack Boons affecting Summons
 - Zeus - Heaven Strike
@@ -76,6 +76,7 @@ Purely for testing, possibly bug-ridden and certainly not polished or feature co
 
 - The Huntress
 - The Furies
+- Origination
 
 ## Installation
 
