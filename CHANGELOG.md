@@ -18,6 +18,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - These Arcana now impact your attack summons
   - The Furies
   - Origination
+  - Strength (Only adding outgoing damage not reducing summon damage)
 - Added a new Hammer
   - Scrap Metal
 - Fix Summoning without enough health count for reserve amount
