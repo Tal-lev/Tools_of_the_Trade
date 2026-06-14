@@ -18,7 +18,7 @@ Purely for testing, possibly bug-ridden and certainly not polished or feature co
 - Summoned Zombies are affected by
   - 9 Attack boons
   - 34 Regular Boons
-  - 4 Keepsakes
+  - 5 Keepsakes
   - 4 Arcana
   - 7 Flip the Arcana
 
@@ -76,6 +76,7 @@ Purely for testing, possibly bug-ridden and certainly not polished or feature co
 - White Antler
 - Lion Fan
 - Blackened Fleece
+- Evil Eye
 
 #### Arcana affecting Summons
 
