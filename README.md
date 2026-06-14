@@ -17,7 +17,7 @@ A mod that adds the silver spade as a new Axe aspect.
   - 9 Attack boons
   - 37 Regular Boons
   - 5 Keepsakes
-  - 4 Arcana + (7 Flip the Arcana)
+  - 5 Arcana + (7 Flip the Arcana)
 
 #### Attack Boons affecting Summons
 - Zeus - Heaven Strike
@@ -80,6 +80,7 @@ A mod that adds the silver spade as a new Axe aspect.
 
 #### Arcana affecting Summons
 
+- The Sorceress
 - The Huntress
 - The Furies
 - Origination
