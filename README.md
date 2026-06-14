@@ -1,8 +1,6 @@
 # Tools of the Trade
 
-An inprogress mod that adds the silver spade as a new Axe aspect.
-
-Purely for testing, possibly bug-ridden and certainly not polished or feature complete.
+A mod that adds the silver spade as a new Axe aspect.
 
 ## Features
 
