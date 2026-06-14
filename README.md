@@ -17,7 +17,7 @@ Purely for testing, possibly bug-ridden and certainly not polished or feature co
   - Scrap Metal
 - Summoned Zombies are affected by
   - 9 Attack boons
-  - 34 Regular Boons
+  - 36 Regular Boons
   - 5 Keepsakes
   - 4 Arcana
   - 7 Flip the Arcana
@@ -48,6 +48,7 @@ Purely for testing, possibly bug-ridden and certainly not polished or feature co
 - Aphrodite - Hearty Appetite
 - Aphrodite - Secret Crush
 - Aphrodite - Sweet Surrender
+- Aphrodite - Wispy Wiles
 - Hephaestus - Molten Touch
 - Hephaestus - Heavy Metal
 - Hephaestus - Martial Art
@@ -55,6 +56,7 @@ Purely for testing, possibly bug-ridden and certainly not polished or feature co
 - Hestia - Slow cooker
 - Ares - Grisly Gain
 - Ares - Blood Spree
+- Ares - Profuse Bleeding
 - Hermes - Nimble limbs
 - Hermes - Tall order
 - Hermes - Mean Streak
