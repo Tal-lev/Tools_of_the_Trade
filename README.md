@@ -17,7 +17,7 @@ Purely for testing, possibly bug-ridden and certainly not polished or feature co
   - Scrap Metal
 - Summoned Zombies are affected by
   - 9 Attack boons
-  - 36 Regular Boons
+  - 37 Regular Boons
   - 5 Keepsakes
   - 4 Arcana + (7 Flip the Arcana)
 
@@ -43,6 +43,7 @@ Purely for testing, possibly bug-ridden and certainly not polished or feature co
 - Apollo - Perfect Image
 - Apollo - Dazzling Display
 - Apollo - Extra Dose
+- Apollo - Exceptional Talent
 - Aphrodite - Shameless Attitude
 - Aphrodite - Hearty Appetite
 - Aphrodite - Secret Crush
