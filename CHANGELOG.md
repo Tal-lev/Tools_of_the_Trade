@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added Icons for Shovel Hammers and Aspect
 - These boons now impact your attack summons
   - Zeus - Arc Flash
+  - Apollo - Exceptional Talent
   - Aphrodite - Wispy Wiles
   - Ares - Profuse Bleeding
 - These Keepsakes now impact your attack summons
