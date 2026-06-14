@@ -20,6 +20,7 @@ Purely for testing, possibly bug-ridden and certainly not polished or feature co
   - 34 Regular Boons
   - 4 Keepsakes
   - 4 Arcana
+  - 7 Flip the Arcana
 
 #### Attack Boons affecting Summons
 - Zeus - Heaven Strike
@@ -82,6 +83,16 @@ Purely for testing, possibly bug-ridden and certainly not polished or feature co
 - The Furies
 - Origination
 - Strength
+
+#### Flip the Arcana affecting Summons
+
+- Bloodlust
+- Performance
+- Retribution
+- The Cyclops
+- The Strategist
+- Beauty
+- Famine
 
 ## Installation
 
