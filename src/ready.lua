@@ -453,6 +453,7 @@ function mod.CreateEnemy( enemyName, args )
 	thread( SetupUnit, newEnemy, CurrentRun, { SkipPresentation = false } )
 	if args.GodVFX then
 		local TextureName = "GR2/JarlUlsfark-" .. enemyData.Name .. "_Color_" .. args.GodVFX
+		LoadPackages({ Name = "JarlUlsfark-" .. enemyData.Name .. "_Color_" .. args.GodVFX })
 		SetThingProperty({ Property = "GrannyTexture", Value = TextureName , DestinationId = newEnemy.ObjectId })
 	end
 	if Enemytype == "boss" then
@@ -640,27 +641,9 @@ modutil.mod.Path.Wrap("LeaveRoom", function(base, currentRun, exitDoor)
 end)
 
 --Loading the package at every room
-modutil.mod.Path.Wrap("SetupMap", function(base, source, args)
-	LoadPackages({ Name = "JarlUlsfark-Zombie_Color_Zeus" })
-	LoadPackages({ Name = "JarlUlsfark-Zombie_Color_Hera" })
-	LoadPackages({ Name = "JarlUlsfark-Zombie_Color_Poseidon" })
-	LoadPackages({ Name = "JarlUlsfark-Zombie_Color_Demeter" })	
-	LoadPackages({ Name = "JarlUlsfark-Zombie_Color_Apollo" })	
-	LoadPackages({ Name = "JarlUlsfark-Zombie_Color_Aphrodite" })	
-	LoadPackages({ Name = "JarlUlsfark-Zombie_Color_Hephaestus" })
-	LoadPackages({ Name = "JarlUlsfark-Zombie_Color_Hestia" })
-	LoadPackages({ Name = "JarlUlsfark-Zombie_Color_Ares" })
-	LoadPackages({ Name = "JarlUlsfark-Mourner_Color_Zeus" })
-	LoadPackages({ Name = "JarlUlsfark-Mourner_Color_Hera" })
-	LoadPackages({ Name = "JarlUlsfark-Mourner_Color_Poseidon" })
-	LoadPackages({ Name = "JarlUlsfark-Mourner_Color_Demeter" })
-	LoadPackages({ Name = "JarlUlsfark-Mourner_Color_Apollo" })
-	LoadPackages({ Name = "JarlUlsfark-Mourner_Color_Aphrodite" })
-	LoadPackages({ Name = "JarlUlsfark-Mourner_Color_Hephaestus" })
-	LoadPackages({ Name = "JarlUlsfark-Mourner_Color_Hestia" })
-	LoadPackages({ Name = "JarlUlsfark-Mourner_Color_Ares" })
-	return base(source, args)
-end)
+--modutil.mod.Path.Wrap("SetupMap", function(base, source, args)
+--	return base(source, args)
+--end)
 
 modutil.mod.Path.Wrap("Kill", function(base, victim, triggerArgs)
 	base(victim, triggerArgs)
