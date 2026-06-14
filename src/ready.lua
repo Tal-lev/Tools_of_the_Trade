@@ -20,6 +20,9 @@ rom.mods['SGG_Modding-ENVY'].auto()
 game = rom.game
 import_as_fallback(game)
 
+local ZagreusJourney = rom.mods['NikkelM-Zagreus_Journey']
+local FliptheArcana = rom.mods['ReadEmAndWeep-Flip_the_Arcana_Mod']
+
 function mod.ReleaseHealthReserve( amount, source )
 	local previousMaxHealth = GetHeroMaxAvailableHealth()
 	if CurrentRun.Hero.ReserveHealthSources[source] then
@@ -239,16 +242,12 @@ function mod.SummonEnemy( triggerArgs, functionArgs )
 			summonArgs.GodVFX = "Ares"
 		end
 	end
-	--Adding Attackoutgoing damage modifier boons
-	--if HeroHasTrait("Hydraulic Might") then
-		--if RequiredEffects = { "EncounterStartOffense" },
-	--	summonArgs.DamageMultiplier = summonArgs.DamageMultiplier + trait.ReportedMultiplier - 1
-	--end
+	--Apollo: 
 	if HeroHasTrait("HighHealthOffenseBoon") then
 		trait = GetHeroTrait("HighHealthOffenseBoon")
 		summonArgs.DamageMultiplier = summonArgs.DamageMultiplier + (trait.ReportedMultiplier or 1.05) - 1
 		if CurrentRun.Hero.Health > (GetHeroMaxAvailableHealth() * trait.ReportedThreshold) then
-			summonArgs.DamageMultiplier = summonArgs.DamageMultiplier + (trait.ReportedMultiplier or 1.10) - 1
+			summonArgs.DamageMultiplier = summonArgs.DamageMultiplier + (trait.ReportedMultiplier or 1.05) - 1
 		end
 	end
 	if HeroHasTrait("PerfectDamageBonusBoon") and not SessionMapState.DeactivatePerfectDamageBonus then
@@ -318,7 +317,29 @@ function mod.SummonEnemy( triggerArgs, functionArgs )
 		trait = GetHeroTrait("LowHealthBuffMetaUpgrade")
 		summonArgs.DamageMultiplier = summonArgs.DamageMultiplier + ((trait.ReportedModifier or 1.2) -1 )
 	end
-
+	
+	if FliptheArcana then
+		--Flip the Arcana: Performance
+		if HeroHasTrait("ReversedLowManaDamageBonusMetaUpgrade") then
+			trait = GetHeroTrait("ReversedLowManaDamageBonusMetaUpgrade")
+			if CurrentRun.Hero.Health > (GetHeroMaxAvailableHealth() * (trait.ReportedThreshold or 0.85)) then
+				summonArgs.DamageMultiplier = summonArgs.DamageMultiplier + (trait.ReportedMultiplier or 1.10) - 1
+			else
+				summonArgs.DamageMultiplier = summonArgs.DamageMultiplier + (((trait.ReportedMultiplier or 1.10) - 1) / 10)
+			end
+		end
+		--Flip the Arcana: Retribution
+		if HeroHasTrait("ReversedMagicCritMetaUpgrade") then
+			trait = GetHeroTrait("ReversedMagicCritMetaUpgrade")
+			summonArgs.DamageMultiplier = summonArgs.DamageMultiplier + ((trait.DisplayValue or 0.01) * GetTotalSpentShrinePoints())
+			summonArgs.IncomingDamageMultiplier = summonArgs.IncomingDamageMultiplier + 0.35
+		end
+		--Flip the Arcana: Beauty
+		if HeroHasTrait("ReversedChanneledBlockMetaUpgrade") then
+			trait = GetHeroTrait("ReversedChanneledBlockMetaUpgrade")
+			summonArgs.DodgeMultiplier = summonArgs.DodgeMultiplier + (trait.ReportedDodgeChance or 0.04) 
+		end
+	end
 	--Traits impacting Non EX only
 	if enemyName == "Zombie" or enemyName == "SentryBot" then
 		--Arcana: The Huntress
@@ -330,6 +351,11 @@ function mod.SummonEnemy( triggerArgs, functionArgs )
 		if HeroHasTrait("ElementalDamageBoon") then
 			trait = GetHeroTrait("ElementalDamageBoon")
 			summonArgs.DamageMultiplier = summonArgs.DamageMultiplier + (((trait.ReportedTotalDamageChange or 1.05) -1) * (CurrentRun.Hero.Elements.Earth or 0))  
+		end
+		--Flip the Arcana: Bloodlust
+		if FliptheArcana and HeroHasTrait("ReversedChanneledCastMetaUpgrade") then
+			trait = GetHeroTrait("ReversedChanneledCastMetaUpgrade")
+			summonArgs.SpeedMultiplier = summonArgs.SpeedMultiplier + (1 - (trait.ReportedWeaponMultiplier or 0.9))
 		end
 	-- Traits impacting omega weapon only
 	elseif enemyName == "Mourner" or enemyName == "AutomatonBeamer" then
@@ -695,7 +721,7 @@ end)
 ModUtil.Path.Wrap("Damage", function(baseFunc, victim, triggerArgs)
 	--For Apollo Double attack boon, which is buggy
 	--local originaltriggerArgs = triggerArgs
-
+	local trait = {}
 	--For adding base damage directly into the hit
 	if victim ~= CurrentRun.Hero and HeroHasTrait("ShovelRaiseDeadNecroMel") and triggerArgs.AttackerTable and triggerArgs.AttackerTable.AlwaysTraitor == true and (triggerArgs.AttackerTable.Name == "Zombie" or triggerArgs.AttackerTable.Name == "Mourner" or triggerArgs.AttackerTable.Name == "SentryBot" or triggerArgs.AttackerTable.Name == "AutomatonBeamer") then	
 		--Ares: Vicious Strike
@@ -761,12 +787,41 @@ ModUtil.Path.Wrap("Damage", function(baseFunc, victim, triggerArgs)
 			trait = GetHeroTrait("EffectVulnerabilityMetaUpgrade")	
 			table.insert(triggerArgs.AttackerTable.OutgoingDamageModifiers, {Name = "Del", NonPlayerMultiplier = (trait.ReportedDamageBoost or 1.25 )})
 		end
+		if FliptheArcana then
+			--Flip the Arcana: The Strategist
+			if HeroHasTrait("ReversedStatusVulnerabilityMetaUpgrade") then
+				trait = GetHeroTrait("ReversedStatusVulnerabilityMetaUpgrade")	
+				if not victim.VulnerabilityEffects or (victim.VulnerabilityEffects and TableLength( victim.VulnerabilityEffects ) < 1) then
+					table.insert(triggerArgs.AttackerTable.OutgoingDamageModifiers, {Name = "Del", NonPlayerMultiplier = ((trait.NoStatusBonusDamage or 0.38 ) + 1)})
+				elseif TableLength( victim.VulnerabilityEffects ) == 1 then
+					table.insert(triggerArgs.AttackerTable.OutgoingDamageModifiers, {Name = "Del", NonPlayerMultiplier = (((trait.NoStatusBonusDamage or 0.38 ) / 2 ) + 1)})
+				end
+			end	
+			--Flip the Arcana: Famine
+			if HeroHasTrait("ReversedRarityBoostMetaUpgrade") then
+				trait = GetHeroTrait("ReversedRarityBoostMetaUpgrade")
+				functionArgs = 
+				{
+					Chance = trait.ReportedChance,
+					Damage = 9999,
+					Vfx = "DemeterBossIceShatter",
+					ExcludeProjectileName = "MedeaCurse",
+					ReportValues = { ReportedChance = "Chance" },
+				}
+				CheckSpawnZeusDamage( victim , functionArgs, triggerArgs )
+			end
+			--Flip the Arcana: The Cyclops
+			if HeroHasTrait("ReversedSprintShieldMetaUpgrade") and victim.Health == victim.MaxHealth then
+				trait = GetHeroTrait("ReversedSprintShieldMetaUpgrade")
+				table.insert(triggerArgs.AttackerTable.OutgoingDamageModifiers, {Name = "Del", NonPlayerMultiplier = ((trait.FirstHitMultiplier or 0.25 ) + 1)})
+			end
+		end
 	end
 	baseFunc(victim, triggerArgs)
 
 	--After the damage remove all the temp additions from the Attacker
 	local KeystoRemove = {}
-	local trait = {}
+	
 	if victim ~= CurrentRun.Hero and HeroHasTrait("ShovelRaiseDeadNecroMel") and triggerArgs.AttackerTable and triggerArgs.AttackerTable.AlwaysTraitor == true and (triggerArgs.AttackerTable.Name == "Zombie" or triggerArgs.AttackerTable.Name == "Mourner" or triggerArgs.AttackerTable.Name == "SentryBot" or triggerArgs.AttackerTable.Name == "AutomatonBeamer") then	
 			--After the damage remove all the temp additions from the Attacker
 			if triggerArgs.AttackerTable.OutgoingCritModifiers then
