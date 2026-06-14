@@ -787,6 +787,11 @@ ModUtil.Path.Wrap("Damage", function(baseFunc, victim, triggerArgs)
 			trait = GetHeroTrait("EffectVulnerabilityMetaUpgrade")	
 			table.insert(triggerArgs.AttackerTable.OutgoingDamageModifiers, {Name = "Del", NonPlayerMultiplier = (trait.ReportedDamageBoost or 1.25 )})
 		end
+		--Keepsake: Evil Eye
+		if HeroHasTrait("DeathVengeanceKeepsake") and victim and GetGenusName(victim) == GameState.CauseOfDeath then
+			trait = GetHeroTrait("DeathVengeanceKeepsake")	
+			table.insert(triggerArgs.AttackerTable.OutgoingDamageModifiers, {Name = "Del", NonPlayerMultiplier = (trait.ReportedWeaponMultiplier or 1.2 )})
+		end
 		if FliptheArcana then
 			--Flip the Arcana: The Strategist
 			if HeroHasTrait("ReversedStatusVulnerabilityMetaUpgrade") then
