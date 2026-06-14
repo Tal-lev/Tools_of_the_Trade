@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Automaton Beamer
 - These boons now impact your attack summons
   - Zeus - Arc Flash
+- Added Icons for Shovel Hammers and Aspect
 
 ## [0.0.8] - 2026-06-13
 
