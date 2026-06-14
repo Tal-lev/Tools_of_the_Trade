@@ -279,6 +279,11 @@ function mod.SummonEnemy( triggerArgs, functionArgs )
 		summonArgs.SpeedMultiplier = summonArgs.SpeedMultiplier + ((trait.ReportedDodgeChance or 0) * CurrentRun.Hero.OlympianBoonCount)
 		summonArgs.DodgeMultiplier = summonArgs.DodgeMultiplier + ((trait.ReportedDodgeChance or 0) * CurrentRun.Hero.OlympianBoonCount)
 	end
+	--Aphrodite: Wispy Wiles
+	if HeroHasTrait("ElementalDodgeBoon") then
+		trait = GetHeroTrait("ElementalDodgeBoon")
+		summonArgs.DodgeMultiplier = summonArgs.DodgeMultiplier + ((trait.ReportedDodgeBonus or 0.02) * CurrentRun.Hero.Elements.Air) 
+	end
 	if HeroHasTrait("CirceShrinkTrait") then
 		trait = GetHeroTrait("CirceShrinkTrait")
 		summonArgs.SpeedMultiplier = summonArgs.SpeedMultiplier + (trait.ReportedDodgeChance or 0)
@@ -745,6 +750,10 @@ ModUtil.Path.Wrap("Damage", function(baseFunc, victim, triggerArgs)
 				AresRendApplyPresentation( victim, triggerArgs, functionArgs )
 				local dataProperties = EffectData["AresStatus"].EffectData 
 				ApplyEffect ( { DestinationId = victim.ObjectId, Id = CurrentRun.Hero.ObjectId, EffectName = "AresStatus", ImpactAngle = math.rad(triggerArgs.ImpactAngle), DataProperties = dataProperties } )
+				--Ares: Profuse Bleeding
+				if HeroHasTrait("RendBloodDropBoon") then
+					CheckGenerateAresSword( victim )
+				end
 			end
 		end
 		--Aphrodite: Secret Crush
