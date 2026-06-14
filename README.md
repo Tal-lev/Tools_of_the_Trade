@@ -11,9 +11,10 @@ Purely for testing, possibly bug-ridden and certainly not polished or feature co
 - Summoning Reserves health that is released upon the summon's death or changing rooms.
   - Trait reduces the amount of health reserved
 - Cast teleports the summons to Melinoe's location
-- Adds two Hammers
+- Adds three Hammers
   - Twin Summons
   - Arise Again
+  - Scrap Metal
 - Summoned Zombies are affected by
   - 9 Attack boons
   - 34 Regular Boons
