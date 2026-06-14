@@ -126,10 +126,10 @@ function mod.SummonEnemy( triggerArgs, functionArgs )
 	local team = functionArgs.team
 	local biome = functionArgs.biome
 	local Enemytype = functionArgs.type
-
+	local ChangeAttackSummonCount = 0
 
 	if (functionArgs.HeraclesCombatMoneyValue or 2) > 0 then
-		trait.AttackSummons = trait.AttackSummons + 1
+		ChangeAttackSummonCount = 1
 		toReserve = 1
 	end
 
@@ -150,18 +150,24 @@ function mod.SummonEnemy( triggerArgs, functionArgs )
 
 	--Part1 of Double summon trait, double the cost
 	if HeroHasTrait("ShovelNecroMelDoubleSummonTrait") then
+		ChangeAttackSummonCount = ChangeAttackSummonCount * 2
+		Reserve = Reserve * 2
+	end
+	--Part1 of Double summon trait, double the cost
+	if HeroHasTrait("DoubleExManaBoon") and triggerArgs.Name == "WeaponAxeSpin" then
+		ChangeAttackSummonCount = ChangeAttackSummonCount * 2
 		Reserve = Reserve * 2
 	end
 
 	if trait.AttackSummons > 1 and toReserve > 0 then
 		if CurrentRun.Hero.Health > Reserve then
+			trait.AttackSummons = trait.AttackSummons + ChangeAttackSummonCount
 			mod.ReserveHealth( Reserve, "Aspect")
 		else
 			local unitId = CurrentRun.Hero.ObjectId
 			PlaySound({ Name = "/Leftovers/Menu Sounds/LevelUpFlash", Id = unitId, ManagerCap = 46 })
 			Flash({ Id = unitId, Speed = 0.85, MinFraction = 0.7, MaxFraction = 0.0, Color = Color.White, Duration = 0.15, ExpireAfterCycle = true })
 			thread( InCombatText, unitId, "Not enough Health!", 0.5 , { SkipShadow = true } )
-			trait.AttackSummons = trait.AttackSummons - 1
 			return
 		end
 	end
@@ -403,6 +409,15 @@ function mod.SummonEnemy( triggerArgs, functionArgs )
 	if HeroHasTrait("ShovelNecroMelDoubleSummonTrait") then
 		wait(0.1)
 		newEnemy = mod.CreateEnemy( enemyName, summonArgs)
+	end
+	--Apollo: Exceptional Talent Part 2
+	if HeroHasTrait("DoubleExManaBoon") and triggerArgs.Name == "WeaponAxeSpin" then
+		wait(0.1)
+		newEnemy = mod.CreateEnemy( enemyName, summonArgs)
+		if HeroHasTrait("ShovelNecroMelDoubleSummonTrait") then
+			wait(0.1)
+			newEnemy = mod.CreateEnemy( enemyName, summonArgs)
+		end
 	end
 	DestroyOnDelay({ invaderSpawnPoint }, 0.1)
 end
