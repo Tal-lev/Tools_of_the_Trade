@@ -392,6 +392,11 @@ function mod.SummonEnemy( triggerArgs, functionArgs )
 			trait = GetHeroTrait("HermesSpecialBoon")
 			summonArgs.SpeedMultiplier = summonArgs.SpeedMultiplier + (1 - (trait.ReportedWeaponMultiplier or 0.85))
 		end
+		--Arcana: The Sorceress
+		if FliptheArcana and HeroHasTrait("ChannelSlowMetaUpgrade") then
+			trait = GetHeroTrait("ChannelSlowMetaUpgrade")
+			summonArgs.SpeedMultiplier = summonArgs.SpeedMultiplier + (1 - (trait.ReportedWeaponMultiplier or 0.8))
+		end
 	end
 
 
