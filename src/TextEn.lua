@@ -82,7 +82,7 @@ sjson.hook(file, function(data)
 			Id = "ShovelNecroMelRobotSummonTrait",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Scrap Metal",
-			Description = "Your {$Keywords.Attack} summons a Sentry Bot and your {$Keywords.AttackEX} summons an Automaton Beamer.",
+			Description = "Your {$Keywords.Attack} summons a {#UpgradeFormat}Sentry Bot {#Prev}and your {$Keywords.AttackEX} summons an {#UpgradeFormat}Automaton Beamer{#Prev}.",
 		},
 		TextOrder)
 	)

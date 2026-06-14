@@ -3,7 +3,7 @@ OverwriteTableKeys( TraitData, {
 	    ShovelNecroMelDoubleSummonTrait = 
 		{
 			InheritFrom = { "WeaponTrait", "AxeHammerTrait" },
-			Icon = "JarlUlsfark-Tools_of_the_Trade\\DoubleSummonIcon",
+			Icon = "JarlUlsfark-Tools_of_the_Trade\\TwinSummonIcon",
 			GameStateRequirements =
 			{
 				{

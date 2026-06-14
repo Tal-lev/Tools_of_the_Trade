@@ -641,9 +641,10 @@ modutil.mod.Path.Wrap("LeaveRoom", function(base, currentRun, exitDoor)
 end)
 
 --Loading the package at every room
---modutil.mod.Path.Wrap("SetupMap", function(base, source, args)
---	return base(source, args)
---end)
+modutil.mod.Path.Wrap("SetupMap", function(base, source, args)
+	LoadPackages({ Name ="JarlUlsfark-Tools_of_the_Trade"})
+	return base(source, args)
+end)
 
 modutil.mod.Path.Wrap("Kill", function(base, victim, triggerArgs)
 	base(victim, triggerArgs)
@@ -1002,7 +1003,7 @@ modutil.once_loaded.game(function()
 				Multiplier = 0.3,
 			},
 		},
-		Icon = "GUI\\Icons\\Shovel",
+		Icon = "JarlUlsfark-Tools_of_the_Trade\\ShovelIcon",
 		RequiredWeapon = "WeaponAxe",
 		WeaponKitGrannyModel = "ToolShovel_Mesh",
 		ReplacementGrannyModels = 
