@@ -19,8 +19,7 @@ Purely for testing, possibly bug-ridden and certainly not polished or feature co
   - 9 Attack boons
   - 36 Regular Boons
   - 5 Keepsakes
-  - 4 Arcana
-  - 7 Flip the Arcana
+  - 4 Arcana + (7 Flip the Arcana)
 
 #### Attack Boons affecting Summons
 - Zeus - Heaven Strike
