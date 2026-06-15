@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+- These Boons now impact your attack summons
+  - Ares - Mutual Destruction
+  - Ares - Grievous Blow
 - These Arcana now impact your attack summons
   - The Sorceress
 
