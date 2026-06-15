@@ -129,7 +129,7 @@ function mod.SummonEnemy( triggerArgs, functionArgs )
 	local Enemytype = functionArgs.type
 	local ChangeAttackSummonCount = 0
 	local ChangeOmegaAttackSummonCount = 0
-
+	print("Started summon Enemy")
 	if (functionArgs.HeraclesCombatMoneyValue or 2) > 0 then
 		ChangeAttackSummonCount = 1
 		toReserve = 1
@@ -163,17 +163,18 @@ function mod.SummonEnemy( triggerArgs, functionArgs )
 		ChangeOmegaAttackSummonCount = ChangeOmegaAttackSummonCount * 2
 		Reserve = Reserve * 2
 	end
-
+	trait.AttackSummons = trait.AttackSummons + ChangeAttackSummonCount
+	trait.OmegaAttackSummons = trait.OmegaAttackSummons + ChangeOmegaAttackSummonCount
 	if trait.AttackSummons > 1 and toReserve > 0 then
 		if CurrentRun.Hero.Health > Reserve then
-			trait.AttackSummons = trait.AttackSummons + ChangeAttackSummonCount
-			trait.OmegaAttackSummons = trait.OmegaAttackSummons + ChangeOmegaAttackSummonCount
 			mod.ReserveHealth( Reserve, "Aspect")
 		else
 			local unitId = CurrentRun.Hero.ObjectId
 			PlaySound({ Name = "/Leftovers/Menu Sounds/LevelUpFlash", Id = unitId, ManagerCap = 46 })
 			Flash({ Id = unitId, Speed = 0.85, MinFraction = 0.7, MaxFraction = 0.0, Color = Color.White, Duration = 0.15, ExpireAfterCycle = true })
 			thread( InCombatText, unitId, "Not enough Health!", 0.5 , { SkipShadow = true } )
+			trait.AttackSummons = trait.AttackSummons - ChangeAttackSummonCount
+			trait.OmegaAttackSummons = trait.OmegaAttackSummons - ChangeOmegaAttackSummonCount
 			return
 		end
 	end
@@ -1239,7 +1240,59 @@ modutil.once_loaded.game(function()
 		FlavorText = "ShovelRaiseDeadNecroMel_FlavorText",
 	}
 
-	--OverwriteTableKeys( TraitSetData.Aspects.AxeRecoveryAspect, ShovelRaiseDeadNecroMel)
+	TabletofPeaceKirbyMel = {
+		InheritFrom = { "WeaponEnchantmentTrait" },
+		RarityLevels =
+		{
+			Common =
+			{
+				Multiplier = 1,
+			},
+			Rare =
+			{
+				Multiplier = 0.9,
+			},
+			Epic =
+			{
+				Multiplier = 0.8,
+			},
+			Heroic =
+			{
+				Multiplier = 0.7,
+			},
+			Legendary =
+			{
+				Multiplier = 0.5,
+			},
+			Perfect =
+			{
+				Multiplier = 0.3,
+			},
+		},
+		Icon = "GUI\\Icons\\ExorcismBook",
+		RequiredWeapon = "WeaponLob",
+		WeaponKitGrannyModel = "ToolTablet_Mesh",
+		ReplacementGrannyModels = 
+		{
+			WeaponLob_Mesh = "ToolTablet_Mesh",
+		},
+		WeaponDataOverride =
+		{
+			WeaponLob = {
+				ShowAmmoUI = false,
+				OnProjectileDeathFunction = "nil",
+				OnProjectileDeathFunctionArgs = {},
+				ChannelSlowIneligible = true,
+			},
+		},
+		SetupFunction =
+		{
+			Threaded = true,
+			Name = "HideGunUI",
+		},
+	}
+
+	--OverwriteTableKeys( TraitSetData.Aspects.LobAmmoBoostAspect, TabletofPeaceKirbyMel)
 	TraitData.ShovelRaiseDeadNecroMel = ShovelRaiseDeadNecroMel
 
 
