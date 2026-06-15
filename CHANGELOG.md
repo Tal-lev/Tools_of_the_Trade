@@ -16,6 +16,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Skull Earring
 - These Arcana now impact your attack summons
   - The Sorceress
+- FIX: Omega summons don't release full health when leaving room
 
 ## [0.1.0] - 2026-06-14
 
