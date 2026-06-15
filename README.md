@@ -15,7 +15,7 @@ A mod that adds the silver spade as a new Axe aspect.
   - Scrap Metal
 - Summoned Zombies are affected by
   - 9 Attack boons
-  - 37 Regular Boons
+  - 39 Regular Boons
   - 5 Keepsakes
   - 5 Arcana + (7 Flip the Arcana)
 
@@ -55,6 +55,8 @@ A mod that adds the silver spade as a new Axe aspect.
 - Ares - Grisly Gain
 - Ares - Blood Spree
 - Ares - Profuse Bleeding
+- Ares - Mutual Destruction
+- Ares - Grievous Blow
 - Hermes - Nimble limbs
 - Hermes - Tall order
 - Hermes - Mean Streak
