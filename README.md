@@ -16,7 +16,7 @@ A mod that adds the silver spade as a new Axe aspect.
 - Summoned Zombies are affected by
   - 9 Attack boons
   - 39 Regular Boons
-  - 5 Keepsakes
+  - 5 Keepsakes + (3 SharedKeepsakePort)
   - 5 Arcana + (7 Flip the Arcana)
 
 #### Attack Boons affecting Summons
@@ -87,6 +87,12 @@ A mod that adds the silver spade as a new Axe aspect.
 - The Furies
 - Origination
 - Strength
+
+#### SharedKeepsakePort Keepsakes affecting Summons
+
+- Shattered Shackle
+- Pierced Butterfly
+- Skull Earring
 
 #### Flip the Arcana affecting Summons
 
