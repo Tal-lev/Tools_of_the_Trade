@@ -10,6 +10,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - These Boons now impact your attack summons
   - Ares - Mutual Destruction
   - Ares - Grievous Blow
+- These SharedKeepsakePort Keepsakes now impact your attack summons
+  - Shattered Shackle
+  - Pierced Butterfly
+  - Skull Earring
 - These Arcana now impact your attack summons
   - The Sorceress
 
