@@ -128,6 +128,7 @@ function mod.SummonEnemy( triggerArgs, functionArgs )
 	local biome = functionArgs.biome
 	local Enemytype = functionArgs.type
 	local ChangeAttackSummonCount = 0
+	local ChangeOmegaAttackSummonCount = 0
 
 	if (functionArgs.HeraclesCombatMoneyValue or 2) > 0 then
 		ChangeAttackSummonCount = 1
@@ -138,6 +139,7 @@ function mod.SummonEnemy( triggerArgs, functionArgs )
 		Reserve = Reserve * 5
 		biome = "Mourning_Fields"
 		enemyName = "Mourner"
+		ChangeOmegaAttackSummonCount = 1
 	end
 	
 	--Hammer: Scrap Metal
@@ -152,17 +154,20 @@ function mod.SummonEnemy( triggerArgs, functionArgs )
 	--Part1 of Double summon trait, double the cost
 	if HeroHasTrait("ShovelNecroMelDoubleSummonTrait") then
 		ChangeAttackSummonCount = ChangeAttackSummonCount * 2
+		ChangeOmegaAttackSummonCount = ChangeOmegaAttackSummonCount * 2
 		Reserve = Reserve * 2
 	end
 	--Part1 of Double summon trait, double the cost
 	if HeroHasTrait("DoubleExManaBoon") and triggerArgs.Name == "WeaponAxeSpin" then
 		ChangeAttackSummonCount = ChangeAttackSummonCount * 2
+		ChangeOmegaAttackSummonCount = ChangeOmegaAttackSummonCount * 2
 		Reserve = Reserve * 2
 	end
 
 	if trait.AttackSummons > 1 and toReserve > 0 then
 		if CurrentRun.Hero.Health > Reserve then
 			trait.AttackSummons = trait.AttackSummons + ChangeAttackSummonCount
+			trait.OmegaAttackSummons = trait.OmegaAttackSummons + ChangeOmegaAttackSummonCount
 			mod.ReserveHealth( Reserve, "Aspect")
 		else
 			local unitId = CurrentRun.Hero.ObjectId
@@ -702,9 +707,10 @@ modutil.mod.Path.Wrap("LeaveRoom", function(base, currentRun, exitDoor)
 	if HeroHasTrait("ShovelRaiseDeadNecroMel") then
 		local trait = GetHeroTrait("ShovelRaiseDeadNecroMel")
 		if trait.AttackSummons > 1 then
-			mod.ReleaseHealthReserve( trait.Reserve * (trait.AttackSummons - 1), "Aspect" )
+			mod.ReleaseHealthReserve( trait.Reserve * (trait.AttackSummons - 1) + (trait.Reserve * 4 * trait.OmegaAttackSummons), "Aspect" )
 		end
 		trait.AttackSummons = 0
+		trait.OmegaAttackSummons = 0
 	end
 	return base(currentRun, exitDoor)
 end)
@@ -725,6 +731,7 @@ modutil.mod.Path.Wrap("Kill", function(base, victim, triggerArgs)
 				if victim.Name == "Zombie" or victim.Name == "SentryBot" then
 					mod.ReleaseHealthReserve( trait.Reserve, "Aspect" )
 				elseif victim.Name == "Mourner" or victim.Name == "AutomatonBeamer" then
+					trait.OmegaAttackSummons = trait.OmegaAttackSummons - 1
 					mod.ReleaseHealthReserve( trait.Reserve * 5, "Aspect" )
 				end
 			end
@@ -904,45 +911,45 @@ ModUtil.Path.Wrap("Damage", function(baseFunc, victim, triggerArgs)
 	local KeystoRemove = {}
 	
 	if victim ~= CurrentRun.Hero and HeroHasTrait("ShovelRaiseDeadNecroMel") and triggerArgs.AttackerTable and triggerArgs.AttackerTable.AlwaysTraitor == true and (triggerArgs.AttackerTable.Name == "Zombie" or triggerArgs.AttackerTable.Name == "Mourner" or triggerArgs.AttackerTable.Name == "SentryBot" or triggerArgs.AttackerTable.Name == "AutomatonBeamer") then	
-			--After the damage remove all the temp additions from the Attacker
-			if triggerArgs.AttackerTable.OutgoingCritModifiers then
-				for key,value in pairs(triggerArgs.AttackerTable.OutgoingCritModifiers) do
-					if value.Name == "Del" then
-						table.insert(KeystoRemove, key)	
-					end
-				end
-				for key,value in pairs(KeystoRemove) do
-					if triggerArgs.AttackerTable.OutgoingCritModifiers[value] then
-						table.remove(triggerArgs.AttackerTable.OutgoingCritModifiers, value)
-					end
+		--After the damage remove all the temp additions from the Attacker
+		if triggerArgs.AttackerTable.OutgoingCritModifiers then
+			for key,value in pairs(triggerArgs.AttackerTable.OutgoingCritModifiers) do
+				if value.Name == "Del" then
+					table.insert(KeystoRemove, key)	
 				end
 			end
-			KeystoRemove = {}
-			if triggerArgs.AttackerTable.OutgoingDamageModifiers then
-				for key,value in pairs(triggerArgs.AttackerTable.OutgoingDamageModifiers) do
-					if value.Name == "Del" then
-						table.insert(KeystoRemove, key)	
-					end
-				end
-				for key,value in pairs(KeystoRemove) do
-					if triggerArgs.AttackerTable.OutgoingDamageModifiers[value] then
-						table.remove(triggerArgs.AttackerTable.OutgoingDamageModifiers, value)
-					end
+			for key,value in pairs(KeystoRemove) do
+				if triggerArgs.AttackerTable.OutgoingCritModifiers[value] then
+					table.remove(triggerArgs.AttackerTable.OutgoingCritModifiers, value)
 				end
 			end
-			KeystoRemove = {}
-			if triggerArgs.AttackerTable.OutgoingDoubleDamageModifiers then
-				for key,value in pairs(triggerArgs.AttackerTable.OutgoingDoubleDamageModifiers) do
-					if value.Name == "Del" then
-						table.insert(KeystoRemove, key)	
-					end
-				end
-				for key,value in pairs(KeystoRemove) do
-					if triggerArgs.AttackerTable.OutgoingDoubleDamageModifiers[value] then
-						table.remove(triggerArgs.AttackerTable.OutgoingDoubleDamageModifiers, value)
-					end
+		end
+		KeystoRemove = {}
+		if triggerArgs.AttackerTable.OutgoingDamageModifiers then
+			for key,value in pairs(triggerArgs.AttackerTable.OutgoingDamageModifiers) do
+				if value.Name == "Del" then
+					table.insert(KeystoRemove, key)	
 				end
 			end
+			for key,value in pairs(KeystoRemove) do
+				if triggerArgs.AttackerTable.OutgoingDamageModifiers[value] then
+					table.remove(triggerArgs.AttackerTable.OutgoingDamageModifiers, value)
+				end
+			end
+		end
+		KeystoRemove = {}
+		if triggerArgs.AttackerTable.OutgoingDoubleDamageModifiers then
+			for key,value in pairs(triggerArgs.AttackerTable.OutgoingDoubleDamageModifiers) do
+				if value.Name == "Del" then
+					table.insert(KeystoRemove, key)	
+				end
+			end
+			for key,value in pairs(KeystoRemove) do
+				if triggerArgs.AttackerTable.OutgoingDoubleDamageModifiers[value] then
+					table.remove(triggerArgs.AttackerTable.OutgoingDoubleDamageModifiers, value)
+				end
+			end
+		end
 			
 		-- Effect of weapon boons
 		if HeroHasTrait("PoseidonWeaponBoon") then
@@ -1186,6 +1193,7 @@ modutil.once_loaded.game(function()
 			},
 		},
 		AttackSummons = 0,
+		OmegaAttackSummons = 0,
 		Reserve = { BaseValue = 10 },
 		-- Changing special to Block
 		PropertyChanges =
