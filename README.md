@@ -1,18 +1,18 @@
 # Tools of the Trade
 
-A mod that adds the silver spade as a new Axe aspect.
+Adding new aspects themed around the Gathering Tools
 
 ## Features
 
 - Adds Silver Spade (AKA NecroMel) as a new Axe aspect
+
+### The Silver Spade (AKA NecroMel)
+
 - Your Attack summons Zombies and Omega Attack summons Mourners.
+- Your Cast teleports the summons to Melinoe's location.
 - Summoning Reserves health that is released upon the summon's death or changing rooms.
-  - Trait reduces the amount of health reserved
-- Cast teleports the summons to Melinoe's location
-- Adds three Hammers
-  - Twin Summons
-  - Arise Again
-  - Scrap Metal
+- Trait reduces the amount of health reserved
+- Introduces three new hammers
 - Summoned Zombies are affected by
   - 9 Attack boons
   - 39 Regular Boons
@@ -20,6 +20,10 @@ A mod that adds the silver spade as a new Axe aspect.
   - 5 Arcana + (7 Flip the Arcana)
 
 [Full Compatibility list](Compatibility.md)
+
+<div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+  <img src="https://media.githubusercontent.com/media/Tal-lev/Tools_of_the_Trade/refs/heads/main/images/NecroMel.png" alt="PonyDressList" width="70%">
+</div>
 
 ## Installation
 
