@@ -352,6 +352,23 @@ function mod.SummonEnemy( triggerArgs, functionArgs )
 			summonArgs.DodgeMultiplier = summonArgs.DodgeMultiplier + (trait.ReportedDodgeChance or 0.04) 
 		end
 	end
+	if ZagreusJourney then
+		--Zagreus Journey Keepsake: Skull Earring
+		if HeroHasTrait("zannc-SharedKeepsakePort-LowHealthDamageKeepsake") and (CurrentRun.Hero.Health < (CurrentRun.Hero.MaxHealth * 0.35)) then
+			trait = GetHeroTrait("zannc-SharedKeepsakePort-LowHealthDamageKeepsake")
+			summonArgs.DamageMultiplier = summonArgs.DamageMultiplier + ((trait.ReportedMultiplier or 1.2) -1)
+		end
+		--Zagreus Journey Keepsake: Pierced Butterfly
+		if HeroHasTrait("zannc-SharedKeepsakePort-PerfectClearDamageBonusKeepsake") then
+			trait = GetHeroTrait("zannc-SharedKeepsakePort-PerfectClearDamageBonusKeepsake")
+			summonArgs.DamageMultiplier = summonArgs.DamageMultiplier + ((trait.AccumulatedDamageBonus or 1) -1)
+		end
+		--Zagreus Journey Keepsake: Shattered Shackle
+		if HeroHasTrait("zannc-SharedKeepsakePort-SisyphusVanillaKeepsake") and (not HeroHasTrait("ZeusWeaponBoon")) and (not HeroHasTrait("HeraWeaponBoon")) and (not HeroHasTrait("PoseidonWeaponBoon")) and (not HeroHasTrait("DemeterWeaponBoon")) and (not HeroHasTrait("ApolloWeaponBoon")) and (not HeroHasTrait("AphroditeWeaponBoon")) and (not HeroHasTrait("HephaestusWeaponBoon")) and (not HeroHasTrait("HestiaWeaponBoon")) and (not HeroHasTrait("AresWeaponBoon")) then
+			trait = GetHeroTrait("zannc-SharedKeepsakePort-SisyphusVanillaKeepsake")
+			summonArgs.DamageMultiplier = summonArgs.DamageMultiplier + ((trait.ReportedWeaponMultiplier or 1.5) -1)
+		end
+	end
 	--Traits impacting Non EX only
 	if enemyName == "Zombie" or enemyName == "SentryBot" then
 		--Arcana: The Huntress
