@@ -22,6 +22,7 @@ import_as_fallback(game)
 
 local ZagreusJourney = rom.mods['NikkelM-Zagreus_Journey']
 local FliptheArcana = rom.mods['ReadEmAndWeep-Flip_the_Arcana_Mod']
+local WrathofOlympus =  rom.mods['Wistiti-WrathOfOlympus']
 
 function mod.ReleaseHealthReserve( amount, source )
 	local previousMaxHealth = GetHeroMaxAvailableHealth()
@@ -747,6 +748,7 @@ ModUtil.Path.Wrap("Damage", function(baseFunc, victim, triggerArgs)
 	--For Apollo Double attack boon, which is buggy
 	--local originaltriggerArgs = triggerArgs
 	local trait = {}
+	local DamageAmount = triggerArgs.DamageAmount
 	--For adding base damage directly into the hit
 	if victim ~= CurrentRun.Hero and HeroHasTrait("ShovelRaiseDeadNecroMel") and triggerArgs.AttackerTable and triggerArgs.AttackerTable.AlwaysTraitor == true and (triggerArgs.AttackerTable.Name == "Zombie" or triggerArgs.AttackerTable.Name == "Mourner" or triggerArgs.AttackerTable.Name == "SentryBot" or triggerArgs.AttackerTable.Name == "AutomatonBeamer") then	
 		--Ares: Vicious Strike
@@ -775,6 +777,34 @@ ModUtil.Path.Wrap("Damage", function(baseFunc, victim, triggerArgs)
 					CheckGenerateAresSword( victim )
 				end
 			end
+		end
+		--Ares: Grievous Blow
+		if HeroHasTrait("AresStatusDoubleDamageBoon") and victim.ActiveEffects and victim.ActiveEffects.AresStatus then
+			trait = GetHeroTrait("AresStatusDoubleDamageBoon")
+			if not triggerArgs.AttackerTable.OutgoingDoubleDamageModifiers then
+				triggerArgs.AttackerTable.OutgoingDoubleDamageModifiers = {}
+			end
+			funtionArgs = 
+			{
+				Name = "Del",
+				ValidActiveEffects = {"AresStatus"},
+				Multiplicative = true,
+				Chance = trait.ReportedChance
+			}
+			table.insert( triggerArgs.AttackerTable.OutgoingDoubleDamageModifiers, funtionArgs )
+		end
+		--Ares: Mutual Destruction
+		if HeroHasTrait("MissingHealthCritBoon") then
+			trait = GetHeroTrait("MissingHealthCritBoon")
+			if not triggerArgs.AttackerTable.OutgoingDoubleDamageModifiers then
+				triggerArgs.AttackerTable.OutgoingDoubleDamageModifiers = {}
+			end
+			funtionArgs = 
+			{
+				Name = "Del",
+				Chance = trait.ReportedMultiplier * (CurrentRun.Hero.MaxHealth - CurrentRun.Hero.Health)
+			}
+			table.insert( triggerArgs.AttackerTable.OutgoingDoubleDamageModifiers, funtionArgs )
 		end
 		--Aphrodite: Secret Crush
 		if HeroHasTrait("FocusRawDamageBoon") then
@@ -865,7 +895,9 @@ ModUtil.Path.Wrap("Damage", function(baseFunc, victim, triggerArgs)
 					end
 				end
 				for key,value in pairs(KeystoRemove) do
-					table.remove(triggerArgs.AttackerTable.OutgoingCritModifiers, value)
+					if triggerArgs.AttackerTable.OutgoingCritModifiers[value] then
+						table.remove(triggerArgs.AttackerTable.OutgoingCritModifiers, value)
+					end
 				end
 			end
 			KeystoRemove = {}
@@ -876,10 +908,25 @@ ModUtil.Path.Wrap("Damage", function(baseFunc, victim, triggerArgs)
 					end
 				end
 				for key,value in pairs(KeystoRemove) do
-					table.remove(triggerArgs.AttackerTable.OutgoingDamageModifiers, value)
+					if triggerArgs.AttackerTable.OutgoingDamageModifiers[value] then
+						table.remove(triggerArgs.AttackerTable.OutgoingDamageModifiers, value)
+					end
 				end
 			end
-		
+			KeystoRemove = {}
+			if triggerArgs.AttackerTable.OutgoingDoubleDamageModifiers then
+				for key,value in pairs(triggerArgs.AttackerTable.OutgoingDoubleDamageModifiers) do
+					if value.Name == "Del" then
+						table.insert(KeystoRemove, key)	
+					end
+				end
+				for key,value in pairs(KeystoRemove) do
+					if triggerArgs.AttackerTable.OutgoingDoubleDamageModifiers[value] then
+						table.remove(triggerArgs.AttackerTable.OutgoingDoubleDamageModifiers, value)
+					end
+				end
+			end
+			
 		-- Effect of weapon boons
 		if HeroHasTrait("PoseidonWeaponBoon") then
 			trait = GetHeroTrait("PoseidonWeaponBoon")
@@ -963,6 +1010,7 @@ ModUtil.Path.Wrap("Damage", function(baseFunc, victim, triggerArgs)
 			}
 			CheckZeusProjectile( victim, functionArgs, triggerArgs )
 		end
+		--Zeus:
 		if HeroHasTrait("SpawnKillBoon") then
 			functionArgs = 
 			{
@@ -974,6 +1022,7 @@ ModUtil.Path.Wrap("Damage", function(baseFunc, victim, triggerArgs)
 			}
 			CheckSpawnZeusDamage( victim , functionArgs, triggerArgs )
 		end
+		--Artemis:
 		if HeroHasTrait("SupportingFireBoon") then
 			trait = GetHeroTrait("SupportingFireBoon")
 			functionArgs = 
@@ -994,6 +1043,7 @@ ModUtil.Path.Wrap("Damage", function(baseFunc, victim, triggerArgs)
 			}
 			CheckSupportingFire ( victim, functionArgs, triggerArgs)
 		end
+		--Apollo:
 		if HeroHasTrait("BlindChanceBoon") then
 			trait = GetHeroTrait("BlindChanceBoon")
 			local dataProperties = EffectData["BlindEffect"].EffectData
@@ -1008,18 +1058,11 @@ ModUtil.Path.Wrap("Damage", function(baseFunc, victim, triggerArgs)
 			local target = RandomFloat(0,1)
 			if (not triggerArgs.AlreadyRepeated) and ((trait.ReportedChance or 0.05) > target) then
 				triggerArgs.AlreadyRepeated = 1
-				if triggerArgs.AttackerTable.Name == "Zombie" then
-					triggerArgs.DamageAmount = 6
-				elseif triggerArgs.AttackerTable.Name == "Mourner" then
-					triggerArgs.DamageAmount = 7
-				elseif triggerArgs.AttackerTable.Name == "SentryBot" then
-					triggerArgs.DamageAmount = 15
-				elseif triggerArgs.AttackerTable.Name == "AutomatonBeamer" then
-					triggerArgs.DamageAmount = 14
-				end
+				triggerArgs.DamageAmount = DamageAmount
 				Damage(victim, triggerArgs)
 			end
 		end
+		--Ares: 
 		if HeroHasTrait("LowHealthLifestealBoon") then
 			if CurrentRun.Hero.Health < 40 then
 				trait = GetHeroTrait("LowHealthLifestealBoon")
