@@ -14,8 +14,7 @@ Adding new aspects themed around the Gathering Tools
 - Trait reduces the amount of health reserved
 - Introduces three new hammers
 - Summoned Zombies are affected by
-  - 9 Attack boons
-  - 39 Regular Boons
+  - 48 Boons
   - 5 Keepsakes + (3 SharedKeepsakePort)
   - 5 Arcana + (7 Flip the Arcana)
 
