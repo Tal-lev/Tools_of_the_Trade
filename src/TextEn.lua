@@ -15,7 +15,7 @@ sjson.hook(file, function(data)
 			Id = "ShovelRaiseDeadNecroMel",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "The Silver Spade",
-			Description = "Your {$Keywords.Attack} primes health to Summon. Your {$Keywords.Cast} teleports your Summons to your location."
+			Description = "Your {$Keywords.Attack} {$Keywords.ReserveHealth} to Summon. Your {$Keywords.Cast} teleports your Summons to your location."
 		},
 		TextOrder)
 	)
@@ -47,7 +47,7 @@ sjson.hook(file, function(data)
 		TextOrder)
 	)
 
-    	table.insert(data.Texts, sjson.to_object(
+	table.insert(data.Texts, sjson.to_object(
 		{
 			Id = "ShovelRaiseDeadNecroMelStat",
 			InheritFrom = "BaseBoonMultiline",
@@ -57,7 +57,7 @@ sjson.hook(file, function(data)
 		TextOrder)
 	)
 
-		table.insert(data.Texts, sjson.to_object(
+	table.insert(data.Texts, sjson.to_object(
 		{
 			Id = "ShovelNecroMelDeathminiSummonTrait",
 			InheritFrom = "BaseBoonMultiline",
@@ -67,7 +67,7 @@ sjson.hook(file, function(data)
 		TextOrder)
 	)
 
-		table.insert(data.Texts, sjson.to_object(
+	table.insert(data.Texts, sjson.to_object(
 		{
 			Id = "ShovelNecroMelDoubleSummonTrait",
 			InheritFrom = "BaseBoonMultiline",
@@ -77,12 +77,22 @@ sjson.hook(file, function(data)
 		TextOrder)
 	)
 
-			table.insert(data.Texts, sjson.to_object(
+	table.insert(data.Texts, sjson.to_object(
 		{
 			Id = "ShovelNecroMelRobotSummonTrait",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Scrap Metal",
 			Description = "Your {$Keywords.Attack} summons a {#UpgradeFormat}Sentry Bot {#Prev}and your {$Keywords.AttackEX} summons an {#UpgradeFormat}Automaton Beamer{#Prev}.",
+		},
+		TextOrder)
+	)
+
+	table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "ShovelNecroMelBloodCostTrait",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Blood Pact",
+			Description = "{$Keywords.ReserveHealth} from summoning {#UpgradeFormat}does not scale {#Prev}with Max {$Keywords.Health}.",
 		},
 		TextOrder)
 	)

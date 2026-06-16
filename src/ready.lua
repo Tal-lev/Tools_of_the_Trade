@@ -26,8 +26,7 @@ local WrathofOlympus =  rom.mods['Wistiti-WrathOfOlympus']
 
 function mod.ReleaseHealthReserve( amount, source )
 	local previousMaxHealth = GetHeroMaxAvailableHealth()
-	if CurrentRun.Hero.ReserveHealthSources[source] then
-		amount = amount * math.ceil((CurrentRun.Hero.MaxHealth + (CurrentRun.Hero.ReserveHealthSources[source] or 0))/100)
+	if CurrentRun.Hero.ReserveHealthSources[source] and CurrentRun.Hero.ReserveHealthSources[source] > 0 then
 		if CurrentRun.Hero.ReserveHealthSources[source] > amount then
 			CurrentRun.Hero.ReserveHealthSources[source] = CurrentRun.Hero.ReserveHealthSources[source] - amount	
 		else
@@ -136,7 +135,9 @@ function mod.SummonEnemy( triggerArgs, functionArgs )
 		if not CurrentRun.Hero.ReserveHealthSources then
 			CurrentRun.Hero.ReserveHealthSources = {}
 		end
-		Reserve = Reserve * math.ceil((CurrentRun.Hero.MaxHealth + (trait.CurrentlyReserved or 0))/100)
+		if not HeroHasTrait("ShovelNecroMelBloodCostTrait") then
+			Reserve = Reserve * math.ceil( CurrentRun.Hero.MaxHealth /100 )
+		end
 	end
 
 	if triggerArgs.Name == "WeaponAxeSpin" then
@@ -313,7 +314,7 @@ function mod.SummonEnemy( triggerArgs, functionArgs )
 	end
 	if HeroHasTrait("MaxHealthDamageBoon") then
 		trait = GetHeroTrait("MaxHealthDamageBoon")
-		local maxhealth = ( GetHeroMaxAvailableHealth() + (CurrentRun.Hero.ReserveHealthSources["Aspect"] or 0))
+		local maxhealth = ( CurrentRun.Hero.MaxHealth or 30)
 		summonArgs.DamageMultiplier = summonArgs.DamageMultiplier + ((trait.ReportedMultiplier or 0.0010) * maxhealth)
 	end
 	--Keepsake: White Antler
@@ -362,7 +363,7 @@ function mod.SummonEnemy( triggerArgs, functionArgs )
 	end
 	if ZagreusJourney then
 		--Zagreus Journey Keepsake: Skull Earring
-		if HeroHasTrait("zannc-SharedKeepsakePort-LowHealthDamageKeepsake") and (CurrentRun.Hero.Health < (CurrentRun.Hero.MaxHealth * 0.35)) then
+		if HeroHasTrait("zannc-SharedKeepsakePort-LowHealthDamageKeepsake") and (CurrentRun.Hero.Health < (GetHeroMaxAvailableHealth() * 0.35)) then
 			trait = GetHeroTrait("zannc-SharedKeepsakePort-LowHealthDamageKeepsake")
 			summonArgs.DamageMultiplier = summonArgs.DamageMultiplier + ((trait.ReportedMultiplier or 1.2) -1)
 		end
@@ -728,15 +729,20 @@ modutil.mod.Path.Wrap("Kill", function(base, victim, triggerArgs)
 	base(victim, triggerArgs)
 	if victim.AlwaysTraitor == true and HeroHasTrait("ShovelRaiseDeadNecroMel") and (victim.Name == "Zombie" or victim.Name == "Mourner" or victim.Name == "SentryBot" or victim.Name == "AutomatonBeamer") and triggerArgs.Killed == true then
 		local trait = GetHeroTrait("ShovelRaiseDeadNecroMel")
+		local Reserve = trait.Reserve
 		if victim.HeraclesCombatMoneyValue > 0 then --to ensure death mini summons don't release health
 			trait.AttackSummons = trait.AttackSummons - 1
 			if trait.AttackSummons > 0 then
+				wait((math.random(0, 8) * 0.05))
+				if not HeroHasTrait("ShovelNecroMelBloodCostTrait") then
+					Reserve = Reserve * math.ceil(CurrentRun.Hero.MaxHealth/100)
+				end
 				if victim.Name == "Zombie" or victim.Name == "SentryBot" then
-					trait.CurrentlyReserved = trait.CurrentlyReserved - trait.Reserve
-					mod.ReleaseHealthReserve( trait.Reserve, "Aspect" )
+					trait.CurrentlyReserved = trait.CurrentlyReserved - Reserve
+					mod.ReleaseHealthReserve( Reserve, "Aspect" )
 				elseif victim.Name == "Mourner" or victim.Name == "AutomatonBeamer" then
-					trait.CurrentlyReserved = trait.CurrentlyReserved - (trait.Reserve * 4)
-					mod.ReleaseHealthReserve( trait.Reserve * 4, "Aspect" )
+					trait.CurrentlyReserved = trait.CurrentlyReserved - (Reserve * 4)
+					mod.ReleaseHealthReserve( (Reserve * 4), "Aspect" )
 				end
 			end
 			if HeroHasTrait("ShovelNecroMelDeathminiSummonTrait") then
@@ -830,7 +836,7 @@ ModUtil.Path.Wrap("Damage", function(baseFunc, victim, triggerArgs)
 			funtionArgs = 
 			{
 				Name = "Del",
-				Chance = trait.ReportedMultiplier * (CurrentRun.Hero.MaxHealth - CurrentRun.Hero.Health)
+				Chance = trait.ReportedMultiplier * (GetHeroMaxAvailableHealth() - CurrentRun.Hero.Health)
 			}
 			table.insert( triggerArgs.AttackerTable.OutgoingDoubleDamageModifiers, funtionArgs )
 		end
@@ -1219,6 +1225,7 @@ modutil.once_loaded.game(function()
 					SwapOnFire = "WeaponAxe",
 					FireFx = "null",
 					NumProjectiles = 0,
+					Cooldown = 0.5,
 				},
 				ExcludeLinked = true,
 			},

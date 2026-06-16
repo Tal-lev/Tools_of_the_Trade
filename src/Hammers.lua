@@ -51,6 +51,23 @@ OverwriteTableKeys( TraitData, {
 			},
 			-- Robot effect is in the function in ready.lua
 		},
+		ShovelNecroMelBloodCostTrait = 
+		{
+			InheritFrom = { "WeaponTrait", "AxeHammerTrait" },
+			Icon = "JarlUlsfark-Tools_of_the_Trade\\BloodPactIcon",
+			GameStateRequirements =
+			{
+				{
+				Path = { "CurrentRun", "Hero", "Weapons", },
+				HasAll = { "WeaponAxe", },
+				},
+				{
+				Path = { "GameState", "LastWeaponUpgradeName", "WeaponAxe", },
+				IsAny = {"ShovelRaiseDeadNecroMel", }
+				},
+			},
+			-- BloodCost effect is in the function in ready.lua
+		},
 })
 
 
@@ -79,4 +96,6 @@ table.insert(TraitData.AxeFreeSpinTrait.GameStateRequirements, {
 table.insert( LootSetData.Loot.WeaponUpgrade.Traits, "ShovelNecroMelDoubleSummonTrait")
 table.insert( LootSetData.Loot.WeaponUpgrade.Traits, "ShovelNecroMelDeathminiSummonTrait")
 table.insert( LootSetData.Loot.WeaponUpgrade.Traits, "ShovelNecroMelRobotSummonTrait")
+table.insert( LootSetData.Loot.WeaponUpgrade.Traits, "ShovelNecroMelBloodCostTrait")
+
 
