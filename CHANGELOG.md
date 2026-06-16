@@ -26,7 +26,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Skull Earring
 - These Arcana now impact your attack summons
   - The Sorceress
-- FIX: Omega summons don't release full health when leaving room
+- Fix: Omega summons don't release full health when leaving room
 
 ## [0.1.0] - 2026-06-14
 
@@ -68,7 +68,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Strength (Only adding outgoing damage not reducing summon damage)
 - Added a new Hammer
   - Scrap Metal
-- Fix Summoning without enough health count for reserve amount
+- Fix: Summoning without enough health count for reserve amount
 
 ## [0.0.7] - 2026-06-11
 
@@ -105,7 +105,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [0.0.5] - 2026-06-08
 
-- Fix game crashes when summoning immidiatly after gaining trait
+- Fix: game crashes when summoning immidiatly after gaining trait
 - These boons now impact your attack summons
   - Artemis - Pressure Points
   - Hera - Uncommon Grace
@@ -115,8 +115,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [0.0.4] - 2026-06-07
 
-- Fix unintended speed
-- Fix Hermes weapon boon speed calculation
+- Fix: unintended speed
+- Fix: Hermes weapon boon speed calculation
 
 ## [0.0.3] - 2026-06-07
 
