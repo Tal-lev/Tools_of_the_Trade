@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+- Balance: Added progressing summoning cost, Health increases per 100 max health
+- Balance: Omega attack summon cost reduced from x5 to x4
+- Fix: Ares's Blood Spree not impacted by Vow of Scars
+
 ## [0.1.2] - 2026-06-15
 
 - Fix: Summoning doesn't reserve health
