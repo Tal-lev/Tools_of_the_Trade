@@ -27,6 +27,7 @@ local WrathofOlympus =  rom.mods['Wistiti-WrathOfOlympus']
 function mod.ReleaseHealthReserve( amount, source )
 	local previousMaxHealth = GetHeroMaxAvailableHealth()
 	if CurrentRun.Hero.ReserveHealthSources[source] then
+		amount = amount * math.ceil((CurrentRun.Hero.MaxHealth + (CurrentRun.Hero.ReserveHealthSources[source] or 0))/100)
 		if CurrentRun.Hero.ReserveHealthSources[source] > amount then
 			CurrentRun.Hero.ReserveHealthSources[source] = CurrentRun.Hero.ReserveHealthSources[source] - amount	
 		else
@@ -116,6 +117,27 @@ function mod.SummonCastTeleport( triggerArgs )
 end
 
 function mod.SummonEnemy( triggerArgs, functionArgs )
+	print("!!!!!!!!!!!!!!!!!!!!!")
+	print("CurrentRun start here")
+	for key,value in pairs(CurrentRun) do
+		print(key)
+		print(value)
+	end
+	print("CurrentRun.ShrineBountiesCompleted start here")
+	for key,value in pairs(CurrentRun.ShrineBountiesCompleted) do
+		print(key)
+		print(value)
+	end
+	print("CurrentRun.ShrineUpgradesDisabled start here")
+	for key,value in pairs(CurrentRun.ShrineUpgradesDisabled) do
+		print(key)
+		print(value)
+	end
+	print("CurrentRun.ShrineUpgradesCache start here")
+	for key,value in pairs(CurrentRun.ShrineUpgradesCache) do
+		print(key)
+		print(value)
+	end
 
 	IncrementTableValue( SessionMapState, "SpellFired" )
 	--GetHeroTrait("ShovelRaiseDeadNecroMel")
@@ -129,14 +151,18 @@ function mod.SummonEnemy( triggerArgs, functionArgs )
 	local Enemytype = functionArgs.type
 	local ChangeAttackSummonCount = 0
 	local ChangeOmegaAttackSummonCount = 0
-	print("Started summon Enemy")
+
 	if (functionArgs.HeraclesCombatMoneyValue or 2) > 0 then
 		ChangeAttackSummonCount = 1
 		toReserve = 1
+		if not CurrentRun.Hero.ReserveHealthSources then
+			CurrentRun.Hero.ReserveHealthSources = {}
+		end
+		Reserve = Reserve * math.ceil((CurrentRun.Hero.MaxHealth + (CurrentRun.Hero.ReserveHealthSources["Aspect"] or 0))/100)
 	end
 
 	if triggerArgs.Name == "WeaponAxeSpin" then
-		Reserve = Reserve * 5
+		Reserve = Reserve * 4
 		biome = "Mourning_Fields"
 		enemyName = "Mourner"
 		ChangeOmegaAttackSummonCount = 1
@@ -708,7 +734,7 @@ modutil.mod.Path.Wrap("LeaveRoom", function(base, currentRun, exitDoor)
 	if HeroHasTrait("ShovelRaiseDeadNecroMel") then
 		local trait = GetHeroTrait("ShovelRaiseDeadNecroMel")
 		if trait.AttackSummons > 1 then
-			mod.ReleaseHealthReserve( trait.Reserve * (trait.AttackSummons - 1) + (trait.Reserve * 4 * trait.OmegaAttackSummons), "Aspect" )
+			mod.ReleaseHealthReserve( trait.Reserve * (trait.AttackSummons - 1) + (trait.Reserve * 3 * trait.OmegaAttackSummons), "Aspect" )
 		end
 		trait.AttackSummons = 0
 		trait.OmegaAttackSummons = 0
@@ -733,7 +759,7 @@ modutil.mod.Path.Wrap("Kill", function(base, victim, triggerArgs)
 					mod.ReleaseHealthReserve( trait.Reserve, "Aspect" )
 				elseif victim.Name == "Mourner" or victim.Name == "AutomatonBeamer" then
 					trait.OmegaAttackSummons = trait.OmegaAttackSummons - 1
-					mod.ReleaseHealthReserve( trait.Reserve * 5, "Aspect" )
+					mod.ReleaseHealthReserve( trait.Reserve * 4, "Aspect" )
 				end
 			end
 			if HeroHasTrait("ShovelNecroMelDeathminiSummonTrait") then
@@ -1087,11 +1113,15 @@ ModUtil.Path.Wrap("Damage", function(baseFunc, victim, triggerArgs)
 				Damage(victim, triggerArgs)
 			end
 		end
-		--Ares: 
+		--Ares: Blood Spree
 		if HeroHasTrait("LowHealthLifestealBoon") then
 			if CurrentRun.Hero.Health < 40 then
 				trait = GetHeroTrait("LowHealthLifestealBoon")
-				Heal( CurrentRun.Hero, {HealAmount = (trait.ReportedLifeStealAmount or 1), SourceName = "LowHealthLifestealBoon" })
+				if MetaUpgradeData and MetaUpgradeData.HealingReductionShrineUpgrade and MetaUpgradeData.HealingReductionShrineUpgrade.ChangeValue then
+					Heal( CurrentRun.Hero, {HealAmount = math.ceil((trait.ReportedLifeStealAmount or 1) * (MetaUpgradeData.HealingReductionShrineUpgrade.ChangeValue)), SourceName = "LowHealthLifestealBoon" })
+				else
+					Heal( CurrentRun.Hero, {HealAmount = (trait.ReportedLifeStealAmount or 1), SourceName = "LowHealthLifestealBoon" })
+				end
 			end
 		end
 		--Circe: Turning to a Simple Form

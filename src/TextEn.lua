@@ -52,7 +52,7 @@ sjson.hook(file, function(data)
 			Id = "ShovelRaiseDeadNecroMelStat",
 			InheritFrom = "BaseBoonMultiline",
 		    DisplayName = "{!Icons.Bullet}{#PropertyFormat}Health Primed:",
-		    Description = "{#UpgradeFormat}{$TooltipData.ExtractData.PrimedHealth}{!Icons.Health}"
+		    Description = "{#UpgradeFormat}{$TooltipData.ExtractData.PrimedHealth} per 100{!Icons.Health}"
 		},
 		TextOrder)
 	)
