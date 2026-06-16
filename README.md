@@ -12,7 +12,7 @@ Adding new aspects themed around the Gathering Tools
 - Your Cast teleports the summons to Melinoe's location.
 - Summoning Reserves health that is released upon the summon's death or changing rooms.
 - Trait reduces the amount of health reserved
-- Introduces three new hammers
+- Introduces four new hammers
 - Summoned Zombies are affected by
   - 48 Boons
   - 5 Keepsakes + (3 SharedKeepsakePort)
