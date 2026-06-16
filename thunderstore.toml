@@ -5,7 +5,7 @@ schemaVersion = "0.0.1"
 [package]
 namespace = "JarlUlsfark"
 name = "Tools_of_the_Trade"
-versionNumber = "0.1.2"
+versionNumber = "0.1.3"
 description = "A mod that adds the Silver Spade (AKA NecroMel) as a new Axe aspect. Attack primes health to summon zombies and cast teleports them to Melinoe."
 websiteUrl = "https://github.com/Tal-lev/Tools_of_the_Trade"
 containsNsfwContent = false
