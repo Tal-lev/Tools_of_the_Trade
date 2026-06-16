@@ -117,27 +117,6 @@ function mod.SummonCastTeleport( triggerArgs )
 end
 
 function mod.SummonEnemy( triggerArgs, functionArgs )
-	print("!!!!!!!!!!!!!!!!!!!!!")
-	print("CurrentRun start here")
-	for key,value in pairs(CurrentRun) do
-		print(key)
-		print(value)
-	end
-	print("CurrentRun.ShrineBountiesCompleted start here")
-	for key,value in pairs(CurrentRun.ShrineBountiesCompleted) do
-		print(key)
-		print(value)
-	end
-	print("CurrentRun.ShrineUpgradesDisabled start here")
-	for key,value in pairs(CurrentRun.ShrineUpgradesDisabled) do
-		print(key)
-		print(value)
-	end
-	print("CurrentRun.ShrineUpgradesCache start here")
-	for key,value in pairs(CurrentRun.ShrineUpgradesCache) do
-		print(key)
-		print(value)
-	end
 
 	IncrementTableValue( SessionMapState, "SpellFired" )
 	--GetHeroTrait("ShovelRaiseDeadNecroMel")
@@ -150,7 +129,6 @@ function mod.SummonEnemy( triggerArgs, functionArgs )
 	local biome = functionArgs.biome
 	local Enemytype = functionArgs.type
 	local ChangeAttackSummonCount = 0
-	local ChangeOmegaAttackSummonCount = 0
 
 	if (functionArgs.HeraclesCombatMoneyValue or 2) > 0 then
 		ChangeAttackSummonCount = 1
@@ -158,14 +136,13 @@ function mod.SummonEnemy( triggerArgs, functionArgs )
 		if not CurrentRun.Hero.ReserveHealthSources then
 			CurrentRun.Hero.ReserveHealthSources = {}
 		end
-		Reserve = Reserve * math.ceil((CurrentRun.Hero.MaxHealth + (CurrentRun.Hero.ReserveHealthSources["Aspect"] or 0))/100)
+		Reserve = Reserve * math.ceil((CurrentRun.Hero.MaxHealth + (trait.CurrentlyReserved or 0))/100)
 	end
 
 	if triggerArgs.Name == "WeaponAxeSpin" then
 		Reserve = Reserve * 4
 		biome = "Mourning_Fields"
 		enemyName = "Mourner"
-		ChangeOmegaAttackSummonCount = 1
 	end
 	
 	--Hammer: Scrap Metal
@@ -190,9 +167,9 @@ function mod.SummonEnemy( triggerArgs, functionArgs )
 		Reserve = Reserve * 2
 	end
 	trait.AttackSummons = trait.AttackSummons + ChangeAttackSummonCount
-	trait.OmegaAttackSummons = trait.OmegaAttackSummons + ChangeOmegaAttackSummonCount
 	if trait.AttackSummons > 1 and toReserve > 0 then
 		if CurrentRun.Hero.Health > Reserve then
+			trait.CurrentlyReserved = trait.CurrentlyReserved + Reserve
 			mod.ReserveHealth( Reserve, "Aspect")
 		else
 			local unitId = CurrentRun.Hero.ObjectId
@@ -200,7 +177,6 @@ function mod.SummonEnemy( triggerArgs, functionArgs )
 			Flash({ Id = unitId, Speed = 0.85, MinFraction = 0.7, MaxFraction = 0.0, Color = Color.White, Duration = 0.15, ExpireAfterCycle = true })
 			thread( InCombatText, unitId, "Not enough Health!", 0.5 , { SkipShadow = true } )
 			trait.AttackSummons = trait.AttackSummons - ChangeAttackSummonCount
-			trait.OmegaAttackSummons = trait.OmegaAttackSummons - ChangeOmegaAttackSummonCount
 			return
 		end
 	end
@@ -734,10 +710,10 @@ modutil.mod.Path.Wrap("LeaveRoom", function(base, currentRun, exitDoor)
 	if HeroHasTrait("ShovelRaiseDeadNecroMel") then
 		local trait = GetHeroTrait("ShovelRaiseDeadNecroMel")
 		if trait.AttackSummons > 1 then
-			mod.ReleaseHealthReserve( trait.Reserve * (trait.AttackSummons - 1) + (trait.Reserve * 3 * trait.OmegaAttackSummons), "Aspect" )
+			mod.ReleaseHealthReserve( trait.CurrentlyReserved, "Aspect" )
 		end
 		trait.AttackSummons = 0
-		trait.OmegaAttackSummons = 0
+		trait.CurrentlyReserved = 0
 	end
 	return base(currentRun, exitDoor)
 end)
@@ -756,9 +732,10 @@ modutil.mod.Path.Wrap("Kill", function(base, victim, triggerArgs)
 			trait.AttackSummons = trait.AttackSummons - 1
 			if trait.AttackSummons > 0 then
 				if victim.Name == "Zombie" or victim.Name == "SentryBot" then
+					trait.CurrentlyReserved = trait.CurrentlyReserved - trait.Reserve
 					mod.ReleaseHealthReserve( trait.Reserve, "Aspect" )
 				elseif victim.Name == "Mourner" or victim.Name == "AutomatonBeamer" then
-					trait.OmegaAttackSummons = trait.OmegaAttackSummons - 1
+					trait.CurrentlyReserved = trait.CurrentlyReserved - (trait.Reserve * 4)
 					mod.ReleaseHealthReserve( trait.Reserve * 4, "Aspect" )
 				end
 			end
@@ -1224,7 +1201,7 @@ modutil.once_loaded.game(function()
 			},
 		},
 		AttackSummons = 0,
-		OmegaAttackSummons = 0,
+		CurrentlyReserved = 0,
 		Reserve = { BaseValue = 10 },
 		-- Changing special to Block
 		PropertyChanges =
