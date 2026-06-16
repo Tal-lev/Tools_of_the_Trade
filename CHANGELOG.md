@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+- Adds Blood Pact Hammer
 - Balance: Added progressing summoning cost, Health increases per 100 max health
 - Balance: Omega attack summon cost reduced from x5 to x4
 - Fix: Ares's Blood Spree not impacted by Vow of Scars
