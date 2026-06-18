@@ -7,6 +7,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+- Adds The Tablet of Peace (AKA KirbyMel) Still experimental
+  -Adds into the shop
+  - Your Attack copies the enemy's weapon.
+  - Your Omega Attack creates a nova that releases the copied weapon.
+  - Trait Increase Omega Attack damage.
+  - 6 Implemented enemies.
+    - Mage
+    - SiegeVine
+    - Radiator
+    - Screamer
+    - Turtle
+    - WaterUnit
+  
+
 ## [0.1.3] - 2026-06-16
 
 - Adds Blood Pact Hammer
