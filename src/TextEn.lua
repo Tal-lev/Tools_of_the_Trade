@@ -97,5 +97,58 @@ sjson.hook(file, function(data)
 		TextOrder)
 	)
 
+	table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "Copy_EmptyText",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = " ",
+      		OverwriteLocalization = true,
+		},
+		TextOrder)
+	)
+
+	table.insert(data.Texts, sjson.to_object(
+	{
+		Id = "CopyAbility_FlavorText",
+		InheritFrom = "BaseBoonMultiline",
+		DisplayName = "Those who oppose the will of Night will soon get a taste of their own medicine.",
+	},
+	TextOrder)
+	)
+
+	table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "DummyCopyDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Copy Ability",
+			Description = "Upon hit Your Attacks {#UpgradeFormat}Copy {#Prev} the enemy's Attack.",
+		},
+		TextOrder)
+	)
+
+	table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "MageCopyDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Copy Ability: Casket",
+			Description = "Your Attacks fires {#UpgradeFormat}3 {#Prev}projectiles in rapid succession.",
+		},
+		TextOrder)
+	)
+
+	table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "SiegeVineCopyDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Copy Ability: Thorn-Weeper",
+			Description = "Your Attacks fire a {#UpgradeFormat}slow homing {#Prev} projectile.",
+		},
+		TextOrder)
+	)
+
+
+
+	
+
     return data
 end)

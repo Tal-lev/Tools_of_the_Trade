@@ -165,3 +165,27 @@ AddGodTraitProperty({
 			},
 		}
 	})
+
+AddGodTraitProperty({
+    TraitSuffix = "WeaponBoon",
+    PropertyChanges = {
+        -- Mage Ranged
+        {
+            WeaponName = "WeaponLob",
+            ProjectileName = "MageRanged",
+            ProjectileProperty = "Graphic",
+            ValuePrefix = "MageProjectile_",
+            ChangeType = "Absolute",
+            ExcludeLinked = true,
+        },   
+		-- SiegeVine Ranged
+        {
+            WeaponName = "WeaponLob",
+            ProjectileName = "ChasingVines",
+            ProjectileProperty = "Graphic",
+            ValuePrefix = "SiegeVineAttack_",
+            ChangeType = "Absolute",
+            ExcludeLinked = true,
+        },   
+	}
+})

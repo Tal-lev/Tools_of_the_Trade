@@ -707,6 +707,59 @@ function mod.CheckOmegaBlitzTrigger ( victim, functionArgs, triggerArgs )
 	end
 end
 
+function mod.SetupCopyAbility()
+	wait(0.1)
+	ShowLobUI()
+	HideAmmoUI()
+	thread( HideAmmoUI )
+	if not HeroHasTrait("DummyCopyDisplayBoon") then
+		AddTraitToHero({ TraitName = "DummyCopyDisplayBoon" })
+	end
+	--UpdateTraitNumber( trait )
+end
+
+function mod.CopyAbility (victim, functionArgs, triggerArgs)
+	if victim.Name == "Mage" then
+		RemoveTrait(CurrentRun.Hero, "DummyCopyDisplayBoon")
+		AddTraitToHero({ TraitName = "MageCopyDisplayBoon" })
+	elseif victim.Name == "SiegeVine" then
+		RemoveTrait(CurrentRun.Hero, "DummyCopyDisplayBoon")
+		AddTraitToHero({ TraitName = "SiegeVineCopyDisplayBoon" })
+	end
+end
+
+function mod.ReleaseCopyAbility ( triggerArgs )
+	local args = 
+	{
+		ProjectileName = "HammerAxeNova",
+		DamageMultiplier = 1,
+	}
+	CreateProjectileFromUnit({ Name = args.ProjectileName, Id = CurrentRun.Hero.ObjectId, DamageMultiplier = args.DamageMultiplier })
+	local TraitsToRemove = {} 
+	for key,value in pairs(CurrentRun.Hero.TraitDictionary) do
+		if string.find(key, "CopyDisplayBoon") then
+			table.insert(TraitsToRemove, key)
+		end
+	end
+	for key,value in pairs(TraitsToRemove) do
+		RemoveTrait(CurrentRun.Hero, value)
+	end	
+	wait(0.2)
+	AddTraitToHero({ TraitName = "DummyCopyDisplayBoon" })
+end
+
+function mod.UnequipCopyAbility (weaponData, functionArgs, triggerArgs)
+	local TraitsToRemove = {} 
+	for key,value in pairs(CurrentRun.Hero.TraitDictionary) do
+		if string.find(key, "CopyDisplayBoon") then
+			table.insert(TraitsToRemove, key)
+		end
+	end
+	for key,value in pairs(TraitsToRemove) do
+		RemoveTrait(CurrentRun.Hero, value)
+	end	
+end
+
 modutil.mod.Path.Wrap("LeaveRoom", function(base, currentRun, exitDoor)
 	if HeroHasTrait("ShovelRaiseDeadNecroMel") then
 		local trait = GetHeroTrait("ShovelRaiseDeadNecroMel")
@@ -1137,12 +1190,15 @@ ModUtil.Path.Wrap("Damage", function(baseFunc, victim, triggerArgs)
 	end
 end)
 
+-- Changing Aspect text
+import "TextEn.lua"
+
 modutil.once_loaded.game(function()
 	
-	-- Changing Aspect text
-	import "TextEn.lua"
-	
-	--import "SummonData.lua"
+
+	import "CopyTraitGodVFX.lua"
+	import "CopyProjectiles.lua"
+	import "CopyTraits.lua"
 
 	ShovelRaiseDeadNecroMel = {
 		InheritFrom = { "WeaponEnchantmentTrait" },
@@ -1254,6 +1310,8 @@ modutil.once_loaded.game(function()
 		FlavorText = "ShovelRaiseDeadNecroMel_FlavorText",
 	}
 
+
+
 	TabletofPeaceKirbyMel = {
 		InheritFrom = { "WeaponEnchantmentTrait" },
 		RarityLevels =
@@ -1295,18 +1353,87 @@ modutil.once_loaded.game(function()
 			WeaponLob = {
 				ShowAmmoUI = false,
 				OnProjectileDeathFunction = "nil",
-				OnProjectileDeathFunctionArgs = {},
 				ChannelSlowIneligible = true,
+				MaxAmmo = 99999,
+				ChargeWeaponStages = 
+				{
+					{ 
+						ManaCost = 20,
+						Wait = 1.0,
+						ExChargeAnimationDelay = 0.06,
+						ExChargeAnimation = "Melinoe_Lob_AttackEx1_Start",
+						EarlyPropertySwaps = 
+						{
+							Delay = 0.2,
+							SwapProperties = 
+							{
+								WeaponProperties =
+								{
+									TargetReticleAnimation = "LobEXProjectileReticle",
+									AutoLock = false,
+									ShowFreeAimLine = false,
+									ReticleRadiusOverride = 530,
+									WeaponRange = 505,
+								},
+							},
+						},
+						WeaponProperties = 
+						{ 
+							Projectile = "CopyBoltCharged",
+							FireGraphic = "Melinoe_Lob_AttackEx1_Fire",
+							FireFx = "DashDustPuffReverseLarge",
+							SelfVelocity = 0,
+							AdditionalProjectileWaveChance = 0,
+						},
+						CompleteObjective = "WeaponLobCharged",
+						ChannelSlowEventOnStart = true
+					},
+				},
 			},
 		},
 		SetupFunction =
 		{
 			Threaded = true,
-			Name = "HideGunUI",
+			Name = _PLUGIN.guid .. "." .. "SetupCopyAbility",
 		},
+		OnEnemyDamagedAction = 
+		{
+			ValidProjectiles = {"CopyBolt"},
+			FunctionName = _PLUGIN.guid .. "." .. "CopyAbility",
+			Args = 
+			{
+			},
+		},
+		OnProjectileCreationFunction =
+		{
+			ValidProjectiles =  { "CopyBoltCharged" },
+			Name = _PLUGIN.guid .. "." .. "ReleaseCopyAbility",
+		},
+		OnUnequipFunctionName =  _PLUGIN.guid .. "." .. "UnequipCopyAbility",
+		PropertyChanges = 
+		{
+			{
+				WeaponName = "WeaponLob",
+				WeaponProperty = "Projectile",
+				ChangeValue = "CopyBolt",
+			},
+			{
+				WeaponName = "WeaponLob",
+				WeaponProperties = 
+				{
+					ClipSize = 1,
+					ClipRegenInterval = 0.3,
+					ChargeSoundFadeTime = 0.25,
+					FullyAutomatic = false,
+					Cooldown = 0.4,
+				},
+				ExcludeLinked = true,
+			}
+		},
+		FlavorText = "CopyAbility_FlavorText",
 	}
 
-	--OverwriteTableKeys( TraitSetData.Aspects.LobAmmoBoostAspect, TabletofPeaceKirbyMel)
+	OverwriteTableKeys( TraitSetData.Aspects.LobAmmoBoostAspect, TabletofPeaceKirbyMel)
 	TraitData.ShovelRaiseDeadNecroMel = ShovelRaiseDeadNecroMel
 
 
