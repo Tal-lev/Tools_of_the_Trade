@@ -734,6 +734,9 @@ function mod.CopyAbility (victim, functionArgs, triggerArgs)
 	elseif victim.Name == "Turtle" or victim.Name == "Turtle_Elite" then
 		RemoveTrait(CurrentRun.Hero, "DummyCopyDisplayBoon")
 		AddTraitToHero({ TraitName = "TurtleCopyDisplayBoon" })	
+	elseif victim.Name == "WaterUnit" or victim.Name == "WaterUnit_Elite" then
+		RemoveTrait(CurrentRun.Hero, "DummyCopyDisplayBoon")
+		AddTraitToHero({ TraitName = "WaterUnitCopyDisplayBoon" })	
 	end
 end
 

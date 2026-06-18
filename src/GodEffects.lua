@@ -225,6 +225,15 @@ AddGodTraitProperty({
             ExcludeLinked = true,
         },  
 
+		-- WaterUnit
+        {
+            WeaponName = "WeaponLob",
+            ProjectileName = "WaterUnitSpit",
+            ProjectileProperty = "Graphic",
+            ValuePrefix = "WaterUnitProjectile_",
+            ChangeType = "Absolute",
+            ExcludeLinked = true,
+        }, 
 		
 	}
 })

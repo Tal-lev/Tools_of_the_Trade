@@ -225,6 +225,45 @@ OverwriteTableKeys( TraitData, {
         },
 		FlavorText = "CopyAbility_FlavorText",
 	},
+
+	WaterUnitCopyDisplayBoon = 
+	{
+		Icon = "JarlUlsfark-Tools_of_the_Trade\\WaterUnitIcon",
+		ShowInHUD = true,
+		CustomLabel = 
+		{
+			DisplayType = "RoomValue",
+			Key = "Copy_WaterUnit",
+			Text = "Copy_EmptyText"
+		},
+        PropertyChanges = 
+        {
+           {
+				WeaponName = "WeaponLob",
+				WeaponProperty = "Projectile",
+				ChangeValue = "WaterUnitSpit",
+			},
+            {
+				WeaponName = "WeaponLob",
+				WeaponProperties = 
+                {
+                    Cooldown = 0.8,
+                },
+                ExcludeLinked = true,
+			},
+            {
+                WeaponName = "WeaponLob",
+                ProjectileName = "WaterUnitSpit",
+                ProjectileProperties = 
+				{
+					Damage = 80,
+					FizzleOldSpawns = false,
+				},
+				ExcludeLinked = true,
+            },
+        },
+		FlavorText = "CopyAbility_FlavorText",
+	},
 	
 
 	
