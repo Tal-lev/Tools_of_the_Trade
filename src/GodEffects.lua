@@ -169,7 +169,7 @@ AddGodTraitProperty({
 AddGodTraitProperty({
     TraitSuffix = "WeaponBoon",
     PropertyChanges = {
-        -- Mage Ranged
+        -- Mage
         {
             WeaponName = "WeaponLob",
             ProjectileName = "MageRanged",
@@ -178,7 +178,7 @@ AddGodTraitProperty({
             ChangeType = "Absolute",
             ExcludeLinked = true,
         },   
-		-- SiegeVine Ranged
+		-- SiegeVine
         {
             WeaponName = "WeaponLob",
             ProjectileName = "ChasingVines",
@@ -186,6 +186,45 @@ AddGodTraitProperty({
             ValuePrefix = "SiegeVineAttack_",
             ChangeType = "Absolute",
             ExcludeLinked = true,
-        },   
+        }, 
+		-- Screamer
+        {
+            WeaponName = "WeaponLob",
+            ProjectileName = "ScreamerCone",
+            ProjectileProperty = "Graphic",
+            ValuePrefix = "ScreamerConeFx_",
+            ChangeType = "Absolute",
+            ExcludeLinked = true,
+        },    
+
+		-- Radiator
+        {
+            WeaponName = "WeaponLob",
+            ProjectileName = "RadiatorMelee360",
+            ProjectileProperty = "Graphic",
+            ValuePrefix = "RadiatorBeam_",
+            ChangeType = "Absolute",
+            ExcludeLinked = true,
+        },  
+		
+		-- Turtle
+        {
+            WeaponName = "WeaponLob",
+            ProjectileName = "TurtleBounce",
+            ProjectileProperty = "Graphic",
+            ValuePrefix = "TurtleLobProjectile_",
+            ChangeType = "Absolute",
+            ExcludeLinked = true,
+        },  
+        {
+            WeaponName = "WeaponLob",
+            ProjectileName = "TurtleBounce",
+            ProjectileProperty = "DetonateFx",
+            ValuePrefix = "TurtleBounceNova_",
+            ChangeType = "Absolute",
+            ExcludeLinked = true,
+        },  
+
+		
 	}
 })

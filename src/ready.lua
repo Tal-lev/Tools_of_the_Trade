@@ -719,12 +719,21 @@ function mod.SetupCopyAbility()
 end
 
 function mod.CopyAbility (victim, functionArgs, triggerArgs)
-	if victim.Name == "Mage" then
+	if victim.Name == "Mage" or victim.Name == "Mage_Elite" then
 		RemoveTrait(CurrentRun.Hero, "DummyCopyDisplayBoon")
 		AddTraitToHero({ TraitName = "MageCopyDisplayBoon" })
-	elseif victim.Name == "SiegeVine" then
+	elseif victim.Name == "SiegeVine" or victim.Name == "SiegeVine_Elite" then
 		RemoveTrait(CurrentRun.Hero, "DummyCopyDisplayBoon")
 		AddTraitToHero({ TraitName = "SiegeVineCopyDisplayBoon" })
+	elseif victim.Name == "Screamer" or victim.Name == "Screamer_Elite" then
+		RemoveTrait(CurrentRun.Hero, "DummyCopyDisplayBoon")
+		AddTraitToHero({ TraitName = "ScreamerCopyDisplayBoon" })
+	elseif victim.Name == "Radiator" or victim.Name == "Radiator_Elite" then
+		RemoveTrait(CurrentRun.Hero, "DummyCopyDisplayBoon")
+		AddTraitToHero({ TraitName = "RadiatorCopyDisplayBoon" })
+	elseif victim.Name == "Turtle" or victim.Name == "Turtle_Elite" then
+		RemoveTrait(CurrentRun.Hero, "DummyCopyDisplayBoon")
+		AddTraitToHero({ TraitName = "TurtleCopyDisplayBoon" })	
 	end
 end
 
