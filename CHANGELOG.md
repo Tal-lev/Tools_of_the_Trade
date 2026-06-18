@@ -8,7 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 - Adds The Tablet of Peace (AKA KirbyMel) Still experimental
-  -Adds into the shop
+  - Adds into the shop
   - Your Attack copies the enemy's weapon.
   - Your Omega Attack creates a nova that releases the copied weapon.
   - Trait Increase Omega Attack damage.
