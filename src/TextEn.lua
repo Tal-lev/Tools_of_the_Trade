@@ -99,6 +99,44 @@ sjson.hook(file, function(data)
 
 	table.insert(data.Texts, sjson.to_object(
 		{
+			Id = "TabletofPeaceKirbyMel",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "The Tablet of Peace",
+			Description = "Your {$Keywords.Attack} copies the enemy's weapon. Your {$Keywords.AttackEX} Releases the copied weapon."
+		},
+		TextOrder)
+	)
+
+	table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "TabletofPeaceKirbyMel_Shop",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "The Tablet of Peace:",
+		},
+		TextOrder)
+	)
+
+	table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "TabletofPeaceKirbyMel_Upgrade",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "The Tablet of Peace {$TooltipData.AspectRarityText}",
+		},
+		TextOrder)
+	)
+
+	table.insert(data.Texts, sjson.to_object(
+	{
+		Id = "TabletofPeaceKirbyMelStat",
+		InheritFrom = "BaseBoonMultiline",
+		DisplayName = "{!Icons.Bullet}{#PropertyFormat}Omega Attack Damage:",
+		Description = "{#UpgradeFormat}{$TooltipData.StatDisplay1}",
+	},
+	TextOrder)
+	)
+
+	table.insert(data.Texts, sjson.to_object(
+		{
 			Id = "Copy_EmptyText",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = " ",

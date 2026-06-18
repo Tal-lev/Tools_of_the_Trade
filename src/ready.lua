@@ -721,30 +721,36 @@ end
 function mod.CopyAbility (victim, functionArgs, triggerArgs)
 	if victim.Name == "Mage" or victim.Name == "Mage_Elite" then
 		RemoveTrait(CurrentRun.Hero, "DummyCopyDisplayBoon")
+		wait(0.1)
 		AddTraitToHero({ TraitName = "MageCopyDisplayBoon" })
 	elseif victim.Name == "SiegeVine" or victim.Name == "SiegeVine_Elite" then
 		RemoveTrait(CurrentRun.Hero, "DummyCopyDisplayBoon")
+		wait(0.1)
 		AddTraitToHero({ TraitName = "SiegeVineCopyDisplayBoon" })
 	elseif victim.Name == "Screamer" or victim.Name == "Screamer_Elite" then
 		RemoveTrait(CurrentRun.Hero, "DummyCopyDisplayBoon")
+		wait(0.1)
 		AddTraitToHero({ TraitName = "ScreamerCopyDisplayBoon" })
 	elseif victim.Name == "Radiator" or victim.Name == "Radiator_Elite" then
 		RemoveTrait(CurrentRun.Hero, "DummyCopyDisplayBoon")
+		wait(0.1)
 		AddTraitToHero({ TraitName = "RadiatorCopyDisplayBoon" })
 	elseif victim.Name == "Turtle" or victim.Name == "Turtle_Elite" then
 		RemoveTrait(CurrentRun.Hero, "DummyCopyDisplayBoon")
+		wait(0.1)
 		AddTraitToHero({ TraitName = "TurtleCopyDisplayBoon" })	
 	elseif victim.Name == "WaterUnit" or victim.Name == "WaterUnit_Elite" then
 		RemoveTrait(CurrentRun.Hero, "DummyCopyDisplayBoon")
+		wait(0.1)
 		AddTraitToHero({ TraitName = "WaterUnitCopyDisplayBoon" })	
 	end
 end
 
-function mod.ReleaseCopyAbility ( triggerArgs )
+function mod.ReleaseCopyAbility ( triggerArgs, functionArgs )
 	local args = 
 	{
 		ProjectileName = "HammerAxeNova",
-		DamageMultiplier = 1,
+		DamageMultiplier = functionArgs.DamageMultiplier or 1,
 	}
 	CreateProjectileFromUnit({ Name = args.ProjectileName, Id = CurrentRun.Hero.ObjectId, DamageMultiplier = args.DamageMultiplier })
 	local TraitsToRemove = {} 
@@ -1334,23 +1340,23 @@ modutil.once_loaded.game(function()
 			},
 			Rare =
 			{
-				Multiplier = 0.9,
+				Multiplier = 1.5,
 			},
 			Epic =
 			{
-				Multiplier = 0.8,
+				Multiplier = 2,
 			},
 			Heroic =
 			{
-				Multiplier = 0.7,
+				Multiplier = 2.5,
 			},
 			Legendary =
 			{
-				Multiplier = 0.5,
+				Multiplier = 3,
 			},
 			Perfect =
 			{
-				Multiplier = 0.3,
+				Multiplier = 4,
 			},
 		},
 		Icon = "GUI\\Icons\\ExorcismBook",
@@ -1420,33 +1426,54 @@ modutil.once_loaded.game(function()
 		{
 			ValidProjectiles =  { "CopyBoltCharged" },
 			Name = _PLUGIN.guid .. "." .. "ReleaseCopyAbility",
+			Args = 
+			{
+				DamageMultiplier = { BaseValue = 1 },
+				ReportValues = 
+				{ 
+					OmegaAttackDamage = "DamageMultiplier",
+				}
+			}
 		},
 		OnUnequipFunctionName =  _PLUGIN.guid .. "." .. "UnequipCopyAbility",
-		PropertyChanges = 
+		--PropertyChanges = 
+		--{
+		--	{
+		--		WeaponName = "WeaponLob",
+		--		WeaponProperty = "Projectile",
+		--		ChangeValue = "CopyBolt",
+		--	},
+		--	{
+		--		WeaponName = "WeaponLob",
+		--		WeaponProperties = 
+		--		{
+		--			ClipSize = 1,
+		--			ClipRegenInterval = 0.3,
+		--			ChargeSoundFadeTime = 0.25,
+		--			FullyAutomatic = false,
+		--			Cooldown = 0.4,
+		--		},
+		--		ExcludeLinked = true,
+		--	}
+		--},
+		StatLines =
+		{
+			"TabletofPeaceKirbyMelStat",
+		},
+		ExtractValues =
 		{
 			{
-				WeaponName = "WeaponLob",
-				WeaponProperty = "Projectile",
-				ChangeValue = "CopyBolt",
+				Key = "OmegaAttackDamage",
+				ExtractAs = "TooltipDamage",
+				Format = "PercentDelta",
 			},
-			{
-				WeaponName = "WeaponLob",
-				WeaponProperties = 
-				{
-					ClipSize = 1,
-					ClipRegenInterval = 0.3,
-					ChargeSoundFadeTime = 0.25,
-					FullyAutomatic = false,
-					Cooldown = 0.4,
-				},
-				ExcludeLinked = true,
-			}
 		},
 		FlavorText = "CopyAbility_FlavorText",
 	}
 
-	OverwriteTableKeys( TraitSetData.Aspects.LobAmmoBoostAspect, TabletofPeaceKirbyMel)
+	--OverwriteTableKeys( TraitSetData.Aspects.LobAmmoBoostAspect, TabletofPeaceKirbyMel)
 	TraitData.ShovelRaiseDeadNecroMel = ShovelRaiseDeadNecroMel
+	TraitData.TabletofPeaceKirbyMel = TabletofPeaceKirbyMel
 
 
 	--Adds the new traits to the in-game shop
