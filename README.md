@@ -24,6 +24,19 @@ Adding new aspects themed around the Gathering Tools
   <img src="https://media.githubusercontent.com/media/Tal-lev/Tools_of_the_Trade/refs/heads/main/images/NecroMel.png" alt="PonyDressList" width="70%">
 </div>
 
+### The Tablet of Peace (AKA KirbyMel) Experimental!!!
+
+- Your Attack copies the enemy's weapon.
+- Your Omega Attack creates a nova that releases the copied weapon.
+- Trait Increase Omega Attack damage.
+- 6 Implemented enemies.
+
+[Full Copy Compatibility list](https://github.com/Tal-lev/Tools_of_the_Trade/blob/main/Copy_Compatibility.md)
+
+<div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+  <img src="https://media.githubusercontent.com/media/Tal-lev/Tools_of_the_Trade/refs/heads/main/images/KirbyMel.png" alt="PonyDressList" width="70%">
+</div>
+
 ## Installation
 
 Use r2modman by ebkr from Thunderstore or GitHub.
