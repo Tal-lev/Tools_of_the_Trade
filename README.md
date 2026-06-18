@@ -18,7 +18,7 @@ Adding new aspects themed around the Gathering Tools
   - 5 Keepsakes + (3 SharedKeepsakePort)
   - 5 Arcana + (7 Flip the Arcana)
 
-[Full Compatibility list](https://github.com/Tal-lev/Tools_of_the_Trade/blob/main/Compatibility.md)
+[Full Summon Compatibility list](https://github.com/Tal-lev/Tools_of_the_Trade/blob/main/Summon_Compatibility.md)
 
 <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
   <img src="https://media.githubusercontent.com/media/Tal-lev/Tools_of_the_Trade/refs/heads/main/images/NecroMel.png" alt="PonyDressList" width="70%">
