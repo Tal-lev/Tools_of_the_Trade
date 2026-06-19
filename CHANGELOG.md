@@ -12,13 +12,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Your Attack copies the enemy's weapon.
   - Your Omega Attack creates a nova that releases the copied weapon.
   - Trait Increase Omega Attack damage.
-  - 6 Implemented enemies.
+  - 9 Implemented enemies.
     - Mage
     - SiegeVine
     - Radiator
     - Screamer
     - Turtle
     - WaterUnit
+    - Radiator2
+    - SirenDrummer
+    - BrokenHearted
   
 
 ## [0.1.3] - 2026-06-16
