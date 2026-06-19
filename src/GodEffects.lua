@@ -234,6 +234,57 @@ AddGodTraitProperty({
             ChangeType = "Absolute",
             ExcludeLinked = true,
         }, 
-		
+		-- Radiator2
+        {
+            WeaponName = "WeaponLob",
+            ProjectileName = "RadiatorMelee360Slow",
+            ProjectileProperty = "Graphic",
+            ValuePrefix = "RadiatorBeamLongRangeIn_",
+            ChangeType = "Absolute",
+            ExcludeLinked = true,
+        }, 
+		{
+            WeaponName = "WeaponLob",
+            ProjectileName = "RadiatorMelee360Slow",
+            ProjectileProperty = "DeathFx",
+            ValuePrefix = "RadiatorBeamLongRangeOut_",
+            ChangeType = "Absolute",
+            ExcludeLinked = true,
+        }, 
+		-- SirenDrummer
+		{
+            WeaponName = "WeaponLob",
+            ProjectileName = "SirenDrummerCircle",
+            ProjectileProperty = "Graphic",
+            ValuePrefix = "SirenDrummerCircleNova_",
+            ChangeType = "Absolute",
+            ExcludeLinked = true,
+        }, 
+		--BrokenHearted
+		{
+            WeaponName = "WeaponLob",
+            ProjectileName = "BrokenHeartedSlam",
+            ProjectileProperty = "DetonateFx",
+            ValuePrefix = "BrokenHeartedNova_",
+            ChangeType = "Absolute",
+            ExcludeLinked = true,
+        }, 
+		--Lamia
+		{
+            WeaponName = "WeaponLob",
+            ProjectileName = "LamiaSkyCast",
+            ProjectileProperty = "Graphic",
+            ValuePrefix = "LamiaSkyCast_",
+            ChangeType = "Absolute",
+            ExcludeLinked = true,
+        }, 
+		{
+            WeaponName = "WeaponLob",
+            ProjectileName = "LamiaSkyCast",
+            ProjectileProperty = "ImpactFx",
+            ValuePrefix = "LamiaLightning_",
+            ChangeType = "Absolute",
+            ExcludeLinked = true,
+        }, 
 	}
 })

@@ -32,6 +32,18 @@ OverwriteTableKeys( TraitData, {
 		FlavorText = "CopyAbility_FlavorText",
 	},
 
+	 DummyCopyTwoDisplayBoon = 
+	{
+		Icon = "GUI\\Icons\\ExorcismBook",
+		ShowInHUD = true,
+		CustomLabel = 
+		{
+			DisplayType = "RoomValue",
+			Key = "Copy_Melinoe2",
+			Text = "Copy_2nd"
+		},
+	},
+
     MageCopyDisplayBoon = 
 	{
 		Icon = "JarlUlsfark-Tools_of_the_Trade\\MageIcon",
@@ -73,6 +85,18 @@ OverwriteTableKeys( TraitData, {
 		FlavorText = "CopyAbility_FlavorText",
 	},
 
+	MageCopyTwoDisplayBoon = 
+	{
+		Icon = "JarlUlsfark-Tools_of_the_Trade\\MageIcon",
+		ShowInHUD = true,
+		CustomLabel = 
+		{
+			DisplayType = "RoomValue",
+			Key = "Copy_Mage2",
+			Text = "Copy_2nd"
+		},
+	},
+
 	SiegeVineCopyDisplayBoon = 
 	{
 		Icon = "JarlUlsfark-Tools_of_the_Trade\\SiegeVineIcon",
@@ -107,6 +131,18 @@ OverwriteTableKeys( TraitData, {
             },
         },
 		FlavorText = "CopyAbility_FlavorText",
+	},
+
+	SiegeVineCopyTwoDisplayBoon = 
+	{
+		Icon = "JarlUlsfark-Tools_of_the_Trade\\SiegeVineIcon",
+		ShowInHUD = true,
+		CustomLabel = 
+		{
+			DisplayType = "RoomValue",
+			Key = "Copy_SiegeVine2",
+			Text = "Copy_2nd"
+		},
 	},
 
 	ScreamerCopyDisplayBoon = 
@@ -148,6 +184,18 @@ OverwriteTableKeys( TraitData, {
 		FlavorText = "CopyAbility_FlavorText",
 	},
 
+	ScreamerCopyTwoDisplayBoon = 
+	{
+		Icon = "JarlUlsfark-Tools_of_the_Trade\\ScreamerIcon",
+		ShowInHUD = true,
+		CustomLabel = 
+		{
+			DisplayType = "RoomValue",
+			Key = "Copy_Screamer2",
+			Text = "Copy_2nd"
+		},
+	},
+
 	RadiatorCopyDisplayBoon = 
 	{
 		Icon = "JarlUlsfark-Tools_of_the_Trade\\RadiatorIcon",
@@ -185,6 +233,83 @@ OverwriteTableKeys( TraitData, {
             },
         },
 		FlavorText = "CopyAbility_FlavorText",
+	},
+
+	RadiatorCopyTwoDisplayBoon = 
+	{
+		Icon = "JarlUlsfark-Tools_of_the_Trade\\RadiatorIcon",
+		ShowInHUD = true,
+		CustomLabel = 
+		{
+			DisplayType = "RoomValue",
+			Key = "Copy_Radiator2",
+			Text = "Copy_2nd"
+		},
+	},
+	--Doesn't Scatter
+	TreantCopyDisplayBoon = 
+	{
+		Icon = "JarlUlsfark-Tools_of_the_Trade\\TreantIcon",
+		ShowInHUD = true,
+		CustomLabel = 
+		{
+			DisplayType = "RoomValue",
+			Key = "Copy_Treant",
+			Text = "Copy_EmptyText"
+		},
+		--WeaponDataOverride = 
+		--{
+		--	WeaponLob = 
+		--	{
+		--		Spread = 15,
+		--	},
+		--},
+        PropertyChanges = 
+        {
+           {
+				WeaponName = "WeaponLob",
+				WeaponProperty = "Projectile",
+				ChangeValue = "TreantRanged",
+			},
+            {
+				WeaponName = "WeaponLob",
+				WeaponProperties = 
+                {
+                    Cooldown = 1.35,
+					NumProjectiles = 60,
+					ProjectileInterval = 0.0485,
+					FireRotationDampening = 0.14,
+					CancelMovement = true,
+					--Spread = 15,
+					RootOwnerWhileFiring = true,
+					ProjectileAngleOffset = math.rad(0),
+                },
+                ExcludeLinked = true,
+			},
+            {
+                WeaponName = "WeaponLob",
+                ProjectileName = "TreantRanged",
+                ProjectileProperties = 
+				{
+					Damage = 10,
+					FizzleOldSpawns = false,
+				},
+				ExcludeLinked = true,
+            },
+        },
+		FlavorText = "CopyAbility_FlavorText",
+	},
+
+	TreantCopyTwoDisplayBoon = 
+	{
+		Icon = "JarlUlsfark-Tools_of_the_Trade\\TreantIcon",
+		ShowInHUD = true,
+		CustomLabel = 
+		{
+			DisplayType = "RoomValue",
+			Key = "Copy_Treant2",
+			Text = "Copy_2nd"
+		},
 	},
 
 	TurtleCopyDisplayBoon = 
@@ -226,6 +351,18 @@ OverwriteTableKeys( TraitData, {
 		FlavorText = "CopyAbility_FlavorText",
 	},
 
+	TurtleCopyTwoDisplayBoon = 
+	{
+		Icon = "JarlUlsfark-Tools_of_the_Trade\\TurtleIcon",
+		ShowInHUD = true,
+		CustomLabel = 
+		{
+			DisplayType = "RoomValue",
+			Key = "Copy_Turtle2",
+			Text = "Copy_2nd"
+		},
+	},
+
 	WaterUnitCopyDisplayBoon = 
 	{
 		Icon = "JarlUlsfark-Tools_of_the_Trade\\WaterUnitIcon",
@@ -265,6 +402,351 @@ OverwriteTableKeys( TraitData, {
 		FlavorText = "CopyAbility_FlavorText",
 	},
 	
+	WaterUnitCopyTwoDisplayBoon = 
+	{
+		Icon = "JarlUlsfark-Tools_of_the_Trade\\WaterUnitIcon",
+		ShowInHUD = true,
+		CustomLabel = 
+		{
+			DisplayType = "RoomValue",
+			Key = "Copy_WaterUnit2",
+			Text = "Copy_2nd"
+		},
+	},
 
+	RadiatortwoCopyDisplayBoon = 
+	{
+		Icon = "JarlUlsfark-Tools_of_the_Trade\\Radiator2Icon",
+		ShowInHUD = true,
+		CustomLabel = 
+		{
+			DisplayType = "RoomValue",
+			Key = "Copy_Radiator",
+			Text = "Copy_EmptyText"
+		},
+        PropertyChanges = 
+        {
+           {
+				WeaponName = "WeaponLob",
+				WeaponProperty = "Projectile",
+				ChangeValue = "RadiatorMelee360Slow",
+			},
+            {
+				WeaponName = "WeaponLob",
+				WeaponProperties = 
+                {
+                    Cooldown = 5,
+                },
+                ExcludeLinked = true,
+			},
+            {
+                WeaponName = "WeaponLob",
+                ProjectileName = "RadiatorMelee360Slow",
+                ProjectileProperties = 
+				{
+					Damage = 110,
+					FizzleOldSpawns = true,
+				},
+				ExcludeLinked = true,
+            },
+        },
+		FlavorText = "CopyAbility_FlavorText",
+	},
+
+	RadiatortwoCopyTwoDisplayBoon = 
+	{
+		Icon = "JarlUlsfark-Tools_of_the_Trade\\Radiator2Icon",
+		ShowInHUD = true,
+		CustomLabel = 
+		{
+			DisplayType = "RoomValue",
+			Key = "Copy_Radiator2",
+			Text = "Copy_2nd"
+		},
+	},
+
+	SirenDrummerCopyDisplayBoon = 
+	{
+		Icon = "JarlUlsfark-Tools_of_the_Trade\\SirenDrummerIcon",
+		ShowInHUD = true,
+		CustomLabel = 
+		{
+			DisplayType = "RoomValue",
+			Key = "Copy_SirenDrummer",
+			Text = "Copy_EmptyText"
+		},
+        PropertyChanges = 
+        {
+           {
+				WeaponName = "WeaponLob",
+				WeaponProperty = "Projectile",
+				ChangeValue = "SirenDrummerCircle",
+			},
+            {
+				WeaponName = "WeaponLob",
+				WeaponProperties = 
+                {
+                    Cooldown = 5,
+                },
+                ExcludeLinked = true,
+			},
+            {
+                WeaponName = "WeaponLob",
+                ProjectileName = "SirenDrummerCircle",
+                ProjectileProperties = 
+				{
+					Damage = 160,
+					FizzleOldSpawns = true,
+				},
+				ExcludeLinked = true,
+            },
+        },
+		FlavorText = "CopyAbility_FlavorText",
+	},
+
+	SirenDrummerCopyTwoDisplayBoon = 
+	{
+		Icon = "JarlUlsfark-Tools_of_the_Trade\\SirenDrummerIcon",
+		ShowInHUD = true,
+		CustomLabel = 
+		{
+			DisplayType = "RoomValue",
+			Key = "Copy_SirenDrummer2",
+			Text = "Copy_2nd"
+		},
+	},
+
+	BrokenHeartedCopyDisplayBoon = 
+	{
+		Icon = "JarlUlsfark-Tools_of_the_Trade\\BrokenHeartedIcon",
+		ShowInHUD = true,
+		CustomLabel = 
+		{
+			DisplayType = "RoomValue",
+			Key = "Copy_BrokenHearted",
+			Text = "Copy_EmptyText"
+		},
+        PropertyChanges = 
+        {
+           {
+				WeaponName = "WeaponLob",
+				WeaponProperty = "Projectile",
+				ChangeValue = "BrokenHeartedSlam",
+			},
+            {
+				WeaponName = "WeaponLob",
+				WeaponProperties = 
+                {
+                    Cooldown = 1.75,
+					BarrelLength = -100,
+					WeaponRange = 100,
+					AttachToOwner = true,
+                },
+                ExcludeLinked = true,
+			},
+            {
+                WeaponName = "WeaponLob",
+                ProjectileName = "BrokenHeartedSlam",
+                ProjectileProperties = 
+				{
+					Damage = 110,
+					FizzleOldSpawns = false,
+					SpawnAtVictimLocation = false,
+					DetonateAtVictimLocation = false,
+				},
+				ExcludeLinked = true,
+            },
+        },
+		FlavorText = "CopyAbility_FlavorText",
+	},
+
+	BrokenHeartedCopyTwoDisplayBoon = 
+	{
+		Icon = "JarlUlsfark-Tools_of_the_Trade\\BrokenHeartedIcon",
+		ShowInHUD = true,
+		CustomLabel = 
+		{
+			DisplayType = "RoomValue",
+			Key = "Copy_BrokenHearted2",
+			Text = "Copy_2nd"
+		},
+	},
+
+	--INPROGRESS Has issues with modifying the trap created by the projectile
+	LovesickCopyDisplayBoon = 
+	{
+		Icon = "JarlUlsfark-Tools_of_the_Trade\\LovesickIcon",
+		ShowInHUD = true,
+		CustomLabel = 
+		{
+			DisplayType = "RoomValue",
+			Key = "Copy_Lovesick",
+			Text = "Copy_EmptyText"
+		},
+        PropertyChanges = 
+        {
+           {
+				WeaponName = "WeaponLob",
+				WeaponProperty = "Projectile",
+				ChangeValue = "LovesickHeartLob",
+			},
+            {
+				WeaponName = "WeaponLob",
+				WeaponProperties = 
+                {
+                    Cooldown = 2,
+                },
+                ExcludeLinked = true,
+			},
+            {
+                WeaponName = "WeaponLob",
+                ProjectileName = "LovesickHeartLob",
+                ProjectileProperties = 
+				{
+					Damage = 0,
+					FizzleOldSpawns = false,
+				},
+				ExcludeLinked = true,
+            },
+			{
+                WeaponName = "WeaponLob",
+                ProjectileName = "LovesickHeartMineBlast",
+                ProjectileProperties = 
+				{
+					Damage = 120,
+					FizzleOldSpawns = false,
+				},
+				ExcludeLinked = true,
+            },
+        },
+		FlavorText = "CopyAbility_FlavorText",
+	},
+
+	LovesickCopyTwoDisplayBoon = 
+	{
+		Icon = "JarlUlsfark-Tools_of_the_Trade\\LovesickIcon",
+		ShowInHUD = true,
+		CustomLabel = 
+		{
+			DisplayType = "RoomValue",
+			Key = "Copy_SirenDrummer2",
+			Text = "Copy_2nd"
+		},
+	},
+	--Have issues with scatter same as treant and need to implement forward push
+	MournerCopyDisplayBoon = 
+	{
+		Icon = "JarlUlsfark-Tools_of_the_Trade\\MournerIcon",
+		ShowInHUD = true,
+		CustomLabel = 
+		{
+			DisplayType = "RoomValue",
+			Key = "Copy_Mourner",
+			Text = "Copy_EmptyText"
+		},
+        PropertyChanges = 
+        {
+           {
+				WeaponName = "WeaponLob",
+				WeaponProperty = "Projectile",
+				ChangeValue = "MournerRampage",
+			},
+            {
+				WeaponName = "WeaponLob",
+				WeaponProperties = 
+                {
+                    Cooldown = 2,
+					AttachToOwner = false,
+					Type = "BLINK",
+					ChargeSelfVelocity = -2000,
+					FireTickSelfVelocity = 750,
+					RootOwnerWhileFiring = true,
+					SelfVelocity = 500,
+					
+					BarrelLength = -30,
+					NumProjectiles = 20,
+					ProjectileInterval = 0.11,
+					Spread = 15,
+					FireProjectileStartDelay = 0.03,
+					ProjectileAngleOffsetMin = math.rad(0),
+					
+                },
+                ExcludeLinked = true,
+			},
+            {
+                WeaponName = "WeaponLob",
+                ProjectileName = "MournerRampage",
+                ProjectileProperties = 
+				{
+					Damage = 14,
+					FizzleOldSpawns = false,
+				},
+				ExcludeLinked = true,
+            },
+        },
+		FlavorText = "CopyAbility_FlavorText",
+	},
 	
+	MournerCopyTwoDisplayBoon = 
+	{
+		Icon = "JarlUlsfark-Tools_of_the_Trade\\MournerIcon",
+		ShowInHUD = true,
+		CustomLabel = 
+		{
+			DisplayType = "RoomValue",
+			Key = "Copy_Mourner2",
+			Text = "Copy_2nd"
+		},
+	},
+
+	LamiaCopyDisplayBoon = 
+	{
+		Icon = "JarlUlsfark-Tools_of_the_Trade\\LamiaIcon",
+		ShowInHUD = true,
+		CustomLabel = 
+		{
+			DisplayType = "RoomValue",
+			Key = "Copy_Lamia",
+			Text = "Copy_EmptyText"
+		},
+        PropertyChanges = 
+        {
+           {
+				WeaponName = "WeaponLob",
+				WeaponProperty = "Projectile",
+				ChangeValue = "LamiaSkyCast",
+			},
+            {
+				WeaponName = "WeaponLob",
+				WeaponProperties = 
+                {
+                    Cooldown = 1.75,
+                },
+                ExcludeLinked = true,
+			},
+            {
+                WeaponName = "WeaponLob",
+                ProjectileName = "LamiaSkyCast",
+                ProjectileProperties = 
+				{
+					Damage = 90,
+					FizzleOldSpawns = true,
+				},
+				ExcludeLinked = true,
+            },
+        },
+		FlavorText = "CopyAbility_FlavorText",
+	},
+
+	LamiaCopyTwoDisplayBoon = 
+	{
+		Icon = "JarlUlsfark-Tools_of_the_Trade\\LamiaIcon",
+		ShowInHUD = true,
+		CustomLabel = 
+		{
+			DisplayType = "RoomValue",
+			Key = "Copy_Lamia2",
+			Text = "Copy_2nd"
+		},
+	},
 })

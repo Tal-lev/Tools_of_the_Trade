@@ -101,7 +101,7 @@ sjson.hook(file, function(data)
 		{
 			Id = "TabletofPeaceKirbyMel",
 			InheritFrom = "BaseBoonMultiline",
-			DisplayName = "The Tablet of Peace",
+			DisplayName = "The Tablet of Peace (Experimental!)",
 			Description = "Your {$Keywords.Attack} copies the enemy's weapon. Your {$Keywords.AttackEX} Releases the copied weapon."
 		},
 		TextOrder)
@@ -141,6 +141,24 @@ sjson.hook(file, function(data)
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = " ",
       		OverwriteLocalization = true,
+		},
+		TextOrder)
+	)
+
+	table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "Copy_2nd",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "2nd",
+      		OverwriteLocalization = true,
+		},
+		TextOrder)
+	)
+
+	table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "Hint_OutOfCopyLobAmmo",
+			DisplayName = "Copy Spent!",
 		},
 		TextOrder)
 	)
@@ -220,6 +238,46 @@ sjson.hook(file, function(data)
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy Ability: Sea-Serpent",
 			Description = "Your Attack fires a {#UpgradeFormat}Spit projectile{#Prev}.",
+		},
+		TextOrder)
+	)
+
+	table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "RadiatortwoCopyDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Copy Ability: Sop-Spindle",
+			Description = "Your Attack fires a {#UpgradeFormat}long rotating beam{#Prev}.",
+		},
+		TextOrder)
+	)
+
+	table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "SirenDrummerCopyDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Copy Ability: Roxy",
+			Description = "Your Attack fires a long cooldown {#UpgradeFormat}Beat Nova{#Prev}.",
+		},
+		TextOrder)
+	)
+
+	table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "BrokenHeartedCopyDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Copy Ability: Smacker",
+			Description = "Your Attack {#UpgradeFormat}Slams {#Prev}the ground.",
+		},
+		TextOrder)
+	)
+
+	table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "LamiaCopyDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Copy Ability: Lamia",
+			Description = "Your Attack fires a {#UpgradeFormat}homing beam from the sky {#Prev}.",
 		},
 		TextOrder)
 	)

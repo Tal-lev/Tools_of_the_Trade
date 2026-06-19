@@ -710,39 +710,96 @@ end
 function mod.SetupCopyAbility()
 	wait(0.1)
 	ShowLobUI()
-	HideAmmoUI()
-	thread( HideAmmoUI )
-	if not HeroHasTrait("DummyCopyDisplayBoon") then
+	local HasCopy = 0
+	local HasCopyTwo = 0
+	for key,value in pairs(CurrentRun.Hero.TraitDictionary) do
+		if string.find(key, "CopyDisplayBoon") then
+			HasCopy = HasCopy + 1
+		elseif string.find(key, "CopyTwoDisplayBoon") then
+			HasCopyTwo = HasCopyTwo + 1
+		end
+	end
+	if not HeroHasTrait("DummyCopyDisplayBoon") and HasCopy == 0 then
 		AddTraitToHero({ TraitName = "DummyCopyDisplayBoon" })
+	end
+	wait(0.1)
+	if not HeroHasTrait("DummyCopyTwoDisplayBoon") and HasCopyTwo == 0 then
+		AddTraitToHero({ TraitName = "DummyCopyTwoDisplayBoon" })
 	end
 	--UpdateTraitNumber( trait )
 end
 
 function mod.CopyAbility (victim, functionArgs, triggerArgs)
+	local Changed = 0
 	if victim.Name == "Mage" or victim.Name == "Mage_Elite" then
 		RemoveTrait(CurrentRun.Hero, "DummyCopyDisplayBoon")
 		wait(0.1)
 		AddTraitToHero({ TraitName = "MageCopyDisplayBoon" })
+		Changed = 1
 	elseif victim.Name == "SiegeVine" or victim.Name == "SiegeVine_Elite" then
 		RemoveTrait(CurrentRun.Hero, "DummyCopyDisplayBoon")
 		wait(0.1)
 		AddTraitToHero({ TraitName = "SiegeVineCopyDisplayBoon" })
+		Changed = 1
 	elseif victim.Name == "Screamer" or victim.Name == "Screamer_Elite" then
 		RemoveTrait(CurrentRun.Hero, "DummyCopyDisplayBoon")
 		wait(0.1)
 		AddTraitToHero({ TraitName = "ScreamerCopyDisplayBoon" })
+		Changed = 1
 	elseif victim.Name == "Radiator" or victim.Name == "Radiator_Elite" then
 		RemoveTrait(CurrentRun.Hero, "DummyCopyDisplayBoon")
 		wait(0.1)
 		AddTraitToHero({ TraitName = "RadiatorCopyDisplayBoon" })
+		Changed = 1
+	elseif victim.Name == "Treant" then
+		RemoveTrait(CurrentRun.Hero, "DummyCopyDisplayBoon")
+		wait(0.1)
+		AddTraitToHero({ TraitName = "TreantCopyDisplayBoon" })	
+		Changed = 1
 	elseif victim.Name == "Turtle" or victim.Name == "Turtle_Elite" then
 		RemoveTrait(CurrentRun.Hero, "DummyCopyDisplayBoon")
 		wait(0.1)
 		AddTraitToHero({ TraitName = "TurtleCopyDisplayBoon" })	
+		Changed = 1
 	elseif victim.Name == "WaterUnit" or victim.Name == "WaterUnit_Elite" then
 		RemoveTrait(CurrentRun.Hero, "DummyCopyDisplayBoon")
 		wait(0.1)
-		AddTraitToHero({ TraitName = "WaterUnitCopyDisplayBoon" })	
+		AddTraitToHero({ TraitName = "WaterUnitCopyDisplayBoon" })
+		Changed = 1
+	elseif victim.Name == "Radiator2" or victim.Name == "Radiator2_Elite" then
+		RemoveTrait(CurrentRun.Hero, "DummyCopyDisplayBoon")
+		wait(0.1)
+		AddTraitToHero({ TraitName = "RadiatortwoCopyDisplayBoon" })
+		Changed = 1
+	elseif victim.Name == "SirenDrummer" then
+		RemoveTrait(CurrentRun.Hero, "DummyCopyDisplayBoon")
+		wait(0.1)
+		AddTraitToHero({ TraitName = "SirenDrummerCopyDisplayBoon" })
+		Changed = 1
+	elseif victim.Name == "BrokenHearted" or victim.Name == "BrokenHearted_Elite" then
+		RemoveTrait(CurrentRun.Hero, "DummyCopyDisplayBoon")
+		wait(0.1)
+		AddTraitToHero({ TraitName = "BrokenHeartedCopyDisplayBoon" })
+		Changed = 1
+	elseif victim.Name == "Lamia" or victim.Name == "Lamia_Elite" then
+		RemoveTrait(CurrentRun.Hero, "DummyCopyDisplayBoon")
+		wait(0.1)
+		AddTraitToHero({ TraitName = "LamiaCopyDisplayBoon" })	
+		Changed = 1
+	--elseif victim.Name == "Mourner" or victim.Name == "Mourner_Elite" then
+	--	RemoveTrait(CurrentRun.Hero, "DummyCopyDisplayBoon")
+	--	wait(0.1)
+	--	AddTraitToHero({ TraitName = "MournerCopyDisplayBoon" })
+	--  Changed = 1	
+	--elseif victim.Name == "Lovesick" then
+	--	RemoveTrait(CurrentRun.Hero, "DummyCopyDisplayBoon")
+	--	wait(0.1)
+	--	AddTraitToHero({ TraitName = "LovesickCopyDisplayBoon" })	
+	--  Changed = 1
+	end
+	if Changed ~= 0 then
+		CurrentRun.Hero.Ammo.WeaponLob = 20
+		thread( UpdateAmmoUI )
 	end
 end
 
@@ -752,25 +809,61 @@ function mod.ReleaseCopyAbility ( triggerArgs, functionArgs )
 		ProjectileName = "HammerAxeNova",
 		DamageMultiplier = functionArgs.DamageMultiplier or 1,
 	}
+	local trait = GetHeroTrait("TabletofPeaceKirbyMel")
+
 	CreateProjectileFromUnit({ Name = args.ProjectileName, Id = CurrentRun.Hero.ObjectId, DamageMultiplier = args.DamageMultiplier })
 	local TraitsToRemove = {} 
+	local TempSecondCopy = "null"
+	local TempSecondAmmo = 0
 	for key,value in pairs(CurrentRun.Hero.TraitDictionary) do
 		if string.find(key, "CopyDisplayBoon") then
-			table.insert(TraitsToRemove, key)
+			table.insert(TraitsToRemove, 1, key)
+			TempSecondCopy = key
+			TempSecondAmmo = CurrentRun.Hero.Ammo.WeaponLob
+		elseif string.find(key, "CopyTwoDisplayBoon") then
+			table.insert(TraitsToRemove, 1, key)
 		end
 	end
 	for key,value in pairs(TraitsToRemove) do
 		RemoveTrait(CurrentRun.Hero, value)
 	end	
-	wait(0.2)
+	wait(0.1)
+	local StartPos, EndPos = string.find(TempSecondCopy, "CopyDisplayBoon")
+	local StartTrait = string.sub(TempSecondCopy, 1, StartPos - 1)
+	AddTraitToHero({ TraitName = StartTrait .. "CopyTwoDisplayBoon" })
+	wait(0.1)
+	AddTraitToHero({ TraitName = trait.SecondCopy })
+	CurrentRun.Hero.Ammo.WeaponLob = trait.SecondAmmo
+	if TempSecondCopy ~= "null" then
+		trait.SecondCopy = TempSecondCopy
+		trait.SecondAmmo = TempSecondAmmo
+	end
+	thread( UpdateAmmoUI )
+end
+
+function mod.CopyNoAmmo()
+	local TraitsToRemove = {} 
+	for key,value in pairs(CurrentRun.Hero.TraitDictionary) do
+		if string.find(key, "CopyDisplayBoon") then
+			table.insert(TraitsToRemove, 1, key)
+		end
+	end
+	for key,value in pairs(TraitsToRemove) do
+		RemoveTrait(CurrentRun.Hero, value)
+	end	
+	wait(0.1)
 	AddTraitToHero({ TraitName = "DummyCopyDisplayBoon" })
+	UpdateWeaponAmmo("WeaponLob", 1, {} )
+	wait(0.1)
+	ResetAmmo( CurrentRun.Hero, GetWeaponData( CurrentRun.Hero, "WeaponLob" ))
+	PlaySound({ Name = "/SFX/Player Sounds/MelSkullsAmmoBounce", Id = CurrentRun.Hero.ObjectId })
 end
 
 function mod.UnequipCopyAbility (weaponData, functionArgs, triggerArgs)
 	local TraitsToRemove = {} 
 	for key,value in pairs(CurrentRun.Hero.TraitDictionary) do
-		if string.find(key, "CopyDisplayBoon") then
-			table.insert(TraitsToRemove, key)
+		if string.find(key, "CopyDisplayBoon") or string.find(key, "CopyTwoDisplayBoon") then
+			table.insert(TraitsToRemove, 1, key)
 		end
 	end
 	for key,value in pairs(TraitsToRemove) do
@@ -1372,7 +1465,9 @@ modutil.once_loaded.game(function()
 				ShowAmmoUI = false,
 				OnProjectileDeathFunction = "nil",
 				ChannelSlowIneligible = true,
-				MaxAmmo = 99999,
+				MaxAmmo = 20,
+				NoAmmoText = "Hint_OutOfCopyLobAmmo",
+				NoAmmoFunctionName = _PLUGIN.guid .. "." .. "CopyNoAmmo",
 				ChargeWeaponStages = 
 				{
 					{ 
@@ -1407,6 +1502,13 @@ modutil.once_loaded.game(function()
 						ChannelSlowEventOnStart = true
 					},
 				},
+				StartRoomEvents = 
+				{
+					{
+						FunctionName = "null",
+						Args = {}
+					},
+				},
 			},
 		},
 		SetupFunction =
@@ -1414,6 +1516,8 @@ modutil.once_loaded.game(function()
 			Threaded = true,
 			Name = _PLUGIN.guid .. "." .. "SetupCopyAbility",
 		},
+		SecondAmmo = 20,
+		SecondCopy = "DummyCopyDisplayBoon",
 		OnEnemyDamagedAction = 
 		{
 			ValidProjectiles = {"CopyBolt"},
@@ -1436,26 +1540,6 @@ modutil.once_loaded.game(function()
 			}
 		},
 		OnUnequipFunctionName =  _PLUGIN.guid .. "." .. "UnequipCopyAbility",
-		--PropertyChanges = 
-		--{
-		--	{
-		--		WeaponName = "WeaponLob",
-		--		WeaponProperty = "Projectile",
-		--		ChangeValue = "CopyBolt",
-		--	},
-		--	{
-		--		WeaponName = "WeaponLob",
-		--		WeaponProperties = 
-		--		{
-		--			ClipSize = 1,
-		--			ClipRegenInterval = 0.3,
-		--			ChargeSoundFadeTime = 0.25,
-		--			FullyAutomatic = false,
-		--			Cooldown = 0.4,
-		--		},
-		--		ExcludeLinked = true,
-		--	}
-		--},
 		StatLines =
 		{
 			"TabletofPeaceKirbyMelStat",
