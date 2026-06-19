@@ -7,3 +7,4 @@
 - Oceanus - Sop-Spindle
 - Oceanus - Roxy
 - Mourning-Fields - Smacker
+- Mourning-Fields - Lamia
