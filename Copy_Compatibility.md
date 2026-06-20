@@ -29,3 +29,5 @@
 ### Tartarus
 
 - Goldwraith
+- Chronos
+  -Scythe-Throw
