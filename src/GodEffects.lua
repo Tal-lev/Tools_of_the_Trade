@@ -169,7 +169,16 @@ AddGodTraitProperty({
 AddGodTraitProperty({
     TraitSuffix = "WeaponBoon",
     PropertyChanges = {
-        -- Mage
+        -- Brawler
+        {
+            WeaponName = "WeaponLob",
+            ProjectileName = "BrawlerMelee",
+            ProjectileProperty = "Graphic",
+            ValuePrefix = "BrawlerSwipeBase_",
+            ChangeType = "Absolute",
+            ExcludeLinked = true,
+        },   
+		-- Mage
         {
             WeaponName = "WeaponLob",
             ProjectileName = "MageRanged",

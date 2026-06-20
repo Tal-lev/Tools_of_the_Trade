@@ -736,6 +736,11 @@ function mod.CopyAbility (victim, functionArgs, triggerArgs)
 		wait(0.1)
 		AddTraitToHero({ TraitName = "MageCopyDisplayBoon" })
 		Changed = 1
+	elseif victim.Name == "Brawler" or victim.Name == "Brawler_Elite" then
+		RemoveTrait(CurrentRun.Hero, "DummyCopyDisplayBoon")
+		wait(0.1)
+		AddTraitToHero({ TraitName = "BrawlerCopyDisplayBoon" })
+		Changed = 1
 	elseif victim.Name == "SiegeVine" or victim.Name == "SiegeVine_Elite" then
 		RemoveTrait(CurrentRun.Hero, "DummyCopyDisplayBoon")
 		wait(0.1)
