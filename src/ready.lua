@@ -837,6 +837,11 @@ function mod.CopyAbility (victim, functionArgs, triggerArgs)
 		wait(0.1)
 		AddTraitToHero({ TraitName = "GoldElementalCopyDisplayBoon" })	
 		Changed = 1
+	elseif victim.Name == "Chronos" then
+		RemoveTrait(CurrentRun.Hero, "DummyCopyDisplayBoon")
+		wait(0.1)
+		AddTraitToHero({ TraitName = "ChronosOneCopyDisplayBoon" })	
+		Changed = 1
 	end
 	if Changed ~= 0 then
 		ResetAmmo( CurrentRun.Hero, GetWeaponData( CurrentRun.Hero, "WeaponLob" ))

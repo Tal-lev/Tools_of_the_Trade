@@ -362,5 +362,15 @@ sjson.hook(file, function(data)
 		TextOrder)
 	)
 
+	table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "ChronosOneCopyDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Copy Ability: Chronos - Scythe Throw",
+			Description = "Your Attack transforms into a {#UpgradeFormat}Large Spinning Scythe{#Prev}.",
+		},
+		TextOrder)
+	)
+
     return data
 end)

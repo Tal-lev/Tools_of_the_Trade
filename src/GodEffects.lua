@@ -381,6 +381,31 @@ AddGodTraitProperty({
             ChangeType = "Absolute",
             ExcludeLinked = true,
         }, 
+		--Chronos
+		{
+            WeaponName = "WeaponLob",
+            ProjectileName = "ChronosScytheThrow",
+            ProjectileProperty = "DissipateFx",
+            ValuePrefix = "ChronosScytheThrowFade_",
+            ChangeType = "Absolute",
+            ExcludeLinked = true,
+        }, 
+		{
+            WeaponName = "WeaponLob",
+            ProjectileName = "ChronosScytheThrow",
+            ProjectileProperty = "DeathFx",
+            ValuePrefix = "ChronosScytheThrowFade_",
+            ChangeType = "Absolute",
+            ExcludeLinked = true,
+        }, 
+		{
+            WeaponName = "WeaponLob",
+            ProjectileName = "ChronosScytheThrow",
+            ProjectileProperty = "Graphic",
+            ValuePrefix = "ChronosScytheThrowFx_",
+            ChangeType = "Absolute",
+            ExcludeLinked = true,
+        }, 
 
 	}
 })
