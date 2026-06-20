@@ -5,6 +5,8 @@
 - Wailer 
 - Casket
 - Thorn-Weeper
+- Hecate
+  - Torch-Cones
 
 ### Oceanus
 
