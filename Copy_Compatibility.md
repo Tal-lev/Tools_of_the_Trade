@@ -19,3 +19,7 @@
 - Smacker
 - Dread-Wailer
 - Lamia
+
+### Tartarus
+
+- Goldwraith
