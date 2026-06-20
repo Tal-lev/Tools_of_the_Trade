@@ -563,16 +563,16 @@ sjson.hook(file, function(data)
 
     table.insert(data.Animations,
     {
-    Name = "TurtleLobProjectile_Zeus",
-    InheritFrom = "TurtleLobProjectile",
-    ColorFromOwner = "Ignore",
-    AddColor = true,
-    StartRed = 1.0,
-    StartGreen = 0.95,
-    StartBlue = 0.7,
-    EndRed = 0.9999,
-    EndGreen = 0.8,
-    EndBlue = 0.5,
+        Name = "TurtleLobProjectile_Zeus",
+        InheritFrom = "TurtleLobProjectile",
+        ColorFromOwner = "Ignore",
+        AddColor = true,
+        StartRed = 1.0,
+        StartGreen = 0.95,
+        StartBlue = 0.7,
+        EndRed = 0.9999,
+        EndGreen = 0.8,
+        EndBlue = 0.5,
     })
 
     table.insert(data.Animations,
@@ -773,6 +773,345 @@ sjson.hook(file, function(data)
     {
         Name = "TurtleBounceNova_Ares",
         InheritFrom = "TurtleBounceNova_Zeus",
+        StartRed = 1.0,
+        StartGreen = 0.04,
+        StartBlue = 0.001,
+        EndRed = 0.999,
+        EndGreen = 0.0,
+        EndBlue = 0.0,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "FishmanRangedProjectileIn_Zeus",
+        InheritFrom = "FishmanRangedProjectileIn",
+        ChainTo = "FishmanRangedProjectile_Zeus",
+        ColorFromOwner = "Ignore",
+        AddColor = true,
+        StartRed = 1.0,
+        StartGreen = 0.95,
+        StartBlue = 0.7,
+        EndRed = 0.9999,
+        EndGreen = 0.8,
+        EndBlue = 0.5,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "FishmanRangedProjectileIn_Hera",
+        InheritFrom = "FishmanRangedProjectileIn_Zeus",
+        ChainTo = "FishmanRangedProjectile_Hera",
+        StartRed = 0.0,
+        StartGreen = 1.0,
+        StartBlue = 0.1,
+        EndRed = 0.1,
+        EndGreen = 0.3,
+        EndBlue = 1.0,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "FishmanRangedProjectileIn_Poseidon",
+        InheritFrom = "FishmanRangedProjectileIn_Zeus",
+        ChainTo = "FishmanRangedProjectile_Poseidon",
+        StartRed = 0.1,
+        StartGreen = 1.0,
+        StartBlue = 0.8,
+        EndRed = 0,
+        EndGreen = 0.6,
+        EndBlue = 1.0,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "FishmanRangedProjectileIn_Demeter",
+        InheritFrom = "FishmanRangedProjectileIn_Zeus",
+        ChainTo = "FishmanRangedProjectile_Demeter",
+        StartRed = 0.25,
+        StartGreen = 0.35,
+        StartBlue = 0.5,
+        EndRed = 0.35,
+        EndGreen = 0.25,
+        EndBlue = 0.4999,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "FishmanRangedProjectileIn_Apollo",
+        InheritFrom = "FishmanRangedProjectileIn_Zeus",
+        ChainTo = "FishmanRangedProjectile_Apollo",
+        StartRed = 1.0,
+        StartGreen = 0.9,
+        StartBlue = 0.7,
+        EndRed = 0.999,
+        EndGreen = 0.85,
+        EndBlue = 0.05,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "FishmanRangedProjectileIn_Aphrodite",
+        InheritFrom = "FishmanRangedProjectileIn_Zeus",
+        ChainTo = "FishmanRangedProjectile_Aphrodite",
+        StartRed = 1.0,
+        StartGreen = 0.6,
+        StartBlue = 0.8,
+        EndRed = 0.99,
+        EndGreen = 0.05,
+        EndBlue = 0.99,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "FishmanRangedProjectileIn_Hephaestus",
+        InheritFrom = "FishmanRangedProjectileIn_Zeus",
+        ChainTo = "FishmanRangedProjectile_Hephaestus",
+        StartRed = 0.51,
+        StartGreen = 0.82,
+        StartBlue = 1.00,
+        EndRed = 1.00,
+        EndGreen = 0,
+        EndBlue = 0,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "FishmanRangedProjectileIn_Hestia",
+        InheritFrom = "FishmanRangedProjectileIn_Zeus",
+        ChainTo = "FishmanRangedProjectile_Hestia",
+        StartRed = 1.0,
+        StartGreen = 0.3,
+        StartBlue = 0.02,
+        EndRed = 0.999,
+        EndGreen = 0.15,
+        EndBlue = 0.0,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "FishmanRangedProjectileIn_Ares",
+        InheritFrom = "FishmanRangedProjectileIn_Zeus",
+        ChainTo = "FishmanRangedProjectile_Ares",
+        StartRed = 1.0,
+        StartGreen = 0.04,
+        StartBlue = 0.001,
+        EndRed = 0.999,
+        EndGreen = 0.0,
+        EndBlue = 0.0,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "FishmanRangedProjectile_Zeus",
+        InheritFrom = "FishmanRangedProjectile",
+        ColorFromOwner = "Ignore",
+        AddColor = true,
+        StartRed = 1.0,
+        StartGreen = 0.95,
+        StartBlue = 0.7,
+        EndRed = 0.9999,
+        EndGreen = 0.8,
+        EndBlue = 0.5,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "FishmanRangedProjectile_Hera",
+        InheritFrom = "FishmanRangedProjectile_Zeus",
+        StartRed = 0.0,
+        StartGreen = 1.0,
+        StartBlue = 0.1,
+        EndRed = 0.1,
+        EndGreen = 0.3,
+        EndBlue = 1.0,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "FishmanRangedProjectile_Poseidon",
+        InheritFrom = "FishmanRangedProjectile_Zeus",
+        StartRed = 0.1,
+        StartGreen = 1.0,
+        StartBlue = 0.8,
+        EndRed = 0,
+        EndGreen = 0.6,
+        EndBlue = 1.0,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "FishmanRangedProjectile_Demeter",
+        InheritFrom = "FishmanRangedProjectile_Zeus",
+        StartRed = 0.25,
+        StartGreen = 0.35,
+        StartBlue = 0.5,
+        EndRed = 0.35,
+        EndGreen = 0.25,
+        EndBlue = 0.4999,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "FishmanRangedProjectile_Apollo",
+        InheritFrom = "FishmanRangedProjectile_Zeus",
+        StartRed = 1.0,
+        StartGreen = 0.9,
+        StartBlue = 0.7,
+        EndRed = 0.999,
+        EndGreen = 0.85,
+        EndBlue = 0.05,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "FishmanRangedProjectile_Aphrodite",
+        InheritFrom = "FishmanRangedProjectile_Zeus",
+        StartRed = 1.0,
+        StartGreen = 0.6,
+        StartBlue = 0.8,
+        EndRed = 0.99,
+        EndGreen = 0.05,
+        EndBlue = 0.99,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "FishmanRangedProjectile_Hephaestus",
+        InheritFrom = "FishmanRangedProjectile_Zeus",
+        StartRed = 0.51,
+        StartGreen = 0.82,
+        StartBlue = 1.00,
+        EndRed = 1.00,
+        EndGreen = 0,
+        EndBlue = 0,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "FishmanRangedProjectile_Hestia",
+        InheritFrom = "FishmanRangedProjectile_Zeus",
+        StartRed = 1.0,
+        StartGreen = 0.3,
+        StartBlue = 0.02,
+        EndRed = 0.999,
+        EndGreen = 0.15,
+        EndBlue = 0.0,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "FishmanRangedProjectile_Ares",
+        InheritFrom = "FishmanRangedProjectile_Zeus",
+        StartRed = 1.0,
+        StartGreen = 0.04,
+        StartBlue = 0.001,
+        EndRed = 0.999,
+        EndGreen = 0.0,
+        EndBlue = 0.0,
+    })
+
+table.insert(data.Animations,
+    {
+        Name = "FishmanRangedProjectileDetonate_Zeus",
+        InheritFrom = "FishmanRangedProjectileDetonate",
+        ColorFromOwner = "Ignore",
+        AddColor = true,
+        StartRed = 1.0,
+        StartGreen = 0.95,
+        StartBlue = 0.7,
+        EndRed = 0.9999,
+        EndGreen = 0.8,
+        EndBlue = 0.5,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "FishmanRangedProjectileDetonate_Hera",
+        InheritFrom = "FishmanRangedProjectileDetonate_Zeus",
+        StartRed = 0.0,
+        StartGreen = 1.0,
+        StartBlue = 0.1,
+        EndRed = 0.1,
+        EndGreen = 0.3,
+        EndBlue = 1.0,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "FishmanRangedProjectileDetonate_Poseidon",
+        InheritFrom = "FishmanRangedProjectileDetonate_Zeus",
+        StartRed = 0.1,
+        StartGreen = 1.0,
+        StartBlue = 0.8,
+        EndRed = 0,
+        EndGreen = 0.6,
+        EndBlue = 1.0,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "FishmanRangedProjectileDetonate_Demeter",
+        InheritFrom = "FishmanRangedProjectileDetonate_Zeus",
+        StartRed = 0.25,
+        StartGreen = 0.35,
+        StartBlue = 0.5,
+        EndRed = 0.35,
+        EndGreen = 0.25,
+        EndBlue = 0.4999,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "FishmanRangedProjectileDetonate_Apollo",
+        InheritFrom = "FishmanRangedProjectileDetonate_Zeus",
+        StartRed = 1.0,
+        StartGreen = 0.9,
+        StartBlue = 0.7,
+        EndRed = 0.999,
+        EndGreen = 0.85,
+        EndBlue = 0.05,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "FishmanRangedProjectileDetonate_Aphrodite",
+        InheritFrom = "FishmanRangedProjectileDetonate_Zeus",
+        StartRed = 1.0,
+        StartGreen = 0.6,
+        StartBlue = 0.8,
+        EndRed = 0.99,
+        EndGreen = 0.05,
+        EndBlue = 0.99,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "FishmanRangedProjectileDetonate_Hephaestus",
+        InheritFrom = "FishmanRangedProjectileDetonate_Zeus",
+        StartRed = 0.51,
+        StartGreen = 0.82,
+        StartBlue = 1.00,
+        EndRed = 1.00,
+        EndGreen = 0,
+        EndBlue = 0,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "FishmanRangedProjectileDetonate_Hestia",
+        InheritFrom = "FishmanRangedProjectileDetonate_Zeus",
+        StartRed = 1.0,
+        StartGreen = 0.3,
+        StartBlue = 0.02,
+        EndRed = 0.999,
+        EndGreen = 0.15,
+        EndBlue = 0.0,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "FishmanRangedProjectileDetonate_Ares",
+        InheritFrom = "FishmanRangedProjectileDetonate_Zeus",
         StartRed = 1.0,
         StartGreen = 0.04,
         StartBlue = 0.001,

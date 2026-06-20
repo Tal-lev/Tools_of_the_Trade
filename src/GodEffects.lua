@@ -224,7 +224,23 @@ AddGodTraitProperty({
             ChangeType = "Absolute",
             ExcludeLinked = true,
         },  
-
+		--FishmanRanged
+		{
+            WeaponName = "WeaponLob",
+            ProjectileName = "FishmanRanged",
+            ProjectileProperty = "Graphic",
+            ValuePrefix = "FishmanRangedProjectileIn_",
+            ChangeType = "Absolute",
+            ExcludeLinked = true,
+        },  
+        {
+            WeaponName = "WeaponLob",
+            ProjectileName = "FishmanRanged",
+            ProjectileProperty = "DetonateFx",
+            ValuePrefix = "FishmanRangedProjectileDetonate_",
+            ChangeType = "Absolute",
+            ExcludeLinked = true,
+        },  
 		-- WaterUnit
         {
             WeaponName = "WeaponLob",

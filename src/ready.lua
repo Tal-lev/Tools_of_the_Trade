@@ -761,6 +761,11 @@ function mod.CopyAbility (victim, functionArgs, triggerArgs)
 		wait(0.1)
 		AddTraitToHero({ TraitName = "TurtleCopyDisplayBoon" })	
 		Changed = 1
+	elseif victim.Name == "FishmanRanged" or victim.Name == "FishmanRanged_Elite" then
+		RemoveTrait(CurrentRun.Hero, "DummyCopyDisplayBoon")
+		wait(0.1)
+		AddTraitToHero({ TraitName = "FishmanRangedCopyDisplayBoon" })	
+		Changed = 1
 	elseif victim.Name == "WaterUnit" or victim.Name == "WaterUnit_Elite" then
 		RemoveTrait(CurrentRun.Hero, "DummyCopyDisplayBoon")
 		wait(0.1)
@@ -798,12 +803,13 @@ function mod.CopyAbility (victim, functionArgs, triggerArgs)
 	--  Changed = 1
 	end
 	if Changed ~= 0 then
-		CurrentRun.Hero.Ammo.WeaponLob = 20
+		CurrentRun.Hero.Ammo.WeaponLob = GetMaxAmmo("WeaponLob")
 		thread( UpdateAmmoUI )
 	end
 end
 
 function mod.ReleaseCopyAbility ( triggerArgs, functionArgs )
+	ManaDelta( -20 )
 	local args = 
 	{
 		ProjectileName = "HammerAxeNova",
@@ -855,6 +861,7 @@ function mod.CopyNoAmmo()
 	AddTraitToHero({ TraitName = "DummyCopyDisplayBoon" })
 	UpdateWeaponAmmo("WeaponLob", 1, {} )
 	wait(0.1)
+	thread( InCombatText, CurrentRun.Hero, "Copy Spent", 0.5 , { SkipShadow = true } )
 	ResetAmmo( CurrentRun.Hero, GetWeaponData( CurrentRun.Hero, "WeaponLob" ))
 	PlaySound({ Name = "/SFX/Player Sounds/MelSkullsAmmoBounce", Id = CurrentRun.Hero.ObjectId })
 end
