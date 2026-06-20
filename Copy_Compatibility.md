@@ -21,6 +21,7 @@
 
 ### Mourning Fields
 
+- Blight-Shade
 - Smacker
 - Dread-Wailer
 - Lamia
