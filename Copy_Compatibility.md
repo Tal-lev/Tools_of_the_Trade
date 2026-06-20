@@ -30,4 +30,4 @@
 
 - Goldwraith
 - Chronos
-  -Scythe-Throw
+  - Scythe-Throw
