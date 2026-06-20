@@ -294,6 +294,24 @@ AddGodTraitProperty({
             ChangeType = "Absolute",
             ExcludeLinked = true,
         }, 
+		--Scylla Notes
+		
+		{
+            WeaponName = "WeaponLob",
+            ProjectileName = "ScyllaNotes",
+            ProjectileProperty = "Graphic",
+            ValuePrefix = "ScyllaNote_",
+            ChangeType = "Absolute",
+            ExcludeLinked = true,
+        }, 
+		{
+            WeaponName = "WeaponLob",
+            ProjectileName = "ScyllaNotes",
+            ProjectileProperty = "DetonateFx",
+            ValuePrefix = "ScyllaNoteExplosion_",
+            ChangeType = "Absolute",
+            ExcludeLinked = true,
+        },
 		--BrokenHearted
 		{
             WeaponName = "WeaponLob",

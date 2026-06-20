@@ -756,10 +756,15 @@ function mod.CopyAbility (victim, functionArgs, triggerArgs)
 		wait(0.1)
 		AddTraitToHero({ TraitName = "RadiatorCopyDisplayBoon" })
 		Changed = 1
-	elseif victim.Name == "Treant" then
+	--elseif victim.Name == "Treant" then
+	--	RemoveTrait(CurrentRun.Hero, "DummyCopyDisplayBoon")
+	--	wait(0.1)
+	--	AddTraitToHero({ TraitName = "TreantCopyDisplayBoon" })	
+	--	Changed = 1
+	elseif victim.Name == "Hecate" then
 		RemoveTrait(CurrentRun.Hero, "DummyCopyDisplayBoon")
 		wait(0.1)
-		AddTraitToHero({ TraitName = "TreantCopyDisplayBoon" })	
+		AddTraitToHero({ TraitName = "HecateOneCopyDisplayBoon" })
 		Changed = 1
 	elseif victim.Name == "Turtle" or victim.Name == "Turtle_Elite" then
 		RemoveTrait(CurrentRun.Hero, "DummyCopyDisplayBoon")
@@ -791,6 +796,12 @@ function mod.CopyAbility (victim, functionArgs, triggerArgs)
 		wait(0.1)
 		AddTraitToHero({ TraitName = "SirenKeytaristCopyDisplayBoon" })
 		Changed = 1
+	elseif victim.Name == "Scylla" then
+		RemoveTrait(CurrentRun.Hero, "DummyCopyDisplayBoon")
+		wait(0.1)
+		AddTraitToHero({ TraitName = "ScyllaOneCopyDisplayBoon" })
+		--AddTraitToHero({ TraitName = "ScyllaTwoCopyDisplayBoon" })
+		Changed = 1
 	elseif victim.Name == "BrokenHearted" or victim.Name == "BrokenHearted_Elite" then
 		RemoveTrait(CurrentRun.Hero, "DummyCopyDisplayBoon")
 		wait(0.1)
@@ -806,11 +817,6 @@ function mod.CopyAbility (victim, functionArgs, triggerArgs)
 		wait(0.1)
 		AddTraitToHero({ TraitName = "LamiaCopyDisplayBoon" })	
 		Changed = 1
-	elseif victim.Name == "GoldElemental" or victim.Name == "GoldElemental_Elite" then
-		RemoveTrait(CurrentRun.Hero, "DummyCopyDisplayBoon")
-		wait(0.1)
-		AddTraitToHero({ TraitName = "GoldElementalCopyDisplayBoon" })	
-		Changed = 1
 	--elseif victim.Name == "Mourner" or victim.Name == "Mourner_Elite" then
 	--	RemoveTrait(CurrentRun.Hero, "DummyCopyDisplayBoon")
 	--	wait(0.1)
@@ -821,8 +827,14 @@ function mod.CopyAbility (victim, functionArgs, triggerArgs)
 	--	wait(0.1)
 	--	AddTraitToHero({ TraitName = "LovesickCopyDisplayBoon" })	
 	--  Changed = 1
+	elseif victim.Name == "GoldElemental" or victim.Name == "GoldElemental_Elite" then
+		RemoveTrait(CurrentRun.Hero, "DummyCopyDisplayBoon")
+		wait(0.1)
+		AddTraitToHero({ TraitName = "GoldElementalCopyDisplayBoon" })	
+		Changed = 1
 	end
 	if Changed ~= 0 then
+		ResetAmmo( CurrentRun.Hero, GetWeaponData( CurrentRun.Hero, "WeaponLob" ))
 		CurrentRun.Hero.Ammo.WeaponLob = GetMaxAmmo("WeaponLob")
 		thread( UpdateAmmoUI )
 	end
@@ -881,9 +893,17 @@ function mod.CopyNoAmmo()
 	AddTraitToHero({ TraitName = "DummyCopyDisplayBoon" })
 	UpdateWeaponAmmo("WeaponLob", 1, {} )
 	wait(0.1)
-	thread( InCombatText, CurrentRun.Hero, "Copy Spent", 0.5 , { SkipShadow = true } )
+	thread( InCombatText, CurrentRun.Hero.ObjectId, "Copy Spent", 0.5 , { SkipShadow = true } )
 	ResetAmmo( CurrentRun.Hero, GetWeaponData( CurrentRun.Hero, "WeaponLob" ))
 	PlaySound({ Name = "/SFX/Player Sounds/MelSkullsAmmoBounce", Id = CurrentRun.Hero.ObjectId })
+end
+
+function mod.ReloadAmmo(weaponData)
+	if HeroHasTrait("DummyCopyDisplayBoon") then
+		ReloadAmmo(weaponData)
+	else
+		UpdateWeaponAmmo("WeaponLob", 1, {} )
+	end
 end
 
 function mod.UnequipCopyAbility (weaponData, functionArgs, triggerArgs)
@@ -1532,7 +1552,7 @@ modutil.once_loaded.game(function()
 				StartRoomEvents = 
 				{
 					{
-						FunctionName = "null",
+						FunctionName = _PLUGIN.guid .. "." .. "ReloadAmmo",
 						Args = {}
 					},
 				},
