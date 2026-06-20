@@ -285,6 +285,15 @@ AddGodTraitProperty({
             ChangeType = "Absolute",
             ExcludeLinked = true,
         }, 
+		-- SirenKeytarist
+		{
+            WeaponName = "WeaponLob",
+            ProjectileName = "SirenKeytaristPowerslideMelee",
+            ProjectileProperty = "Graphic",
+            ValuePrefix = "SirenKeytaristPowerslideMeleeGlow_",
+            ChangeType = "Absolute",
+            ExcludeLinked = true,
+        }, 
 		--BrokenHearted
 		{
             WeaponName = "WeaponLob",
