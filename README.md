@@ -29,7 +29,7 @@ Adding new aspects themed around the Gathering Tools
 - Your Attack copies the enemy's weapon.
 - Your Omega Attack creates a nova that releases the copied weapon.
 - Trait Increase Omega Attack damage.
-- 15 Implemented enemies.
+- 16 Implemented enemies.
 
 [Full Copy Compatibility list](https://github.com/Tal-lev/Tools_of_the_Trade/blob/main/Copy_Compatibility.md)
 
