@@ -23,6 +23,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
     - Radiator2
     - SirenDrummer
     - BrokenHearted
+    - Screamer2
     - Lamia
   
 
