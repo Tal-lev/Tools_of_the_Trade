@@ -12,7 +12,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Your Attack copies the enemy's weapon.
   - Your Omega Attack creates a nova that replaces the current copy ability with the reserve copy ability
   - Trait Increase Omega Attack damage.
-  - 13 Implemented enemies.
+  - 14 Implemented enemies.
     - Brawler
     - Mage
     - SiegeVine
@@ -26,6 +26,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
     - BrokenHearted
     - Screamer2
     - Lamia
+    - GoldElemental
   
 
 ## [0.1.3] - 2026-06-16
