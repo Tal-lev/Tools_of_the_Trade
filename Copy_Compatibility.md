@@ -1,10 +1,19 @@
-- Erebus - Spindle 
-- Erebus - Wailer 
-- Erebus - Casket
-- Erebus - Thorn-Weeper  
-- Oceanus - Shellback 
-- Oceanus - Sea-Serpent
-- Oceanus - Sop-Spindle
-- Oceanus - Roxy
-- Mourning-Fields - Smacker
-- Mourning-Fields - Lamia
+### Erebus
+
+- Spindle 
+- Wailer 
+- Casket
+- Thorn-Weeper
+
+### Oceanus
+
+- Hippo
+- Shellback 
+- Sea-Serpent
+- Sop-Spindle
+- Roxy
+
+### Mourning Fields
+
+- Smacker
+- Lamia
