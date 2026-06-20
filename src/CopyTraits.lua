@@ -909,4 +909,59 @@ OverwriteTableKeys( TraitData, {
 			Text = "Copy_2nd"
 		},
 	},
+
+	GoldElementalCopyDisplayBoon = 
+	{
+		Icon = "JarlUlsfark-Tools_of_the_Trade\\GoldElementalIcon",
+		ShowInHUD = true,
+		CustomLabel = 
+		{
+			DisplayType = "RoomValue",
+			Key = "Copy_GoldElemental",
+			Text = "Copy_EmptyText"
+		},
+        PropertyChanges = 
+        {
+           {
+				WeaponName = "WeaponLob",
+				WeaponProperty = "Projectile",
+				ChangeValue = "GoldElementalBeam",
+			},
+            {
+				WeaponName = "WeaponLob",
+				WeaponProperties = 
+                {
+                    Cooldown = 1.8,
+					BlockMoveInput = true,
+					CancelMovement = true,
+                },
+                ExcludeLinked = true,
+			},
+            {
+                WeaponName = "WeaponLob",
+                ProjectileName = "GoldElementalBeam",
+                ProjectileProperties = 
+				{
+					Damage = 100,
+					FizzleOldSpawns = true,
+					AutoLock = true,
+					AutoLockRange = 600,
+				},
+				ExcludeLinked = true,
+            },
+        },
+		FlavorText = "CopyAbility_FlavorText",
+	},
+
+	GoldElementalCopyTwoDisplayBoon = 
+	{
+		Icon = "JarlUlsfark-Tools_of_the_Trade\\GoldElementalIcon",
+		ShowInHUD = true,
+		CustomLabel = 
+		{
+			DisplayType = "RoomValue",
+			Key = "Copy_GoldElemental2",
+			Text = "Copy_2nd"
+		},
+	},
 })

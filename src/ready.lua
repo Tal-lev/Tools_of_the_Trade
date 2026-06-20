@@ -801,6 +801,11 @@ function mod.CopyAbility (victim, functionArgs, triggerArgs)
 		wait(0.1)
 		AddTraitToHero({ TraitName = "LamiaCopyDisplayBoon" })	
 		Changed = 1
+	elseif victim.Name == "GoldElemental" or victim.Name == "GoldElemental_Elite" then
+		RemoveTrait(CurrentRun.Hero, "DummyCopyDisplayBoon")
+		wait(0.1)
+		AddTraitToHero({ TraitName = "GoldElementalCopyDisplayBoon" })	
+		Changed = 1
 	--elseif victim.Name == "Mourner" or victim.Name == "Mourner_Elite" then
 	--	RemoveTrait(CurrentRun.Hero, "DummyCopyDisplayBoon")
 	--	wait(0.1)

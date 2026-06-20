@@ -320,5 +320,15 @@ AddGodTraitProperty({
             ChangeType = "Absolute",
             ExcludeLinked = true,
         }, 
+		--GoldElemental
+		{
+            WeaponName = "WeaponLob",
+            ProjectileName = "GoldElementalBeam",
+            ProjectileProperty = "Graphic",
+            ValuePrefix = "GoldElementalBeam_",
+            ChangeType = "Absolute",
+            ExcludeLinked = true,
+        }, 
+
 	}
 })
