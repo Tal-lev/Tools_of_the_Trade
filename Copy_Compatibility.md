@@ -13,6 +13,7 @@
 - Sea-Serpent
 - Sop-Spindle
 - Roxy
+- Jetty
 
 ### Mourning Fields
 
