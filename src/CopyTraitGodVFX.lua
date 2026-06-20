@@ -2128,7 +2128,7 @@ table.insert(data.Animations,
         EndBlue = 0.0,
     })
 
-     table.insert(data.Animations,
+    table.insert(data.Animations,
     {
     Name = "ScyllaNoteExplosion_Zeus",
     InheritFrom = "ScyllaNoteExplosion",
@@ -2230,6 +2230,336 @@ table.insert(data.Animations,
     {
         Name = "ScyllaNoteExplosion_Ares",
         InheritFrom = "ScyllaNoteExplosion_Zeus",
+        StartRed = 1.0,
+        StartGreen = 0.04,
+        StartBlue = 0.001,
+        EndRed = 0.999,
+        EndGreen = 0.0,
+        EndBlue = 0.0,
+    })
+
+    table.insert(data.Animations,
+    {
+    Name = "CorruptedShadeProjectileDissipate_Zeus",
+    InheritFrom = "CorruptedShadeProjectileDissipate",
+    ColorFromOwner = "Ignore",
+    AddColor = true,
+    StartRed = 1.0,
+    StartGreen = 0.95,
+    StartBlue = 0.7,
+    EndRed = 0.9999,
+    EndGreen = 0.8,
+    EndBlue = 0.5,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "CorruptedShadeProjectileDissipate_Hera",
+        InheritFrom = "CorruptedShadeProjectileDissipate_Zeus",
+        StartRed = 0.0,
+        StartGreen = 1.0,
+        StartBlue = 0.1,
+        EndRed = 0.1,
+        EndGreen = 0.3,
+        EndBlue = 1.0,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "CorruptedShadeProjectileDissipate_Poseidon",
+        InheritFrom = "CorruptedShadeProjectileDissipate_Zeus",
+        StartRed = 0.1,
+        StartGreen = 1.0,
+        StartBlue = 0.8,
+        EndRed = 0,
+        EndGreen = 0.6,
+        EndBlue = 1.0,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "CorruptedShadeProjectileDissipate_Demeter",
+        InheritFrom = "CorruptedShadeProjectileDissipate_Zeus",
+        StartRed = 0.25,
+        StartGreen = 0.35,
+        StartBlue = 0.5,
+        EndRed = 0.35,
+        EndGreen = 0.25,
+        EndBlue = 0.4999,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "CorruptedShadeProjectileDissipate_Apollo",
+        InheritFrom = "CorruptedShadeProjectileDissipate_Zeus",
+        StartRed = 1.0,
+        StartGreen = 0.9,
+        StartBlue = 0.7,
+        EndRed = 0.999,
+        EndGreen = 0.85,
+        EndBlue = 0.05,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "CorruptedShadeProjectileDissipate_Aphrodite",
+        InheritFrom = "CorruptedShadeProjectileDissipate_Zeus",
+        StartRed = 1.0,
+        StartGreen = 0.6,
+        StartBlue = 0.8,
+        EndRed = 0.99,
+        EndGreen = 0.05,
+        EndBlue = 0.99,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "CorruptedShadeProjectileDissipate_Hephaestus",
+        InheritFrom = "CorruptedShadeProjectileDissipate_Zeus",
+        StartRed = 0.51,
+        StartGreen = 0.82,
+        StartBlue = 1.00,
+        EndRed = 1.00,
+        EndGreen = 0,
+        EndBlue = 0,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "CorruptedShadeProjectileDissipate_Hestia",
+        InheritFrom = "CorruptedShadeProjectileDissipate_Zeus",
+        StartRed = 1.0,
+        StartGreen = 0.3,
+        StartBlue = 0.02,
+        EndRed = 0.999,
+        EndGreen = 0.15,
+        EndBlue = 0.0,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "CorruptedShadeProjectileDissipate_Ares",
+        InheritFrom = "CorruptedShadeProjectileDissipate_Zeus",
+        StartRed = 1.0,
+        StartGreen = 0.04,
+        StartBlue = 0.001,
+        EndRed = 0.999,
+        EndGreen = 0.0,
+        EndBlue = 0.0,
+    })
+
+    table.insert(data.Animations,
+    {
+    Name = "CorruptedShadeProjectileImpact_Zeus",
+    InheritFrom = "CorruptedShadeProjectileImpact",
+    ColorFromOwner = "Ignore",
+    AddColor = true,
+    StartRed = 1.0,
+    StartGreen = 0.95,
+    StartBlue = 0.7,
+    EndRed = 0.9999,
+    EndGreen = 0.8,
+    EndBlue = 0.5,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "CorruptedShadeProjectileImpact_Hera",
+        InheritFrom = "CorruptedShadeProjectileImpact_Zeus",
+        StartRed = 0.0,
+        StartGreen = 1.0,
+        StartBlue = 0.1,
+        EndRed = 0.1,
+        EndGreen = 0.3,
+        EndBlue = 1.0,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "CorruptedShadeProjectileImpact_Poseidon",
+        InheritFrom = "CorruptedShadeProjectileImpact_Zeus",
+        StartRed = 0.1,
+        StartGreen = 1.0,
+        StartBlue = 0.8,
+        EndRed = 0,
+        EndGreen = 0.6,
+        EndBlue = 1.0,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "CorruptedShadeProjectileImpact_Demeter",
+        InheritFrom = "CorruptedShadeProjectileImpact_Zeus",
+        StartRed = 0.25,
+        StartGreen = 0.35,
+        StartBlue = 0.5,
+        EndRed = 0.35,
+        EndGreen = 0.25,
+        EndBlue = 0.4999,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "CorruptedShadeProjectileImpact_Apollo",
+        InheritFrom = "CorruptedShadeProjectileImpact_Zeus",
+        StartRed = 1.0,
+        StartGreen = 0.9,
+        StartBlue = 0.7,
+        EndRed = 0.999,
+        EndGreen = 0.85,
+        EndBlue = 0.05,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "CorruptedShadeProjectileImpact_Aphrodite",
+        InheritFrom = "CorruptedShadeProjectileImpact_Zeus",
+        StartRed = 1.0,
+        StartGreen = 0.6,
+        StartBlue = 0.8,
+        EndRed = 0.99,
+        EndGreen = 0.05,
+        EndBlue = 0.99,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "CorruptedShadeProjectileImpact_Hephaestus",
+        InheritFrom = "CorruptedShadeProjectileImpact_Zeus",
+        StartRed = 0.51,
+        StartGreen = 0.82,
+        StartBlue = 1.00,
+        EndRed = 1.00,
+        EndGreen = 0,
+        EndBlue = 0,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "CorruptedShadeProjectileImpact_Hestia",
+        InheritFrom = "CorruptedShadeProjectileImpact_Zeus",
+        StartRed = 1.0,
+        StartGreen = 0.3,
+        StartBlue = 0.02,
+        EndRed = 0.999,
+        EndGreen = 0.15,
+        EndBlue = 0.0,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "CorruptedShadeProjectileImpact_Ares",
+        InheritFrom = "CorruptedShadeProjectileImpact_Zeus",
+        StartRed = 1.0,
+        StartGreen = 0.04,
+        StartBlue = 0.001,
+        EndRed = 0.999,
+        EndGreen = 0.0,
+        EndBlue = 0.0,
+    })
+
+    table.insert(data.Animations,
+    {
+    Name = "CorruptedShadeProjectile_Zeus",
+    InheritFrom = "CorruptedShadeProjectile",
+    ColorFromOwner = "Ignore",
+    AddColor = true,
+    StartRed = 1.0,
+    StartGreen = 0.95,
+    StartBlue = 0.7,
+    EndRed = 0.9999,
+    EndGreen = 0.8,
+    EndBlue = 0.5,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "CorruptedShadeProjectile_Hera",
+        InheritFrom = "CorruptedShadeProjectile_Zeus",
+        StartRed = 0.0,
+        StartGreen = 1.0,
+        StartBlue = 0.1,
+        EndRed = 0.1,
+        EndGreen = 0.3,
+        EndBlue = 1.0,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "CorruptedShadeProjectile_Poseidon",
+        InheritFrom = "CorruptedShadeProjectile_Zeus",
+        StartRed = 0.1,
+        StartGreen = 1.0,
+        StartBlue = 0.8,
+        EndRed = 0,
+        EndGreen = 0.6,
+        EndBlue = 1.0,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "CorruptedShadeProjectile_Demeter",
+        InheritFrom = "CorruptedShadeProjectile_Zeus",
+        StartRed = 0.25,
+        StartGreen = 0.35,
+        StartBlue = 0.5,
+        EndRed = 0.35,
+        EndGreen = 0.25,
+        EndBlue = 0.4999,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "CorruptedShadeProjectile_Apollo",
+        InheritFrom = "CorruptedShadeProjectile_Zeus",
+        StartRed = 1.0,
+        StartGreen = 0.9,
+        StartBlue = 0.7,
+        EndRed = 0.999,
+        EndGreen = 0.85,
+        EndBlue = 0.05,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "CorruptedShadeProjectile_Aphrodite",
+        InheritFrom = "CorruptedShadeProjectile_Zeus",
+        StartRed = 1.0,
+        StartGreen = 0.6,
+        StartBlue = 0.8,
+        EndRed = 0.99,
+        EndGreen = 0.05,
+        EndBlue = 0.99,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "CorruptedShadeProjectile_Hephaestus",
+        InheritFrom = "CorruptedShadeProjectile_Zeus",
+        StartRed = 0.51,
+        StartGreen = 0.82,
+        StartBlue = 1.00,
+        EndRed = 1.00,
+        EndGreen = 0,
+        EndBlue = 0,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "CorruptedShadeProjectile_Hestia",
+        InheritFrom = "CorruptedShadeProjectile_Zeus",
+        StartRed = 1.0,
+        StartGreen = 0.3,
+        StartBlue = 0.02,
+        EndRed = 0.999,
+        EndGreen = 0.15,
+        EndBlue = 0.0,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "CorruptedShadeProjectile_Ares",
+        InheritFrom = "CorruptedShadeProjectile_Zeus",
         StartRed = 1.0,
         StartGreen = 0.04,
         StartBlue = 0.001,

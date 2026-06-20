@@ -312,6 +312,31 @@ AddGodTraitProperty({
             ChangeType = "Absolute",
             ExcludeLinked = true,
         },
+		--Corrupted Shade small
+		{
+            WeaponName = "WeaponLob",
+            ProjectileName = "CorruptedShadeSCast",
+            ProjectileProperty = "DissipateFx",
+            ValuePrefix = "CorruptedShadeProjectileDissipate_",
+            ChangeType = "Absolute",
+            ExcludeLinked = true,
+        }, 
+		{
+            WeaponName = "WeaponLob",
+            ProjectileName = "CorruptedShadeSCast",
+            ProjectileProperty = "ImpactFx",
+            ValuePrefix = "CorruptedShadeProjectileImpact_",
+            ChangeType = "Absolute",
+            ExcludeLinked = true,
+        }, 
+		{
+            WeaponName = "WeaponLob",
+            ProjectileName = "CorruptedShadeSCast",
+            ProjectileProperty = "Graphic",
+            ValuePrefix = "CorruptedShadeProjectile_",
+            ChangeType = "Absolute",
+            ExcludeLinked = true,
+        }, 
 		--BrokenHearted
 		{
             WeaponName = "WeaponLob",

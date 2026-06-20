@@ -802,6 +802,11 @@ function mod.CopyAbility (victim, functionArgs, triggerArgs)
 		AddTraitToHero({ TraitName = "ScyllaOneCopyDisplayBoon" })
 		--AddTraitToHero({ TraitName = "ScyllaTwoCopyDisplayBoon" })
 		Changed = 1
+	elseif victim.Name == "CorruptedShadeSmall" or victim.Name == "CorruptedShadeSmall_Elite" then
+		RemoveTrait(CurrentRun.Hero, "DummyCopyDisplayBoon")
+		wait(0.1)
+		AddTraitToHero({ TraitName = "CorruptedShadeSmallCopyDisplayBoon" })
+		Changed = 1
 	elseif victim.Name == "BrokenHearted" or victim.Name == "BrokenHearted_Elite" then
 		RemoveTrait(CurrentRun.Hero, "DummyCopyDisplayBoon")
 		wait(0.1)
