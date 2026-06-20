@@ -1,5 +1,6 @@
 ### Erebus
 
+- Wastrel
 - Spindle 
 - Wailer 
 - Casket
