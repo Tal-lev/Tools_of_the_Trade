@@ -623,6 +623,57 @@ OverwriteTableKeys( TraitData, {
 		},
 	},
 
+	ScreamertwoCopyDisplayBoon = 
+	{
+		Icon = "JarlUlsfark-Tools_of_the_Trade\\Screamer2Icon",
+		ShowInHUD = true,
+		CustomLabel = 
+		{
+			DisplayType = "RoomValue",
+			Key = "Copy_Screamer",
+			Text = "Copy_EmptyText"
+		},
+        PropertyChanges = 
+        {
+           {
+				WeaponName = "WeaponLob",
+				WeaponProperty = "Projectile",
+				ChangeValue = "ScreamerConeLarge",
+			},
+            {
+				WeaponName = "WeaponLob",
+				WeaponProperties = 
+                {
+                    Cooldown = 0.6,
+                },
+                ExcludeLinked = true,
+			},
+            {
+                WeaponName = "WeaponLob",
+                ProjectileName = "ScreamerConeLarge",
+                ProjectileProperties = 
+				{
+					Damage = 80,
+					FizzleOldSpawns = true,
+				},
+				ExcludeLinked = true,
+            },
+        },
+		FlavorText = "CopyAbility_FlavorText",
+	},
+
+	ScreamertwoCopyTwoDisplayBoon = 
+	{
+		Icon = "JarlUlsfark-Tools_of_the_Trade\\Screamer2Icon",
+		ShowInHUD = true,
+		CustomLabel = 
+		{
+			DisplayType = "RoomValue",
+			Key = "Copy_Screamer2",
+			Text = "Copy_2nd"
+		},
+	},
+
 	--INPROGRESS Has issues with modifying the trap created by the projectile
 	LovesickCopyDisplayBoon = 
 	{

@@ -285,6 +285,15 @@ AddGodTraitProperty({
             ChangeType = "Absolute",
             ExcludeLinked = true,
         }, 
+		--Screamer2
+		{
+            WeaponName = "WeaponLob",
+            ProjectileName = "ScreamerConeLarge",
+            ProjectileProperty = "Graphic",
+            ValuePrefix = "ScreamerConeFxLarge_",
+            ChangeType = "Absolute",
+            ExcludeLinked = true,
+        }, 
 		--Lamia
 		{
             WeaponName = "WeaponLob",
