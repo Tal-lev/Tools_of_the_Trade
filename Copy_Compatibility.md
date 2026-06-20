@@ -16,4 +16,5 @@
 ### Mourning Fields
 
 - Smacker
+- Dread-Wailer
 - Lamia
