@@ -169,7 +169,25 @@ AddGodTraitProperty({
 AddGodTraitProperty({
     TraitSuffix = "WeaponBoon",
     PropertyChanges = {
-        -- Brawler
+        -- Guard
+        {
+            WeaponName = "WeaponLob",
+            ProjectileName = "GuardMelee",
+            ProjectileProperty = "DetonateFx",
+            ValuePrefix = "GuardMeleeAoE_",
+            ChangeType = "Absolute",
+            ExcludeLinked = true,
+        },  
+		-- Guard2
+        {
+            WeaponName = "WeaponLob",
+            ProjectileName = "GuardMelee2",
+            ProjectileProperty = "DetonateFx",
+            ValuePrefix = "GuardMeleeAoE_",
+            ChangeType = "Absolute",
+            ExcludeLinked = true,
+        }, 
+		-- Brawler
         {
             WeaponName = "WeaponLob",
             ProjectileName = "BrawlerMelee",
