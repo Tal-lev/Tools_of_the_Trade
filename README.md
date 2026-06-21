@@ -26,8 +26,9 @@ Adding new aspects themed around the Gathering Tools
 
 ### The Tablet of Peace (AKA KirbyMel) Experimental!!!
 
-- Your Attack copies the enemy's weapon.
-- Your Omega Attack creates a nova that releases the copied weapon.
+- Gain two abilities, Copy and Reserve-Copy.
+- Your Attack Switches Copy trait with the enemy's weapon.
+- Your Omega Attack creates a nova and replaces between Copy and Reserve-Copy traits.
 - Trait Increase Omega Attack damage.
 - 19 Implemented enemies.
 
