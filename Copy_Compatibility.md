@@ -1,5 +1,6 @@
 ### Erebus
 
+- Whisper
 - Wastrel
 - Spindle 
 - Wailer 
@@ -10,6 +11,7 @@
 
 ### Oceanus
 
+- Wet-Whisper
 - Hippo
 - Shellback 
 - Sea-Serpent
