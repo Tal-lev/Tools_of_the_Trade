@@ -12,6 +12,7 @@
 ### Oceanus
 
 - Wet-Whisper
+- Lurker
 - Hippo
 - Shellback 
 - Sea-Serpent
