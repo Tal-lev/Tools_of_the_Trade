@@ -594,6 +594,64 @@ OverwriteTableKeys( TraitData, {
 		},
 	},
 
+	FishmanMeleeCopyDisplayBoon = 
+	{
+		Icon = "JarlUlsfark-Tools_of_the_Trade\\FishmanMeleeIcon",
+		ShowInHUD = true,
+		CustomLabel = 
+		{
+			DisplayType = "RoomValue",
+			Key = "Copy_FishmanMelee",
+			Text = "Copy_EmptyText"
+		},
+        PropertyChanges = 
+        {
+           {
+				WeaponName = "WeaponLob",
+				WeaponProperty = "Projectile",
+				ChangeValue = "FishmanImpale",
+			},
+            {
+				WeaponName = "WeaponLob",
+				WeaponProperties = 
+                {
+                    Cooldown = 0.4,
+					FireOnRelease = true,
+					BlockMoveInput = true,
+					CancelMovement = true,
+					SelfVelocity = 400,
+					BarrelLength = 250,
+					AutoLock = true,
+					AutoLockRange = 100,
+					AutoLockArcDistance = 90,
+					RootOwnerWhileFiring = true,
+					CancelChargeOnRelease = true,
+                },
+                ExcludeLinked = true,
+			},
+            {
+                WeaponName = "WeaponLob",
+                ProjectileName = "FishmanImpale",
+                ProjectileProperty = "Damage",
+                ChangeValue = 140,
+                ChangeType = "Absolute",
+            },
+        },
+		FlavorText = "CopyAbility_FlavorText",
+	},
+
+	FishmanMeleeCopyTwoDisplayBoon = 
+	{
+		Icon = "JarlUlsfark-Tools_of_the_Trade\\FishmanMeleeIcon",
+		ShowInHUD = true,
+		CustomLabel = 
+		{
+			DisplayType = "RoomValue",
+			Key = "Copy_FishmanMelee2",
+			Text = "Copy_2nd"
+		},
+	},
+
 	FishmanRangedCopyDisplayBoon = 
 	{
 		Icon = "JarlUlsfark-Tools_of_the_Trade\\FishmanRangedIcon",

@@ -251,6 +251,15 @@ AddGodTraitProperty({
             ChangeType = "Absolute",
             ExcludeLinked = true,
         },  
+		--FishmanMelee
+		{
+            WeaponName = "WeaponLob",
+            ProjectileName = "FishmanImpale",
+            ProjectileProperty = "Graphic",
+            ValuePrefix = "FishmanTridentStrike_",
+            ChangeType = "Absolute",
+            ExcludeLinked = true,
+        },  
 		--FishmanRanged
 		{
             WeaponName = "WeaponLob",
