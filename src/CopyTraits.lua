@@ -1071,6 +1071,64 @@ OverwriteTableKeys( TraitData, {
 		},
 	},
 
+	CorruptedShadeMediumCopyDisplayBoon = 
+	{
+		Icon = "JarlUlsfark-Tools_of_the_Trade\\CorruptedShadeMediumIcon",
+		ShowInHUD = true,
+		CustomLabel = 
+		{
+			DisplayType = "RoomValue",
+			Key = "Copy_CorruptedShadeMedium",
+			Text = "Copy_EmptyText"
+		},
+        PropertyChanges = 
+        {
+           {
+				WeaponName = "WeaponLob",
+				WeaponProperty = "Projectile",
+				ChangeValue = "CorruptedShadeMRam",
+			},
+            {
+				WeaponName = "WeaponLob",
+				WeaponProperties = 
+                {
+                    Cooldown = 1,
+					ChargeTime = 0.3,
+					FireOnRelease = true,
+					BlockMoveInput = true,
+					CancelMovement = true,
+					SelfVelocity = 1200,
+					AutoLock = true,
+					AutoLockRange = 100,
+					AutoLockArcDistance = 90,
+					RootOwnerWhileFiring = true,
+					CancelChargeOnRelease = true,
+                },
+                ExcludeLinked = true,
+			},
+            {
+                WeaponName = "WeaponLob",
+                ProjectileName = "CorruptedShadeMRam",
+                ProjectileProperty = "Damage",
+                ChangeValue = 90,
+                ChangeType = "Absolute",
+            },
+        },
+		FlavorText = "CopyAbility_FlavorText",
+	},
+
+	CorruptedShadeMediumCopyTwoDisplayBoon = 
+	{
+		Icon = "JarlUlsfark-Tools_of_the_Trade\\CorruptedShadeMediumIcon",
+		ShowInHUD = true,
+		CustomLabel = 
+		{
+			DisplayType = "RoomValue",
+			Key = "Copy_CorruptedShadeMedium2",
+			Text = "Copy_2nd"
+		},
+	},
+
 	BrokenHeartedCopyDisplayBoon = 
 	{
 		Icon = "JarlUlsfark-Tools_of_the_Trade\\BrokenHeartedIcon",
@@ -1235,7 +1293,7 @@ OverwriteTableKeys( TraitData, {
 		CustomLabel = 
 		{
 			DisplayType = "RoomValue",
-			Key = "Copy_SirenDrummer2",
+			Key = "Copy_Lovesick2",
 			Text = "Copy_2nd"
 		},
 	},

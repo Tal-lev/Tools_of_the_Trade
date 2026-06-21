@@ -364,6 +364,16 @@ AddGodTraitProperty({
             ChangeType = "Absolute",
             ExcludeLinked = true,
         }, 
+		--Corrupted Shade Medium
+		
+		{
+            WeaponName = "WeaponLob",
+            ProjectileName = "CorruptedShadeMRam",
+            ProjectileProperty = "Graphic",
+            ValuePrefix = "CorruptedShadeRamFx_",
+            ChangeType = "Absolute",
+            ExcludeLinked = true,
+        }, 
 		--BrokenHearted
 		{
             WeaponName = "WeaponLob",
