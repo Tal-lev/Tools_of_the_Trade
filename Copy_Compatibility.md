@@ -17,6 +17,7 @@
 - Shellback 
 - Sea-Serpent
 - Sop-Spindle
+- Jellyfish
 - Roxy
 - Jetty
 - Scylla
