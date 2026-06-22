@@ -6,6 +6,7 @@
 - Wailer 
 - Casket
 - Thorn-Weeper
+- Root-Stalker Tail
 - Hecate
   - Torch-Cones
 
