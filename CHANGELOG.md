@@ -16,13 +16,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
     - Extended Reflection
     - Permenant Reflection
     - Explosive Reflection
-  - 24 Implemented enemies.
+  - 26 Implemented enemies.
     - Guard
     - Brawler
     - Mage
     - SiegeVine
     - Radiator
     - Screamer
+    - TrantTail
     - Hecate
       - Torch-cones
     - Guard2
