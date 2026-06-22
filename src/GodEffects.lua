@@ -303,6 +303,15 @@ AddGodTraitProperty({
             ChangeType = "Absolute",
             ExcludeLinked = true,
         }, 
+		--Jellyfish
+		{
+            WeaponName = "WeaponLob",
+            ProjectileName = "JellyfishStingRing",
+            ProjectileProperty = "Graphic",
+            ValuePrefix = "JellyfishStingRingIn_",
+            ChangeType = "Absolute",
+            ExcludeLinked = true,
+        }, 
 		-- SirenDrummer
 		{
             WeaponName = "WeaponLob",

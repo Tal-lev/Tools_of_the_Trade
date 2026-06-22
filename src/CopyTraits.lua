@@ -339,6 +339,7 @@ OverwriteTableKeys( TraitData, {
 				WeaponProperties = 
                 {
                     Cooldown = 0.6,
+					FizzleOldSpawns = true,
                 },
                 ExcludeLinked = true,
 			},
@@ -348,7 +349,6 @@ OverwriteTableKeys( TraitData, {
                 ProjectileProperties = 
 				{
 					Damage = 30,
-					FizzleOldSpawns = true,
 				},
 				ExcludeLinked = true,
             },
@@ -390,6 +390,7 @@ OverwriteTableKeys( TraitData, {
 				WeaponProperties = 
                 {
                     Cooldown = 1.35,
+					FizzleOldSpawns = true,
                 },
                 ExcludeLinked = true,
 			},
@@ -399,7 +400,6 @@ OverwriteTableKeys( TraitData, {
                 ProjectileProperties = 
 				{
 					Damage = 50,
-					FizzleOldSpawns = true,
 				},
 				ExcludeLinked = true,
             },
@@ -455,6 +455,7 @@ OverwriteTableKeys( TraitData, {
 					--Spread = 15,
 					RootOwnerWhileFiring = true,
 					ProjectileAngleOffset = math.rad(0),
+					FizzleOldSpawns = false,
                 },
                 ExcludeLinked = true,
 			},
@@ -464,7 +465,6 @@ OverwriteTableKeys( TraitData, {
                 ProjectileProperties = 
 				{
 					Damage = 10,
-					FizzleOldSpawns = false,
 				},
 				ExcludeLinked = true,
             },
@@ -513,6 +513,7 @@ OverwriteTableKeys( TraitData, {
 					ProjectileInterval = 0.11,
 					BarrelLength = 0,
 					AttachToOwner = true,
+					FizzleOldSpawns = false,
 
                 },
                 ExcludeLinked = true,
@@ -523,7 +524,6 @@ OverwriteTableKeys( TraitData, {
                 ProjectileProperties = 
 				{
 					Damage = 70,
-					FizzleOldSpawns = false,
 				},
 				ExcludeLinked = true,
             },
@@ -565,6 +565,7 @@ OverwriteTableKeys( TraitData, {
 				WeaponProperties = 
                 {
                     Cooldown = 1.5,
+					FizzleOldSpawns = false,
                 },
                 ExcludeLinked = true,
 			},
@@ -574,7 +575,6 @@ OverwriteTableKeys( TraitData, {
                 ProjectileProperties = 
 				{
 					Damage = 60,
-					FizzleOldSpawns = false,
 				},
 				ExcludeLinked = true,
             },
@@ -674,6 +674,7 @@ OverwriteTableKeys( TraitData, {
 				WeaponProperties = 
                 {
                     Cooldown = 1,
+					FizzleOldSpawns = false,
                 },
                 ExcludeLinked = true,
 			},
@@ -683,7 +684,6 @@ OverwriteTableKeys( TraitData, {
                 ProjectileProperties = 
 				{
 					Damage = 70,
-					FizzleOldSpawns = false,
 				},
 				ExcludeLinked = true,
             },
@@ -725,6 +725,7 @@ OverwriteTableKeys( TraitData, {
 				WeaponProperties = 
                 {
                     Cooldown = 0.8,
+					FizzleOldSpawns = false,
                 },
                 ExcludeLinked = true,
 			},
@@ -734,7 +735,6 @@ OverwriteTableKeys( TraitData, {
                 ProjectileProperties = 
 				{
 					Damage = 80,
-					FizzleOldSpawns = false,
 				},
 				ExcludeLinked = true,
             },
@@ -776,6 +776,7 @@ OverwriteTableKeys( TraitData, {
 				WeaponProperties = 
                 {
                     Cooldown = 5,
+					FizzleOldSpawns = true,
                 },
                 ExcludeLinked = true,
 			},
@@ -785,7 +786,6 @@ OverwriteTableKeys( TraitData, {
                 ProjectileProperties = 
 				{
 					Damage = 110,
-					FizzleOldSpawns = true,
 				},
 				ExcludeLinked = true,
             },
@@ -801,6 +801,109 @@ OverwriteTableKeys( TraitData, {
 		{
 			DisplayType = "RoomValue",
 			Key = "Copy_Radiator2",
+			Text = "Copy_2nd"
+		},
+	},
+
+	ThiefMineLayerCopyDisplayBoon = 
+	{
+		Icon = "JarlUlsfark-Tools_of_the_Trade\\ThiefMineLayerIcon",
+		ShowInHUD = true,
+		CustomLabel = 
+		{
+			DisplayType = "RoomValue",
+			Key = "Copy_ThiefMineLayer",
+			Text = "Copy_EmptyText"
+		},
+        PropertyChanges = 
+        {
+           {
+				WeaponName = "WeaponLob",
+				WeaponProperty = "Projectile",
+				ChangeValue = "BloodMineToss",
+			},
+            {
+				WeaponName = "WeaponLob",
+				WeaponProperties = 
+                {
+                    Cooldown = 2,
+					FizzleOldSpawns = false,
+                },
+                ExcludeLinked = true,
+			},
+            {
+                WeaponName = "WeaponLob",
+                ProjectileName = "BloodMineToss",
+                ProjectileProperties = 
+				{
+					Damage = 0,
+				},
+				ExcludeLinked = true,
+            },
+        },
+		FlavorText = "CopyAbility_FlavorText",
+	},
+
+	ThiefMineLayerCopyTwoDisplayBoon = 
+	{
+		Icon = "JarlUlsfark-Tools_of_the_Trade\\ThiefMineLayerIcon",
+		ShowInHUD = true,
+		CustomLabel = 
+		{
+			DisplayType = "RoomValue",
+			Key = "Copy_ThiefMineLayer2",
+			Text = "Copy_2nd"
+		},
+	},
+
+	JellyfishCopyDisplayBoon = 
+	{
+		Icon = "JarlUlsfark-Tools_of_the_Trade\\JellyfishIcon",
+		ShowInHUD = true,
+		CustomLabel = 
+		{
+			DisplayType = "RoomValue",
+			Key = "Copy_Jellyfish",
+			Text = "Copy_EmptyText"
+		},
+        PropertyChanges = 
+        {
+           {
+				WeaponName = "WeaponLob",
+				WeaponProperty = "Projectile",
+				ChangeValue = "JellyfishStingRing",
+			},
+            {
+				WeaponName = "WeaponLob",
+				WeaponProperties = 
+                {
+                    Cooldown = 1.5,
+					FizzleOldSpawns = true,
+					BarrelLength = 0,
+                },
+                ExcludeLinked = true,
+			},
+            {
+                WeaponName = "WeaponLob",
+                ProjectileName = "JellyfishStingRing",
+                ProjectileProperties = 
+				{
+					Damage = 50,
+				},
+				ExcludeLinked = true,
+            },
+        },
+		FlavorText = "CopyAbility_FlavorText",
+	},
+
+	JellyfishCopyTwoDisplayBoon = 
+	{
+		Icon = "JarlUlsfark-Tools_of_the_Trade\\JellyfishIcon",
+		ShowInHUD = true,
+		CustomLabel = 
+		{
+			DisplayType = "RoomValue",
+			Key = "Copy_Jellyfish2",
 			Text = "Copy_2nd"
 		},
 	},
@@ -827,6 +930,7 @@ OverwriteTableKeys( TraitData, {
 				WeaponProperties = 
                 {
                     Cooldown = 5,
+					FizzleOldSpawns = true,
                 },
                 ExcludeLinked = true,
 			},
@@ -836,7 +940,6 @@ OverwriteTableKeys( TraitData, {
                 ProjectileProperties = 
 				{
 					Damage = 160,
-					FizzleOldSpawns = true,
 				},
 				ExcludeLinked = true,
             },
@@ -887,6 +990,7 @@ OverwriteTableKeys( TraitData, {
 					AutoLockArcDistance = 90,
 					RootOwnerWhileFiring = true,
 					CancelChargeOnRelease = true,
+					FizzleOldSpawns = true,
                 },
                 ExcludeLinked = true,
 			},
@@ -896,7 +1000,6 @@ OverwriteTableKeys( TraitData, {
                 ProjectileProperties = 
 				{
 					Damage = 140,
-					FizzleOldSpawns = true,
 				},
 				ExcludeLinked = true,
             },
@@ -938,6 +1041,7 @@ OverwriteTableKeys( TraitData, {
 				WeaponProperties = 
                 {
                     Cooldown = 1,
+					FizzleOldSpawns = false,
                 },
                 ExcludeLinked = true,
 			},
@@ -947,7 +1051,6 @@ OverwriteTableKeys( TraitData, {
                 ProjectileProperties = 
 				{
 					Damage = 60,
-					FizzleOldSpawns = false,
 				},
 				ExcludeLinked = true,
             },
@@ -989,6 +1092,7 @@ OverwriteTableKeys( TraitData, {
 				WeaponProperties = 
                 {
                     Cooldown = 1,
+					FizzleOldSpawns = true,
 					
                 },
                 ExcludeLinked = true,
@@ -999,8 +1103,6 @@ OverwriteTableKeys( TraitData, {
                 ProjectileProperties = 
 				{
 					Damage = 130,
-					FizzleOldSpawns = true,
-
 				},
 				ExcludeLinked = true,
             },
@@ -1042,6 +1144,7 @@ OverwriteTableKeys( TraitData, {
 				WeaponProperties = 
                 {
                     Cooldown = 0.6,
+					FizzleOldSpawns = false,
                 },
                 ExcludeLinked = true,
 			},
@@ -1051,7 +1154,6 @@ OverwriteTableKeys( TraitData, {
                 ProjectileProperties = 
 				{
 					Damage = 70,
-					FizzleOldSpawns = false,
 				},
 				ExcludeLinked = true,
             },
@@ -1154,6 +1256,7 @@ OverwriteTableKeys( TraitData, {
 					BarrelLength = -100,
 					WeaponRange = 100,
 					AttachToOwner = true,
+					FizzleOldSpawns = false,
                 },
                 ExcludeLinked = true,
 			},
@@ -1163,7 +1266,6 @@ OverwriteTableKeys( TraitData, {
                 ProjectileProperties = 
 				{
 					Damage = 110,
-					FizzleOldSpawns = false,
 					SpawnAtVictimLocation = false,
 					DetonateAtVictimLocation = false,
 				},
@@ -1207,6 +1309,7 @@ OverwriteTableKeys( TraitData, {
 				WeaponProperties = 
                 {
                     Cooldown = 0.6,
+					FizzleOldSpawns = true,
                 },
                 ExcludeLinked = true,
 			},
@@ -1216,7 +1319,6 @@ OverwriteTableKeys( TraitData, {
                 ProjectileProperties = 
 				{
 					Damage = 80,
-					FizzleOldSpawns = true,
 				},
 				ExcludeLinked = true,
             },
@@ -1259,6 +1361,7 @@ OverwriteTableKeys( TraitData, {
 				WeaponProperties = 
                 {
                     Cooldown = 2,
+					FizzleOldSpawns = false,
                 },
                 ExcludeLinked = true,
 			},
@@ -1268,7 +1371,6 @@ OverwriteTableKeys( TraitData, {
                 ProjectileProperties = 
 				{
 					Damage = 0,
-					FizzleOldSpawns = false,
 				},
 				ExcludeLinked = true,
             },
@@ -1278,7 +1380,6 @@ OverwriteTableKeys( TraitData, {
                 ProjectileProperties = 
 				{
 					Damage = 120,
-					FizzleOldSpawns = false,
 				},
 				ExcludeLinked = true,
             },
@@ -1333,7 +1434,7 @@ OverwriteTableKeys( TraitData, {
 					Spread = 15,
 					FireProjectileStartDelay = 0.03,
 					ProjectileAngleOffsetMin = math.rad(0),
-					
+					FizzleOldSpawns = false,
                 },
                 ExcludeLinked = true,
 			},
@@ -1343,7 +1444,6 @@ OverwriteTableKeys( TraitData, {
                 ProjectileProperties = 
 				{
 					Damage = 14,
-					FizzleOldSpawns = false,
 				},
 				ExcludeLinked = true,
             },
@@ -1385,6 +1485,7 @@ OverwriteTableKeys( TraitData, {
 				WeaponProperties = 
                 {
                     Cooldown = 1.75,
+					FizzleOldSpawns = true,
                 },
                 ExcludeLinked = true,
 			},
@@ -1394,7 +1495,6 @@ OverwriteTableKeys( TraitData, {
                 ProjectileProperties = 
 				{
 					Damage = 90,
-					FizzleOldSpawns = true,
 				},
 				ExcludeLinked = true,
             },
@@ -1410,6 +1510,58 @@ OverwriteTableKeys( TraitData, {
 		{
 			DisplayType = "RoomValue",
 			Key = "Copy_Lamia2",
+			Text = "Copy_2nd"
+		},
+	},
+
+	Lamia_MinibossCopyDisplayBoon = 
+	{
+		Icon = "JarlUlsfark-Tools_of_the_Trade\\Lamia_MinibossIcon",
+		ShowInHUD = true,
+		CustomLabel = 
+		{
+			DisplayType = "RoomValue",
+			Key = "Copy_Lamia_Miniboss",
+			Text = "Copy_EmptyText"
+		},
+        PropertyChanges = 
+        {
+           {
+				WeaponName = "WeaponLob",
+				WeaponProperty = "Projectile",
+				ChangeValue = "LamiaSkyCast",
+			},
+            {
+				WeaponName = "WeaponLob",
+				WeaponProperties = 
+                {
+                    Cooldown = 1.75,
+					NumProjectiles = 3,
+					FizzleOldSpawns = true,
+                },
+                ExcludeLinked = true,
+			},
+            {
+                WeaponName = "WeaponLob",
+                ProjectileName = "LamiaSkyCast",
+                ProjectileProperties = 
+				{
+					Damage = 90,
+				},
+				ExcludeLinked = true,
+            },
+        },
+		FlavorText = "CopyAbility_FlavorText",
+	},
+
+	Lamia_MinibossCopyTwoDisplayBoon = 
+	{
+		Icon = "JarlUlsfark-Tools_of_the_Trade\\Lamia_MinibossIcon",
+		ShowInHUD = true,
+		CustomLabel = 
+		{
+			DisplayType = "RoomValue",
+			Key = "Copy_Lamia_Miniboss2",
 			Text = "Copy_2nd"
 		},
 	},
@@ -1438,6 +1590,9 @@ OverwriteTableKeys( TraitData, {
                     Cooldown = 1.8,
 					BlockMoveInput = true,
 					CancelMovement = true,
+					FizzleOldSpawns = true,
+					AutoLock = true,
+					AutoLockRange = 600,
                 },
                 ExcludeLinked = true,
 			},
@@ -1447,9 +1602,6 @@ OverwriteTableKeys( TraitData, {
                 ProjectileProperties = 
 				{
 					Damage = 100,
-					FizzleOldSpawns = true,
-					AutoLock = true,
-					AutoLockRange = 600,
 				},
 				ExcludeLinked = true,
             },
@@ -1491,7 +1643,7 @@ OverwriteTableKeys( TraitData, {
 				WeaponProperties = 
                 {
                     Cooldown = 3,
-
+					FizzleOldSpawns = true,
                 },
                 ExcludeLinked = true,
 			},
@@ -1501,7 +1653,6 @@ OverwriteTableKeys( TraitData, {
                 ProjectileProperties = 
 				{
 					Damage = 350,
-					FizzleOldSpawns = true,
 				},
 				ExcludeLinked = true,
             },

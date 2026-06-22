@@ -136,6 +136,36 @@ sjson.hook(file, function(data)
 	)
 
 	table.insert(data.Texts, sjson.to_object(
+	{
+		Id = "TabletKirbyInfiniteAmmoTrait",
+		InheritFrom = "BaseBoonMultiline",
+		DisplayName = "Permenant Reflection",
+		Description = "Your copied {$Keywords.Attack} never expires. {$Keywords.AttackEX} releases the copy.",
+	},
+	TextOrder)
+	)
+
+	table.insert(data.Texts, sjson.to_object(
+	{
+		Id = "TabletKirbyDoubleAmmoTrait",
+		InheritFrom = "BaseBoonMultiline",
+		DisplayName = "Extended Reflection",
+		Description = "Your {$Keywords.Attack} have double {$Keywords.Ammo}.",
+	},
+	TextOrder)
+	)
+
+	table.insert(data.Texts, sjson.to_object(
+	{
+		Id = "TabletKirbyMegaAmmoTrait",
+		InheritFrom = "BaseBoonMultiline",
+		DisplayName = "Explosive Reflection",
+		Description = "Your {$Keywords.Attack} deals +100% damage but always copies the last enemy hit.",
+	},
+	TextOrder)
+	)
+
+	table.insert(data.Texts, sjson.to_object(
 		{
 			Id = "Copy_EmptyText",
 			InheritFrom = "BaseBoonMultiline",
@@ -324,6 +354,16 @@ sjson.hook(file, function(data)
 
 	table.insert(data.Texts, sjson.to_object(
 		{
+			Id = "JellyfishCopyDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Copy Ability: Jelly-Fish",
+			Description = "Your Attack {#UpgradeFormat}stings lightning around you{#Prev}.",
+		},
+		TextOrder)
+	)
+
+	table.insert(data.Texts, sjson.to_object(
+		{
 			Id = "SirenDrummerCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy Ability: Roxy",
@@ -388,6 +428,16 @@ sjson.hook(file, function(data)
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy Ability: Lamia",
 			Description = "Your Attack fires a {#UpgradeFormat}homing beam from the sky {#Prev}.",
+		},
+		TextOrder)
+	)
+
+	table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "Lamia_MinibossCopyDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Copy Ability: Queen Lamia",
+			Description = "Your Attack fires {#UpgradeFormat}3 homing beam from the sky {#Prev}.",
 		},
 		TextOrder)
 	)
