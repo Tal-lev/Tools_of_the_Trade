@@ -30,6 +30,7 @@
 - Smacker
 - Dread-Wailer
 - Lamia
+- Lamia Queen
 
 ### Tartarus
 
