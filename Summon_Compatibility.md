@@ -81,5 +81,5 @@
 - Retribution
 - The Cyclops
 - The Strategist
-    Beauty
-    Famine
+- Beauty
+- Famine
