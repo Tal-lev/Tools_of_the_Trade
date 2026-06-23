@@ -317,6 +317,54 @@ OverwriteTableKeys( TraitData, {
 		},
 	},
 
+	FogEmitterCopyDisplayBoon = 
+	{
+		Icon = "JarlUlsfark-Tools_of_the_Trade\\FogEmitterIcon",
+		ShowInHUD = true,
+		CustomLabel = 
+		{
+			DisplayType = "RoomValue",
+			Key = "Copy_FogEmitter",
+			Text = "Copy_EmptyText"
+		},
+        PropertyChanges = 
+        {
+           {
+				WeaponName = "WeaponLob",
+				WeaponProperty = "Projectile",
+				ChangeValue = "FogEmitterSlam",
+			},
+            {
+				WeaponName = "WeaponLob",
+				WeaponProperties = 
+                {
+                    Cooldown = 1.2,
+                },
+                ExcludeLinked = true,
+			},
+            {
+                WeaponName = "WeaponLob",
+                ProjectileName = "FogEmitterSlam",
+                ProjectileProperty = "Damage",
+                ChangeValue = 90,
+                ChangeType = "Absolute",
+            },
+        },
+		FlavorText = "CopyAbility_FlavorText",
+	},
+
+	FogEmitterCopyTwoDisplayBoon = 
+	{
+		Icon = "JarlUlsfark-Tools_of_the_Trade\\FogEmitterIcon",
+		ShowInHUD = true,
+		CustomLabel = 
+		{
+			DisplayType = "RoomValue",
+			Key = "Copy_FogEmitter2",
+			Text = "Copy_2nd"
+		},
+	},
+	
 	ScreamerCopyDisplayBoon = 
 	{
 		Icon = "JarlUlsfark-Tools_of_the_Trade\\ScreamerIcon",
@@ -418,6 +466,58 @@ OverwriteTableKeys( TraitData, {
 			Text = "Copy_2nd"
 		},
 	},
+
+	TreantTailCopyDisplayBoon = 
+	{
+		Icon = "JarlUlsfark-Tools_of_the_Trade\\TreantTailIcon",
+		ShowInHUD = true,
+		CustomLabel = 
+		{
+			DisplayType = "RoomValue",
+			Key = "Copy_TreantTail",
+			Text = "Copy_EmptyText"
+		},
+        PropertyChanges = 
+        {
+           {
+				WeaponName = "WeaponLob",
+				WeaponProperty = "Projectile",
+				ChangeValue = "TreantTailSwipe",
+			},
+            {
+				WeaponName = "WeaponLob",
+				WeaponProperties = 
+                {
+                    Cooldown = 0.8,
+					FizzleOldSpawns = true,
+                },
+                ExcludeLinked = true,
+			},
+            {
+                WeaponName = "WeaponLob",
+                ProjectileName = "TreantTailSwipe",
+                ProjectileProperties = 
+				{
+					Damage = 60,
+				},
+				ExcludeLinked = true,
+            },
+        },
+		FlavorText = "CopyAbility_FlavorText",
+	},
+
+	TreantTailCopyTwoDisplayBoon = 
+	{
+		Icon = "JarlUlsfark-Tools_of_the_Trade\\TreantTailIcon",
+		ShowInHUD = true,
+		CustomLabel = 
+		{
+			DisplayType = "RoomValue",
+			Key = "Copy_TreantTail2",
+			Text = "Copy_2nd"
+		},
+	},
+
 	--Doesn't Scatter
 	TreantCopyDisplayBoon = 
 	{
@@ -1275,6 +1375,60 @@ OverwriteTableKeys( TraitData, {
 		FlavorText = "CopyAbility_FlavorText",
 	},
 
+	FogEmittertwoCopyDisplayBoon = 
+	{
+		Icon = "JarlUlsfark-Tools_of_the_Trade\\FogEmitter2Icon",
+		ShowInHUD = true,
+		CustomLabel = 
+		{
+			DisplayType = "RoomValue",
+			Key = "Copy_FogEmittertwo",
+			Text = "Copy_EmptyText"
+		},
+        PropertyChanges = 
+        {
+           {
+				WeaponName = "WeaponLob",
+				WeaponProperty = "Projectile",
+				ChangeValue = "FogEmitterSweepSmall",
+			},
+            {
+				WeaponName = "WeaponLob",
+				WeaponProperties = 
+                {
+                    Cooldown = 1,
+                },
+                ExcludeLinked = true,
+			},
+            {
+                WeaponName = "WeaponLob",
+                ProjectileName = "FogEmitterSweepSmall",
+                ProjectileProperty = "Damage",
+                ChangeValue = 80,
+                ChangeType = "Absolute",
+            },
+			{
+				WeaponName = "WeaponLob",
+				WeaponProperty = "ProjectileScaleMultiplier",
+				ChangeValue = 0.6,
+				ChangeType = "Multiply",
+			},	
+        },
+		FlavorText = "CopyAbility_FlavorText",
+	},
+
+	FogEmittertwoCopyTwoDisplayBoon = 
+	{
+		Icon = "JarlUlsfark-Tools_of_the_Trade\\FogEmitter2Icon",
+		ShowInHUD = true,
+		CustomLabel = 
+		{
+			DisplayType = "RoomValue",
+			Key = "Copy_FogEmittertwo2",
+			Text = "Copy_2nd"
+		},
+	},
+
 	BrokenHeartedCopyTwoDisplayBoon = 
 	{
 		Icon = "JarlUlsfark-Tools_of_the_Trade\\BrokenHeartedIcon",
@@ -1334,6 +1488,68 @@ OverwriteTableKeys( TraitData, {
 		{
 			DisplayType = "RoomValue",
 			Key = "Copy_Screamer2",
+			Text = "Copy_2nd"
+		},
+	},
+
+	VampireCopyDisplayBoon = 
+	{
+		Icon = "JarlUlsfark-Tools_of_the_Trade\\VampireIcon",
+		ShowInHUD = true,
+		CustomLabel = 
+		{
+			DisplayType = "RoomValue",
+			Key = "Copy_Vampire",
+			Text = "Copy_EmptyText"
+		},
+        PropertyChanges = 
+        {
+           {
+				WeaponName = "WeaponLob",
+				WeaponProperty = "Projectile",
+				ChangeValue = "VampireSwipe",
+			},
+            {
+				WeaponName = "WeaponLob",
+				WeaponProperties = 
+                {
+                    Cooldown = 0.8,
+                },
+                ExcludeLinked = true,
+			},
+            {
+                WeaponName = "WeaponLob",
+                ProjectileName = "VampireSwipe",
+                ProjectileProperties = 
+				{
+					Damage = 160,
+				},
+				ExcludeLinked = true,
+            },
+        },
+		AddOutgoingLifestealModifiers =
+		{
+			ValidWeapons = { "WeaponLob" },
+			ValidMultiplier = 0.01,
+			MaxLifesteal = 1,
+			MinLifesteal = 1,
+			ReportValues = 
+			{ 
+				ReportedLifeStealAmount = "MaxLifesteal",
+				ReportedRequirement = "RequiredMaxHealth",
+			},
+		},
+		FlavorText = "CopyAbility_FlavorText",
+	},
+
+	VampireCopyTwoDisplayBoon = 
+	{
+		Icon = "JarlUlsfark-Tools_of_the_Trade\\VampireIcon",
+		ShowInHUD = true,
+		CustomLabel = 
+		{
+			DisplayType = "RoomValue",
+			Key = "Copy_Vampire2",
 			Text = "Copy_2nd"
 		},
 	},

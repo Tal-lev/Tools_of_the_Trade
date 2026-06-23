@@ -783,6 +783,226 @@ sjson.hook(file, function(data)
 
     table.insert(data.Animations,
     {
+    Name = "TreantTailSwipeFx_Zeus",
+    InheritFrom = "TreantTailSwipeFx",
+    ColorFromOwner = "Ignore",
+    AddColor = true,
+    StartRed = 1.0,
+    StartGreen = 0.95,
+    StartBlue = 0.7,
+    EndRed = 0.9999,
+    EndGreen = 0.8,
+    EndBlue = 0.5,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "TreantTailSwipeFx_Hera",
+        InheritFrom = "TreantTailSwipeFx_Zeus",
+        StartRed = 0.0,
+        StartGreen = 1.0,
+        StartBlue = 0.1,
+        EndRed = 0.1,
+        EndGreen = 0.3,
+        EndBlue = 1.0,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "TreantTailSwipeFx_Poseidon",
+        InheritFrom = "TreantTailSwipeFx_Zeus",
+        StartRed = 0.1,
+        StartGreen = 1.0,
+        StartBlue = 0.8,
+        EndRed = 0,
+        EndGreen = 0.6,
+        EndBlue = 1.0,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "TreantTailSwipeFx_Demeter",
+        InheritFrom = "TreantTailSwipeFx_Zeus",
+        StartRed = 0.25,
+        StartGreen = 0.35,
+        StartBlue = 0.5,
+        EndRed = 0.35,
+        EndGreen = 0.25,
+        EndBlue = 0.4999,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "TreantTailSwipeFx_Apollo",
+        InheritFrom = "TreantTailSwipeFx_Zeus",
+        StartRed = 1.0,
+        StartGreen = 0.9,
+        StartBlue = 0.7,
+        EndRed = 0.999,
+        EndGreen = 0.85,
+        EndBlue = 0.05,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "TreantTailSwipeFx_Aphrodite",
+        InheritFrom = "TreantTailSwipeFx_Zeus",
+        StartRed = 1.0,
+        StartGreen = 0.6,
+        StartBlue = 0.8,
+        EndRed = 0.99,
+        EndGreen = 0.05,
+        EndBlue = 0.99,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "TreantTailSwipeFx_Hephaestus",
+        InheritFrom = "TreantTailSwipeFx_Zeus",
+        StartRed = 0.51,
+        StartGreen = 0.82,
+        StartBlue = 1.00,
+        EndRed = 1.00,
+        EndGreen = 0,
+        EndBlue = 0,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "TreantTailSwipeFx_Hestia",
+        InheritFrom = "TreantTailSwipeFx_Zeus",
+        StartRed = 1.0,
+        StartGreen = 0.3,
+        StartBlue = 0.02,
+        EndRed = 0.999,
+        EndGreen = 0.15,
+        EndBlue = 0.0,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "TreantTailSwipeFx_Ares",
+        InheritFrom = "TreantTailSwipeFx_Zeus",
+        StartRed = 1.0,
+        StartGreen = 0.04,
+        StartBlue = 0.001,
+        EndRed = 0.999,
+        EndGreen = 0.0,
+        EndBlue = 0.0,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "FogEmitterSlamNova_Zeus",
+        InheritFrom = "FogEmitterSlamNova",
+        ColorFromOwner = "Ignore",
+        AddColor = true,
+        StartRed = 1.0,
+        StartGreen = 0.95,
+        StartBlue = 0.7,
+        EndRed = 0.9999,
+        EndGreen = 0.8,
+        EndBlue = 0.5,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "FogEmitterSlamNova_Hera",
+        InheritFrom = "FogEmitterSlamNova_Zeus",
+        StartRed = 0.0,
+        StartGreen = 1.0,
+        StartBlue = 0.1,
+        EndRed = 0.1,
+        EndGreen = 0.3,
+        EndBlue = 1.0,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "FogEmitterSlamNova_Poseidon",
+        InheritFrom = "FogEmitterSlamNova_Zeus",
+        StartRed = 0.1,
+        StartGreen = 1.0,
+        StartBlue = 0.8,
+        EndRed = 0,
+        EndGreen = 0.6,
+        EndBlue = 1.0,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "FogEmitterSlamNova_Demeter",
+        InheritFrom = "FogEmitterSlamNova_Zeus",
+        StartRed = 0.25,
+        StartGreen = 0.35,
+        StartBlue = 0.5,
+        EndRed = 0.35,
+        EndGreen = 0.25,
+        EndBlue = 0.4999,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "FogEmitterSlamNova_Apollo",
+        InheritFrom = "FogEmitterSlamNova_Zeus",
+        StartRed = 1.0,
+        StartGreen = 0.9,
+        StartBlue = 0.7,
+        EndRed = 0.999,
+        EndGreen = 0.85,
+        EndBlue = 0.05,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "FogEmitterSlamNova_Aphrodite",
+        InheritFrom = "FogEmitterSlamNova_Zeus",
+        StartRed = 1.0,
+        StartGreen = 0.6,
+        StartBlue = 0.8,
+        EndRed = 0.99,
+        EndGreen = 0.05,
+        EndBlue = 0.99,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "FogEmitterSlamNova_Hephaestus",
+        InheritFrom = "FogEmitterSlamNova_Zeus",
+        StartRed = 0.51,
+        StartGreen = 0.82,
+        StartBlue = 1.00,
+        EndRed = 1.00,
+        EndGreen = 0,
+        EndBlue = 0,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "FogEmitterSlamNova_Hestia",
+        InheritFrom = "FogEmitterSlamNova_Zeus",
+        StartRed = 1.0,
+        StartGreen = 0.3,
+        StartBlue = 0.02,
+        EndRed = 0.999,
+        EndGreen = 0.15,
+        EndBlue = 0.0,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "FogEmitterSlamNova_Ares",
+        InheritFrom = "FogEmitterSlamNova_Zeus",
+        StartRed = 1.0,
+        StartGreen = 0.04,
+        StartBlue = 0.001,
+        EndRed = 0.999,
+        EndGreen = 0.0,
+        EndBlue = 0.0,
+    })
+
+    table.insert(data.Animations,
+    {
         Name = "TurtleLobProjectile_Zeus",
         InheritFrom = "TurtleLobProjectile",
         ColorFromOwner = "Ignore",
@@ -3249,6 +3469,116 @@ table.insert(data.Animations,
 
     table.insert(data.Animations,
     {
+    Name = "FogEmitterSweepArc_Zeus",
+    InheritFrom = "FogEmitterSweepArc",
+    ColorFromOwner = "Ignore",
+    AddColor = true,
+    StartRed = 1.0,
+    StartGreen = 0.95,
+    StartBlue = 0.7,
+    EndRed = 0.9999,
+    EndGreen = 0.8,
+    EndBlue = 0.5,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "FogEmitterSweepArc_Hera",
+        InheritFrom = "FogEmitterSweepArc_Zeus",
+        StartRed = 0.0,
+        StartGreen = 1.0,
+        StartBlue = 0.1,
+        EndRed = 0.1,
+        EndGreen = 0.3,
+        EndBlue = 1.0,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "FogEmitterSweepArc_Poseidon",
+        InheritFrom = "FogEmitterSweepArc_Zeus",
+        StartRed = 0.1,
+        StartGreen = 1.0,
+        StartBlue = 0.8,
+        EndRed = 0,
+        EndGreen = 0.6,
+        EndBlue = 1.0,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "FogEmitterSweepArc_Demeter",
+        InheritFrom = "FogEmitterSweepArc_Zeus",
+        StartRed = 0.25,
+        StartGreen = 0.35,
+        StartBlue = 0.5,
+        EndRed = 0.35,
+        EndGreen = 0.25,
+        EndBlue = 0.4999,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "FogEmitterSweepArc_Apollo",
+        InheritFrom = "FogEmitterSweepArc_Zeus",
+        StartRed = 1.0,
+        StartGreen = 0.9,
+        StartBlue = 0.7,
+        EndRed = 0.999,
+        EndGreen = 0.85,
+        EndBlue = 0.05,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "FogEmitterSweepArc_Aphrodite",
+        InheritFrom = "FogEmitterSweepArc_Zeus",
+        StartRed = 1.0,
+        StartGreen = 0.6,
+        StartBlue = 0.8,
+        EndRed = 0.99,
+        EndGreen = 0.05,
+        EndBlue = 0.99,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "FogEmitterSweepArc_Hephaestus",
+        InheritFrom = "FogEmitterSweepArc_Zeus",
+        StartRed = 0.51,
+        StartGreen = 0.82,
+        StartBlue = 1.00,
+        EndRed = 1.00,
+        EndGreen = 0,
+        EndBlue = 0,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "FogEmitterSweepArc_Hestia",
+        InheritFrom = "FogEmitterSweepArc_Zeus",
+        StartRed = 1.0,
+        StartGreen = 0.3,
+        StartBlue = 0.02,
+        EndRed = 0.999,
+        EndGreen = 0.15,
+        EndBlue = 0.0,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "FogEmitterSweepArc_Ares",
+        InheritFrom = "FogEmitterSweepArc_Zeus",
+        StartRed = 1.0,
+        StartGreen = 0.04,
+        StartBlue = 0.001,
+        EndRed = 0.999,
+        EndGreen = 0.0,
+        EndBlue = 0.0,
+    })
+
+    table.insert(data.Animations,
+    {
     Name = "BrokenHeartedNova_Zeus",
     InheritFrom = "BrokenHeartedNova",
     ColorFromOwner = "Ignore",
@@ -3686,6 +4016,117 @@ table.insert(data.Animations,
         EndGreen = 0.0,
         EndBlue = 0.0,
     })
+
+    table.insert(data.Animations,
+    {
+    Name = "VampireSwipe_Zeus",
+    InheritFrom = "VampireSwipe",
+    ColorFromOwner = "Ignore",
+    AddColor = true,
+    StartRed = 1.0,
+    StartGreen = 0.95,
+    StartBlue = 0.7,
+    EndRed = 0.9999,
+    EndGreen = 0.8,
+    EndBlue = 0.5,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "VampireSwipe_Hera",
+        InheritFrom = "VampireSwipe_Zeus",
+        StartRed = 0.0,
+        StartGreen = 1.0,
+        StartBlue = 0.1,
+        EndRed = 0.1,
+        EndGreen = 0.3,
+        EndBlue = 1.0,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "VampireSwipe_Poseidon",
+        InheritFrom = "VampireSwipe_Zeus",
+        StartRed = 0.1,
+        StartGreen = 1.0,
+        StartBlue = 0.8,
+        EndRed = 0,
+        EndGreen = 0.6,
+        EndBlue = 1.0,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "VampireSwipe_Demeter",
+        InheritFrom = "VampireSwipe_Zeus",
+        StartRed = 0.25,
+        StartGreen = 0.35,
+        StartBlue = 0.5,
+        EndRed = 0.35,
+        EndGreen = 0.25,
+        EndBlue = 0.4999,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "VampireSwipe_Apollo",
+        InheritFrom = "VampireSwipe_Zeus",
+        StartRed = 1.0,
+        StartGreen = 0.9,
+        StartBlue = 0.7,
+        EndRed = 0.999,
+        EndGreen = 0.85,
+        EndBlue = 0.05,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "VampireSwipe_Aphrodite",
+        InheritFrom = "VampireSwipe_Zeus",
+        StartRed = 1.0,
+        StartGreen = 0.6,
+        StartBlue = 0.8,
+        EndRed = 0.99,
+        EndGreen = 0.05,
+        EndBlue = 0.99,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "VampireSwipe_Hephaestus",
+        InheritFrom = "VampireSwipe_Zeus",
+        StartRed = 0.51,
+        StartGreen = 0.82,
+        StartBlue = 1.00,
+        EndRed = 1.00,
+        EndGreen = 0,
+        EndBlue = 0,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "VampireSwipe_Hestia",
+        InheritFrom = "VampireSwipe_Zeus",
+        StartRed = 1.0,
+        StartGreen = 0.3,
+        StartBlue = 0.02,
+        EndRed = 0.999,
+        EndGreen = 0.15,
+        EndBlue = 0.0,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "VampireSwipe_Ares",
+        InheritFrom = "VampireSwipe_Zeus",
+        StartRed = 1.0,
+        StartGreen = 0.04,
+        StartBlue = 0.001,
+        EndRed = 0.999,
+        EndGreen = 0.0,
+        EndBlue = 0.0,
+    })
+
 
     table.insert(data.Animations,
     {

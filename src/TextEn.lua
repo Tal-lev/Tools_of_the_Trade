@@ -140,7 +140,7 @@ sjson.hook(file, function(data)
 		Id = "TabletKirbyInfiniteAmmoTrait",
 		InheritFrom = "BaseBoonMultiline",
 		DisplayName = "Permenant Reflection",
-		Description = "Your copied {$Keywords.Attack} never expires. {$Keywords.AttackEX} releases the copy.",
+		Description = "Your copied {$Keywords.Attack} {#UpgradeFormat}never expires{#Prev}. {$Keywords.AttackEX} releases the copy.",
 	},
 	TextOrder)
 	)
@@ -150,7 +150,7 @@ sjson.hook(file, function(data)
 		Id = "TabletKirbyDoubleAmmoTrait",
 		InheritFrom = "BaseBoonMultiline",
 		DisplayName = "Extended Reflection",
-		Description = "Your {$Keywords.Attack} have double {$Keywords.Ammo}.",
+		Description = "Your {$Keywords.Attack} have {#UpgradeFormat}double {#Prev}{$Keywords.Ammo}.",
 	},
 	TextOrder)
 	)
@@ -160,7 +160,7 @@ sjson.hook(file, function(data)
 		Id = "TabletKirbyMegaAmmoTrait",
 		InheritFrom = "BaseBoonMultiline",
 		DisplayName = "Explosive Reflection",
-		Description = "Your {$Keywords.Attack} deals +100% damage but always copies the last enemy hit.",
+		Description = "Your {$Keywords.Attack} deals {#UpgradeFormat}+100% {#Prev}damage but always {#UpgradeFormat}copies the last enemy hit{#Prev}.",
 	},
 	TextOrder)
 	)
@@ -294,6 +294,26 @@ sjson.hook(file, function(data)
 
 	table.insert(data.Texts, sjson.to_object(
 		{
+			Id = "TreantTailCopyDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Copy Ability: Root-Stalker Tail",
+			Description = "Your Attack {#UpgradeFormat}Swipes around you{#Prev}.",
+		},
+		TextOrder)
+	)
+
+	table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "FogEmitterCopyDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Copy Ability: Shadow-Spiller",
+			Description = "Your Attack {#UpgradeFormat}Slams the ground in front of you{#Prev}.",
+		},
+		TextOrder)
+	)
+
+	table.insert(data.Texts, sjson.to_object(
+		{
 			Id = "HecateOneCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy Ability: Hecate Torch-Cone",
@@ -414,6 +434,16 @@ sjson.hook(file, function(data)
 
 	table.insert(data.Texts, sjson.to_object(
 		{
+			Id = "FogEmitterCopyDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Copy Ability: Sorrow-Spiller",
+			Description = "Your Attack {#UpgradeFormat}Sweeps in front of you{#Prev}.",
+		},
+		TextOrder)
+	)
+
+	table.insert(data.Texts, sjson.to_object(
+		{
 			Id = "BrokenHeartedCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy Ability: Smacker",
@@ -438,6 +468,16 @@ sjson.hook(file, function(data)
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy Ability: Queen Lamia",
 			Description = "Your Attack fires {#UpgradeFormat}3 homing beam from the sky {#Prev}.",
+		},
+		TextOrder)
+	)
+
+		table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "VampireCopyDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Copy Ability: Phantom",
+			Description = "Your Attacks {#UpgradeFormat}Claw forward {#Prev}and {#UpgradeFormat}Steals Life{#Prev}.",
 		},
 		TextOrder)
 	)

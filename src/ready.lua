@@ -730,147 +730,77 @@ function mod.SetupCopyAbility()
 end
 
 function mod.CopyAbility (victim, functionArgs, triggerArgs)
-	local Changed = 0
+	local Changed = "null"
 	if (not HeroHasTrait("TabletKirbyMegaAmmoTrait")) and (triggerArgs.SourceProjectile ~= "CopyBolt") then
 		return
 	end
 	local CopyTrait = "DummyCopyDisplayBoon"
 	local TraitsToRemove = {}
-	for key,value in pairs(CurrentRun.Hero.TraitDictionary) do
-		if string.find(key, "CopyDisplayBoon") then
-			table.insert(TraitsToRemove, 1, key)
-			CopyTrait = key
-		end
-	end
-	for key,value in pairs(TraitsToRemove) do
-		RemoveTrait(CurrentRun.Hero, value)
-	end
 	if victim.Name == "Mage" or victim.Name == "Mage_Elite" then
-		RemoveTrait(CurrentRun.Hero, CopyTrait)
-		wait(0.1)
-		AddTraitToHero({ TraitName = "MageCopyDisplayBoon" })
-		Changed = 1
+		Changed = "Mage"
 	elseif victim.Name == "Guard" or victim.Name == "Guard_Elite" then
-		RemoveTrait(CurrentRun.Hero, CopyTrait)
-		wait(0.1)
-		AddTraitToHero({ TraitName = "GuardCopyDisplayBoon" })
-		Changed = 1
+		Changed = "Guard"
 	elseif victim.Name == "Guard2" or victim.Name == "Guard2_Elite" then
-		RemoveTrait(CurrentRun.Hero, CopyTrait)
-		wait(0.1)
-		AddTraitToHero({ TraitName = "GuardtwoCopyDisplayBoon" })
-		Changed = 1
+		Changed = "Guardtwo"
 	elseif victim.Name == "Brawler" or victim.Name == "Brawler_Elite" then
-		RemoveTrait(CurrentRun.Hero, CopyTrait)
-		wait(0.1)
-		AddTraitToHero({ TraitName = "BrawlerCopyDisplayBoon" })
-		Changed = 1
+		Changed = "Brawler"
 	elseif victim.Name == "SiegeVine" or victim.Name == "SiegeVine_Elite" then
-		RemoveTrait(CurrentRun.Hero, CopyTrait)
-		wait(0.1)
-		AddTraitToHero({ TraitName = "SiegeVineCopyDisplayBoon" })
-		Changed = 1
+		Changed = "SiegeVine"
 	elseif victim.Name == "Screamer" or victim.Name == "Screamer_Elite" then
-		RemoveTrait(CurrentRun.Hero, CopyTrait)
-		wait(0.1)
-		AddTraitToHero({ TraitName = "ScreamerCopyDisplayBoon" })
-		Changed = 1
+		Changed = "Screamer"
 	elseif victim.Name == "Radiator" or victim.Name == "Radiator_Elite" then
-		RemoveTrait(CurrentRun.Hero, CopyTrait)
-		wait(0.1)
-		AddTraitToHero({ TraitName = "RadiatorCopyDisplayBoon" })
-		Changed = 1
+		Changed = "Radiator"
+	elseif victim.Name == "TreantTail" or victim.Name == "TreantTail_Elite" then
+		Changed = "TreantTail"
 	--elseif victim.Name == "Treant" then
 	--	RemoveTrait(CurrentRun.Hero, CopyTrait)
 	--	wait(0.1)
 	--	AddTraitToHero({ TraitName = "TreantCopyDisplayBoon" })	
 	--	Changed = 1
+	elseif victim.Name == "FogEmitter" or victim.Name == "FogEmitter_Elite" then
+		Changed = "FogEmitter"
 	elseif victim.Name == "Hecate" then
-		RemoveTrait(CurrentRun.Hero, CopyTrait)
-		wait(0.1)
-		AddTraitToHero({ TraitName = "HecateOneCopyDisplayBoon" })
-		Changed = 1
+		Changed = "HecateOne"
 	elseif victim.Name == "Turtle" or victim.Name == "Turtle_Elite" then
-		RemoveTrait(CurrentRun.Hero, CopyTrait)
-		wait(0.1)
-		AddTraitToHero({ TraitName = "TurtleCopyDisplayBoon" })	
-		Changed = 1
-	elseif victim.Name == "FishmanMelee" or victim.Name == "FishmanMelee_Elite" then
-		RemoveTrait(CurrentRun.Hero, CopyTrait)
-		wait(0.1)
-		AddTraitToHero({ TraitName = "FishmanMeleeCopyDisplayBoon" })	
-		Changed = 1
+		Changed = "Turtle"
+	elseif victim.Name == "FishmanMelee" or victim.Name == "FishmanMelee_Elite" then	
+		Changed = "FishmanMelee"
 	elseif victim.Name == "FishmanRanged" or victim.Name == "FishmanRanged_Elite" then
-		RemoveTrait(CurrentRun.Hero, CopyTrait)
-		wait(0.1)
-		AddTraitToHero({ TraitName = "FishmanRangedCopyDisplayBoon" })	
-		Changed = 1
+		Changed = "FishmanRanged"
 	elseif victim.Name == "WaterUnit" or victim.Name == "WaterUnit_Elite" then
-		RemoveTrait(CurrentRun.Hero, CopyTrait)
-		wait(0.1)
-		AddTraitToHero({ TraitName = "WaterUnitCopyDisplayBoon" })
-		Changed = 1
+		Changed = "WaterUnit"
 	elseif victim.Name == "Radiator2" or victim.Name == "Radiator2_Elite" then
-		RemoveTrait(CurrentRun.Hero, CopyTrait)
-		wait(0.1)
-		AddTraitToHero({ TraitName = "RadiatortwoCopyDisplayBoon" })
-		Changed = 1
+		Changed = "Radiatortwo"
 	elseif victim.Name == "Jellyfish" or victim.Name == "Jellyfish_Elite" then
-		RemoveTrait(CurrentRun.Hero, CopyTrait)
-		wait(0.1)
-		AddTraitToHero({ TraitName = "JellyfishCopyDisplayBoon" })
-		Changed = 1
+		Changed = "Jellyfish"
 	--elseif victim.Name == "ThiefMineLayer" or victim.Name == "ThiefMineLayer_Elite" then
 	--	RemoveTrait(CurrentRun.Hero, CopyTrait)
 	--	wait(0.1)
 	--	AddTraitToHero({ TraitName = "ThiefMineLayerCopyDisplayBoon" })
 	--	Changed = 1
 	elseif victim.Name == "SirenDrummer" then
-		RemoveTrait(CurrentRun.Hero, CopyTrait)
-		wait(0.1)
-		AddTraitToHero({ TraitName = "SirenDrummerCopyDisplayBoon" })
-		Changed = 1
+		Changed = "SirenDrummer"
 	elseif victim.Name == "SirenKeytarist" then
-		RemoveTrait(CurrentRun.Hero, CopyTrait)
-		wait(0.1)
-		AddTraitToHero({ TraitName = "SirenKeytaristCopyDisplayBoon" })
-		Changed = 1
+		Changed = "SirenKeytarist"
 	elseif victim.Name == "Scylla" then
-		RemoveTrait(CurrentRun.Hero, CopyTrait)
-		wait(0.1)
-		AddTraitToHero({ TraitName = "ScyllaOneCopyDisplayBoon" })
 		--AddTraitToHero({ TraitName = "ScyllaTwoCopyDisplayBoon" })
-		Changed = 1
+		Changed = "ScyllaOne"
 	elseif victim.Name == "CorruptedShadeSmall" or victim.Name == "CorruptedShadeSmall_Elite" then
-		RemoveTrait(CurrentRun.Hero, CopyTrait)
-		wait(0.1)
-		AddTraitToHero({ TraitName = "CorruptedShadeSmallCopyDisplayBoon" })
-		Changed = 1
+		Changed = "CorruptedShadeSmall"
 	elseif victim.Name == "CorruptedShadeMedium" or victim.Name == "CorruptedShadeMedium_Elite" then
-		RemoveTrait(CurrentRun.Hero, CopyTrait)
-		wait(0.1)
-		AddTraitToHero({ TraitName = "CorruptedShadeMediumCopyDisplayBoon" })
-		Changed = 1
+		Changed = "CorruptedShadeMedium"
+	elseif victim.Name == "FogEmitter2" or victim.Name == "FogEmitter2_Elite" then
+		Changed = "FogEmittertwo"
 	elseif victim.Name == "BrokenHearted" or victim.Name == "BrokenHearted_Elite" then
-		RemoveTrait(CurrentRun.Hero, CopyTrait)
-		wait(0.1)
-		AddTraitToHero({ TraitName = "BrokenHeartedCopyDisplayBoon" })
-		Changed = 1
-	elseif victim.Name == "Screamer2" or victim.Name == "Screamer2_Elite" then
-		RemoveTrait(CurrentRun.Hero, CopyTrait)
-		wait(0.1)
-		AddTraitToHero({ TraitName = "ScreamertwoCopyDisplayBoon" })	
-		Changed = 1
+		Changed = "BrokenHearted"
+	elseif victim.Name == "Screamer2" or victim.Name == "Screamer2_Elite" then	
+		Changed = "Screamertwo"
 	elseif victim.Name == "Lamia" or victim.Name == "Lamia_Elite" then
-		RemoveTrait(CurrentRun.Hero, CopyTrait)
-		wait(0.1)
-		AddTraitToHero({ TraitName = "LamiaCopyDisplayBoon" })	
-		Changed = 1
+		Changed = "Lamia"
 	elseif victim.Name == "Lamia_Miniboss"then
-		RemoveTrait(CurrentRun.Hero, CopyTrait)
-		wait(0.1)
-		AddTraitToHero({ TraitName = "Lamia_MinibossCopyDisplayBoon" })	
-		Changed = 1
+		Changed = "Lamia_Miniboss"
+	elseif victim.Name == "Vampire" or victim.Name == "Vampire_Elite" then
+		Changed = "Vampire"
 	--elseif victim.Name == "Mourner" or victim.Name == "Mourner_Elite" then
 	--	RemoveTrait(CurrentRun.Hero, CopyTrait)
 	--	wait(0.1)
@@ -882,17 +812,22 @@ function mod.CopyAbility (victim, functionArgs, triggerArgs)
 	--	AddTraitToHero({ TraitName = "LovesickCopyDisplayBoon" })	
 	--  Changed = 1
 	elseif victim.Name == "GoldElemental" or victim.Name == "GoldElemental_Elite" then
-		RemoveTrait(CurrentRun.Hero, CopyTrait)
-		wait(0.1)
-		AddTraitToHero({ TraitName = "GoldElementalCopyDisplayBoon" })	
-		Changed = 1
+		Changed = "GoldElemental"
 	elseif victim.Name == "Chronos" then
-		RemoveTrait(CurrentRun.Hero, CopyTrait)
-		wait(0.1)
-		AddTraitToHero({ TraitName = "ChronosOneCopyDisplayBoon" })	
-		Changed = 1
+		Changed = "ChronosOne"
 	end
-	if Changed ~= 0 then
+	if Changed ~= "null" then
+		for key,value in pairs(CurrentRun.Hero.TraitDictionary) do
+			if string.find(key, "CopyDisplayBoon") then
+				table.insert(TraitsToRemove, 1, key)
+				CopyTrait = key
+			end
+		end
+		for key,value in pairs(TraitsToRemove) do
+			RemoveTrait(CurrentRun.Hero, value)
+		end
+		wait(0.1)
+		AddTraitToHero({ TraitName = Changed .. "CopyDisplayBoon" })	
 		ResetAmmo( CurrentRun.Hero, GetWeaponData( CurrentRun.Hero, "WeaponLob" ))
 		CurrentRun.Hero.Ammo.WeaponLob = GetMaxAmmo("WeaponLob")
 		thread( UpdateAmmoUI )

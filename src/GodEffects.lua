@@ -233,7 +233,24 @@ AddGodTraitProperty({
             ChangeType = "Absolute",
             ExcludeLinked = true,
         },  
-		
+		-- Treant Tail
+        {
+            WeaponName = "WeaponLob",
+            ProjectileName = "TreantTailSwipe",
+            ProjectileProperty = "DetonateFx",
+            ValuePrefix = "TreantTailSwipeFx_",
+            ChangeType = "Absolute",
+            ExcludeLinked = true,
+        },  
+		-- FogEmitter
+        {
+            WeaponName = "WeaponLob",
+            ProjectileName = "FogEmitterSlam",
+            ProjectileProperty = "Graphic",
+            ValuePrefix = "FogEmitterSlamNova_",
+            ChangeType = "Absolute",
+            ExcludeLinked = true,
+        },  
 		-- Turtle
         {
             WeaponName = "WeaponLob",
@@ -374,12 +391,20 @@ AddGodTraitProperty({
             ExcludeLinked = true,
         }, 
 		--Corrupted Shade Medium
-		
 		{
             WeaponName = "WeaponLob",
             ProjectileName = "CorruptedShadeMRam",
             ProjectileProperty = "Graphic",
             ValuePrefix = "CorruptedShadeRamFx_",
+            ChangeType = "Absolute",
+            ExcludeLinked = true,
+        }, 
+		--FogEmitter2
+		{
+            WeaponName = "WeaponLob",
+            ProjectileName = "FogEmitterSweepSmall",
+            ProjectileProperty = "Graphic",
+            ValuePrefix = "FogEmitterSweepArc_",
             ChangeType = "Absolute",
             ExcludeLinked = true,
         }, 
@@ -415,6 +440,15 @@ AddGodTraitProperty({
             ProjectileName = "LamiaSkyCast",
             ProjectileProperty = "ImpactFx",
             ValuePrefix = "LamiaLightning_",
+            ChangeType = "Absolute",
+            ExcludeLinked = true,
+        }, 
+		--Vampire
+		{
+            WeaponName = "WeaponLob",
+            ProjectileName = "VampireSwipe",
+            ProjectileProperty = "Graphic",
+            ValuePrefix = "VampireSwipe_",
             ChangeType = "Absolute",
             ExcludeLinked = true,
         }, 
