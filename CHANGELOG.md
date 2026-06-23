@@ -43,6 +43,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
     - FogEmitter2
     - BrokenHearted
     - Screamer2
+    - TreantTail2
     - Lamia
     - Lamia2
     - Vampire
