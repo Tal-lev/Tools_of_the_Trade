@@ -12,6 +12,7 @@
 - Thorn-Weeper
 - Root-Stalker Tail
 - Shadow-Spiller
+- Sister of the Dead
 - Hecate
   - Torch-Cones
 
@@ -24,6 +25,7 @@
 - Sea-Serpent
 - Sop-Spindle
 - Jellyfish
+- Hellifish
 - Roxy
 - Jetty
 - Scylla
