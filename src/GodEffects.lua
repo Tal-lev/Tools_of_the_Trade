@@ -479,6 +479,23 @@ AddGodTraitProperty({
             ChangeType = "Absolute",
             ExcludeLinked = true,
         }, 
+		--TimeElemental
+		{
+            WeaponName = "WeaponLob",
+            ProjectileName = "TimeElementalOrbit",
+            ProjectileProperty = "Graphic",
+            ValuePrefix = "TimeElementalProjectileIn_",
+            ChangeType = "Absolute",
+            ExcludeLinked = true,
+        },
+		{
+            WeaponName = "WeaponLob",
+            ProjectileName = "TimeElementalOrbit",
+            ProjectileProperty = "DissipateFx",
+            ValuePrefix = "TimeElementalProjectileDissipate_",
+            ChangeType = "Absolute",
+            ExcludeLinked = true,
+        },
 		--Chronos
 		{
             WeaponName = "WeaponLob",

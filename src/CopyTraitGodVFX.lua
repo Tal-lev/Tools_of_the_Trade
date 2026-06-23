@@ -4468,6 +4468,345 @@ table.insert(data.Animations,
 
     table.insert(data.Animations,
     {
+        Name = "TimeElementalProjectile_Zeus",
+        InheritFrom = "TimeElementalProjectile",
+        ColorFromOwner = "Ignore",
+        AddColor = true,
+        StartRed = 1.0,
+        StartGreen = 0.95,
+        StartBlue = 0.7,
+        EndRed = 0.9999,
+        EndGreen = 0.8,
+        EndBlue = 0.5,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "TimeElementalProjectile_Hera",
+        InheritFrom = "TimeElementalProjectile_Zeus",
+        StartRed = 0.0,
+        StartGreen = 1.0,
+        StartBlue = 0.1,
+        EndRed = 0.1,
+        EndGreen = 0.3,
+        EndBlue = 1.0,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "TimeElementalProjectile_Poseidon",
+        InheritFrom = "TimeElementalProjectile_Zeus",
+        StartRed = 0.1,
+        StartGreen = 1.0,
+        StartBlue = 0.8,
+        EndRed = 0,
+        EndGreen = 0.6,
+        EndBlue = 1.0,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "TimeElementalProjectile_Demeter",
+        InheritFrom = "TimeElementalProjectile_Zeus",
+        StartRed = 0.25,
+        StartGreen = 0.35,
+        StartBlue = 0.5,
+        EndRed = 0.35,
+        EndGreen = 0.25,
+        EndBlue = 0.4999,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "TimeElementalProjectile_Apollo",
+        InheritFrom = "TimeElementalProjectile_Zeus",
+        StartRed = 1.0,
+        StartGreen = 0.9,
+        StartBlue = 0.7,
+        EndRed = 0.999,
+        EndGreen = 0.85,
+        EndBlue = 0.05,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "TimeElementalProjectile_Aphrodite",
+        InheritFrom = "TimeElementalProjectile_Zeus",
+        StartRed = 1.0,
+        StartGreen = 0.6,
+        StartBlue = 0.8,
+        EndRed = 0.99,
+        EndGreen = 0.05,
+        EndBlue = 0.99,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "TimeElementalProjectile_Hephaestus",
+        InheritFrom = "TimeElementalProjectile_Zeus",
+        StartRed = 0.51,
+        StartGreen = 0.82,
+        StartBlue = 1.00,
+        EndRed = 1.00,
+        EndGreen = 0,
+        EndBlue = 0,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "TimeElementalProjectile_Hestia",
+        InheritFrom = "TimeElementalProjectile_Zeus",
+        StartRed = 1.0,
+        StartGreen = 0.3,
+        StartBlue = 0.02,
+        EndRed = 0.999,
+        EndGreen = 0.15,
+        EndBlue = 0.0,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "TimeElementalProjectile_Ares",
+        InheritFrom = "TimeElementalProjectile_Zeus",
+        StartRed = 1.0,
+        StartGreen = 0.04,
+        StartBlue = 0.001,
+        EndRed = 0.999,
+        EndGreen = 0.0,
+        EndBlue = 0.0,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "TimeElementalProjectileIn_Zeus",
+        InheritFrom = "TimeElementalProjectileIn",
+        ChainTo = "TimeElementalProjectile_Zeus",
+        ColorFromOwner = "Ignore",
+        AddColor = true,
+        StartRed = 1.0,
+        StartGreen = 0.95,
+        StartBlue = 0.7,
+        EndRed = 0.9999,
+        EndGreen = 0.8,
+        EndBlue = 0.5,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "TimeElementalProjectileIn_Hera",
+        InheritFrom = "TimeElementalProjectileIn_Zeus",
+        ChainTo = "TimeElementalProjectile_Hera",
+        StartRed = 0.0,
+        StartGreen = 1.0,
+        StartBlue = 0.1,
+        EndRed = 0.1,
+        EndGreen = 0.3,
+        EndBlue = 1.0,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "TimeElementalProjectileIn_Poseidon",
+        InheritFrom = "TimeElementalProjectileIn_Zeus",
+        ChainTo = "TimeElementalProjectile_Poseidon",
+        StartRed = 0.1,
+        StartGreen = 1.0,
+        StartBlue = 0.8,
+        EndRed = 0,
+        EndGreen = 0.6,
+        EndBlue = 1.0,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "TimeElementalProjectileIn_Demeter",
+        InheritFrom = "TimeElementalProjectileIn_Zeus",
+        ChainTo = "TimeElementalProjectile_Demeter",
+        StartRed = 0.25,
+        StartGreen = 0.35,
+        StartBlue = 0.5,
+        EndRed = 0.35,
+        EndGreen = 0.25,
+        EndBlue = 0.4999,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "TimeElementalProjectileIn_Apollo",
+        InheritFrom = "TimeElementalProjectileIn_Zeus",
+        ChainTo = "TimeElementalProjectile_Apollo",
+        StartRed = 1.0,
+        StartGreen = 0.9,
+        StartBlue = 0.7,
+        EndRed = 0.999,
+        EndGreen = 0.85,
+        EndBlue = 0.05,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "TimeElementalProjectileIn_Aphrodite",
+        InheritFrom = "TimeElementalProjectileIn_Zeus",
+        ChainTo = "TimeElementalProjectile_Aphrodite",
+        StartRed = 1.0,
+        StartGreen = 0.6,
+        StartBlue = 0.8,
+        EndRed = 0.99,
+        EndGreen = 0.05,
+        EndBlue = 0.99,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "TimeElementalProjectileIn_Hephaestus",
+        InheritFrom = "TimeElementalProjectileIn_Zeus",
+        ChainTo = "TimeElementalProjectile_Hephaestus",
+        StartRed = 0.51,
+        StartGreen = 0.82,
+        StartBlue = 1.00,
+        EndRed = 1.00,
+        EndGreen = 0,
+        EndBlue = 0,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "TimeElementalProjectileIn_Hestia",
+        InheritFrom = "TimeElementalProjectileIn_Zeus",
+        ChainTo = "TimeElementalProjectile_Hestia",
+        StartRed = 1.0,
+        StartGreen = 0.3,
+        StartBlue = 0.02,
+        EndRed = 0.999,
+        EndGreen = 0.15,
+        EndBlue = 0.0,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "TimeElementalProjectileIn_Ares",
+        InheritFrom = "TimeElementalProjectileIn_Zeus",
+        ChainTo = "TimeElementalProjectile_Ares",
+        StartRed = 1.0,
+        StartGreen = 0.04,
+        StartBlue = 0.001,
+        EndRed = 0.999,
+        EndGreen = 0.0,
+        EndBlue = 0.0,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "TimeElementalProjectileDissipate_Zeus",
+        InheritFrom = "TimeElementalProjectileDissipate",
+        ColorFromOwner = "Ignore",
+        AddColor = true,
+        StartRed = 1.0,
+        StartGreen = 0.95,
+        StartBlue = 0.7,
+        EndRed = 0.9999,
+        EndGreen = 0.8,
+        EndBlue = 0.5,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "TimeElementalProjectileDissipate_Hera",
+        InheritFrom = "TimeElementalProjectileDissipate_Zeus",
+        StartRed = 0.0,
+        StartGreen = 1.0,
+        StartBlue = 0.1,
+        EndRed = 0.1,
+        EndGreen = 0.3,
+        EndBlue = 1.0,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "TimeElementalProjectileDissipate_Poseidon",
+        InheritFrom = "TimeElementalProjectileDissipate_Zeus",
+        StartRed = 0.1,
+        StartGreen = 1.0,
+        StartBlue = 0.8,
+        EndRed = 0,
+        EndGreen = 0.6,
+        EndBlue = 1.0,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "TimeElementalProjectileDissipate_Demeter",
+        InheritFrom = "TimeElementalProjectileDissipate_Zeus",
+        StartRed = 0.25,
+        StartGreen = 0.35,
+        StartBlue = 0.5,
+        EndRed = 0.35,
+        EndGreen = 0.25,
+        EndBlue = 0.4999,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "TimeElementalProjectileDissipate_Apollo",
+        InheritFrom = "TimeElementalProjectileDissipate_Zeus",
+        StartRed = 1.0,
+        StartGreen = 0.9,
+        StartBlue = 0.7,
+        EndRed = 0.999,
+        EndGreen = 0.85,
+        EndBlue = 0.05,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "TimeElementalProjectileDissipate_Aphrodite",
+        InheritFrom = "TimeElementalProjectileDissipate_Zeus",
+        StartRed = 1.0,
+        StartGreen = 0.6,
+        StartBlue = 0.8,
+        EndRed = 0.99,
+        EndGreen = 0.05,
+        EndBlue = 0.99,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "TimeElementalProjectileDissipate_Hephaestus",
+        InheritFrom = "TimeElementalProjectileDissipate_Zeus",
+        StartRed = 0.51,
+        StartGreen = 0.82,
+        StartBlue = 1.00,
+        EndRed = 1.00,
+        EndGreen = 0,
+        EndBlue = 0,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "TimeElementalProjectileDissipate_Hestia",
+        InheritFrom = "TimeElementalProjectileDissipate_Zeus",
+        StartRed = 1.0,
+        StartGreen = 0.3,
+        StartBlue = 0.02,
+        EndRed = 0.999,
+        EndGreen = 0.15,
+        EndBlue = 0.0,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "TimeElementalProjectileDissipate_Ares",
+        InheritFrom = "TimeElementalProjectileDissipate_Zeus",
+        StartRed = 1.0,
+        StartGreen = 0.04,
+        StartBlue = 0.001,
+        EndRed = 0.999,
+        EndGreen = 0.0,
+        EndBlue = 0.0,
+    })
+
+    table.insert(data.Animations,
+    {
         Name = "ChronosScytheThrowFx2_Zeus",
         InheritFrom = "ChronosScytheThrowFx2",
         ColorFromOwner = "Ignore",
