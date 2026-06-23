@@ -7,6 +7,7 @@
 - Casket
 - Thorn-Weeper
 - Root-Stalker Tail
+- Shadow-Spiller
 - Hecate
   - Torch-Cones
 
