@@ -34,6 +34,7 @@
 - Dread-Wailer
 - Lamia
 - Lamia Queen
+- Phantom
 
 ### Tartarus
 
