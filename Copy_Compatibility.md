@@ -29,6 +29,7 @@
 
 - Blight-Shade
 - Blood-Shade
+- Sorrow-Spiller
 - Smacker
 - Dread-Wailer
 - Lamia
