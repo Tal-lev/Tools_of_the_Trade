@@ -251,6 +251,39 @@ AddGodTraitProperty({
             ChangeType = "Absolute",
             ExcludeLinked = true,
         },  
+		--LightRanged
+		{
+            WeaponName = "WeaponLob",
+            ProjectileName = "LightRangedBolt",
+            ProjectileProperty = "DissipateFx",
+            ValuePrefix = "EnemyProjectileDissipate_",
+            ChangeType = "Absolute",
+            ExcludeLinked = true,
+        }, 
+		{
+            WeaponName = "WeaponLob",
+            ProjectileName = "LightRangedBolt",
+            ProjectileProperty = "DeathFx",
+            ValuePrefix = "EnemyProjectileDissipate_",
+            ChangeType = "Absolute",
+            ExcludeLinked = true,
+        }, 
+		{
+            WeaponName = "WeaponLob",
+            ProjectileName = "LightRangedBolt",
+            ProjectileProperty = "ImpactFx",
+            ValuePrefix = "MageProjectileExplosion_LightRanged_",
+            ChangeType = "Absolute",
+            ExcludeLinked = true,
+        }, 
+		{
+            WeaponName = "WeaponLob",
+            ProjectileName = "LightRangedBolt",
+            ProjectileProperty = "Graphic",
+            ValuePrefix = "EnemyProjectileIn_",
+            ChangeType = "Absolute",
+            ExcludeLinked = true,
+        },  
 		-- Turtle
         {
             WeaponName = "WeaponLob",
@@ -328,7 +361,17 @@ AddGodTraitProperty({
             ValuePrefix = "JellyfishStingRingIn_",
             ChangeType = "Absolute",
             ExcludeLinked = true,
-        }, 
+        },
+		--Octofish
+		{
+            WeaponName = "WeaponLob",
+            ProjectileName = "OctofishInkProjectile",
+            ProjectileProperty = "Graphic",
+            ValuePrefix = "OctofishInkProjectile_",
+            ChangeType = "Absolute",
+            ExcludeLinked = true,
+        },
+		 
 		-- SirenDrummer
 		{
             WeaponName = "WeaponLob",

@@ -731,6 +731,7 @@ end
 
 function mod.CopyAbility (victim, functionArgs, triggerArgs)
 	local Changed = "null"
+	local Location = "null" 
 	if (not HeroHasTrait("TabletKirbyMegaAmmoTrait")) and (triggerArgs.SourceProjectile ~= "CopyBolt") then
 		return
 	end
@@ -738,20 +739,28 @@ function mod.CopyAbility (victim, functionArgs, triggerArgs)
 	local TraitsToRemove = {}
 	if victim.Name == "Mage" or victim.Name == "Mage_Elite" then
 		Changed = "Mage"
+		Location = "BiomeF"
 	elseif victim.Name == "Guard" or victim.Name == "Guard_Elite" then
 		Changed = "Guard"
+		Location = "BiomeF"
 	elseif victim.Name == "Guard2" or victim.Name == "Guard2_Elite" then
 		Changed = "Guardtwo"
+		Location = "BiomeG"
 	elseif victim.Name == "Brawler" or victim.Name == "Brawler_Elite" then
 		Changed = "Brawler"
+		Location = "BiomeF"
 	elseif victim.Name == "SiegeVine" or victim.Name == "SiegeVine_Elite" then
 		Changed = "SiegeVine"
+		Location = "BiomeF"
 	elseif victim.Name == "Screamer" or victim.Name == "Screamer_Elite" then
 		Changed = "Screamer"
+		Location = "BiomeF"
 	elseif victim.Name == "Radiator" or victim.Name == "Radiator_Elite" then
 		Changed = "Radiator"
+		Location = "BiomeF"
 	elseif victim.Name == "TreantTail" or victim.Name == "TreantTail_Elite" then
 		Changed = "TreantTail"
+		Location = "BiomeF"
 	--elseif victim.Name == "Treant" then
 	--	RemoveTrait(CurrentRun.Hero, CopyTrait)
 	--	wait(0.1)
@@ -759,20 +768,37 @@ function mod.CopyAbility (victim, functionArgs, triggerArgs)
 	--	Changed = 1
 	elseif victim.Name == "FogEmitter" or victim.Name == "FogEmitter_Elite" then
 		Changed = "FogEmitter"
+		Location = "BiomeF"
+	--elseif victim.Name == "ZombieAssassin_Miniboss" then
+	--	Changed = "ZombieAssassin_Miniboss"
+	--	Location = "BiomeF"
+	elseif victim.Name == "LightRanged" or victim.Name == "LightRanged_Elite" then
+		Changed = "LightRanged"
+		Location = "BiomeF"
 	elseif victim.Name == "Hecate" then
 		Changed = "HecateOne"
+		Location = "BiomeF"
 	elseif victim.Name == "Turtle" or victim.Name == "Turtle_Elite" then
 		Changed = "Turtle"
+		Location = "BiomeG"
 	elseif victim.Name == "FishmanMelee" or victim.Name == "FishmanMelee_Elite" then	
 		Changed = "FishmanMelee"
+		Location = "BiomeG"
 	elseif victim.Name == "FishmanRanged" or victim.Name == "FishmanRanged_Elite" then
 		Changed = "FishmanRanged"
+		Location = "BiomeG"
 	elseif victim.Name == "WaterUnit" or victim.Name == "WaterUnit_Elite" then
 		Changed = "WaterUnit"
+		Location = "BiomeG"
 	elseif victim.Name == "Radiator2" or victim.Name == "Radiator2_Elite" then
 		Changed = "Radiatortwo"
+		Location = "BiomeG"
 	elseif victim.Name == "Jellyfish" or victim.Name == "Jellyfish_Elite" then
 		Changed = "Jellyfish"
+		Location = "BiomeG"
+	elseif victim.Name == "Octofish" or victim.Name == "Octofish_Elite" then
+		Changed = "Octofish"
+		Location = "BiomeG"
 	--elseif victim.Name == "ThiefMineLayer" or victim.Name == "ThiefMineLayer_Elite" then
 	--	RemoveTrait(CurrentRun.Hero, CopyTrait)
 	--	wait(0.1)
@@ -780,31 +806,44 @@ function mod.CopyAbility (victim, functionArgs, triggerArgs)
 	--	Changed = 1
 	elseif victim.Name == "SirenDrummer" then
 		Changed = "SirenDrummer"
+		Location = "BiomeG"
 	elseif victim.Name == "SirenKeytarist" then
 		Changed = "SirenKeytarist"
+		Location = "BiomeG"
 	elseif victim.Name == "Scylla" then
 		--AddTraitToHero({ TraitName = "ScyllaTwoCopyDisplayBoon" })
 		Changed = "ScyllaOne"
+		Location = "BiomeG"
 	elseif victim.Name == "CorruptedShadeSmall" or victim.Name == "CorruptedShadeSmall_Elite" then
 		Changed = "CorruptedShadeSmall"
+		Location = "BiomeH"
 	elseif victim.Name == "CorruptedShadeMedium" or victim.Name == "CorruptedShadeMedium_Elite" then
 		Changed = "CorruptedShadeMedium"
+		Location = "BiomeH"
 	elseif victim.Name == "FogEmitter2" or victim.Name == "FogEmitter2_Elite" then
 		Changed = "FogEmittertwo"
+		Location = "BiomeH"
 	elseif victim.Name == "BrokenHearted" or victim.Name == "BrokenHearted_Elite" then
 		Changed = "BrokenHearted"
+		Location = "BiomeH"
 	elseif victim.Name == "Screamer2" or victim.Name == "Screamer2_Elite" then	
 		Changed = "Screamertwo"
+		Location = "BiomeH"
 	elseif victim.Name == "TreantTail2" or victim.Name == "TreantTail2_Elite" then
 		Changed = "TreantTailtwo"
+		Location = "BiomeH"
 	elseif victim.Name == "Lamia" or victim.Name == "Lamia_Elite" then
 		Changed = "Lamia"
+		Location = "BiomeH"
 	elseif victim.Name == "Lamia_Miniboss"then
 		Changed = "Lamia_Miniboss"
+		Location = "BiomeH"
 	elseif victim.Name == "Vampire" or victim.Name == "Vampire_Elite" then
 		Changed = "Vampire"
+		Location = "BiomeH"
 	elseif victim.Name == "InfestedCerberus" then
 		Changed = "InfestedCerberusOne"
+		Location = "BiomeH"
 	--elseif victim.Name == "Mourner" or victim.Name == "Mourner_Elite" then
 	--	RemoveTrait(CurrentRun.Hero, CopyTrait)
 	--	wait(0.1)
@@ -817,14 +856,19 @@ function mod.CopyAbility (victim, functionArgs, triggerArgs)
 	--  Changed = 1
 	elseif victim.Name == "GoldElemental" or victim.Name == "GoldElemental_Elite" then
 		Changed = "GoldElemental"
+		Location = "BiomeI"
 	elseif victim.Name == "TimeElemental" or victim.Name == "TimeElemental_Elite" then
 		Changed = "TimeElemental"
+		Location = "BiomeI"
 	elseif victim.Name == "SatyrLancer" or victim.Name == "SatyrLancer_Elite" then
 		Changed = "SatyrLancer"
+		Location = "BiomeI"
 	elseif victim.Name == "SatyrRatCatcher" or victim.Name == "SatyrRatCatcher_Elite" then
 		Changed = "SatyrRatCatcher"
+		Location = "BiomeI"
 	elseif victim.Name == "Chronos" then
 		Changed = "ChronosOne"
+		Location = "BiomeIHouse"
 	end
 	if Changed ~= "null" then
 		for key,value in pairs(CurrentRun.Hero.TraitDictionary) do
@@ -836,6 +880,8 @@ function mod.CopyAbility (victim, functionArgs, triggerArgs)
 		for key,value in pairs(TraitsToRemove) do
 			RemoveTrait(CurrentRun.Hero, value)
 		end
+		local trait = GetHeroTrait("TabletofPeaceKirbyMel")
+		trait.Location = Location
 		wait(0.1)
 		AddTraitToHero({ TraitName = Changed .. "CopyDisplayBoon" })	
 		ResetAmmo( CurrentRun.Hero, GetWeaponData( CurrentRun.Hero, "WeaponLob" ))
@@ -857,11 +903,13 @@ function mod.ReleaseCopyAbility ( triggerArgs, functionArgs )
 	local TraitsToRemove = {} 
 	local TempSecondCopy = "null"
 	local TempSecondAmmo = 0
+	local TempSecondLocation = "null"
 	for key,value in pairs(CurrentRun.Hero.TraitDictionary) do
 		if string.find(key, "CopyDisplayBoon") then
 			table.insert(TraitsToRemove, 1, key)
 			TempSecondCopy = key
 			TempSecondAmmo = CurrentRun.Hero.Ammo.WeaponLob
+			TempSecondLocation = trait.Location
 		elseif string.find(key, "CopyTwoDisplayBoon") then
 			table.insert(TraitsToRemove, 1, key)
 		end
@@ -880,6 +928,8 @@ function mod.ReleaseCopyAbility ( triggerArgs, functionArgs )
 	end
 	wait(0.1)
 	AddTraitToHero({ TraitName = trait.SecondCopy })
+	trait.Location = trait.SecondLocation
+	trait.SecondLocation = TempSecondLocation
 	if not HeroHasTrait("TabletKirbyMegaAmmoTrait") then
 		CurrentRun.Hero.Ammo.WeaponLob = trait.SecondAmmo
 	else
@@ -953,6 +1003,15 @@ end)
 --Loading the package at every room
 modutil.mod.Path.Wrap("SetupMap", function(base, source, args)
 	LoadPackages({ Name ="JarlUlsfark-Tools_of_the_Trade"})
+	if HeroHasTrait("TabletofPeaceKirbyMel") then
+		local trait = GetHeroTrait("TabletofPeaceKirbyMel")
+		if trait.location ~= "null" then
+			LoadPackages({Name = trait.Location})
+		end
+		if trait.SecondLocation ~= "null" then
+			LoadPackages({Name = trait.SecondLocation})
+		end
+	end
 	return base(source, args)
 end)
 
@@ -1583,8 +1642,10 @@ modutil.once_loaded.game(function()
 			Threaded = true,
 			Name = _PLUGIN.guid .. "." .. "SetupCopyAbility",
 		},
+		Location = "null",
 		SecondAmmo = 20,
 		SecondCopy = "DummyCopyDisplayBoon",
+		SecondLocation = "null",
 		OnEnemyDamagedAction = 
 		{
 			ValidWeapons = {"WeaponLob"},
