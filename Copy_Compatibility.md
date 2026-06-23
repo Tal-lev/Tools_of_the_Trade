@@ -32,6 +32,7 @@
 - Sorrow-Spiller
 - Smacker
 - Dread-Wailer
+- Brush-Stalker Tail
 - Lamia
 - Lamia Queen
 - Phantom
