@@ -16,7 +16,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
     - Extended Reflection
     - Permenant Reflection
     - Explosive Reflection
-  - 28 Implemented enemies.
+  - 29 Implemented enemies.
     - Guard
     - Brawler
     - Mage
@@ -44,6 +44,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
     - BrokenHearted
     - Screamer2
     - Lamia
+    - Lamia2
+    - Vampire
     - GoldElemental
     - Chronos
       - Scythe-Throw
