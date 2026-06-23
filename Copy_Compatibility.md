@@ -21,6 +21,7 @@
 - Wet-Whisper
 - Lurker
 - Hippo
+- Pinhead
 - Shellback 
 - Sea-Serpent
 - Sop-Spindle
@@ -48,6 +49,7 @@
 
 ### Tartarus
 
+- Sandskull
 - Goldwraith
 - Tempus
 - Satyr Hoplite
