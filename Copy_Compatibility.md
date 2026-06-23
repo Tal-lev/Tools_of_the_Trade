@@ -41,6 +41,7 @@
 - Lamia Queen
 - Phantom
 - Infernal Cerberus
+  - Fire-Breath
 
 ### Tartarus
 
