@@ -821,6 +821,8 @@ function mod.CopyAbility (victim, functionArgs, triggerArgs)
 		Changed = "TimeElemental"
 	elseif victim.Name == "SatyrLancer" or victim.Name == "SatyrLancer_Elite" then
 		Changed = "SatyrLancer"
+	elseif victim.Name == "SatyrRatCatcher" or victim.Name == "SatyrRatCatcher_Elite" then
+		Changed = "SatyrRatCatcher"
 	elseif victim.Name == "Chronos" then
 		Changed = "ChronosOne"
 	end

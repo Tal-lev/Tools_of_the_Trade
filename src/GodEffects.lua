@@ -521,6 +521,31 @@ AddGodTraitProperty({
             ChangeType = "Absolute",
             ExcludeLinked = true,
         },
+		--SatyrRatCatcher
+		{
+            WeaponName = "WeaponLob",
+            ProjectileName = "SatyrCast",
+            ProjectileProperty = "DissipateFx",
+            ValuePrefix = "SatyrCastFireballDissipate_",
+            ChangeType = "Absolute",
+            ExcludeLinked = true,
+        },
+		{
+            WeaponName = "WeaponLob",
+            ProjectileName = "SatyrCast",
+            ProjectileProperty = "ImpactFx",
+            ValuePrefix = "SatyrCastFireballDissipate_",
+            ChangeType = "Absolute",
+            ExcludeLinked = true,
+        },
+		{
+            WeaponName = "WeaponLob",
+            ProjectileName = "SatyrCast",
+            ProjectileProperty = "Graphic",
+            ValuePrefix = "SatyrCastFireballIn_",
+            ChangeType = "Absolute",
+            ExcludeLinked = true,
+        },
 		--Chronos
 		{
             WeaponName = "WeaponLob",
