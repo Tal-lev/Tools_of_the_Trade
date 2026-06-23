@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.2.0] - 2026-06-23
+
 - Adds The Tablet of Peace (AKA KirbyMel) Still experimental
   - Adds into the shop
   - Your Attack copies the enemy's weapon.
@@ -206,7 +208,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - First version of the mod!
 
-[unreleased]: https://github.com/Tal-lev/Tools_of_the_Trade/compare/0.1.3...HEAD
+[unreleased]: https://github.com/Tal-lev/Tools_of_the_Trade/compare/0.2.0...HEAD
+[0.2.0]: https://github.com/Tal-lev/Tools_of_the_Trade/compare/0.1.3...0.2.0
 [0.1.3]: https://github.com/Tal-lev/Tools_of_the_Trade/compare/0.1.2...0.1.3
 [0.1.2]: https://github.com/Tal-lev/Tools_of_the_Trade/compare/0.1.1...0.1.2
 [0.1.1]: https://github.com/Tal-lev/Tools_of_the_Trade/compare/0.1.0...0.1.1
