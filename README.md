@@ -5,6 +5,7 @@ Adding new aspects themed around the Gathering Tools
 ## Features
 
 - Adds Silver Spade (AKA NecroMel) as a new Axe aspect
+- Adds Tabet of Peace (AKA KirbyMel) as a new Skull aspect
 
 ### The Silver Spade (AKA NecroMel)
 
@@ -31,7 +32,7 @@ Adding new aspects themed around the Gathering Tools
 - Your Omega Attack creates a nova and replaces between Copy and Reserve-Copy traits.
 - Trait Increase Omega Attack damage.
 - Introduces three new hammers
-- 37 Implemented enemies.
+- 39 Implemented enemies.
 
 [Full Copy Compatibility list](https://github.com/Tal-lev/Tools_of_the_Trade/blob/main/Copy_Compatibility.md)
 
