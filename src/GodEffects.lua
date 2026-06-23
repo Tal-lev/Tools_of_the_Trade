@@ -426,6 +426,15 @@ AddGodTraitProperty({
             ChangeType = "Absolute",
             ExcludeLinked = true,
         }, 
+		-- Treant Tail2
+        {
+            WeaponName = "WeaponLob",
+            ProjectileName = "TreantTail2Swipe",
+            ProjectileProperty = "DetonateFx",
+            ValuePrefix = "TreantTailSwipeFx_",
+            ChangeType = "Absolute",
+            ExcludeLinked = true,
+        },  
 		--Lamia
 		{
             WeaponName = "WeaponLob",
@@ -449,6 +458,15 @@ AddGodTraitProperty({
             ProjectileName = "VampireSwipe",
             ProjectileProperty = "Graphic",
             ValuePrefix = "VampireSwipe_",
+            ChangeType = "Absolute",
+            ExcludeLinked = true,
+        }, 
+		--InfestedCerberus
+		{
+            WeaponName = "WeaponLob",
+            ProjectileName = "InfestedCerberusBreath",
+            ProjectileProperty = "Graphic",
+            ValuePrefix = "CerbFireballBreathIn_",
             ChangeType = "Absolute",
             ExcludeLinked = true,
         }, 

@@ -1679,6 +1679,57 @@ OverwriteTableKeys( TraitData, {
 		},
 	},
 
+	TreantTailtwoCopyDisplayBoon = 
+	{
+		Icon = "JarlUlsfark-Tools_of_the_Trade\\TreantTail2Icon",
+		ShowInHUD = true,
+		CustomLabel = 
+		{
+			DisplayType = "RoomValue",
+			Key = "Copy_TreantTailtwo",
+			Text = "Copy_EmptyText"
+		},
+        PropertyChanges = 
+        {
+           {
+				WeaponName = "WeaponLob",
+				WeaponProperty = "Projectile",
+				ChangeValue = "TreantTail2Swipe",
+			},
+            {
+				WeaponName = "WeaponLob",
+				WeaponProperties = 
+                {
+                    Cooldown = 0.8,
+					FizzleOldSpawns = true,
+                },
+                ExcludeLinked = true,
+			},
+            {
+                WeaponName = "WeaponLob",
+                ProjectileName = "TreantTail2Swipe",
+                ProjectileProperties = 
+				{
+					Damage = 120,
+				},
+				ExcludeLinked = true,
+            },
+        },
+		FlavorText = "CopyAbility_FlavorText",
+	},
+
+	TreantTailtwoCopyTwoDisplayBoon = 
+	{
+		Icon = "JarlUlsfark-Tools_of_the_Trade\\TreantTail2Icon",
+		ShowInHUD = true,
+		CustomLabel = 
+		{
+			DisplayType = "RoomValue",
+			Key = "Copy_TreantTailtwo2",
+			Text = "Copy_2nd"
+		},
+	},
+
 	LamiaCopyDisplayBoon = 
 	{
 		Icon = "JarlUlsfark-Tools_of_the_Trade\\LamiaIcon",
@@ -1778,6 +1829,63 @@ OverwriteTableKeys( TraitData, {
 		{
 			DisplayType = "RoomValue",
 			Key = "Copy_Lamia_Miniboss2",
+			Text = "Copy_2nd"
+		},
+	},
+
+	InfestedCerberusOneCopyDisplayBoon = 
+	{
+		Icon = "JarlUlsfark-Tools_of_the_Trade\\InfestedCerberusIcon",
+		ShowInHUD = true,
+		CustomLabel = 
+		{
+			DisplayType = "RoomValue",
+			Key = "Copy_InfestedCerberus",
+			Text = "Copy_EmptyText"
+		},
+        PropertyChanges = 
+        {
+           {
+				WeaponName = "WeaponLob",
+				WeaponProperty = "Projectile",
+				ChangeValue = "InfestedCerberusBreath",
+			},
+            {
+				WeaponName = "WeaponLob",
+				WeaponProperties = 
+                {
+                    Cooldown = 2,
+					RootOwnerWhileFiring = true,
+					ChargeTime = 1,
+					ProjectileAngleOffset = math.rad(0),
+					NumProjectiles = 8,
+					ProjectileInterval = 0.2,
+					FireOnRelease = true,
+					AttachToOwner = true,
+                },
+                ExcludeLinked = true,
+			},
+            {
+                WeaponName = "WeaponLob",
+                ProjectileName = "InfestedCerberusBreath",
+                ProjectileProperties = 
+				{
+					Damage = 160,
+				},
+				ExcludeLinked = true,
+            },
+        },
+		FlavorText = "CopyAbility_FlavorText",
+	},
+
+	InfestedCerberusOneCopyTwoDisplayBoon = 
+	{
+		Icon = "JarlUlsfark-Tools_of_the_Trade\\InfestedCerberusIcon",
+		ShowInHUD = true,
+		CustomLabel = 
+		{
+			DisplayType = "RoomValue",
+			Key = "Copy_InfestedCerberus2",
 			Text = "Copy_2nd"
 		},
 	},

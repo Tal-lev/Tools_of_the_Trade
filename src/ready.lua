@@ -795,12 +795,16 @@ function mod.CopyAbility (victim, functionArgs, triggerArgs)
 		Changed = "BrokenHearted"
 	elseif victim.Name == "Screamer2" or victim.Name == "Screamer2_Elite" then	
 		Changed = "Screamertwo"
+	elseif victim.Name == "TreantTail2" or victim.Name == "TreantTail2_Elite" then
+		Changed = "TreantTailtwo"
 	elseif victim.Name == "Lamia" or victim.Name == "Lamia_Elite" then
 		Changed = "Lamia"
 	elseif victim.Name == "Lamia_Miniboss"then
 		Changed = "Lamia_Miniboss"
 	elseif victim.Name == "Vampire" or victim.Name == "Vampire_Elite" then
 		Changed = "Vampire"
+	elseif victim.Name == "InfestedCerberus" then
+		Changed = "InfestedCerberusOne"
 	--elseif victim.Name == "Mourner" or victim.Name == "Mourner_Elite" then
 	--	RemoveTrait(CurrentRun.Hero, CopyTrait)
 	--	wait(0.1)

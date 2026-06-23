@@ -4127,6 +4127,234 @@ table.insert(data.Animations,
         EndBlue = 0.0,
     })
 
+    table.insert(data.Animations,
+    {
+        Name = "CerbFireballBreath_Zeus",
+        InheritFrom = "CerbFireballBreath",
+        ColorFromOwner = "Ignore",
+        AddColor = true,
+        StartRed = 1.0,
+        StartGreen = 0.95,
+        StartBlue = 0.7,
+        EndRed = 0.9999,
+        EndGreen = 0.8,
+        EndBlue = 0.5,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "CerbFireballBreath_Hera",
+        InheritFrom = "CerbFireballBreath_Zeus",
+        StartRed = 0.0,
+        StartGreen = 1.0,
+        StartBlue = 0.1,
+        EndRed = 0.1,
+        EndGreen = 0.3,
+        EndBlue = 1.0,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "CerbFireballBreath_Poseidon",
+        InheritFrom = "CerbFireballBreath_Zeus",
+        StartRed = 0.1,
+        StartGreen = 1.0,
+        StartBlue = 0.8,
+        EndRed = 0,
+        EndGreen = 0.6,
+        EndBlue = 1.0,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "CerbFireballBreath_Demeter",
+        InheritFrom = "CerbFireballBreath_Zeus",
+        StartRed = 0.25,
+        StartGreen = 0.35,
+        StartBlue = 0.5,
+        EndRed = 0.35,
+        EndGreen = 0.25,
+        EndBlue = 0.4999,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "CerbFireballBreath_Apollo",
+        InheritFrom = "CerbFireballBreath_Zeus",
+        StartRed = 1.0,
+        StartGreen = 0.9,
+        StartBlue = 0.7,
+        EndRed = 0.999,
+        EndGreen = 0.85,
+        EndBlue = 0.05,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "CerbFireballBreath_Aphrodite",
+        InheritFrom = "CerbFireballBreath_Zeus",
+        StartRed = 1.0,
+        StartGreen = 0.6,
+        StartBlue = 0.8,
+        EndRed = 0.99,
+        EndGreen = 0.05,
+        EndBlue = 0.99,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "CerbFireballBreath_Hephaestus",
+        InheritFrom = "CerbFireballBreath_Zeus",
+        StartRed = 0.51,
+        StartGreen = 0.82,
+        StartBlue = 1.00,
+        EndRed = 1.00,
+        EndGreen = 0,
+        EndBlue = 0,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "CerbFireballBreath_Hestia",
+        InheritFrom = "CerbFireballBreath_Zeus",
+        StartRed = 1.0,
+        StartGreen = 0.3,
+        StartBlue = 0.02,
+        EndRed = 0.999,
+        EndGreen = 0.15,
+        EndBlue = 0.0,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "CerbFireballBreath_Ares",
+        InheritFrom = "CerbFireballBreath_Zeus",
+        StartRed = 1.0,
+        StartGreen = 0.04,
+        StartBlue = 0.001,
+        EndRed = 0.999,
+        EndGreen = 0.0,
+        EndBlue = 0.0,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "CerbFireballBreathIn_Zeus",
+        InheritFrom = "CerbFireballBreathIn",
+        ChainTo = "CerbFireballBreath_Zeus",
+        ColorFromOwner = "Ignore",
+        AddColor = true,
+        StartRed = 1.0,
+        StartGreen = 0.95,
+        StartBlue = 0.7,
+        EndRed = 0.9999,
+        EndGreen = 0.8,
+        EndBlue = 0.5,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "CerbFireballBreathIn_Hera",
+        InheritFrom = "CerbFireballBreathIn_Zeus",
+        ChainTo = "CerbFireballBreath_Hera",
+        StartRed = 0.0,
+        StartGreen = 1.0,
+        StartBlue = 0.1,
+        EndRed = 0.1,
+        EndGreen = 0.3,
+        EndBlue = 1.0,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "CerbFireballBreathIn_Poseidon",
+        InheritFrom = "CerbFireballBreathIn_Zeus",
+        ChainTo = "CerbFireballBreath_Poseidon",
+        StartRed = 0.1,
+        StartGreen = 1.0,
+        StartBlue = 0.8,
+        EndRed = 0,
+        EndGreen = 0.6,
+        EndBlue = 1.0,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "CerbFireballBreathIn_Demeter",
+        InheritFrom = "CerbFireballBreathIn_Zeus",
+        ChainTo = "CerbFireballBreath_Demeter",
+        StartRed = 0.25,
+        StartGreen = 0.35,
+        StartBlue = 0.5,
+        EndRed = 0.35,
+        EndGreen = 0.25,
+        EndBlue = 0.4999,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "CerbFireballBreathIn_Apollo",
+        InheritFrom = "CerbFireballBreathIn_Zeus",
+        ChainTo = "CerbFireballBreath_Apollo",
+        StartRed = 1.0,
+        StartGreen = 0.9,
+        StartBlue = 0.7,
+        EndRed = 0.999,
+        EndGreen = 0.85,
+        EndBlue = 0.05,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "CerbFireballBreathIn_Aphrodite",
+        InheritFrom = "CerbFireballBreathIn_Zeus",
+        ChainTo = "CerbFireballBreath_Aphrodite",
+        StartRed = 1.0,
+        StartGreen = 0.6,
+        StartBlue = 0.8,
+        EndRed = 0.99,
+        EndGreen = 0.05,
+        EndBlue = 0.99,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "CerbFireballBreathIn_Hephaestus",
+        InheritFrom = "CerbFireballBreathIn_Zeus",
+        ChainTo = "CerbFireballBreath_Hephaestus",
+        StartRed = 0.51,
+        StartGreen = 0.82,
+        StartBlue = 1.00,
+        EndRed = 1.00,
+        EndGreen = 0,
+        EndBlue = 0,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "CerbFireballBreathIn_Hestia",
+        InheritFrom = "CerbFireballBreathIn_Zeus",
+        ChainTo = "CerbFireballBreath_Hestia",
+        StartRed = 1.0,
+        StartGreen = 0.3,
+        StartBlue = 0.02,
+        EndRed = 0.999,
+        EndGreen = 0.15,
+        EndBlue = 0.0,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "CerbFireballBreathIn_Ares",
+        InheritFrom = "CerbFireballBreathIn_Zeus",
+        ChainTo = "CerbFireballBreath_Ares",
+        StartRed = 1.0,
+        StartGreen = 0.04,
+        StartBlue = 0.001,
+        EndRed = 0.999,
+        EndGreen = 0.0,
+        EndBlue = 0.0,
+    })
 
     table.insert(data.Animations,
     {
