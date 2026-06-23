@@ -354,6 +354,16 @@ sjson.hook(file, function(data)
 
 	table.insert(data.Texts, sjson.to_object(
 		{
+			Id = "FishSwarmerCopyDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Copy Ability: Pinhead",
+			Description = "Your Attack {#UpgradeFormat}Bites enemies in front{#Prev}.",
+		},
+		TextOrder)
+	)
+
+	table.insert(data.Texts, sjson.to_object(
+		{
 			Id = "TurtleCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy Ability: Shellback",
@@ -528,6 +538,16 @@ sjson.hook(file, function(data)
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy Ability: Infernal Cerberus - Fire-Breath",
 			Description = "Your Attack transforms into a {#UpgradeFormat}Fire Breath{#Prev}.",
+		},
+		TextOrder)
+	)
+
+	table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "SwarmerClockworkCopyDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Copy Ability: Sandskull",
+			Description = "Your Attack {#UpgradeFormat}Bites enemies in front{#Prev}.",
 		},
 		TextOrder)
 	)

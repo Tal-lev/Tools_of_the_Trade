@@ -745,6 +745,63 @@ OverwriteTableKeys( TraitData, {
 		},
 	},
 
+	FishSwarmerCopyDisplayBoon = 
+	{
+		Icon = "JarlUlsfark-Tools_of_the_Trade\\FishSwarmerIcon",
+		ShowInHUD = true,
+		CustomLabel = 
+		{
+			DisplayType = "RoomValue",
+			Key = "Copy_FishSwarmer",
+			Text = "Copy_EmptyText"
+		},
+        PropertyChanges = 
+        {
+           {
+				WeaponName = "WeaponLob",
+				WeaponProperty = "Projectile",
+				ChangeValue = "FishSwarmerBite",
+			},
+            {
+				WeaponName = "WeaponLob",
+				WeaponProperties = 
+                {
+					Cooldown = 0.4,
+					BlockMoveInput = true,
+					CancelMovement = true,
+					FizzleOldSpawns = true,
+					AutoLock = true,
+					BarrelLength = 150,
+					AutoLockRange = 300,
+					SelfVelocity = 900,
+                },
+                ExcludeLinked = true,
+			},
+            {
+                WeaponName = "WeaponLob",
+                ProjectileName = "FishSwarmerBite",
+                ProjectileProperties = 
+				{
+					Damage = 40,
+				},
+				ExcludeLinked = true,
+            },
+        },
+		FlavorText = "CopyAbility_FlavorText",
+	},
+
+	FishSwarmerCopyTwoDisplayBoon = 
+	{
+		Icon = "JarlUlsfark-Tools_of_the_Trade\\FishSwarmerIcon",
+		ShowInHUD = true,
+		CustomLabel = 
+		{
+			DisplayType = "RoomValue",
+			Key = "Copy_FishSwarmer2",
+			Text = "Copy_2nd"
+		},
+	},
+
 	FishmanMeleeCopyDisplayBoon = 
 	{
 		Icon = "JarlUlsfark-Tools_of_the_Trade\\FishmanMeleeIcon",
@@ -2043,6 +2100,63 @@ OverwriteTableKeys( TraitData, {
 		},
 	},
 
+	SwarmerClockworkCopyDisplayBoon = 
+	{
+		Icon = "JarlUlsfark-Tools_of_the_Trade\\SwarmerClockworkIcon",
+		ShowInHUD = true,
+		CustomLabel = 
+		{
+			DisplayType = "RoomValue",
+			Key = "Copy_SwarmerClockwork",
+			Text = "Copy_EmptyText"
+		},
+        PropertyChanges = 
+        {
+           {
+				WeaponName = "WeaponLob",
+				WeaponProperty = "Projectile",
+				ChangeValue = "SwarmerClockworkMelee",
+			},
+            {
+				WeaponName = "WeaponLob",
+				WeaponProperties = 
+                {
+                    Cooldown = 0.35,
+					BlockMoveInput = true,
+					CancelMovement = true,
+					FizzleOldSpawns = true,
+					AutoLock = true,
+					BarrelLength = 150,
+					AutoLockRange = 300,
+					SelfVelocity = 900,
+                },
+                ExcludeLinked = true,
+			},
+            {
+                WeaponName = "WeaponLob",
+                ProjectileName = "SwarmerClockworkMelee",
+                ProjectileProperties = 
+				{
+					Damage = 80,
+				},
+				ExcludeLinked = true,
+            },
+        },
+		FlavorText = "CopyAbility_FlavorText",
+	},
+
+	SwarmerClockworkCopyTwoDisplayBoon = 
+	{
+		Icon = "JarlUlsfark-Tools_of_the_Trade\\SwarmerClockworkIcon",
+		ShowInHUD = true,
+		CustomLabel = 
+		{
+			DisplayType = "RoomValue",
+			Key = "Copy_SwarmerClockwork2",
+			Text = "Copy_2nd"
+		},
+	},
+	
 	GoldElementalCopyDisplayBoon = 
 	{
 		Icon = "JarlUlsfark-Tools_of_the_Trade\\GoldElementalIcon",

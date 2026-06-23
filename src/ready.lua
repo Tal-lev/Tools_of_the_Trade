@@ -781,6 +781,9 @@ function mod.CopyAbility (victim, functionArgs, triggerArgs)
 	elseif victim.Name == "Turtle" or victim.Name == "Turtle_Elite" then
 		Changed = "Turtle"
 		Location = "BiomeG"
+	elseif victim.Name == "FishSwarmer" or victim.Name == "FishSwarmer_Elite" then
+		Changed = "FishSwarmer"
+		Location = "BiomeG"
 	elseif victim.Name == "FishmanMelee" or victim.Name == "FishmanMelee_Elite" then	
 		Changed = "FishmanMelee"
 		Location = "BiomeG"
@@ -857,6 +860,9 @@ function mod.CopyAbility (victim, functionArgs, triggerArgs)
 	--	wait(0.1)
 	--	AddTraitToHero({ TraitName = "LovesickCopyDisplayBoon" })	
 	--  Changed = 1
+	elseif victim.Name == "SwarmerClockwork" or victim.Name == "SwarmerClockwork_Elite" then
+		Changed = "SwarmerClockwork"
+		Location = "BiomeI"
 	elseif victim.Name == "GoldElemental" or victim.Name == "GoldElemental_Elite" then
 		Changed = "GoldElemental"
 		Location = "BiomeI"
