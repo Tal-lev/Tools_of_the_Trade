@@ -1432,6 +1432,58 @@ OverwriteTableKeys( TraitData, {
 		},
 	},
 
+	CorruptedShadeLargeCopyDisplayBoon = 
+	{
+		Icon = "JarlUlsfark-Tools_of_the_Trade\\CorruptedShadeLargeIcon",
+		ShowInHUD = true,
+		CustomLabel = 
+		{
+			DisplayType = "RoomValue",
+			Key = "Copy_CorruptedShadeLarge",
+			Text = "Copy_EmptyText"
+		},
+        PropertyChanges = 
+        {
+           {
+				WeaponName = "WeaponLob",
+				WeaponProperty = "Projectile",
+				ChangeValue = "CorruptedShadeLNova",
+			},
+            {
+				WeaponName = "WeaponLob",
+				WeaponProperties = 
+                {
+                    Cooldown = 1.1,
+					FizzleOldSpawns = false,
+					BarrelLength = 0,
+                },
+                ExcludeLinked = true,
+			},
+            {
+                WeaponName = "WeaponLob",
+                ProjectileName = "CorruptedShadeLNova",
+                ProjectileProperties = 
+				{
+					Damage = 130,
+				},
+				ExcludeLinked = true,
+            },
+        },
+		FlavorText = "CopyAbility_FlavorText",
+	},
+
+	CorruptedShadeLargeCopyTwoDisplayBoon = 
+	{
+		Icon = "JarlUlsfark-Tools_of_the_Trade\\CorruptedShadeLargeIcon",
+		ShowInHUD = true,
+		CustomLabel = 
+		{
+			DisplayType = "RoomValue",
+			Key = "Copy_CorruptedShadeLarge2",
+			Text = "Copy_2nd"
+		},
+	},
+
 	BrokenHeartedCopyDisplayBoon = 
 	{
 		Icon = "JarlUlsfark-Tools_of_the_Trade\\BrokenHeartedIcon",

@@ -441,7 +441,16 @@ AddGodTraitProperty({
             ValuePrefix = "CorruptedShadeRamFx_",
             ChangeType = "Absolute",
             ExcludeLinked = true,
-        }, 
+        },
+		--Corrupted Shade Large
+		{
+            WeaponName = "WeaponLob",
+            ProjectileName = "CorruptedShadeLNova",
+            ProjectileProperty = "DetonateFx",
+            ValuePrefix = "CorruptedShadeLNova_",
+            ChangeType = "Absolute",
+            ExcludeLinked = true,
+        },
 		--FogEmitter2
 		{
             WeaponName = "WeaponLob",

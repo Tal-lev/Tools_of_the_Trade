@@ -820,6 +820,9 @@ function mod.CopyAbility (victim, functionArgs, triggerArgs)
 	elseif victim.Name == "CorruptedShadeMedium" or victim.Name == "CorruptedShadeMedium_Elite" then
 		Changed = "CorruptedShadeMedium"
 		Location = "BiomeH"
+	elseif victim.Name == "CorruptedShadeLarge" or victim.Name == "CorruptedShadeLarge_Elite" then
+		Changed = "CorruptedShadeLarge"
+		Location = "BiomeH"
 	elseif victim.Name == "FogEmitter2" or victim.Name == "FogEmitter2_Elite" then
 		Changed = "FogEmittertwo"
 		Location = "BiomeH"
