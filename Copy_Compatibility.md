@@ -48,5 +48,6 @@
 - Goldwraith
 - Tempus
 - Satyr Hoplite
+- Satyr Vierophant
 - Chronos
   - Scythe-Throw
