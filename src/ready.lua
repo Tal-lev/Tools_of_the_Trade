@@ -1519,7 +1519,7 @@ modutil.once_loaded.game(function()
 				Multiplier = 4,
 			},
 		},
-		Icon = "GUI\\Icons\\ExorcismBook",
+		Icon = "JarlUlsfark-Tools_of_the_Trade\\TabletIcon",
 		RequiredWeapon = "WeaponLob",
 		WeaponKitGrannyModel = "ToolTablet_Mesh",
 		ReplacementGrannyModels = 
