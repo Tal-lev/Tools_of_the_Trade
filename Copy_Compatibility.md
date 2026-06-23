@@ -36,6 +36,7 @@
 - Lamia
 - Lamia Queen
 - Phantom
+- Infested Cerberus
 
 ### Tartarus
 
