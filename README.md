@@ -31,7 +31,7 @@ Adding new aspects themed around the Gathering Tools
 - Your Omega Attack creates a nova and replaces between Copy and Reserve-Copy traits.
 - Trait Increase Omega Attack damage.
 - Introduces three new hammers
-- 29 Implemented enemies.
+- 30 Implemented enemies.
 
 [Full Copy Compatibility list](https://github.com/Tal-lev/Tools_of_the_Trade/blob/main/Copy_Compatibility.md)
 
