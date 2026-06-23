@@ -1,3 +1,7 @@
+<div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+  <img src="https://media.githubusercontent.com/media/Tal-lev/Tools_of_the_Trade/refs/heads/main/images/CopyComp.png" alt="PonyDressList" width="70%">
+</div>
+
 ### Erebus
 
 - Whisper
