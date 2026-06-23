@@ -35,6 +35,7 @@
 
 - Blight-Shade
 - Blood-Shade
+- Bloat-Shade
 - Sorrow-Spiller
 - Smacker
 - Dread-Wailer
