@@ -357,7 +357,7 @@ sjson.hook(file, function(data)
 			Id = "FishSwarmerCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy Ability: Pinhead",
-			Description = "Your Attack {#UpgradeFormat}Bites enemies in front{#Prev}.",
+			Description = "Your Attack {#UpgradeFormat}Bites {#Prev}enemies in front.",
 		},
 		TextOrder)
 	)
@@ -507,7 +507,7 @@ sjson.hook(file, function(data)
 			Id = "LycanSwarmerCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy Ability: Canine",
-			Description = "Your Attack {#UpgradeFormat}Bites enemies in front{#Prev}.",
+			Description = "Your Attack {#UpgradeFormat}Bites {#Prev}enemies in front.",
 		},
 		TextOrder)
 	)
@@ -557,7 +557,7 @@ sjson.hook(file, function(data)
 			Id = "SwarmerClockworkCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy Ability: Sandskull",
-			Description = "Your Attack {#UpgradeFormat}Bites enemies in front{#Prev}.",
+			Description = "Your Attack {#UpgradeFormat}Bites {#Prev}enemies in front.",
 		},
 		TextOrder)
 	)
@@ -608,6 +608,26 @@ sjson.hook(file, function(data)
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy Ability: Satyr Vierophant",
 			Description = "Your Attack fires a {#UpgradeFormat}Homing Flaming Projectile{#Prev}.",
+		},
+		TextOrder)
+	)
+
+	table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "CrawlerCopyDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Copy Ability: Crawler",
+			Description = "Your Attack {#UpgradeFormat}Bites {#Prev}enemies in front.",
+		},
+		TextOrder)
+	)
+
+	table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "SatyrCultistCopyDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Copy Ability: Satyr Supplicant",
+			Description = "Your Attack {#UpgradeFormat}Throws a Dagger{#Prev}.",
 		},
 		TextOrder)
 	)

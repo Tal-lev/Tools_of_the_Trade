@@ -607,6 +607,24 @@ AddGodTraitProperty({
             ChangeType = "Absolute",
             ExcludeLinked = true,
         },
+		--Crawler
+		{
+            WeaponName = "WeaponLob",
+            ProjectileName = "CrawlerRush",
+            ProjectileProperty = "DetonateFx",
+            ValuePrefix = "RatSwipe_",
+            ChangeType = "Absolute",
+            ExcludeLinked = true,
+        },
+		--SatyrCultist
+		{
+            WeaponName = "WeaponLob",
+            ProjectileName = "CultistThrow",
+            ProjectileProperty = "Graphic",
+            ValuePrefix = "CharybdisTentacleSpikeIn_",
+            ChangeType = "Absolute",
+            ExcludeLinked = true,
+        },
 		--Chronos
 		{
             WeaponName = "WeaponLob",

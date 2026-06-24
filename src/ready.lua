@@ -881,6 +881,12 @@ function mod.CopyAbility (victim, functionArgs, triggerArgs)
 	elseif victim.Name == "SatyrRatCatcher" or victim.Name == "SatyrRatCatcher_Elite" then
 		Changed = "SatyrRatCatcher"
 		Location = "BiomeI"
+	elseif victim.Name == "Crawler" or victim.Name == "Crawler_Elite" then
+		Changed = "Crawler"
+		Location = "BiomeI"
+	elseif victim.Name == "SatyrCultist" or victim.Name == "SatyrCultist_Elite" then
+		Changed = "SatyrCultist"
+		Location = "BiomeIHouse"
 	elseif victim.Name == "Chronos" then
 		Changed = "ChronosOne"
 		Location = "BiomeIHouse"
