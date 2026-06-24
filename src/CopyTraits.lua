@@ -962,6 +962,58 @@ OverwriteTableKeys( TraitData, {
 		},
 	},
 
+	WaterUnitMinibossCopyDisplayBoon = 
+	{
+		Icon = "JarlUlsfark-Tools_of_the_Trade\\WaterUnitMinibossIcon",
+		ShowInHUD = true,
+		CustomLabel = 
+		{
+			DisplayType = "RoomValue",
+			Key = "Copy_WaterUnitMiniboss",
+			Text = "Copy_EmptyText"
+		},
+        PropertyChanges = 
+        {
+           {
+				WeaponName = "WeaponLob",
+				WeaponProperty = "Projectile",
+				ChangeValue = "WaterUnitSpitSplit",
+			},
+            {
+				WeaponName = "WeaponLob",
+				WeaponProperties = 
+                {
+                    Cooldown = 1.5,
+					FizzleOldSpawns = false,
+                },
+                ExcludeLinked = true,
+			},
+            {
+                WeaponName = "WeaponLob",
+                ProjectileName = "WaterUnitSpitSplit",
+                ProjectileProperties = 
+				{
+					Damage = 170,
+					SpawnOnDissipate = "WaterUnitSpitSplit1player",
+				},
+				ExcludeLinked = true,
+            },
+        },
+		FlavorText = "CopyAbility_FlavorText",
+	},
+	
+	WaterUnitMinibossCopyTwoDisplayBoon = 
+	{
+		Icon = "JarlUlsfark-Tools_of_the_Trade\\WaterUnitMinibossIcon",
+		ShowInHUD = true,
+		CustomLabel = 
+		{
+			DisplayType = "RoomValue",
+			Key = "Copy_WaterUnitMiniboss2",
+			Text = "Copy_2nd"
+		},
+	},
+
 	RadiatortwoCopyDisplayBoon = 
 	{
 		Icon = "JarlUlsfark-Tools_of_the_Trade\\Radiator2Icon",
@@ -1162,6 +1214,63 @@ OverwriteTableKeys( TraitData, {
 		{
 			DisplayType = "RoomValue",
 			Key = "Copy_Octofish2",
+			Text = "Copy_2nd"
+		},
+	},
+
+	CrawlerMinibossCopyDisplayBoon = 
+	{
+		Icon = "JarlUlsfark-Tools_of_the_Trade\\CrawlerMinibossIcon",
+		ShowInHUD = true,
+		CustomLabel = 
+		{
+			DisplayType = "RoomValue",
+			Key = "Copy_CrawlerMiniboss",
+			Text = "Copy_EmptyText"
+		},
+        PropertyChanges = 
+        {
+           {
+				WeaponName = "WeaponLob",
+				WeaponProperty = "Projectile",
+				ChangeValue = "CrawlerMinibossRush",
+			},
+            {
+				WeaponName = "WeaponLob",
+				WeaponProperties = 
+                {
+                    Cooldown = 0.4,
+					BlockMoveInput = true,
+					CancelMovement = true,
+					FizzleOldSpawns = true,
+					AutoLock = true,
+					BarrelLength = 150,
+					AutoLockRange = 300,
+					SelfVelocity = 1400,
+                },
+                ExcludeLinked = true,
+			},
+            {
+                WeaponName = "WeaponLob",
+                ProjectileName = "CrawlerMinibossRush",
+                ProjectileProperties = 
+				{
+					Damage = 110,
+				},
+				ExcludeLinked = true,
+            },
+        },
+		FlavorText = "CopyAbility_FlavorText",
+	},
+
+	CrawlerMinibossCopyTwoDisplayBoon = 
+	{
+		Icon = "JarlUlsfark-Tools_of_the_Trade\\CrawlerMinibossIcon",
+		ShowInHUD = true,
+		CustomLabel = 
+		{
+			DisplayType = "RoomValue",
+			Key = "Copy_CrawlerMiniboss2",
 			Text = "Copy_2nd"
 		},
 	},
@@ -1904,20 +2013,25 @@ OverwriteTableKeys( TraitData, {
 				WeaponProperties = 
                 {
                     Cooldown = 2,
-					AttachToOwner = false,
-					Type = "BLINK",
+					AttachToOwner = true,
+					Type = "GUN",
 					ChargeSelfVelocity = -2000,
-					FireTickSelfVelocity = 750,
-					RootOwnerWhileFiring = true,
-					SelfVelocity = 500,
-					
+					RootOwnerWhileFiring = false,
+					SelfVelocity = 1200,
 					BarrelLength = -30,
 					NumProjectiles = 20,
 					ProjectileInterval = 0.11,
-					Spread = 15,
+					Spread = 0,
 					FireProjectileStartDelay = 0.03,
-					ProjectileAngleOffsetMin = math.rad(0),
-					FizzleOldSpawns = false,
+					ProjectileAngleOffset = math.rad(1),
+					FireOnRelease = true,
+					BlockMoveInput = true,
+					CancelMovement = true,
+					AutoLock = true,
+					AutoLockRange = 600,
+					AutoLockArcDistance = 90,
+					CancelChargeOnRelease = true,
+					FizzleOldSpawns = true,
                 },
                 ExcludeLinked = true,
 			},

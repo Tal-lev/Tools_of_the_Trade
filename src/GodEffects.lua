@@ -371,7 +371,32 @@ AddGodTraitProperty({
             ChangeType = "Absolute",
             ExcludeLinked = true,
         },
-		 
+		--CrawlerMiniBoss
+		{
+            WeaponName = "WeaponLob",
+            ProjectileName = "CrawlerMinibossRush",
+            ProjectileProperty = "Graphic",
+            ValuePrefix = "RatSwipeRush_",
+            ChangeType = "Absolute",
+            ExcludeLinked = true,
+        },
+		--WaterUnitMiniBoss
+		{
+            WeaponName = "WeaponLob",
+            ProjectileName = "WaterUnitSpitSplit",
+            ProjectileProperty = "Graphic",
+            ValuePrefix = "WaterUnitProjectile_",
+            ChangeType = "Absolute",
+            ExcludeLinked = true,
+        },
+		{
+            WeaponName = "WeaponLob",
+            ProjectileName = "WaterUnitSpitSplit",
+            ProjectileProperty = "SpawnOnDissipate",
+            ValuePrefix = "WaterUnitSpitSplit1player_",
+            ChangeType = "Absolute",
+            ExcludeLinked = true,
+        },
 		-- SirenDrummer
 		{
             WeaponName = "WeaponLob",

@@ -802,6 +802,12 @@ function mod.CopyAbility (victim, functionArgs, triggerArgs)
 	elseif victim.Name == "Octofish" or victim.Name == "Octofish_Elite" then
 		Changed = "Octofish"
 		Location = "BiomeG"
+	elseif victim.Name == "CrawlerMiniboss" then
+		Changed = "CrawlerMiniboss"
+		Location = "BiomeG"
+	elseif victim.Name == "WaterUnitMiniboss" then
+		Changed = "WaterUnitMiniboss"
+		Location = "BiomeG"
 	--elseif victim.Name == "ThiefMineLayer" or victim.Name == "ThiefMineLayer_Elite" then
 	--	RemoveTrait(CurrentRun.Hero, CopyTrait)
 	--	wait(0.1)
@@ -854,10 +860,8 @@ function mod.CopyAbility (victim, functionArgs, triggerArgs)
 		Changed = "InfestedCerberusOne"
 		Location = "BiomeH"
 	--elseif victim.Name == "Mourner" or victim.Name == "Mourner_Elite" then
-	--	RemoveTrait(CurrentRun.Hero, CopyTrait)
-	--	wait(0.1)
-	--	AddTraitToHero({ TraitName = "MournerCopyDisplayBoon" })
-	--  Changed = 1	
+	--	Changed = "Mourner"	
+	--	Location = "BiomeH"
 	--elseif victim.Name == "Lovesick" then
 	--	RemoveTrait(CurrentRun.Hero, CopyTrait)
 	--	wait(0.1)
