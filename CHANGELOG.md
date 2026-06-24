@@ -8,10 +8,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 - Fix: Added tracking for the packages used in owned copies and loading them at setupmap
-- 10 Implemented enemies.
+- 11 Implemented enemies.
   - LightRanged
   - FishSwarmer
   - Octofish
+  - CrawlerMiniBoss
   - CorruptedShadeLarge
   - LycanSwarmer
   - SwarmerClockwork
