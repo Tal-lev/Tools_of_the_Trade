@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.2.1] - 2026-06-24
+
 - Fix: Added tracking for the packages used in owned copies and loading them at setupmap
 - 12 Implemented enemies.
   - LightRanged
@@ -223,7 +225,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - First version of the mod!
 
-[unreleased]: https://github.com/Tal-lev/Tools_of_the_Trade/compare/0.2.0...HEAD
+[unreleased]: https://github.com/Tal-lev/Tools_of_the_Trade/compare/0.2.1...HEAD
+[0.2.1]: https://github.com/Tal-lev/Tools_of_the_Trade/compare/0.2.0...0.2.1
 [0.2.0]: https://github.com/Tal-lev/Tools_of_the_Trade/compare/0.1.3...0.2.0
 [0.1.3]: https://github.com/Tal-lev/Tools_of_the_Trade/compare/0.1.2...0.1.3
 [0.1.2]: https://github.com/Tal-lev/Tools_of_the_Trade/compare/0.1.1...0.1.2
