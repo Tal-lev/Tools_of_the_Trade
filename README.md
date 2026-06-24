@@ -14,7 +14,7 @@ Adding new aspects themed around the Gathering Tools
 - Summoning Reserves health that is released upon the summon's death or changing rooms.
 - Trait reduces the amount of health reserved
 - Introduces four new hammers
-- Traits that were altered to work with Summones
+- Traits that were altered to work with Summons
   - 48 Boons
   - 5 Keepsakes + (3 SharedKeepsakePort)
   - 5 Arcana + (7 Flip the Arcana)
