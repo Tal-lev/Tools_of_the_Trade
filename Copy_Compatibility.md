@@ -41,6 +41,7 @@
 - Smacker
 - Dread-Wailer
 - Brush-Stalker Tail
+- Canine
 - Lamia
 - Lamia Queen
 - Phantom
@@ -50,6 +51,7 @@
 ### Tartarus
 
 - Sandskull
+- Wretched Thug
 - Goldwraith
 - Tempus
 - Satyr Hoplite
