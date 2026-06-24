@@ -56,6 +56,7 @@
 - Tempus
 - Satyr Hoplite
 - Satyr Vierophant
+- Crawler
 - Satyr Supplicant
 - Chronos
   - Scythe-Throw
