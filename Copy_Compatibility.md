@@ -27,6 +27,7 @@
 - Sop-Spindle
 - Jellyfish
 - Hellifish
+- King Vermin
 - Roxy
 - Jetty
 - Scylla
