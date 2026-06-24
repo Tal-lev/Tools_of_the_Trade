@@ -832,6 +832,9 @@ function mod.CopyAbility (victim, functionArgs, triggerArgs)
 	elseif victim.Name == "BrokenHearted" or victim.Name == "BrokenHearted_Elite" then
 		Changed = "BrokenHearted"
 		Location = "BiomeH"
+	elseif victim.Name == "LycanSwarmer" or victim.Name == "LycanSwarmer_Elite" then
+		Changed = "LycanSwarmer"
+		Location = "BiomeH"
 	elseif victim.Name == "Screamer2" or victim.Name == "Screamer2_Elite" then	
 		Changed = "Screamertwo"
 		Location = "BiomeH"
@@ -862,6 +865,9 @@ function mod.CopyAbility (victim, functionArgs, triggerArgs)
 	--  Changed = 1
 	elseif victim.Name == "SwarmerClockwork" or victim.Name == "SwarmerClockwork_Elite" then
 		Changed = "SwarmerClockwork"
+		Location = "BiomeI"
+	elseif victim.Name == "ClockworkHeavyMelee" or victim.Name == "ClockworkHeavyMelee_Elite" then
+		Changed = "ClockworkHeavyMelee"
 		Location = "BiomeI"
 	elseif victim.Name == "GoldElemental" or victim.Name == "GoldElemental_Elite" then
 		Changed = "GoldElemental"

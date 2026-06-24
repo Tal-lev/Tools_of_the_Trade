@@ -1585,6 +1585,18 @@ OverwriteTableKeys( TraitData, {
 		FlavorText = "CopyAbility_FlavorText",
 	},
 
+	BrokenHeartedCopyTwoDisplayBoon = 
+	{
+		Icon = "JarlUlsfark-Tools_of_the_Trade\\BrokenHeartedIcon",
+		ShowInHUD = true,
+		CustomLabel = 
+		{
+			DisplayType = "RoomValue",
+			Key = "Copy_BrokenHearted2",
+			Text = "Copy_2nd"
+		},
+	},
+
 	FogEmittertwoCopyDisplayBoon = 
 	{
 		Icon = "JarlUlsfark-Tools_of_the_Trade\\FogEmitter2Icon",
@@ -1639,14 +1651,59 @@ OverwriteTableKeys( TraitData, {
 		},
 	},
 
-	BrokenHeartedCopyTwoDisplayBoon = 
+	LycanSwarmerCopyDisplayBoon = 
 	{
-		Icon = "JarlUlsfark-Tools_of_the_Trade\\BrokenHeartedIcon",
+		Icon = "JarlUlsfark-Tools_of_the_Trade\\LycanSwarmerIcon",
 		ShowInHUD = true,
 		CustomLabel = 
 		{
 			DisplayType = "RoomValue",
-			Key = "Copy_BrokenHearted2",
+			Key = "Copy_LycanSwarmer",
+			Text = "Copy_EmptyText"
+		},
+        PropertyChanges = 
+        {
+           {
+				WeaponName = "WeaponLob",
+				WeaponProperty = "Projectile",
+				ChangeValue = "LycanSwarmerChomp",
+			},
+            {
+				WeaponName = "WeaponLob",
+				WeaponProperties = 
+                {
+					Cooldown = 0.5,
+					BlockMoveInput = true,
+					CancelMovement = true,
+					FizzleOldSpawns = true,
+					AutoLock = true,
+					BarrelLength = 150,
+					AutoLockRange = 300,
+					SelfVelocity = 900,
+                },
+                ExcludeLinked = true,
+			},
+            {
+                WeaponName = "WeaponLob",
+                ProjectileName = "LycanSwarmerChomp",
+                ProjectileProperties = 
+				{
+					Damage = 80,
+				},
+				ExcludeLinked = true,
+            },
+        },
+		FlavorText = "CopyAbility_FlavorText",
+	},
+
+	LycanSwarmerCopyTwoDisplayBoon = 
+	{
+		Icon = "JarlUlsfark-Tools_of_the_Trade\\LycanSwarmerIcon",
+		ShowInHUD = true,
+		CustomLabel = 
+		{
+			DisplayType = "RoomValue",
+			Key = "Copy_LycanSwarmer2",
 			Text = "Copy_2nd"
 		},
 	},
@@ -2153,6 +2210,67 @@ OverwriteTableKeys( TraitData, {
 		{
 			DisplayType = "RoomValue",
 			Key = "Copy_SwarmerClockwork2",
+			Text = "Copy_2nd"
+		},
+	},
+	
+	ClockworkHeavyMeleeCopyDisplayBoon = 
+	{
+		Icon = "JarlUlsfark-Tools_of_the_Trade\\ClockworkHeavyMeleeIcon",
+		ShowInHUD = true,
+		CustomLabel = 
+		{
+			DisplayType = "RoomValue",
+			Key = "Copy_ClockworkHeavyMelee",
+			Text = "Copy_EmptyText"
+		},
+        PropertyChanges = 
+        {
+           {
+				WeaponName = "WeaponLob",
+				WeaponProperty = "Projectile",
+				ChangeValue = "ThugShove",
+			},
+            {
+				WeaponName = "WeaponLob",
+				WeaponProperties = 
+                {
+                    Cooldown = 0.75,
+					FireOnRelease = true,
+					BlockMoveInput = true,
+					CancelMovement = true,
+					SelfVelocity = 1000,
+					AutoLock = true,
+					BarrelLength = -100,
+					AutoLockRange = 300,
+					AutoLockArcDistance = 90,
+					RootOwnerWhileFiring = true,
+					CancelChargeOnRelease = true,
+					FizzleOldSpawns = true,
+                },
+                ExcludeLinked = true,
+			},
+            {
+                WeaponName = "WeaponLob",
+                ProjectileName = "ThugShove",
+                ProjectileProperties = 
+				{
+					Damage = 180,
+				},
+				ExcludeLinked = true,
+            },
+        },
+		FlavorText = "CopyAbility_FlavorText",
+	},
+
+	ClockworkHeavyMeleeCopyTwoDisplayBoon = 
+	{
+		Icon = "JarlUlsfark-Tools_of_the_Trade\\ClockworkHeavyMeleeIcon",
+		ShowInHUD = true,
+		CustomLabel = 
+		{
+			DisplayType = "RoomValue",
+			Key = "Copy_ClockworkHeavyMelee2",
 			Text = "Copy_2nd"
 		},
 	},

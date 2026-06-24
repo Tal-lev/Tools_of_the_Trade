@@ -522,6 +522,15 @@ AddGodTraitProperty({
             ChangeType = "Absolute",
             ExcludeLinked = true,
         }, 
+		-- ClockworkHeavyMelee
+		{
+            WeaponName = "WeaponLob",
+            ProjectileName = "ThugShove",
+            ProjectileProperty = "Graphic",
+            ValuePrefix = "ThugShoveFx_",
+            ChangeType = "Absolute",
+            ExcludeLinked = true,
+        }, 
 		--GoldElemental
 		{
             WeaponName = "WeaponLob",
