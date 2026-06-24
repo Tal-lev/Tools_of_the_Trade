@@ -28,6 +28,7 @@
 - Jellyfish
 - Hellifish
 - King Vermin
+- Deep Serpent
 - Roxy
 - Jetty
 - Scylla
