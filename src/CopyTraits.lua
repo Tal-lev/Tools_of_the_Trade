@@ -2330,6 +2330,64 @@ OverwriteTableKeys( TraitData, {
 		},
 	},
 
+	GoldElemental_MiniBossCopyDisplayBoon = 
+	{
+		Icon = "JarlUlsfark-Tools_of_the_Trade\\GoldElemental_MiniBossIcon",
+		ShowInHUD = true,
+		CustomLabel = 
+		{
+			DisplayType = "RoomValue",
+			Key = "Copy_GoldElemental_MiniBoss",
+			Text = "Copy_EmptyText"
+		},
+        PropertyChanges = 
+        {
+           {
+				WeaponName = "WeaponLob",
+				WeaponProperty = "Projectile",
+				ChangeValue = "GoldElementalGround",
+			},
+            {
+				WeaponName = "WeaponLob",
+				WeaponProperties = 
+                {
+                    Cooldown = 1.5,
+					BlockMoveInput = true,
+					CancelMovement = true,
+					FizzleOldSpawns = false,
+					AutoLock = false,
+					NumProjectiles = 17,
+					ProjectileAngleOffset = math.rad(50),
+					ProjectileInterval = 0.1,
+					
+                },
+                ExcludeLinked = true,
+			},
+            {
+                WeaponName = "WeaponLob",
+                ProjectileName = "GoldElementalGround",
+                ProjectileProperties = 
+				{
+					Damage = 200,
+				},
+				ExcludeLinked = true,
+            },
+        },
+		FlavorText = "CopyAbility_FlavorText",
+	},
+
+	GoldElemental_MiniBossCopyTwoDisplayBoon = 
+	{
+		Icon = "JarlUlsfark-Tools_of_the_Trade\\GoldElemental_MiniBossIcon",
+		ShowInHUD = true,
+		CustomLabel = 
+		{
+			DisplayType = "RoomValue",
+			Key = "Copy_GoldElemental_MiniBoss2",
+			Text = "Copy_2nd"
+		},
+	},
+
 	TimeElementalCopyDisplayBoon = 
 	{
 		Icon = "JarlUlsfark-Tools_of_the_Trade\\TimeElementalIcon",

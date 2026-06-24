@@ -872,6 +872,9 @@ function mod.CopyAbility (victim, functionArgs, triggerArgs)
 	elseif victim.Name == "GoldElemental" or victim.Name == "GoldElemental_Elite" then
 		Changed = "GoldElemental"
 		Location = "BiomeI"
+	elseif victim.Name == "GoldElemental_MiniBoss" then
+		Changed = "GoldElemental_MiniBoss"
+		Location = "BiomeI"
 	elseif victim.Name == "TimeElemental" or victim.Name == "TimeElemental_Elite" then
 		Changed = "TimeElemental"
 		Location = "BiomeI"

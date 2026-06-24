@@ -584,6 +584,16 @@ sjson.hook(file, function(data)
 
 	table.insert(data.Texts, sjson.to_object(
 		{
+			Id = "GoldElementalCopyDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Copy Ability: Goldwrath",
+			Description = "Your Attack fires {#UpgradeFormat}numerous coins in all directions{#Prev}.",
+		},
+		TextOrder)
+	)
+
+	table.insert(data.Texts, sjson.to_object(
+		{
 			Id = "TimeElementalCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy Ability: Tempus",

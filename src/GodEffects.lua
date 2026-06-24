@@ -540,6 +540,23 @@ AddGodTraitProperty({
             ChangeType = "Absolute",
             ExcludeLinked = true,
         }, 
+		--GoldElemental_MiniBoss
+		{
+            WeaponName = "WeaponLob",
+            ProjectileName = "GoldElementalGround",
+            ProjectileProperty = "Graphic",
+            ValuePrefix = "GoldElementalCoinBounce_",
+            ChangeType = "Absolute",
+            ExcludeLinked = true,
+        },
+		{
+            WeaponName = "WeaponLob",
+            ProjectileName = "GoldElementalGround",
+            ProjectileProperty = "DissipateFx",
+            ValuePrefix = "GoldElementalCoinBounceOut_",
+            ChangeType = "Absolute",
+            ExcludeLinked = true,
+        },
 		--TimeElemental
 		{
             WeaponName = "WeaponLob",
