@@ -58,5 +58,6 @@
 - Satyr Vierophant
 - Crawler
 - Satyr Supplicant
+- Goldwrath
 - Chronos
   - Scythe-Throw
