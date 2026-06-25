@@ -63,3 +63,7 @@
 - Goldwrath
 - Chronos
   - Scythe-Throw
+
+### Ephyra (Unreleased)
+
+- Bronzebeak
