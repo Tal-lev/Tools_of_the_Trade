@@ -692,6 +692,16 @@ AddGodTraitProperty({
             ChangeType = "Absolute",
             ExcludeLinked = true,
         }, 
+		--Carrrion
+		{
+            WeaponName = "WeaponLob",
+            ProjectileName = "CarrionSweep",
+            ProjectileProperty = "Graphic",
+            ValuePrefix = "CarrionSweepAttackFx_",
+            ChangeType = "Absolute",
+            ExcludeLinked = true,
+        }, 
+
 
 	}
 })

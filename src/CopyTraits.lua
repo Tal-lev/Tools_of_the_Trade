@@ -2822,5 +2822,62 @@ OverwriteTableKeys( TraitData, {
 		},
 	},
 
+	CarrionCopyDisplayBoon = 
+	{
+		Icon = "JarlUlsfark-Tools_of_the_Trade\\CarrionIcon",
+		ShowInHUD = true,
+		CustomLabel = 
+		{
+			DisplayType = "RoomValue",
+			Key = "Copy_Carrion",
+			Text = "Copy_EmptyText"
+		},
+        PropertyChanges = 
+        {
+           {
+				WeaponName = "WeaponLob",
+				WeaponProperty = "Projectile",
+				ChangeValue = "CarrionSweep",
+			},
+            {
+				WeaponName = "WeaponLob",
+				WeaponProperties = 
+                {
+                    Cooldown = 0.2,
+					FireOnRelease = true,
+					BlockMoveInput = true,
+					CancelMovement = true,
+					SelfVelocity = 1200,
+					AutoLock = true,
+					AutoLockRange = 200,
+					AutoLockArcDistance = 90,
+					RootOwnerWhileFiring = true,
+					CancelChargeOnRelease = true,
+                },
+                ExcludeLinked = true,
+			},
+            {
+                WeaponName = "WeaponLob",
+                ProjectileName = "CarrionSweep",
+                ProjectileProperty = "Damage",
+                ChangeValue = 60,
+                ChangeType = "Absolute",
+            },
+        },
+		FlavorText = "CopyAbility_FlavorText",
+	},
+
+	CarrionCopyTwoDisplayBoon = 
+	{
+		Icon = "JarlUlsfark-Tools_of_the_Trade\\CarrionIcon",
+		ShowInHUD = true,
+		CustomLabel = 
+		{
+			DisplayType = "RoomValue",
+			Key = "Copy_Carrion2",
+			Text = "Copy_2nd"
+		},
+	},
+
 	
 })
