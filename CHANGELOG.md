@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+- 1 Implemented enemies for copy.
+  - Carrion
+
 ## [0.2.1] - 2026-06-24
 
 - Fix: Added tracking for the packages used in owned copies and loading them at setupmap
