@@ -7,8 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-- 1 Implemented enemies for copy.
+- 2 Implemented enemies for copy.
   - Carrion
+  - ZombieHeavyRanged
 
 ## [0.2.1] - 2026-06-24
 
