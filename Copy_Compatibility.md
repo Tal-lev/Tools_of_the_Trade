@@ -12,6 +12,7 @@
 - Thorn-Weeper
 - Root-Stalker Tail
 - Shadow-Spiller
+- Master-Slicer
 - Sister of the Dead
 - Hecate
   - Torch-Cones
@@ -68,3 +69,4 @@
 
 - Bronzebeak
 - Lubber
+- Cutthroat
