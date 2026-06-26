@@ -701,6 +701,24 @@ AddGodTraitProperty({
             ChangeType = "Absolute",
             ExcludeLinked = true,
         }, 
+		--ZombieHeavyRanged
+		{
+            WeaponName = "WeaponLob",
+            ProjectileName = "ZombieHeavyRangedToss",
+            ProjectileProperty = "Graphic",
+            ValuePrefix = "FireBarrelZombieProjectile_",
+            ChangeType = "Absolute",
+            ExcludeLinked = true,
+        }, 
+		{
+            WeaponName = "WeaponLob",
+            ProjectileName = "ZombieHeavyRangedToss",
+            ProjectileProperty = "SpawnOnDetonate",
+            ValuePrefix = "ZombieHRFire_",
+            ChangeType = "Absolute",
+            ExcludeLinked = true,
+        }, 
+
 
 
 	}

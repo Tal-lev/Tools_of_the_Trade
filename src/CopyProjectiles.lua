@@ -406,5 +406,275 @@ local file = rom.path.combine(rom.paths.Content, 'Game/Projectiles/PlayerProject
 		},
 	})
 
+	table.insert(data.Projectiles,
+	{
+		Name = "ZombieHRFire_Zeus",
+		InheritFrom = "ZombieHRFire",
+		Thing =
+		{
+			Graphic = "GreekFireLarge_Zeus",
+			AmbientSound = "/Leftovers/Object Ambiences/FireAmbientLoop",
+			Points =
+			{
+				{
+					X = 4,
+					Y = 0,
+				},
+				{
+					X = 0,
+					Y = -2,
+				},
+				{
+					X = -4,
+					Y = 0,
+				},
+				{
+					X = 0,
+					Y = 2,
+				},
+			},
+		},
+	})
+
+	table.insert(data.Projectiles,
+	{
+		Name = "ZombieHRFire_Hera",
+		InheritFrom = "ZombieHRFire",
+		Thing =
+		{
+			Graphic = "GreekFireLarge_Hera",
+			AmbientSound = "/Leftovers/Object Ambiences/FireAmbientLoop",
+			Points =
+			{
+				{
+					X = 4,
+					Y = 0,
+				},
+				{
+					X = 0,
+					Y = -2,
+				},
+				{
+					X = -4,
+					Y = 0,
+				},
+				{
+					X = 0,
+					Y = 2,
+				},
+			},
+		},
+	})
+
+	table.insert(data.Projectiles,
+	{
+		Name = "ZombieHRFire_Poseidon",
+		InheritFrom = "ZombieHRFire",
+		Thing =
+		{
+			Graphic = "GreekFireLarge_Poseidon",
+			AmbientSound = "/Leftovers/Object Ambiences/FireAmbientLoop",
+			Points =
+			{
+				{
+					X = 4,
+					Y = 0,
+				},
+				{
+					X = 0,
+					Y = -2,
+				},
+				{
+					X = -4,
+					Y = 0,
+				},
+				{
+					X = 0,
+					Y = 2,
+				},
+			},
+		},
+	})
+
+	table.insert(data.Projectiles,
+	{
+		Name = "ZombieHRFire_Demeter",
+		InheritFrom = "ZombieHRFire",
+		Thing =
+		{
+			Graphic = "GreekFireLarge_Demeter",
+			AmbientSound = "/Leftovers/Object Ambiences/FireAmbientLoop",
+			Points =
+			{
+				{
+					X = 4,
+					Y = 0,
+				},
+				{
+					X = 0,
+					Y = -2,
+				},
+				{
+					X = -4,
+					Y = 0,
+				},
+				{
+					X = 0,
+					Y = 2,
+				},
+			},
+		},
+	})
+
+	table.insert(data.Projectiles,
+	{
+		Name = "ZombieHRFire_Apollo",
+		InheritFrom = "ZombieHRFire",
+		Thing =
+		{
+			Graphic = "GreekFireLarge_Apollo",
+			AmbientSound = "/Leftovers/Object Ambiences/FireAmbientLoop",
+			Points =
+			{
+				{
+					X = 4,
+					Y = 0,
+				},
+				{
+					X = 0,
+					Y = -2,
+				},
+				{
+					X = -4,
+					Y = 0,
+				},
+				{
+					X = 0,
+					Y = 2,
+				},
+			},
+		},
+	})
+
+	table.insert(data.Projectiles,
+	{
+		Name = "ZombieHRFire_Aphrodite",
+		InheritFrom = "ZombieHRFire",
+		Thing =
+		{
+			Graphic = "GreekFireLarge_Aphrodite",
+			AmbientSound = "/Leftovers/Object Ambiences/FireAmbientLoop",
+			Points =
+			{
+				{
+					X = 4,
+					Y = 0,
+				},
+				{
+					X = 0,
+					Y = -2,
+				},
+				{
+					X = -4,
+					Y = 0,
+				},
+				{
+					X = 0,
+					Y = 2,
+				},
+			},
+		},
+	})
+
+	table.insert(data.Projectiles,
+	{
+		Name = "ZombieHRFire_Hephaestus",
+		InheritFrom = "ZombieHRFire",
+		Thing =
+		{
+			Graphic = "GreekFireLarge_Hephaestus",
+			AmbientSound = "/Leftovers/Object Ambiences/FireAmbientLoop",
+			Points =
+			{
+				{
+					X = 4,
+					Y = 0,
+				},
+				{
+					X = 0,
+					Y = -2,
+				},
+				{
+					X = -4,
+					Y = 0,
+				},
+				{
+					X = 0,
+					Y = 2,
+				},
+			},
+		},
+	})
+	
+	table.insert(data.Projectiles,
+	{
+		Name = "ZombieHRFire_Hestia",
+		InheritFrom = "ZombieHRFire",
+		Thing =
+		{
+			Graphic = "GreekFireLarge_Hestia",
+			AmbientSound = "/Leftovers/Object Ambiences/FireAmbientLoop",
+			Points =
+			{
+				{
+					X = 4,
+					Y = 0,
+				},
+				{
+					X = 0,
+					Y = -2,
+				},
+				{
+					X = -4,
+					Y = 0,
+				},
+				{
+					X = 0,
+					Y = 2,
+				},
+			},
+		},
+	})
+
+	table.insert(data.Projectiles,
+	{
+		Name = "ZombieHRFire_Ares",
+		InheritFrom = "ZombieHRFire",
+		Thing =
+		{
+			Graphic = "GreekFireLarge_Ares",
+			AmbientSound = "/Leftovers/Object Ambiences/FireAmbientLoop",
+			Points =
+			{
+				{
+					X = 4,
+					Y = 0,
+				},
+				{
+					X = 0,
+					Y = -2,
+				},
+				{
+					X = -4,
+					Y = 0,
+				},
+				{
+					X = 0,
+					Y = 2,
+				},
+			},
+		},
+	})
+
 return data
 end)
