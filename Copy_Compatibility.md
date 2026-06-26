@@ -67,3 +67,4 @@
 ### Ephyra (Unreleased)
 
 - Bronzebeak
+- Lubber
