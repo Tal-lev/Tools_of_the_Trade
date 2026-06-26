@@ -2982,5 +2982,134 @@ OverwriteTableKeys( TraitData, {
 		},
 	},
 
+	ZombieAssassinCopyDisplayBoon = 
+	{
+		Icon = "JarlUlsfark-Tools_of_the_Trade\\ZombieAssassinIcon",
+		ShowInHUD = true,
+		CustomLabel = 
+		{
+			DisplayType = "RoomValue",
+			Key = "Copy_ZombieAssassin",
+			Text = "Copy_EmptyText"
+		},
+        PropertyChanges = 
+        {
+           {
+				WeaponName = "WeaponLob",
+				WeaponProperty = "Projectile",
+				ChangeValue = "ZombieAssassinStab",
+			},
+            {
+				WeaponName = "WeaponLob",
+				WeaponProperties = 
+                {
+                    Cooldown = 0.4,
+					FizzleOldSpawns = false,
+					Cooldown = 0.2,
+					FireOnRelease = true,
+					BlockMoveInput = true,
+					CancelMovement = true,
+					SelfVelocity = 600,
+					AutoLock = true,
+					AutoLockRange = 100,
+					AutoLockArcDistance = 90,
+					RootOwnerWhileFiring = true,
+					CancelChargeOnRelease = true,
+					NumProjectiles = 6,
+					ProjectileInterval = 0.1,
+					ProjectileAngleOffset = math.rad(3),
+
+                },
+                ExcludeLinked = true,
+			},
+            {
+                WeaponName = "WeaponLob",
+                ProjectileName = "ZombieAssassinStab",
+                ProjectileProperties = 
+				{
+					Damage = 40,
+				},
+				ExcludeLinked = true,
+            },
+        },
+		FlavorText = "CopyAbility_FlavorText",
+	},
+
+	ZombieAssassinCopyTwoDisplayBoon = 
+	{
+		Icon = "JarlUlsfark-Tools_of_the_Trade\\ZombieAssassinIcon",
+		ShowInHUD = true,
+		CustomLabel = 
+		{
+			DisplayType = "RoomValue",
+			Key = "Copy_ZombieAssassin2",
+			Text = "Copy_2nd"
+		},
+	},
+
+	ZombieAssassin_MinibossCopyDisplayBoon = 
+	{
+		Icon = "JarlUlsfark-Tools_of_the_Trade\\ZombieAssassin_MinibossIcon",
+		ShowInHUD = true,
+		CustomLabel = 
+		{
+			DisplayType = "RoomValue",
+			Key = "Copy_ZombieAssassin_Miniboss",
+			Text = "Copy_EmptyText"
+		},
+        PropertyChanges = 
+        {
+           {
+				WeaponName = "WeaponLob",
+				WeaponProperty = "Projectile",
+				ChangeValue = "ZombieAssassinStab",
+			},
+            {
+				WeaponName = "WeaponLob",
+				WeaponProperties = 
+                {
+                    Cooldown = 0.4,
+					FizzleOldSpawns = false,
+					Cooldown = 0.2,
+					FireOnRelease = true,
+					BlockMoveInput = true,
+					CancelMovement = true,
+					SelfVelocity = 600,
+					AutoLock = true,
+					AutoLockRange = 100,
+					AutoLockArcDistance = 90,
+					RootOwnerWhileFiring = true,
+					CancelChargeOnRelease = true,
+					NumProjectiles = 6,
+					ProjectileInterval = 0.1,
+					ProjectileAngleOffset = math.rad(3),
+
+                },
+                ExcludeLinked = true,
+			},
+            {
+                WeaponName = "WeaponLob",
+                ProjectileName = "ZombieAssassinStab",
+                ProjectileProperties = 
+				{
+					Damage = 50,
+				},
+				ExcludeLinked = true,
+            },
+        },
+		FlavorText = "CopyAbility_FlavorText",
+	},
+
+	ZombieAssassin_MinibossCopyTwoDisplayBoon = 
+	{
+		Icon = "JarlUlsfark-Tools_of_the_Trade\\ZombieAssassin_MinibossIcon",
+		ShowInHUD = true,
+		CustomLabel = 
+		{
+			DisplayType = "RoomValue",
+			Key = "Copy_ZombieAssassin_Miniboss2",
+			Text = "Copy_2nd"
+		},
+	},
 	
 })

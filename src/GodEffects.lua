@@ -718,7 +718,15 @@ AddGodTraitProperty({
             ChangeType = "Absolute",
             ExcludeLinked = true,
         }, 
-
+		--ZombieAssassin
+		{
+            WeaponName = "WeaponLob",
+            ProjectileName = "ZombieAssassinStab",
+            ProjectileProperty = "Graphic",
+            ValuePrefix = "ZombieAssassinStabFx_",
+            ChangeType = "Absolute",
+            ExcludeLinked = true,
+        }, 
 
 
 	}

@@ -775,6 +775,9 @@ function mod.CopyAbility (victim, functionArgs, triggerArgs)
 	elseif victim.Name == "LightRanged" or victim.Name == "LightRanged_Elite" then
 		Changed = "LightRanged"
 		Location = "BiomeF"
+	elseif victim.Name == "ZombieAssassin_Miniboss" then
+		Changed = "ZombieAssassin_Miniboss"
+		Location = "BiomeN"
 	elseif victim.Name == "Hecate" then
 		Changed = "HecateOne"
 		Location = "BiomeF"
@@ -905,6 +908,9 @@ function mod.CopyAbility (victim, functionArgs, triggerArgs)
 	--	Location = "BiomeN"
 	elseif victim.Name == "ZombieHeavyRanged" or victim.Name == "ZombieHeavyRanged_Elite" then
 		Changed = "ZombieHeavyRanged"
+		Location = "BiomeN"
+	elseif victim.Name == "ZombieAssassin" or victim.Name == "ZombieAssassin_Elite" then
+		Changed = "ZombieAssassin"
 		Location = "BiomeN"
 	
 	end
