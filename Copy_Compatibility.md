@@ -74,5 +74,7 @@
 - Eidolon
 - Eye-dolon
 - Tombstone
+- Black Sheep
+- Shamble Sheep
 - Polyphemus
   - Kick
