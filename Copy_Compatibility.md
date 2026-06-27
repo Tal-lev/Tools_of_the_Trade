@@ -74,6 +74,7 @@
 - Eidolon
 - Eye-dolon
 - Tombstone
+- Erymanthian Boar
 - Black Sheep
 - Shamble Sheep
 - Polyphemus
