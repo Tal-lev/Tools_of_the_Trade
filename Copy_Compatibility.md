@@ -70,3 +70,5 @@
 - Bronzebeak
 - Lubber
 - Cutthroat
+- Eidolon
+- Eye-dolon
