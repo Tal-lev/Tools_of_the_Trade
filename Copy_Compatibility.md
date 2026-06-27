@@ -74,3 +74,5 @@
 - Eidolon
 - Eye-dolon
 - Tombstone
+- Polyphemus
+  - Kick
