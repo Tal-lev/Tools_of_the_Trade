@@ -12,6 +12,7 @@
 - Thorn-Weeper
 - Root-Stalker Tail
 - Shadow-Spiller
+- Lanthorn
 - Master-Slicer
 - Sister of the Dead
 - Hecate
