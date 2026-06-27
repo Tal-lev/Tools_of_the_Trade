@@ -7,7 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-- 6 Implemented enemies for copy.
+- 7 Implemented enemies for copy.
+  - Wisp
   - Carrion
   - ZombieHeavyRanged
   - ZombieAssassin
