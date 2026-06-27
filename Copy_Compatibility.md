@@ -75,6 +75,7 @@
 - Eye-dolon
 - Tombstone
 - Erymanthian Boar
+- Satyr Champion
 - Black Sheep
 - Shamble Sheep
 - Polyphemus
