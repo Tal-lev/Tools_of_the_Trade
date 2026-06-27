@@ -7,7 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-- 9 Implemented enemies for copy.
+- 11 Implemented enemies for copy.
   - Wisp
   - Carrion
   - ZombieHeavyRanged
@@ -16,6 +16,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Mudman
   - MudmanEye
   - ZombieSpawner
+  - Sheep_Zombie
+  - Sheep_Explosive
   - Polyphemus
 
 ## [0.2.1] - 2026-06-24
