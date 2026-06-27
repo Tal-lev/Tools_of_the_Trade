@@ -73,3 +73,4 @@
 - Cutthroat
 - Eidolon
 - Eye-dolon
+- Tombstone
