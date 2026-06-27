@@ -772,12 +772,15 @@ function mod.CopyAbility (victim, functionArgs, triggerArgs)
 	--elseif victim.Name == "ZombieAssassin_Miniboss" then
 	--	Changed = "ZombieAssassin_Miniboss"
 	--	Location = "BiomeF"
-	elseif victim.Name == "LightRanged" or victim.Name == "LightRanged_Elite" then
-		Changed = "LightRanged"
+	elseif victim.Name == "Wisp" or victim.Name == "Wisp_Elite" then
+		Changed = "Wisp"
 		Location = "BiomeF"
 	elseif victim.Name == "ZombieAssassin_Miniboss" then
 		Changed = "ZombieAssassin_Miniboss"
 		Location = "BiomeN"
+	elseif victim.Name == "LightRanged" or victim.Name == "LightRanged_Elite" then
+		Changed = "LightRanged"
+		Location = "BiomeF"
 	elseif victim.Name == "Hecate" then
 		Changed = "HecateOne"
 		Location = "BiomeF"
@@ -866,10 +869,8 @@ function mod.CopyAbility (victim, functionArgs, triggerArgs)
 	--	Changed = "Mourner"	
 	--	Location = "BiomeH"
 	--elseif victim.Name == "Lovesick" then
-	--	RemoveTrait(CurrentRun.Hero, CopyTrait)
-	--	wait(0.1)
-	--	AddTraitToHero({ TraitName = "LovesickCopyDisplayBoon" })	
-	--  Changed = 1
+	--	Changed = "Lovesick"	
+	--	Location = "BiomeH"
 	elseif victim.Name == "SwarmerClockwork" or victim.Name == "SwarmerClockwork_Elite" then
 		Changed = "SwarmerClockwork"
 		Location = "BiomeI"
@@ -912,7 +913,31 @@ function mod.CopyAbility (victim, functionArgs, triggerArgs)
 	elseif victim.Name == "ZombieAssassin" or victim.Name == "ZombieAssassin_Elite" then
 		Changed = "ZombieAssassin"
 		Location = "BiomeN"
-	
+	elseif victim.Name == "MudmanEye" or victim.Name == "MudmanEye_Elite" then
+		Changed = "MudmanEye"
+		Location = "BiomeN"
+	elseif victim.Name == "Mudman" or victim.Name == "Mudman_Elite" then
+		Changed = "Mudman"
+		Location = "BiomeN"
+	elseif victim.Name == "ZombieSpawner" or victim.Name == "ZombieSpawner_Elite" then
+		Changed = "ZombieSpawner"
+		Location = "BiomeN"
+	elseif victim.Name == "Boar" or victim.Name == "MiniBossBoar" then
+		Changed = "Boar"
+		Location = "BiomeN"
+	elseif victim.Name == "SatyrCrossbow" then
+		Changed = "SatyrCrossbow"
+		Location = "BiomeN"
+	elseif victim.Name == "Sheep_Explosive" or victim.Name == "Sheep_Explosive_Elite" then
+		Changed = "Sheep_Explosive"
+		Location = "BiomeN"
+	elseif victim.Name == "Sheep_Zombie" or victim.Name == "Sheep_Zombie_Elite" then
+		Changed = "Sheep_Zombie"
+		Location = "BiomeN"
+	elseif victim.Name == "Polyphemus" then
+		Changed = "PolyphemusOne"
+		Location = "BiomeN"
+
 	end
 	if Changed ~= "null" then
 		for key,value in pairs(CurrentRun.Hero.TraitDictionary) do
@@ -1032,6 +1057,51 @@ function mod.UnequipCopyAbility (weaponData, functionArgs, triggerArgs)
 	end	
 end
 
+function mod.ProjectileSpawnUnitOnDeath( projectileData, triggerArgs )
+	if SessionMapState.HandlingDeath or ( triggerArgs and triggerArgs.BlockSpawns ) then
+		return
+	end
+
+	local newSpawnData = EnemyData[projectileData.SpawnName]
+	if newSpawnData == nil then
+		DebugAssert({ Condition = false, Text = "Projectile trying to spawn non-existant enemy." })
+		return
+	end
+
+	-- if new spawn would send you over Active Cap, skip it
+	local newSpawnActiveCapWeight = newSpawnData.ActiveCapWeight or 1
+
+	local encounter = CurrentRun.CurrentRoom.Encounter
+	if encounter ~= nil and encounter.ActiveEnemyCap ~= nil and GetActiveEnemyCount(encounter) + newSpawnActiveCapWeight > encounter.ActiveEnemyCap then
+		return
+	end
+
+	local spawnPointId = SpawnObstacle({ Name = "InvisibleTarget", LocationX = triggerArgs.LocationX, LocationY = triggerArgs.LocationY, Group = "Scripting" })
+	if IsLocationBlocked({ Id = spawnPointId }) then
+		Destroy({ Id = spawnPointId })
+		return
+	end
+	local newUnit = DeepCopyTable(newSpawnData)
+	newUnit.BlocksLootInteraction = false
+	newUnit.AlwaysTraitor = true
+	newUnit.Charmed = true
+	newUnit.RequiredKill = false
+	newUnit.ObjectId = SpawnUnit({ Name = projectileData.SpawnName, DestinationId = spawnPointId, Group = "Standing" })
+
+	if projectileData.SpawnBounceOffVictim and triggerArgs.TriggeredByTable ~= nil then
+		ApplyUpwardForce({ Id = newUnit.ObjectId, Speed = projectileData.SpawnBounceOffVictimUpwardVelocity or 2200, SelfApplied = true })
+		ApplyForce({ Id = newUnit.ObjectId, Speed = projectileData.SpawnBounceOffVictimVelocity or 650, Angle = triggerArgs.Angle + 180, SelfApplied = true })
+	end
+
+	if projectileData.SpawnsSkipActivatePresentation then
+		newUnit.UseActivatePresentation = false
+	end
+	
+	SetupUnit( newUnit )
+
+	Destroy({ Id = spawnPointId })
+end
+
 modutil.mod.Path.Wrap("LeaveRoom", function(base, currentRun, exitDoor)
 	if HeroHasTrait("ShovelRaiseDeadNecroMel") then
 		local trait = GetHeroTrait("ShovelRaiseDeadNecroMel")
@@ -1113,8 +1183,16 @@ modutil.mod.Path.Wrap("Kill", function(base, victim, triggerArgs)
 end)
 
 ModUtil.Path.Wrap("Damage", function(baseFunc, victim, triggerArgs)
+	print("!!!!!!!!!!!!!!!!!!!!!!!!!")
+	print(victim.Name)
 	--For Apollo Double attack boon, which is buggy
 	--local originaltriggerArgs = triggerArgs
+	--For Stupid Sheep!
+	if HeroHasTrait("TabletofPeaceKirbyMel") and victim and (victim.Name == "Sheep_Explosive" or victim.Name == "Sheep_Zombie" or victim.Name == "Sheep_Sick") then
+		local trait = GetHeroTrait("TabletofPeaceKirbyMel")
+		functionArgs = {},
+		mod.CopyAbility(victim, functionArgs, triggerArgs)
+	end
 	local trait = {}
 	local DamageAmount = triggerArgs.DamageAmount
 	--For adding base damage directly into the hit

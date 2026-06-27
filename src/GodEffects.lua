@@ -284,6 +284,15 @@ AddGodTraitProperty({
             ChangeType = "Absolute",
             ExcludeLinked = true,
         },  
+		-- Wisp
+		{
+            WeaponName = "WeaponLob",
+            ProjectileName = "WispFuse",
+            ProjectileProperty = "DetonateFx",
+            ValuePrefix = "WispFuseExplosion_",
+            ChangeType = "Absolute",
+            ExcludeLinked = true,
+        },
 		-- Turtle
         {
             WeaponName = "WeaponLob",
@@ -727,7 +736,69 @@ AddGodTraitProperty({
             ChangeType = "Absolute",
             ExcludeLinked = true,
         }, 
-
+		--Mudman
+		{
+            WeaponName = "WeaponLob",
+            ProjectileName = "MudmanEyeThrowplayer",
+            ProjectileProperty = "Graphic",
+            ValuePrefix = "MudmanEyeballProjectile_",
+            ChangeType = "Absolute",
+            ExcludeLinked = true,
+        },
+		--MudmanEye
+		{
+            WeaponName = "WeaponLob",
+            ProjectileName = "MudmanEyeExplode",
+            ProjectileProperty = "DetonateFx",
+            ValuePrefix = "MudmanEyeballExplosionFlare_",
+            ChangeType = "Absolute",
+            ExcludeLinked = true,
+        }, 
+		--ZombieSpawner
+		{
+            WeaponName = "WeaponLob",
+            ProjectileName = "ZombieSpawnerLobplayer",
+            ProjectileProperty = "Graphic",
+            ValuePrefix = "ZombieSpawnerLobProjectile_",
+            ChangeType = "Absolute",
+            ExcludeLinked = true,
+        }, 
+		--Boar
+		{
+            WeaponName = "WeaponLob",
+            ProjectileName = "BoarGroundPound",
+            ProjectileProperty = "Graphic",
+            ValuePrefix = "PolyphemusLeapTouchdownFx_",
+            ChangeType = "Absolute",
+            ExcludeLinked = true,
+        }, 
+		--SatyrCrossbow
+		{
+            WeaponName = "WeaponLob",
+            ProjectileName = "SatyrCrossbowHomingBolt",
+            ProjectileProperty = "Graphic",
+            ValuePrefix = "SatyrCrossbowBolt_",
+            ChangeType = "Absolute",
+            ExcludeLinked = true,
+        }, 
+		--Sheep_Explosive
+		{
+            WeaponName = "WeaponLob",
+            ProjectileName = "SheepExplode",
+            ProjectileProperty = "DetonateFx",
+            ValuePrefix = "MineExplosionFadeDecal_",
+            ChangeType = "Absolute",
+            ExcludeLinked = true,
+        }, 
+		--PolyphemusOne
+		{
+            WeaponName = "WeaponLob",
+            ProjectileName = "PolyphemusKick",
+            ProjectileProperty = "Graphic",
+            ValuePrefix = "CyclopsKickArcIn_",
+            ChangeType = "Absolute",
+            ExcludeLinked = true,
+        },
 
 	}
 })
