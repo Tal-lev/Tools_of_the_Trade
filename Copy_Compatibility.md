@@ -80,3 +80,7 @@
 - Shamble Sheep
 - Polyphemus
   - Kick
+
+### Sea of Sorrows (Unreleased)
+
+- Seesword
