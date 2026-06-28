@@ -101,3 +101,5 @@
 - Auto-Forcer
 - Harpy Raptor
 - Satyr Raider
+- Satyr Goldpike
+- Satyr Sapper
