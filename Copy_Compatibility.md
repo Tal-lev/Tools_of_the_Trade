@@ -84,3 +84,5 @@
 ### Sea of Sorrows (Unreleased)
 
 - Seesword
+- Stickler
+- Anchor
