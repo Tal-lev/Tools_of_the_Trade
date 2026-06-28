@@ -86,3 +86,5 @@
 - Seesword
 - Stickler
 - Anchor
+- Boozer
+- Harpy Talon
