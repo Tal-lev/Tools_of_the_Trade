@@ -10160,5 +10160,464 @@ table.insert(data.Animations,
         EndBlue = 0.0,
     })
 
+    table.insert(data.Animations,
+        {
+        Name = "CaptainProjectileTrailLaser_Zeus",
+        InheritFrom = "CaptainProjectileTrailLaser",
+        ColorFromOwner = "Ignore",
+        AddColor = true,
+        StartRed = 1.0,
+        StartGreen = 0.95,
+        StartBlue = 0.7,
+        EndRed = 0.9999,
+        EndGreen = 0.8,
+        EndBlue = 0.5,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "CaptainProjectileTrailLaser_Hera",
+        InheritFrom = "CaptainProjectileTrailLaser_Zeus",
+        StartRed = 0.0,
+        StartGreen = 1.0,
+        StartBlue = 0.1,
+        EndRed = 0.1,
+        EndGreen = 0.3,
+        EndBlue = 1.0,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "CaptainProjectileTrailLaser_Poseidon",
+        InheritFrom = "CaptainProjectileTrailLaser_Zeus",
+        StartRed = 0.1,
+        StartGreen = 1.0,
+        StartBlue = 0.8,
+        EndRed = 0,
+        EndGreen = 0.6,
+        EndBlue = 1.0,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "CaptainProjectileTrailLaser_Demeter",
+        InheritFrom = "CaptainProjectileTrailLaser_Zeus",
+        StartRed = 0.25,
+        StartGreen = 0.35,
+        StartBlue = 0.5,
+        EndRed = 0.35,
+        EndGreen = 0.25,
+        EndBlue = 0.4999,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "CaptainProjectileTrailLaser_Apollo",
+        InheritFrom = "CaptainProjectileTrailLaser_Zeus",
+        StartRed = 1.0,
+        StartGreen = 0.9,
+        StartBlue = 0.7,
+        EndRed = 0.999,
+        EndGreen = 0.85,
+        EndBlue = 0.05,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "CaptainProjectileTrailLaser_Aphrodite",
+        InheritFrom = "CaptainProjectileTrailLaser_Zeus",
+        StartRed = 1.0,
+        StartGreen = 0.6,
+        StartBlue = 0.8,
+        EndRed = 0.99,
+        EndGreen = 0.05,
+        EndBlue = 0.99,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "CaptainProjectileTrailLaser_Hephaestus",
+        InheritFrom = "CaptainProjectileTrailLaser_Zeus",
+        StartRed = 0.51,
+        StartGreen = 0.82,
+        StartBlue = 1.00,
+        EndRed = 1.00,
+        EndGreen = 0,
+        EndBlue = 0,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "CaptainProjectileTrailLaser_Hestia",
+        InheritFrom = "CaptainProjectileTrailLaser_Zeus",
+        StartRed = 1.0,
+        StartGreen = 0.3,
+        StartBlue = 0.02,
+        EndRed = 0.999,
+        EndGreen = 0.15,
+        EndBlue = 0.0,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "CaptainProjectileTrailLaser_Ares",
+        InheritFrom = "CaptainProjectileTrailLaser_Zeus",
+        StartRed = 1.0,
+        StartGreen = 0.04,
+        StartBlue = 0.001,
+        EndRed = 0.999,
+        EndGreen = 0.0,
+        EndBlue = 0.0,
+    })
+
+    table.insert(data.Animations,
+        {
+        Name = "CaptainProjectile_Zeus",
+        InheritFrom = "CaptainProjectile",
+        VisualFx = "CaptainProjectileTrailLaser_Zeus",
+        ColorFromOwner = "Ignore",
+        AddColor = true,
+        StartRed = 1.0,
+        StartGreen = 0.95,
+        StartBlue = 0.7,
+        EndRed = 0.9999,
+        EndGreen = 0.8,
+        EndBlue = 0.5,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "CaptainProjectile_Hera",
+        InheritFrom = "CaptainProjectile_Zeus",
+        VisualFx = "CaptainProjectileTrailLaser_Hera",
+        StartRed = 0.0,
+        StartGreen = 1.0,
+        StartBlue = 0.1,
+        EndRed = 0.1,
+        EndGreen = 0.3,
+        EndBlue = 1.0,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "CaptainProjectile_Poseidon",
+        InheritFrom = "CaptainProjectile_Zeus",
+        VisualFx = "CaptainProjectileTrailLaser_Poseidon",
+        StartRed = 0.1,
+        StartGreen = 1.0,
+        StartBlue = 0.8,
+        EndRed = 0,
+        EndGreen = 0.6,
+        EndBlue = 1.0,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "CaptainProjectile_Demeter",
+        InheritFrom = "CaptainProjectile_Zeus",
+        VisualFx = "CaptainProjectileTrailLaser_Demeter",
+        StartRed = 0.25,
+        StartGreen = 0.35,
+        StartBlue = 0.5,
+        EndRed = 0.35,
+        EndGreen = 0.25,
+        EndBlue = 0.4999,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "CaptainProjectile_Apollo",
+        InheritFrom = "CaptainProjectile_Zeus",
+        VisualFx = "CaptainProjectileTrailLaser_Apollo",
+        StartRed = 1.0,
+        StartGreen = 0.9,
+        StartBlue = 0.7,
+        EndRed = 0.999,
+        EndGreen = 0.85,
+        EndBlue = 0.05,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "CaptainProjectile_Aphrodite",
+        InheritFrom = "CaptainProjectile_Zeus",
+        VisualFx = "CaptainProjectileTrailLaser_Aphrodite",
+        StartRed = 1.0,
+        StartGreen = 0.6,
+        StartBlue = 0.8,
+        EndRed = 0.99,
+        EndGreen = 0.05,
+        EndBlue = 0.99,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "CaptainProjectile_Hephaestus",
+        InheritFrom = "CaptainProjectile_Zeus",
+        VisualFx = "CaptainProjectileTrailLaser_Hephaestus",
+        StartRed = 0.51,
+        StartGreen = 0.82,
+        StartBlue = 1.00,
+        EndRed = 1.00,
+        EndGreen = 0,
+        EndBlue = 0,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "CaptainProjectile_Hestia",
+        InheritFrom = "CaptainProjectile_Zeus",
+        VisualFx = "CaptainProjectileTrailLaser_Hestia",
+        StartRed = 1.0,
+        StartGreen = 0.3,
+        StartBlue = 0.02,
+        EndRed = 0.999,
+        EndGreen = 0.15,
+        EndBlue = 0.0,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "CaptainProjectile_Ares",
+        InheritFrom = "CaptainProjectile_Zeus",
+        VisualFx = "CaptainProjectileTrailLaser_Ares",
+        StartRed = 1.0,
+        StartGreen = 0.04,
+        StartBlue = 0.001,
+        EndRed = 0.999,
+        EndGreen = 0.0,
+        EndBlue = 0.0,
+    })
+
+    table.insert(data.Animations,
+        {
+        Name = "GunTrail_Sniper_Zeus",
+        InheritFrom = "GunTrail_Sniper",
+        ColorFromOwner = "Ignore",
+        AddColor = true,
+        StartRed = 1.0,
+        StartGreen = 0.95,
+        StartBlue = 0.7,
+        EndRed = 0.9999,
+        EndGreen = 0.8,
+        EndBlue = 0.5,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "GunTrail_Sniper_Hera",
+        InheritFrom = "GunTrail_Sniper_Zeus",
+        StartRed = 0.0,
+        StartGreen = 1.0,
+        StartBlue = 0.1,
+        EndRed = 0.1,
+        EndGreen = 0.3,
+        EndBlue = 1.0,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "GunTrail_Sniper_Poseidon",
+        InheritFrom = "GunTrail_Sniper_Zeus",
+        StartRed = 0.1,
+        StartGreen = 1.0,
+        StartBlue = 0.8,
+        EndRed = 0,
+        EndGreen = 0.6,
+        EndBlue = 1.0,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "GunTrail_Sniper_Demeter",
+        InheritFrom = "GunTrail_Sniper_Zeus",
+        StartRed = 0.25,
+        StartGreen = 0.35,
+        StartBlue = 0.5,
+        EndRed = 0.35,
+        EndGreen = 0.25,
+        EndBlue = 0.4999,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "GunTrail_Sniper_Apollo",
+        InheritFrom = "GunTrail_Sniper_Zeus",
+        StartRed = 1.0,
+        StartGreen = 0.9,
+        StartBlue = 0.7,
+        EndRed = 0.999,
+        EndGreen = 0.85,
+        EndBlue = 0.05,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "GunTrail_Sniper_Aphrodite",
+        InheritFrom = "GunTrail_Sniper_Zeus",
+        StartRed = 1.0,
+        StartGreen = 0.6,
+        StartBlue = 0.8,
+        EndRed = 0.99,
+        EndGreen = 0.05,
+        EndBlue = 0.99,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "GunTrail_Sniper_Hephaestus",
+        InheritFrom = "GunTrail_Sniper_Zeus",
+        StartRed = 0.51,
+        StartGreen = 0.82,
+        StartBlue = 1.00,
+        EndRed = 1.00,
+        EndGreen = 0,
+        EndBlue = 0,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "GunTrail_Sniper_Hestia",
+        InheritFrom = "GunTrail_Sniper_Zeus",
+        StartRed = 1.0,
+        StartGreen = 0.3,
+        StartBlue = 0.02,
+        EndRed = 0.999,
+        EndGreen = 0.15,
+        EndBlue = 0.0,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "GunTrail_Sniper_Ares",
+        InheritFrom = "GunTrail_Sniper_Zeus",
+        StartRed = 1.0,
+        StartGreen = 0.04,
+        StartBlue = 0.001,
+        EndRed = 0.999,
+        EndGreen = 0.0,
+        EndBlue = 0.0,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "GunWeaponProjectile_Sniper_Zeus",
+        InheritFrom = "GunWeaponProjectile_Sniper",
+        VisualFx = "GunTrail_Sniper_Zeus",
+        ColorFromOwner = "Ignore",
+        AddColor = true,
+        StartRed = 1.0,
+        StartGreen = 0.95,
+        StartBlue = 0.7,
+        EndRed = 0.9999,
+        EndGreen = 0.8,
+        EndBlue = 0.5,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "GunWeaponProjectile_Sniper_Hera",
+        InheritFrom = "GunWeaponProjectile_Sniper_Zeus",
+        VisualFx = "GunTrail_Sniper_Hera",
+        StartRed = 0.0,
+        StartGreen = 1.0,
+        StartBlue = 0.1,
+        EndRed = 0.1,
+        EndGreen = 0.3,
+        EndBlue = 1.0,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "GunWeaponProjectile_Sniper_Poseidon",
+        InheritFrom = "GunWeaponProjectile_Sniper_Zeus",
+        VisualFx = "GunTrail_Sniper_Poseidon",
+        StartRed = 0.1,
+        StartGreen = 1.0,
+        StartBlue = 0.8,
+        EndRed = 0,
+        EndGreen = 0.6,
+        EndBlue = 1.0,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "GunWeaponProjectile_Sniper_Demeter",
+        InheritFrom = "GunWeaponProjectile_Sniper_Zeus",
+        VisualFx = "GunTrail_Sniper_Demeter",
+        StartRed = 0.25,
+        StartGreen = 0.35,
+        StartBlue = 0.5,
+        EndRed = 0.35,
+        EndGreen = 0.25,
+        EndBlue = 0.4999,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "GunWeaponProjectile_Sniper_Apollo",
+        InheritFrom = "GunWeaponProjectile_Sniper_Zeus",
+        VisualFx = "GunTrail_Sniper_Apollo",
+        StartRed = 1.0,
+        StartGreen = 0.9,
+        StartBlue = 0.7,
+        EndRed = 0.999,
+        EndGreen = 0.85,
+        EndBlue = 0.05,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "GunWeaponProjectile_Sniper_Aphrodite",
+        InheritFrom = "GunWeaponProjectile_Sniper_Zeus",
+        VisualFx = "GunTrail_Sniper_Aphrodite",
+        StartRed = 1.0,
+        StartGreen = 0.6,
+        StartBlue = 0.8,
+        EndRed = 0.99,
+        EndGreen = 0.05,
+        EndBlue = 0.99,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "GunWeaponProjectile_Sniper_Hephaestus",
+        InheritFrom = "GunWeaponProjectile_Sniper_Zeus",
+        VisualFx = "GunTrail_Sniper_Hephaestus",
+        StartRed = 0.51,
+        StartGreen = 0.82,
+        StartBlue = 1.00,
+        EndRed = 1.00,
+        EndGreen = 0,
+        EndBlue = 0,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "GunWeaponProjectile_Sniper_Hestia",
+        InheritFrom = "GunWeaponProjectile_Sniper_Zeus",
+        VisualFx = "GunTrail_Sniper_Hestia",
+        StartRed = 1.0,
+        StartGreen = 0.3,
+        StartBlue = 0.02,
+        EndRed = 0.999,
+        EndGreen = 0.15,
+        EndBlue = 0.0,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "GunWeaponProjectile_Sniper_Ares",
+        InheritFrom = "GunWeaponProjectile_Sniper_Zeus",
+        VisualFx = "GunTrail_Sniper_Ares",
+        StartRed = 1.0,
+        StartGreen = 0.04,
+        StartBlue = 0.001,
+        EndRed = 0.999,
+        EndGreen = 0.0,
+        EndBlue = 0.0,
+    })
+
+
 return data
 end)

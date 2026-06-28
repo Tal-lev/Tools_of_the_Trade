@@ -861,6 +861,23 @@ AddGodTraitProperty({
             ChangeType = "Absolute",
             ExcludeLinked = true,
         }, 
-
+		--Captain
+		{
+            WeaponName = "WeaponLob",
+            ProjectileName = "CaptainPistolShot",
+            ProjectileProperty = "Graphic",
+            ValuePrefix = "CaptainProjectile_",
+            ChangeType = "Absolute",
+            ExcludeLinked = true,
+        }, 
+		--ErisOne
+		{
+            WeaponName = "WeaponLob",
+            ProjectileName = "SniperGunWeapon",
+            ProjectileProperty = "Graphic",
+            ValuePrefix = "GunWeaponProjectile_Sniper_",
+            ChangeType = "Absolute",
+            ExcludeLinked = true,
+        }, 
 	}
 })
