@@ -7,7 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-- 21 Implemented enemies for copy.
+- 22 Implemented enemies for copy.
   - Wisp
   - Carrion
   - ZombieHeavyRanged
@@ -29,6 +29,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - WaterElemental
   - Mage2
   - Captain
+  - Eris
+    - Sniper-shot
 
 ## [0.2.1] - 2026-06-24
 
