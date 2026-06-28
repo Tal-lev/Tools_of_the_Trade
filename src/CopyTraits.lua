@@ -4362,4 +4362,114 @@ OverwriteTableKeys( TraitData, {
 			Text = "Copy_2nd"
 		},
 	},
+
+	SatyrLancertwoCopyDisplayBoon = 
+	{
+		Icon = "JarlUlsfark-Tools_of_the_Trade\\SatyrLancer2Icon",
+		ShowInHUD = true,
+		CustomLabel = 
+		{
+			DisplayType = "RoomValue",
+			Key = "Copy_SatyrLancertwo",
+			Text = "Copy_EmptyText"
+		},
+        PropertyChanges = 
+        {
+           {
+				WeaponName = "WeaponLob",
+				WeaponProperty = "Projectile",
+				ChangeValue = "SatyrLancer2Throw",
+			},
+            {
+				WeaponName = "WeaponLob",
+				WeaponProperties = 
+                {
+                    Cooldown = 0.85,
+					FizzleOldSpawns = false,
+					BarrelLength = 200,
+                },
+                ExcludeLinked = true,
+			},
+            {
+                WeaponName = "WeaponLob",
+                ProjectileName = "SatyrLancer2Throw",
+                ProjectileProperties = 
+				{
+					Damage = 200,
+				},
+				ExcludeLinked = true,
+            },
+			{
+				WeaponName = "WeaponLob",
+				WeaponProperty = "ProjectileScaleMultiplier",
+				ChangeValue = 0.4,
+				ChangeType = "Multiply",
+			},	
+        },
+		FlavorText = "CopyAbility_FlavorText",
+	},
+
+	SatyrLancertwoCopyTwoDisplayBoon = 
+	{
+		Icon = "JarlUlsfark-Tools_of_the_Trade\\SatyrLancer2Icon",
+		ShowInHUD = true,
+		CustomLabel = 
+		{
+			DisplayType = "RoomValue",
+			Key = "Copy_SatyrLancertwo2",
+			Text = "Copy_2nd"
+		},
+	},
+
+	SatyrSapperCopyDisplayBoon = 
+	{
+		Icon = "JarlUlsfark-Tools_of_the_Trade\\SatyrSapperIcon",
+		ShowInHUD = true,
+		CustomLabel = 
+		{
+			DisplayType = "RoomValue",
+			Key = "Copy_SatyrSapper",
+			Text = "Copy_EmptyText"
+		},
+        PropertyChanges = 
+        {
+           {
+				WeaponName = "WeaponLob",
+				WeaponProperty = "Projectile",
+				ChangeValue = "SatyrRocket",
+			},
+            {
+				WeaponName = "WeaponLob",
+				WeaponProperties = 
+                {
+                    Cooldown = 1.485,
+					FizzleOldSpawns = false,
+					BarrelLength = 150,
+                },
+                ExcludeLinked = true,
+			},
+            {
+                WeaponName = "WeaponLob",
+                ProjectileName = "SatyrRocket",
+                ProjectileProperties = 
+				{
+					Damage = 220,
+				},
+				ExcludeLinked = true,
+            },
+        },
+		FlavorText = "CopyAbility_FlavorText",
+	},
+
+	SatyrSapperCopyTwoDisplayBoon = 
+	{
+		Icon = "JarlUlsfark-Tools_of_the_Trade\\SatyrSapperIcon",
+		ShowInHUD = true,
+		CustomLabel = 
+		{
+			DisplayType = "RoomValue",
+			Key = "Copy_SatyrSapper2",
+			Text = "Copy_2nd"
+		},
+	},
 })

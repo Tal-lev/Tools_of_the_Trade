@@ -924,5 +924,31 @@ AddGodTraitProperty({
             ChangeType = "Absolute",
             ExcludeLinked = true,
         },
+		--SatyrLancer2
+		{
+            WeaponName = "WeaponLob",
+            ProjectileName = "SatyrLancer2Throw",
+            ProjectileProperty = "Graphic",
+            ValuePrefix = "SatyrSpearProjectile_",
+            ChangeType = "Absolute",
+            ExcludeLinked = true,
+        },
+		--SatyrSapper
+		{
+            WeaponName = "WeaponLob",
+            ProjectileName = "SatyrRocket",
+            ProjectileProperty = "Graphic",
+            ValuePrefix = "SatyrRocketProjectile_",
+            ChangeType = "Absolute",
+            ExcludeLinked = true,
+        },
+		{
+            WeaponName = "WeaponLob",
+            ProjectileName = "SatyrRocket",
+            ProjectileProperty = "DetonateFx",
+            ValuePrefix = "SatyrRocketExplosion_",
+            ChangeType = "Absolute",
+            ExcludeLinked = true,
+        },
 	}
 })
