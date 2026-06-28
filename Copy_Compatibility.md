@@ -90,3 +90,4 @@
 - Harpy Talon
 - Droplet
 - Blasket
+- The Yargonaut
