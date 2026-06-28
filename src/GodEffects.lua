@@ -852,6 +852,15 @@ AddGodTraitProperty({
             ChangeType = "Absolute",
             ExcludeLinked = true,
         },
+		--Mage2
+		{
+            WeaponName = "WeaponLob",
+            ProjectileName = "Mage2Ranged",
+            ProjectileProperty = "Graphic",
+            ValuePrefix = "MageProjectile_",
+            ChangeType = "Absolute",
+            ExcludeLinked = true,
+        }, 
 
 	}
 })

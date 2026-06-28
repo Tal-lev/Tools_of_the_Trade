@@ -3862,4 +3862,123 @@ OverwriteTableKeys( TraitData, {
 			Text = "Copy_2nd"
 		},
 	},
+
+	WaterElementalCopyDisplayBoon = 
+	{
+		Icon = "JarlUlsfark-Tools_of_the_Trade\\WaterElementalIcon",
+		ShowInHUD = true,
+		CustomLabel = 
+		{
+			DisplayType = "RoomValue",
+			Key = "Copy_WaterElemental",
+			Text = "Copy_EmptyText"
+		},
+        PropertyChanges = 
+        {
+           {
+				WeaponName = "WeaponLob",
+				WeaponProperty = "Projectile",
+				ChangeValue = "WaterElementalBite",
+			},
+            {
+				WeaponName = "WeaponLob",
+				WeaponProperties = 
+                {
+					Cooldown = 0.8,
+					BlockMoveInput = true,
+					CancelMovement = true,
+					FizzleOldSpawns = true,
+					AutoLock = true,
+					BarrelLength = 150,
+					AutoLockRange = 300,
+					SelfVelocity = 900,
+                },
+                ExcludeLinked = true,
+			},
+            {
+                WeaponName = "WeaponLob",
+                ProjectileName = "WaterElementalBite",
+                ProjectileProperties = 
+				{
+					Damage = 90,
+				},
+				ExcludeLinked = true,
+            },
+        },
+		FlavorText = "CopyAbility_FlavorText",
+	},
+
+	WaterElementalCopyTwoDisplayBoon = 
+	{
+		Icon = "JarlUlsfark-Tools_of_the_Trade\\WaterElementalIcon",
+		ShowInHUD = true,
+		CustomLabel = 
+		{
+			DisplayType = "RoomValue",
+			Key = "Copy_WaterElemental2",
+			Text = "Copy_2nd"
+		},
+	},
+
+	MagetwoCopyDisplayBoon = 
+	{
+		Icon = "JarlUlsfark-Tools_of_the_Trade\\Mage2Icon",
+		ShowInHUD = true,
+		CustomLabel = 
+		{
+			DisplayType = "RoomValue",
+			Key = "Copy_Magetwo",
+			Text = "Copy_EmptyText"
+		},
+        PropertyChanges = 
+        {
+           {
+				WeaponName = "WeaponLob",
+				WeaponProperty = "Projectile",
+				ChangeValue = "Mage2Ranged",
+			},
+            {
+				WeaponName = "WeaponLob",
+				WeaponProperties = 
+                {
+                    Cooldown = 0.1,
+                    BarrelLength = 55,
+                    ClipSize = 3,
+                    ClipRegenInterval = 1.2,
+                    ClipReload = 1.2,
+		            ChargeSoundFadeTime = 0.25,
+					NumProjectiles = 3,
+					ProjectileAngleOffset = math.rad(35),
+
+                },
+                ExcludeLinked = true,
+			},
+            {
+                WeaponName = "WeaponLob",
+                ProjectileName = "Mage2Ranged",
+                ProjectileProperty = "Damage",
+                ChangeValue = 80,
+                ChangeType = "Absolute",
+            },
+			{
+				WeaponName = "WeaponLob",
+				WeaponProperty = "ProjectileScaleMultiplier",
+				ChangeValue = 1.2,
+				ChangeType = "Multiply",
+			},
+        },
+		FlavorText = "CopyAbility_FlavorText",
+	},
+
+	MagetwoCopyTwoDisplayBoon = 
+	{
+		Icon = "JarlUlsfark-Tools_of_the_Trade\\Mage2Icon",
+		ShowInHUD = true,
+		CustomLabel = 
+		{
+			DisplayType = "RoomValue",
+			Key = "Copy_Magetwo2",
+			Text = "Copy_2nd"
+		},
+	},
 })

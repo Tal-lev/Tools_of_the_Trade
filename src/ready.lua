@@ -952,6 +952,12 @@ function mod.CopyAbility (victim, functionArgs, triggerArgs)
 	elseif victim.Name == "HarpyCutter" or victim.Name == "HarpyCutter_Elite" then
 		Changed = "HarpyCutter"
 		Location = "BiomeO"
+	elseif victim.Name == "WaterElemental" or victim.Name == "WaterElemental_Elite" then
+		Changed = "WaterElemental"
+		Location = "BiomeO"
+	elseif victim.Name == "Mage2" or victim.Name == "Mage2_Elite" then
+		Changed = "Magetwo"
+		Location = "BiomeO"
 	end
 	if Changed ~= "null" then
 		for key,value in pairs(CurrentRun.Hero.TraitDictionary) do
