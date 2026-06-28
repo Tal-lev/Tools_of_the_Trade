@@ -100,3 +100,4 @@
 - Auto-Watcher
 - Auto-Forcer
 - Harpy Raptor
+- Satyr Raider
