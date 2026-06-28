@@ -91,3 +91,5 @@
 - Droplet
 - Blasket
 - The Yargonaut
+- Eris
+  - Sniper-Shot
