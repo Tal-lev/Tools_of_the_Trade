@@ -88,3 +88,5 @@
 - Anchor
 - Boozer
 - Harpy Talon
+- Droplet
+- Blasket
