@@ -93,3 +93,10 @@
 - The Yargonaut
 - Eris
   - Sniper-Shot
+
+### Mount Olympus (Unreleased)
+
+- Auto-Seeker
+- Auto-Watcher
+- Auto-Forcer
+- Harpy Raptor
