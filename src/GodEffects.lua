@@ -834,6 +834,24 @@ AddGodTraitProperty({
             ChangeType = "Absolute",
             ExcludeLinked = true,
         },
+		--Drunk
+		{
+            WeaponName = "WeaponLob",
+            ProjectileName = "DrunkSwingLeft",
+            ProjectileProperty = "StartFx",
+            ValuePrefix = "ShipsSwordSwipeRight_",
+            ChangeType = "Absolute",
+            ExcludeLinked = true,
+        },
+		--HarpyCutter
+		{
+            WeaponName = "WeaponLob",
+            ProjectileName = "HarpySlice",
+            ProjectileProperty = "StartFx",
+            ValuePrefix = "HarpySliceFx_",
+            ChangeType = "Absolute",
+            ExcludeLinked = true,
+        },
 
 	}
 })

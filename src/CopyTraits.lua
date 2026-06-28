@@ -3743,4 +3743,123 @@ OverwriteTableKeys( TraitData, {
 		},
 	},
 
+	DrunkCopyDisplayBoon = 
+	{
+		Icon = "JarlUlsfark-Tools_of_the_Trade\\DrunkIcon",
+		ShowInHUD = true,
+		CustomLabel = 
+		{
+			DisplayType = "RoomValue",
+			Key = "Copy_Drunk",
+			Text = "Copy_EmptyText"
+		},
+        PropertyChanges = 
+        {
+           {
+				WeaponName = "WeaponLob",
+				WeaponProperty = "Projectile",
+				ChangeValue = "DrunkSwingLeft",
+			},
+            {
+				WeaponName = "WeaponLob",
+				WeaponProperties = 
+                {
+                    Cooldown = 0.3,
+					FizzleOldSpawns = false,
+					FireOnRelease = true,
+					BlockMoveInput = true,
+					CancelMovement = true,
+					SelfVelocity = 800,
+					AutoLock = true,
+					AutoLockRange = 150,
+					AutoLockArcDistance = 90,
+					RootOwnerWhileFiring = true,
+					CancelChargeOnRelease = true,
+                },
+                ExcludeLinked = true,
+			},
+            {
+                WeaponName = "WeaponLob",
+                ProjectileName = "DrunkSwingLeft",
+                ProjectileProperties = 
+				{
+					Damage = 160,
+				},
+				ExcludeLinked = true,
+            },
+        },
+		FlavorText = "CopyAbility_FlavorText",
+	},
+
+	DrunkCopyTwoDisplayBoon = 
+	{
+		Icon = "JarlUlsfark-Tools_of_the_Trade\\DrunkIcon",
+		ShowInHUD = true,
+		CustomLabel = 
+		{
+			DisplayType = "RoomValue",
+			Key = "Copy_Drunk2",
+			Text = "Copy_2nd"
+		},
+	},
+
+	HarpyCutterCopyDisplayBoon = 
+	{
+		Icon = "JarlUlsfark-Tools_of_the_Trade\\HarpyCutterIcon",
+		ShowInHUD = true,
+		CustomLabel = 
+		{
+			DisplayType = "RoomValue",
+			Key = "Copy_HarpyCutter",
+			Text = "Copy_EmptyText"
+		},
+        PropertyChanges = 
+        {
+           {
+				WeaponName = "WeaponLob",
+				WeaponProperty = "Projectile",
+				ChangeValue = "HarpySlice",
+			},
+            {
+				WeaponName = "WeaponLob",
+				WeaponProperties = 
+                {
+                    Cooldown = 0.85,
+					FizzleOldSpawns = false,
+					FireOnRelease = true,
+					BlockMoveInput = true,
+					CancelMovement = true,
+					SelfVelocity = 1000,
+					AutoLock = true,
+					AutoLockRange = 150,
+					AutoLockArcDistance = 90,
+					RootOwnerWhileFiring = true,
+					CancelChargeOnRelease = true,
+                },
+                ExcludeLinked = true,
+			},
+            {
+                WeaponName = "WeaponLob",
+                ProjectileName = "HarpySlice",
+                ProjectileProperties = 
+				{
+					Damage = 140,
+				},
+				ExcludeLinked = true,
+            },
+        },
+		FlavorText = "CopyAbility_FlavorText",
+	},
+
+	HarpyCutterCopyTwoDisplayBoon = 
+	{
+		Icon = "JarlUlsfark-Tools_of_the_Trade\\HarpyCutterIcon",
+		ShowInHUD = true,
+		CustomLabel = 
+		{
+			DisplayType = "RoomValue",
+			Key = "Copy_HarpyCutter2",
+			Text = "Copy_2nd"
+		},
+	},
 })

@@ -832,5 +832,25 @@ sjson.hook(file, function(data)
 		TextOrder)
 	)
 
+	table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "DrunkCopyDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Copy Ability: Boozer",
+			Description = "Your Attack {#UpgradeFormat}Slashes {#Prev}before you{#Prev}.",
+		},
+		TextOrder)
+	)
+
+	table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "HarpyCutterCopyDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Copy Ability: Harpy Talon",
+			Description = "Your Attack {#UpgradeFormat}Slices {#Prev}forward{#Prev}.",
+		},
+		TextOrder)
+	)
+
     return data
 end)
