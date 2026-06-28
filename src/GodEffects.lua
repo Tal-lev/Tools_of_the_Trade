@@ -915,5 +915,14 @@ AddGodTraitProperty({
             ChangeType = "Absolute",
             ExcludeLinked = true,
         },
+		--SatyrCrossbow2
+		{
+            WeaponName = "WeaponLob",
+            ProjectileName = "SatyrCrossbow2Bolt",
+            ProjectileProperty = "Graphic",
+            ValuePrefix = "SatyrCrossbowBolt_",
+            ChangeType = "Absolute",
+            ExcludeLinked = true,
+        },
 	}
 })
