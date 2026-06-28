@@ -9500,5 +9500,445 @@ table.insert(data.Animations,
     })
 
 
+     table.insert(data.Animations,
+    {
+        Name = "EnemyHeavySlashWretchAssassin_Zeus",
+        InheritFrom = "EnemyHeavySlashWretchAssassin",
+        ColorFromOwner = "Ignore",
+        AddColor = true,
+        StartRed = 1.0,
+        StartGreen = 0.95,
+        StartBlue = 0.7,
+        EndRed = 0.9999,
+        EndGreen = 0.8,
+        EndBlue = 0.5,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "EnemyHeavySlashWretchAssassin_Hera",
+        InheritFrom = "EnemyHeavySlashWretchAssassin_Zeus",
+        StartRed = 0.0,
+        StartGreen = 1.0,
+        StartBlue = 0.1,
+        EndRed = 0.1,
+        EndGreen = 0.3,
+        EndBlue = 1.0,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "EnemyHeavySlashWretchAssassin_Poseidon",
+        InheritFrom = "EnemyHeavySlashWretchAssassin_Zeus",
+        StartRed = 0.1,
+        StartGreen = 1.0,
+        StartBlue = 0.8,
+        EndRed = 0,
+        EndGreen = 0.6,
+        EndBlue = 1.0,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "EnemyHeavySlashWretchAssassin_Demeter",
+        InheritFrom = "EnemyHeavySlashWretchAssassin_Zeus",
+        StartRed = 0.25,
+        StartGreen = 0.35,
+        StartBlue = 0.5,
+        EndRed = 0.35,
+        EndGreen = 0.25,
+        EndBlue = 0.4999,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "EnemyHeavySlashWretchAssassin_Apollo",
+        InheritFrom = "EnemyHeavySlashWretchAssassin_Zeus",
+        StartRed = 1.0,
+        StartGreen = 0.9,
+        StartBlue = 0.7,
+        EndRed = 0.999,
+        EndGreen = 0.85,
+        EndBlue = 0.05,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "EnemyHeavySlashWretchAssassin_Aphrodite",
+        InheritFrom = "EnemyHeavySlashWretchAssassin_Zeus",
+        StartRed = 1.0,
+        StartGreen = 0.6,
+        StartBlue = 0.8,
+        EndRed = 0.99,
+        EndGreen = 0.05,
+        EndBlue = 0.99,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "EnemyHeavySlashWretchAssassin_Hephaestus",
+        InheritFrom = "EnemyHeavySlashWretchAssassin_Zeus",
+        StartRed = 0.51,
+        StartGreen = 0.82,
+        StartBlue = 1.00,
+        EndRed = 1.00,
+        EndGreen = 0,
+        EndBlue = 0,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "EnemyHeavySlashWretchAssassin_Hestia",
+        InheritFrom = "EnemyHeavySlashWretchAssassin_Zeus",
+        StartRed = 1.0,
+        StartGreen = 0.3,
+        StartBlue = 0.02,
+        EndRed = 0.999,
+        EndGreen = 0.15,
+        EndBlue = 0.0,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "EnemyHeavySlashWretchAssassin_Ares",
+        InheritFrom = "EnemyHeavySlashWretchAssassin_Zeus",
+        StartRed = 1.0,
+        StartGreen = 0.04,
+        StartBlue = 0.001,
+        EndRed = 0.999,
+        EndGreen = 0.0,
+        EndBlue = 0.0,
+    })
+
+     table.insert(data.Animations,
+    {
+        Name = "SticklerSpear_Zeus",
+        InheritFrom = "SticklerSpear",
+        ColorFromOwner = "Ignore",
+        AddColor = true,
+        StartRed = 1.0,
+        StartGreen = 0.95,
+        StartBlue = 0.7,
+        EndRed = 0.9999,
+        EndGreen = 0.8,
+        EndBlue = 0.5,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "SticklerSpear_Hera",
+        InheritFrom = "SticklerSpear_Zeus",
+        StartRed = 0.0,
+        StartGreen = 1.0,
+        StartBlue = 0.1,
+        EndRed = 0.1,
+        EndGreen = 0.3,
+        EndBlue = 1.0,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "SticklerSpear_Poseidon",
+        InheritFrom = "SticklerSpear_Zeus",
+        StartRed = 0.1,
+        StartGreen = 1.0,
+        StartBlue = 0.8,
+        EndRed = 0,
+        EndGreen = 0.6,
+        EndBlue = 1.0,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "SticklerSpear_Demeter",
+        InheritFrom = "SticklerSpear_Zeus",
+        StartRed = 0.25,
+        StartGreen = 0.35,
+        StartBlue = 0.5,
+        EndRed = 0.35,
+        EndGreen = 0.25,
+        EndBlue = 0.4999,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "SticklerSpear_Apollo",
+        InheritFrom = "SticklerSpear_Zeus",
+        StartRed = 1.0,
+        StartGreen = 0.9,
+        StartBlue = 0.7,
+        EndRed = 0.999,
+        EndGreen = 0.85,
+        EndBlue = 0.05,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "SticklerSpear_Aphrodite",
+        InheritFrom = "SticklerSpear_Zeus",
+        StartRed = 1.0,
+        StartGreen = 0.6,
+        StartBlue = 0.8,
+        EndRed = 0.99,
+        EndGreen = 0.05,
+        EndBlue = 0.99,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "SticklerSpear_Hephaestus",
+        InheritFrom = "SticklerSpear_Zeus",
+        StartRed = 0.51,
+        StartGreen = 0.82,
+        StartBlue = 1.00,
+        EndRed = 1.00,
+        EndGreen = 0,
+        EndBlue = 0,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "SticklerSpear_Hestia",
+        InheritFrom = "SticklerSpear_Zeus",
+        StartRed = 1.0,
+        StartGreen = 0.3,
+        StartBlue = 0.02,
+        EndRed = 0.999,
+        EndGreen = 0.15,
+        EndBlue = 0.0,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "SticklerSpear_Ares",
+        InheritFrom = "SticklerSpear_Zeus",
+        StartRed = 1.0,
+        StartGreen = 0.04,
+        StartBlue = 0.001,
+        EndRed = 0.999,
+        EndGreen = 0.0,
+        EndBlue = 0.0,
+    })
+
+     table.insert(data.Animations,
+    {
+        Name = "SticklerSpearDissipate_Zeus",
+        InheritFrom = "SticklerSpearDissipate",
+        ColorFromOwner = "Ignore",
+        AddColor = true,
+        StartRed = 1.0,
+        StartGreen = 0.95,
+        StartBlue = 0.7,
+        EndRed = 0.9999,
+        EndGreen = 0.8,
+        EndBlue = 0.5,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "SticklerSpearDissipate_Hera",
+        InheritFrom = "SticklerSpearDissipate_Zeus",
+        StartRed = 0.0,
+        StartGreen = 1.0,
+        StartBlue = 0.1,
+        EndRed = 0.1,
+        EndGreen = 0.3,
+        EndBlue = 1.0,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "SticklerSpearDissipate_Poseidon",
+        InheritFrom = "SticklerSpearDissipate_Zeus",
+        StartRed = 0.1,
+        StartGreen = 1.0,
+        StartBlue = 0.8,
+        EndRed = 0,
+        EndGreen = 0.6,
+        EndBlue = 1.0,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "SticklerSpearDissipate_Demeter",
+        InheritFrom = "SticklerSpearDissipate_Zeus",
+        StartRed = 0.25,
+        StartGreen = 0.35,
+        StartBlue = 0.5,
+        EndRed = 0.35,
+        EndGreen = 0.25,
+        EndBlue = 0.4999,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "SticklerSpearDissipate_Apollo",
+        InheritFrom = "SticklerSpearDissipate_Zeus",
+        StartRed = 1.0,
+        StartGreen = 0.9,
+        StartBlue = 0.7,
+        EndRed = 0.999,
+        EndGreen = 0.85,
+        EndBlue = 0.05,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "SticklerSpearDissipate_Aphrodite",
+        InheritFrom = "SticklerSpearDissipate_Zeus",
+        StartRed = 1.0,
+        StartGreen = 0.6,
+        StartBlue = 0.8,
+        EndRed = 0.99,
+        EndGreen = 0.05,
+        EndBlue = 0.99,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "SticklerSpearDissipate_Hephaestus",
+        InheritFrom = "SticklerSpearDissipate_Zeus",
+        StartRed = 0.51,
+        StartGreen = 0.82,
+        StartBlue = 1.00,
+        EndRed = 1.00,
+        EndGreen = 0,
+        EndBlue = 0,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "SticklerSpearDissipate_Hestia",
+        InheritFrom = "SticklerSpearDissipate_Zeus",
+        StartRed = 1.0,
+        StartGreen = 0.3,
+        StartBlue = 0.02,
+        EndRed = 0.999,
+        EndGreen = 0.15,
+        EndBlue = 0.0,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "SticklerSpearDissipate_Ares",
+        InheritFrom = "SticklerSpearDissipate_Zeus",
+        StartRed = 1.0,
+        StartGreen = 0.04,
+        StartBlue = 0.001,
+        EndRed = 0.999,
+        EndGreen = 0.0,
+        EndBlue = 0.0,
+    })
+
+      table.insert(data.Animations,
+    {
+        Name = "SwabAnchorNovaQuick_Zeus",
+        InheritFrom = "SwabAnchorNovaQuick",
+        ColorFromOwner = "Ignore",
+        AddColor = true,
+        StartRed = 1.0,
+        StartGreen = 0.95,
+        StartBlue = 0.7,
+        EndRed = 0.9999,
+        EndGreen = 0.8,
+        EndBlue = 0.5,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "SwabAnchorNovaQuick_Hera",
+        InheritFrom = "SwabAnchorNovaQuick_Zeus",
+        StartRed = 0.0,
+        StartGreen = 1.0,
+        StartBlue = 0.1,
+        EndRed = 0.1,
+        EndGreen = 0.3,
+        EndBlue = 1.0,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "SwabAnchorNovaQuick_Poseidon",
+        InheritFrom = "SwabAnchorNovaQuick_Zeus",
+        StartRed = 0.1,
+        StartGreen = 1.0,
+        StartBlue = 0.8,
+        EndRed = 0,
+        EndGreen = 0.6,
+        EndBlue = 1.0,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "SwabAnchorNovaQuick_Demeter",
+        InheritFrom = "SwabAnchorNovaQuick_Zeus",
+        StartRed = 0.25,
+        StartGreen = 0.35,
+        StartBlue = 0.5,
+        EndRed = 0.35,
+        EndGreen = 0.25,
+        EndBlue = 0.4999,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "SwabAnchorNovaQuick_Apollo",
+        InheritFrom = "SwabAnchorNovaQuick_Zeus",
+        StartRed = 1.0,
+        StartGreen = 0.9,
+        StartBlue = 0.7,
+        EndRed = 0.999,
+        EndGreen = 0.85,
+        EndBlue = 0.05,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "SwabAnchorNovaQuick_Aphrodite",
+        InheritFrom = "SwabAnchorNovaQuick_Zeus",
+        StartRed = 1.0,
+        StartGreen = 0.6,
+        StartBlue = 0.8,
+        EndRed = 0.99,
+        EndGreen = 0.05,
+        EndBlue = 0.99,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "SwabAnchorNovaQuick_Hephaestus",
+        InheritFrom = "SwabAnchorNovaQuick_Zeus",
+        StartRed = 0.51,
+        StartGreen = 0.82,
+        StartBlue = 1.00,
+        EndRed = 1.00,
+        EndGreen = 0,
+        EndBlue = 0,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "SwabAnchorNovaQuick_Hestia",
+        InheritFrom = "SwabAnchorNovaQuick_Zeus",
+        StartRed = 1.0,
+        StartGreen = 0.3,
+        StartBlue = 0.02,
+        EndRed = 0.999,
+        EndGreen = 0.15,
+        EndBlue = 0.0,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "SwabAnchorNovaQuick_Ares",
+        InheritFrom = "SwabAnchorNovaQuick_Zeus",
+        StartRed = 1.0,
+        StartGreen = 0.04,
+        StartBlue = 0.001,
+        EndRed = 0.999,
+        EndGreen = 0.0,
+        EndBlue = 0.0,
+    })
+
 return data
 end)

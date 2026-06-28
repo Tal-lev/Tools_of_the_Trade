@@ -799,6 +799,41 @@ AddGodTraitProperty({
             ChangeType = "Absolute",
             ExcludeLinked = true,
         },
+		--Scimiterror
+		{
+            WeaponName = "WeaponLob",
+            ProjectileName = "ScimiterrorChop",
+            ProjectileProperty = "Graphic",
+            ValuePrefix = "EnemyHeavySlashWretchAssassin_",
+            ChangeType = "Absolute",
+            ExcludeLinked = true,
+        },
+		--Stickler
+		{
+            WeaponName = "WeaponLob",
+            ProjectileName = "SticklerThrow",
+            ProjectileProperty = "Graphic",
+            ValuePrefix = "SticklerSpear_",
+            ChangeType = "Absolute",
+            ExcludeLinked = true,
+        },
+		{
+            WeaponName = "WeaponLob",
+            ProjectileName = "SticklerThrow",
+            ProjectileProperty = "DissipateFx",
+            ValuePrefix = "SticklerSpearDissipate_",
+            ChangeType = "Absolute",
+            ExcludeLinked = true,
+        },
+		--Swab
+		{
+            WeaponName = "WeaponLob",
+            ProjectileName = "SwabShockwavePull",
+            ProjectileProperty = "Graphic",
+            ValuePrefix = "SwabAnchorNovaQuick_",
+            ChangeType = "Absolute",
+            ExcludeLinked = true,
+        },
 
 	}
 })

@@ -3574,4 +3574,173 @@ OverwriteTableKeys( TraitData, {
 		},
 	},
 
+	ScimiterrorCopyDisplayBoon = 
+	{
+		Icon = "JarlUlsfark-Tools_of_the_Trade\\ScimiterrorIcon",
+		ShowInHUD = true,
+		CustomLabel = 
+		{
+			DisplayType = "RoomValue",
+			Key = "Copy_Scimiterror",
+			Text = "Copy_EmptyText"
+		},
+        PropertyChanges = 
+        {
+           {
+				WeaponName = "WeaponLob",
+				WeaponProperty = "Projectile",
+				ChangeValue = "ScimiterrorChop",
+			},
+            {
+				WeaponName = "WeaponLob",
+				WeaponProperties = 
+                {
+                    Cooldown = 1,
+					FizzleOldSpawns = false,
+					FireOnRelease = true,
+					BlockMoveInput = true,
+					CancelMovement = true,
+					SelfVelocity = 800,
+					AutoLock = true,
+					AutoLockRange = 150,
+					AutoLockArcDistance = 90,
+					RootOwnerWhileFiring = true,
+					CancelChargeOnRelease = true,
+                },
+                ExcludeLinked = true,
+			},
+            {
+                WeaponName = "WeaponLob",
+                ProjectileName = "ScimiterrorChop",
+                ProjectileProperties = 
+				{
+					Damage = 110,
+				},
+				ExcludeLinked = true,
+            },
+        },
+		FlavorText = "CopyAbility_FlavorText",
+	},
+
+	ScimiterrorCopyTwoDisplayBoon = 
+	{
+		Icon = "JarlUlsfark-Tools_of_the_Trade\\ScimiterrorIcon",
+		ShowInHUD = true,
+		CustomLabel = 
+		{
+			DisplayType = "RoomValue",
+			Key = "Copy_Scimiterror2",
+			Text = "Copy_2nd"
+		},
+	},
+
+	SticklerCopyDisplayBoon = 
+	{
+		Icon = "JarlUlsfark-Tools_of_the_Trade\\SticklerIcon",
+		ShowInHUD = true,
+		CustomLabel = 
+		{
+			DisplayType = "RoomValue",
+			Key = "Copy_Stickler",
+			Text = "Copy_EmptyText"
+		},
+        PropertyChanges = 
+        {
+           {
+				WeaponName = "WeaponLob",
+				WeaponProperty = "Projectile",
+				ChangeValue = "SticklerThrow",
+			},
+            {
+				WeaponName = "WeaponLob",
+				WeaponProperties = 
+                {
+                    Cooldown = 1.5,
+					FizzleOldSpawns = false,
+                },
+                ExcludeLinked = true,
+			},
+            {
+                WeaponName = "WeaponLob",
+                ProjectileName = "SticklerThrow",
+                ProjectileProperties = 
+				{
+					Damage = 150,
+				},
+				ExcludeLinked = true,
+            },
+        },
+		FlavorText = "CopyAbility_FlavorText",
+	},
+
+	SticklerCopyTwoDisplayBoon = 
+	{
+		Icon = "JarlUlsfark-Tools_of_the_Trade\\SticklerIcon",
+		ShowInHUD = true,
+		CustomLabel = 
+		{
+			DisplayType = "RoomValue",
+			Key = "Copy_Stickler2",
+			Text = "Copy_2nd"
+		},
+	},
+
+	SwabCopyDisplayBoon = 
+	{
+		Icon = "JarlUlsfark-Tools_of_the_Trade\\SwabIcon",
+		ShowInHUD = true,
+		CustomLabel = 
+		{
+			DisplayType = "RoomValue",
+			Key = "Copy_Swab",
+			Text = "Copy_EmptyText"
+		},
+        PropertyChanges = 
+        {
+           {
+				WeaponName = "WeaponLob",
+				WeaponProperty = "Projectile",
+				ChangeValue = "SwabShockwavePull",
+			},
+            {
+				WeaponName = "WeaponLob",
+				WeaponProperties = 
+                {
+                    Cooldown = 3,
+					FizzleOldSpawns = false,
+					ChargeTime = 1,
+                },
+                ExcludeLinked = true,
+			},
+            {
+                WeaponName = "WeaponLob",
+                ProjectileName = "SwabShockwavePull",
+                ProjectileProperties = 
+				{
+					Damage = 220,
+				},
+				ExcludeLinked = true,
+            },
+			{
+				WeaponName = "WeaponLob",
+				WeaponProperty = "ProjectileScaleMultiplier",
+				ChangeValue = 1.2,
+				ChangeType = "Multiply",
+			},	
+        },
+		FlavorText = "CopyAbility_FlavorText",
+	},
+
+	SwabCopyTwoDisplayBoon = 
+	{
+		Icon = "JarlUlsfark-Tools_of_the_Trade\\SwabIcon",
+		ShowInHUD = true,
+		CustomLabel = 
+		{
+			DisplayType = "RoomValue",
+			Key = "Copy_Swab2",
+			Text = "Copy_2nd"
+		},
+	},
+
 })
