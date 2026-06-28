@@ -879,5 +879,41 @@ AddGodTraitProperty({
             ChangeType = "Absolute",
             ExcludeLinked = true,
         }, 
+		--SentryBot
+		{
+            WeaponName = "WeaponLob",
+            ProjectileName = "SentryBotBolt",
+            ProjectileProperty = "Graphic",
+            ValuePrefix = "SentryBotProjectile_",
+            ChangeType = "Absolute",
+            ExcludeLinked = true,
+        }, 
+		--AutomatonBeamer
+		{
+            WeaponName = "WeaponLob",
+            ProjectileName = "AutomatonBeamBolt",
+            ProjectileProperty = "Graphic",
+            ValuePrefix = "EnemyBeamerProjectile_",
+            ChangeType = "Absolute",
+            ExcludeLinked = true,
+        }, 
+		--AutomatonEnforcer
+		{
+            WeaponName = "WeaponLob",
+            ProjectileName = "AutomatonWhirlwind",
+            ProjectileProperty = "DetonateFx",
+            ValuePrefix = "EnforcerWhirlwindFx_",
+            ChangeType = "Absolute",
+            ExcludeLinked = true,
+        },
+		--HarpyDropper
+		{
+            WeaponName = "WeaponLob",
+            ProjectileName = "HarpyFlapFast",
+            ProjectileProperty = "Graphic",
+            ValuePrefix = "HarpyTornado_",
+            ChangeType = "Absolute",
+            ExcludeLinked = true,
+        },
 	}
 })

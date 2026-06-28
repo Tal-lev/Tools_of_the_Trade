@@ -964,6 +964,18 @@ function mod.CopyAbility (victim, functionArgs, triggerArgs)
 	elseif victim.Name == "Eris" then
 		Changed = "ErisOne"
 		Location = "BiomeO"
+	elseif victim.Name == "SentryBot" or victim.Name == "SentryBot_Elite" then
+		Changed = "SentryBot"
+		Location = "BiomeP"
+	elseif victim.Name == "AutomatonBeamer" or victim.Name == "AutomatonBeamer_Elite" then
+		Changed = "AutomatonBeamer"
+		Location = "BiomeP"
+	elseif victim.Name == "AutomatonEnforcer" or victim.Name == "AutomatonEnforcer_Elite" then
+		Changed = "AutomatonEnforcer"
+		Location = "BiomeP"
+	elseif victim.Name == "HarpyDropper" or victim.Name == "HarpyDropper_Elite" then
+		Changed = "HarpyDropper"
+		Location = "BiomeP"
 	end
 	if Changed ~= "null" then
 		for key,value in pairs(CurrentRun.Hero.TraitDictionary) do

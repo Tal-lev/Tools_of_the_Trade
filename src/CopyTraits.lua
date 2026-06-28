@@ -4089,4 +4089,226 @@ OverwriteTableKeys( TraitData, {
 			Text = "Copy_2nd"
 		},
 	},
+
+	SentryBotCopyDisplayBoon = 
+	{
+		Icon = "JarlUlsfark-Tools_of_the_Trade\\SentryBotIcon",
+		ShowInHUD = true,
+		CustomLabel = 
+		{
+			DisplayType = "RoomValue",
+			Key = "Copy_SentryBot",
+			Text = "Copy_EmptyText"
+		},
+        PropertyChanges = 
+        {
+           {
+				WeaponName = "WeaponLob",
+				WeaponProperty = "Projectile",
+				ChangeValue = "SentryBotBolt",
+			},
+            {
+				WeaponName = "WeaponLob",
+				WeaponProperties = 
+                {
+                    Cooldown = 1.1,
+					FizzleOldSpawns = false,
+                },
+                ExcludeLinked = true,
+			},
+            {
+                WeaponName = "WeaponLob",
+                ProjectileName = "SentryBotBolt",
+                ProjectileProperties = 
+				{
+					Damage = 150,
+				},
+				ExcludeLinked = true,
+            },
+        },
+		FlavorText = "CopyAbility_FlavorText",
+	},
+
+	SentryBotCopyTwoDisplayBoon = 
+	{
+		Icon = "JarlUlsfark-Tools_of_the_Trade\\SentryBotIcon",
+		ShowInHUD = true,
+		CustomLabel = 
+		{
+			DisplayType = "RoomValue",
+			Key = "Copy_SentryBot2",
+			Text = "Copy_2nd"
+		},
+	},
+
+	AutomatonBeamerCopyDisplayBoon = 
+	{
+		Icon = "JarlUlsfark-Tools_of_the_Trade\\AutomatonBeamerIcon",
+		ShowInHUD = true,
+		CustomLabel = 
+		{
+			DisplayType = "RoomValue",
+			Key = "Copy_AutomatonBeamer",
+			Text = "Copy_EmptyText"
+		},
+        PropertyChanges = 
+        {
+           {
+				WeaponName = "WeaponLob",
+				WeaponProperty = "Projectile",
+				ChangeValue = "AutomatonBeamBolt",
+			},
+            {
+				WeaponName = "WeaponLob",
+				WeaponProperties = 
+                {
+                    Cooldown = 2.25,
+					FizzleOldSpawns = true,
+					NumProjectiles = 10,
+					ProjectileInterval = 0.3,
+					ChargeTime = 3,
+					ProjectileAngleOffset = math.rad(0),
+					RootOwnerWhileFiring = true,
+
+                },
+                ExcludeLinked = true,
+			},
+            {
+                WeaponName = "WeaponLob",
+                ProjectileName = "AutomatonBeamBolt",
+                ProjectileProperties = 
+				{
+					Damage = 140,
+				},
+				ExcludeLinked = true,
+            },
+        },
+		FlavorText = "CopyAbility_FlavorText",
+	},
+
+	AutomatonBeamerCopyTwoDisplayBoon = 
+	{
+		Icon = "JarlUlsfark-Tools_of_the_Trade\\AutomatonBeamerIcon",
+		ShowInHUD = true,
+		CustomLabel = 
+		{
+			DisplayType = "RoomValue",
+			Key = "Copy_AutomatonBeamer2",
+			Text = "Copy_2nd"
+		},
+	},
+
+	AutomatonEnforcerCopyDisplayBoon = 
+	{
+		Icon = "JarlUlsfark-Tools_of_the_Trade\\AutomatonEnforcerIcon",
+		ShowInHUD = true,
+		CustomLabel = 
+		{
+			DisplayType = "RoomValue",
+			Key = "Copy_AutomatonEnforcer",
+			Text = "Copy_EmptyText"
+		},
+        PropertyChanges = 
+        {
+           {
+				WeaponName = "WeaponLob",
+				WeaponProperty = "Projectile",
+				ChangeValue = "AutomatonWhirlwind",
+			},
+            {
+				WeaponName = "WeaponLob",
+				WeaponProperties = 
+                {
+                    Cooldown = 2.15,
+					FizzleOldSpawns = true,
+					NumProjectiles = 10,
+					ProjectileInterval = 0.16,
+					ChargeTime = 1.6,
+					ProjectileAngleOffset = math.rad(0),
+					RootOwnerWhileFiring = true,
+
+                },
+                ExcludeLinked = true,
+			},
+            {
+                WeaponName = "WeaponLob",
+                ProjectileName = "AutomatonWhirlwind",
+                ProjectileProperties = 
+				{
+					Damage = 130,
+				},
+				ExcludeLinked = true,
+            },
+        },
+		FlavorText = "CopyAbility_FlavorText",
+	},
+
+	AutomatonEnforcerCopyTwoDisplayBoon = 
+	{
+		Icon = "JarlUlsfark-Tools_of_the_Trade\\AutomatonEnforcerIcon",
+		ShowInHUD = true,
+		CustomLabel = 
+		{
+			DisplayType = "RoomValue",
+			Key = "Copy_AutomatonEnforcer2",
+			Text = "Copy_2nd"
+		},
+	},
+
+	HarpyDropperCopyDisplayBoon = 
+	{
+		Icon = "JarlUlsfark-Tools_of_the_Trade\\HarpyDropperIcon",
+		ShowInHUD = true,
+		CustomLabel = 
+		{
+			DisplayType = "RoomValue",
+			Key = "Copy_HarpyDropper",
+			Text = "Copy_EmptyText"
+		},
+        PropertyChanges = 
+        {
+           {
+				WeaponName = "WeaponLob",
+				WeaponProperty = "Projectile",
+				ChangeValue = "HarpyFlapFast",
+			},
+            {
+				WeaponName = "WeaponLob",
+				WeaponProperties = 
+                {
+                    Cooldown = 1.2,
+					FizzleOldSpawns = false,
+                },
+                ExcludeLinked = true,
+			},
+            {
+                WeaponName = "WeaponLob",
+                ProjectileName = "HarpyFlapFast",
+                ProjectileProperties = 
+				{
+					Damage = 110,
+				},
+				ExcludeLinked = true,
+            },
+			{
+				WeaponName = "WeaponLob",
+				WeaponProperty = "ProjectileScaleMultiplier",
+				ChangeValue = 1.2,
+				ChangeType = "Multiply",
+			},	
+        },
+		FlavorText = "CopyAbility_FlavorText",
+	},
+
+	HarpyDropperCopyTwoDisplayBoon = 
+	{
+		Icon = "JarlUlsfark-Tools_of_the_Trade\\HarpyDropperIcon",
+		ShowInHUD = true,
+		CustomLabel = 
+		{
+			DisplayType = "RoomValue",
+			Key = "Copy_HarpyDropper2",
+			Text = "Copy_2nd"
+		},
+	},
 })
