@@ -104,3 +104,12 @@
 - Satyr Goldpike
 - Satyr Sapper
 - Talos
+- Heracles
+- Prometheus
+
+### The Summit (Unreleased)
+
+- Polyp
+- Stalker
+- Horror
+- Eyesore
