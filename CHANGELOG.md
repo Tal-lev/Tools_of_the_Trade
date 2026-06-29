@@ -7,7 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-- 30 Implemented enemies for copy.
+- 36 Implemented enemies for copy.
   - Wisp
   - Carrion
   - ZombieHeavyRanged
@@ -39,6 +39,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - SatyrLancer2
   - SatyrSapper
   - Talos
+  - Heracles
+  - Prometheus
+  - Simple
+  - Stalker
+  - Brute
+  - Mati
 
 ## [0.2.1] - 2026-06-24
 
