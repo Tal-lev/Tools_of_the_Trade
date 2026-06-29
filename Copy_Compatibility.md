@@ -105,7 +105,9 @@
 - Satyr Sapper
 - Talos
 - Heracles
+  - Spin-Attack
 - Prometheus
+  - Fire-Pillar
 
 ### The Summit (Unreleased)
 
