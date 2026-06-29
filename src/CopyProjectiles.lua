@@ -695,7 +695,105 @@ local file = rom.path.combine(rom.paths.Content, 'Game/Projectiles/PlayerProject
 		InheritFrom = "LovesickHeartLob",
 		SpawnOnDeath = "null",
 	})
+
+	table.insert(data.Projectiles,
+	{
+		Name = "MatiSlowBolt2player",
+		InheritFrom = "MatiSlowBolt2",
+		Damage = 100,
+	})
 	
+	table.insert(data.Projectiles,
+	{
+		Name = "MatiSlowBolt2player_Zeus",
+		InheritFrom = "MatiSlowBolt2player",
+		Thing = 
+			{
+				Graphic = "MatiProjectileFxIn_Zeus",
+			},
+	})
+
+	table.insert(data.Projectiles,
+	{
+		Name = "MatiSlowBolt2player_Hera",
+		InheritFrom = "MatiSlowBolt2player",
+		Thing = 
+			{
+				Graphic = "MatiProjectileFxIn_Hera",
+			},
+	})
+
+	table.insert(data.Projectiles,
+	{
+		Name = "MatiSlowBolt2player_Poseidon",
+		InheritFrom = "MatiSlowBolt2player",
+		Thing = 
+			{
+				Graphic = "MatiProjectileFxIn_Poseidon",
+			},
+	})
+
+	table.insert(data.Projectiles,
+	{
+		Name = "MatiSlowBolt2player_Demeter",
+		InheritFrom = "MatiSlowBolt2player",
+		Thing = 
+			{
+				Graphic = "MatiProjectileFxIn_Demeter",
+			},
+	})
+
+	table.insert(data.Projectiles,
+	{
+		Name = "MatiSlowBolt2player_Apollo",
+		InheritFrom = "MatiSlowBolt2player",
+		Thing = 
+			{
+				Graphic = "MatiProjectileFxIn_Apollo",
+			},
+	})
+
+	table.insert(data.Projectiles,
+	{
+		Name = "MatiSlowBolt2player_Aphrodite",
+		InheritFrom = "MatiSlowBolt2player",
+		Thing = 
+			{
+				Graphic = "MatiProjectileFxIn_Aphrodite",
+			},
+	})
+
+	table.insert(data.Projectiles,
+	{
+		Name = "MatiSlowBolt2player_Hephaestus",
+		InheritFrom = "MatiSlowBolt2player",
+		Thing = 
+			{
+				Graphic = "MatiProjectileFxIn_Hephaestus",
+			},
+	})
+
+	table.insert(data.Projectiles,
+	{
+		Name = "MatiSlowBolt2player_Hestia",
+		InheritFrom = "MatiSlowBolt2player",
+		Thing = 
+			{
+				Graphic = "MatiProjectileFxIn_Hestia",
+			},
+	})
+
+	table.insert(data.Projectiles,
+	{
+		Name = "MatiSlowBolt2player_Ares",
+		InheritFrom = "MatiSlowBolt2player",
+		Thing = 
+			{
+				Graphic = "MatiProjectileFxIn_Ares",
+			},
+	})
+
+			
 return data
 end)
 

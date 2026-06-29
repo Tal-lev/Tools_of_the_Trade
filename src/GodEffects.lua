@@ -950,5 +950,76 @@ AddGodTraitProperty({
             ChangeType = "Absolute",
             ExcludeLinked = true,
         },
+		--Talos
+		{
+            WeaponName = "WeaponLob",
+            ProjectileName = "TalosShieldThrowStraight",
+            ProjectileProperty = "Graphic",
+            ValuePrefix = "TalosShieldVerticalR_",
+            ChangeType = "Absolute",
+            ExcludeLinked = true,
+        },
+		--Heracles
+		{
+            WeaponName = "WeaponLob",
+            ProjectileName = "HeraclesEMSpin",
+            ProjectileProperty = "DetonateFx",
+            ValuePrefix = "HeraclesEMSpinFx_",
+            ChangeType = "Absolute",
+            ExcludeLinked = true,
+        },
+		--Prometheus
+		{
+            WeaponName = "WeaponLob",
+            ProjectileName = "PrometheusUppercutWhirlwind",
+            ProjectileProperty = "Graphic",
+            ValuePrefix = "PrometheusFirePillarFx_",
+            ChangeType = "Absolute",
+            ExcludeLinked = true,
+        },
+		--Simple
+		{
+            WeaponName = "WeaponLob",
+            ProjectileName = "SimpleLocust",
+            ProjectileProperty = "Graphic",
+            ValuePrefix = "SimpleLocustFx_",
+            ChangeType = "Absolute",
+            ExcludeLinked = true,
+        },
+		--Stalker
+		{
+            WeaponName = "WeaponLob",
+            ProjectileName = "StalkerGroundWave",
+            ProjectileProperty = "Graphic",
+            ValuePrefix = "TyphonStalkerWaveSpike_",
+            ChangeType = "Absolute",
+            ExcludeLinked = true,
+        },
+		--Brute
+		{
+            WeaponName = "WeaponLob",
+            ProjectileName = "BruteChargeHorn",
+            ProjectileProperty = "Graphic",
+            ValuePrefix = "BruteChargeHornFx_",
+            ChangeType = "Absolute",
+            ExcludeLinked = true,
+        },
+		--Mati
+		{
+            WeaponName = "WeaponLob",
+            ProjectileName = "MatiSlowBolt",
+            ProjectileProperty = "Graphic",
+            ValuePrefix = "MatiProjectileFxIn_",
+            ChangeType = "Absolute",
+            ExcludeLinked = true,
+        },
+		{
+            WeaponName = "WeaponLob",
+            ProjectileName = "MatiSlowBolt",
+            ProjectileProperty = "SpawnOnDissipate",
+            ValuePrefix = "MatiSlowBolt2player_",
+            ChangeType = "Absolute",
+            ExcludeLinked = true,
+        },
 	}
 })

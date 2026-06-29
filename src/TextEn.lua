@@ -962,5 +962,75 @@ sjson.hook(file, function(data)
 		TextOrder)
 	)
 
+	table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "SatyrSapperCopyDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Copy Ability: Talos",
+			Description = "Your Attack throws a {#UpgradeFormat}Spinning Shield{#Prev}.",
+		},
+		TextOrder)
+	)
+
+	table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "HeraclesOneCopyDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Copy Ability: Heracles Spin",
+			Description = "Your Attack {#UpgradeFormat}Spins {#Prev}around you in a {#UpgradeFormat}Barrage of Blows{#Prev}.",
+		},
+		TextOrder)
+	)
+
+	table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "PrometheusOneCopyDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Copy Ability: Prometheus Fire-Pillar",
+			Description = "Your Attack fires a {#UpgradeFormat}Burning Pillar{#Prev}.",
+		},
+		TextOrder)
+	)
+
+	table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "SimpleCopyDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Copy Ability: Polyp",
+			Description = "Your Attack creates a {#UpgradeFormat}Small Damaging Aura{#Prev} infront.",
+		},
+		TextOrder)
+	)
+
+	table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "StalkerCopyDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Copy Ability: Stalker",
+			Description = "Your Attack fire {#UpgradeFormat}2 Linear Shockwaves{#Prev}.",
+		},
+		TextOrder)
+	)
+
+	table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "StalkerCopyDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Copy Ability: Horror",
+			Description = "Your Attack transforms into a {#UpgradeFormat}Horn Charge{#Prev}.",
+		},
+		TextOrder)
+	)
+
+	table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "MatiCopyDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Copy Ability: Eyesore",
+			Description = "Your Attack fire a {#UpgradeFormat}Homing Splitting Projectile{#Prev}.",
+		},
+		TextOrder)
+	)
+
     return data
 end)
