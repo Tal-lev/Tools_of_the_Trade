@@ -103,3 +103,4 @@
 - Satyr Raider
 - Satyr Goldpike
 - Satyr Sapper
+- Talos
