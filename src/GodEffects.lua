@@ -1021,5 +1021,14 @@ AddGodTraitProperty({
             ChangeType = "Absolute",
             ExcludeLinked = true,
         },
+		--DragonBurrower
+		{
+            WeaponName = "WeaponLob",
+            ProjectileName = "DragonBurrowerRanged",
+            ProjectileProperty = "Graphic",
+            ValuePrefix = "DragonBurrowerRangedIn_",
+            ChangeType = "Absolute",
+            ExcludeLinked = true,
+        },
 	}
 })

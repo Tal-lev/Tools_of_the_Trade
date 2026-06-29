@@ -12167,5 +12167,236 @@ table.insert(data.Animations,
         EndBlue = 0.0,
     })
 
+    table.insert(data.Animations,
+        {
+        Name = "DragonBurrowerRanged_Zeus",
+        InheritFrom = "DragonBurrowerRanged",
+        Color = {},
+        ColorFromOwner = "Ignore",
+        AddColor = true,
+        StartRed = 1.0,
+        StartGreen = 0.95,
+        StartBlue = 0.7,
+        EndRed = 0.9999,
+        EndGreen = 0.8,
+        EndBlue = 0.5,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "DragonBurrowerRanged_Hera",
+        InheritFrom = "DragonBurrowerRanged_Zeus",
+        StartRed = 0.0,
+        StartGreen = 1.0,
+        StartBlue = 0.1,
+        EndRed = 0.1,
+        EndGreen = 0.3,
+        EndBlue = 1.0,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "DragonBurrowerRanged_Poseidon",
+        InheritFrom = "DragonBurrowerRanged_Zeus",
+        StartRed = 0.1,
+        StartGreen = 1.0,
+        StartBlue = 0.8,
+        EndRed = 0,
+        EndGreen = 0.6,
+        EndBlue = 1.0,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "DragonBurrowerRanged_Demeter",
+        InheritFrom = "DragonBurrowerRanged_Zeus",
+        StartRed = 0.25,
+        StartGreen = 0.35,
+        StartBlue = 0.5,
+        EndRed = 0.35,
+        EndGreen = 0.25,
+        EndBlue = 0.4999,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "DragonBurrowerRanged_Apollo",
+        InheritFrom = "DragonBurrowerRanged_Zeus",
+        StartRed = 1.0,
+        StartGreen = 0.9,
+        StartBlue = 0.7,
+        EndRed = 0.999,
+        EndGreen = 0.85,
+        EndBlue = 0.05,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "DragonBurrowerRanged_Aphrodite",
+        InheritFrom = "DragonBurrowerRanged_Zeus",
+        StartRed = 1.0,
+        StartGreen = 0.6,
+        StartBlue = 0.8,
+        EndRed = 0.99,
+        EndGreen = 0.05,
+        EndBlue = 0.99,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "DragonBurrowerRanged_Hephaestus",
+        InheritFrom = "DragonBurrowerRanged_Zeus",
+        StartRed = 0.51,
+        StartGreen = 0.82,
+        StartBlue = 1.00,
+        EndRed = 1.00,
+        EndGreen = 0,
+        EndBlue = 0,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "DragonBurrowerRanged_Hestia",
+        InheritFrom = "DragonBurrowerRanged_Zeus",
+        StartRed = 1.0,
+        StartGreen = 0.3,
+        StartBlue = 0.02,
+        EndRed = 0.999,
+        EndGreen = 0.15,
+        EndBlue = 0.0,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "DragonBurrowerRanged_Ares",
+        InheritFrom = "DragonBurrowerRanged_Zeus",
+        StartRed = 1.0,
+        StartGreen = 0.04,
+        StartBlue = 0.001,
+        EndRed = 0.999,
+        EndGreen = 0.0,
+        EndBlue = 0.0,
+    })
+
+    table.insert(data.Animations,
+        {
+        Name = "DragonBurrowerRangedIn_Zeus",
+        InheritFrom = "DragonBurrowerRangedIn",
+        ChainTo = "DragonBurrowerRanged_Zeus",
+        Color = {},
+        ColorFromOwner = "Ignore",
+        AddColor = true,
+        StartRed = 1.0,
+        StartGreen = 0.95,
+        StartBlue = 0.7,
+        EndRed = 0.9999,
+        EndGreen = 0.8,
+        EndBlue = 0.5,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "DragonBurrowerRangedIn_Hera",
+        InheritFrom = "DragonBurrowerRangedIn_Zeus",
+        ChainTo = "DragonBurrowerRanged_Hera",
+        StartRed = 0.0,
+        StartGreen = 1.0,
+        StartBlue = 0.1,
+        EndRed = 0.1,
+        EndGreen = 0.3,
+        EndBlue = 1.0,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "DragonBurrowerRangedIn_Poseidon",
+        InheritFrom = "DragonBurrowerRangedIn_Zeus",
+        ChainTo = "DragonBurrowerRanged_Poseidon",
+        StartRed = 0.1,
+        StartGreen = 1.0,
+        StartBlue = 0.8,
+        EndRed = 0,
+        EndGreen = 0.6,
+        EndBlue = 1.0,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "DragonBurrowerRangedIn_Demeter",
+        InheritFrom = "DragonBurrowerRangedIn_Zeus",
+        ChainTo = "DragonBurrowerRanged_Demeter",
+        StartRed = 0.25,
+        StartGreen = 0.35,
+        StartBlue = 0.5,
+        EndRed = 0.35,
+        EndGreen = 0.25,
+        EndBlue = 0.4999,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "DragonBurrowerRangedIn_Apollo",
+        InheritFrom = "DragonBurrowerRangedIn_Zeus",
+        ChainTo = "DragonBurrowerRanged_Apollo",
+        StartRed = 1.0,
+        StartGreen = 0.9,
+        StartBlue = 0.7,
+        EndRed = 0.999,
+        EndGreen = 0.85,
+        EndBlue = 0.05,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "DragonBurrowerRangedIn_Aphrodite",
+        InheritFrom = "DragonBurrowerRangedIn_Zeus",
+        ChainTo = "DragonBurrowerRanged_Aphrodite",
+        StartRed = 1.0,
+        StartGreen = 0.6,
+        StartBlue = 0.8,
+        EndRed = 0.99,
+        EndGreen = 0.05,
+        EndBlue = 0.99,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "DragonBurrowerRangedIn_Hephaestus",
+        InheritFrom = "DragonBurrowerRangedIn_Zeus",
+        ChainTo = "DragonBurrowerRanged_Hephaestus",
+        StartRed = 0.51,
+        StartGreen = 0.82,
+        StartBlue = 1.00,
+        EndRed = 1.00,
+        EndGreen = 0,
+        EndBlue = 0,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "DragonBurrowerRangedIn_Hestia",
+        InheritFrom = "DragonBurrowerRangedIn_Zeus",
+        ChainTo = "DragonBurrowerRanged_Hestia",
+        StartRed = 1.0,
+        StartGreen = 0.3,
+        StartBlue = 0.02,
+        EndRed = 0.999,
+        EndGreen = 0.15,
+        EndBlue = 0.0,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "DragonBurrowerRangedIn_Ares",
+        InheritFrom = "DragonBurrowerRangedIn_Zeus",
+        ChainTo = "DragonBurrowerRanged_Ares",
+        StartRed = 1.0,
+        StartGreen = 0.04,
+        StartBlue = 0.001,
+        EndRed = 0.999,
+        EndGreen = 0.0,
+        EndBlue = 0.0,
+    })
+
 return data
 end)
