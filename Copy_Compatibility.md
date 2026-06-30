@@ -117,3 +117,4 @@
 - Eyesore
 - Land-Dracon
 - Spawn of Typhon
+- Tail of Typhon
