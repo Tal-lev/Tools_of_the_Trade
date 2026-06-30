@@ -118,3 +118,5 @@
 - Land-Dracon
 - Spawn of Typhon
 - Tail of Typhon
+- Typhon
+  - Tongue-Lash
