@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+- Added Biome damage for copy abilities
+  - Tartarus 90%
+  - Ocean of Sorrows 70%
+  - Mount Olympus 60%
+  - The Summit 60%
+- Added 1 cosmetic
+
 ## [0.3.0] - 2026-06-30
 
 - 40 Implemented enemies for copy.
