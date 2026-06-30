@@ -7,7 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-- 37 Implemented enemies for copy.
+- 38 Implemented enemies for copy.
   - Wisp
   - Carrion
   - ZombieHeavyRanged
@@ -46,6 +46,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Brute
   - Mati
   - DragonBurrower
+  - Brute_Miniboss
 
 ## [0.2.1] - 2026-06-24
 
