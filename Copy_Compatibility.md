@@ -116,3 +116,4 @@
 - Horror
 - Eyesore
 - Land-Dracon
+- Spawn of Typhon
