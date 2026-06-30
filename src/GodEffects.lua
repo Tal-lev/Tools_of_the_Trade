@@ -1030,5 +1030,32 @@ AddGodTraitProperty({
             ChangeType = "Absolute",
             ExcludeLinked = true,
         },
+		--Brute_Miniboss
+		{
+            WeaponName = "WeaponLob",
+            ProjectileName = "BruteMelee1_Miniboss",
+            ProjectileProperty = "StartFx",
+            ValuePrefix = "BruteMeleeSwipe_",
+            ChangeType = "Absolute",
+            ExcludeLinked = true,
+        },
+		--TyphonTail
+		{
+            WeaponName = "WeaponLob",
+            ProjectileName = "TyphonTailDrill",
+            ProjectileProperty = "Graphic",
+            ValuePrefix = "TyphonTailDrillFx_",
+            ChangeType = "Absolute",
+            ExcludeLinked = true,
+        },
+		--TyphonHead
+		{
+            WeaponName = "WeaponLob",
+            ProjectileName = "TyphonHeadTongueMelee",
+            ProjectileProperty = "Graphic",
+            ValuePrefix = "TyphonHeadTongueBeamIn_",
+            ChangeType = "Absolute",
+            ExcludeLinked = true,
+        },
 	}
 })

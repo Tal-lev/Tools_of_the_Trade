@@ -1042,5 +1042,35 @@ sjson.hook(file, function(data)
 		TextOrder)
 	)
 
+	table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "Brute_MinibossCopyDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Copy Ability: Spawn of Typhon",
+			Description = "Your Attack {#UpgradeFormat}Swipes{#Prev} forward.",
+		},
+		TextOrder)
+	)
+
+	table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "TyphonTailCopyDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Copy Ability: Tail of Typhon",
+			Description = "Your Attack fires a {#UpgradeFormat}Rotating Drill{#Prev}.",
+		},
+		TextOrder)
+	)
+
+		table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "TyphonHeadCopyDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Copy Ability: Typhon Tongue-Lash",
+			Description = "Your Attack fires a {#UpgradeFormat}Lashing Tongue of Typhon{#Prev}.",
+		},
+		TextOrder)
+	)
+
     return data
 end)

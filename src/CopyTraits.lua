@@ -4902,4 +4902,174 @@ OverwriteTableKeys( TraitData, {
 		},
 	},
 
+	Brute_MinibossCopyDisplayBoon = 
+	{
+		Icon = "JarlUlsfark-Tools_of_the_Trade\\Brute_MinibossIcon",
+		ShowInHUD = true,
+		CustomLabel = 
+		{
+			DisplayType = "RoomValue",
+			Key = "Copy_Brute_Miniboss",
+			Text = "Copy_EmptyText"
+		},
+        PropertyChanges = 
+        {
+           {
+				WeaponName = "WeaponLob",
+				WeaponProperty = "Projectile",
+				ChangeValue = "BruteMelee1_Miniboss",
+			},
+            {
+				WeaponName = "WeaponLob",
+				WeaponProperties = 
+                {
+                    Cooldown = 1,
+					FizzleOldSpawns = false,
+					BlockMoveInput = true,
+					CancelMovement = true,
+					AutoLock = true,
+					AutoLockRange = 100,
+					SelfVelocity = 400,
+                },
+                ExcludeLinked = true,
+			},
+			{
+                WeaponName = "WeaponLob",
+                ProjectileName = "BruteMelee1_Miniboss",
+                ProjectileProperties = 
+				{
+					Damage = 300,
+				},
+				ExcludeLinked = true,
+            },
+			{
+				WeaponName = "WeaponLob",
+				WeaponProperty = "ProjectileScaleMultiplier",
+				ChangeValue = 2.6,
+				ChangeType = "Multiply",
+			},	
+        },
+		FlavorText = "CopyAbility_FlavorText",
+	},
+
+	Brute_MinibossCopyTwoDisplayBoon = 
+	{
+		Icon = "JarlUlsfark-Tools_of_the_Trade\\Brute_MinibossIcon",
+		ShowInHUD = true,
+		CustomLabel = 
+		{
+			DisplayType = "RoomValue",
+			Key = "Copy_Brute_Miniboss2",
+			Text = "Copy_2nd"
+		},
+	},
+
+	TyphonTailCopyDisplayBoon = 
+	{
+		Icon = "JarlUlsfark-Tools_of_the_Trade\\TyphonTailIcon",
+		ShowInHUD = true,
+		CustomLabel = 
+		{
+			DisplayType = "RoomValue",
+			Key = "Copy_TyphonTail",
+			Text = "Copy_EmptyText"
+		},
+        PropertyChanges = 
+        {
+           {
+				WeaponName = "WeaponLob",
+				WeaponProperty = "Projectile",
+				ChangeValue = "TyphonTailDrill",
+			},
+            {
+				WeaponName = "WeaponLob",
+				WeaponProperties = 
+                {
+                    Cooldown = 1.6,
+					FizzleOldSpawns = true,
+					BarrelLength = 0,
+					NumProjectiles = 10,
+					ProjectileInterval = 0.3,
+
+                },
+                ExcludeLinked = true,
+			},
+			{
+                WeaponName = "WeaponLob",
+                ProjectileName = "TyphonTailDrill",
+                ProjectileProperties = 
+				{
+					Damage = 290,
+				},
+				ExcludeLinked = true,
+            },
+        },
+		FlavorText = "CopyAbility_FlavorText",
+	},
+
+	TyphonTailCopyTwoDisplayBoon = 
+	{
+		Icon = "JarlUlsfark-Tools_of_the_Trade\\TyphonTailIcon",
+		ShowInHUD = true,
+		CustomLabel = 
+		{
+			DisplayType = "RoomValue",
+			Key = "Copy_TyphonTail2",
+			Text = "Copy_2nd"
+		},
+	},
+
+	TyphonHeadOneCopyDisplayBoon = 
+	{
+		Icon = "JarlUlsfark-Tools_of_the_Trade\\TyphonHeadIcon",
+		ShowInHUD = true,
+		CustomLabel = 
+		{
+			DisplayType = "RoomValue",
+			Key = "Copy_TyphonHead",
+			Text = "Copy_EmptyText"
+		},
+        PropertyChanges = 
+        {
+           {
+				WeaponName = "WeaponLob",
+				WeaponProperty = "Projectile",
+				ChangeValue = "TyphonHeadTongueMelee",
+			},
+            {
+				WeaponName = "WeaponLob",
+				WeaponProperties = 
+                {
+                    Cooldown = 1.1,
+					FizzleOldSpawns = true,
+					BarrelLength = 0,
+
+                },
+                ExcludeLinked = true,
+			},
+			{
+                WeaponName = "WeaponLob",
+                ProjectileName = "TyphonHeadTongueMelee",
+                ProjectileProperties = 
+				{
+					Damage = 700,
+				},
+				ExcludeLinked = true,
+            },
+        },
+		FlavorText = "CopyAbility_FlavorText",
+	},
+
+	TyphonTailCopyTwoDisplayBoon = 
+	{
+		Icon = "JarlUlsfark-Tools_of_the_Trade\\TyphonHeadIcon",
+		ShowInHUD = true,
+		CustomLabel = 
+		{
+			DisplayType = "RoomValue",
+			Key = "Copy_TyphonHead2",
+			Text = "Copy_2nd"
+		},
+	},
+
 })
