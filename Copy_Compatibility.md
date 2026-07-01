@@ -63,6 +63,7 @@
 - Crawler
 - Satyr Supplicant
 - Goldwrath
+- The Verminancer
 - Chronos
   - Scythe-Throw
 - Zagreus
