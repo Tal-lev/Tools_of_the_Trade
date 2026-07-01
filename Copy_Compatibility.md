@@ -94,6 +94,7 @@
 - Droplet
 - Blasket
 - The Yargonaut
+- Charybdis Tentacle
 - Eris
   - Sniper-Shot
 
