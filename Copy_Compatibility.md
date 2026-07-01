@@ -46,6 +46,7 @@
 - Dread-Wailer
 - Brush-Stalker Tail
 - Canine
+- Lycaon
 - Lamia
 - Lamia Queen
 - Phantom
