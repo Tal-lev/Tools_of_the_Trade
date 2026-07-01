@@ -503,6 +503,15 @@ AddGodTraitProperty({
             ChangeType = "Absolute",
             ExcludeLinked = true,
         }, 
+		--Lycanthrope
+		{
+            WeaponName = "WeaponLob",
+            ProjectileName = "LycanthropePounce",
+            ProjectileProperty = "Graphic",
+            ValuePrefix = "LycanSwipeBase_",
+            ChangeType = "Absolute",
+            ExcludeLinked = true,
+        }, 
 		--Screamer2
 		{
             WeaponName = "WeaponLob",
@@ -658,6 +667,15 @@ AddGodTraitProperty({
             ChangeType = "Absolute",
             ExcludeLinked = true,
         },
+		--SatyrRatCatcher_Miniboss
+		{
+            WeaponName = "WeaponLob",
+            ProjectileName = "SatyrRatCatcherMelee_Miniboss",
+            ProjectileProperty = "Graphic",
+            ValuePrefix = "SatyrRatCatcherMeleeFx_",
+            ChangeType = "Absolute",
+            ExcludeLinked = true,
+        },
 		--Crawler
 		{
             WeaponName = "WeaponLob",
@@ -676,7 +694,7 @@ AddGodTraitProperty({
             ChangeType = "Absolute",
             ExcludeLinked = true,
         },
-		--Chronos
+		--ChronosOne
 		{
             WeaponName = "WeaponLob",
             ProjectileName = "ChronosScytheThrow",
@@ -701,12 +719,46 @@ AddGodTraitProperty({
             ChangeType = "Absolute",
             ExcludeLinked = true,
         }, 
+		--ZagreusOne
+		{
+            WeaponName = "WeaponLob",
+            ProjectileName = "ZagreusCast",
+            ProjectileProperty = "Graphic",
+            ValuePrefix = "BloodstoneProjectile_",
+            ChangeType = "Absolute",
+            ExcludeLinked = true,
+        },
+		{
+            WeaponName = "WeaponLob",
+            ProjectileName = "ZagreusCast",
+            ProjectileProperty = "DissipateFx",
+            ValuePrefix = "BloodstoneHitFx_",
+            ChangeType = "Absolute",
+            ExcludeLinked = true,
+        },
+		{
+            WeaponName = "WeaponLob",
+            ProjectileName = "ZagreusCast",
+            ProjectileProperty = "ImpactFx",
+            ValuePrefix = "BloodstoneHitFx_",
+            ChangeType = "Absolute",
+            ExcludeLinked = true,
+        },
 		--Carrrion
 		{
             WeaponName = "WeaponLob",
             ProjectileName = "CarrionSweep",
             ProjectileProperty = "Graphic",
             ValuePrefix = "CarrionSweepAttackFx_",
+            ChangeType = "Absolute",
+            ExcludeLinked = true,
+        }, 
+		--Zombie
+		{
+            WeaponName = "WeaponLob",
+            ProjectileName = "ZombieMelee",
+            ProjectileProperty = "StartFx",
+            ValuePrefix = "LycanSwipe_",
             ChangeType = "Absolute",
             ExcludeLinked = true,
         }, 
@@ -869,7 +921,25 @@ AddGodTraitProperty({
             ValuePrefix = "CaptainProjectile_",
             ChangeType = "Absolute",
             ExcludeLinked = true,
-        }, 
+        },
+		--CharybdisTentacle
+		{
+            WeaponName = "WeaponLob",
+            ProjectileName = "TentacleSpike2",
+            ProjectileProperty = "Graphic",
+            ValuePrefix = "CharybdisTentacleSpikeIn_",
+            ChangeType = "Absolute",
+            ExcludeLinked = true,
+        },
+		{
+            WeaponName = "WeaponLob",
+            ProjectileName = "TentacleSpike2",
+            ProjectileProperty = "DetonateFx",
+            ValuePrefix = "FishmanRangedProjectileDetonate_",
+            ChangeType = "Absolute",
+            ExcludeLinked = true,
+        },  
+
 		--ErisOne
 		{
             WeaponName = "WeaponLob",
@@ -1030,6 +1100,15 @@ AddGodTraitProperty({
             ChangeType = "Absolute",
             ExcludeLinked = true,
         },
+		--DragonBurrower
+		{
+            WeaponName = "WeaponLob",
+            ProjectileName = "EarthElementalLaser",
+            ProjectileProperty = "Graphic",
+            ValuePrefix = "EarthElementalBeam_",
+            ChangeType = "Absolute",
+            ExcludeLinked = true,
+        },
 		--Brute_Miniboss
 		{
             WeaponName = "WeaponLob",
@@ -1045,6 +1124,31 @@ AddGodTraitProperty({
             ProjectileName = "TyphonTailDrill",
             ProjectileProperty = "Graphic",
             ValuePrefix = "TyphonTailDrillFx_",
+            ChangeType = "Absolute",
+            ExcludeLinked = true,
+        },
+		--TyphonEye
+		{
+            WeaponName = "WeaponLob",
+            ProjectileName = "TyphonEyeCannon",
+            ProjectileProperty = "Graphic",
+            ValuePrefix = "TyphonHeadEyeProjectile_",
+            ChangeType = "Absolute",
+            ExcludeLinked = true,
+        },
+		{
+            WeaponName = "WeaponLob",
+            ProjectileName = "TyphonEyeCannon",
+            ProjectileProperty = "DetonateFx",
+            ValuePrefix = "TyphonHeadEyeProjectilePop_",
+            ChangeType = "Absolute",
+            ExcludeLinked = true,
+        },
+		{
+            WeaponName = "WeaponLob",
+            ProjectileName = "TyphonEyeCannon",
+            ProjectileProperty = "SpawnOnDeath",
+            ValuePrefix = "TyphonHeadBoltChaoticplayer_",
             ChangeType = "Absolute",
             ExcludeLinked = true,
         },

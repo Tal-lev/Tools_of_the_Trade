@@ -1,3 +1,10 @@
+local BiomeIScaling = 0.9
+local BiomeOScaling = 0.7
+local BiomePScaling = 0.6
+local BiomeQScaling = 0.6
+local BiomeCScaling = 0.7
+
+
 OverwriteTableKeys( TraitData, {
     DummyCopyDisplayBoon = 
 	{
@@ -1817,6 +1824,63 @@ OverwriteTableKeys( TraitData, {
 		},
 	},
 
+	LycanthropeCopyDisplayBoon = 
+	{
+		Icon = "JarlUlsfark-Tools_of_the_Trade\\LycanthropeIcon",
+		ShowInHUD = true,
+		CustomLabel = 
+		{
+			DisplayType = "RoomValue",
+			Key = "Copy_Lycanthrope",
+			Text = "Copy_EmptyText"
+		},
+        PropertyChanges = 
+        {
+           {
+				WeaponName = "WeaponLob",
+				WeaponProperty = "Projectile",
+				ChangeValue = "LycanthropePounce",
+			},
+            {
+				WeaponName = "WeaponLob",
+				WeaponProperties = 
+                {
+					Cooldown = 1.1,
+					BlockMoveInput = true,
+					CancelMovement = true,
+					FizzleOldSpawns = true,
+					AutoLock = true,
+					BarrelLength = 100,
+					AutoLockRange = 300,
+					SelfVelocity = 1100,
+                },
+                ExcludeLinked = true,
+			},
+            {
+                WeaponName = "WeaponLob",
+                ProjectileName = "LycanthropePounce",
+                ProjectileProperties = 
+				{
+					Damage = 160,
+				},
+				ExcludeLinked = true,
+            },
+        },
+		FlavorText = "CopyAbility_FlavorText",
+	},
+
+	LycanthropeCopyTwoDisplayBoon = 
+	{
+		Icon = "JarlUlsfark-Tools_of_the_Trade\\LycanthropeIcon",
+		ShowInHUD = true,
+		CustomLabel = 
+		{
+			DisplayType = "RoomValue",
+			Key = "Copy_Lycanthrope2",
+			Text = "Copy_2nd"
+		},
+	},
+
 	ScreamertwoCopyDisplayBoon = 
 	{
 		Icon = "JarlUlsfark-Tools_of_the_Trade\\Screamer2Icon",
@@ -2299,7 +2363,7 @@ OverwriteTableKeys( TraitData, {
                 ProjectileName = "SwarmerClockworkMelee",
                 ProjectileProperties = 
 				{
-					Damage = 80,
+					Damage = (80 * BiomeIScaling),
 				},
 				ExcludeLinked = true,
             },
@@ -2360,7 +2424,7 @@ OverwriteTableKeys( TraitData, {
                 ProjectileName = "ThugShove",
                 ProjectileProperties = 
 				{
-					Damage = 180,
+					Damage = (180 * BiomeIScaling),
 				},
 				ExcludeLinked = true,
             },
@@ -2415,7 +2479,7 @@ OverwriteTableKeys( TraitData, {
                 ProjectileName = "GoldElementalBeam",
                 ProjectileProperties = 
 				{
-					Damage = 100,
+					Damage = (100 * BiomeIScaling),
 				},
 				ExcludeLinked = true,
             },
@@ -2473,7 +2537,7 @@ OverwriteTableKeys( TraitData, {
                 ProjectileName = "GoldElementalGround",
                 ProjectileProperties = 
 				{
-					Damage = 200,
+					Damage = (200 * BiomeIScaling),
 				},
 				ExcludeLinked = true,
             },
@@ -2524,7 +2588,7 @@ OverwriteTableKeys( TraitData, {
                 ProjectileName = "TimeElementalOrbit",
                 ProjectileProperties = 
 				{
-					Damage = 90,
+					Damage = (90 * BiomeIScaling),
 				},
 				ExcludeLinked = true,
             },
@@ -2576,7 +2640,7 @@ OverwriteTableKeys( TraitData, {
                 ProjectileName = "SatyrLancerThrow",
                 ProjectileProperties = 
 				{
-					Damage = 170,
+					Damage = (170 * BiomeIScaling),
 				},
 				ExcludeLinked = true,
             },
@@ -2634,7 +2698,7 @@ OverwriteTableKeys( TraitData, {
                 ProjectileName = "SatyrCast",
                 ProjectileProperties = 
 				{
-					Damage = 160,
+					Damage = (160 * BiomeIScaling),
 				},
 				ExcludeLinked = true,
             },
@@ -2650,6 +2714,66 @@ OverwriteTableKeys( TraitData, {
 		{
 			DisplayType = "RoomValue",
 			Key = "Copy_SatyrRatCatcher2",
+			Text = "Copy_2nd"
+		},
+	},
+
+	SatyrRatCatcher_MinibossCopyDisplayBoon = 
+	{
+		Icon = "JarlUlsfark-Tools_of_the_Trade\\SatyrRatCatcher_MinibossIcon",
+		ShowInHUD = true,
+		CustomLabel = 
+		{
+			DisplayType = "RoomValue",
+			Key = "Copy_SatyrRatCatcher_Miniboss",
+			Text = "Copy_EmptyText"
+		},
+        PropertyChanges = 
+        {
+           {
+				WeaponName = "WeaponLob",
+				WeaponProperty = "Projectile",
+				ChangeValue = "SatyrRatCatcherMelee_Miniboss",
+			},
+            {
+				WeaponName = "WeaponLob",
+				WeaponProperties = 
+                {
+                    Cooldown = 1.1,
+					FizzleOldSpawns = false,
+					BarrelLength = 0,
+					BlockMoveInput = true,
+					CancelMovement = true,
+					SelfVelocity = 700,
+					AutoLock = true,
+					AutoLockRange = 200,
+					AutoLockArcDistance = 30,
+					RootOwnerWhileFiring = true,
+                },
+                ExcludeLinked = true,
+			},
+            {
+                WeaponName = "WeaponLob",
+                ProjectileName = "SatyrRatCatcherMelee_Miniboss",
+                ProjectileProperties = 
+				{
+					Damage = (180 * BiomeIScaling),
+					AttachToOwner = true,
+				},
+				ExcludeLinked = true,
+            },
+        },
+		FlavorText = "CopyAbility_FlavorText",
+	},
+
+	SatyrRatCatcher_MinibossCopyTwoDisplayBoon = 
+	{
+		Icon = "JarlUlsfark-Tools_of_the_Trade\\SatyrRatCatcher_MinibossIcon",
+		ShowInHUD = true,
+		CustomLabel = 
+		{
+			DisplayType = "RoomValue",
+			Key = "Copy_SatyrRatCatcher_Miniboss2",
 			Text = "Copy_2nd"
 		},
 	},
@@ -2691,7 +2815,7 @@ OverwriteTableKeys( TraitData, {
                 ProjectileName = "CrawlerRush",
                 ProjectileProperties = 
 				{
-					Damage = 10,
+					Damage = (10 * BiomeIScaling),
 				},
 				ExcludeLinked = true,
             },
@@ -2742,7 +2866,7 @@ OverwriteTableKeys( TraitData, {
                 ProjectileName = "CultistThrow",
                 ProjectileProperties = 
 				{
-					Damage = 110,
+					Damage = (110 * BiomeIScaling),
 				},
 				ExcludeLinked = true,
             },
@@ -2793,7 +2917,7 @@ OverwriteTableKeys( TraitData, {
                 ProjectileName = "ChronosScytheThrow",
                 ProjectileProperties = 
 				{
-					Damage = 350,
+					Damage = (350 * BiomeIScaling),
 				},
 				ExcludeLinked = true,
             },
@@ -2809,6 +2933,57 @@ OverwriteTableKeys( TraitData, {
 		{
 			DisplayType = "RoomValue",
 			Key = "Copy_Chronos2",
+			Text = "Copy_2nd"
+		},
+	},
+
+	ZagreusOneCopyDisplayBoon = 
+	{
+		Icon = "JarlUlsfark-Tools_of_the_Trade\\ZagreusIcon",
+		ShowInHUD = true,
+		CustomLabel = 
+		{
+			DisplayType = "RoomValue",
+			Key = "Copy_Zagreus",
+			Text = "Copy_EmptyText"
+		},
+        PropertyChanges = 
+        {
+           {
+				WeaponName = "WeaponLob",
+				WeaponProperty = "Projectile",
+				ChangeValue = "ZagreusCast",
+			},
+            {
+				WeaponName = "WeaponLob",
+				WeaponProperties = 
+                {
+                    Cooldown = 0.9,
+					FizzleOldSpawns = true,
+                },
+                ExcludeLinked = true,
+			},
+            {
+                WeaponName = "WeaponLob",
+                ProjectileName = "ZagreusCast",
+                ProjectileProperties = 
+				{
+					Damage = (300 * BiomeCScaling),
+				},
+				ExcludeLinked = true,
+            },
+        },
+		FlavorText = "CopyAbility_FlavorText",
+	},
+
+	ZagreusOneCopyTwoDisplayBoon = 
+	{
+		Icon = "JarlUlsfark-Tools_of_the_Trade\\ZagreusIcon",
+		ShowInHUD = true,
+		CustomLabel = 
+		{
+			DisplayType = "RoomValue",
+			Key = "Copy_Zagreus2",
 			Text = "Copy_2nd"
 		},
 	},
@@ -2885,13 +3060,13 @@ OverwriteTableKeys( TraitData, {
            {
 				WeaponName = "WeaponLob",
 				WeaponProperty = "Projectile",
-				ChangeValue = "ZombieMeleePlayer",
+				ChangeValue = "ZombieMelee",
 			},
             {
 				WeaponName = "WeaponLob",
 				WeaponProperties = 
                 {
-                    Cooldown = 0.2,
+                    Cooldown = 0.4,
 					FireOnRelease = true,
 					BlockMoveInput = true,
 					CancelMovement = true,
@@ -2901,10 +3076,20 @@ OverwriteTableKeys( TraitData, {
 					AutoLockArcDistance = 90,
 					RootOwnerWhileFiring = true,
 					CancelChargeOnRelease = true,
-					NumProjectiles = 1,
+					BarrelLength = -200,
                 },
                 ExcludeLinked = true,
 			},
+			{
+                WeaponName = "WeaponLob",
+                ProjectileName = "ZombieMelee",
+                ProjectileProperties = 
+				{
+					Damage = 60,
+					StartFx = "LycanSwipe",
+				},
+				ExcludeLinked = true,
+            },
         },
 		FlavorText = "CopyAbility_FlavorText",
 	},
@@ -2917,6 +3102,128 @@ OverwriteTableKeys( TraitData, {
 		{
 			DisplayType = "RoomValue",
 			Key = "Copy_Zombie2",
+			Text = "Copy_2nd"
+		},
+	},
+
+	ZombieCrewmanCopyDisplayBoon = 
+	{
+		Icon = "JarlUlsfark-Tools_of_the_Trade\\ZombieCrewmanIcon",
+		ShowInHUD = true,
+		CustomLabel = 
+		{
+			DisplayType = "RoomValue",
+			Key = "Copy_ZombieCrewman",
+			Text = "Copy_EmptyText"
+		},
+        PropertyChanges = 
+        {
+           {
+				WeaponName = "WeaponLob",
+				WeaponProperty = "Projectile",
+				ChangeValue = "ZombieMelee",
+			},
+            {
+				WeaponName = "WeaponLob",
+				WeaponProperties = 
+                {
+                    Cooldown = 0.4,
+					FireOnRelease = true,
+					BlockMoveInput = true,
+					CancelMovement = true,
+					SelfVelocity = 400,
+					AutoLock = true,
+					AutoLockRange = 100,
+					AutoLockArcDistance = 90,
+					RootOwnerWhileFiring = true,
+					CancelChargeOnRelease = true,
+					BarrelLength = -200,
+                },
+                ExcludeLinked = true,
+			},
+			{
+                WeaponName = "WeaponLob",
+                ProjectileName = "ZombieMelee",
+                ProjectileProperties = 
+				{
+					Damage = 60,
+					StartFx = "LycanSwipe",
+				},
+				ExcludeLinked = true,
+            },
+        },
+		FlavorText = "CopyAbility_FlavorText",
+	},
+
+	ZombieCrewmanCopyTwoDisplayBoon = 
+	{
+		Icon = "JarlUlsfark-Tools_of_the_Trade\\ZombieCrewmanIcon",
+		ShowInHUD = true,
+		CustomLabel = 
+		{
+			DisplayType = "RoomValue",
+			Key = "Copy_ZombieCrewman2",
+			Text = "Copy_2nd"
+		},
+	},
+
+	ZombieOlympusCopyDisplayBoon = 
+	{
+		Icon = "JarlUlsfark-Tools_of_the_Trade\\ZombieOlympusIcon",
+		ShowInHUD = true,
+		CustomLabel = 
+		{
+			DisplayType = "RoomValue",
+			Key = "Copy_ZombieCrewman",
+			Text = "Copy_EmptyText"
+		},
+        PropertyChanges = 
+        {
+           {
+				WeaponName = "WeaponLob",
+				WeaponProperty = "Projectile",
+				ChangeValue = "ZombieMelee",
+			},
+            {
+				WeaponName = "WeaponLob",
+				WeaponProperties = 
+                {
+                    Cooldown = 0.4,
+					FireOnRelease = true,
+					BlockMoveInput = true,
+					CancelMovement = true,
+					SelfVelocity = 400,
+					AutoLock = true,
+					AutoLockRange = 100,
+					AutoLockArcDistance = 90,
+					RootOwnerWhileFiring = true,
+					CancelChargeOnRelease = true,
+					BarrelLength = -200,
+                },
+                ExcludeLinked = true,
+			},
+			{
+                WeaponName = "WeaponLob",
+                ProjectileName = "ZombieMelee",
+                ProjectileProperties = 
+				{
+					Damage = (120 * BiomePScaling),
+					StartFx = "LycanSwipe",
+				},
+				ExcludeLinked = true,
+            },
+        },
+		FlavorText = "CopyAbility_FlavorText",
+	},
+
+	ZombieOlympusCopyTwoDisplayBoon = 
+	{
+		Icon = "JarlUlsfark-Tools_of_the_Trade\\ZombieOlympusIcon",
+		ShowInHUD = true,
+		CustomLabel = 
+		{
+			DisplayType = "RoomValue",
+			Key = "Copy_ZombieOlympus2",
 			Text = "Copy_2nd"
 		},
 	},
@@ -3614,7 +3921,7 @@ OverwriteTableKeys( TraitData, {
                 ProjectileName = "ScimiterrorChop",
                 ProjectileProperties = 
 				{
-					Damage = 110,
+					Damage = (110 * BiomeOScaling),
 				},
 				ExcludeLinked = true,
             },
@@ -3665,7 +3972,7 @@ OverwriteTableKeys( TraitData, {
                 ProjectileName = "SticklerThrow",
                 ProjectileProperties = 
 				{
-					Damage = 150,
+					Damage = (150 * BiomeOScaling),
 				},
 				ExcludeLinked = true,
             },
@@ -3717,7 +4024,7 @@ OverwriteTableKeys( TraitData, {
                 ProjectileName = "SwabShockwavePull",
                 ProjectileProperties = 
 				{
-					Damage = 220,
+					Damage = (220 * BiomeOScaling),
 				},
 				ExcludeLinked = true,
             },
@@ -3783,7 +4090,7 @@ OverwriteTableKeys( TraitData, {
                 ProjectileName = "DrunkSwingLeft",
                 ProjectileProperties = 
 				{
-					Damage = 160,
+					Damage = (160 * BiomeOScaling),
 				},
 				ExcludeLinked = true,
             },
@@ -3843,7 +4150,7 @@ OverwriteTableKeys( TraitData, {
                 ProjectileName = "HarpySlice",
                 ProjectileProperties = 
 				{
-					Damage = 140,
+					Damage = (140 * BiomeOScaling),
 				},
 				ExcludeLinked = true,
             },
@@ -3900,7 +4207,7 @@ OverwriteTableKeys( TraitData, {
                 ProjectileName = "WaterElementalBite",
                 ProjectileProperties = 
 				{
-					Damage = 90,
+					Damage = (90 * BiomeOScaling),
 				},
 				ExcludeLinked = true,
             },
@@ -3957,7 +4264,7 @@ OverwriteTableKeys( TraitData, {
                 WeaponName = "WeaponLob",
                 ProjectileName = "Mage2Ranged",
                 ProjectileProperty = "Damage",
-                ChangeValue = 80,
+                ChangeValue = (80 * BiomeOScaling),
                 ChangeType = "Absolute",
             },
 			{
@@ -4016,7 +4323,7 @@ OverwriteTableKeys( TraitData, {
                 ProjectileName = "CaptainPistolShot",
                 ProjectileProperties = 
 				{
-					Damage = 150,
+					Damage = (150 * BiomeOScaling),
 				},
 				ExcludeLinked = true,
             },
@@ -4032,6 +4339,57 @@ OverwriteTableKeys( TraitData, {
 		{
 			DisplayType = "RoomValue",
 			Key = "Copy_Captain2",
+			Text = "Copy_2nd"
+		},
+	},
+
+	CharybdisTentacleCopyDisplayBoon = 
+	{
+		Icon = "JarlUlsfark-Tools_of_the_Trade\\CharybdisTentacleIcon",
+		ShowInHUD = true,
+		CustomLabel = 
+		{
+			DisplayType = "RoomValue",
+			Key = "Copy_CharybdisTentacle",
+			Text = "Copy_EmptyText"
+		},
+        PropertyChanges = 
+        {
+           {
+				WeaponName = "WeaponLob",
+				WeaponProperty = "Projectile",
+				ChangeValue = "TentacleSpike2",
+			},
+            {
+				WeaponName = "WeaponLob",
+				WeaponProperties = 
+                {
+                    Cooldown = 3.1,
+					FizzleOldSpawns = false,
+                },
+                ExcludeLinked = true,
+			},
+            {
+                WeaponName = "WeaponLob",
+                ProjectileName = "TentacleSpike2",
+                ProjectileProperties = 
+				{
+					Damage = (160 * BiomeOScaling),
+				},
+				ExcludeLinked = true,
+            },
+        },
+		FlavorText = "CopyAbility_FlavorText",
+	},
+
+	CharybdisTentacleCopyTwoDisplayBoon = 
+	{
+		Icon = "JarlUlsfark-Tools_of_the_Trade\\CharybdisTentacleIcon",
+		ShowInHUD = true,
+		CustomLabel = 
+		{
+			DisplayType = "RoomValue",
+			Key = "Copy_CharybdisTentacle2",
 			Text = "Copy_2nd"
 		},
 	},
@@ -4070,7 +4428,7 @@ OverwriteTableKeys( TraitData, {
                 ProjectileName = "SniperGunWeapon",
                 ProjectileProperties = 
 				{
-					Damage = 300,
+					Damage = (300 * BiomeOScaling),
 				},
 				ExcludeLinked = true,
             },
@@ -4121,7 +4479,7 @@ OverwriteTableKeys( TraitData, {
                 ProjectileName = "SentryBotBolt",
                 ProjectileProperties = 
 				{
-					Damage = 150,
+					Damage = (150 * BiomePScaling),
 				},
 				ExcludeLinked = true,
             },
@@ -4177,7 +4535,7 @@ OverwriteTableKeys( TraitData, {
                 ProjectileName = "AutomatonBeamBolt",
                 ProjectileProperties = 
 				{
-					Damage = 140,
+					Damage = (140 * BiomePScaling),
 				},
 				ExcludeLinked = true,
             },
@@ -4234,7 +4592,7 @@ OverwriteTableKeys( TraitData, {
                 ProjectileName = "AutomatonWhirlwind",
                 ProjectileProperties = 
 				{
-					Damage = 130,
+					Damage = (130 * BiomePScaling),
 				},
 				ExcludeLinked = true,
             },
@@ -4285,7 +4643,7 @@ OverwriteTableKeys( TraitData, {
                 ProjectileName = "HarpyFlapFast",
                 ProjectileProperties = 
 				{
-					Damage = 110,
+					Damage = (110 * BiomePScaling),
 				},
 				ExcludeLinked = true,
             },
@@ -4342,7 +4700,7 @@ OverwriteTableKeys( TraitData, {
                 ProjectileName = "SatyrCrossbow2Bolt",
                 ProjectileProperties = 
 				{
-					Damage = 170,
+					Damage = (170 * BiomePScaling),
 				},
 				ExcludeLinked = true,
             },
@@ -4394,7 +4752,7 @@ OverwriteTableKeys( TraitData, {
                 ProjectileName = "SatyrLancer2Throw",
                 ProjectileProperties = 
 				{
-					Damage = 200,
+					Damage = (200 * BiomePScaling),
 				},
 				ExcludeLinked = true,
             },
@@ -4452,7 +4810,7 @@ OverwriteTableKeys( TraitData, {
                 ProjectileName = "SatyrRocket",
                 ProjectileProperties = 
 				{
-					Damage = 220,
+					Damage = (220 * BiomePScaling),
 				},
 				ExcludeLinked = true,
             },
@@ -4504,7 +4862,7 @@ OverwriteTableKeys( TraitData, {
                 ProjectileName = "TalosShieldThrowStraight",
                 ProjectileProperties = 
 				{
-					Damage = 250,
+					Damage = (250 * BiomePScaling),
 				},
 				ExcludeLinked = true,
             },
@@ -4567,7 +4925,7 @@ OverwriteTableKeys( TraitData, {
                 ProjectileName = "HeraclesEMSpin",
                 ProjectileProperties = 
 				{
-					Damage = 250,
+					Damage = (250 * BiomePScaling),
 				},
 				ExcludeLinked = true,
             },
@@ -4618,7 +4976,7 @@ OverwriteTableKeys( TraitData, {
                 ProjectileName = "PrometheusUppercutWhirlwind",
                 ProjectileProperties = 
 				{
-					Damage = 350,
+					Damage = (350 * BiomePScaling),
 				},
 				ExcludeLinked = true,
             },
@@ -4669,7 +5027,7 @@ OverwriteTableKeys( TraitData, {
                 ProjectileName = "SimpleLocust",
                 ProjectileProperties = 
 				{
-					Damage = 90,
+					Damage = (90 * BiomeQScaling),
 				},
 				ExcludeLinked = true,
             },
@@ -4722,7 +5080,7 @@ OverwriteTableKeys( TraitData, {
                 ProjectileName = "StalkerGroundWave",
                 ProjectileProperties = 
 				{
-					Damage = 180,
+					Damage = (180 * BiomeQScaling),
 				},
 				ExcludeLinked = true,
             },
@@ -4738,6 +5096,59 @@ OverwriteTableKeys( TraitData, {
 		{
 			DisplayType = "RoomValue",
 			Key = "Copy_Stalker2",
+			Text = "Copy_2nd"
+		},
+	},
+
+	Stalker_MinibossCopyDisplayBoon = 
+	{
+		Icon = "JarlUlsfark-Tools_of_the_Trade\\Stalker_MinibossIcon",
+		ShowInHUD = true,
+		CustomLabel = 
+		{
+			DisplayType = "RoomValue",
+			Key = "Copy_Stalker_Miniboss",
+			Text = "Copy_EmptyText"
+		},
+        PropertyChanges = 
+        {
+           {
+				WeaponName = "WeaponLob",
+				WeaponProperty = "Projectile",
+				ChangeValue = "StalkerGroundWave",
+			},
+            {
+				WeaponName = "WeaponLob",
+				WeaponProperties = 
+                {
+                    Cooldown = 1,
+					FizzleOldSpawns = false,
+					NumProjectiles = 2,
+					ProjectileAngleOffset = math.rad(20),
+                },
+                ExcludeLinked = true,
+			},
+            {
+                WeaponName = "WeaponLob",
+                ProjectileName = "StalkerGroundWave",
+                ProjectileProperties = 
+				{
+					Damage = (240 * BiomeQScaling),
+				},
+				ExcludeLinked = true,
+            },
+        },
+		FlavorText = "CopyAbility_FlavorText",
+	},
+
+	Stalker_MinibossCopyTwoDisplayBoon = 
+	{
+		Icon = "JarlUlsfark-Tools_of_the_Trade\\Stalker_MinibossIcon",
+		ShowInHUD = true,
+		CustomLabel = 
+		{
+			DisplayType = "RoomValue",
+			Key = "Copy_Stalker_Miniboss2",
 			Text = "Copy_2nd"
 		},
 	},
@@ -4779,7 +5190,7 @@ OverwriteTableKeys( TraitData, {
                 ProjectileName = "BruteChargeHorn",
                 ProjectileProperties = 
 				{
-					Damage = 250,
+					Damage = (250 * BiomeQScaling),
 				},
 				ExcludeLinked = true,
             },
@@ -4830,7 +5241,7 @@ OverwriteTableKeys( TraitData, {
                 ProjectileName = "MatiSlowBolt",
                 ProjectileProperties = 
 				{
-					Damage = 170,
+					Damage = (170 * BiomeQScaling),
 					SpawnOnDissipate = "MatiSlowBolt2player"
 				},
 				ExcludeLinked = true,
@@ -4882,7 +5293,7 @@ OverwriteTableKeys( TraitData, {
                 ProjectileName = "DragonBurrowerRanged",
                 ProjectileProperties = 
 				{
-					Damage = 110,
+					Damage = (110 * BiomeQScaling),
 				},
 				ExcludeLinked = true,
             },
@@ -4898,6 +5309,64 @@ OverwriteTableKeys( TraitData, {
 		{
 			DisplayType = "RoomValue",
 			Key = "Copy_DragonBurrower2",
+			Text = "Copy_2nd"
+		},
+	},
+
+	EarthElementalCopyDisplayBoon = 
+	{
+		Icon = "JarlUlsfark-Tools_of_the_Trade\\EarthElementalIcon",
+		ShowInHUD = true,
+		CustomLabel = 
+		{
+			DisplayType = "RoomValue",
+			Key = "Copy_EarthElemental",
+			Text = "Copy_EmptyText"
+		},
+        PropertyChanges = 
+        {
+           {
+				WeaponName = "WeaponLob",
+				WeaponProperty = "Projectile",
+				ChangeValue = "EarthElementalLaserplayer",
+			},
+            {
+				WeaponName = "WeaponLob",
+				WeaponProperties = 
+                {
+                    Cooldown = 1.55,
+					BlockMoveInput = true,
+					CancelMovement = true,
+					FizzleOldSpawns = true,
+					AutoLock = true,
+					AutoLockRange = 600,
+					BarrelLength = 0,
+                },
+                ExcludeLinked = true,
+			},
+            {
+                WeaponName = "WeaponLob",
+                ProjectileName = "EarthElementalLaserplayer",
+                ProjectileProperties = 
+				{
+					Damage = (90 * BiomeQScaling),
+					BeamDieOnTargetLost = false,
+					AffectsEnemies = true,
+				},
+				ExcludeLinked = true,
+            },
+        },
+		FlavorText = "CopyAbility_FlavorText",
+	},
+
+	GoldElementalCopyTwoDisplayBoon = 
+	{
+		Icon = "JarlUlsfark-Tools_of_the_Trade\\GoldElementalIcon",
+		ShowInHUD = true,
+		CustomLabel = 
+		{
+			DisplayType = "RoomValue",
+			Key = "Copy_GoldElemental2",
 			Text = "Copy_2nd"
 		},
 	},
@@ -4938,7 +5407,7 @@ OverwriteTableKeys( TraitData, {
                 ProjectileName = "BruteMelee1_Miniboss",
                 ProjectileProperties = 
 				{
-					Damage = 300,
+					Damage = (300 * BiomeQScaling),
 				},
 				ExcludeLinked = true,
             },
@@ -4999,7 +5468,7 @@ OverwriteTableKeys( TraitData, {
                 ProjectileName = "TyphonTailDrill",
                 ProjectileProperties = 
 				{
-					Damage = 290,
+					Damage = (290 * BiomeQScaling),
 				},
 				ExcludeLinked = true,
             },
@@ -5015,6 +5484,59 @@ OverwriteTableKeys( TraitData, {
 		{
 			DisplayType = "RoomValue",
 			Key = "Copy_TyphonTail2",
+			Text = "Copy_2nd"
+		},
+	},
+
+	TyphonEyeCopyDisplayBoon = 
+	{
+		Icon = "JarlUlsfark-Tools_of_the_Trade\\TyphonEyeIcon",
+		ShowInHUD = true,
+		CustomLabel = 
+		{
+			DisplayType = "RoomValue",
+			Key = "Copy_TyphonEye",
+			Text = "Copy_EmptyText"
+		},
+        PropertyChanges = 
+        {
+           {
+				WeaponName = "WeaponLob",
+				WeaponProperty = "Projectile",
+				ChangeValue = "TyphonEyeCannon",
+			},
+            {
+				WeaponName = "WeaponLob",
+				WeaponProperties = 
+                {
+                    Cooldown = 2,
+					FizzleOldSpawns = false,
+
+                },
+                ExcludeLinked = true,
+			},
+			{
+                WeaponName = "WeaponLob",
+                ProjectileName = "TyphonEyeCannon",
+                ProjectileProperties = 
+				{
+					Damage = (350 * BiomeQScaling),
+					SpawnOnDeath = "TyphonHeadBoltChaoticplayer",
+				},
+				ExcludeLinked = true,
+            },
+        },
+		FlavorText = "CopyAbility_FlavorText",
+	},
+
+	TyphonEyeCopyTwoDisplayBoon = 
+	{
+		Icon = "JarlUlsfark-Tools_of_the_Trade\\TyphonEyeIcon",
+		ShowInHUD = true,
+		CustomLabel = 
+		{
+			DisplayType = "RoomValue",
+			Key = "Copy_TyphonEye2",
 			Text = "Copy_2nd"
 		},
 	},
@@ -5052,7 +5574,7 @@ OverwriteTableKeys( TraitData, {
                 ProjectileName = "TyphonHeadTongueMelee",
                 ProjectileProperties = 
 				{
-					Damage = 700,
+					Damage = (700 * BiomeQScaling),
 				},
 				ExcludeLinked = true,
             },

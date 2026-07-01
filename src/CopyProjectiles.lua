@@ -1,3 +1,8 @@
+local BiomeIScaling = 0.9
+local BiomeOScaling = 0.7
+local BiomePScaling = 0.6
+local BiomeQScaling = 0.6
+
 local file = rom.path.combine(rom.paths.Content, 'Game/Projectiles/PlayerProjectiles.sjson')
 	sjson.hook(file, function(data)
 
@@ -700,7 +705,7 @@ local file = rom.path.combine(rom.paths.Content, 'Game/Projectiles/PlayerProject
 	{
 		Name = "MatiSlowBolt2player",
 		InheritFrom = "MatiSlowBolt2",
-		Damage = 100,
+		Damage = (100 * BiomeQScaling),
 	})
 	
 	table.insert(data.Projectiles,
@@ -793,6 +798,109 @@ local file = rom.path.combine(rom.paths.Content, 'Game/Projectiles/PlayerProject
 			},
 	})
 
+	table.insert(data.Projectiles,
+	{
+		Name = "TyphonHeadBoltChaoticplayer",
+		InheritFrom = "TyphonHeadBoltChaotic",
+		Damage = (300 * BiomeQScaling),
+	})
+	
+	table.insert(data.Projectiles,
+	{
+		Name = "TyphonHeadBoltChaoticplayer_Zeus",
+		InheritFrom = "TyphonHeadBoltChaoticplayer",
+		Thing = 
+			{
+				Graphic = "TyphonHeadEyeProjectileSecondary_Zeus",
+			},
+	})
+
+	table.insert(data.Projectiles,
+	{
+		Name = "TyphonHeadBoltChaoticplayer_Hera",
+		InheritFrom = "TyphonHeadBoltChaoticplayer",
+		Thing = 
+			{
+				Graphic = "TyphonHeadEyeProjectileSecondary_Hera",
+			},
+	})
+
+	table.insert(data.Projectiles,
+	{
+		Name = "TyphonHeadBoltChaoticplayer_Poseidon",
+		InheritFrom = "TyphonHeadBoltChaoticplayer",
+		Thing = 
+			{
+				Graphic = "TyphonHeadEyeProjectileSecondary_Poseidon",
+			},
+	})
+
+	table.insert(data.Projectiles,
+	{
+		Name = "TyphonHeadBoltChaoticplayer_Demeter",
+		InheritFrom = "TyphonHeadBoltChaoticplayer",
+		Thing = 
+			{
+				Graphic = "TyphonHeadEyeProjectileSecondary_Demeter",
+			},
+	})
+
+	table.insert(data.Projectiles,
+	{
+		Name = "TyphonHeadBoltChaoticplayer_Apollo",
+		InheritFrom = "TyphonHeadBoltChaoticplayer",
+		Thing = 
+			{
+				Graphic = "TyphonHeadEyeProjectileSecondary_Apollo",
+			},
+	})
+
+	table.insert(data.Projectiles,
+	{
+		Name = "TyphonHeadBoltChaoticplayer_Aphrodite",
+		InheritFrom = "TyphonHeadBoltChaoticplayer",
+		Thing = 
+			{
+				Graphic = "TyphonHeadEyeProjectileSecondary_Aphrodite",
+			},
+	})
+
+	table.insert(data.Projectiles,
+	{
+		Name = "TyphonHeadBoltChaoticplayer_Hephaestus",
+		InheritFrom = "TyphonHeadBoltChaoticplayer",
+		Thing = 
+			{
+				Graphic = "TyphonHeadEyeProjectileSecondary_Hephaestus",
+			},
+	})
+
+	table.insert(data.Projectiles,
+	{
+		Name = "TyphonHeadBoltChaoticplayer_Hestia",
+		InheritFrom = "TyphonHeadBoltChaoticplayer",
+		Thing = 
+			{
+				Graphic = "TyphonHeadEyeProjectileSecondary_Hestia",
+			},
+	})
+
+	table.insert(data.Projectiles,
+	{
+		Name = "TyphonHeadBoltChaoticplayer_Ares",
+		InheritFrom = "TyphonHeadBoltChaoticplayer",
+		Thing = 
+			{
+				Graphic = "TyphonHeadEyeProjectileSecondary_Ares",
+			},
+	})
+
+	table.insert(data.Projectiles,
+	{
+		Name = "EarthElementalLaserplayer",
+		InheritFrom = "EarthElementalLaser",
+	})
+
 			
 return data
 end)
@@ -835,5 +943,21 @@ OverwriteTableKeys( ProjectileData, {
 		SpawnBounceOffVictimVelocity = 0,
 		SpawnBounceOffVictimUpwardVelocity = 0,
 		SpawnsSkipActivatePresentation = false,
+	},
+
+	EarthElementalLaserplayer =
+	{
+		HitScreenshake = { Distance = 3, Speed = 1000, Duration = 0.12, FalloffSpeed = 3000 },
+		HitSimSlowParameters =
+		{
+			{ ScreenPreWait = 0.02, Fraction = 0.01, LerpTime = 0 },
+			{ ScreenPreWait = 0.03, Fraction = 1.0, LerpTime = 0 },
+		},
+		OutgoingDamageModifiers =
+		{
+			{
+				NonPlayerMultiplier = 1,
+			}
+		},
 	},
 })

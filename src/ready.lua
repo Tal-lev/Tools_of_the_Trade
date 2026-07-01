@@ -769,9 +769,6 @@ function mod.CopyAbility (victim, functionArgs, triggerArgs)
 	elseif victim.Name == "FogEmitter" or victim.Name == "FogEmitter_Elite" then
 		Changed = "FogEmitter"
 		Location = "BiomeF"
-	--elseif victim.Name == "ZombieAssassin_Miniboss" then
-	--	Changed = "ZombieAssassin_Miniboss"
-	--	Location = "BiomeF"
 	elseif victim.Name == "Wisp" or victim.Name == "Wisp_Elite" then
 		Changed = "Wisp"
 		Location = "BiomeF"
@@ -847,6 +844,9 @@ function mod.CopyAbility (victim, functionArgs, triggerArgs)
 	elseif victim.Name == "LycanSwarmer" or victim.Name == "LycanSwarmer_Elite" then
 		Changed = "LycanSwarmer"
 		Location = "BiomeH"
+	elseif victim.Name == "Lycanthrope" or victim.Name == "Lycanthrope_Elite" then
+		Changed = "Lycanthrope"
+		Location = "BiomeH"
 	elseif victim.Name == "Screamer2" or victim.Name == "Screamer2_Elite" then	
 		Changed = "Screamertwo"
 		Location = "BiomeH"
@@ -892,6 +892,9 @@ function mod.CopyAbility (victim, functionArgs, triggerArgs)
 	elseif victim.Name == "SatyrRatCatcher" or victim.Name == "SatyrRatCatcher_Elite" then
 		Changed = "SatyrRatCatcher"
 		Location = "BiomeI"
+	elseif victim.Name == "SatyrRatCatcher_Miniboss" then
+		Changed = "SatyrRatCatcher_Miniboss"
+		Location = "BiomeI"
 	elseif victim.Name == "Crawler" or victim.Name == "Crawler_Elite" then
 		Changed = "Crawler"
 		Location = "BiomeI"
@@ -901,12 +904,15 @@ function mod.CopyAbility (victim, functionArgs, triggerArgs)
 	elseif victim.Name == "Chronos" then
 		Changed = "ChronosOne"
 		Location = "BiomeIHouse"
+	elseif victim.Name == "Zagreus" then
+		Changed = "ZagreusOne"
+		Location = "BiomeC"
 	elseif victim.Name == "Carrion" or victim.Name == "Carrion_Elite" then
 		Changed = "Carrion"
 		Location = "BiomeN"
-	--elseif victim.Name == "Zombie" then
-	--	Changed = "Zombie"
-	--	Location = "BiomeN"
+	elseif victim.Name == "Zombie" or victim.Name == "Zombie_Elite"  then
+		Changed = "Zombie"
+		Location = "BiomeN"
 	elseif victim.Name == "ZombieHeavyRanged" or victim.Name == "ZombieHeavyRanged_Elite" then
 		Changed = "ZombieHeavyRanged"
 		Location = "BiomeN"
@@ -937,6 +943,9 @@ function mod.CopyAbility (victim, functionArgs, triggerArgs)
 	elseif victim.Name == "Polyphemus" then
 		Changed = "PolyphemusOne"
 		Location = "BiomeN"
+	elseif victim.Name == "ZombieCrewman" or victim.Name == "ZombieCrewman_Elite" then
+		Changed = "ZombieCrewman"
+		Location = "BiomeO"
 	elseif victim.Name == "Scimiterror" or victim.Name == "Scimiterror_Elite" then
 		Changed = "Scimiterror"
 		Location = "BiomeO"
@@ -961,9 +970,15 @@ function mod.CopyAbility (victim, functionArgs, triggerArgs)
 	elseif victim.Name == "Captain" or victim.Name == "MiniBossCaptain" then
 		Changed = "Captain"
 		Location = "BiomeO"
+	elseif victim.Name == "CharybdisTentacle" or victim.Name == "CharybdisTentacle_Elite" then
+		Changed = "CharybdisTentacle"
+		Location = "BiomeO"
 	elseif victim.Name == "Eris" then
 		Changed = "ErisOne"
 		Location = "BiomeO"
+	elseif victim.Name == "ZombieOlympus" or victim.Name == "ZombieOlympus_Elite" then
+		Changed = "ZombieOlympus"
+		Location = "BiomeP"
 	elseif victim.Name == "SentryBot" or victim.Name == "SentryBot_Elite" then
 		Changed = "SentryBot"
 		Location = "BiomeP"
@@ -1009,11 +1024,20 @@ function mod.CopyAbility (victim, functionArgs, triggerArgs)
 	elseif victim.Name == "DragonBurrower" or victim.Name == "DragonBurrower_Elite" then
 		Changed = "DragonBurrower"
 		Location = "BiomeQ"
+	elseif victim.Name == "EarthElemental" or victim.Name == "EarthElemental_Elite" then
+		Changed = "EarthElemental"
+		Location = "BiomeQ"
 	elseif victim.Name == "Brute_Miniboss" then
 		Changed = "Brute_Miniboss"
 		Location = "BiomeQ"
+	elseif victim.Name == "Stalker_Miniboss" then
+		Changed = "Stalker_Miniboss"
+		Location = "BiomeQ"
 	elseif victim.Name == "TyphonTail" then
 		Changed = "TyphonTail"
+		Location = "BiomeQ"
+	elseif victim.Name == "TyphonEye" then
+		Changed = "TyphonEye"
 		Location = "BiomeQ"
 	elseif victim.Name == "TyphonHead" then
 		Changed = "TyphonHeadOne"

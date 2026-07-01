@@ -544,6 +544,16 @@ sjson.hook(file, function(data)
 
 	table.insert(data.Texts, sjson.to_object(
 		{
+			Id = "LycanthropeCopyDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Copy Ability: Lycaon",
+			Description = "Your Attack {#UpgradeFormat}Pounces  {#Prev} on enemies and Swipes down with {#UpgradeFormat}Claws{#Prev}.",
+		},
+		TextOrder)
+	)
+
+	table.insert(data.Texts, sjson.to_object(
+		{
 			Id = "LamiaCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy Ability: Lamia",
@@ -654,6 +664,16 @@ sjson.hook(file, function(data)
 
 	table.insert(data.Texts, sjson.to_object(
 		{
+			Id = "SatyrRatCatcher_MinibossCopyDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Copy Ability: The Verminancer",
+			Description = "Your Attack {#UpgradeFormat}Tail Swipes while Dashing{#Prev}.",
+		},
+		TextOrder)
+	)
+
+	table.insert(data.Texts, sjson.to_object(
+		{
 			Id = "CrawlerCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy Ability: Crawler",
@@ -684,10 +704,50 @@ sjson.hook(file, function(data)
 
 	table.insert(data.Texts, sjson.to_object(
 		{
+			Id = "ZagreusOneCopyDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Copy Ability: Zagreus - Blood Cast",
+			Description = "Your Attack fires a {#UpgradeFormat}Blood Projectile{#Prev}.",
+		},
+		TextOrder)
+	)
+
+	table.insert(data.Texts, sjson.to_object(
+		{
 			Id = "CarrionCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy Ability: Bronzebeak",
 			Description = "Your Attack {#UpgradeFormat}Swoops {#Prev}onto enemies.",
+		},
+		TextOrder)
+	)
+
+	table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "ZombieCopyDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Copy Ability: Shambler",
+			Description = "Your Attack {#UpgradeFormat}Swipes{#Prev} down.",
+		},
+		TextOrder)
+	)
+
+	table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "ZombieCrewmanCopyDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Copy Ability: Sea-Shambler",
+			Description = "Your Attack {#UpgradeFormat}Swipes{#Prev} down.",
+		},
+		TextOrder)
+	)
+
+	table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "ZombieOlympusCopyDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Copy Ability: Snow-Shambler",
+			Description = "Your Attack {#UpgradeFormat}Swipes{#Prev} down.",
 		},
 		TextOrder)
 	)
@@ -884,6 +944,16 @@ sjson.hook(file, function(data)
 
 	table.insert(data.Texts, sjson.to_object(
 		{
+			Id = "CharybdisTentacleCopyDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Copy Ability: Charybdis Tentacle",
+			Description = "Your Attack shoots a {#UpgradeFormat}Homing Projectile{#Prev}.",
+		},
+		TextOrder)
+	)
+
+	table.insert(data.Texts, sjson.to_object(
+		{
 			Id = "ErisOneCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy Ability: Eris Sniper-Shot",
@@ -1014,6 +1084,16 @@ sjson.hook(file, function(data)
 
 	table.insert(data.Texts, sjson.to_object(
 		{
+			Id = "Stalker_MinibossCopyDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Copy Ability: Twins of Typhon",
+			Description = "Your Attack fire {#UpgradeFormat}2 Linear Shockwaves{#Prev}.",
+		},
+		TextOrder)
+	)
+
+	table.insert(data.Texts, sjson.to_object(
+		{
 			Id = "StalkerCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy Ability: Horror",
@@ -1044,6 +1124,16 @@ sjson.hook(file, function(data)
 
 	table.insert(data.Texts, sjson.to_object(
 		{
+			Id = "EarthElementalCopyDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Copy Ability: Headstone",
+			Description = "Your Attack fires a {#UpgradeFormat}Beam{#Prev}.",
+		},
+		TextOrder)
+	)
+
+	table.insert(data.Texts, sjson.to_object(
+		{
 			Id = "Brute_MinibossCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy Ability: Spawn of Typhon",
@@ -1062,7 +1152,17 @@ sjson.hook(file, function(data)
 		TextOrder)
 	)
 
-		table.insert(data.Texts, sjson.to_object(
+	table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "TyphonEyeCopyDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Copy Ability: Eye of Typhon",
+			Description = "Your Attack fires a {#UpgradeFormat}Lobbed Splitting Projectile{#Prev}.",
+		},
+		TextOrder)
+	)
+
+	table.insert(data.Texts, sjson.to_object(
 		{
 			Id = "TyphonHeadCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
