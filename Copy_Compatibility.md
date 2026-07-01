@@ -124,6 +124,7 @@
 - Horror
 - Eyesore
 - Land-Dracon
+- Headstone
 - Spawn of Typhon
 - Twins of Typhon
 - Tail of Typhon
