@@ -132,7 +132,7 @@ OverwriteTableKeys( TraitData, {
 		TabletKirbyMegaAmmoTrait = 
 		{
 			InheritFrom = { "WeaponTrait", "LobHammerTrait" },
-			Icon = "JarlUlsfark-Tools_of_the_Trade\\DoubleAmmoIcon",
+			Icon = "JarlUlsfark-Tools_of_the_Trade\\FracturedReflectionIcon",
 			RarityLevels =
 			{
 				Common =

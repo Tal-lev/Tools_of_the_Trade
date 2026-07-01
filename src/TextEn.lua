@@ -159,7 +159,7 @@ sjson.hook(file, function(data)
 	{
 		Id = "TabletKirbyMegaAmmoTrait",
 		InheritFrom = "BaseBoonMultiline",
-		DisplayName = "Explosive Reflection",
+		DisplayName = "Fractured Reflection",
 		Description = "Your {$Keywords.Attack} deals {#UpgradeFormat}+100% {#Prev}damage but always {#UpgradeFormat}copies the last enemy hit{#Prev}.",
 	},
 	TextOrder)
