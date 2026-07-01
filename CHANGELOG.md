@@ -12,7 +12,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Ocean of Sorrows 70%
   - Mount Olympus 60%
   - The Summit 60%
-- 2 Implemented enemies for copy.
+- 4 Implemented enemies for copy.
+  - Lycanthrope
   - SatyrRatCatcher_Miniboss
   - Zagreus
     - Blood Cast
