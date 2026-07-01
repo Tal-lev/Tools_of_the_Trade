@@ -65,6 +65,8 @@
 - Goldwrath
 - Chronos
   - Scythe-Throw
+- Zagreus
+  - Blood-Cast
 
 ### Ephyra (Unreleased)
 
