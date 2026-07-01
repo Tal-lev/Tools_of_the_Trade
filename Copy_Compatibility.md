@@ -73,6 +73,7 @@
 ### Ephyra (Unreleased)
 
 - Bronzebeak
+- Shambler
 - Lubber
 - Cutthroat
 - Eidolon
@@ -87,6 +88,7 @@
 
 ### Sea of Sorrows (Unreleased)
 
+- Sea-Shambler
 - Seesword
 - Stickler
 - Anchor
@@ -101,6 +103,7 @@
 
 ### Mount Olympus (Unreleased)
 
+- Snow-Shambler
 - Auto-Seeker
 - Auto-Watcher
 - Auto-Forcer
