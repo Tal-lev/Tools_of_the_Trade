@@ -70,7 +70,7 @@
 - Zagreus
   - Blood-Cast
 
-### Ephyra (Unreleased)
+### Ephyra
 
 - Bronzebeak
 - Shambler
@@ -86,7 +86,7 @@
 - Polyphemus
   - Kick
 
-### Sea of Sorrows (Unreleased)
+### Sea of Sorrows
 
 - Sea-Shambler
 - Seesword
@@ -101,7 +101,7 @@
 - Eris
   - Sniper-Shot
 
-### Mount Olympus (Unreleased)
+### Mount Olympus
 
 - Snow-Shambler
 - Auto-Seeker
@@ -117,7 +117,7 @@
 - Prometheus
   - Fire-Pillar
 
-### The Summit (Unreleased)
+### The Summit
 
 - Polyp
 - Stalker
@@ -126,5 +126,6 @@
 - Land-Dracon
 - Spawn of Typhon
 - Tail of Typhon
+- Eye of Typhon
 - Typhon
   - Tongue-Lash
