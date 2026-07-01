@@ -125,6 +125,7 @@
 - Eyesore
 - Land-Dracon
 - Spawn of Typhon
+- Twins of Typhon
 - Tail of Typhon
 - Eye of Typhon
 - Typhon
