@@ -1042,6 +1042,17 @@ function mod.CopyAbility (victim, functionArgs, triggerArgs)
 	elseif victim.Name == "TyphonHead" then
 		Changed = "TyphonHeadOne"
 		Location = "BiomeQEnding"
+	elseif ZagreusJourney then
+		if victim.Name == "HadesSwarmer" or victim.Name == "HadesSwarmer_Elite" then
+			Changed = "HadesSwarmer"
+			Location = "RoomManagerModsNikkelMHadesBiomes"
+		elseif victim.Name == "LightSpawner" or victim.Name == "LightSpawner_Elite" then
+			Changed = "LightSpawner"
+			Location = "RoomManagerModsNikkelMHadesBiomes"
+		elseif victim.Name == "PunchingBagUnit" or victim.Name == "PunchingBagUnit_Elite" then
+			Changed = "PunchingBagUnit"
+			Location = "RoomManagerModsNikkelMHadesBiomes"
+		end
 	end
 	if Changed ~= "null" then
 		for key,value in pairs(CurrentRun.Hero.TraitDictionary) do
@@ -1221,6 +1232,9 @@ end)
 --Loading the package at every room
 modutil.mod.Path.Wrap("SetupMap", function(base, source, args)
 	LoadPackages({ Name ="JarlUlsfark-Tools_of_the_Trade"})
+	if ZagreusJourney then
+		LoadPackages({ Name ="JarlUlsfark-Tools_of_the_Trade_ZJcompat"})
+	end
 	if HeroHasTrait("TabletofPeaceKirbyMel") then
 		local trait = GetHeroTrait("TabletofPeaceKirbyMel")
 		if trait.location ~= "null" then

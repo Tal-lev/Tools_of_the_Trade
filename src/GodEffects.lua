@@ -1,3 +1,4 @@
+local ZagreusJourney = rom.mods['NikkelM-Zagreus_Journey']
 -- Utility functions
 local CoreGods = { "Aphrodite", "Apollo", "Ares", "Demeter", "Hephaestus", "Hera", "Hestia", "Poseidon", "Zeus" }
 
@@ -1163,3 +1164,23 @@ AddGodTraitProperty({
         },
 	}
 })
+
+
+
+if ZagreusJourney then 
+
+	AddGodTraitProperty({
+		TraitSuffix = "WeaponBoon",
+		PropertyChanges = {
+			--TyphonHead
+			{
+				WeaponName = "WeaponLob",
+				ProjectileName = "PunchingBagUnitWeapon",
+				ProjectileProperty = "DetonateGraphic",
+				ValuePrefix = "EnemyConeAttackPunchingBag_",
+				ChangeType = "Absolute",
+				ExcludeLinked = true,
+			},
+		}
+	})
+end

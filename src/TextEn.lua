@@ -7,6 +7,8 @@
 	"OverwriteLocalization",
 	}
 
+local ZagreusJourney = rom.mods['NikkelM-Zagreus_Journey']
+
 local file = rom.path.combine(rom.paths.Content, 'Game/Text/en/TraitText.en.sjson')
 sjson.hook(file, function(data)
 
@@ -1171,6 +1173,40 @@ sjson.hook(file, function(data)
 		},
 		TextOrder)
 	)
+
+	if ZagreusJourney then
+		
+		table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "HadesSwarmerCopyDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Copy Ability: Numbskull",
+			Description = "Your Attack {#UpgradeFormat}Bites {#Prev}enemies in front.",
+		},
+		TextOrder)
+		)
+
+		table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "LightSpawnerCopyDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Copy Ability: Skullomat",
+			Description = "Your Attack {#UpgradeFormat}Spawns {#Prev}a {#UpgradeFormat}Numbskull{#Prev}.",
+		},
+		TextOrder)
+		)
+
+		table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "PunchingBagUnitCopyDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Copy Ability: Wretched Lout",
+			Description = "Your Attack {#UpgradeFormat}Dashes {#Prev}forward.",
+		},
+		TextOrder)
+		)
+
+	end
 
     return data
 end)

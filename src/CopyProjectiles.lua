@@ -2,6 +2,11 @@ local BiomeIScaling = 0.9
 local BiomeOScaling = 0.7
 local BiomePScaling = 0.6
 local BiomeQScaling = 0.6
+local BiomeCScaling = 0.7
+
+local BiomeAScaling = 1
+
+local ZagreusJourney = rom.mods['NikkelM-Zagreus_Journey']
 
 local file = rom.path.combine(rom.paths.Content, 'Game/Projectiles/PlayerProjectiles.sjson')
 	sjson.hook(file, function(data)
@@ -901,6 +906,18 @@ local file = rom.path.combine(rom.paths.Content, 'Game/Projectiles/PlayerProject
 		InheritFrom = "EarthElementalLaser",
 	})
 
+	if ZagreusJourney then
+	
+		table.insert(data.Projectiles,
+		{
+			Name = "SwarmerSpawnerplayer",
+			InheritFrom = "SwarmerMelee",
+			Damage = 0,
+			DamageLow = 0,
+     		DamageHigh = 0,
+		})
+	end
+
 			
 return data
 end)
@@ -960,4 +977,28 @@ OverwriteTableKeys( ProjectileData, {
 			}
 		},
 	},
+
+	SwarmerSpawnerplayer =
+	{
+		OnDeathFunctionName = _PLUGIN.guid .. "." .. "ProjectileSpawnUnitOnDeath",
+		SpawnName = "Zombie",
+		SpawnBounceOffVictim = false,
+		SpawnBounceOffVictimVelocity = 0,
+		SpawnBounceOffVictimUpwardVelocity = 0,
+		SpawnsSkipActivatePresentation = false,
+	},
 })
+
+if ZagreusJourney then
+	OverwriteTableKeys( ProjectileData, {
+		SwarmerSpawnerplayer =
+		{
+			OnDeathFunctionName = _PLUGIN.guid .. "." .. "ProjectileSpawnUnitOnDeath",
+			SpawnName = "HadesSwarmer",
+			SpawnBounceOffVictim = false,
+			SpawnBounceOffVictimVelocity = 0,
+			SpawnBounceOffVictimUpwardVelocity = 0,
+			SpawnsSkipActivatePresentation = true,
+		},
+	})
+end

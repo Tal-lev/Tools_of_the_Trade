@@ -4,6 +4,9 @@ local BiomePScaling = 0.6
 local BiomeQScaling = 0.6
 local BiomeCScaling = 0.7
 
+local BiomeAScaling = 1
+
+local ZagreusJourney = rom.mods['NikkelM-Zagreus_Journey']
 
 OverwriteTableKeys( TraitData, {
     DummyCopyDisplayBoon = 
@@ -5582,7 +5585,7 @@ OverwriteTableKeys( TraitData, {
 		FlavorText = "CopyAbility_FlavorText",
 	},
 
-	TyphonTailCopyTwoDisplayBoon = 
+	TyphonHeadOneCopyTwoDisplayBoon = 
 	{
 		Icon = "JarlUlsfark-Tools_of_the_Trade\\TyphonHeadIcon",
 		ShowInHUD = true,
@@ -5595,3 +5598,176 @@ OverwriteTableKeys( TraitData, {
 	},
 
 })
+
+if ZagreusJourney then
+	OverwriteTableKeys( TraitData, {
+	HadesSwarmerCopyDisplayBoon = 
+		{
+			Icon = "JarlUlsfark-Tools_of_the_Trade_ZJcompat\\HadesSwarmerIcon",
+			ShowInHUD = true,
+			CustomLabel = 
+			{
+				DisplayType = "RoomValue",
+				Key = "Copy_HadesSwarmer",
+				Text = "Copy_EmptyText"
+			},
+			PropertyChanges = 
+			{
+			{
+					WeaponName = "WeaponLob",
+					WeaponProperty = "Projectile",
+					ChangeValue = "SwarmerMelee",
+				},
+				{
+					WeaponName = "WeaponLob",
+					WeaponProperties = 
+					{
+						Cooldown = 0.4,
+						BlockMoveInput = true,
+						CancelMovement = true,
+						FizzleOldSpawns = true,
+						AutoLock = true,
+						BarrelLength = 150,
+						AutoLockRange = 300,
+						SelfVelocity = 900,
+
+					},
+					ExcludeLinked = true,
+				},
+				{
+					WeaponName = "WeaponLob",
+					ProjectileName = "SwarmerMelee",
+					ProjectileProperties = 
+					{
+						Damage = (30 * BiomeAScaling),
+					},
+					ExcludeLinked = true,
+				},
+			},
+			FlavorText = "CopyAbility_FlavorText",
+		},
+		
+		HadesSwarmerCopyTwoDisplayBoon = 
+		{
+			Icon = "JarlUlsfark-Tools_of_the_Trade_ZJcompat\\HadesSwarmerIcon",
+			ShowInHUD = true,
+			CustomLabel = 
+			{
+				DisplayType = "RoomValue",
+				Key = "Copy_HadesSwarmer2",
+				Text = "Copy_2nd"
+			},
+		},
+
+		LightSpawnerCopyDisplayBoon = 
+		{
+			Icon = "JarlUlsfark-Tools_of_the_Trade_ZJcompat\\LightSpawnerIcon",
+			ShowInHUD = true,
+			CustomLabel = 
+			{
+				DisplayType = "RoomValue",
+				Key = "Copy_LightSpawner",
+				Text = "Copy_EmptyText"
+			},
+			PropertyChanges = 
+			{
+			{
+					WeaponName = "WeaponLob",
+					WeaponProperty = "Projectile",
+					ChangeValue = "SwarmerSpawnerplayer",
+				},
+				{
+					WeaponName = "WeaponLob",
+					WeaponProperties = 
+					{
+						Cooldown = 1,
+						FizzleOldSpawns = false,
+						BarrelLength = 150,
+
+					},
+					ExcludeLinked = true,
+				},
+				{
+					WeaponName = "WeaponLob",
+					ProjectileName = "SwarmerSpawnerplayer",
+					ProjectileProperties = 
+					{
+						Damage = (0 * BiomeAScaling),
+					},
+					ExcludeLinked = true,
+				},
+			},
+			FlavorText = "CopyAbility_FlavorText",
+		},
+
+		LightSpawnerCopyTwoDisplayBoon = 
+		{
+			Icon = "JarlUlsfark-Tools_of_the_Trade_ZJcompat\\LightSpawnerIcon",
+			ShowInHUD = true,
+			CustomLabel = 
+			{
+				DisplayType = "RoomValue",
+				Key = "Copy_LightSpawner2",
+				Text = "Copy_2nd"
+			},
+		},
+
+		PunchingBagUnitCopyDisplayBoon = 
+		{
+			Icon = "JarlUlsfark-Tools_of_the_Trade_ZJcompat\\PunchingBagUnitIcon",
+			ShowInHUD = true,
+			CustomLabel = 
+			{
+				DisplayType = "RoomValue",
+				Key = "Copy_PunchingBagUnit",
+				Text = "Copy_EmptyText"
+			},
+			PropertyChanges = 
+			{
+			{
+					WeaponName = "WeaponLob",
+					WeaponProperty = "Projectile",
+					ChangeValue = "PunchingBagUnitWeapon",
+				},
+				{
+					WeaponName = "WeaponLob",
+					WeaponProperties = 
+					{
+						Cooldown = 0.4,
+						BlockMoveInput = true,
+						CancelMovement = true,
+						FizzleOldSpawns = true,
+						AutoLock = true,
+						BarrelLength = 50,
+						AutoLockRange = 300,
+						SelfVelocity = 1200,
+
+					},
+					ExcludeLinked = true,
+				},
+				{
+					WeaponName = "WeaponLob",
+					ProjectileName = "PunchingBagUnitWeapon",
+					ProjectileProperties = 
+					{
+						Damage = (80 * BiomeAScaling),
+					},
+					ExcludeLinked = true,
+				},
+			},
+			FlavorText = "CopyAbility_FlavorText",
+		},
+		
+		PunchingBagUnitCopyTwoDisplayBoon = 
+		{
+			Icon = "JarlUlsfark-Tools_of_the_Trade_ZJcompat\\PunchingBagUnitIcon",
+			ShowInHUD = true,
+			CustomLabel = 
+			{
+				DisplayType = "RoomValue",
+				Key = "Copy_PunchingBagUnit2",
+				Text = "Copy_2nd"
+			},
+		},
+	})
+end
