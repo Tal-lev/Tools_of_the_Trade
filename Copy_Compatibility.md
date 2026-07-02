@@ -131,3 +131,11 @@
 - Eye of Typhon
 - Typhon
   - Tongue-Lash
+ 
+## Zagreus Journey
+
+### Tartarus (H1)
+
+- Numbskull
+- Skullomat
+- Wretched Lout
