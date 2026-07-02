@@ -1055,6 +1055,24 @@ function mod.CopyAbility (victim, functionArgs, triggerArgs)
 		elseif victim.Name == "HadesLightRanged" or victim.Name == "HadesLightRanged_Elite" then
 			Changed = "HadesLightRanged"
 			Location = "TartarusModsNikkelMHadesBiomes"
+		elseif victim.Name == "HeavyRanged" or victim.Name == "HeavyRanged_Elite" then
+			Changed = "HeavyRanged"
+			Location = "TartarusModsNikkelMHadesBiomes"
+		elseif victim.Name == "HeavyMelee" or victim.Name == "HeavyMelee_Elite" then
+			Changed = "HeavyMelee"
+			Location = "BiomeI"
+		--elseif victim.Name == "DisembodiedHand" or victim.Name == "DisembodiedHand_Elite" then
+		--	Changed = "DisembodiedHand"
+		--	Location = "TartarusModsNikkelMHadesBiomes"
+		elseif victim.Name == "WretchAssassinMiniboss" then
+			Changed = "WretchAssassinMiniboss"
+			Location = "TartarusModsNikkelMHadesBiomes"
+		elseif victim.Name == "Harpy" then
+			Changed = "HarpyOne"
+			Location = "TartarusModsNikkelMHadesBiomes"
+		elseif victim.Name == "Harpy2" then
+			Changed = "HarpytwoOne"
+			Location = "TartarusModsNikkelMHadesBiomes"
 		end
 	end
 	if Changed ~= "null" then
@@ -1832,7 +1850,7 @@ modutil.once_loaded.game(function()
 				ShowAmmoUI = false,
 				OnProjectileDeathFunction = "nil",
 				ChannelSlowIneligible = true,
-				MaxAmmo = 20,
+				MaxAmmo = 10,
 				NoAmmoText = "Hint_OutOfCopyLobAmmo",
 				NoAmmoFunctionName = _PLUGIN.guid .. "." .. "CopyNoAmmo",
 				ChargeWeaponStages = 
@@ -1884,7 +1902,7 @@ modutil.once_loaded.game(function()
 			Name = _PLUGIN.guid .. "." .. "SetupCopyAbility",
 		},
 		Location = "null",
-		SecondAmmo = 20,
+		SecondAmmo = 10,
 		SecondCopy = "DummyCopyDisplayBoon",
 		SecondLocation = "null",
 		OnEnemyDamagedAction = 
@@ -1936,6 +1954,9 @@ modutil.once_loaded.game(function()
 	import "GodEffects.lua"
 
 	import "Hammers.lua"
+
+	--Adds minor propechies
+	import "Quests.lua"
 	--Add god specific attack animations for summon
 	--import "VFXAnimations.lua"
 

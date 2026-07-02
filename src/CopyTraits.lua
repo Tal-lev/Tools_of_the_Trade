@@ -80,6 +80,7 @@ OverwriteTableKeys( TraitData, {
 					BlockMoveInput = true,
 					CancelMovement = true,
 					SelfVelocity = 800,
+					AttachToOwner =true,
 					AutoLock = true,
 					AutoLockRange = 100,
 					AutoLockArcDistance = 90,
@@ -5362,14 +5363,14 @@ OverwriteTableKeys( TraitData, {
 		FlavorText = "CopyAbility_FlavorText",
 	},
 
-	GoldElementalCopyTwoDisplayBoon = 
+	EarthElementalCopyTwoDisplayBoon = 
 	{
-		Icon = "JarlUlsfark-Tools_of_the_Trade\\GoldElementalIcon",
+		Icon = "JarlUlsfark-Tools_of_the_Trade\\EarthElementalIcon",
 		ShowInHUD = true,
 		CustomLabel = 
 		{
 			DisplayType = "RoomValue",
-			Key = "Copy_GoldElemental2",
+			Key = "Copy_EarthElemental2",
 			Text = "Copy_2nd"
 		},
 	},
@@ -5822,5 +5823,354 @@ if ZagreusJourney then
 				Text = "Copy_2nd"
 			},
 		},
+
+		HeavyRangedCopyDisplayBoon = 
+		{
+			Icon = "JarlUlsfark-Tools_of_the_Trade_ZJcompat\\HeavyRangedIcon",
+			ShowInHUD = true,
+			CustomLabel = 
+			{
+				DisplayType = "RoomValue",
+				Key = "Copy_HeavyRanged",
+				Text = "Copy_EmptyText"
+			},
+			PropertyChanges = 
+			{
+			{
+					WeaponName = "WeaponLob",
+					WeaponProperty = "Projectile",
+					ChangeValue = "HeavyRangedWeapon",
+				},
+				{
+					WeaponName = "WeaponLob",
+					WeaponProperties = 
+					{
+						Cooldown = 3,
+						FizzleOldSpawns = false,
+						BarrelLength = 0,
+						AutoLock = true,
+						AutoLockRange = 400,
+						AutoLockArcDistance = 90,
+
+					},
+					ExcludeLinked = true,
+				},
+				{
+					WeaponName = "WeaponLob",
+					ProjectileName = "HeavyRangedWeapon",
+					ProjectileProperties = 
+					{
+						Damage = (10 * BiomeAScaling),
+					},
+					ExcludeLinked = true,
+				},
+			},
+			FlavorText = "CopyAbility_FlavorText",
+		},
+
+		HeavyRangedCopyTwoDisplayBoon = 
+		{
+			Icon = "JarlUlsfark-Tools_of_the_Trade_ZJcompat\\HeavyRangedIcon",
+			ShowInHUD = true,
+			CustomLabel = 
+			{
+				DisplayType = "RoomValue",
+				Key = "Copy_HeavyRanged2",
+				Text = "Copy_2nd"
+			},
+		},
+
+		HeavyMeleeCopyDisplayBoon = 
+		{
+			Icon = "JarlUlsfark-Tools_of_the_Trade\\ClockworkHeavyMeleeIcon",
+			ShowInHUD = true,
+			CustomLabel = 
+			{
+				DisplayType = "RoomValue",
+				Key = "Copy_HeavyMelee",
+				Text = "Copy_EmptyText"
+			},
+			PropertyChanges = 
+			{
+			{
+					WeaponName = "WeaponLob",
+					WeaponProperty = "Projectile",
+					ChangeValue = "ThugSwipe",
+				},
+				{
+					WeaponName = "WeaponLob",
+					WeaponProperties = 
+					{
+						Cooldown = 1.5,
+						FireOnRelease = true,
+						BlockMoveInput = true,
+						CancelMovement = true,
+						SelfVelocity = 400,
+						AutoLock = true,
+						AutoLockRange = 100,
+						AutoLockArcDistance = 90,
+						RootOwnerWhileFiring = true,
+						CancelChargeOnRelease = true,
+						BarrelLength = -100,
+					},
+					ExcludeLinked = true,
+				},
+				{
+					WeaponName = "WeaponLob",
+					ProjectileName = "ThugSwipe",
+					ProjectileProperties = 
+					{
+						Damage = (100 * BiomeAScaling),
+					},
+					ExcludeLinked = true,
+				},
+				{
+				WeaponName = "WeaponLob",
+				WeaponProperty = "ProjectileScaleMultiplier",
+				ChangeValue = 0.8,
+				ChangeType = "Multiply",
+				},
+			},
+			FlavorText = "CopyAbility_FlavorText",
+		},
+
+		HeavyMeleeCopyTwoDisplayBoon = 
+		{
+			Icon = "JarlUlsfark-Tools_of_the_Trade\\ClockworkHeavyMeleeIcon",
+			ShowInHUD = true,
+			CustomLabel = 
+			{
+				DisplayType = "RoomValue",
+				Key = "Copy_HeavyMelee2",
+				Text = "Copy_2nd"
+			},
+		},
+
+		DisembodiedHandCopyDisplayBoon = 
+		{
+			Icon = "JarlUlsfark-Tools_of_the_Trade_ZJcompat\\DisembodiedHandIcon",
+			ShowInHUD = true,
+			CustomLabel = 
+			{
+				DisplayType = "RoomValue",
+				Key = "Copy_DisembodiedHand",
+				Text = "Copy_EmptyText"
+			},
+			PropertyChanges = 
+			{
+			{
+					WeaponName = "WeaponLob",
+					WeaponProperty = "Projectile",
+					ChangeValue = "DisembodiedHandGrab",
+				},
+				{
+					WeaponName = "WeaponLob",
+					WeaponProperties = 
+					{
+						Cooldown = 1,
+						FireOnRelease = true,
+						BlockMoveInput = true,
+						CancelMovement = true,
+						SelfVelocity = 400,
+						AutoLock = true,
+						AutoLockRange = 100,
+						AutoLockArcDistance = 90,
+						RootOwnerWhileFiring = true,
+						CancelChargeOnRelease = true,
+						BarrelLength = 0,
+					},
+					ExcludeLinked = true,
+				},
+				{
+					WeaponName = "WeaponLob",
+					ProjectileName = "DisembodiedHandGrab",
+					ProjectileProperties = 
+					{
+						Damage = (50 * BiomeAScaling),
+					},
+					ExcludeLinked = true,
+				},
+				{
+				WeaponName = "WeaponLob",
+				WeaponProperty = "ProjectileScaleMultiplier",
+				ChangeValue = 0.8,
+				ChangeType = "Multiply",
+				},
+			},
+			FlavorText = "CopyAbility_FlavorText",
+		},
+
+		DisembodiedHandCopyTwoDisplayBoon = 
+		{
+			Icon = "JarlUlsfark-Tools_of_the_Trade_ZJcompat\\DisembodiedHandIcon",
+			ShowInHUD = true,
+			CustomLabel = 
+			{
+				DisplayType = "RoomValue",
+				Key = "Copy_DisembodiedHand2",
+				Text = "Copy_2nd"
+			},
+		},
+
+		WretchAssassinMinibossCopyDisplayBoon = 
+		{
+			Icon = "JarlUlsfark-Tools_of_the_Trade_ZJcompat\\WretchAssassinMinibossIcon",
+			ShowInHUD = true,
+			CustomLabel = 
+			{
+				DisplayType = "RoomValue",
+				Key = "Copy_WretchAssassinMiniboss",
+				Text = "Copy_EmptyText"
+			},
+			PropertyChanges = 
+			{
+			{
+					WeaponName = "WeaponLob",
+					WeaponProperty = "Projectile",
+					ChangeValue = "WretchAssassinRanged",
+				},
+				{
+					WeaponName = "WeaponLob",
+					WeaponProperties = 
+					{
+						Cooldown = 0.4,
+						FizzleOldSpawns = false,
+						NumProjectiles = 3,
+						AutoLock = true,
+						AutoLockRange = 300,
+						AutoLockArcDistance = 40,
+						ProjectileInterval = 0.2,
+						ProjectileIntervalStart = 0.1,
+						ProjectileAngleOffset = math.rad(0),
+					},
+					ExcludeLinked = true,
+				},
+				{
+					WeaponName = "WeaponLob",
+					ProjectileName = "WretchAssassinRanged",
+					ProjectileProperties = 
+					{
+						Damage = (40 * BiomeAScaling),
+					},
+					ExcludeLinked = true,
+				},
+			},
+			FlavorText = "CopyAbility_FlavorText",
+		},
+
+		WretchAssassinMinibossCopyTwoDisplayBoon = 
+		{
+			Icon = "JarlUlsfark-Tools_of_the_Trade_ZJcompat\\WretchAssassinMinibossIcon",
+			ShowInHUD = true,
+			CustomLabel = 
+			{
+				DisplayType = "RoomValue",
+				Key = "Copy_WretchAssassinMiniboss2",
+				Text = "Copy_2nd"
+			},
+		},
+
+		HarpyOneCopyDisplayBoon = 
+		{
+			Icon = "JarlUlsfark-Tools_of_the_Trade_ZJcompat\\HarpyIcon",
+			ShowInHUD = true,
+			CustomLabel = 
+			{
+				DisplayType = "RoomValue",
+				Key = "Copy_Harpy",
+				Text = "Copy_EmptyText"
+			},
+			PropertyChanges = 
+			{
+			{
+					WeaponName = "WeaponLob",
+					WeaponProperty = "Projectile",
+					ChangeValue = "HarpyWhipWhirl",
+				},
+				{
+					WeaponName = "WeaponLob",
+					WeaponProperties = 
+					{
+						Cooldown = 0.6,
+						FizzleOldSpawns = false,
+					},
+					ExcludeLinked = true,
+				},
+				{
+					WeaponName = "WeaponLob",
+					ProjectileName = "HarpyWhipWhirl",
+					ProjectileProperties = 
+					{
+						Damage = (150 * BiomeAScaling),
+					},
+					ExcludeLinked = true,
+				},
+			},
+			FlavorText = "CopyAbility_FlavorText",
+		},
+
+		HarpyOneCopyTwoDisplayBoon = 
+		{
+			Icon = "JarlUlsfark-Tools_of_the_Trade_ZJcompat\\HarpyIcon",
+			ShowInHUD = true,
+			CustomLabel = 
+			{
+				DisplayType = "RoomValue",
+				Key = "Copy_Harpy2",
+				Text = "Copy_2nd"
+			},
+		},
+
+		HarpytwoOneCopyDisplayBoon = 
+		{
+			Icon = "JarlUlsfark-Tools_of_the_Trade_ZJcompat\\Harpy2Icon",
+			ShowInHUD = true,
+			CustomLabel = 
+			{
+				DisplayType = "RoomValue",
+				Key = "Copy_Harpytwo",
+				Text = "Copy_EmptyText"
+			},
+			PropertyChanges = 
+			{
+			{
+					WeaponName = "WeaponLob",
+					WeaponProperty = "Projectile",
+					ChangeValue = "HarpyWhipShot",
+				},
+				{
+					WeaponName = "WeaponLob",
+					WeaponProperties = 
+					{
+						Cooldown = 0.6,
+						FizzleOldSpawns = false,
+					},
+					ExcludeLinked = true,
+				},
+				{
+					WeaponName = "WeaponLob",
+					ProjectileName = "HarpyWhipShot",
+					ProjectileProperties = 
+					{
+						Damage = (70 * BiomeAScaling),
+					},
+					ExcludeLinked = true,
+				},
+			},
+			FlavorText = "CopyAbility_FlavorText",
+		},
+
+		HarpytwoOneCopyTwoDisplayBoon = 
+		{
+			Icon = "JarlUlsfark-Tools_of_the_Trade_ZJcompat\\Harpy2Icon",
+			ShowInHUD = true,
+			CustomLabel = 
+			{
+				DisplayType = "RoomValue",
+				Key = "Copy_Harpytwo2",
+				Text = "Copy_2nd"
+			},
+		},
+
 	})
 end

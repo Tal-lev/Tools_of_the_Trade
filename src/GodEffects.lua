@@ -1190,6 +1190,67 @@ if ZagreusJourney then
 				ChangeType = "Absolute",
 				ExcludeLinked = true,
 			},
+			{
+				WeaponName = "WeaponLob",
+				ProjectileName = "LightRangedWeapon",
+				ProjectileProperty = "ImpactFx",
+				ValuePrefix = "HadesEnemyProjectileImpact_",
+				ChangeType = "Absolute",
+				ExcludeLinked = true,
+			},
+			--HeavyRanged
+			{
+				WeaponName = "WeaponLob",
+				ProjectileName = "HeavyRangedWeapon",
+				ProjectileProperty = "Graphic",
+				ValuePrefix = "EnemyLaserPreview_",
+				ChangeType = "Absolute",
+				ExcludeLinked = true,
+			},
+			--HeavyMelee
+			{
+				WeaponName = "WeaponLob",
+				ProjectileName = "ThugSwipe",
+				ProjectileProperty = "Graphic",
+				ValuePrefix = "ThugMeleeSwipe_",
+				ChangeType = "Absolute",
+				ExcludeLinked = true,
+			},
+			--WretchAssassinMiniboss
+			{
+				WeaponName = "WeaponLob",
+				ProjectileName = "WretchAssassinRanged",
+				ProjectileProperty = "Graphic",
+				ValuePrefix = "WretchAssassinRangedProjectile_",
+				ChangeType = "Absolute",
+				ExcludeLinked = true,
+			},
+			{
+				WeaponName = "WeaponLob",
+				ProjectileName = "WretchAssassinRanged",
+				ProjectileProperty = "ImpactFx",
+				ValuePrefix = "HadesEnemyProjectileImpact_",
+				ChangeType = "Absolute",
+				ExcludeLinked = true,
+			},
+			--Harpy Megaera
+			{
+				WeaponName = "WeaponLob",
+				ProjectileName = "HarpyWhipWhirl",
+				ProjectileProperty = "DetonateFx",
+				ValuePrefix = "FuryWhipWhirl_",
+				ChangeType = "Absolute",
+				ExcludeLinked = true,
+			},
+			--Harpy2 Alecto
+			{
+				WeaponName = "WeaponLob",
+				ProjectileName = "HarpyWhipShot",
+				ProjectileProperty = "Graphic",
+				ValuePrefix = "FuryAlectoThrow_",
+				ChangeType = "Absolute",
+				ExcludeLinked = true,
+			},
 		}
 	})
 end
