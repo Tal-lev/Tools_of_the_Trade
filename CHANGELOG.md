@@ -8,12 +8,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 - Balance Reducing KirbyMel Max Ammo to 10
-- 5 Implemented ZJ enemies for copy.
+- 9 Implemented ZJ enemies for copy.
   - HadesSwarmer
   - LightSpawner
   - PunchingBagUnit
   - HadesLightRanged
   - HeavyRanged
+  - HeavyMelee
+  - WretchAssassinMiniboss
+  - Harpy
+  - Harpy2
 - 4 Minor Prophecies added
   - Clear with both tools
   - Get the 7 new hammers
