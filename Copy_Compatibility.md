@@ -139,3 +139,4 @@
 - Numbskull
 - Skullomat
 - Wretched Lout
+- Wretched Witch
