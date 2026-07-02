@@ -134,7 +134,7 @@
  
 ## Zagreus Journey
 
-### Tartarus (H1)
+### Tartarus (H1) (Unreleased)
 
 - Numbskull
 - Skullomat
