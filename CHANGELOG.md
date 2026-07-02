@@ -7,11 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-- 4 Implemented ZJ enemies for copy.
+- 5 Implemented ZJ enemies for copy.
   - HadesSwarmer
   - LightSpawner
   - PunchingBagUnit
   - HadesLightRanged
+  - HeavyRanged
 
 ## [0.3.1] - 2026-07-01
 
