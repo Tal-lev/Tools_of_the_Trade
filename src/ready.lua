@@ -1045,13 +1045,16 @@ function mod.CopyAbility (victim, functionArgs, triggerArgs)
 	elseif ZagreusJourney then
 		if victim.Name == "HadesSwarmer" or victim.Name == "HadesSwarmer_Elite" then
 			Changed = "HadesSwarmer"
-			Location = "RoomManagerModsNikkelMHadesBiomes"
+			Location = "HadesBiomesFxOriginal"
 		elseif victim.Name == "LightSpawner" or victim.Name == "LightSpawner_Elite" then
 			Changed = "LightSpawner"
-			Location = "RoomManagerModsNikkelMHadesBiomes"
+			Location = "HadesBiomesFxOriginal"
 		elseif victim.Name == "PunchingBagUnit" or victim.Name == "PunchingBagUnit_Elite" then
 			Changed = "PunchingBagUnit"
-			Location = "RoomManagerModsNikkelMHadesBiomes"
+			Location = "HadesBiomesFxOriginal"
+		elseif victim.Name == "HadesLightRanged" or victim.Name == "HadesLightRanged_Elite" then
+			Changed = "HadesLightRanged"
+			Location = "TartarusModsNikkelMHadesBiomes"
 		end
 	end
 	if Changed ~= "null" then
@@ -1301,8 +1304,6 @@ modutil.mod.Path.Wrap("Kill", function(base, victim, triggerArgs)
 end)
 
 ModUtil.Path.Wrap("Damage", function(baseFunc, victim, triggerArgs)
-	print("!!!!!!!!!!!!!!!!!!!!!!!!!")
-	print(victim.Name)
 	--For Apollo Double attack boon, which is buggy
 	--local originaltriggerArgs = triggerArgs
 	--For Stupid Sheep!

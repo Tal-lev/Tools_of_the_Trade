@@ -1172,12 +1172,21 @@ if ZagreusJourney then
 	AddGodTraitProperty({
 		TraitSuffix = "WeaponBoon",
 		PropertyChanges = {
-			--TyphonHead
+			--PunchingBagUnit
 			{
 				WeaponName = "WeaponLob",
 				ProjectileName = "PunchingBagUnitWeapon",
 				ProjectileProperty = "DetonateGraphic",
 				ValuePrefix = "EnemyConeAttackPunchingBag_",
+				ChangeType = "Absolute",
+				ExcludeLinked = true,
+			},
+			--HadesLightRanged
+			{
+				WeaponName = "WeaponLob",
+				ProjectileName = "LightRangedWeapon",
+				ProjectileProperty = "Graphic",
+				ValuePrefix = "HadesEnemyProjectileIn_",
 				ChangeType = "Absolute",
 				ExcludeLinked = true,
 			},

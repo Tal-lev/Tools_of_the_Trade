@@ -911,7 +911,7 @@ OverwriteTableKeys( TraitData, {
 
 	FishmanRangedCopyTwoDisplayBoon = 
 	{
-		Icon = "JarlUlsfark-Tools_of_the_Trade\\TFishmanRangedIcon",
+		Icon = "JarlUlsfark-Tools_of_the_Trade\\FishmanRangedIcon",
 		ShowInHUD = true,
 		CustomLabel = 
 		{
@@ -5766,6 +5766,59 @@ if ZagreusJourney then
 			{
 				DisplayType = "RoomValue",
 				Key = "Copy_PunchingBagUnit2",
+				Text = "Copy_2nd"
+			},
+		},
+
+		HadesLightRangedCopyDisplayBoon = 
+		{
+			Icon = "JarlUlsfark-Tools_of_the_Trade_ZJcompat\\HadesLightRangedIcon",
+			ShowInHUD = true,
+			CustomLabel = 
+			{
+				DisplayType = "RoomValue",
+				Key = "Copy_HadesLightRanged",
+				Text = "Copy_EmptyText"
+			},
+			PropertyChanges = 
+			{
+			{
+					WeaponName = "WeaponLob",
+					WeaponProperty = "Projectile",
+					ChangeValue = "LightRangedWeapon",
+				},
+				{
+					WeaponName = "WeaponLob",
+					WeaponProperties = 
+					{
+						Cooldown = 0.5,
+						FizzleOldSpawns = false,
+						BarrelLength = 150,
+
+					},
+					ExcludeLinked = true,
+				},
+				{
+					WeaponName = "WeaponLob",
+					ProjectileName = "LightRangedWeapon",
+					ProjectileProperties = 
+					{
+						Damage = (50 * BiomeAScaling),
+					},
+					ExcludeLinked = true,
+				},
+			},
+			FlavorText = "CopyAbility_FlavorText",
+		},
+
+		HadesLightRangedCopyTwoDisplayBoon = 
+		{
+			Icon = "JarlUlsfark-Tools_of_the_Trade_ZJcompat\\HadesLightRangedIcon",
+			ShowInHUD = true,
+			CustomLabel = 
+			{
+				DisplayType = "RoomValue",
+				Key = "Copy_HadesLightRanged2",
 				Text = "Copy_2nd"
 			},
 		},

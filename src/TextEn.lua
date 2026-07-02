@@ -1206,6 +1206,16 @@ sjson.hook(file, function(data)
 		TextOrder)
 		)
 
+		table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "HadesLightRangedCopyDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Copy Ability: Wretched Witch",
+			Description = "Your Attack fire a {#UpgradeFormat}Projectile{#Prev}.",
+		},
+		TextOrder)
+		)
+
 	end
 
     return data
