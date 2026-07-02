@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+- 3 Implemented ZJ enemies for copy.
+  - HadesSwarmer
+  - LightSpawner
+  - PunchingBagUnit
+
 ## [0.3.1] - 2026-07-01
 
 - Added Biome damage for copy abilities
