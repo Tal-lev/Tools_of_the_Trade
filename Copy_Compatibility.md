@@ -139,5 +139,9 @@
 - Numbskull
 - Skullomat
 - Wretched Lout
+- Wretched Thug
 - Wretched Witch
 - Brimstone
+- Wretched Sneak
+- Megaera
+- Alecto
