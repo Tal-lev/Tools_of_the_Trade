@@ -14,6 +14,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - PunchingBagUnit
   - HadesLightRanged
   - HeavyRanged
+- 4 Minor Prophecies added
+  - Clear with both tools
+  - Get the 7 new hammers
+  - Get All Copy Abilities in Underworld route
+  - Get All Copy Abilities in Surface route
 
 ## [0.3.1] - 2026-07-01
 
