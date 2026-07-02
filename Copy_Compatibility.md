@@ -140,3 +140,4 @@
 - Skullomat
 - Wretched Lout
 - Wretched Witch
+- Brimstone
