@@ -495,6 +495,39 @@ AddGodTraitProperty({
             ChangeType = "Absolute",
             ExcludeLinked = true,
         },
+		--SpreadShotUnit
+		{
+            WeaponName = "WeaponLob",
+            ProjectileName = "SpreadShotBolt",
+            ProjectileProperty = "Graphic",
+            ValuePrefix = "EnemyProjectileIn_",
+            ChangeType = "Absolute",
+            ExcludeLinked = true,
+        },
+		{
+            WeaponName = "WeaponLob",
+            ProjectileName = "SpreadShotBolt",
+            ProjectileProperty = "DissipateFx",
+            ValuePrefix = "EnemyProjectileDissipate_",
+            ChangeType = "Absolute",
+            ExcludeLinked = true,
+        },
+		{
+            WeaponName = "WeaponLob",
+            ProjectileName = "SpreadShotBolt",
+            ProjectileProperty = "DeathFx",
+            ValuePrefix = "EnemyProjectileDissipate_",
+            ChangeType = "Absolute",
+            ExcludeLinked = true,
+        },
+		{
+            WeaponName = "WeaponLob",
+            ProjectileName = "SpreadShotBolt",
+            ProjectileProperty = "ImpactFx",
+            ValuePrefix = "MageProjectileExplosion_LightRanged_",
+            ChangeType = "Absolute",
+            ExcludeLinked = true,
+        },
 		--Corrupted Shade small
 		{
             WeaponName = "WeaponLob",
@@ -1321,6 +1354,44 @@ if ZagreusJourney then
 				ChangeType = "Absolute",
 				ExcludeLinked = true,
 			},
+			--CrushUnit
+			{
+				WeaponName = "WeaponLob",
+				ProjectileName = "CrusherUnitTouchdown",
+				ProjectileProperty = "DetonateFx",
+				ValuePrefix = "CrusherTouchdownFx_",
+				ChangeType = "Absolute",
+				ExcludeLinked = true,
+			},
+
+			--HydraDartMaker
+			{
+				WeaponName = "WeaponLob",
+				ProjectileName = "HydraDart",
+				ProjectileProperty = "Graphic",
+				ValuePrefix = "DragonBurrowerRangedIn_",
+				ChangeType = "Absolute",
+				ExcludeLinked = true,
+			},
+			--HydraLava
+			{
+				WeaponName = "WeaponLob",
+				ProjectileName = "HydraLavaSpit",
+				ProjectileProperty = "SpawnOnDetonate",
+				ValuePrefix = "LavaPuddleLarge_",
+				ChangeType = "Absolute",
+				ExcludeLinked = true,
+			},
+			--HydraSlam
+			{
+				WeaponName = "WeaponLob",
+				ProjectileName = "HydraTouchdown",
+				ProjectileProperty = "DetonateFx",
+				ValuePrefix = "HydraTouchdownFx_",
+				ChangeType = "Absolute",
+				ExcludeLinked = true,
+			},
+
 		}
 	})
 end

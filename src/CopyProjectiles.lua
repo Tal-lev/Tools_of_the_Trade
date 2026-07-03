@@ -916,6 +916,134 @@ local file = rom.path.combine(rom.paths.Content, 'Game/Projectiles/PlayerProject
 			DamageLow = 0,
      		DamageHigh = 0,
 		})
+
+		table.insert(data.Projectiles,
+		{
+			Name = "HydraSummonplayer",
+			InheritFrom = "1_BaseEnemyProjectileUndestroyable",
+			CheckObstacleImpact = true,
+			DetonateOnTouchdown = true,
+			DetonateFx = "null",
+			DetonateSound = "null",
+			Type = "LOB",
+			Damage = 0,
+			DamageRadiusScaleY = 0.55,
+			AutoAdjustForTarget = false,
+			Speed = 1250,
+			SpeedVariance = 150,
+			MaxSpeed = 1575.0,
+			LaunchAngle = 75,
+			SpinRate = 0,
+			MinRange = 0.0,
+			Gravity = 2400,
+			AffectsFriends = false,
+			AffectsSelf = false,
+			CheckUnitImpact = false,
+			CheckObstacleImpact = false,
+			--SpawnOnDetonate = "HydraTooth",
+			--SpawnType = "UNIT",
+			SkipSpawnsIfBlocked = true,
+			DangerDistance = 0,
+			CanBeReflected = false,
+			Thing = {
+				Graphic = "HydraTooth",
+				Scale = 1,
+				OffsetZ = 101,
+				AttachedAnim = "LootShadowHydraTooth",
+			},
+		})
+
+		table.insert(data.Projectiles,
+		{
+			Name = "LavaPuddleLarge_Zeus",
+			InheritFrom = "LavaPuddleLarge",
+			Thing =
+			{
+				Graphic = "GreekFireLarge_Zeus",
+			},
+		})
+
+		table.insert(data.Projectiles,
+		{
+			Name = "LavaPuddleLarge_Hera",
+			InheritFrom = "LavaPuddleLarge",
+			Thing =
+			{
+				Graphic = "GreekFireLarge_Hera",
+			},
+		})
+
+		table.insert(data.Projectiles,
+		{
+			Name = "LavaPuddleLarge_Poseidon",
+			InheritFrom = "LavaPuddleLarge",
+			Thing = 
+				{
+					Graphic = "GreekFireLarge_Poseidon",
+				},
+		})
+
+		table.insert(data.Projectiles,
+		{
+			Name = "LavaPuddleLarge_Demeter",
+			InheritFrom = "LavaPuddleLarge",
+			Thing = 
+				{
+					Graphic = "GreekFireLarge_Demeter",
+				},
+		})
+
+		table.insert(data.Projectiles,
+		{
+			Name = "LavaPuddleLarge_Apollo",
+			InheritFrom = "LavaPuddleLarge",
+			Thing = 
+				{
+					Graphic = "GreekFireLarge_Apollo",
+				},
+		})
+
+		table.insert(data.Projectiles,
+		{
+			Name = "LavaPuddleLarge_Aphrodite",
+			InheritFrom = "LavaPuddleLarge",
+			Thing = 
+				{
+					Graphic = "GreekFireLarge_Aphrodite",
+				},
+		})
+
+		table.insert(data.Projectiles,
+		{
+			Name = "LavaPuddleLarge_Hephaestus",
+			InheritFrom = "LavaPuddleLarge",
+			Thing = 
+				{
+					Graphic = "GreekFireLarge_Hephaestus",
+				},
+		})
+
+		table.insert(data.Projectiles,
+		{
+			Name = "LavaPuddleLarge_Hestia",
+			InheritFrom = "LavaPuddleLarge",
+			Thing = 
+				{
+					Graphic = "GreekFireLarge_Hestia",
+				},
+		})
+
+		table.insert(data.Projectiles,
+		{
+			Name = "LavaPuddleLarge_Ares",
+			InheritFrom = "LavaPuddleLarge",
+			Thing = 
+				{
+					Graphic = "GreekFireLarge_Ares",
+				},
+		})
+			
+
 	end
 
 			
@@ -995,6 +1123,16 @@ if ZagreusJourney then
 		{
 			OnDeathFunctionName = _PLUGIN.guid .. "." .. "ProjectileSpawnUnitOnDeath",
 			SpawnName = "HadesSwarmer",
+			SpawnBounceOffVictim = false,
+			SpawnBounceOffVictimVelocity = 0,
+			SpawnBounceOffVictimUpwardVelocity = 0,
+			SpawnsSkipActivatePresentation = true,
+		},
+
+		HydraSummonplayer =
+		{
+			OnDeathFunctionName = _PLUGIN.guid .. "." .. "ProjectileSpawnUnitOnDeath",
+			SpawnName = "BloodlessNaked",
 			SpawnBounceOffVictim = false,
 			SpawnBounceOffVictimVelocity = 0,
 			SpawnBounceOffVictimUpwardVelocity = 0,

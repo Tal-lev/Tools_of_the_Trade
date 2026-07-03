@@ -16262,6 +16262,348 @@ table.insert(data.Animations,
             EndBlue = 0.0,
         })
         
+        table.insert(data.Animations,
+        {
+            Name = "KirbyHydraTouchdownFx",
+            FilePath = "Fx\\HydraTouchdown\\HydraTouchdown",
+            GroupName = "FX_Terrain",
+            Type = "Slide",
+            AngleFromOwner = "Ignore",
+            EndFrame = 65,
+            NumFrames = 65,
+            StartFrame = 1,
+            RandomFlipHorizontal = true,
+            ScaleRadius = 280.0,
+            Ambient = 0.0,
+            UseAttachedFlasher = false,
+            UseAttachedShake = false,
+            CreateAnimations = {
+                { Name = "HydraTouchdownImpactFx" },
+                { Name = "HydraTouchdownImpactFxDark" },
+                { Name = "HydraTouchdownGroundCracks" },
+                { Name = "QuickFlashEnemy" },
+            },
+            Slides = {
+
+                { DurationFrames = 1 },
+                --/*Frame 1*/
+                { DurationFrames = 1 },
+                { DurationFrames = 1 },
+                { DurationFrames = 1 },
+                { DurationFrames = 1 },
+                { DurationFrames = 1 },
+                { DurationFrames = 1 },
+                { DurationFrames = 1 },
+                { DurationFrames = 1 },
+                { DurationFrames = 1 },
+                --/*Frame 10*/
+
+                { DurationFrames = 2 },
+                { DurationFrames = 2 },
+                { DurationFrames = 2 },
+                { DurationFrames = 2 },
+                { DurationFrames = 2 },
+                { DurationFrames = 2 },
+                { DurationFrames = 2 },
+                { DurationFrames = 2 },
+                { DurationFrames = 2 },
+                { DurationFrames = 2 },
+                --/*Frame 20*/
+
+                { DurationFrames = 2 },
+                { DurationFrames = 2 },
+                { DurationFrames = 2 },
+                { DurationFrames = 2 },
+                { DurationFrames = 2 },
+                { DurationFrames = 2 },
+                { DurationFrames = 2 },
+                { DurationFrames = 2 },
+                { DurationFrames = 2 },
+                { DurationFrames = 2 },
+                --/*Frame 30*/
+
+                { DurationFrames = 2 },
+                { DurationFrames = 2 },
+                { DurationFrames = 2 },
+                { DurationFrames = 2 },
+                { DurationFrames = 2 },
+                { DurationFrames = 2 },
+                { DurationFrames = 2 },
+                { DurationFrames = 2 },
+                { DurationFrames = 2 },
+                { DurationFrames = 2 },
+                --/*Frame 40*/
+
+                { DurationFrames = 2 },
+                { DurationFrames = 2 },
+                { DurationFrames = 2 },
+                { DurationFrames = 2 },
+                { DurationFrames = 2 },
+                { DurationFrames = 2 },
+                { DurationFrames = 2 },
+                { DurationFrames = 2 },
+                { DurationFrames = 2 },
+                { DurationFrames = 2 },
+                --/*Frame 50*/
+
+                { DurationFrames = 2 },
+                { DurationFrames = 2 },
+                { DurationFrames = 2 },
+                { DurationFrames = 2 },
+                { DurationFrames = 2 },
+                { DurationFrames = 2 },
+                { DurationFrames = 2 },
+                { DurationFrames = 2 },
+                { DurationFrames = 2 },
+                { DurationFrames = 2 },
+                --/*Frame 60*/
+
+                { DurationFrames = 2 },
+                { DurationFrames = 2 },
+                { DurationFrames = 2 },
+                { DurationFrames = 2 },
+                { DurationFrames = 2 },
+            },
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "HydraTouchdownFx_Zeus",
+            InheritFrom = "KirbyHydraTouchdownFx",
+            Color = {},
+            ColorFromOwner = "Ignore",
+            AddColor = true,
+            StartRed = 1.0,
+            StartGreen = 0.95,
+            StartBlue = 0.7,
+            EndRed = 0.9999,
+            EndGreen = 0.8,
+            EndBlue = 0.5,
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "HydraTouchdownFx_Hera",
+            InheritFrom = "HydraTouchdownFx_Zeus",
+            StartRed = 0.0,
+            StartGreen = 1.0,
+            StartBlue = 0.1,
+            EndRed = 0.1,
+            EndGreen = 0.3,
+            EndBlue = 1.0,
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "HydraTouchdownFx_Poseidon",
+            InheritFrom = "HydraTouchdownFx_Zeus",
+            StartRed = 0.1,
+            StartGreen = 1.0,
+            StartBlue = 0.8,
+            EndRed = 0,
+            EndGreen = 0.6,
+            EndBlue = 1.0,
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "HydraTouchdownFx_Demeter",
+            InheritFrom = "HydraTouchdownFx_Zeus",
+            StartRed = 0.25,
+            StartGreen = 0.35,
+            StartBlue = 0.5,
+            EndRed = 0.35,
+            EndGreen = 0.25,
+            EndBlue = 0.4999,
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "HydraTouchdownFx_Apollo",
+            InheritFrom = "HydraTouchdownFx_Zeus",
+            StartRed = 1.0,
+            StartGreen = 0.9,
+            StartBlue = 0.7,
+            EndRed = 0.999,
+            EndGreen = 0.85,
+            EndBlue = 0.05,
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "HydraTouchdownFx_Aphrodite",
+            InheritFrom = "HydraTouchdownFx_Zeus",
+            StartRed = 1.0,
+            StartGreen = 0.6,
+            StartBlue = 0.8,
+            EndRed = 0.99,
+            EndGreen = 0.05,
+            EndBlue = 0.99,
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "HydraTouchdownFx_Hephaestus",
+            InheritFrom = "HydraTouchdownFx_Zeus",
+            StartRed = 0.51,
+            StartGreen = 0.82,
+            StartBlue = 1.00,
+            EndRed = 1.00,
+            EndGreen = 0,
+            EndBlue = 0,
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "HydraTouchdownFx_Hestia",
+            InheritFrom = "HydraTouchdownFx_Zeus",
+            StartRed = 1.0,
+            StartGreen = 0.3,
+            StartBlue = 0.02,
+            EndRed = 0.999,
+            EndGreen = 0.15,
+            EndBlue = 0.0,
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "HydraTouchdownFx_Ares",
+            InheritFrom = "HydraTouchdownFx_Zeus",
+            StartRed = 1.0,
+            StartGreen = 0.04,
+            StartBlue = 0.001,
+            EndRed = 0.999,
+            EndGreen = 0.0,
+            EndBlue = 0.0,
+        })
+
+        table.insert(data.Animations,
+        {
+        Name = "KirbyCrusherTouchdownFx",
+        InheritFrom = "KirbyHydraTouchdownFx",
+        LocationZFromOwner = "Ignore",
+        ClearCreateAnimations = true,
+        ColorFromOwner = "Ignore",
+        CreateAnimations = {
+            { Name = "CrusherCrater" },
+            { Name = "HydraTouchdownImpactFx" },
+            { Name = "HydraTouchdownImpactFxDark" },
+            { Name = "QuickFlashEnemy" },
+        },
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "CrusherTouchdownFx_Zeus",
+            InheritFrom = "KirbyCrusherTouchdownFx",
+            Color = {},
+            ColorFromOwner = "Ignore",
+            AddColor = true,
+            StartRed = 1.0,
+            StartGreen = 0.95,
+            StartBlue = 0.7,
+            EndRed = 0.9999,
+            EndGreen = 0.8,
+            EndBlue = 0.5,
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "CrusherTouchdownFx_Hera",
+            InheritFrom = "CrusherTouchdownFx_Zeus",
+            StartRed = 0.0,
+            StartGreen = 1.0,
+            StartBlue = 0.1,
+            EndRed = 0.1,
+            EndGreen = 0.3,
+            EndBlue = 1.0,
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "CrusherTouchdownFx_Poseidon",
+            InheritFrom = "CrusherTouchdownFx_Zeus",
+            StartRed = 0.1,
+            StartGreen = 1.0,
+            StartBlue = 0.8,
+            EndRed = 0,
+            EndGreen = 0.6,
+            EndBlue = 1.0,
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "CrusherTouchdownFx_Demeter",
+            InheritFrom = "CrusherTouchdownFx_Zeus",
+            StartRed = 0.25,
+            StartGreen = 0.35,
+            StartBlue = 0.5,
+            EndRed = 0.35,
+            EndGreen = 0.25,
+            EndBlue = 0.4999,
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "CrusherTouchdownFx_Apollo",
+            InheritFrom = "CrusherTouchdownFx_Zeus",
+            StartRed = 1.0,
+            StartGreen = 0.9,
+            StartBlue = 0.7,
+            EndRed = 0.999,
+            EndGreen = 0.85,
+            EndBlue = 0.05,
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "CrusherTouchdownFx_Aphrodite",
+            InheritFrom = "CrusherTouchdownFx_Zeus",
+            StartRed = 1.0,
+            StartGreen = 0.6,
+            StartBlue = 0.8,
+            EndRed = 0.99,
+            EndGreen = 0.05,
+            EndBlue = 0.99,
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "CrusherTouchdownFx_Hephaestus",
+            InheritFrom = "CrusherTouchdownFx_Zeus",
+            StartRed = 0.51,
+            StartGreen = 0.82,
+            StartBlue = 1.00,
+            EndRed = 1.00,
+            EndGreen = 0,
+            EndBlue = 0,
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "CrusherTouchdownFx_Hestia",
+            InheritFrom = "CrusherTouchdownFx_Zeus",
+            StartRed = 1.0,
+            StartGreen = 0.3,
+            StartBlue = 0.02,
+            EndRed = 0.999,
+            EndGreen = 0.15,
+            EndBlue = 0.0,
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "CrusherTouchdownFx_Ares",
+            InheritFrom = "CrusherTouchdownFx_Zeus",
+            StartRed = 1.0,
+            StartGreen = 0.04,
+            StartBlue = 0.001,
+            EndRed = 0.999,
+            EndGreen = 0.0,
+            EndBlue = 0.0,
+        })
+
+
     end
 
 return data

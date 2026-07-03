@@ -165,7 +165,7 @@ OverwriteTableKeys( TraitData, {
 				ExcludeLinked = true,
 				ValidWeaponMultiplier =
 				{
-					BaseValue = 2,
+					BaseValue = 1.5,
 					SourceIsMultiplier = true,
 				},
 				ReportValues = { ReportedWeaponMultiplier = "ValidWeaponMultiplier"},
@@ -173,7 +173,7 @@ OverwriteTableKeys( TraitData, {
 			WeaponAmmoModification = 
 			{
 				Name = "WeaponLob",
-				ReduceMaxAmmo = { BaseValue = 19 },
+				ReduceMaxAmmo = { BaseValue = 9 },
 				ReportValues = { ReportedAmmoBonus = "ReduceMaxAmmo"},
 			},
 		},

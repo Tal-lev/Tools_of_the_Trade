@@ -840,6 +840,9 @@ function mod.CopyAbility (victim, functionArgs, triggerArgs)
 	elseif victim.Name == "BloodlessWaveFist" or victim.Name == "BloodlessWaveFist_Elite" or victim.Name =="HadesBloodlessWaveFist" or victim.Name == "HadesBloodlessWaveFist_Elite" then
 		Changed = "BloodlessWaveFist"
 		Location = "BiomeB"
+	elseif victim.Name == "SpreadShotUnit" or victim.Name == "SpreadShotUnit_Elite" or victim.Name =="HadesSpreadShotUnit" or victim.Name == "HadesSpreadShotUnit_Elite" then
+		Changed = "SpreadShotUnit"
+		Location = "BiomeB"
 	elseif victim.Name == "CorruptedShadeSmall" or victim.Name == "CorruptedShadeSmall_Elite" then
 		Changed = "CorruptedShadeSmall"
 		Location = "BiomeH"
@@ -1093,6 +1096,30 @@ function mod.CopyAbility (victim, functionArgs, triggerArgs)
 		elseif victim.Name == "Harpy3" then
 			Changed = "HarpythreeOne"
 			Location = "TartarusModsNikkelMHadesBiomes"
+		elseif victim.Name == "RangedBurrower" or victim.Name == "RangedBurrower_Elite" then
+			Changed = "RangedBurrower"
+			Location = "AsphodelModsNikkelMHadesBiomes"
+		elseif victim.Name == "CrusherUnit" or victim.Name == "CrusherUnit_Elite" then
+			Changed = "CrusherUnit"
+			Location = "AsphodelModsNikkelMHadesBiomes"
+		elseif victim.Name == "SpreadShotUnitMiniboss" then
+			Changed = "SpreadShotUnitMiniboss"
+			Location = "BiomeB"
+		elseif victim.Name == "HydraHeadDartmaker" or victim.Name == "HydraHeadImmortal" then
+			Changed = "HydraHeadDartmaker"
+			Location = "AsphodelModsNikkelMHadesBiomes"
+		elseif victim.Name == "HydraHeadLavamaker" or victim.Name == "HydraHeadImmortalLavamaker" then
+			Changed = "HydraHeadLavamaker"
+			Location = "BiomeN"
+		elseif victim.Name == "HydraHeadSlammer" or victim.Name == "HydraHeadImmortalSlammer" then
+			Changed = "HydraHeadSlammer"
+			Location = "AsphodelModsNikkelMHadesBiomes"
+		elseif victim.Name == "HydraHeadWavemaker" or victim.Name == "HydraHeadImmortalWavemaker" then
+			Changed = "HydraHeadWavemaker"
+			Location = "AsphodelModsNikkelMHadesBiomes"
+		elseif victim.Name == "HydraHeadSummoner" or victim.Name == "HydraHeadImmortalSummoner" then
+			Changed = "HydraHeadSummoner"
+			Location = "AsphodelModsNikkelMHadesBiomes"
 		end
 	end
 	if Changed ~= "null" then
@@ -1109,6 +1136,7 @@ function mod.CopyAbility (victim, functionArgs, triggerArgs)
 		trait.Location = Location
 		wait(0.1)
 		AddTraitToHero({ TraitName = Changed .. "CopyDisplayBoon" })	
+		LoadPackages({Name = Location})
 		ResetAmmo( CurrentRun.Hero, GetWeaponData( CurrentRun.Hero, "WeaponLob" ))
 		CurrentRun.Hero.Ammo.WeaponLob = GetMaxAmmo("WeaponLob")
 		thread( UpdateAmmoUI )

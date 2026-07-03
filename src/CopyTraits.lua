@@ -5,6 +5,7 @@ local BiomeQScaling = 0.6
 local BiomeCScaling = 0.7
 
 local BiomeAScaling = 1
+local BiomeBScaling = 1
 
 local ZagreusJourney = rom.mods['NikkelM-Zagreus_Journey']
 
@@ -1773,6 +1774,60 @@ OverwriteTableKeys( TraitData, {
 		{
 			DisplayType = "RoomValue",
 			Key = "Copy_BloodlessWaveFist2",
+			Text = "Copy_2nd"
+		},
+	},
+
+	SpreadShotUnitCopyDisplayBoon = 
+	{
+		Icon = "JarlUlsfark-Tools_of_the_Trade\\SpreadShotUnitIcon",
+		ShowInHUD = true,
+		CustomLabel = 
+		{
+			DisplayType = "RoomValue",
+			Key = "Copy_SpreadShotUnit",
+			Text = "Copy_EmptyText"
+		},
+        PropertyChanges = 
+        {
+           {
+				WeaponName = "WeaponLob",
+				WeaponProperty = "Projectile",
+				ChangeValue = "SpreadShotBolt",
+			},
+            {
+				WeaponName = "WeaponLob",
+				WeaponProperties = 
+                {
+					Cooldown = 1.5,
+					AutoLock = false,
+					BarrelLength = 0,
+					NumProjectiles = 5,
+					ProjectileAngleInterval = 30,
+                },
+                ExcludeLinked = true,
+			},
+            {
+                WeaponName = "WeaponLob",
+                ProjectileName = "SpreadShotBolt",
+                ProjectileProperties = 
+				{
+					Damage = 50,
+				},
+				ExcludeLinked = true,
+            },
+        },
+		FlavorText = "CopyAbility_FlavorText",
+	},
+
+	SpreadShotUnitCopyTwoDisplayBoon = 
+	{
+		Icon = "JarlUlsfark-Tools_of_the_Trade\\SpreadShotUnitIcon",
+		ShowInHUD = true,
+		CustomLabel = 
+		{
+			DisplayType = "RoomValue",
+			Key = "Copy_SpreadShotUnit2",
 			Text = "Copy_2nd"
 		},
 	},
@@ -6557,5 +6612,440 @@ if ZagreusJourney then
 			},
 		},
 		
+		RangedBurrowerCopyDisplayBoon = 
+		{
+			Icon = "JarlUlsfark-Tools_of_the_Trade_ZJcompat\\RangedBurrowerIcon",
+			ShowInHUD = true,
+			CustomLabel = 
+			{
+				DisplayType = "RoomValue",
+				Key = "Copy_RangedBurrower",
+				Text = "Copy_EmptyText"
+			},
+			PropertyChanges = 
+			{
+			{
+					WeaponName = "WeaponLob",
+					WeaponProperty = "Projectile",
+					ChangeValue = "HydraDart",
+				},
+				{
+					WeaponName = "WeaponLob",
+					WeaponProperties = 
+					{
+						Cooldown = 0.75,
+						FizzleOldSpawns = false,
+					},
+					ExcludeLinked = true,
+				},
+				{
+					WeaponName = "WeaponLob",
+					ProjectileName = "HydraDart",
+					ProjectileProperties = 
+					{
+						Damage = (70 * BiomeBScaling),
+					},
+					ExcludeLinked = true,
+				},
+				{
+				WeaponName = "WeaponLob",
+				WeaponProperty = "ProjectileScaleMultiplier",
+				ChangeValue = 0.7,
+				ChangeType = "Multiply",
+			},	
+			},
+			FlavorText = "CopyAbility_FlavorText",
+		},
+
+		RangedBurrowerCopyTwoDisplayBoon = 
+		{
+			Icon = "JarlUlsfark-Tools_of_the_Trade_ZJcompat\\RangedBurrowerIcon",
+			ShowInHUD = true,
+			CustomLabel = 
+			{
+				DisplayType = "RoomValue",
+				Key = "Copy_RangedBurrower2",
+				Text = "Copy_2nd"
+			},
+		},
+		
+		CrusherUnitCopyDisplayBoon = 
+		{
+			Icon = "JarlUlsfark-Tools_of_the_Trade_ZJcompat\\CrusherUnitIcon",
+			ShowInHUD = true,
+			CustomLabel = 
+			{
+				DisplayType = "RoomValue",
+				Key = "Copy_CrusherUnit",
+				Text = "Copy_EmptyText"
+			},
+			PropertyChanges = 
+			{
+			{
+					WeaponName = "WeaponLob",
+					WeaponProperty = "Projectile",
+					ChangeValue = "CrusherUnitTouchdown",
+				},
+				{
+					WeaponName = "WeaponLob",
+					WeaponProperties = 
+					{
+						Cooldown = 1,
+						FizzleOldSpawns = true,
+					},
+					ExcludeLinked = true,
+				},
+				{
+					WeaponName = "WeaponLob",
+					ProjectileName = "CrusherUnitTouchdown",
+					ProjectileProperties = 
+					{
+						Damage = (120 * BiomeBScaling),
+					},
+					ExcludeLinked = true,
+				},
+			},
+			FlavorText = "CopyAbility_FlavorText",
+		},
+
+		CrusherUnitCopyTwoDisplayBoon = 
+		{
+			Icon = "JarlUlsfark-Tools_of_the_Trade_ZJcompat\\CrusherUnitIcon",
+			ShowInHUD = true,
+			CustomLabel = 
+			{
+				DisplayType = "RoomValue",
+				Key = "Copy_CrusherUnit2",
+				Text = "Copy_2nd"
+			},
+		},
+
+		SpreadShotUnitMinibossCopyDisplayBoon = 
+		{
+			Icon = "JarlUlsfark-Tools_of_the_Trade_ZJcompat\\SpreadShotUnitMinibossIcon",
+			ShowInHUD = true,
+			CustomLabel = 
+			{
+				DisplayType = "RoomValue",
+				Key = "Copy_SpreadShotUnitMiniboss",
+				Text = "Copy_EmptyText"
+			},
+			PropertyChanges = 
+			{
+			{
+					WeaponName = "WeaponLob",
+					WeaponProperty = "Projectile",
+					ChangeValue = "LightRangedWeapon",
+				},
+				{
+					WeaponName = "WeaponLob",
+					WeaponProperties = 
+					{
+						Cooldown = 2,
+						AutoLock = false,
+						BarrelLength = 0,
+						NumProjectiles = 30,
+						ProjectileInterval = 0.1,
+						ProjectileIntervalStart = 0.1,
+						ProjectileAngleOffset = math.rad(70),
+					},
+					ExcludeLinked = true,
+				},
+				{
+					WeaponName = "WeaponLob",
+					ProjectileName = "LightRangedWeapon",
+					ProjectileProperties = 
+					{
+						Damage = 50,
+					},
+					ExcludeLinked = true,
+				},
+			},
+			FlavorText = "CopyAbility_FlavorText",
+		},
+
+		SpreadShotUnitMinibossTwoDisplayBoon = 
+		{
+			Icon = "JarlUlsfark-Tools_of_the_Trade_ZJcompat\\SpreadShotUnitMinibossIcon",
+			ShowInHUD = true,
+			CustomLabel = 
+			{
+				DisplayType = "RoomValue",
+				Key = "Copy_SpreadShotUnitMiniboss2",
+				Text = "Copy_2nd"
+			},
+		},
+
+		HydraHeadDartmakerCopyDisplayBoon = 
+		{
+			Icon = "JarlUlsfark-Tools_of_the_Trade_ZJcompat\\HydraHeadDartmakerIcon",
+			ShowInHUD = true,
+			CustomLabel = 
+			{
+				DisplayType = "RoomValue",
+				Key = "Copy_HydraHeadDartmaker",
+				Text = "Copy_EmptyText"
+			},
+			PropertyChanges = 
+			{
+			{
+					WeaponName = "WeaponLob",
+					WeaponProperty = "Projectile",
+					ChangeValue = "HydraDart",
+				},
+				{
+					WeaponName = "WeaponLob",
+					WeaponProperties = 
+					{
+						Cooldown = 2,
+						FizzleOldSpawns = false,
+						NumProjectiles = 5,
+						ProjectileInterval = 0.6,
+						ProjectileIntervalStart = 0.6,
+						ProjectileAngleOffset = math.rad(0),
+					},
+					ExcludeLinked = true,
+				},
+				{
+					WeaponName = "WeaponLob",
+					ProjectileName = "HydraDart",
+					ProjectileProperties = 
+					{
+						Damage = (70 * BiomeBScaling),
+					},
+					ExcludeLinked = true,
+				},
+			},
+			FlavorText = "CopyAbility_FlavorText",
+		},
+
+		HydraHeadDartmakerCopyTwoDisplayBoon = 
+		{
+			Icon = "JarlUlsfark-Tools_of_the_Trade_ZJcompat\\HydraHeadDartmakerIcon",
+			ShowInHUD = true,
+			CustomLabel = 
+			{
+				DisplayType = "RoomValue",
+				Key = "Copy_HydraHeadDartmaker2",
+				Text = "Copy_2nd"
+			},
+		},
+
+		HydraHeadLavamakerCopyDisplayBoon = 
+		{
+			Icon = "JarlUlsfark-Tools_of_the_Trade_ZJcompat\\HydraHeadLavamakerIcon",
+			ShowInHUD = true,
+			CustomLabel = 
+			{
+				DisplayType = "RoomValue",
+				Key = "Copy_HydraHeadLavamaker",
+				Text = "Copy_EmptyText"
+			},
+			PropertyChanges = 
+			{
+			{
+					WeaponName = "WeaponLob",
+					WeaponProperty = "Projectile",
+					ChangeValue = "HydraLavaSpit",
+				},
+				{
+					WeaponName = "WeaponLob",
+					WeaponProperties = 
+					{
+						Cooldown = 2.5,
+						FizzleOldSpawns = false,
+						NumProjectiles = 4,
+						ProjectileInterval = 0.2,
+						ProjectileIntervalStart = 0.1,
+						ProjectileAngleOffset = math.rad(0),
+						WeaponRange = 1000,
+					},
+					ExcludeLinked = true,
+				},
+				{
+					WeaponName = "WeaponLob",
+					ProjectileName = "HydraLavaSpit",
+					ProjectileProperties = 
+					{
+						Damage = (50 * BiomeBScaling),
+					},
+					ExcludeLinked = true,
+				},
+			},
+			FlavorText = "CopyAbility_FlavorText",
+		},
+
+		HydraHeadLavamakerCopyTwoDisplayBoon = 
+		{
+			Icon = "JarlUlsfark-Tools_of_the_Trade_ZJcompat\\HydraHeadLavamakerIcon",
+			ShowInHUD = true,
+			CustomLabel = 
+			{
+				DisplayType = "RoomValue",
+				Key = "Copy_HydraHeadLavamaker2",
+				Text = "Copy_2nd"
+			},
+		},
+
+		HydraHeadSummonerCopyDisplayBoon = 
+		{
+			Icon = "JarlUlsfark-Tools_of_the_Trade_ZJcompat\\HydraHeadSummonerIcon",
+			ShowInHUD = true,
+			CustomLabel = 
+			{
+				DisplayType = "RoomValue",
+				Key = "Copy_HydraHeadSummoner",
+				Text = "Copy_EmptyText"
+			},
+			PropertyChanges = 
+			{
+			{
+					WeaponName = "WeaponLob",
+					WeaponProperty = "Projectile",
+					ChangeValue = "HydraSummonplayer",
+				},
+				{
+					WeaponName = "WeaponLob",
+					WeaponProperties = 
+					{
+						Cooldown = 2.5,
+						FizzleOldSpawns = false,
+						NumProjectiles = 2,
+						ProjectileIntervalStart = 0.3,
+						ProjectileInterval = 0.3,
+						ProjectileAngleOffset = math.rad(30),
+					},
+					ExcludeLinked = true,
+				},
+				{
+					WeaponName = "WeaponLob",
+					ProjectileName = "HydraSummonplayer",
+					ProjectileProperties = 
+					{
+						Damage = (0 * BiomeBScaling),
+					},
+					ExcludeLinked = true,
+				},
+			},
+			FlavorText = "CopyAbility_FlavorText",
+		},
+
+		HydraHeadSummonerCopyTwoDisplayBoon = 
+		{
+			Icon = "JarlUlsfark-Tools_of_the_Trade_ZJcompat\\HydraHeadSummonerIcon",
+			ShowInHUD = true,
+			CustomLabel = 
+			{
+				DisplayType = "RoomValue",
+				Key = "Copy_HydraHeadSummoner2",
+				Text = "Copy_2nd"
+			},
+		},
+
+		HydraHeadWavemakerCopyDisplayBoon = 
+		{
+			Icon = "JarlUlsfark-Tools_of_the_Trade_ZJcompat\\HydraHeadWavemakerIcon",
+			ShowInHUD = true,
+			CustomLabel = 
+			{
+				DisplayType = "RoomValue",
+				Key = "Copy_HydraHeadWavemaker",
+				Text = "Copy_EmptyText"
+			},
+			PropertyChanges = 
+			{
+			{
+					WeaponName = "WeaponLob",
+					WeaponProperty = "Projectile",
+					ChangeValue = "BloodlessWaveFistWeapon",
+				},
+				{
+					WeaponName = "WeaponLob",
+					WeaponProperties = 
+					{
+						Cooldown = 2,
+						FizzleOldSpawns = false,
+						NumProjectiles = 3,
+						ProjectileInterval = 0,
+						ProjectileIntervalStart = 0,
+						ProjectileAngleOffset = math.rad(15),
+					},
+					ExcludeLinked = true,
+				},
+				{
+					WeaponName = "WeaponLob",
+					ProjectileName = "BloodlessWaveFistWeapon",
+					ProjectileProperties = 
+					{
+						Damage = (110 * BiomeBScaling),
+					},
+					ExcludeLinked = true,
+				},
+			},
+			FlavorText = "CopyAbility_FlavorText",
+		},
+
+		HydraHeadWavemakerCopyTwoDisplayBoon = 
+		{
+			Icon = "JarlUlsfark-Tools_of_the_Trade_ZJcompat\\HydraHeadWavemakerIcon",
+			ShowInHUD = true,
+			CustomLabel = 
+			{
+				DisplayType = "RoomValue",
+				Key = "Copy_HydraHeadWavemaker2",
+				Text = "Copy_2nd"
+			},
+		},
+
+		HydraHeadSlammerCopyDisplayBoon = 
+		{
+			Icon = "JarlUlsfark-Tools_of_the_Trade_ZJcompat\\HydraHeadSlammerIcon",
+			ShowInHUD = true,
+			CustomLabel = 
+			{
+				DisplayType = "RoomValue",
+				Key = "Copy_HydraHeadSlammer",
+				Text = "Copy_EmptyText"
+			},
+			PropertyChanges = 
+			{
+			{
+					WeaponName = "WeaponLob",
+					WeaponProperty = "Projectile",
+					ChangeValue = "HydraTouchdown",
+				},
+				{
+					WeaponName = "WeaponLob",
+					WeaponProperties = 
+					{
+						Cooldown = 1,
+						FizzleOldSpawns = true,
+					},
+					ExcludeLinked = true,
+				},
+				{
+					WeaponName = "WeaponLob",
+					ProjectileName = "HydraTouchdown",
+					ProjectileProperties = 
+					{
+						Damage = (160 * BiomeBScaling),
+					},
+					ExcludeLinked = true,
+				},
+			},
+			FlavorText = "CopyAbility_FlavorText",
+		},
+
+		HydraHeadSlammerCopyTwoDisplayBoon = 
+		{
+			Icon = "JarlUlsfark-Tools_of_the_Trade_ZJcompat\\HydraHeadSlammerIcon",
+			ShowInHUD = true,
+			CustomLabel = 
+			{
+				DisplayType = "RoomValue",
+				Key = "Copy_HydraHeadSlammer2",
+				Text = "Copy_2nd"
+			},
+		},
 	})
 end

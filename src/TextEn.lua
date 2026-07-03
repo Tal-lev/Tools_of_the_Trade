@@ -152,7 +152,7 @@ sjson.hook(file, function(data)
 		Id = "TabletKirbyDoubleAmmoTrait",
 		InheritFrom = "BaseBoonMultiline",
 		DisplayName = "Extended Reflection",
-		Description = "Your {$Keywords.Attack} have {#UpgradeFormat}double {#Prev}{$Keywords.Ammo}.",
+		Description = "Your {$Keywords.Attack} have {#UpgradeFormat}double {#Prev}{$Keywords.AmmoSupply}.",
 	},
 	TextOrder)
 	)
@@ -162,7 +162,7 @@ sjson.hook(file, function(data)
 		Id = "TabletKirbyMegaAmmoTrait",
 		InheritFrom = "BaseBoonMultiline",
 		DisplayName = "Fractured Reflection",
-		Description = "Your {$Keywords.Attack} deals {#UpgradeFormat}+100% {#Prev}damage but always {#UpgradeFormat}copies the last enemy hit{#Prev}.",
+		Description = "Your {$Keywords.Attack} deals {#UpgradeFormat}+50% {#Prev}damage but always {#UpgradeFormat}copies the last enemy hit{#Prev}.",
 	},
 	TextOrder)
 	)
@@ -532,7 +532,17 @@ sjson.hook(file, function(data)
 			Description = "Your Attack fires a{#UpgradeFormat}Wave Projectile{#Prev}.",
 		},
 		TextOrder)
-		)
+	)
+
+	table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "SpreadShotUnitCopyDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Copy: Spreader",
+			Description = "Your Attack fires {#UpgradeFormat}5 Projectiles{#Prev} in a {#UpgradeFormat}Fan Formation{#Prev}.",
+		},
+		TextOrder)
+	)
 
 	table.insert(data.Texts, sjson.to_object(
 		{
@@ -1332,6 +1342,86 @@ sjson.hook(file, function(data)
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: Tisiphone Hell-Fire Pillar",
 			Description = "Your Attack fires a {#UpgradeFormat}Hell-Fire Pillar{#Prev}.",
+		},
+		TextOrder)
+		)
+
+		table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "RangedBurrowerCopyDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Copy: Dracon",
+			Description = "Your Attack fires a {#UpgradeFormat}Homing Darts{#Prev}.",
+		},
+		TextOrder)
+		)
+
+		table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "CrusherUnitCopyDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Copy: Skull-Crusher",
+			Description = "Your Attack {#UpgradeFormat}Slams Down {#Prev}.",
+		},
+		TextOrder)
+		)
+
+		table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "SpreadShotUnitMinibossCopyDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Copy: Dire Spreader",
+			Description = "Your Attack fires a {#UpgradeFormat}Projectile Barrage {#Prev}in all directions.",
+		},
+		TextOrder)
+		)
+
+		table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "HydraHeadDartmakerCopyDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Copy: Hydra Darts",
+			Description = "Your Attack fires {#UpgradeFormat}5 Consecutive Homing Darts{#Prev}.",
+		},
+		TextOrder)
+		)
+
+		table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "HydraHeadLavamakerCopyDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Copy: Hydra Lava",
+			Description = "Your Attack fires {#UpgradeFormat}4 Orbs {#Prev}that leave {#UpgradeFormat}Lava {#Prev}in their wake.",
+		},
+		TextOrder)
+		)
+
+		table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "HydraHeadSummonerCopyDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Copy: Hydra Summon",
+			Description = "Your Attack fires {#UpgradeFormat}2 Teeth {#Prev}that {#UpgradeFormat}Spawn Bloodless{#Prev}.",
+		},
+		TextOrder)
+		)
+
+		table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "HydraHeadSummonerCopyDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Copy: Hydra Wave",
+			Description = "Your Attack fires {#UpgradeFormat}3 Wave Projectile Side by Side{#Prev}.",
+		},
+		TextOrder)
+		)
+
+		table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "HydraHeadSlammerCopyDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Copy: Hydra Slam",
+			Description = "Your Attack {#UpgradeFormat}Slams Down {#Prev}in a large area.",
 		},
 		TextOrder)
 		)
