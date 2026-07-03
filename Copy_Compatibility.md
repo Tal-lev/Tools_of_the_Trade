@@ -142,6 +142,7 @@
 - Wretched Thug
 - Wretched Witch
 - Brimstone
+- Doomstone
 - Wretched Sneak
 - Megaera
   - Whip-Fury
@@ -149,3 +150,11 @@
   - Saw-Shot
 - Tisiphone
   - Hell-Fire Pillar
+
+### Asphodel
+
+- Bloodless
+- Inferno-Bomber
+- Slam-Dancer
+- Burn-Flinger
+- Wave-Maker
