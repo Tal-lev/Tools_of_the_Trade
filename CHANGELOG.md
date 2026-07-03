@@ -7,9 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-- Balance Reducing KirbyMel Max Ammo to 10
-- Balance Mage-copy now fires 3 projectiles and has longer cooldown instead of having a clip size of 3
-- 16 Implemented ZJ enemies for copy.
+- 22 Implemented ZJ enemies for copy.
   - HadesSwarmer
   - LightSpawner
   - PunchingBagUnit
@@ -26,12 +24,24 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - BloodlessSelfDestruct
   - BloodlessPitcher
   - BloodlessWaveFist
-  - 
+  - SpreadShotUnit
+  - RangedBurrower
+  - HydraHeadDartmaker
+  - HydraHeadLavamaker
+  - HydraHeadWavemaker
+  - HydraHeadSummoner
 - 4 Minor Prophecies added
   - Clear with both tools
   - Get the 7 new hammers
   - Get All Copy Abilities in Underworld route
   - Get All Copy Abilities in Surface route
+- Balance Changes
+  - KirbyMel Max Ammo to 20 -> 10
+  - Mage-copy
+    - projectiles 1 -> 3
+    - cooldown 0.1s -> 1.2s
+    - ClipSize removed
+  - Balance Explosive Reflection Hammer damage +100% -> 50%
 
 ## [0.3.1] - 2026-07-01
 
