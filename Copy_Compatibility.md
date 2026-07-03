@@ -160,6 +160,8 @@
 - Wave-Maker
 - Spreader
 - Dracon
+- Skull-Crusher
+- Dire Spreader
 - Hydra
   - Darts
   - Lava
