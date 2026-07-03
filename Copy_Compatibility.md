@@ -165,3 +165,4 @@
   - Lava
   - Summons
   - Waves
+  - Slam
