@@ -49,6 +49,7 @@ While the mod has been tested decently well it is recommended to backup your sav
 ## Credits
 
 - @zerp on discord for posing all enemies without codex entries
+- @NikkelM on discord for posing all H1 enemies and creating ZagreusJourney
 
 ## Issues
 
