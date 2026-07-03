@@ -158,3 +158,10 @@
 - Slam-Dancer
 - Burn-Flinger
 - Wave-Maker
+- Spreader
+- Dracon
+- Hydra
+  - Darts
+  - Lava
+  - Summons
+  - Waves
