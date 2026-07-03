@@ -7,7 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-- 22 Implemented ZJ enemies for copy.
+- 25 Implemented ZJ enemies for copy.
   - HadesSwarmer
   - LightSpawner
   - PunchingBagUnit
@@ -26,10 +26,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - BloodlessWaveFist
   - SpreadShotUnit
   - RangedBurrower
+  - CrusherUnit
+  - SpreadShotUnitMiniboss
   - HydraHeadDartmaker
   - HydraHeadLavamaker
   - HydraHeadWavemaker
   - HydraHeadSummoner
+  - HydraHeadSlammer
 - 4 Minor Prophecies added
   - Clear with both tools
   - Get the 7 new hammers
