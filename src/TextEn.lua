@@ -1248,6 +1248,16 @@ sjson.hook(file, function(data)
 
 		table.insert(data.Texts, sjson.to_object(
 		{
+			Id = "HeavyRangedSplitterMinibossCopyDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Copy: Doomstone",
+			Description = "Your Attack fires {#UpgradeFormat}8 Non-Rotating Beams{#Prev}.",
+		},
+		TextOrder)
+		)
+
+		table.insert(data.Texts, sjson.to_object(
+		{
 			Id = "HarpyOneCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: Megaera Whip-Fury",
@@ -1262,6 +1272,16 @@ sjson.hook(file, function(data)
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: Alecto Saw-Shot",
 			Description = "Your Attack fires a{#UpgradeFormat}Spinning Saw{#Prev}.",
+		},
+		TextOrder)
+		)
+
+		table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "HarpythreeOneCopyDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Copy: Tisiphone Hell-Fire Pillar",
+			Description = "Your Attack fires a {#UpgradeFormat}Hell-Fire Pillar{#Prev}.",
 		},
 		TextOrder)
 		)

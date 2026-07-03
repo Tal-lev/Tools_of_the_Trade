@@ -1207,6 +1207,15 @@ if ZagreusJourney then
 				ChangeType = "Absolute",
 				ExcludeLinked = true,
 			},
+			--HeavyRangedSplitterMiniboss
+			{
+				WeaponName = "WeaponLob",
+				ProjectileName = "HeavyRangedWeaponSplitter",
+				ProjectileProperty = "Graphic",
+				ValuePrefix = "EnemyLaserPreview_",
+				ChangeType = "Absolute",
+				ExcludeLinked = true,
+			},
 			--HeavyMelee
 			{
 				WeaponName = "WeaponLob",
@@ -1248,6 +1257,15 @@ if ZagreusJourney then
 				ProjectileName = "HarpyWhipShot",
 				ProjectileProperty = "Graphic",
 				ValuePrefix = "FuryAlectoThrow_",
+				ChangeType = "Absolute",
+				ExcludeLinked = true,
+			},
+			--Harpy3 Tisiphone
+			{
+				WeaponName = "WeaponLob",
+				ProjectileName = "HarpyLightningTisiphone",
+				ProjectileProperty = "DetonateFx",
+				ValuePrefix = "FuryHellfire_",
 				ChangeType = "Absolute",
 				ExcludeLinked = true,
 			},

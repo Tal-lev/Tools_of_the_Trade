@@ -1067,11 +1067,17 @@ function mod.CopyAbility (victim, functionArgs, triggerArgs)
 		elseif victim.Name == "WretchAssassinMiniboss" then
 			Changed = "WretchAssassinMiniboss"
 			Location = "TartarusModsNikkelMHadesBiomes"
+		elseif victim.Name == "HeavyRangedSplitterMiniboss" then
+			Changed = "HeavyRangedSplitterMiniboss"
+			Location = "TartarusModsNikkelMHadesBiomes"
 		elseif victim.Name == "Harpy" then
 			Changed = "HarpyOne"
 			Location = "TartarusModsNikkelMHadesBiomes"
 		elseif victim.Name == "Harpy2" then
 			Changed = "HarpytwoOne"
+			Location = "TartarusModsNikkelMHadesBiomes"
+		elseif victim.Name == "Harpy3" then
+			Changed = "HarpythreeOne"
 			Location = "TartarusModsNikkelMHadesBiomes"
 		end
 	end

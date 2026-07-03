@@ -190,12 +190,17 @@ OverwriteTableKeys( TraitData, {
 				WeaponName = "WeaponLob",
 				WeaponProperties = 
                 {
-                    Cooldown = 0.1,
+                    Cooldown = 1.2,
                     BarrelLength = 55,
-                    ClipSize = 3,
-                    ClipRegenInterval = 1.2,
-                    ClipReload = 1.2,
+                    --ClipSize = 3,
+                    --ClipRegenInterval = 1.2,
+                    --ClipReload = 1.2,
 		            ChargeSoundFadeTime = 0.25,
+					NumProjectiles = 3,
+					ProjectileInterval = 0.2,
+					ProjectileIntervalStart = 0.1,
+					ProjectileAngleOffset = math.rad(0),
+
                 },
                 ExcludeLinked = true,
 			},
@@ -6012,6 +6017,63 @@ if ZagreusJourney then
 			},
 		},
 
+		HeavyRangedSplitterMinibossCopyDisplayBoon = 
+		{
+			Icon = "JarlUlsfark-Tools_of_the_Trade_ZJcompat\\HeavyRangedSplitterMinibossIcon",
+			ShowInHUD = true,
+			CustomLabel = 
+			{
+				DisplayType = "RoomValue",
+				Key = "Copy_HeavyRangedSplitterMiniboss",
+				Text = "Copy_EmptyText"
+			},
+			PropertyChanges = 
+			{
+			{
+					WeaponName = "WeaponLob",
+					WeaponProperty = "Projectile",
+					ChangeValue = "HeavyRangedWeaponSplitter",
+				},
+				{
+					WeaponName = "WeaponLob",
+					WeaponProperties = 
+					{
+						Cooldown = 3,
+						FizzleOldSpawns = false,
+						BarrelLength = 0,
+						AutoLock = true,
+						AutoLockRange = 400,
+						AutoLockArcDistance = 90,
+						NumProjectiles = 8,
+						ProjectileAngleOffset = math.rad(45),
+					},
+					ExcludeLinked = true,
+				},
+				{
+					WeaponName = "WeaponLob",
+					ProjectileName = "HeavyRangedWeaponSplitter",
+					ProjectileProperties = 
+					{
+						Damage = (15 * BiomeAScaling),
+					},
+					ExcludeLinked = true,
+				},
+			},
+			FlavorText = "CopyAbility_FlavorText",
+		},
+
+		HeavyRangedSplitterMinibossCopyTwoDisplayBoon = 
+		{
+			Icon = "JarlUlsfark-Tools_of_the_Trade_ZJcompat\\HeavyRangedSplitterMinibossIcon",
+			ShowInHUD = true,
+			CustomLabel = 
+			{
+				DisplayType = "RoomValue",
+				Key = "Copy_HeavyRangedSplitterMiniboss2",
+				Text = "Copy_2nd"
+			},
+		},
+
 		WretchAssassinMinibossCopyDisplayBoon = 
 		{
 			Icon = "JarlUlsfark-Tools_of_the_Trade_ZJcompat\\WretchAssassinMinibossIcon",
@@ -6172,5 +6234,55 @@ if ZagreusJourney then
 			},
 		},
 
+		HarpythreeOneCopyDisplayBoon = 
+		{
+			Icon = "JarlUlsfark-Tools_of_the_Trade_ZJcompat\\Harpy3Icon",
+			ShowInHUD = true,
+			CustomLabel = 
+			{
+				DisplayType = "RoomValue",
+				Key = "Copy_Harpythree",
+				Text = "Copy_EmptyText"
+			},
+			PropertyChanges = 
+			{
+			{
+					WeaponName = "WeaponLob",
+					WeaponProperty = "Projectile",
+					ChangeValue = "HarpyLightningTisiphone",
+				},
+				{
+					WeaponName = "WeaponLob",
+					WeaponProperties = 
+					{
+						Cooldown = 0.8,
+						FizzleOldSpawns = false,
+					},
+					ExcludeLinked = true,
+				},
+				{
+					WeaponName = "WeaponLob",
+					ProjectileName = "HarpyLightningTisiphone",
+					ProjectileProperties = 
+					{
+						Damage = (90 * BiomeAScaling),
+					},
+					ExcludeLinked = true,
+				},
+			},
+			FlavorText = "CopyAbility_FlavorText",
+		},
+
+		HarpythreeOneCopyTwoDisplayBoon = 
+		{
+			Icon = "JarlUlsfark-Tools_of_the_Trade_ZJcompat\\Harpy3Icon",
+			ShowInHUD = true,
+			CustomLabel = 
+			{
+				DisplayType = "RoomValue",
+				Key = "Copy_Harpythree2",
+				Text = "Copy_2nd"
+			},
+		},
 	})
 end

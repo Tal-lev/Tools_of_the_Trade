@@ -15766,7 +15766,169 @@ table.insert(data.Animations,
             EndGreen = 0.0,
             EndBlue = 0.0,
         })
+        
+        
+        table.insert(data.Animations,
+        {
+            Name = "KirbyFuryHellfire",
+            FilePath = "Fx\\FuryHellfire\\FuryHellfire",
+            GroupName = "Standing",
+            Type = "Book",
+            VisualFx = "FuryHellfireParticles",
+            AngleFromOwner = "Ignore",
+            Sound = "/SFX/Enemy Sounds/Megaera/MegaeraFlameBurst",
+            ColorFromOwner = "Ignore",
+            EndFrame = 52,
+            NumFrames = 52,
+            RandomPlaySpeedMax = 75.0,
+            RandomPlaySpeedMin = 45.0,
+            StartFrame = 1,
+            RandomFlipHorizontal = true,
+            OriginX = 240.0,
+            OriginY = 510.0,
+            SortMode = "Id",
+            ScaleFromOwner = "Ignore",
+            ScaleMax = 1.1,
+            ScaleMin = 0.9,
+            Ambient = 0.0,
+            VisualFxCap = 12,
+            VisualFxIntervalMax = 0.1,
+            VisualFxIntervalMin = 0.02,
+            VisualFx = "null",
+            AddColor = true,
+            EndBlue = 0.2,
+            EndGreen = 0.8,
+            StartBlue = 0.8,
+            StartGreen = 1.0,
+            StartRed = 0.2,
+            EaseIn = 0.5,
+            EaseOut = 0.6,
+            EndScaleX = 0.2,
+            EndScaleY = 1.5,
+            StartScaleX = 0.6,
+            Hue = 0.5,
+            CreateAnimations = {
+                { Name = "QuickFlashGreenLarge" },
+                { Name = "RadialNovaTisiphone" },
+                { Name = "FuryDustRingFrontTisiphone" },
+                { Name = "FuryDustRingBackTisiphone" },
+                { Name = "FuryTisiphoneGhosts" },
+                { Name = "RadialNovaEnemyDark" },
+                { Name = "BatMaybeGhost" },
+            },
+        })
+        
+        table.insert(data.Animations,
+        {
+            Name = "FuryHellfire_Zeus",
+            InheritFrom = "KirbyFuryHellfire",
+            Color = {},
+            ColorFromOwner = "Ignore",
+            AddColor = true,
+            StartRed = 1.0,
+            StartGreen = 0.95,
+            StartBlue = 0.7,
+            EndRed = 0.9999,
+            EndGreen = 0.8,
+            EndBlue = 0.5,
+        })
 
+        table.insert(data.Animations,
+        {
+            Name = "FuryHellfire_Hera",
+            InheritFrom = "FuryHellfire_Zeus",
+            StartRed = 0.0,
+            StartGreen = 1.0,
+            StartBlue = 0.1,
+            EndRed = 0.1,
+            EndGreen = 0.3,
+            EndBlue = 1.0,
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "FuryHellfire_Poseidon",
+            InheritFrom = "FuryHellfire_Zeus",
+            StartRed = 0.1,
+            StartGreen = 1.0,
+            StartBlue = 0.8,
+            EndRed = 0,
+            EndGreen = 0.6,
+            EndBlue = 1.0,
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "FuryHellfire_Demeter",
+            InheritFrom = "FuryHellfire_Zeus",
+            StartRed = 0.25,
+            StartGreen = 0.35,
+            StartBlue = 0.5,
+            EndRed = 0.35,
+            EndGreen = 0.25,
+            EndBlue = 0.4999,
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "FuryHellfire_Apollo",
+            InheritFrom = "FuryHellfire_Zeus",
+            StartRed = 1.0,
+            StartGreen = 0.9,
+            StartBlue = 0.7,
+            EndRed = 0.999,
+            EndGreen = 0.85,
+            EndBlue = 0.05,
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "FuryHellfire_Aphrodite",
+            InheritFrom = "FuryHellfire_Zeus",
+            StartRed = 1.0,
+            StartGreen = 0.6,
+            StartBlue = 0.8,
+            EndRed = 0.99,
+            EndGreen = 0.05,
+            EndBlue = 0.99,
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "FuryHellfire_Hephaestus",
+            InheritFrom = "FuryHellfire_Zeus",
+            StartRed = 0.51,
+            StartGreen = 0.82,
+            StartBlue = 1.00,
+            EndRed = 1.00,
+            EndGreen = 0,
+            EndBlue = 0,
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "FuryHellfire_Hestia",
+            InheritFrom = "FuryHellfire_Zeus",
+            StartRed = 1.0,
+            StartGreen = 0.3,
+            StartBlue = 0.02,
+            EndRed = 0.999,
+            EndGreen = 0.15,
+            EndBlue = 0.0,
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "FuryHellfire_Ares",
+            InheritFrom = "FuryHellfire_Zeus",
+            StartRed = 1.0,
+            StartGreen = 0.04,
+            StartBlue = 0.001,
+            EndRed = 0.999,
+            EndGreen = 0.0,
+            EndBlue = 0.0,
+        })
+        
     end
 
 return data
