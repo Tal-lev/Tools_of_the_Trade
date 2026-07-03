@@ -144,4 +144,8 @@
 - Brimstone
 - Wretched Sneak
 - Megaera
+  - Whip-Fury
 - Alecto
+  - Saw-Shot
+- Tisiphone
+  - Hell-Fire Pillar
