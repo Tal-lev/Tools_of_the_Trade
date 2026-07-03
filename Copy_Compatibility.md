@@ -151,7 +151,7 @@
 - Tisiphone
   - Hell-Fire Pillar
 
-### Asphodel
+### Asphodel (Unreleased)
 
 - Bloodless
 - Inferno-Bomber
