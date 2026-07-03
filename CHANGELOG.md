@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 - Balance Reducing KirbyMel Max Ammo to 10
+- Balance Mage-copy now fires 3 projectiles and has longer cooldown instead of having a clip size of 3
 - 9 Implemented ZJ enemies for copy.
   - HadesSwarmer
   - LightSpawner
