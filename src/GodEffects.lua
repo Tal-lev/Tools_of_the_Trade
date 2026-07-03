@@ -443,6 +443,58 @@ AddGodTraitProperty({
             ChangeType = "Absolute",
             ExcludeLinked = true,
         },
+		--BloodlessGrenadier
+		{
+            WeaponName = "WeaponLob",
+            ProjectileName = "BloodlessGrenadierRanged",
+            ProjectileProperty = "DetonateFx",
+            ValuePrefix = "GrenadeExplosion_",
+            ChangeType = "Absolute",
+            ExcludeLinked = true,
+        },
+		{
+            WeaponName = "WeaponLob",
+            ProjectileName = "BloodlessGrenadierRanged",
+            ProjectileProperty = "Graphic",
+            ValuePrefix = "Projectile_BloodlessGrenadier_",
+            ChangeType = "Absolute",
+            ExcludeLinked = true,
+        },
+		--BloodlessGrenadier
+		{
+            WeaponName = "WeaponLob",
+            ProjectileName = "BloodlessGrenadierDive",
+            ProjectileProperty = "DetonateFx",
+            ValuePrefix = "GrenadeExplosion_",
+            ChangeType = "Absolute",
+            ExcludeLinked = true,
+        },
+		--BloodlessPitcher
+		{
+            WeaponName = "WeaponLob",
+            ProjectileName = "BloodlessPitch",
+            ProjectileProperty = "DetonateFx",
+            ValuePrefix = "GrenadeExplosion_",
+            ChangeType = "Absolute",
+            ExcludeLinked = true,
+        },
+		{
+            WeaponName = "WeaponLob",
+            ProjectileName = "BloodlessPitch",
+            ProjectileProperty = "Graphic",
+            ValuePrefix = "Projectile_BloodlessGrenadierPitch_",
+            ChangeType = "Absolute",
+            ExcludeLinked = true,
+        },
+		--BloodlessWaveFist
+		{
+            WeaponName = "WeaponLob",
+            ProjectileName = "BloodlessWaveFistWeapon",
+            ProjectileProperty = "Graphic",
+            ValuePrefix = "WaveFistFx_",
+            ChangeType = "Absolute",
+            ExcludeLinked = true,
+        },
 		--Corrupted Shade small
 		{
             WeaponName = "WeaponLob",

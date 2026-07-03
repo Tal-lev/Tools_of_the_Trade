@@ -1505,6 +1505,278 @@ OverwriteTableKeys( TraitData, {
 		},
 	},
 
+	BloodlessNakedCopyDisplayBoon = 
+	{
+		Icon = "JarlUlsfark-Tools_of_the_Trade\\BloodlessNakedIcon",
+		ShowInHUD = true,
+		CustomLabel = 
+		{
+			DisplayType = "RoomValue",
+			Key = "Copy_BloodlessNaked",
+			Text = "Copy_EmptyText"
+		},
+        PropertyChanges = 
+        {
+           {
+				WeaponName = "WeaponLob",
+				WeaponProperty = "Projectile",
+				ChangeValue = "BloodlessMelee",
+			},
+            {
+				WeaponName = "WeaponLob",
+				WeaponProperties = 
+                {
+					Cooldown = 0.4,
+					BlockMoveInput = true,
+					CancelMovement = true,
+					FizzleOldSpawns = true,
+					AutoLock = true,
+					BarrelLength = 150,
+					AutoLockRange = 300,
+					SelfVelocity = 1200,
+                },
+                ExcludeLinked = true,
+			},
+            {
+                WeaponName = "WeaponLob",
+                ProjectileName = "BloodlessMelee",
+                ProjectileProperties = 
+				{
+					Damage = 90,
+				},
+				ExcludeLinked = true,
+            },
+        },
+		FlavorText = "CopyAbility_FlavorText",
+	},
+
+	BloodlessNakedCopyTwoDisplayBoon = 
+	{
+		Icon = "JarlUlsfark-Tools_of_the_Trade\\BloodlessNakedIcon",
+		ShowInHUD = true,
+		CustomLabel = 
+		{
+			DisplayType = "RoomValue",
+			Key = "Copy_BloodlessNaked2",
+			Text = "Copy_2nd"
+		},
+	},
+
+	BloodlessGrenadierCopyDisplayBoon = 
+	{
+		Icon = "JarlUlsfark-Tools_of_the_Trade\\BloodlessGrenadierIcon",
+		ShowInHUD = true,
+		CustomLabel = 
+		{
+			DisplayType = "RoomValue",
+			Key = "Copy_BloodlessGrenadier",
+			Text = "Copy_EmptyText"
+		},
+        PropertyChanges = 
+        {
+           {
+				WeaponName = "WeaponLob",
+				WeaponProperty = "Projectile",
+				ChangeValue = "BloodlessGrenadierRanged",
+			},
+            {
+				WeaponName = "WeaponLob",
+				WeaponProperties = 
+                {
+					Cooldown = 0.5,
+					AutoLock = true,
+					BarrelLength = 150,
+					AutoLockRange = 300,
+					AutoLockArcDistance = 40,
+                },
+                ExcludeLinked = true,
+			},
+            {
+                WeaponName = "WeaponLob",
+                ProjectileName = "BloodlessGrenadierRanged",
+                ProjectileProperties = 
+				{
+					Damage = 120,
+				},
+				ExcludeLinked = true,
+            },
+        },
+		FlavorText = "CopyAbility_FlavorText",
+	},
+
+	BloodlessGrenadierCopyTwoDisplayBoon = 
+	{
+		Icon = "JarlUlsfark-Tools_of_the_Trade\\BloodlessGrenadierIcon",
+		ShowInHUD = true,
+		CustomLabel = 
+		{
+			DisplayType = "RoomValue",
+			Key = "Copy_BloodlessGrenadier2",
+			Text = "Copy_2nd"
+		},
+	},
+
+	BloodlessSelfDestructCopyDisplayBoon = 
+	{
+		Icon = "JarlUlsfark-Tools_of_the_Trade\\BloodlessSelfDestructIcon",
+		ShowInHUD = true,
+		CustomLabel = 
+		{
+			DisplayType = "RoomValue",
+			Key = "Copy_BloodlessSelfDestruct",
+			Text = "Copy_EmptyText"
+		},
+        PropertyChanges = 
+        {
+           {
+				WeaponName = "WeaponLob",
+				WeaponProperty = "Projectile",
+				ChangeValue = "BloodlessGrenadierDive",
+			},
+            {
+				WeaponName = "WeaponLob",
+				WeaponProperties = 
+                {
+					Cooldown = 0.35,
+					AutoLock = false,
+					BarrelLength = 0,
+					WeaponRange = 0,
+                },
+                ExcludeLinked = true,
+			},
+            {
+                WeaponName = "WeaponLob",
+                ProjectileName = "BloodlessGrenadierDive",
+                ProjectileProperties = 
+				{
+					Damage = 140,
+				},
+				ExcludeLinked = true,
+            },
+        },
+		FlavorText = "CopyAbility_FlavorText",
+	},
+
+	BloodlessSelfDestructCopyTwoDisplayBoon = 
+	{
+		Icon = "JarlUlsfark-Tools_of_the_Trade\\BloodlessSelfDestructIcon",
+		ShowInHUD = true,
+		CustomLabel = 
+		{
+			DisplayType = "RoomValue",
+			Key = "Copy_BloodlessSelfDestruct2",
+			Text = "Copy_2nd"
+		},
+	},
+
+	BloodlessPitcherCopyDisplayBoon = 
+	{
+		Icon = "JarlUlsfark-Tools_of_the_Trade\\BloodlessPitcherIcon",
+		ShowInHUD = true,
+		CustomLabel = 
+		{
+			DisplayType = "RoomValue",
+			Key = "Copy_BloodlessPitcher",
+			Text = "Copy_EmptyText"
+		},
+        PropertyChanges = 
+        {
+           {
+				WeaponName = "WeaponLob",
+				WeaponProperty = "Projectile",
+				ChangeValue = "BloodlessPitch",
+			},
+            {
+				WeaponName = "WeaponLob",
+				WeaponProperties = 
+                {
+					Cooldown = 0.5,
+					AutoLock = true,
+					BarrelLength = 150,
+					AutoLockRange = 300,
+					AutoLockArcDistance = 40,
+                },
+                ExcludeLinked = true,
+			},
+            {
+                WeaponName = "WeaponLob",
+                ProjectileName = "BloodlessPitch",
+                ProjectileProperties = 
+				{
+					Damage = 100,
+				},
+				ExcludeLinked = true,
+            },
+        },
+		FlavorText = "CopyAbility_FlavorText",
+	},
+
+	BloodlessPitcherCopyTwoDisplayBoon = 
+	{
+		Icon = "JarlUlsfark-Tools_of_the_Trade\\BloodlessPitcherIcon",
+		ShowInHUD = true,
+		CustomLabel = 
+		{
+			DisplayType = "RoomValue",
+			Key = "Copy_BloodlessPitcher2",
+			Text = "Copy_2nd"
+		},
+	},
+
+	BloodlessWaveFistCopyDisplayBoon = 
+	{
+		Icon = "JarlUlsfark-Tools_of_the_Trade\\BloodlessWaveFistIcon",
+		ShowInHUD = true,
+		CustomLabel = 
+		{
+			DisplayType = "RoomValue",
+			Key = "Copy_BloodlessWaveFist",
+			Text = "Copy_EmptyText"
+		},
+        PropertyChanges = 
+        {
+           {
+				WeaponName = "WeaponLob",
+				WeaponProperty = "Projectile",
+				ChangeValue = "BloodlessWaveFistWeapon",
+			},
+            {
+				WeaponName = "WeaponLob",
+				WeaponProperties = 
+                {
+					Cooldown = 1.5,
+					AutoLock = true,
+					BarrelLength = 150,
+					AutoLockRange = 300,
+					AutoLockArcDistance = 40,
+                },
+                ExcludeLinked = true,
+			},
+            {
+                WeaponName = "WeaponLob",
+                ProjectileName = "BloodlessWaveFistWeapon",
+                ProjectileProperties = 
+				{
+					Damage = 70,
+				},
+				ExcludeLinked = true,
+            },
+        },
+		FlavorText = "CopyAbility_FlavorText",
+	},
+
+	BloodlessWaveFistCopyTwoDisplayBoon = 
+	{
+		Icon = "JarlUlsfark-Tools_of_the_Trade\\BloodlessWaveFistIcon",
+		ShowInHUD = true,
+		CustomLabel = 
+		{
+			DisplayType = "RoomValue",
+			Key = "Copy_BloodlessWaveFist2",
+			Text = "Copy_2nd"
+		},
+	},
+
 	CorruptedShadeSmallCopyDisplayBoon = 
 	{
 		Icon = "JarlUlsfark-Tools_of_the_Trade\\CorruptedShadeSmallIcon",
@@ -6284,5 +6556,6 @@ if ZagreusJourney then
 				Text = "Copy_2nd"
 			},
 		},
+		
 	})
 end

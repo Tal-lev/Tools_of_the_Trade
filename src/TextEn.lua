@@ -486,6 +486,56 @@ sjson.hook(file, function(data)
 
 	table.insert(data.Texts, sjson.to_object(
 		{
+			Id = "BloodlessNakedCopyDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Copy: Bloodless",
+			Description = "Your Attack {#UpgradeFormat}Charges {#Prev}forward.",
+		},
+		TextOrder)
+		)
+
+	table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "BloodlessGrenadierCopyDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Copy: Inferno-Bomber",
+			Description = "Your Attack lobs a {#UpgradeFormat}Grenade{#Prev}.",
+		},
+		TextOrder)
+		)
+
+	table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "BloodlessSelfDestructCopyDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Copy: Slam-Dancer",
+			Description = "Your Attack {#UpgradeFormat}Explodes Underneath{#Prev}.",
+		},
+		TextOrder)
+		)
+
+	table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "BloodlessPitcherCopyDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Copy: Burn-Flinger",
+			Description = "Your Attack {#UpgradeFormat}Flings{#Prev}a {#UpgradeFormat}Grenade{#Prev}.",
+		},
+		TextOrder)
+		)
+
+	table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "BloodlessWaveFistCopyDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Copy: Wave-Maker",
+			Description = "Your Attack fires a{#UpgradeFormat}Wave Projectile{#Prev}.",
+		},
+		TextOrder)
+		)
+
+	table.insert(data.Texts, sjson.to_object(
+		{
 			Id = "CorruptedShadeSmallCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: Blight-Shade",

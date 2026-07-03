@@ -823,9 +823,23 @@ function mod.CopyAbility (victim, functionArgs, triggerArgs)
 		Changed = "SirenKeytarist"
 		Location = "BiomeG"
 	elseif victim.Name == "Scylla" then
-		--AddTraitToHero({ TraitName = "ScyllaTwoCopyDisplayBoon" })
 		Changed = "ScyllaOne"
 		Location = "BiomeG"
+	elseif victim.Name == "BloodlessNaked" or victim.Name == "BloodlessNaked_Elite" or victim.Name =="HadesBloodlessNaked" or victim.Name == "HadesBloodlessNaked_Elite" then
+		Changed = "BloodlessNaked"
+		Location = "BiomeB"
+	elseif victim.Name == "BloodlessGrenadier" or victim.Name == "BloodlessGrenadier_Elite" or victim.Name =="HadesBloodlessGrenadier" or victim.Name == "HadesBloodlessGrenadier_Elite" then
+		Changed = "BloodlessGrenadier"
+		Location = "BiomeB"
+	elseif victim.Name == "BloodlessSelfDestruct" or victim.Name == "BloodlessSelfDestruct_Elite" or victim.Name =="HadesBloodlessSelfDestruct" or victim.Name == "HadesBloodlessSelfDestruct_Elite" then
+		Changed = "BloodlessSelfDestruct"
+		Location = "BiomeB"
+	elseif victim.Name == "BloodlessPitcher" or victim.Name == "BloodlessPitcher_Elite" or victim.Name =="HadesBloodlessPitcher" or victim.Name == "HadesBloodlessPitcher_Elite" then
+		Changed = "BloodlessPitcher"
+		Location = "BiomeB"
+	elseif victim.Name == "BloodlessWaveFist" or victim.Name == "BloodlessWaveFist_Elite" or victim.Name =="HadesBloodlessWaveFist" or victim.Name == "HadesBloodlessWaveFist_Elite" then
+		Changed = "BloodlessWaveFist"
+		Location = "BiomeB"
 	elseif victim.Name == "CorruptedShadeSmall" or victim.Name == "CorruptedShadeSmall_Elite" then
 		Changed = "CorruptedShadeSmall"
 		Location = "BiomeH"
