@@ -1,6 +1,6 @@
 # Tools of the Trade
 
-Adding new aspects themed around the Gathering Tools
+Adding 2 new Weapon Aspects themed around the Gathering Tools
 
 ## Features
 
