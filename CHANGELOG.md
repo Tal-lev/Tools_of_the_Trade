@@ -7,7 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-- 27 Implemented ZJ enemies for copy.
+- 32 Implemented ZJ enemies for copy.
   - HadesSwarmer
   - LightSpawner
   - PunchingBagUnit
@@ -35,6 +35,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - HydraHeadWavemaker
   - HydraHeadSummoner
   - HydraHeadSlammer
+  - ShadeNaked
+  - ShadeSpearUnit
+  - ShadeSwordUnit
+  - ShadeShieldUnit
+  - ShadeBowUnit
 - 4 Minor Prophecies added
   - Clear with both tools
   - Get the 7 new hammers
