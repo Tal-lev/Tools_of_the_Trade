@@ -178,3 +178,6 @@
 - Brightsword
 - Greatshield
 - Strongbow
+- Soul Catcher
+- Flame Wheel
+- Nemean Chariot
