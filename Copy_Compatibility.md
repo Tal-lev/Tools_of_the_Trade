@@ -161,6 +161,8 @@
 - Spreader
 - Dracon
 - Skull-Crusher
+- Gorgon
+- MegaGorgon
 - Dire Spreader
 - Hydra
   - Darts
