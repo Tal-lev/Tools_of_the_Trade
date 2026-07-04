@@ -170,3 +170,11 @@
   - Summons
   - Waves
   - Slam
+
+### Elysium (Unreleased)
+
+- Exalted Shade
+- Longspear
+- Brightsword
+- Greatshield
+- Strongbow
