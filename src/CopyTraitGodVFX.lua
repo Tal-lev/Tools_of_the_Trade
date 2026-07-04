@@ -16603,6 +16603,773 @@ table.insert(data.Animations,
             EndBlue = 0.0,
         })
 
+        table.insert(data.Animations,
+        {
+        Name = "KirbyShadeSpikeSpear",
+        ChainTo = "ShadeSpikeSpearDissipate",
+        CreateAnimation = "QuickFlashEnemy",
+        FilePath = "Fx\\ShadeSpike\\ShadeSpike",
+        GroupName = "FX_Standing_Add",
+        Type = "Book",
+        VisualFx = "ShadeEphemeraB",
+        EaseIn = 0.9,
+        EaseOut = 1.0,
+        EndFrame = 22,
+        Loop = true,
+        NumFrames = 60,
+        PlaySpeed = 60.0,
+        StartFrame = 1,
+        OriginX = 180.0,
+        OriginY = 90.0,
+        LocationZFromOwner = "Take",
+        SortMode = "FromParent",
+        TransferChildren = true,
+        EndScaleY = 0.25,
+        ScaleFromOwner = "Ignore",
+        Ambient = 0.0,
+        VisualFxDistanceMax = 60.0,
+        VisualFxDistanceMin = 50.0,
+        OverlayVfx = true,
+        TimeModifierFraction = 0.75,
+        CreateAnimations = {
+            { Name = "ShadeSpikeSpearTrail" },
+            { Name = "ShadeSpikeSpearTrailDark" },
+        },
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "ShadeSpikeSpear_Zeus",
+            InheritFrom = "KirbyShadeSpikeSpear",
+            Color = {},
+            ColorFromOwner = "Ignore",
+            AddColor = true,
+            StartRed = 1.0,
+            StartGreen = 0.95,
+            StartBlue = 0.7,
+            EndRed = 0.9999,
+            EndGreen = 0.8,
+            EndBlue = 0.5,
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "ShadeSpikeSpear_Hera",
+            InheritFrom = "ShadeSpikeSpear_Zeus",
+            StartRed = 0.0,
+            StartGreen = 1.0,
+            StartBlue = 0.1,
+            EndRed = 0.1,
+            EndGreen = 0.3,
+            EndBlue = 1.0,
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "ShadeSpikeSpear_Poseidon",
+            InheritFrom = "ShadeSpikeSpear_Zeus",
+            StartRed = 0.1,
+            StartGreen = 1.0,
+            StartBlue = 0.8,
+            EndRed = 0,
+            EndGreen = 0.6,
+            EndBlue = 1.0,
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "ShadeSpikeSpear_Demeter",
+            InheritFrom = "ShadeSpikeSpear_Zeus",
+            StartRed = 0.25,
+            StartGreen = 0.35,
+            StartBlue = 0.5,
+            EndRed = 0.35,
+            EndGreen = 0.25,
+            EndBlue = 0.4999,
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "ShadeSpikeSpear_Apollo",
+            InheritFrom = "ShadeSpikeSpear_Zeus",
+            StartRed = 1.0,
+            StartGreen = 0.9,
+            StartBlue = 0.7,
+            EndRed = 0.999,
+            EndGreen = 0.85,
+            EndBlue = 0.05,
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "ShadeSpikeSpear_Aphrodite",
+            InheritFrom = "ShadeSpikeSpear_Zeus",
+            StartRed = 1.0,
+            StartGreen = 0.6,
+            StartBlue = 0.8,
+            EndRed = 0.99,
+            EndGreen = 0.05,
+            EndBlue = 0.99,
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "ShadeSpikeSpear_Hephaestus",
+            InheritFrom = "ShadeSpikeSpear_Zeus",
+            StartRed = 0.51,
+            StartGreen = 0.82,
+            StartBlue = 1.00,
+            EndRed = 1.00,
+            EndGreen = 0,
+            EndBlue = 0,
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "ShadeSpikeSpear_Hestia",
+            InheritFrom = "ShadeSpikeSpear_Zeus",
+            StartRed = 1.0,
+            StartGreen = 0.3,
+            StartBlue = 0.02,
+            EndRed = 0.999,
+            EndGreen = 0.15,
+            EndBlue = 0.0,
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "ShadeSpikeSpear_Ares",
+            InheritFrom = "ShadeSpikeSpear_Zeus",
+            StartRed = 1.0,
+            StartGreen = 0.04,
+            StartBlue = 0.001,
+            EndRed = 0.999,
+            EndGreen = 0.0,
+            EndBlue = 0.0,
+        })
+
+        table.insert(data.Animations,
+        {
+        Name = "KirbyShadeSpikeVertical",
+        FilePath = "Fx\\ShadeSpike\\ShadeSpike",
+        Type = "Book",
+        EndFrame = 22,
+        NumFrames = 22,
+        PlaySpeed = 60.0,
+        StartFrame = 1,
+        OriginX = 60.0,
+        OriginY = 90.0,
+        ScaleFromOwner = "Ignore",
+        Ambient = 0.0,
+        GroupName = "Standing",
+        VisualFx = "ShadeSpikeVerticalParticles",
+        AngleFromOwner = "Ignore",
+        AngleMax = 120.00,
+        AngleMin = 60.00,
+        EaseIn = 0.9,
+        EaseOut = 1.0,
+        RandomPlaySpeedMax = 70.0,
+        RandomPlaySpeedMin = 30.0,
+        EndOffsetY = -50.0,
+        StartOffsetY = 5.0,
+        LocationFromOwner = "Ignore",
+        Scale = 0.5,
+        ScaleMax = 1.0,
+        ScaleMin = 0.2,
+        ScaleX = 1.5,
+        ScaleY = 0.66,
+        VisualFxCap = 3,
+        VisualFxIntervalMax = 1.0,
+        VisualFxIntervalMin = 0.1,
+        CancelOverCap = true,
+        CreateAnimations = {
+            { Name = "ShadeGroundCrack" },
+            { Name = "QuickFlashEnemySmall" },
+            { Name = "ShadeEphemera" },
+        },
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "ShadeSpikeVertical_Zeus",
+            InheritFrom = "KirbyShadeSpikeVertical",
+            Color = {},
+            ColorFromOwner = "Ignore",
+            AddColor = true,
+            StartRed = 1.0,
+            StartGreen = 0.95,
+            StartBlue = 0.7,
+            EndRed = 0.9999,
+            EndGreen = 0.8,
+            EndBlue = 0.5,
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "ShadeSpikeVertical_Hera",
+            InheritFrom = "ShadeSpikeVertical_Zeus",
+            StartRed = 0.0,
+            StartGreen = 1.0,
+            StartBlue = 0.1,
+            EndRed = 0.1,
+            EndGreen = 0.3,
+            EndBlue = 1.0,
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "ShadeSpikeVertical_Poseidon",
+            InheritFrom = "ShadeSpikeVertical_Zeus",
+            StartRed = 0.1,
+            StartGreen = 1.0,
+            StartBlue = 0.8,
+            EndRed = 0,
+            EndGreen = 0.6,
+            EndBlue = 1.0,
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "ShadeSpikeVertical_Demeter",
+            InheritFrom = "ShadeSpikeVertical_Zeus",
+            StartRed = 0.25,
+            StartGreen = 0.35,
+            StartBlue = 0.5,
+            EndRed = 0.35,
+            EndGreen = 0.25,
+            EndBlue = 0.4999,
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "ShadeSpikeVertical_Apollo",
+            InheritFrom = "ShadeSpikeVertical_Zeus",
+            StartRed = 1.0,
+            StartGreen = 0.9,
+            StartBlue = 0.7,
+            EndRed = 0.999,
+            EndGreen = 0.85,
+            EndBlue = 0.05,
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "ShadeSpikeVertical_Aphrodite",
+            InheritFrom = "ShadeSpikeVertical_Zeus",
+            StartRed = 1.0,
+            StartGreen = 0.6,
+            StartBlue = 0.8,
+            EndRed = 0.99,
+            EndGreen = 0.05,
+            EndBlue = 0.99,
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "ShadeSpikeVertical_Hephaestus",
+            InheritFrom = "ShadeSpikeVertical_Zeus",
+            StartRed = 0.51,
+            StartGreen = 0.82,
+            StartBlue = 1.00,
+            EndRed = 1.00,
+            EndGreen = 0,
+            EndBlue = 0,
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "ShadeSpikeVertical_Hestia",
+            InheritFrom = "ShadeSpikeVertical_Zeus",
+            StartRed = 1.0,
+            StartGreen = 0.3,
+            StartBlue = 0.02,
+            EndRed = 0.999,
+            EndGreen = 0.15,
+            EndBlue = 0.0,
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "ShadeSpikeVertical_Ares",
+            InheritFrom = "ShadeSpikeVertical_Zeus",
+            StartRed = 1.0,
+            StartGreen = 0.04,
+            StartBlue = 0.001,
+            EndRed = 0.999,
+            EndGreen = 0.0,
+            EndBlue = 0.0,
+        })
+
+        table.insert(data.Animations,
+        {
+        Name = "KirbyShadeSwordOverheadProjectileFx",
+        FilePath = "Fx\\ShadeSpike\\ShadeSpike",
+        Type = "Book",
+        AngleFromOwner = "Take",
+        EndFrame = 22,
+        NumFrames = 22,
+        PlaySpeed = 60.0,
+        StartFrame = 1,
+        OriginY = 90.0,
+        ScaleFromOwner = "Ignore",
+        Ambient = 0.0,
+        VisualFx = "ShadeSpikeVertical",
+        ActiveVisualFxCap = 40,
+        AngleFromOwner = "Maintain",
+        Sound = "/SFX/Enemy Sounds/BloodlessWaveAmbienceLoop",
+        StopSoundOnFinishFade = 0.25,
+        EaseIn = 0.9,
+        EaseOut = 1.0,
+        Loop = true,
+        PlaySpeed = 120.0,
+        OriginX = 220.0,
+        PostRotateScaleY = 0.5,
+        ScaleX = 0.5,
+        ScaleY = 0.5,
+        VisualFxDistanceMax = 60.0,
+        VisualFxDistanceMin = 30.0,
+        Color = { Red = 0.0, Green = 0.0, Blue = 0.0, },
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "ShadeSwordOverheadProjectileFx_Zeus",
+            InheritFrom = "KirbyShadeSwordOverheadProjectileFx",
+            VisualFx = "ShadeSpikeVertical_Zeus",
+            Color = {},
+            ColorFromOwner = "Ignore",
+            AddColor = true,
+            StartRed = 1.0,
+            StartGreen = 0.95,
+            StartBlue = 0.7,
+            EndRed = 0.9999,
+            EndGreen = 0.8,
+            EndBlue = 0.5,
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "ShadeSwordOverheadProjectileFx_Hera",
+            InheritFrom = "ShadeSwordOverheadProjectileFx_Zeus",
+            VisualFx = "ShadeSpikeVertical_Hera",
+            StartRed = 0.0,
+            StartGreen = 1.0,
+            StartBlue = 0.1,
+            EndRed = 0.1,
+            EndGreen = 0.3,
+            EndBlue = 1.0,
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "ShadeSwordOverheadProjectileFx_Poseidon",
+            InheritFrom = "ShadeSwordOverheadProjectileFx_Zeus",
+            VisualFx = "ShadeSpikeVertical_Poseidon",
+            StartRed = 0.1,
+            StartGreen = 1.0,
+            StartBlue = 0.8,
+            EndRed = 0,
+            EndGreen = 0.6,
+            EndBlue = 1.0,
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "ShadeSwordOverheadProjectileFx_Demeter",
+            InheritFrom = "ShadeSwordOverheadProjectileFx_Zeus",
+            VisualFx = "ShadeSpikeVertical_Demeter",
+            StartRed = 0.25,
+            StartGreen = 0.35,
+            StartBlue = 0.5,
+            EndRed = 0.35,
+            EndGreen = 0.25,
+            EndBlue = 0.4999,
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "ShadeSwordOverheadProjectileFx_Apollo",
+            InheritFrom = "ShadeSwordOverheadProjectileFx_Zeus",
+            VisualFx = "ShadeSpikeVertical_Apollo",
+            StartRed = 1.0,
+            StartGreen = 0.9,
+            StartBlue = 0.7,
+            EndRed = 0.999,
+            EndGreen = 0.85,
+            EndBlue = 0.05,
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "ShadeSwordOverheadProjectileFx_Aphrodite",
+            InheritFrom = "ShadeSwordOverheadProjectileFx_Zeus",
+            VisualFx = "ShadeSpikeVertical_Aphrodite",
+            StartRed = 1.0,
+            StartGreen = 0.6,
+            StartBlue = 0.8,
+            EndRed = 0.99,
+            EndGreen = 0.05,
+            EndBlue = 0.99,
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "ShadeSwordOverheadProjectileFx_Hephaestus",
+            InheritFrom = "ShadeSwordOverheadProjectileFx_Zeus",
+            VisualFx = "ShadeSpikeVertical_Hephaestus",
+            StartRed = 0.51,
+            StartGreen = 0.82,
+            StartBlue = 1.00,
+            EndRed = 1.00,
+            EndGreen = 0,
+            EndBlue = 0,
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "ShadeSwordOverheadProjectileFx_Hestia",
+            InheritFrom = "ShadeSwordOverheadProjectileFx_Zeus",
+            VisualFx = "ShadeSpikeVertical_Hestia",
+            StartRed = 1.0,
+            StartGreen = 0.3,
+            StartBlue = 0.02,
+            EndRed = 0.999,
+            EndGreen = 0.15,
+            EndBlue = 0.0,
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "ShadeSwordOverheadProjectileFx_Ares",
+            InheritFrom = "ShadeSwordOverheadProjectileFx_Zeus",
+            VisualFx = "ShadeSpikeVertical_Ares",
+            StartRed = 1.0,
+            StartGreen = 0.04,
+            StartBlue = 0.001,
+            EndRed = 0.999,
+            EndGreen = 0.0,
+            EndBlue = 0.0,
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "KirbyShadeHunkerDownProjectileFx",
+            Type = "Constant",
+            FilePath = "Particles\\particle_glow",
+            CreateAnimation = "QuickFlashEnemy",
+            GroupName = "FX_Standing_Add",
+            VisualFx = "WaveFistTrailShade",
+            Sound = "/SFX/Enemy Sounds/BloodlessWaveAmbienceLoop",
+            StopSoundOnFinishFade = 0.25,
+            Alpha = 0.35,
+            EndFrame = 1,
+            Loop = true,
+            NumFrames = 1,
+            StartFrame = 1,
+            Ambient = 0.0,
+            VisualFxDistanceMax = 50.0,
+            VisualFxDistanceMin = 40.0,
+            OverlayVfx = true,
+            ActiveVisualFxCap = 40,
+            PingPongShiftOverDuration = true,
+            --CreateAnimations = {
+            --    { Name = "ShadeSpikeVertical" },
+            --}
+            --Color = { Red = 1.0, Green = 0.0, Blue = 0.50, },
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "ShadeHunkerDownProjectileFx_Zeus",
+            InheritFrom = "KirbyShadeHunkerDownProjectileFx",
+            Color = {},
+            ColorFromOwner = "Ignore",
+            AddColor = true,
+            StartRed = 1.0,
+            StartGreen = 0.95,
+            StartBlue = 0.7,
+            EndRed = 0.9999,
+            EndGreen = 0.8,
+            EndBlue = 0.5,
+            CreateAnimations = {
+                { Name = "ShadeSpikeVertical_Zeus" },
+            },
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "ShadeHunkerDownProjectileFx_Hera",
+            InheritFrom = "KirbyShadeHunkerDownProjectileFx",
+            Color = {},
+            ColorFromOwner = "Ignore",
+            AddColor = true,
+            StartRed = 0.0,
+            StartGreen = 1.0,
+            StartBlue = 0.1,
+            EndRed = 0.1,
+            EndGreen = 0.3,
+            EndBlue = 1.0,
+            CreateAnimations = {
+                { Name = "ShadeSpikeVertical_Hera" },
+            },
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "ShadeHunkerDownProjectileFx_Poseidon",
+            InheritFrom = "KirbyShadeHunkerDownProjectileFx",
+            Color = {},
+            ColorFromOwner = "Ignore",
+            AddColor = true,
+            StartRed = 0.1,
+            StartGreen = 1.0,
+            StartBlue = 0.8,
+            EndRed = 0,
+            EndGreen = 0.6,
+            EndBlue = 1.0,
+            CreateAnimations = {
+                { Name = "ShadeSpikeVertical_Poseidon" },
+            },
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "ShadeHunkerDownProjectileFx_Demeter",
+            InheritFrom = "KirbyShadeHunkerDownProjectileFx",
+            Color = {},
+            ColorFromOwner = "Ignore",
+            AddColor = true,
+            StartRed = 0.25,
+            StartGreen = 0.35,
+            StartBlue = 0.5,
+            EndRed = 0.35,
+            EndGreen = 0.25,
+            EndBlue = 0.4999,
+            CreateAnimations = {
+                { Name = "ShadeSpikeVertical_Demeter" },
+            },
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "ShadeHunkerDownProjectileFx_Apollo",
+            InheritFrom = "KirbyShadeHunkerDownProjectileFx",
+            Color = {},
+            ColorFromOwner = "Ignore",
+            AddColor = true,
+            StartRed = 1.0,
+            StartGreen = 0.9,
+            StartBlue = 0.7,
+            EndRed = 0.999,
+            EndGreen = 0.85,
+            EndBlue = 0.05,
+            CreateAnimations = {
+                { Name = "ShadeSpikeVertical_Apollo" },
+            },
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "ShadeHunkerDownProjectileFx_Aphrodite",
+            InheritFrom = "KirbyShadeHunkerDownProjectileFx",
+            Color = {},
+            ColorFromOwner = "Ignore",
+            AddColor = true,
+            StartRed = 1.0,
+            StartGreen = 0.6,
+            StartBlue = 0.8,
+            EndRed = 0.99,
+            EndGreen = 0.05,
+            EndBlue = 0.99,
+            CreateAnimations = {
+                { Name = "ShadeSpikeVertical_Aphrodite" },
+            },
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "ShadeHunkerDownProjectileFx_Hephaestus",
+            InheritFrom = "KirbyShadeHunkerDownProjectileFx",
+            Color = {},
+            ColorFromOwner = "Ignore",
+            AddColor = true,
+            StartRed = 0.51,
+            StartGreen = 0.82,
+            StartBlue = 1.00,
+            EndRed = 1.00,
+            EndGreen = 0,
+            EndBlue = 0,
+            CreateAnimations = {
+                { Name = "ShadeSpikeVertical_Hephaestus" },
+            },
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "ShadeHunkerDownProjectileFx_Hestia",
+            InheritFrom = "KirbyShadeHunkerDownProjectileFx",
+            Color = {},
+            ColorFromOwner = "Ignore",
+            AddColor = true,
+            StartRed = 1.0,
+            StartGreen = 0.3,
+            StartBlue = 0.02,
+            EndRed = 0.999,
+            EndGreen = 0.15,
+            EndBlue = 0.0,
+            CreateAnimations = {
+                { Name = "ShadeSpikeVertical_Hestia" },
+            },
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "ShadeHunkerDownProjectileFx_Ares",
+            InheritFrom = "KirbyShadeHunkerDownProjectileFx",
+            Color = {},
+            ColorFromOwner = "Ignore",
+            AddColor = true,
+            StartRed = 1.0,
+            StartGreen = 0.04,
+            StartBlue = 0.001,
+            EndRed = 0.999,
+            EndGreen = 0.0,
+            EndBlue = 0.0,
+            CreateAnimations = {
+                { Name = "ShadeSpikeVertical_Ares" },
+            },
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "KirbyShadeBowArrow",
+            CreateAnimation = "QuickFlashEnemy",
+            FilePath = "Fx\\ShadeSpike\\ShadeSpike",
+            Type = "Book",
+            VisualFx = "ShadeBowTrail",
+            Duration = 0.5,
+            EndFrame = 21,
+            HoldLastFrame = true,
+            NumFrames = 21,
+            StartFrame = 1,
+            OriginY = 90.0,
+            Scale = 0.6,
+            ScaleY = 0.4,
+            Ambient = 0.0,
+            VisualFxDistanceMax = 91.0,
+            VisualFxDistanceMin = 90.0,
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "ShadeBowArrow_Zeus",
+            InheritFrom = "KirbyShadeBowArrow",
+            Color = {},
+            ColorFromOwner = "Ignore",
+            AddColor = true,
+            StartRed = 1.0,
+            StartGreen = 0.95,
+            StartBlue = 0.7,
+            EndRed = 0.9999,
+            EndGreen = 0.8,
+            EndBlue = 0.5,
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "ShadeBowArrow_Hera",
+            InheritFrom = "ShadeBowArrow_Zeus",
+            StartRed = 0.0,
+            StartGreen = 1.0,
+            StartBlue = 0.1,
+            EndRed = 0.1,
+            EndGreen = 0.3,
+            EndBlue = 1.0,
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "ShadeBowArrow_Poseidon",
+            InheritFrom = "ShadeBowArrow_Zeus",
+            StartRed = 0.1,
+            StartGreen = 1.0,
+            StartBlue = 0.8,
+            EndRed = 0,
+            EndGreen = 0.6,
+            EndBlue = 1.0,
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "ShadeBowArrow_Demeter",
+            InheritFrom = "ShadeBowArrow_Zeus",
+            StartRed = 0.25,
+            StartGreen = 0.35,
+            StartBlue = 0.5,
+            EndRed = 0.35,
+            EndGreen = 0.25,
+            EndBlue = 0.4999,
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "ShadeBowArrow_Apollo",
+            InheritFrom = "ShadeBowArrow_Zeus",
+            StartRed = 1.0,
+            StartGreen = 0.9,
+            StartBlue = 0.7,
+            EndRed = 0.999,
+            EndGreen = 0.85,
+            EndBlue = 0.05,
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "ShadeBowArrow_Aphrodite",
+            InheritFrom = "ShadeBowArrow_Zeus",
+            StartRed = 1.0,
+            StartGreen = 0.6,
+            StartBlue = 0.8,
+            EndRed = 0.99,
+            EndGreen = 0.05,
+            EndBlue = 0.99,
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "ShadeBowArrow_Hephaestus",
+            InheritFrom = "ShadeBowArrow_Zeus",
+            StartRed = 0.51,
+            StartGreen = 0.82,
+            StartBlue = 1.00,
+            EndRed = 1.00,
+            EndGreen = 0,
+            EndBlue = 0,
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "ShadeBowArrow_Hestia",
+            InheritFrom = "ShadeBowArrow_Zeus",
+            StartRed = 1.0,
+            StartGreen = 0.3,
+            StartBlue = 0.02,
+            EndRed = 0.999,
+            EndGreen = 0.15,
+            EndBlue = 0.0,
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "ShadeBowArrow_Ares",
+            InheritFrom = "ShadeBowArrow_Zeus",
+            StartRed = 1.0,
+            StartGreen = 0.04,
+            StartBlue = 0.001,
+            EndRed = 0.999,
+            EndGreen = 0.0,
+            EndBlue = 0.0,
+        })
 
     end
 

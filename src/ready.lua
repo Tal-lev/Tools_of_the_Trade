@@ -1126,6 +1126,21 @@ function mod.CopyAbility (victim, functionArgs, triggerArgs)
 		elseif victim.Name == "HydraHeadSummoner" or victim.Name == "HydraHeadImmortalSummoner" then
 			Changed = "HydraHeadSummoner"
 			Location = "AsphodelModsNikkelMHadesBiomes"
+		elseif victim.Name == "ShadeNaked" or victim.Name == "ShadeNaked_Elite" then
+			Changed = "ShadeNaked"
+			Location = "ElysiumModsNikkelMHadesBiomes"
+		elseif victim.Name == "ShadeSpearUnit" or victim.Name == "ShadeSpearUnit_Elite" then
+			Changed = "ShadeSpearUnit"
+			Location = "ElysiumModsNikkelMHadesBiomes"
+		elseif victim.Name == "ShadeSwordUnit" or victim.Name == "ShadeSwordUnit_Elite" then
+			Changed = "ShadeSwordUnit"
+			Location = "ElysiumModsNikkelMHadesBiomes"
+		elseif victim.Name == "ShadeShieldUnit" or victim.Name == "ShadeShieldUnit_Elite" then
+			Changed = "ShadeShieldUnit"
+			Location = "ElysiumModsNikkelMHadesBiomes"
+		elseif victim.Name == "ShadeBowUnit" or victim.Name == "ShadeBowUnit_Elite" then
+			Changed = "ShadeBowUnit"
+			Location = "ElysiumModsNikkelMHadesBiomes"
 		end
 	end
 	if Changed ~= "null" then
@@ -1146,6 +1161,10 @@ function mod.CopyAbility (victim, functionArgs, triggerArgs)
 		ResetAmmo( CurrentRun.Hero, GetWeaponData( CurrentRun.Hero, "WeaponLob" ))
 		CurrentRun.Hero.Ammo.WeaponLob = GetMaxAmmo("WeaponLob")
 		thread( UpdateAmmoUI )
+		wait(0.1)
+		if HeroHasTrait("ShadeNakedCopyDisplayBoon") then
+			mod.HandleShadeNakedCopy()
+		end
 	end
 end
 
@@ -1200,6 +1219,10 @@ function mod.ReleaseCopyAbility ( triggerArgs, functionArgs )
 	end
 	SetWeaponProperty({ WeaponName = "WeaponLob", DestinationId = CurrentRun.Hero.ObjectId, Property = "Enabled", Value = true })
 	thread( UpdateAmmoUI )
+	wait(0.1)
+	if HeroHasTrait("ShadeNakedCopyDisplayBoon") then
+		mod.HandleShadeNakedCopy()
+	end
 end
 
 function mod.CopyNoAmmo()
@@ -1292,6 +1315,27 @@ function mod.ProjectileSpawnUnitOnDeath( projectileData, triggerArgs )
 	Destroy({ Id = spawnPointId })
 end
 
+function mod.HandleShadeNakedCopy()
+	if HeroHasTrait("ShadeNakedCopyDisplayBoon") then
+		if HeroHasTrait("ShadeSpearUnitCopyDisplayBoon") or HeroHasTrait("ShadeSwordUnitCopyDisplayBoon") or HeroHasTrait("ShadeShieldUnitCopyDisplayBoon") or HeroHasTrait("ShadeBowUnitCopyDisplayBoon") then
+			for key,value in pairs(CurrentRun.Hero.TraitDictionary) do
+				if string.find(key, "CopyDisplayBoon") then
+					if key == "ShadeSpearUnitCopyDisplayBoon" or key == "ShadeSwordUnitCopyDisplayBoon" or key == "ShadeShieldUnitCopyDisplayBoon" or key == "ShadeBowUnitCopyDisplayBoon" then
+						table.insert(TraitsToRemove, 1, key)
+					end
+				end
+			end
+			for key,value in pairs(TraitsToRemove) do
+				RemoveTrait(CurrentRun.Hero, value)
+			end
+		end
+		local ShadeOptions = {"ShadeSpearUnitCopyDisplayBoon", "ShadeSwordUnitCopyDisplayBoon", "ShadeShieldUnitCopyDisplayBoon", "ShadeBowUnitCopyDisplayBoon"}
+		local RandomIndex = math.random(#ShadeOptions)
+		local ChosenOption = ShadeOptions[RandomIndex]
+		AddTraitToHero({TraitName = ChosenOption})
+	end
+end
+
 modutil.mod.Path.Wrap("LeaveRoom", function(base, currentRun, exitDoor)
 	if HeroHasTrait("ShovelRaiseDeadNecroMel") then
 		local trait = GetHeroTrait("ShovelRaiseDeadNecroMel")
@@ -1317,6 +1361,9 @@ modutil.mod.Path.Wrap("SetupMap", function(base, source, args)
 		end
 		if trait.SecondLocation ~= "null" then
 			LoadPackages({Name = trait.SecondLocation})
+		end
+		if ZagreusJourney and HeroHasTrait("ShadeNakedCopyDisplayBoon") then
+			mod.HandleShadeNakedCopy()
 		end
 	end
 	return base(source, args)

@@ -1391,6 +1391,58 @@ if ZagreusJourney then
 				ChangeType = "Absolute",
 				ExcludeLinked = true,
 			},
+			--ShadeSpearUnit
+			{
+				WeaponName = "WeaponLob",
+				ProjectileName = "ShadeSpearThrust",
+				ProjectileProperty = "Graphic",
+				ValuePrefix = "ShadeSpikeSpear_",
+				ChangeType = "Absolute",
+				ExcludeLinked = true,
+			},
+			--ShadeSwordUnit
+			{
+				WeaponName = "WeaponLob",
+				ProjectileName = "ShadeSwordOverhead",
+				ProjectileProperty = "Graphic",
+				ValuePrefix = "ShadeSwordOverheadProjectileFx_",
+				ChangeType = "Absolute",
+				ExcludeLinked = true,
+			},
+			--ShadeShieldUnit
+			{
+				WeaponName = "WeaponLob",
+				ProjectileName = "ShadeHunkerDown",
+				ProjectileProperty = "DetonateFx",
+				ValuePrefix = "ShadeSpikeVertical_",
+				ChangeType = "Absolute",
+				ExcludeLinked = true,
+			},
+			{
+				WeaponName = "WeaponLob",
+				ProjectileName = "ShadeHunkerDown",
+				ProjectileProperty = "Graphic",
+				ValuePrefix = "ShadeHunkerDownProjectileFx_",
+				ChangeType = "Absolute",
+				ExcludeLinked = true,
+			},
+			--ShadeBowUnit
+			{
+				WeaponName = "WeaponLob",
+				ProjectileName = "ShadeBowRanged",
+				ProjectileProperty = "Graphic",
+				ValuePrefix = "ShadeBowArrow_",
+				ChangeType = "Absolute",
+				ExcludeLinked = true,
+			},
+			{
+				WeaponName = "WeaponLob",
+				ProjectileName = "ShadeBowRanged",
+				ProjectileProperty = "ImpactFx",
+				ValuePrefix = "HadesEnemyProjectileImpact_",
+				ChangeType = "Absolute",
+				ExcludeLinked = true,
+			},
 
 		}
 	})

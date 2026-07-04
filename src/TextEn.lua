@@ -1446,6 +1446,56 @@ sjson.hook(file, function(data)
 		TextOrder)
 		)
 
+		table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "ShadeNakedCopyDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Copy: Naked Shade",
+			Description = "Each {#UpgradeFormat}Location {#Prev}your Attack transforms into one of the {#UpgradeFormat}Champions of Elysium{#Prev}.",
+		},
+		TextOrder)
+		)
+
+		table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "ShadeSpearUnitCopyDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Copy: Longspear",
+			Description = "Your Attack transforms into a {#UpgradeFormat}Spear Thrust{#Prev}.",
+		},
+		TextOrder)
+		)
+
+		table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "ShadeSwordUnitCopyDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Copy: Brightsword",
+			Description = "Your Attack stabs the ground shooting into a {#UpgradeFormat}Spiked Projectile{#Prev}.",
+		},
+		TextOrder)
+		)
+
+		table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "ShadeShieldUnitCopyDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Copy: Greatshield",
+			Description = "Your Attack slams the ground shooting into a {#UpgradeFormat}Shockwave{#Prev}.",
+		},
+		TextOrder)
+		)
+
+		table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "ShadeBowUnitCopyDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Copy: Strongbow",
+			Description = "Your Attack shoots a {#UpgradeFormat}Fast Arrow{#Prev}.",
+		},
+		TextOrder)
+		)
+
 	end
 
 
