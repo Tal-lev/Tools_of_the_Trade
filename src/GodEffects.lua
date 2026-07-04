@@ -1443,6 +1443,35 @@ if ZagreusJourney then
 				ChangeType = "Absolute",
 				ExcludeLinked = true,
 			},
+			--FlurrySpawner
+			{
+				WeaponName = "WeaponLob",
+				ProjectileName = "FlurrySpawnerWeapon",
+				ProjectileProperty = "Graphic",
+				ValuePrefix = "SoulSpawnerButterfly_",
+				ChangeType = "Absolute",
+				ExcludeLinked = true,
+			},
+			--ChariotSuicide
+			{
+				WeaponName = "WeaponLob",
+				ProjectileName = "ChariotRamDeathWeapon",
+				ProjectileProperty = "DetonateFx",
+				ValuePrefix = "GrenadeExplosion_",
+				ChangeType = "Absolute",
+				ExcludeLinked = true,
+			},
+            --Chariot
+			{
+				WeaponName = "WeaponLob",
+				ProjectileName = "ChariotRam",
+				ProjectileProperty = "DetonateFx",
+				ValuePrefix = "EnemyConeAttackChariotRam_",
+				ChangeType = "Absolute",
+				ExcludeLinked = true,
+			},
+
+
 
 		}
 	})

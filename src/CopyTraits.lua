@@ -7383,5 +7383,185 @@ if ZagreusJourney then
 				Text = "Copy_2nd"
 			},
 		},
+
+		FlurrySpawnerCopyDisplayBoon = 
+		{
+			Icon = "JarlUlsfark-Tools_of_the_Trade_ZJcompat\\FlurrySpawnerIcon",
+			ShowInHUD = true,
+			CustomLabel = 
+			{
+				DisplayType = "RoomValue",
+				Key = "Copy_FlurrySpawner",
+				Text = "Copy_EmptyText"
+			},
+			PropertyChanges = 
+			{
+			{
+					WeaponName = "WeaponLob",
+					WeaponProperty = "Projectile",
+					ChangeValue = "FlurrySpawnerWeapon",
+				},
+				{
+					WeaponName = "WeaponLob",
+					WeaponProperties = 
+					{
+						Cooldown = 5.0,
+						FizzleOldSpawns = false,
+						NumProjectiles = 20,
+						ProjectileInterval = 0.2,
+						ProjectileAngleOffset = math.rad(10),
+						
+					},
+					ExcludeLinked = true,
+				},
+				{
+					WeaponName = "WeaponLob",
+					ProjectileName = "FlurrySpawnerWeapon",
+					ProjectileProperties = 
+					{
+						Damage = (30 * BiomeCScaling),
+					},
+					ExcludeLinked = true,
+				},
+			},
+			FlavorText = "CopyAbility_FlavorText",
+		},
+
+		FlurrySpawnerCopyTwoDisplayBoon = 
+		{
+			Icon = "JarlUlsfark-Tools_of_the_Trade_ZJcompat\\FlurrySpawnerIcon",
+			ShowInHUD = true,
+			CustomLabel = 
+			{
+				DisplayType = "RoomValue",
+				Key = "Copy_FlurrySpawner2",
+				Text = "Copy_2nd"
+			},
+		},
+
+		ChariotSuicideCopyDisplayBoon = 
+		{
+			Icon = "JarlUlsfark-Tools_of_the_Trade_ZJcompat\\ChariotSuicideIcon",
+			ShowInHUD = true,
+			CustomLabel = 
+			{
+				DisplayType = "RoomValue",
+				Key = "Copy_ChariotSuicide",
+				Text = "Copy_EmptyText"
+			},
+			PropertyChanges = 
+			{
+			{
+					WeaponName = "WeaponLob",
+					WeaponProperty = "Projectile",
+					ChangeValue = "ChariotRamDeathWeapon",
+				},
+				{
+					WeaponName = "WeaponLob",
+					WeaponProperties = 
+					{
+						Cooldown = 2.0,
+						FizzleOldSpawns = false,
+						BlockMoveInput = true,
+						CancelMovement = true,
+						SelfVelocity = 1200,
+						AttachToOwner =true,
+						AutoLock = true,
+						AutoLockRange = 100,
+						AutoLockArcDistance = 90,
+						RootOwnerWhileFiring = true,
+						CancelChargeOnRelease = true,
+						
+					},
+					ExcludeLinked = true,
+				},
+				{
+					WeaponName = "WeaponLob",
+					ProjectileName = "ChariotRamDeathWeapon",
+					ProjectileProperties = 
+					{
+						Damage = (100 * BiomeCScaling),
+						StartDelay = 0.45,
+					},
+					ExcludeLinked = true,
+				},
+			},
+			FlavorText = "CopyAbility_FlavorText",
+		},
+
+		ChariotSuicideCopyTwoDisplayBoon = 
+		{
+			Icon = "JarlUlsfark-Tools_of_the_Trade_ZJcompat\\ChariotSuicideIcon",
+			ShowInHUD = true,
+			CustomLabel = 
+			{
+				DisplayType = "RoomValue",
+				Key = "Copy_ChariotSuicide2",
+				Text = "Copy_2nd"
+			},
+		},
+
+		ChariotCopyDisplayBoon = 
+		{
+			Icon = "JarlUlsfark-Tools_of_the_Trade_ZJcompat\\ChariotIcon",
+			ShowInHUD = true,
+			CustomLabel = 
+			{
+				DisplayType = "RoomValue",
+				Key = "Copy_Chariot",
+				Text = "Copy_EmptyText"
+			},
+			PropertyChanges = 
+			{
+			{
+					WeaponName = "WeaponLob",
+					WeaponProperty = "Projectile",
+					ChangeValue = "ChariotRam",
+				},
+				{
+					WeaponName = "WeaponLob",
+					WeaponProperties = 
+					{
+						Cooldown = 2.0,
+						FizzleOldSpawns = false,
+						BlockMoveInput = true,
+						CancelMovement = true,
+						SelfVelocity = 1200,
+						AttachToOwner =true,
+						AutoLock = true,
+						AutoLockRange = 100,
+						AutoLockArcDistance = 90,
+						RootOwnerWhileFiring = true,
+						CancelChargeOnRelease = true,
+						AttachToOwner = true,
+						
+					},
+					ExcludeLinked = true,
+				},
+				{
+					WeaponName = "WeaponLob",
+					ProjectileName = "ChariotRam",
+					ProjectileProperties = 
+					{
+						Damage = (190 * BiomeCScaling),
+						StartDelay = 0.45,
+					},
+					ExcludeLinked = true,
+				},
+			},
+			FlavorText = "CopyAbility_FlavorText",
+		},
+
+		ChariotCopyTwoDisplayBoon = 
+		{
+			Icon = "JarlUlsfark-Tools_of_the_Trade_ZJcompat\\ChariotIcon",
+			ShowInHUD = true,
+			CustomLabel = 
+			{
+				DisplayType = "RoomValue",
+				Key = "Copy_ChariotSuicide2",
+				Text = "Copy_2nd"
+			},
+		},
 	})
 end

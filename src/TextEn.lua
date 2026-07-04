@@ -103,7 +103,7 @@ sjson.hook(file, function(data)
 		{
 			Id = "TabletofPeaceKirbyMel",
 			InheritFrom = "BaseBoonMultiline",
-			DisplayName = "The Tablet of Peace (Experimental!)",
+			DisplayName = "The Tablet of Peace",
 			Description = "Your {$Keywords.Attack} copies the enemy's weapon. Your {$Keywords.AttackEX} Releases the copied weapon."
 		},
 		TextOrder)
@@ -1492,6 +1492,36 @@ sjson.hook(file, function(data)
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: Strongbow",
 			Description = "Your Attack shoots a {#UpgradeFormat}Fast Arrow{#Prev}.",
+		},
+		TextOrder)
+		)
+
+		table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "FlurrySpawnerCopyDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Copy: Soul Catcher",
+			Description = "Your Attack fires a {#UpgradeFormat}Flurry of Butterflies{#Prev}.",
+		},
+		TextOrder)
+		)
+
+		table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "ChariotSuicideCopyDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Copy: Flame Wheel",
+			Description = "Your Attack {#UpgradeFormat}Rams {#Prev}forward and {#UpgradeFormat}Explodes{#Prev}.",
+		},
+		TextOrder)
+		)
+
+		table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "ChariotCopyDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Copy: Nemean Chariot",
+			Description = "Your Attack {#UpgradeFormat}Rams {#Prev} into enemies.",
 		},
 		TextOrder)
 		)

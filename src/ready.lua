@@ -1060,22 +1060,22 @@ function mod.CopyAbility (victim, functionArgs, triggerArgs)
 		Changed = "TyphonHeadOne"
 		Location = "BiomeQEnding"
 	elseif ZagreusJourney then
-		if victim.Name == "HadesSwarmer" or victim.Name == "HadesSwarmer_Elite" then
+		if victim.Name == "HadesSwarmer" or victim.Name == "HadesSwarmerElite" then
 			Changed = "HadesSwarmer"
 			Location = "HadesBiomesFxOriginal"
-		elseif victim.Name == "LightSpawner" or victim.Name == "LightSpawner_Elite" then
+		elseif victim.Name == "LightSpawner" or victim.Name == "LightSpawnerElite" then
 			Changed = "LightSpawner"
 			Location = "HadesBiomesFxOriginal"
-		elseif victim.Name == "PunchingBagUnit" or victim.Name == "PunchingBagUnit_Elite" then
+		elseif victim.Name == "PunchingBagUnit" or victim.Name == "PunchingBagUnitElite" then
 			Changed = "PunchingBagUnit"
 			Location = "HadesBiomesFxOriginal"
-		elseif victim.Name == "HadesLightRanged" or victim.Name == "HadesLightRanged_Elite" then
+		elseif victim.Name == "HadesLightRanged" or victim.Name == "HadesLightRangedElite" then
 			Changed = "HadesLightRanged"
 			Location = "TartarusModsNikkelMHadesBiomes"
-		elseif victim.Name == "HeavyRanged" or victim.Name == "HeavyRanged_Elite" then
+		elseif victim.Name == "HeavyRanged" or victim.Name == "HeavyRangedElite" then
 			Changed = "HeavyRanged"
 			Location = "TartarusModsNikkelMHadesBiomes"
-		elseif victim.Name == "HeavyMelee" or victim.Name == "HeavyMelee_Elite" then
+		elseif victim.Name == "HeavyMelee" or victim.Name == "HeavyMeleeElite" then
 			Changed = "HeavyMelee"
 			Location = "BiomeI"
 		--elseif victim.Name == "DisembodiedHand" or victim.Name == "DisembodiedHand_Elite" then
@@ -1096,16 +1096,16 @@ function mod.CopyAbility (victim, functionArgs, triggerArgs)
 		elseif victim.Name == "Harpy3" then
 			Changed = "HarpythreeOne"
 			Location = "TartarusModsNikkelMHadesBiomes"
-		elseif victim.Name == "RangedBurrower" or victim.Name == "RangedBurrower_Elite" then
+		elseif victim.Name == "RangedBurrower" or victim.Name == "RangedBurrowerElite" then
 			Changed = "RangedBurrower"
 			Location = "AsphodelModsNikkelMHadesBiomes"
-		elseif victim.Name == "CrusherUnit" or victim.Name == "CrusherUnit_Elite" then
+		elseif victim.Name == "CrusherUnit" or victim.Name == "CrusherUnitElite" then
 			Changed = "CrusherUnit"
 			Location = "AsphodelModsNikkelMHadesBiomes"
-		elseif victim.Name == "FreezeShotUnit" or victim.Name == "FreezeShotUnit_Elite" then
+		elseif victim.Name == "FreezeShotUnit" or victim.Name == "FreezeShotUnitElite" then
 			Changed = "FreezeShotUnit"
 			Location = "AsphodelModsNikkelMHadesBiomes"
-		elseif victim.Name == "HitAndRunUnit" or victim.Name == "HitAndRunUnit_Elite" then
+		elseif victim.Name == "HitAndRunUnit" or victim.Name == "HitAndRunUnitElite" then
 			Changed = "HitAndRunUnit"
 			Location = "AsphodelModsNikkelMHadesBiomes"
 		elseif victim.Name == "SpreadShotUnitMiniboss" then
@@ -1126,20 +1126,29 @@ function mod.CopyAbility (victim, functionArgs, triggerArgs)
 		elseif victim.Name == "HydraHeadSummoner" or victim.Name == "HydraHeadImmortalSummoner" then
 			Changed = "HydraHeadSummoner"
 			Location = "AsphodelModsNikkelMHadesBiomes"
-		elseif victim.Name == "ShadeNaked" or victim.Name == "ShadeNaked_Elite" then
+		elseif victim.Name == "ShadeNaked" or victim.Name == "ShadeNakedElite" then
 			Changed = "ShadeNaked"
 			Location = "ElysiumModsNikkelMHadesBiomes"
-		elseif victim.Name == "ShadeSpearUnit" or victim.Name == "ShadeSpearUnit_Elite" then
+		elseif victim.Name == "ShadeSpearUnit" or victim.Name == "ShadeSpearUnitElite" then
 			Changed = "ShadeSpearUnit"
 			Location = "ElysiumModsNikkelMHadesBiomes"
-		elseif victim.Name == "ShadeSwordUnit" or victim.Name == "ShadeSwordUnit_Elite" then
+		elseif victim.Name == "ShadeSwordUnit" or victim.Name == "ShadeSwordUnitElite" then
 			Changed = "ShadeSwordUnit"
 			Location = "ElysiumModsNikkelMHadesBiomes"
-		elseif victim.Name == "ShadeShieldUnit" or victim.Name == "ShadeShieldUnit_Elite" then
+		elseif victim.Name == "ShadeShieldUnit" or victim.Name == "ShadeShieldUnitElite" then
 			Changed = "ShadeShieldUnit"
 			Location = "ElysiumModsNikkelMHadesBiomes"
-		elseif victim.Name == "ShadeBowUnit" or victim.Name == "ShadeBowUnit_Elite" then
+		elseif victim.Name == "ShadeBowUnit" or victim.Name == "ShadeBowUnitElite" then
 			Changed = "ShadeBowUnit"
+			Location = "ElysiumModsNikkelMHadesBiomes"
+		elseif victim.Name == "FlurrySpawner" or victim.Name == "FlurrySpawnerElite" then
+			Changed = "FlurrySpawner"
+			Location = "ElysiumModsNikkelMHadesBiomes"
+		elseif victim.Name == "ChariotSuicide" or victim.Name == "ChariotSuicideElite" then
+			Changed = "ChariotSuicide"
+			Location = "ElysiumModsNikkelMHadesBiomes"
+		elseif victim.Name == "Chariot" or victim.Name == "ChariotElite" then
+			Changed = "Chariot"
 			Location = "ElysiumModsNikkelMHadesBiomes"
 		end
 	end

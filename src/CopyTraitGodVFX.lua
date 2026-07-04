@@ -17371,6 +17371,287 @@ table.insert(data.Animations,
             EndBlue = 0.0,
         })
 
+        table.insert(data.Animations,
+        {
+        Name = "KirbySoulSpawnerButterfly",
+        Type = "Book",
+        FilePath = "Animations\\SoulSpawner\\SoulSpawnerButterfly\\SoulSpawnerButterfly",
+        NumFrames = 6,
+        NumAngles = 32,
+        Material = "Unlit",
+        RandomPlaySpeedMin = 30,
+        RandomPlaySpeedMax = 36,
+        ScaleMin = 0.8,
+        ScaleMax = 1.0,
+        Loop = true,
+        RandomStartFrame = false,
+        ReRandomizeOnLoop = true,
+        PingPongShiftOverDuration = true,
+        DieWithOwner = true,
+        LocationZFromOwner = "Maintain",
+        UseParentOffset = true,
+        LoopFramesOnly = true,
+        RandomDurationMin = 0.25,
+        RandomDurationMax = 0.6,
+        StartOffsetZ = 15,
+        EndOffsetZ = -15,
+        Hue = 0,
+        AddColor = true,
+        StartRed = 0,
+        StartGreen = 0,
+        StartBlue = 0,
+        EndRed = 0.1,
+        EndGreen = 0.2,
+        EndBlue = 0.3,
+        EaseIn=0.9,
+        EaseOut=1.0,
+        PingPongColor = true,
+        VisualFxIntervalMin=0.5,
+        VisualFxIntervalMax=1.0,
+        VisualFx = "SoulSpawnerButterlyTrail",
+		VisualFxManagerCap = 400,
+    })
+
+    table.insert(data.Animations,
+        {
+            Name = "SoulSpawnerButterfly_Zeus",
+            InheritFrom = "KirbySoulSpawnerButterfly",
+            Color = {},
+            ColorFromOwner = "Ignore",
+            AddColor = true,
+            StartRed = 1.0,
+            StartGreen = 0.95,
+            StartBlue = 0.7,
+            EndRed = 0.9999,
+            EndGreen = 0.8,
+            EndBlue = 0.5,
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "SoulSpawnerButterfly_Hera",
+            InheritFrom = "SoulSpawnerButterfly_Zeus",
+            StartRed = 0.0,
+            StartGreen = 1.0,
+            StartBlue = 0.1,
+            EndRed = 0.1,
+            EndGreen = 0.3,
+            EndBlue = 1.0,
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "SoulSpawnerButterfly_Poseidon",
+            InheritFrom = "SoulSpawnerButterfly_Zeus",
+            StartRed = 0.1,
+            StartGreen = 1.0,
+            StartBlue = 0.8,
+            EndRed = 0,
+            EndGreen = 0.6,
+            EndBlue = 1.0,
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "SoulSpawnerButterfly_Demeter",
+            InheritFrom = "SoulSpawnerButterfly_Zeus",
+            StartRed = 0.25,
+            StartGreen = 0.35,
+            StartBlue = 0.5,
+            EndRed = 0.35,
+            EndGreen = 0.25,
+            EndBlue = 0.4999,
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "SoulSpawnerButterfly_Apollo",
+            InheritFrom = "SoulSpawnerButterfly_Zeus",
+            StartRed = 1.0,
+            StartGreen = 0.9,
+            StartBlue = 0.7,
+            EndRed = 0.999,
+            EndGreen = 0.85,
+            EndBlue = 0.05,
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "SoulSpawnerButterfly_Aphrodite",
+            InheritFrom = "SoulSpawnerButterfly_Zeus",
+            StartRed = 1.0,
+            StartGreen = 0.6,
+            StartBlue = 0.8,
+            EndRed = 0.99,
+            EndGreen = 0.05,
+            EndBlue = 0.99,
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "SoulSpawnerButterfly_Hephaestus",
+            InheritFrom = "SoulSpawnerButterfly_Zeus",
+            StartRed = 0.51,
+            StartGreen = 0.82,
+            StartBlue = 1.00,
+            EndRed = 1.00,
+            EndGreen = 0,
+            EndBlue = 0,
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "SoulSpawnerButterfly_Hestia",
+            InheritFrom = "SoulSpawnerButterfly_Zeus",
+            StartRed = 1.0,
+            StartGreen = 0.3,
+            StartBlue = 0.02,
+            EndRed = 0.999,
+            EndGreen = 0.15,
+            EndBlue = 0.0,
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "SoulSpawnerButterfly_Ares",
+            InheritFrom = "SoulSpawnerButterfly_Zeus",
+            StartRed = 1.0,
+            StartGreen = 0.04,
+            StartBlue = 0.001,
+            EndRed = 0.999,
+            EndGreen = 0.0,
+            EndBlue = 0.0,
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "KirbyEnemyConeAttackChariotRam",
+            CreateAnimation = "QuickFlashEnemy",
+            FilePath = "Fx\\EnemyConeAttack\\EnemyConeAttack",
+            Type = "Book",
+            EndFrame = 26,
+            NumFrames = 26,
+            PlaySpeed = 60.0,
+            StartFrame = 1,
+            LocationFromOwner = "Ignore",
+            PostRotateScaleY = 0.5,
+            Ambient = 0.0,
+            SortMode = "FromParent",
+            GroupName = "FX_Terrain",
+            SortMode = "Secondary",
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "EnemyConeAttackChariotRam_Zeus",
+            InheritFrom = "KirbyEnemyConeAttackChariotRam",
+            Color = {},
+            ColorFromOwner = "Ignore",
+            AddColor = true,
+            StartRed = 1.0,
+            StartGreen = 0.95,
+            StartBlue = 0.7,
+            EndRed = 0.9999,
+            EndGreen = 0.8,
+            EndBlue = 0.5,
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "EnemyConeAttackChariotRam_Hera",
+            InheritFrom = "EnemyConeAttackChariotRam_Zeus",
+            StartRed = 0.0,
+            StartGreen = 1.0,
+            StartBlue = 0.1,
+            EndRed = 0.1,
+            EndGreen = 0.3,
+            EndBlue = 1.0,
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "EnemyConeAttackChariotRam_Poseidon",
+            InheritFrom = "EnemyConeAttackChariotRam_Zeus",
+            StartRed = 0.1,
+            StartGreen = 1.0,
+            StartBlue = 0.8,
+            EndRed = 0,
+            EndGreen = 0.6,
+            EndBlue = 1.0,
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "EnemyConeAttackChariotRam_Demeter",
+            InheritFrom = "EnemyConeAttackChariotRam_Zeus",
+            StartRed = 0.25,
+            StartGreen = 0.35,
+            StartBlue = 0.5,
+            EndRed = 0.35,
+            EndGreen = 0.25,
+            EndBlue = 0.4999,
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "EnemyConeAttackChariotRam_Apollo",
+            InheritFrom = "EnemyConeAttackChariotRam_Zeus",
+            StartRed = 1.0,
+            StartGreen = 0.9,
+            StartBlue = 0.7,
+            EndRed = 0.999,
+            EndGreen = 0.85,
+            EndBlue = 0.05,
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "EnemyConeAttackChariotRam_Aphrodite",
+            InheritFrom = "EnemyConeAttackChariotRam_Zeus",
+            StartRed = 1.0,
+            StartGreen = 0.6,
+            StartBlue = 0.8,
+            EndRed = 0.99,
+            EndGreen = 0.05,
+            EndBlue = 0.99,
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "EnemyConeAttackChariotRam_Hephaestus",
+            InheritFrom = "EnemyConeAttackChariotRam_Zeus",
+            StartRed = 0.51,
+            StartGreen = 0.82,
+            StartBlue = 1.00,
+            EndRed = 1.00,
+            EndGreen = 0,
+            EndBlue = 0,
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "EnemyConeAttackChariotRam_Hestia",
+            InheritFrom = "EnemyConeAttackChariotRam_Zeus",
+            StartRed = 1.0,
+            StartGreen = 0.3,
+            StartBlue = 0.02,
+            EndRed = 0.999,
+            EndGreen = 0.15,
+            EndBlue = 0.0,
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "EnemyConeAttackChariotRam_Ares",
+            InheritFrom = "EnemyConeAttackChariotRam_Zeus",
+            StartRed = 1.0,
+            StartGreen = 0.04,
+            StartBlue = 0.001,
+            EndRed = 0.999,
+            EndGreen = 0.0,
+            EndBlue = 0.0,
+        })
+
     end
 
 return data
