@@ -6,7 +6,7 @@ schemaVersion = "0.0.1"
 namespace = "JarlUlsfark"
 name = "Tools_of_the_Trade"
 versionNumber = "0.3.1"
-description = "A mod that adds the Silver Spade (AKA NecroMel) and the Tablet of Peace (AKA KirbyMel) as new aspects. KirbyMel is still experimental!!"
+description = "A mod that adds 2 new Weapon Aspects: the Silver Spade (AKA NecroMel) and the Tablet of Peace (AKA KirbyMel)."
 websiteUrl = "https://github.com/Tal-lev/Tools_of_the_Trade"
 containsNsfwContent = false
 
