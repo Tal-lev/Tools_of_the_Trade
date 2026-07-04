@@ -1102,6 +1102,12 @@ function mod.CopyAbility (victim, functionArgs, triggerArgs)
 		elseif victim.Name == "CrusherUnit" or victim.Name == "CrusherUnit_Elite" then
 			Changed = "CrusherUnit"
 			Location = "AsphodelModsNikkelMHadesBiomes"
+		elseif victim.Name == "FreezeShotUnit" or victim.Name == "FreezeShotUnit_Elite" then
+			Changed = "FreezeShotUnit"
+			Location = "AsphodelModsNikkelMHadesBiomes"
+		elseif victim.Name == "HitAndRunUnit" or victim.Name == "HitAndRunUnit_Elite" then
+			Changed = "HitAndRunUnit"
+			Location = "AsphodelModsNikkelMHadesBiomes"
 		elseif victim.Name == "SpreadShotUnitMiniboss" then
 			Changed = "SpreadShotUnitMiniboss"
 			Location = "BiomeB"

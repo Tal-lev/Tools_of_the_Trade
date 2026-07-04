@@ -1368,6 +1368,26 @@ sjson.hook(file, function(data)
 
 		table.insert(data.Texts, sjson.to_object(
 		{
+			Id = "FreezeShotUnitCopyDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Copy: Gorgon",
+			Description = "Your Attack fires a {#UpgradeFormat}Homing Projectile {#Prev} that turns enemies to {#UpgradeFormat}Stone{#Prev}.",
+		},
+		TextOrder)
+		)
+
+		table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "HitAndRunUnitCopyDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Copy: MegaGorgon",
+			Description = "Your Attack fires a {#UpgradeFormat}6 Homing Projectile {#Prev}in a #{UpgradeFormat}Fan Pattern {#Prev} that turns enemies to {#UpgradeFormat}Stone{#Prev}.",
+		},
+		TextOrder)
+		)
+
+		table.insert(data.Texts, sjson.to_object(
+		{
 			Id = "SpreadShotUnitMinibossCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: Dire Spreader",

@@ -6720,6 +6720,110 @@ if ZagreusJourney then
 			},
 		},
 
+		FreezeShotUnitCopyDisplayBoon = 
+		{
+			Icon = "JarlUlsfark-Tools_of_the_Trade_ZJcompat\\FreezeShotUnitIcon",
+			ShowInHUD = true,
+			CustomLabel = 
+			{
+				DisplayType = "RoomValue",
+				Key = "Copy_FreezeShotUnit",
+				Text = "Copy_EmptyText"
+			},
+			PropertyChanges = 
+			{
+			{
+					WeaponName = "WeaponLob",
+					WeaponProperty = "Projectile",
+					ChangeValue = "FreezeShotWeapon",
+				},
+				{
+					WeaponName = "WeaponLob",
+					WeaponProperties = 
+					{
+						Cooldown = 0.5,
+						FizzleOldSpawns = false,
+					},
+					ExcludeLinked = true,
+				},
+				{
+					WeaponName = "WeaponLob",
+					ProjectileName = "FreezeShotWeapon",
+					ProjectileProperties = 
+					{
+						Damage = (10 * BiomeBScaling),
+					},
+					ExcludeLinked = true,
+				},
+			},
+			FlavorText = "CopyAbility_FlavorText",
+		},
+
+		FreezeShotUnitCopyTwoDisplayBoon = 
+		{
+			Icon = "JarlUlsfark-Tools_of_the_Trade_ZJcompat\\FreezeShotUnitIcon",
+			ShowInHUD = true,
+			CustomLabel = 
+			{
+				DisplayType = "RoomValue",
+				Key = "Copy_FreezeShotUnit2",
+				Text = "Copy_2nd"
+			},
+		},
+
+		HitAndRunUnitCopyDisplayBoon = 
+		{
+			Icon = "JarlUlsfark-Tools_of_the_Trade_ZJcompat\\HitAndRunUnitIcon",
+			ShowInHUD = true,
+			CustomLabel = 
+			{
+				DisplayType = "RoomValue",
+				Key = "Copy_HitAndRunUnit",
+				Text = "Copy_EmptyText"
+			},
+			PropertyChanges = 
+			{
+			{
+					WeaponName = "WeaponLob",
+					WeaponProperty = "Projectile",
+					ChangeValue = "FreezeShotWeapon",
+				},
+				{
+					WeaponName = "WeaponLob",
+					WeaponProperties = 
+					{
+						Cooldown = 0.5,
+						FizzleOldSpawns = false,
+						NumProjectiles = 6,
+						ProjectileAngleOffset = math.rad(20),
+					},
+					ExcludeLinked = true,
+				},
+				{
+					WeaponName = "WeaponLob",
+					ProjectileName = "FreezeShotWeapon",
+					ProjectileProperties = 
+					{
+						Damage = (10 * BiomeBScaling),
+					},
+					ExcludeLinked = true,
+				},
+			},
+			FlavorText = "CopyAbility_FlavorText",
+		},
+
+		HitAndRunUnitCopyTwoDisplayBoon = 
+		{
+			Icon = "JarlUlsfark-Tools_of_the_Trade_ZJcompat\\HitAndRunUnitIcon",
+			ShowInHUD = true,
+			CustomLabel = 
+			{
+				DisplayType = "RoomValue",
+				Key = "Copy_HitAndRunUnit2",
+				Text = "Copy_2nd"
+			},
+		},
+
 		SpreadShotUnitMinibossCopyDisplayBoon = 
 		{
 			Icon = "JarlUlsfark-Tools_of_the_Trade_ZJcompat\\SpreadShotUnitMinibossIcon",
