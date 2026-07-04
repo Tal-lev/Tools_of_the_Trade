@@ -27,12 +27,11 @@ Adding new aspects themed around the Gathering Tools
 
 ### The Tablet of Peace (AKA KirbyMel)
 
-- Gain two abilities, Copy and Reserve-Copy.
-- Your Attack Switches Copy trait with the enemy's weapon.
-- Your Omega Attack creates a nova and replaces between Copy and Reserve-Copy traits.
+- Your Attack Copies the enemy's weapon.
+- Your Omega Attack creates a nova and places the copied weapon in Reserve until Omega Attack is used again.
 - Trait Increase Omega Attack damage.
 - Introduces three new hammers
-- 131 Implemented enemies.
+- 131 Implemented Copy Abilities.
 
 [Full Copy Compatibility list](https://github.com/Tal-lev/Tools_of_the_Trade/blob/main/Copy_Compatibility.md)
 
