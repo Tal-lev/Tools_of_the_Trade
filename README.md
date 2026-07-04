@@ -25,7 +25,7 @@ Adding new aspects themed around the Gathering Tools
   <img src="https://media.githubusercontent.com/media/Tal-lev/Tools_of_the_Trade/refs/heads/main/images/NecroMel.png" alt="PonyDressList" width="70%">
 </div>
 
-### The Tablet of Peace (AKA KirbyMel) Experimental!!!
+### The Tablet of Peace (AKA KirbyMel)
 
 - Gain two abilities, Copy and Reserve-Copy.
 - Your Attack Switches Copy trait with the enemy's weapon.
