@@ -51,7 +51,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
     - projectiles 1 -> 3
     - cooldown 0.1s -> 1.2s
     - ClipSize removed
-  - Balance Explosive Reflection Hammer damage +100% -> 50%
+  - Explosive Reflection Hammer damage +100% -> 50%
 
 ## [0.3.1] - 2026-07-01
 
