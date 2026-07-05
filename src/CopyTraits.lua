@@ -3274,6 +3274,57 @@ OverwriteTableKeys( TraitData, {
 		},
 	},
 
+	ChronosTwoCopyDisplayBoon = 
+	{
+		Icon = "JarlUlsfark-Tools_of_the_Trade\\Chronos2Icon",
+		ShowInHUD = true,
+		CustomLabel = 
+		{
+			DisplayType = "RoomValue",
+			Key = "Copy_Chronostwo",
+			Text = "Copy_EmptyText"
+		},
+        PropertyChanges = 
+        {
+           {
+				WeaponName = "WeaponLob",
+				WeaponProperty = "Projectile",
+				ChangeValue = "ChronosDashStasis",
+			},
+            {
+				WeaponName = "WeaponLob",
+				WeaponProperties = 
+                {
+                    Cooldown = 3,
+					FizzleOldSpawns = true,
+                },
+                ExcludeLinked = true,
+			},
+            {
+                WeaponName = "WeaponLob",
+                ProjectileName = "ChronosDashStasis",
+                ProjectileProperties = 
+				{
+					Damage = (0 * BiomeIScaling),
+				},
+				ExcludeLinked = true,
+            },
+        },
+		FlavorText = "CopyAbility_FlavorText",
+	},
+
+	ChronosTwoCopyTwoDisplayBoon = 
+	{
+		Icon = "JarlUlsfark-Tools_of_the_Trade\\Chronos2Icon",
+		ShowInHUD = true,
+		CustomLabel = 
+		{
+			DisplayType = "RoomValue",
+			Key = "Copy_Chronostwo2",
+			Text = "Copy_2nd"
+		},
+	},
+
 	ZagreusOneCopyDisplayBoon = 
 	{
 		Icon = "JarlUlsfark-Tools_of_the_Trade\\ZagreusIcon",

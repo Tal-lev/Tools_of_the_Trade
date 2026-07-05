@@ -917,7 +917,11 @@ function mod.CopyAbility (victim, functionArgs, triggerArgs)
 		Changed = "SatyrCultist"
 		Location = "BiomeIHouse"
 	elseif victim.Name == "Chronos" then
-		Changed = "ChronosOne"
+		if math.random() < 0.5 then
+			Changed = "ChronosOne"
+		else
+			Changed = "ChronosTwo"
+		end
 		Location = "BiomeIHouse"
 	elseif victim.Name == "Zagreus" then
 		if math.random() < 0.5 then

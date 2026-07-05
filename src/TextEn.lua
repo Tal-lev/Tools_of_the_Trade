@@ -766,6 +766,16 @@ sjson.hook(file, function(data)
 
 	table.insert(data.Texts, sjson.to_object(
 		{
+			Id = "ChronosTwoCopyDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Copy: Chronos Time Stasis",
+			Description = "Your Attack {#UpgradeFormat}Stops {#Prev}enemies in a {#UpgradeFormat}Moment in Time{#Prev}.",
+		},
+		TextOrder)
+	)
+
+	table.insert(data.Texts, sjson.to_object(
+		{
 			Id = "ZagreusOneCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: Zagreus - Blood Cast",
