@@ -1163,6 +1163,9 @@ function mod.CopyAbility (victim, functionArgs, triggerArgs)
 		elseif victim.Name == "SplitShotUnit" or victim.Name == "SplitShotUnitElite" then
 			Changed = "SplitShotUnit"
 			Location = "ElysiumModsNikkelMHadesBiomes"
+		elseif victim.Name == "Minotaur" then
+			Changed = "MinotaurOne"
+			Location = "ElysiumModsNikkelMHadesBiomes"
 		end
 	end
 	if Changed ~= "null" then
@@ -2082,7 +2085,7 @@ modutil.once_loaded.game(function()
 	import "Quests.lua"
 	--Add god specific attack animations for summon
 	--import "VFXAnimations.lua"
-
+	import "Cosmetics.lua"
 	--Add god specific attacks for summon
 	--import "WeaponData.lua"
 

@@ -18394,6 +18394,296 @@ table.insert(data.Animations,
             EndGreen = 0.0,
             EndBlue = 0.0,
         })
+        
+        table.insert(data.Animations,
+        {
+            Name = "KirbyMinotaurShockwaveTrail",
+            FilePath = "Fx\\EnemyWaveFist\\EnemyWaveFist",
+            GroupName = "FX_Terrain",
+            Type = "Book",
+            EaseIn = 0.95,
+            EaseOut = 1.0,
+            EndFrame = 24,
+            NumFrames = 24,
+            RandomPlaySpeedMax = 60.0,
+            RandomPlaySpeedMin = 50.0,
+            StartFrame = 1,
+            RandomFlipVertical = true,
+            LocationFromOwner = "Ignore",
+            LocationZFromOwner = "Ignore",
+            EndScaleY = 0.75,
+            PostRotateScaleY = 0.5,
+            Scale = 1.5,
+            ScaleFromOwner = "Ignore",
+            StartScaleY = 0.5,
+            Ambient = 0.0,
+            CreateAnimations = {
+                { Name = "MinotaurShockwaveSpike" },
+                { Name = "DustPuffWaveFist" },
+                { Name = "RubbleFallImpactDebrisWaveFist" },
+            },
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "MinotaurShockwaveTrail_Zeus",
+            InheritFrom = "KirbyMinotaurShockwaveTrail",
+            Color = {},
+            ColorFromOwner = "Ignore",
+            AddColor = true,
+            StartRed = 1.0,
+            StartGreen = 0.95,
+            StartBlue = 0.7,
+            EndRed = 0.9999,
+            EndGreen = 0.8,
+            EndBlue = 0.5,
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "MinotaurShockwaveTrail_Hera",
+            InheritFrom = "MinotaurShockwaveTrail_Zeus",
+            StartRed = 0.0,
+            StartGreen = 1.0,
+            StartBlue = 0.1,
+            EndRed = 0.1,
+            EndGreen = 0.3,
+            EndBlue = 1.0,
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "MinotaurShockwaveTrail_Poseidon",
+            InheritFrom = "MinotaurShockwaveTrail_Zeus",
+            StartRed = 0.1,
+            StartGreen = 1.0,
+            StartBlue = 0.8,
+            EndRed = 0,
+            EndGreen = 0.6,
+            EndBlue = 1.0,
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "MinotaurShockwaveTrail_Demeter",
+            InheritFrom = "MinotaurShockwaveTrail_Zeus",
+            StartRed = 0.25,
+            StartGreen = 0.35,
+            StartBlue = 0.5,
+            EndRed = 0.35,
+            EndGreen = 0.25,
+            EndBlue = 0.4999,
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "MinotaurShockwaveTrail_Apollo",
+            InheritFrom = "MinotaurShockwaveTrail_Zeus",
+            StartRed = 1.0,
+            StartGreen = 0.9,
+            StartBlue = 0.7,
+            EndRed = 0.999,
+            EndGreen = 0.85,
+            EndBlue = 0.05,
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "MinotaurShockwaveTrail_Aphrodite",
+            InheritFrom = "MinotaurShockwaveTrail_Zeus",
+            StartRed = 1.0,
+            StartGreen = 0.6,
+            StartBlue = 0.8,
+            EndRed = 0.99,
+            EndGreen = 0.05,
+            EndBlue = 0.99,
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "MinotaurShockwaveTrail_Hephaestus",
+            InheritFrom = "MinotaurShockwaveTrail_Zeus",
+            StartRed = 0.51,
+            StartGreen = 0.82,
+            StartBlue = 1.00,
+            EndRed = 1.00,
+            EndGreen = 0,
+            EndBlue = 0,
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "MinotaurShockwaveTrail_Hestia",
+            InheritFrom = "MinotaurShockwaveTrail_Zeus",
+            StartRed = 1.0,
+            StartGreen = 0.3,
+            StartBlue = 0.02,
+            EndRed = 0.999,
+            EndGreen = 0.15,
+            EndBlue = 0.0,
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "MinotaurShockwaveTrail_Ares",
+            InheritFrom = "MinotaurShockwaveTrail_Zeus",
+            StartRed = 1.0,
+            StartGreen = 0.04,
+            StartBlue = 0.001,
+            EndRed = 0.999,
+            EndGreen = 0.0,
+            EndBlue = 0.0,
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "KirbyMinotaurShockwaveFx",
+            CreateAnimation = "QuickFlashEnemy",
+            FilePath = "Particles\\particle_quickflash",
+            GroupName = "FX_Standing_Add",
+            Type = "Constant",
+            Sound = "/SFX/Enemy Sounds/BloodlessWaveAmbienceLoop",
+            StopSoundOnFinishFade = 0.2,
+            Alpha = 0.5,
+            EndFrame = 1,
+            Loop = true,
+            NumFrames = 1,
+            StartFrame = 1,
+            PostRotateScaleY = 0.5,
+            Scale = 0.5,
+            ScaleX = 2.0,
+            ScaleY = 0.5,
+            Ambient = 0.0,
+            ActiveVisualFxCap = 100,
+            VisualFxDistanceMax = 50.0,
+            VisualFxDistanceMin = 40.0,
+            OverlayVfx = true,
+            PingPongShiftOverDuration = true,
+            CreateAnimations = {
+                { Name = "WaveFistInitSpike" },
+            },
+            Color = { Red = 1.0, Green = 0.0, Blue = 0.50, },
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "MinotaurShockwaveFx_Zeus",
+            InheritFrom = "KirbyMinotaurShockwaveFx",
+            VisualFx = "MinotaurShockwaveTrail_Zeus",
+            Color = {},
+            ColorFromOwner = "Ignore",
+            AddColor = true,
+            StartRed = 1.0,
+            StartGreen = 0.95,
+            StartBlue = 0.7,
+            EndRed = 0.9999,
+            EndGreen = 0.8,
+            EndBlue = 0.5,
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "MinotaurShockwaveFx_Hera",
+            InheritFrom = "MinotaurShockwaveFx_Zeus",
+            VisualFx = "MinotaurShockwaveTrail_Hera",
+            StartRed = 0.0,
+            StartGreen = 1.0,
+            StartBlue = 0.1,
+            EndRed = 0.1,
+            EndGreen = 0.3,
+            EndBlue = 1.0,
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "MinotaurShockwaveFx_Poseidon",
+            InheritFrom = "MinotaurShockwaveFx_Zeus",
+            VisualFx = "MinotaurShockwaveTrail_Poseidon",
+            StartRed = 0.1,
+            StartGreen = 1.0,
+            StartBlue = 0.8,
+            EndRed = 0,
+            EndGreen = 0.6,
+            EndBlue = 1.0,
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "MinotaurShockwaveFx_Demeter",
+            InheritFrom = "MinotaurShockwaveFx_Zeus",
+            VisualFx = "MinotaurShockwaveTrail_Demeter",
+            StartRed = 0.25,
+            StartGreen = 0.35,
+            StartBlue = 0.5,
+            EndRed = 0.35,
+            EndGreen = 0.25,
+            EndBlue = 0.4999,
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "MinotaurShockwaveFx_Apollo",
+            InheritFrom = "MinotaurShockwaveFx_Zeus",
+            VisualFx = "MinotaurShockwaveTrail_Apollo",
+            StartRed = 1.0,
+            StartGreen = 0.9,
+            StartBlue = 0.7,
+            EndRed = 0.999,
+            EndGreen = 0.85,
+            EndBlue = 0.05,
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "MinotaurShockwaveFx_Aphrodite",
+            InheritFrom = "MinotaurShockwaveFx_Zeus",
+            VisualFx = "MinotaurShockwaveTrail_Aphrodite",
+            StartRed = 1.0,
+            StartGreen = 0.6,
+            StartBlue = 0.8,
+            EndRed = 0.99,
+            EndGreen = 0.05,
+            EndBlue = 0.99,
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "MinotaurShockwaveFx_Hephaestus",
+            InheritFrom = "MinotaurShockwaveFx_Zeus",
+            VisualFx = "MinotaurShockwaveTrail_Hephaestus",
+            StartRed = 0.51,
+            StartGreen = 0.82,
+            StartBlue = 1.00,
+            EndRed = 1.00,
+            EndGreen = 0,
+            EndBlue = 0,
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "MinotaurShockwaveFx_Hestia",
+            InheritFrom = "MinotaurShockwaveFx_Zeus",
+            VisualFx = "MinotaurShockwaveTrail_Hestia",
+            StartRed = 1.0,
+            StartGreen = 0.3,
+            StartBlue = 0.02,
+            EndRed = 0.999,
+            EndGreen = 0.15,
+            EndBlue = 0.0,
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "MinotaurShockwaveFx_Ares",
+            InheritFrom = "MinotaurShockwaveFx_Zeus",
+            VisualFx = "MinotaurShockwaveTrail_Ares",
+            StartRed = 1.0,
+            StartGreen = 0.04,
+            StartBlue = 0.001,
+            EndRed = 0.999,
+            EndGreen = 0.0,
+            EndBlue = 0.0,
+        })
 
     end
 

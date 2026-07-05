@@ -1566,6 +1566,16 @@ sjson.hook(file, function(data)
 		TextOrder)
 		)
 
+		table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "MinotaurOneCopyDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Copy: Asterius Crescent Strike",
+			Description = "Your Attack Slams down sending {#UpgradeFormat}3 Shockwaves{#Prev}.",
+		},
+		TextOrder)
+		)
+
 	end
 
 

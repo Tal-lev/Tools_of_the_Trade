@@ -1513,10 +1513,15 @@ if ZagreusJourney then
 				ChangeType = "Absolute",
 				ExcludeLinked = true,
 			},
-            
-
-
-
+            --MinotaurOne
+            {
+				WeaponName = "WeaponLob",
+				ProjectileName = "MinotaurAxeCrescentStrike",
+				ProjectileProperty = "Graphic",
+				ValuePrefix = "MinotaurShockwaveFx_",
+				ChangeType = "Absolute",
+				ExcludeLinked = true,
+			},
 
 		}
 	})

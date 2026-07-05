@@ -7779,5 +7779,62 @@ if ZagreusJourney then
 				Text = "Copy_2nd"
 			},
 		},
+
+		MinotaurOneCopyDisplayBoon = 
+		{
+			Icon = "JarlUlsfark-Tools_of_the_Trade_ZJcompat\\MinotaurIcon",
+			ShowInHUD = true,
+			CustomLabel = 
+			{
+				DisplayType = "RoomValue",
+				Key = "Copy_MinotaurOne",
+				Text = "Copy_EmptyText"
+			},
+			PropertyChanges = 
+			{
+				{
+					WeaponName = "WeaponLob",
+					WeaponProperty = "Projectile",
+					ChangeValue = "MinotaurAxeCrescentStrike",
+				},
+				{
+					WeaponName = "WeaponLob",
+					WeaponProperties = 
+					{
+						Cooldown = 1.0,
+						FizzleOldSpawns = false,
+						NumProjectiles = 3,
+						BarrelLength = 200,
+						ProjectileAngleOffset = math.rad(20),
+						SelfVelocity = 400,
+						BlockMoveInput = true,
+						CancelMovement = true,
+					},
+					ExcludeLinked = true,
+				},
+				{
+					WeaponName = "WeaponLob",
+					ProjectileName = "MinotaurAxeCrescentStrike",
+					ProjectileProperties = 
+					{
+						Damage = (60 * BiomeCScaling),
+					},
+					ExcludeLinked = true,
+				},
+			},
+			FlavorText = "CopyAbility_FlavorText",
+		},
+
+		MinotaurOneCopyTwoDisplayBoon = 
+		{
+			Icon = "JarlUlsfark-Tools_of_the_Trade_ZJcompat\\MinotaurIcon",
+			ShowInHUD = true,
+			CustomLabel = 
+			{
+				DisplayType = "RoomValue",
+				Key = "Copy_MinotaurOne2",
+				Text = "Copy_2nd"
+			},
+		},
 	})
 end
