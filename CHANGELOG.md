@@ -7,7 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-- 35 Implemented ZJ enemies for copy.
+- 36 Implemented ZJ enemies for copy.
   - HadesSwarmer
   - LightSpawner
   - PunchingBagUnit
@@ -44,6 +44,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - ChariotSuicide
   - Chariot
   - SplitShotUnit
+  - Minotaur
+    - Cresent Strike
 - 3 Implemented Boss Copy
   - Chronos - Time Stasis
   - Zagreus - Spear Spin
