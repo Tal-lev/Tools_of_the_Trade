@@ -44,7 +44,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - ChariotSuicide
   - Chariot
   - SplitShotUnit
-- 1 Implemented Boss Copy
+- 2 Implemented Boss Copy
+  - Chronos - Time Stasis
   - Zagreus - Spear Spin
 - 4 Minor Prophecies added
   - Clear with both tools
