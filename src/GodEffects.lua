@@ -1044,6 +1044,15 @@ AddGodTraitProperty({
             ChangeType = "Absolute",
             ExcludeLinked = true,
         }, 
+        --ErisTwo
+		{
+            WeaponName = "WeaponLob",
+            ProjectileName = "ErisLaser",
+            ProjectileProperty = "Graphic",
+            ValuePrefix = "GunLaser_",
+            ChangeType = "Absolute",
+            ExcludeLinked = true,
+        }, 
 		--SentryBot
 		{
             WeaponName = "WeaponLob",

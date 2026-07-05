@@ -4893,6 +4893,61 @@ OverwriteTableKeys( TraitData, {
 		},
 	},
 
+	ErisTwoCopyDisplayBoon = 
+	{
+		Icon = "JarlUlsfark-Tools_of_the_Trade\\Eris2Icon",
+		ShowInHUD = true,
+		CustomLabel = 
+		{
+			DisplayType = "RoomValue",
+			Key = "Copy_Eris2",
+			Text = "Copy_EmptyText"
+		},
+        PropertyChanges = 
+        {
+           {
+				WeaponName = "WeaponLob",
+				WeaponProperty = "Projectile",
+				ChangeValue = "ErisLaser",
+			},
+            {
+				WeaponName = "WeaponLob",
+				WeaponProperties = 
+                {
+                    Cooldown = 0.92,
+					FizzleOldSpawns = false,
+					AutoLock = true,
+					AutoLockRange = 400,
+					AutoLockArcDistance = 60,
+					FireRotationDampening = 0.1,
+                },
+                ExcludeLinked = true,
+			},
+            {
+                WeaponName = "WeaponLob",
+                ProjectileName = "ErisLaser",
+                ProjectileProperties = 
+				{
+					Damage = (300 * BiomeOScaling),
+				},
+				ExcludeLinked = true,
+            },
+        },
+		FlavorText = "CopyAbility_FlavorText",
+	},
+
+	ErisTwoCopyTwoDisplayBoon = 
+	{
+		Icon = "JarlUlsfark-Tools_of_the_Trade\\Eris2Icon",
+		ShowInHUD = true,
+		CustomLabel = 
+		{
+			DisplayType = "RoomValue",
+			Key = "Copy_Eristwo2",
+			Text = "Copy_2nd"
+		},
+	},
+
 	SentryBotCopyDisplayBoon = 
 	{
 		Icon = "JarlUlsfark-Tools_of_the_Trade\\SentryBotIcon",

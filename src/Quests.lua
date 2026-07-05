@@ -340,6 +340,7 @@ OverwriteTableKeys( QuestData, {
                     "CaptainCopyDisplayBoon",
                     "CharybdisTentacleCopyDisplayBoon",
                     "ErisOneCopyDisplayBoon",
+                    "ErisTwoCopyDisplayBoon",
                    
                     --Mount Olympus
                     "ZombieOlympusCopyDisplayBoon",
@@ -404,6 +405,7 @@ OverwriteTableKeys( QuestData, {
                     "CaptainCopyDisplayBoon",
                     "CharybdisTentacleCopyDisplayBoon",
                     "ErisOneCopyDisplayBoon",
+                    "ErisTwoCopyDisplayBoon",
                    
                     --Mount Olympus
                     "ZombieOlympusCopyDisplayBoon",
