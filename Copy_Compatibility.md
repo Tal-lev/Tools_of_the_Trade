@@ -67,6 +67,7 @@
 - The Verminancer
 - Chronos
   - Scythe-Throw
+  - Time Stasis
 - Zagreus
   - Blood-Cast
   - Spear Spin
