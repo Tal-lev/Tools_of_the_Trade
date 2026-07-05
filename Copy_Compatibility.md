@@ -69,6 +69,7 @@
   - Scythe-Throw
 - Zagreus
   - Blood-Cast
+  - Spear Spin
 
 ### Ephyra
 
@@ -181,3 +182,4 @@
 - Soul Catcher
 - Flame Wheel
 - Nemean Chariot
+- Splitter
