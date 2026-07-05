@@ -185,3 +185,5 @@
 - Flame Wheel
 - Nemean Chariot
 - Splitter
+- Asterius
+  - Crescent Strike
