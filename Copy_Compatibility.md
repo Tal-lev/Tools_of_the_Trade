@@ -102,6 +102,7 @@
 - Charybdis Tentacle
 - Eris
   - Sniper-Shot
+  - Laser
 
 ### Mount Olympus
 
