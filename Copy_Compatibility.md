@@ -187,3 +187,5 @@
 - Splitter
 - Asterius
   - Crescent Strike
+- Theseus
+  - Spear Throw
