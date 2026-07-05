@@ -7836,5 +7836,56 @@ if ZagreusJourney then
 				Text = "Copy_2nd"
 			},
 		},
+
+		TheseusOneCopyDisplayBoon = 
+		{
+			Icon = "JarlUlsfark-Tools_of_the_Trade_ZJcompat\\TheseusIcon",
+			ShowInHUD = true,
+			CustomLabel = 
+			{
+				DisplayType = "RoomValue",
+				Key = "Copy_MinotaurOne",
+				Text = "Copy_EmptyText"
+			},
+			PropertyChanges = 
+			{
+				{
+					WeaponName = "WeaponLob",
+					WeaponProperty = "Projectile",
+					ChangeValue = "TheseusSpearThrowReturn",
+				},
+				{
+					WeaponName = "WeaponLob",
+					WeaponProperties = 
+					{
+						Cooldown = 1.0,
+						FizzleOldSpawns = false,
+					},
+					ExcludeLinked = true,
+				},
+				{
+					WeaponName = "WeaponLob",
+					ProjectileName = "TheseusSpearThrowReturn",
+					ProjectileProperties = 
+					{
+						Damage = (200 * BiomeCScaling),
+					},
+					ExcludeLinked = true,
+				},
+			},
+			FlavorText = "CopyAbility_FlavorText",
+		},
+
+		TheseusOneCopyTwoDisplayBoon = 
+		{
+			Icon = "JarlUlsfark-Tools_of_the_Trade_ZJcompat\\TheseusIcon",
+			ShowInHUD = true,
+			CustomLabel = 
+			{
+				DisplayType = "RoomValue",
+				Key = "Copy_MinotaurOne2",
+				Text = "Copy_2nd"
+			},
+		},
 	})
 end

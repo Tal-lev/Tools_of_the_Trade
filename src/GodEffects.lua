@@ -1522,6 +1522,23 @@ if ZagreusJourney then
 				ChangeType = "Absolute",
 				ExcludeLinked = true,
 			},
+            --TheseusOne
+            {
+				WeaponName = "WeaponLob",
+				ProjectileName = "TheseusSpearThrowReturn",
+				ProjectileProperty = "Graphic",
+				ValuePrefix = "SpearThrowProjectile_Theseus",
+				ChangeType = "Absolute",
+				ExcludeLinked = true,
+			},
+            {
+				WeaponName = "WeaponLob",
+				ProjectileName = "TheseusSpearThrowReturn",
+				ProjectileProperty = "ImpactFx",
+				ValuePrefix = "HadesEnemyProjectileImpact_",
+				ChangeType = "Absolute",
+				ExcludeLinked = true,
+			},
 
 		}
 	})
