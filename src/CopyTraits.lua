@@ -546,13 +546,6 @@ OverwriteTableKeys( TraitData, {
 			Key = "Copy_Treant",
 			Text = "Copy_EmptyText"
 		},
-		--WeaponDataOverride = 
-		--{
-		--	WeaponLob = 
-		--	{
-		--		Spread = 15,
-		--	},
-		--},
         PropertyChanges = 
         {
            {
@@ -569,10 +562,16 @@ OverwriteTableKeys( TraitData, {
 					ProjectileInterval = 0.0485,
 					FireRotationDampening = 0.14,
 					CancelMovement = true,
-					--Spread = 15,
 					RootOwnerWhileFiring = true,
-					ProjectileAngleOffset = math.rad(0),
+					--ProjectileAngleOffset = math.rad(0),
+					--ProjectileOffsetStart = "LEFT",
+					--ProjectileAngleOffsetMin = math.rad(-5),
+					--ProjectileAngleOffsetMax = math.rad(5),
 					FizzleOldSpawns = false,
+					--Scatter = 15,
+					--ScatterCap = 30,
+					--ScatterSubside = 15,
+					--SetCompleteAngleOnFire = true,
                 },
                 ExcludeLinked = true,
 			},
@@ -2630,7 +2629,9 @@ OverwriteTableKeys( TraitData, {
 					RootOwnerWhileFiring = true,
 					ChargeTime = 1,
 					ProjectileAngleOffset = math.rad(0),
-					NumProjectiles = 8,
+					NumProjectiles = 12,
+					ProjectileAngleOffset = math.rad(5),
+					ProjectileOffsetStart = "LEFT",
 					ProjectileInterval = 0.2,
 					FireOnRelease = true,
 					AttachToOwner = true,
@@ -3315,6 +3316,63 @@ OverwriteTableKeys( TraitData, {
 	ZagreusOneCopyTwoDisplayBoon = 
 	{
 		Icon = "JarlUlsfark-Tools_of_the_Trade\\ZagreusIcon",
+		ShowInHUD = true,
+		CustomLabel = 
+		{
+			DisplayType = "RoomValue",
+			Key = "Copy_Zagreus2",
+			Text = "Copy_2nd"
+		},
+	},
+
+	ZagreusTwoCopyDisplayBoon = 
+	{
+		Icon = "JarlUlsfark-Tools_of_the_Trade\\Zagreus2Icon",
+		ShowInHUD = true,
+		CustomLabel = 
+		{
+			DisplayType = "RoomValue",
+			Key = "Copy_Zagreus",
+			Text = "Copy_EmptyText"
+		},
+        PropertyChanges = 
+        {
+           {
+				WeaponName = "WeaponLob",
+				WeaponProperty = "Projectile",
+				ChangeValue = "ZagreusSpearSpin",
+			},
+            {
+				WeaponName = "WeaponLob",
+				WeaponProperties = 
+                {
+                    Cooldown = 1.2,
+					FizzleOldSpawns = true,
+					BlockMoveInput = true,
+					CancelMovement = true,
+					FizzleOldSpawns = true,
+					BarrelLength = 0,
+					AttachToOwner = true,
+					SelfVelocity = 1100,
+                },
+                ExcludeLinked = true,
+			},
+            {
+                WeaponName = "WeaponLob",
+                ProjectileName = "ZagreusSpearSpin",
+                ProjectileProperties = 
+				{
+					Damage = (500 * BiomeCScaling),
+				},
+				ExcludeLinked = true,
+            },
+        },
+		FlavorText = "CopyAbility_FlavorText",
+	},
+
+	ZagreusTwoCopyTwoDisplayBoon = 
+	{
+		Icon = "JarlUlsfark-Tools_of_the_Trade\\Zagreus2Icon",
 		ShowInHUD = true,
 		CustomLabel = 
 		{
@@ -7409,7 +7467,8 @@ if ZagreusJourney then
 						FizzleOldSpawns = false,
 						NumProjectiles = 20,
 						ProjectileInterval = 0.2,
-						ProjectileAngleOffset = math.rad(10),
+						ProjectileAngleOffset = math.rad(5),
+						ProjectileOffsetStart = "LEFT",
 						
 					},
 					ExcludeLinked = true,
@@ -7560,6 +7619,57 @@ if ZagreusJourney then
 			{
 				DisplayType = "RoomValue",
 				Key = "Copy_ChariotSuicide2",
+				Text = "Copy_2nd"
+			},
+		},
+
+		SplitShotUnitCopyDisplayBoon = 
+		{
+			Icon = "JarlUlsfark-Tools_of_the_Trade_ZJcompat\\SplitShotUnitIcon",
+			ShowInHUD = true,
+			CustomLabel = 
+			{
+				DisplayType = "RoomValue",
+				Key = "Copy_SplitShotUnit",
+				Text = "Copy_EmptyText"
+			},
+			PropertyChanges = 
+			{
+			{
+					WeaponName = "WeaponLob",
+					WeaponProperty = "Projectile",
+					ChangeValue = "SplitShotWeapon",
+				},
+				{
+					WeaponName = "WeaponLob",
+					WeaponProperties = 
+					{
+						Cooldown = 1.0,
+						FizzleOldSpawns = false,
+					},
+					ExcludeLinked = true,
+				},
+				{
+					WeaponName = "WeaponLob",
+					ProjectileName = "SplitShotWeapon",
+					ProjectileProperties = 
+					{
+						Damage = (100 * BiomeCScaling),
+					},
+					ExcludeLinked = true,
+				},
+			},
+			FlavorText = "CopyAbility_FlavorText",
+		},
+
+		SplitShotUnitCopyTwoDisplayBoon = 
+		{
+			Icon = "JarlUlsfark-Tools_of_the_Trade_ZJcompat\\SplitShotUnitIcon",
+			ShowInHUD = true,
+			CustomLabel = 
+			{
+				DisplayType = "RoomValue",
+				Key = "Copy_SplitShotUnit2",
 				Text = "Copy_2nd"
 			},
 		},

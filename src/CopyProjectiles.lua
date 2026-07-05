@@ -1042,7 +1042,123 @@ local file = rom.path.combine(rom.paths.Content, 'Game/Projectiles/PlayerProject
 					Graphic = "GreekFireLarge_Ares",
 				},
 		})
-			
+
+		table.insert(data.Projectiles,
+		{
+			Name = "SplitShotSmall_Zeus",
+			InheritFrom = "SpreadShotBolt",
+			DissipateFx = "EnemyProjectileDissipate",
+			DeathFx = "EnemyProjectileDissipate",
+			ImpactFx = "HadesEnemyProjectileImpact_Zeus",
+			Thing = 
+				{
+					Graphic = "HadesEnemyProjectileIn_Zeus",
+				},
+		})
+
+		table.insert(data.Projectiles,
+		{
+			Name = "SplitShotSmall_Hera",
+			InheritFrom = "SpreadShotBolt",
+			DissipateFx = "EnemyProjectileDissipate",
+			DeathFx = "EnemyProjectileDissipate",
+			ImpactFx = "HadesEnemyProjectileImpact_Hera",
+			Thing = 
+				{
+					Graphic = "HadesEnemyProjectileIn_Hera",
+				},
+		})
+
+		table.insert(data.Projectiles,
+		{
+			Name = "SplitShotSmall_Poseidon",
+			InheritFrom = "SpreadShotBolt",
+			DissipateFx = "EnemyProjectileDissipate",
+			DeathFx = "EnemyProjectileDissipate",
+			ImpactFx = "HadesEnemyProjectileImpact_Poseidon",
+			Thing = 
+				{
+					Graphic = "HadesEnemyProjectileIn_Poseidon",
+				},
+		})
+
+		table.insert(data.Projectiles,
+		{
+			Name = "SplitShotSmall_Demeter",
+			InheritFrom = "SpreadShotBolt",
+			DissipateFx = "EnemyProjectileDissipate",
+			DeathFx = "EnemyProjectileDissipate",
+			ImpactFx = "HadesEnemyProjectileImpact_Demeter",
+			Thing = 
+				{
+					Graphic = "HadesEnemyProjectileIn_Demeter",
+				},
+		})
+
+		table.insert(data.Projectiles,
+		{
+			Name = "SplitShotSmall_Apollo",
+			InheritFrom = "SpreadShotBolt",
+			DissipateFx = "EnemyProjectileDissipate",
+			DeathFx = "EnemyProjectileDissipate",
+			ImpactFx = "HadesEnemyProjectileImpact_Apollo",
+			Thing = 
+				{
+					Graphic = "HadesEnemyProjectileIn_Apollo",
+				},
+		})
+
+		table.insert(data.Projectiles,
+		{
+			Name = "SplitShotSmall_Aphrodite",
+			InheritFrom = "SpreadShotBolt",
+			DissipateFx = "EnemyProjectileDissipate",
+			DeathFx = "EnemyProjectileDissipate",
+			ImpactFx = "HadesEnemyProjectileImpact_Aphrodite",
+			Thing = 
+				{
+					Graphic = "HadesEnemyProjectileIn_Aphrodite",
+				},
+		})
+
+		table.insert(data.Projectiles,
+		{
+			Name = "SplitShotSmall_Hephaestus",
+			InheritFrom = "SpreadShotBolt",
+			DissipateFx = "EnemyProjectileDissipate",
+			DeathFx = "EnemyProjectileDissipate",
+			ImpactFx = "HadesEnemyProjectileImpact_Hephaestus",
+			Thing = 
+				{
+					Graphic = "HadesEnemyProjectileIn_Hephaestus",
+				},
+		})
+
+		table.insert(data.Projectiles,
+		{
+			Name = "SplitShotSmall_Hestia",
+			InheritFrom = "SpreadShotBolt",
+			DissipateFx = "EnemyProjectileDissipate",
+			DeathFx = "EnemyProjectileDissipate",
+			ImpactFx = "HadesEnemyProjectileImpact_Hestia",
+			Thing = 
+				{
+					Graphic = "HadesEnemyProjectileIn_Hestia",
+				},
+		})
+
+		table.insert(data.Projectiles,
+		{
+			Name = "SplitShotSmall_Ares",
+			InheritFrom = "SpreadShotBolt",
+			DissipateFx = "EnemyProjectileDissipate",
+			DeathFx = "EnemyProjectileDissipate",
+			ImpactFx = "HadesEnemyProjectileImpact_Ares",
+			Thing = 
+				{
+					Graphic = "HadesEnemyProjectileIn_Ares",
+				},
+		})
 
 	end
 

@@ -776,6 +776,16 @@ sjson.hook(file, function(data)
 
 	table.insert(data.Texts, sjson.to_object(
 		{
+			Id = "ZagreusTwoCopyDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Copy: Zagreus - Spear Spin",
+			Description = "Your Attack {#UpgradeFormat}Spins {#Prev}a {#UpgradeFormat}Spear {#Prev}around you.",
+		},
+		TextOrder)
+	)
+
+	table.insert(data.Texts, sjson.to_object(
+		{
 			Id = "CarrionCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: Bronzebeak",
@@ -1522,6 +1532,16 @@ sjson.hook(file, function(data)
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: Nemean Chariot",
 			Description = "Your Attack {#UpgradeFormat}Rams {#Prev} into enemies.",
+		},
+		TextOrder)
+		)
+
+		table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "SplitShotUnitCopyDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Copy: Splitter",
+			Description = "Your Attack fires a {#UpgradeFormat}Projectile {#Prev}which {#UpgradeFormat}Splits {#Prev}when {#UpgradeFormat}Dissipitates{#Prev}.",
 		},
 		TextOrder)
 		)

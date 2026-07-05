@@ -8948,6 +8948,367 @@ table.insert(data.Animations,
         EndBlue = 0.0,
     })
 
+
+    table.insert(data.Animations,
+    {
+        Name = "SpearSwipe360-Displace_Zeus",
+        InheritFrom = "SpearSwipe360-Displace",
+        ColorFromOwner = "Ignore",
+        Color = {},
+        AddColor = true,
+        StartRed = 1.0,
+        StartGreen = 0.95,
+        StartBlue = 0.7,
+        EndRed = 0.9999,
+        EndGreen = 0.8,
+        EndBlue = 0.5,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "SpearSwipe360-Displace_Hera",
+        InheritFrom = "SpearSwipe360-Displace_Zeus",
+        StartRed = 0.0,
+        StartGreen = 1.0,
+        StartBlue = 0.1,
+        EndRed = 0.1,
+        EndGreen = 0.3,
+        EndBlue = 1.0,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "SpearSwipe360-Displace_Poseidon",
+        InheritFrom = "SpearSwipe360-Displace_Zeus",
+        StartRed = 0.1,
+        StartGreen = 1.0,
+        StartBlue = 0.8,
+        EndRed = 0,
+        EndGreen = 0.6,
+        EndBlue = 1.0,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "SpearSwipe360-Displace_Demeter",
+        InheritFrom = "SpearSwipe360-Displace_Zeus",
+        StartRed = 0.25,
+        StartGreen = 0.35,
+        StartBlue = 0.5,
+        EndRed = 0.35,
+        EndGreen = 0.25,
+        EndBlue = 0.4999,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "SpearSwipe360-Displace_Apollo",
+        InheritFrom = "SpearSwipe360-Displace_Zeus",
+        StartRed = 1.0,
+        StartGreen = 0.9,
+        StartBlue = 0.7,
+        EndRed = 0.999,
+        EndGreen = 0.85,
+        EndBlue = 0.05,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "SpearSwipe360-Displace_Aphrodite",
+        InheritFrom = "SpearSwipe360-Displace_Zeus",
+        StartRed = 1.0,
+        StartGreen = 0.6,
+        StartBlue = 0.8,
+        EndRed = 0.99,
+        EndGreen = 0.05,
+        EndBlue = 0.99,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "SpearSwipe360-Displace_Hephaestus",
+        InheritFrom = "SpearSwipe360-Displace_Zeus",
+        StartRed = 0.51,
+        StartGreen = 0.82,
+        StartBlue = 1.00,
+        EndRed = 1.00,
+        EndGreen = 0,
+        EndBlue = 0,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "SpearSwipe360-Displace_Hestia",
+        InheritFrom = "SpearSwipe360-Displace_Zeus",
+        StartRed = 1.0,
+        StartGreen = 0.3,
+        StartBlue = 0.02,
+        EndRed = 0.999,
+        EndGreen = 0.15,
+        EndBlue = 0.0,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "SpearSwipe360-Displace_Ares",
+        InheritFrom = "SpearSwipe360-Displace_Zeus",
+        StartRed = 1.0,
+        StartGreen = 0.04,
+        StartBlue = 0.001,
+        EndRed = 0.999,
+        EndGreen = 0.0,
+        EndBlue = 0.0,
+    })
+
+     table.insert(data.Animations,
+    {
+        Name = "SpearSwipe360B_Zeus",
+        InheritFrom = "SpearSwipe360B",
+        ColorFromOwner = "Ignore",
+        Color = {},
+        AddColor = true,
+        StartRed = 1.0,
+        StartGreen = 0.95,
+        StartBlue = 0.7,
+        EndRed = 0.9999,
+        EndGreen = 0.8,
+        EndBlue = 0.5,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "SpearSwipe360B_Hera",
+        InheritFrom = "SpearSwipe360B_Zeus",
+        StartRed = 0.0,
+        StartGreen = 1.0,
+        StartBlue = 0.1,
+        EndRed = 0.1,
+        EndGreen = 0.3,
+        EndBlue = 1.0,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "SpearSwipe360B_Poseidon",
+        InheritFrom = "SpearSwipe360B_Zeus",
+        StartRed = 0.1,
+        StartGreen = 1.0,
+        StartBlue = 0.8,
+        EndRed = 0,
+        EndGreen = 0.6,
+        EndBlue = 1.0,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "SpearSwipe360B_Demeter",
+        InheritFrom = "SpearSwipe360B_Zeus",
+        StartRed = 0.25,
+        StartGreen = 0.35,
+        StartBlue = 0.5,
+        EndRed = 0.35,
+        EndGreen = 0.25,
+        EndBlue = 0.4999,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "SpearSwipe360B_Apollo",
+        InheritFrom = "SpearSwipe360B_Zeus",
+        StartRed = 1.0,
+        StartGreen = 0.9,
+        StartBlue = 0.7,
+        EndRed = 0.999,
+        EndGreen = 0.85,
+        EndBlue = 0.05,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "SpearSwipe360B_Aphrodite",
+        InheritFrom = "SpearSwipe360B_Zeus",
+        StartRed = 1.0,
+        StartGreen = 0.6,
+        StartBlue = 0.8,
+        EndRed = 0.99,
+        EndGreen = 0.05,
+        EndBlue = 0.99,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "SpearSwipe360B_Hephaestus",
+        InheritFrom = "SpearSwipe360B_Zeus",
+        StartRed = 0.51,
+        StartGreen = 0.82,
+        StartBlue = 1.00,
+        EndRed = 1.00,
+        EndGreen = 0,
+        EndBlue = 0,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "SpearSwipe360B_Hestia",
+        InheritFrom = "SpearSwipe360B_Zeus",
+        StartRed = 1.0,
+        StartGreen = 0.3,
+        StartBlue = 0.02,
+        EndRed = 0.999,
+        EndGreen = 0.15,
+        EndBlue = 0.0,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "SpearSwipe360B_Ares",
+        InheritFrom = "SpearSwipe360B_Zeus",
+        StartRed = 1.0,
+        StartGreen = 0.04,
+        StartBlue = 0.001,
+        EndRed = 0.999,
+        EndGreen = 0.0,
+        EndBlue = 0.0,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "SpearSwipe360_Zeus",
+        InheritFrom = "SpearSwipe360",
+        ColorFromOwner = "Ignore",
+        ClearCreateAnimations = true,
+        ChildAnimation = "SpearSwipe360B_Zeus",
+        CreateAnimation = "SpearSwipe360-Displace_Zeus",
+        Color = {},
+        AddColor = true,
+        StartRed = 1.0,
+        StartGreen = 0.95,
+        StartBlue = 0.7,
+        EndRed = 0.9999,
+        EndGreen = 0.8,
+        EndBlue = 0.5,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "SpearSwipe360_Hera",
+        InheritFrom = "SpearSwipe360_Zeus",
+        ClearCreateAnimations = true,
+        ChildAnimation = "SpearSwipe360B_Hera",
+        CreateAnimation = "SpearSwipe360-Displace_Hera",
+        StartRed = 0.0,
+        StartGreen = 1.0,
+        StartBlue = 0.1,
+        EndRed = 0.1,
+        EndGreen = 0.3,
+        EndBlue = 1.0,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "SpearSwipe360_Poseidon",
+        InheritFrom = "SpearSwipe360_Zeus",
+        ClearCreateAnimations = true,
+        ChildAnimation = "SpearSwipe360B_Poseidon",
+        CreateAnimation = "SpearSwipe360-Displace_Poseidon",
+        StartRed = 0.1,
+        StartGreen = 1.0,
+        StartBlue = 0.8,
+        EndRed = 0,
+        EndGreen = 0.6,
+        EndBlue = 1.0,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "SpearSwipe360_Demeter",
+        InheritFrom = "SpearSwipe360_Zeus",
+        ClearCreateAnimations = true,
+        ChildAnimation = "SpearSwipe360B_Demeter",
+        CreateAnimation = "SpearSwipe360-Displace_Demeter",
+        StartRed = 0.25,
+        StartGreen = 0.35,
+        StartBlue = 0.5,
+        EndRed = 0.35,
+        EndGreen = 0.25,
+        EndBlue = 0.4999,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "SpearSwipe360_Apollo",
+        InheritFrom = "SpearSwipe360_Zeus",
+        ClearCreateAnimations = true,
+        ChildAnimation = "SpearSwipe360B_Apollo",
+        CreateAnimation = "SpearSwipe360-Displace_Apollo",
+        StartRed = 1.0,
+        StartGreen = 0.9,
+        StartBlue = 0.7,
+        EndRed = 0.999,
+        EndGreen = 0.85,
+        EndBlue = 0.05,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "SpearSwipe360_Aphrodite",
+        InheritFrom = "SpearSwipe360_Zeus",
+        ClearCreateAnimations = true,
+        ChildAnimation = "SpearSwipe360B_Aphrodite",
+        CreateAnimation = "SpearSwipe360-Displace_Aphrodite",
+        StartRed = 1.0,
+        StartGreen = 0.6,
+        StartBlue = 0.8,
+        EndRed = 0.99,
+        EndGreen = 0.05,
+        EndBlue = 0.99,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "SpearSwipe360_Hephaestus",
+        InheritFrom = "SpearSwipe360_Zeus",
+        ClearCreateAnimations = true,
+        ChildAnimation = "SpearSwipe360B_Hephaestus",
+        CreateAnimation = "SpearSwipe360-Displace_Hephaestus",
+        StartRed = 0.51,
+        StartGreen = 0.82,
+        StartBlue = 1.00,
+        EndRed = 1.00,
+        EndGreen = 0,
+        EndBlue = 0,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "SpearSwipe360_Hestia",
+        InheritFrom = "SpearSwipe360_Zeus",
+        ClearCreateAnimations = true,
+        ChildAnimation = "SpearSwipe360B_Hestia",
+        CreateAnimation = "SpearSwipe360-Displace_Hestia",
+        StartRed = 1.0,
+        StartGreen = 0.3,
+        StartBlue = 0.02,
+        EndRed = 0.999,
+        EndGreen = 0.15,
+        EndBlue = 0.0,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "SpearSwipe360_Ares",
+        InheritFrom = "SpearSwipe360_Zeus",
+        ClearCreateAnimations = true,
+        ChildAnimation = "SpearSwipe360B_Ares",
+        CreateAnimation = "SpearSwipe360-Displace_Ares",
+        StartRed = 1.0,
+        StartGreen = 0.04,
+        StartBlue = 0.001,
+        EndRed = 0.999,
+        EndGreen = 0.0,
+        EndBlue = 0.0,
+    })
+
     table.insert(data.Animations,
     {
         Name = "CarrionSweepAttackFx_Zeus",
@@ -17644,6 +18005,276 @@ table.insert(data.Animations,
         {
             Name = "EnemyConeAttackChariotRam_Ares",
             InheritFrom = "EnemyConeAttackChariotRam_Zeus",
+            StartRed = 1.0,
+            StartGreen = 0.04,
+            StartBlue = 0.001,
+            EndRed = 0.999,
+            EndGreen = 0.0,
+            EndBlue = 0.0,
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "KirbyEnemyProjectileMultiBreak",
+            FilePath = "Fx\\EnemyProjectileMultiBreak\\EnemyProjectileMultiBreak",
+            GroupName = "Standing",
+            Type = "Book",
+            EndFrame = 6,
+            NumFrames = 6,
+            PlaySpeed = 30.0,
+            StartFrame = 1,
+            OffsetZ = 30.0,
+            SortMode = "FromParent",
+            Ambient = 0.0,
+            OverlayVfx = true,
+            Sound = "/Leftovers/SFX/PlayerProjectile",
+            CreateAnimations = {
+                { Name = "EnemyProjectileMultiBreakFlare" },
+                { Name = "QuickFlashEnemy" },
+            }
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "EnemyProjectileMultiBreak_Zeus",
+            InheritFrom = "KirbyEnemyProjectileMultiBreak",
+            Color = {},
+            ColorFromOwner = "Ignore",
+            AddColor = true,
+            StartRed = 1.0,
+            StartGreen = 0.95,
+            StartBlue = 0.7,
+            EndRed = 0.9999,
+            EndGreen = 0.8,
+            EndBlue = 0.5,
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "EnemyProjectileMultiBreak_Hera",
+            InheritFrom = "EnemyProjectileMultiBreak_Zeus",
+            StartRed = 0.0,
+            StartGreen = 1.0,
+            StartBlue = 0.1,
+            EndRed = 0.1,
+            EndGreen = 0.3,
+            EndBlue = 1.0,
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "EnemyProjectileMultiBreak_Poseidon",
+            InheritFrom = "EnemyProjectileMultiBreak_Zeus",
+            StartRed = 0.1,
+            StartGreen = 1.0,
+            StartBlue = 0.8,
+            EndRed = 0,
+            EndGreen = 0.6,
+            EndBlue = 1.0,
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "EnemyProjectileMultiBreak_Demeter",
+            InheritFrom = "EnemyProjectileMultiBreak_Zeus",
+            StartRed = 0.25,
+            StartGreen = 0.35,
+            StartBlue = 0.5,
+            EndRed = 0.35,
+            EndGreen = 0.25,
+            EndBlue = 0.4999,
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "EnemyProjectileMultiBreak_Apollo",
+            InheritFrom = "EnemyProjectileMultiBreak_Zeus",
+            StartRed = 1.0,
+            StartGreen = 0.9,
+            StartBlue = 0.7,
+            EndRed = 0.999,
+            EndGreen = 0.85,
+            EndBlue = 0.05,
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "EnemyProjectileMultiBreak_Aphrodite",
+            InheritFrom = "EnemyProjectileMultiBreak_Zeus",
+            StartRed = 1.0,
+            StartGreen = 0.6,
+            StartBlue = 0.8,
+            EndRed = 0.99,
+            EndGreen = 0.05,
+            EndBlue = 0.99,
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "EnemyProjectileMultiBreak_Hephaestus",
+            InheritFrom = "EnemyProjectileMultiBreak_Zeus",
+            StartRed = 0.51,
+            StartGreen = 0.82,
+            StartBlue = 1.00,
+            EndRed = 1.00,
+            EndGreen = 0,
+            EndBlue = 0,
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "EnemyProjectileMultiBreak_Hestia",
+            InheritFrom = "EnemyProjectileMultiBreak_Zeus",
+            StartRed = 1.0,
+            StartGreen = 0.3,
+            StartBlue = 0.02,
+            EndRed = 0.999,
+            EndGreen = 0.15,
+            EndBlue = 0.0,
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "EnemyProjectileMultiBreak_Ares",
+            InheritFrom = "EnemyProjectileMultiBreak_Zeus",
+            StartRed = 1.0,
+            StartGreen = 0.04,
+            StartBlue = 0.001,
+            EndRed = 0.999,
+            EndGreen = 0.0,
+            EndBlue = 0.0,
+        })
+
+
+        table.insert(data.Animations,
+        {
+            Name = "KirbyEnemyProjectileMulti",
+            CreateAnimation = "EnemyProjectileGlow",
+            FilePath = "Fx\\EnemyProjectileMulti\\EnemyProjectileMulti",
+            Type = "Book",
+            VisualFx = "DisplaceHeatTrail",
+            VisualFxManagerCap = 400,
+            AngleFromOwner = "Ignore",
+            Sound = "/SFX/Enemy Sounds/EnemyProjectileAmbientBig",
+            StopSoundOnFinishFade = 0.25,
+            EndFrame = 60,
+            Loop = true,
+            NumFrames = 60,
+            RandomPlaySpeedMax = 60.0,
+            RandomPlaySpeedMin = 45.0,
+            StartFrame = 1,
+            RandomFlipHorizontal = true,
+            OffsetZ = 60.0,
+            Scale = 0.75,
+            Ambient = 0.0,
+            VisualFxIntervalMax = 0.21,
+            VisualFxIntervalMin = 0.2,
+            OverlayVfx = true,
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "EnemyProjectileMulti_Zeus",
+            InheritFrom = "KirbyEnemyProjectileMulti",
+            Color = {},
+            ColorFromOwner = "Ignore",
+            AddColor = true,
+            StartRed = 1.0,
+            StartGreen = 0.95,
+            StartBlue = 0.7,
+            EndRed = 0.9999,
+            EndGreen = 0.8,
+            EndBlue = 0.5,
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "EnemyProjectileMulti_Hera",
+            InheritFrom = "EnemyProjectileMulti_Zeus",
+            StartRed = 0.0,
+            StartGreen = 1.0,
+            StartBlue = 0.1,
+            EndRed = 0.1,
+            EndGreen = 0.3,
+            EndBlue = 1.0,
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "EnemyProjectileMulti_Poseidon",
+            InheritFrom = "EnemyProjectileMulti_Zeus",
+            StartRed = 0.1,
+            StartGreen = 1.0,
+            StartBlue = 0.8,
+            EndRed = 0,
+            EndGreen = 0.6,
+            EndBlue = 1.0,
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "EnemyProjectileMulti_Demeter",
+            InheritFrom = "EnemyProjectileMulti_Zeus",
+            StartRed = 0.25,
+            StartGreen = 0.35,
+            StartBlue = 0.5,
+            EndRed = 0.35,
+            EndGreen = 0.25,
+            EndBlue = 0.4999,
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "EnemyProjectileMulti_Apollo",
+            InheritFrom = "EnemyProjectileMulti_Zeus",
+            StartRed = 1.0,
+            StartGreen = 0.9,
+            StartBlue = 0.7,
+            EndRed = 0.999,
+            EndGreen = 0.85,
+            EndBlue = 0.05,
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "EnemyProjectileMulti_Aphrodite",
+            InheritFrom = "EnemyProjectileMulti_Zeus",
+            StartRed = 1.0,
+            StartGreen = 0.6,
+            StartBlue = 0.8,
+            EndRed = 0.99,
+            EndGreen = 0.05,
+            EndBlue = 0.99,
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "EnemyProjectileMulti_Hephaestus",
+            InheritFrom = "EnemyProjectileMulti_Zeus",
+            StartRed = 0.51,
+            StartGreen = 0.82,
+            StartBlue = 1.00,
+            EndRed = 1.00,
+            EndGreen = 0,
+            EndBlue = 0,
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "EnemyProjectileMulti_Hestia",
+            InheritFrom = "EnemyProjectileMulti_Zeus",
+            StartRed = 1.0,
+            StartGreen = 0.3,
+            StartBlue = 0.02,
+            EndRed = 0.999,
+            EndGreen = 0.15,
+            EndBlue = 0.0,
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "EnemyProjectileMulti_Ares",
+            InheritFrom = "EnemyProjectileMulti_Zeus",
             StartRed = 1.0,
             StartGreen = 0.04,
             StartBlue = 0.001,

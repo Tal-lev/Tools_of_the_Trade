@@ -830,6 +830,15 @@ AddGodTraitProperty({
             ChangeType = "Absolute",
             ExcludeLinked = true,
         },
+        --ZagreusTwo
+        {
+            WeaponName = "WeaponLob",
+            ProjectileName = "ZagreusSpearSpin",
+            ProjectileProperty = "Graphic",
+            ValuePrefix = "SpearSwipe360_",
+            ChangeType = "Absolute",
+            ExcludeLinked = true,
+        },
 		--Carrrion
 		{
             WeaponName = "WeaponLob",
@@ -1470,6 +1479,33 @@ if ZagreusJourney then
 				ChangeType = "Absolute",
 				ExcludeLinked = true,
 			},
+            --SplitShotUnit
+            {
+				WeaponName = "WeaponLob",
+				ProjectileName = "SplitShotWeapon",
+				ProjectileProperty = "Graphic",
+				ValuePrefix = "EnemyProjectileMulti_",
+				ChangeType = "Absolute",
+				ExcludeLinked = true,
+			},
+            {
+				WeaponName = "WeaponLob",
+				ProjectileName = "SplitShotWeapon",
+				ProjectileProperty = "DissipateFx",
+				ValuePrefix = "EnemyProjectileMultiBreak_",
+				ChangeType = "Absolute",
+				ExcludeLinked = true,
+			},
+            {
+				WeaponName = "WeaponLob",
+				ProjectileName = "SplitShotWeapon",
+				ProjectileProperty = "SpawnOnDissipate",
+				ValuePrefix = "SplitShotSmall_",
+				ChangeType = "Absolute",
+				ExcludeLinked = true,
+			},
+            
+
 
 
 

@@ -762,10 +762,8 @@ function mod.CopyAbility (victim, functionArgs, triggerArgs)
 		Changed = "TreantTail"
 		Location = "BiomeF"
 	--elseif victim.Name == "Treant" then
-	--	RemoveTrait(CurrentRun.Hero, CopyTrait)
-	--	wait(0.1)
-	--	AddTraitToHero({ TraitName = "TreantCopyDisplayBoon" })	
-	--	Changed = 1
+	--	Changed = "Treant"
+	--	Location = "BiomeF"
 	elseif victim.Name == "FogEmitter" or victim.Name == "FogEmitter_Elite" then
 		Changed = "FogEmitter"
 		Location = "BiomeF"
@@ -922,7 +920,11 @@ function mod.CopyAbility (victim, functionArgs, triggerArgs)
 		Changed = "ChronosOne"
 		Location = "BiomeIHouse"
 	elseif victim.Name == "Zagreus" then
-		Changed = "ZagreusOne"
+		if math.random() < 0.5 then
+			Changed = "ZagreusOne"
+		else
+			Changed = "ZagreusTwo"
+		end
 		Location = "BiomeC"
 	elseif victim.Name == "Carrion" or victim.Name == "Carrion_Elite" then
 		Changed = "Carrion"
@@ -1149,6 +1151,9 @@ function mod.CopyAbility (victim, functionArgs, triggerArgs)
 			Location = "ElysiumModsNikkelMHadesBiomes"
 		elseif victim.Name == "Chariot" or victim.Name == "ChariotElite" then
 			Changed = "Chariot"
+			Location = "ElysiumModsNikkelMHadesBiomes"
+		elseif victim.Name == "SplitShotUnit" or victim.Name == "SplitShotUnitElite" then
+			Changed = "SplitShotUnit"
 			Location = "ElysiumModsNikkelMHadesBiomes"
 		end
 	end
