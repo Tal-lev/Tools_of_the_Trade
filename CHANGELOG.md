@@ -43,6 +43,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - FlurrySpawner
   - ChariotSuicide
   - Chariot
+  - SplitShotUnit
+- 1 Implemented Boss Copy
+  - Zagreus - Spear Spin
 - 4 Minor Prophecies added
   - Clear with both tools
   - Get the 7 new hammers
