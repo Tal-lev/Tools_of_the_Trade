@@ -189,3 +189,8 @@
   - Crescent Strike
 - Theseus
   - Spear Throw
+
+### Styx (Unreleased)
+
+- Satyr Cultist
+- Gigantic Vermin
