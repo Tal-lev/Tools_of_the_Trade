@@ -6,6 +6,7 @@ local BiomeCScaling = 0.7
 
 local BiomeAScaling = 1
 local BiomeBScaling = 1
+local BiomeDScaling = 1
 
 local ZagreusJourney = rom.mods['NikkelM-Zagreus_Journey']
 
@@ -7884,6 +7885,119 @@ if ZagreusJourney then
 			{
 				DisplayType = "RoomValue",
 				Key = "Copy_MinotaurOne2",
+				Text = "Copy_2nd"
+			},
+		},
+
+		SatyrRangedCopyDisplayBoon = 
+		{
+			Icon = "JarlUlsfark-Tools_of_the_Trade_ZJcompat\\SatyrRangedIcon",
+			ShowInHUD = true,
+			CustomLabel = 
+			{
+				DisplayType = "RoomValue",
+				Key = "Copy_SatyrRanged",
+				Text = "Copy_EmptyText"
+			},
+			PropertyChanges = 
+			{
+				{
+					WeaponName = "WeaponLob",
+					WeaponProperty = "Projectile",
+					ChangeValue = "SatyrRangedWeaponplayer",
+				},
+				{
+					WeaponName = "WeaponLob",
+					WeaponProperties = 
+					{
+						Cooldown = 0.4,
+						FizzleOldSpawns = false,
+					},
+					ExcludeLinked = true,
+				},
+				{
+					WeaponName = "WeaponLob",
+					ProjectileName = "SatyrRangedWeaponplayer",
+					ProjectileProperties = 
+					{
+						Damage = (10 * BiomeDScaling),
+					},
+					ExcludeLinked = true,
+				},
+			},
+			FlavorText = "CopyAbility_FlavorText",
+		},
+
+		SatyrRangedCopyTwoDisplayBoon = 
+		{
+			Icon = "JarlUlsfark-Tools_of_the_Trade_ZJcompat\\SatyrRangedIcon",
+			ShowInHUD = true,
+			CustomLabel = 
+			{
+				DisplayType = "RoomValue",
+				Key = "Copy_SatyrRanged2",
+				Text = "Copy_2nd"
+			},
+		},
+
+		RatThugCopyDisplayBoon = 
+		{
+			Icon = "JarlUlsfark-Tools_of_the_Trade_ZJcompat\\RatThugIcon",
+			ShowInHUD = true,
+			CustomLabel = 
+			{
+				DisplayType = "RoomValue",
+				Key = "Copy_RatThug",
+				Text = "Copy_EmptyText"
+			},
+			PropertyChanges = 
+			{
+				{
+					WeaponName = "WeaponLob",
+					WeaponProperty = "Projectile",
+					ChangeValue = "RatPoisonShake",
+				},
+				{
+					WeaponName = "WeaponLob",
+					WeaponProperties = 
+					{
+						Cooldown = 0.4,
+						FizzleOldSpawns = false,
+						WeaponRange = 200,
+						NumProjectiles = 4,
+						ProjectileAngleOffset = math.rad(90),
+
+					},
+					ExcludeLinked = true,
+				},
+				{
+					WeaponName = "WeaponLob",
+					ProjectileName = "RatPoisonShake",
+					ProjectileProperties = 
+					{
+						Damage = (10 * BiomeDScaling),
+						SpawnOnDetonate = "HadesPoisonPuddleSmallplayer"
+					},
+					ExcludeLinked = true,
+				},
+				{
+				WeaponName = "WeaponLob",
+				WeaponProperty = "ProjectileScaleMultiplier",
+				ChangeValue = 0.1,
+				ChangeType = "Multiply",
+				},	
+			},
+			FlavorText = "CopyAbility_FlavorText",
+		},
+
+		RatThugCopyTwoDisplayBoon = 
+		{
+			Icon = "JarlUlsfark-Tools_of_the_Trade_ZJcompat\\RatThugIcon",
+			ShowInHUD = true,
+			CustomLabel = 
+			{
+				DisplayType = "RoomValue",
+				Key = "Copy_RatThug2",
 				Text = "Copy_2nd"
 			},
 		},

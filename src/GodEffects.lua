@@ -1539,6 +1539,15 @@ if ZagreusJourney then
 				ChangeType = "Absolute",
 				ExcludeLinked = true,
 			},
+            --RatThug
+            {
+				WeaponName = "WeaponLob",
+				ProjectileName = "RatPoisonShake",
+				ProjectileProperty = "SpawnOnDetonate",
+				ValuePrefix = "HadesPoisonPuddleSmallplayer_",
+				ChangeType = "Absolute",
+				ExcludeLinked = true,
+			},
 
 		}
 	})

@@ -1169,6 +1169,12 @@ function mod.CopyAbility (victim, functionArgs, triggerArgs)
 		elseif victim.Name == "Theseus" then
 			Changed = "TheseusOne"
 			Location = "ElysiumModsNikkelMHadesBiomes"
+		elseif victim.Name == "SatyrRanged" then
+			Changed = "SatyrRanged"
+			Location = "StyxModsNikkelMHadesBiomes"
+		elseif victim.Name == "RatThug" then
+			Changed = "RatThug"
+			Location = "StyxModsNikkelMHadesBiomes"
 		end
 	end
 	if Changed ~= "null" then

@@ -18886,6 +18886,565 @@ table.insert(data.Animations,
             EndBlue = 0.0,
         })
 
+        table.insert(data.Animations,
+        {
+            Name = "PoisonPoolSmallLoop_Zeus",
+            InheritFrom = "PoisonPoolSmallLoop",
+            Color = {},
+            ColorFromOwner = "Ignore",
+            AddColor = true,
+            StartRed = 1.0,
+            StartGreen = 0.95,
+            StartBlue = 0.7,
+            EndRed = 0.9999,
+            EndGreen = 0.8,
+            EndBlue = 0.5,
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "PoisonPoolSmallLoop_Hera",
+            InheritFrom = "PoisonPoolSmallLoop_Zeus",
+            StartRed = 0.0,
+            StartGreen = 1.0,
+            StartBlue = 0.1,
+            EndRed = 0.1,
+            EndGreen = 0.3,
+            EndBlue = 1.0,
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "PoisonPoolSmallLoop_Poseidon",
+            InheritFrom = "PoisonPoolSmallLoop_Zeus",
+            StartRed = 0.1,
+            StartGreen = 1.0,
+            StartBlue = 0.8,
+            EndRed = 0,
+            EndGreen = 0.6,
+            EndBlue = 1.0,
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "PoisonPoolSmallLoop_Demeter",
+            InheritFrom = "PoisonPoolSmallLoop_Zeus",
+            StartRed = 0.25,
+            StartGreen = 0.35,
+            StartBlue = 0.5,
+            EndRed = 0.35,
+            EndGreen = 0.25,
+            EndBlue = 0.4999,
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "PoisonPoolSmallLoop_Apollo",
+            InheritFrom = "PoisonPoolSmallLoop_Zeus",
+            StartRed = 1.0,
+            StartGreen = 0.9,
+            StartBlue = 0.7,
+            EndRed = 0.999,
+            EndGreen = 0.85,
+            EndBlue = 0.05,
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "PoisonPoolSmallLoop_Aphrodite",
+            InheritFrom = "PoisonPoolSmallLoop_Zeus",
+            StartRed = 1.0,
+            StartGreen = 0.6,
+            StartBlue = 0.8,
+            EndRed = 0.99,
+            EndGreen = 0.05,
+            EndBlue = 0.99,
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "PoisonPoolSmallLoop_Hephaestus",
+            InheritFrom = "PoisonPoolSmallLoop_Zeus",
+            StartRed = 0.51,
+            StartGreen = 0.82,
+            StartBlue = 1.00,
+            EndRed = 1.00,
+            EndGreen = 0,
+            EndBlue = 0,
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "PoisonPoolSmallLoop_Hestia",
+            InheritFrom = "PoisonPoolSmallLoop_Zeus",
+            StartRed = 1.0,
+            StartGreen = 0.3,
+            StartBlue = 0.02,
+            EndRed = 0.999,
+            EndGreen = 0.15,
+            EndBlue = 0.0,
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "PoisonPoolSmallLoop_Ares",
+            InheritFrom = "PoisonPoolSmallLoop_Zeus",
+            StartRed = 1.0,
+            StartGreen = 0.04,
+            StartBlue = 0.001,
+            EndRed = 0.999,
+            EndGreen = 0.0,
+            EndBlue = 0.0,
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "PoisonPoolSmallIn_Zeus",
+            InheritFrom = "PoisonPoolSmallIn",
+            ChainTo = "PoisonPoolSmallLoop_Zeus",
+            Color = {},
+            ColorFromOwner = "Ignore",
+            AddColor = true,
+            StartRed = 1.0,
+            StartGreen = 0.95,
+            StartBlue = 0.7,
+            EndRed = 0.9999,
+            EndGreen = 0.8,
+            EndBlue = 0.5,
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "PoisonPoolSmallIn_Hera",
+            InheritFrom = "PoisonPoolSmallIn_Zeus",
+            ChainTo = "PoisonPoolSmallLoop_Hera",
+            StartRed = 0.0,
+            StartGreen = 1.0,
+            StartBlue = 0.1,
+            EndRed = 0.1,
+            EndGreen = 0.3,
+            EndBlue = 1.0,
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "PoisonPoolSmallIn_Poseidon",
+            InheritFrom = "PoisonPoolSmallIn_Zeus",
+            ChainTo = "PoisonPoolSmallLoop_Poseidon",
+            StartRed = 0.1,
+            StartGreen = 1.0,
+            StartBlue = 0.8,
+            EndRed = 0,
+            EndGreen = 0.6,
+            EndBlue = 1.0,
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "PoisonPoolSmallIn_Demeter",
+            InheritFrom = "PoisonPoolSmallIn_Zeus",
+            ChainTo = "PoisonPoolSmallLoop_Demeter",
+            StartRed = 0.25,
+            StartGreen = 0.35,
+            StartBlue = 0.5,
+            EndRed = 0.35,
+            EndGreen = 0.25,
+            EndBlue = 0.4999,
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "PoisonPoolSmallIn_Apollo",
+            InheritFrom = "PoisonPoolSmallIn_Zeus",
+            ChainTo = "PoisonPoolSmallLoop_Apollo",
+            StartRed = 1.0,
+            StartGreen = 0.9,
+            StartBlue = 0.7,
+            EndRed = 0.999,
+            EndGreen = 0.85,
+            EndBlue = 0.05,
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "PoisonPoolSmallIn_Aphrodite",
+            InheritFrom = "PoisonPoolSmallIn_Zeus",
+            ChainTo = "PoisonPoolSmallLoop_Aphrodite",
+            StartRed = 1.0,
+            StartGreen = 0.6,
+            StartBlue = 0.8,
+            EndRed = 0.99,
+            EndGreen = 0.05,
+            EndBlue = 0.99,
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "PoisonPoolSmallIn_Hephaestus",
+            InheritFrom = "PoisonPoolSmallIn_Zeus",
+            ChainTo = "PoisonPoolSmallLoop_Hephaestus",
+            StartRed = 0.51,
+            StartGreen = 0.82,
+            StartBlue = 1.00,
+            EndRed = 1.00,
+            EndGreen = 0,
+            EndBlue = 0,
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "PoisonPoolSmallIn_Hestia",
+            InheritFrom = "PoisonPoolSmallIn_Zeus",
+            ChainTo = "PoisonPoolSmallLoop_Hestia",
+            StartRed = 1.0,
+            StartGreen = 0.3,
+            StartBlue = 0.02,
+            EndRed = 0.999,
+            EndGreen = 0.15,
+            EndBlue = 0.0,
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "PoisonPoolSmallIn_Ares",
+            InheritFrom = "PoisonPoolSmallIn_Zeus",
+            ChainTo = "PoisonPoolSmallLoop_Ares",
+            StartRed = 1.0,
+            StartGreen = 0.04,
+            StartBlue = 0.001,
+            EndRed = 0.999,
+            EndGreen = 0.0,
+            EndBlue = 0.0,
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "PoisonPoolSmallLoop_Flipped_Zeus",
+            InheritFrom = "PoisonPoolSmallLoop_Flipped",
+            Color = {},
+            ColorFromOwner = "Ignore",
+            AddColor = true,
+            StartRed = 1.0,
+            StartGreen = 0.95,
+            StartBlue = 0.7,
+            EndRed = 0.9999,
+            EndGreen = 0.8,
+            EndBlue = 0.5,
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "PoisonPoolSmallLoop_Flipped_Hera",
+            InheritFrom = "PoisonPoolSmallLoop_Flipped_Zeus",
+            StartRed = 0.0,
+            StartGreen = 1.0,
+            StartBlue = 0.1,
+            EndRed = 0.1,
+            EndGreen = 0.3,
+            EndBlue = 1.0,
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "PoisonPoolSmallLoop_Flipped_Poseidon",
+            InheritFrom = "PoisonPoolSmallLoop_Flipped_Zeus",
+            StartRed = 0.1,
+            StartGreen = 1.0,
+            StartBlue = 0.8,
+            EndRed = 0,
+            EndGreen = 0.6,
+            EndBlue = 1.0,
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "PoisonPoolSmallLoop_Flipped_Demeter",
+            InheritFrom = "PoisonPoolSmallLoop_Flipped_Zeus",
+            StartRed = 0.25,
+            StartGreen = 0.35,
+            StartBlue = 0.5,
+            EndRed = 0.35,
+            EndGreen = 0.25,
+            EndBlue = 0.4999,
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "PoisonPoolSmallLoop_Flipped_Apollo",
+            InheritFrom = "PoisonPoolSmallLoop_Flipped_Zeus",
+            StartRed = 1.0,
+            StartGreen = 0.9,
+            StartBlue = 0.7,
+            EndRed = 0.999,
+            EndGreen = 0.85,
+            EndBlue = 0.05,
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "PoisonPoolSmallLoop_Flipped_Aphrodite",
+            InheritFrom = "PoisonPoolSmallLoop_Flipped_Zeus",
+            StartRed = 1.0,
+            StartGreen = 0.6,
+            StartBlue = 0.8,
+            EndRed = 0.99,
+            EndGreen = 0.05,
+            EndBlue = 0.99,
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "PoisonPoolSmallLoop_Flipped_Hephaestus",
+            InheritFrom = "PoisonPoolSmallLoop_Flipped_Zeus",
+            StartRed = 0.51,
+            StartGreen = 0.82,
+            StartBlue = 1.00,
+            EndRed = 1.00,
+            EndGreen = 0,
+            EndBlue = 0,
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "PoisonPoolSmallLoop_Flipped_Hestia",
+            InheritFrom = "PoisonPoolSmallLoop_Flipped_Zeus",
+            StartRed = 1.0,
+            StartGreen = 0.3,
+            StartBlue = 0.02,
+            EndRed = 0.999,
+            EndGreen = 0.15,
+            EndBlue = 0.0,
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "PoisonPoolSmallLoop_Flipped_Ares",
+            InheritFrom = "PoisonPoolSmallLoop_Flipped_Zeus",
+            StartRed = 1.0,
+            StartGreen = 0.04,
+            StartBlue = 0.001,
+            EndRed = 0.999,
+            EndGreen = 0.0,
+            EndBlue = 0.0,
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "PoisonPoolSmallIn_Flipped_Zeus",
+            InheritFrom = "PoisonPoolSmallIn_Flipped",
+            ChainTo = "PoisonPoolSmallLoop_Flipped_Zeus",
+            Color = {},
+            ColorFromOwner = "Ignore",
+            AddColor = true,
+            StartRed = 1.0,
+            StartGreen = 0.95,
+            StartBlue = 0.7,
+            EndRed = 0.9999,
+            EndGreen = 0.8,
+            EndBlue = 0.5,
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "PoisonPoolSmallIn_Flipped_Hera",
+            InheritFrom = "PoisonPoolSmallIn_Flipped_Zeus",
+            ChainTo = "PoisonPoolSmallLoop_Flipped_Hera",
+            StartRed = 0.0,
+            StartGreen = 1.0,
+            StartBlue = 0.1,
+            EndRed = 0.1,
+            EndGreen = 0.3,
+            EndBlue = 1.0,
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "PoisonPoolSmallIn_Flipped_Poseidon",
+            InheritFrom = "PoisonPoolSmallIn_Flipped_Zeus",
+            ChainTo = "PoisonPoolSmallLoop_Flipped_Poseidon",
+            StartRed = 0.1,
+            StartGreen = 1.0,
+            StartBlue = 0.8,
+            EndRed = 0,
+            EndGreen = 0.6,
+            EndBlue = 1.0,
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "PoisonPoolSmallIn_Flipped_Demeter",
+            InheritFrom = "PoisonPoolSmallIn_Flipped_Zeus",
+            ChainTo = "PoisonPoolSmallLoop_Flipped_Demeter",
+            StartRed = 0.25,
+            StartGreen = 0.35,
+            StartBlue = 0.5,
+            EndRed = 0.35,
+            EndGreen = 0.25,
+            EndBlue = 0.4999,
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "PoisonPoolSmallIn_Flipped_Apollo",
+            InheritFrom = "PoisonPoolSmallIn_Flipped_Zeus",
+            ChainTo = "PoisonPoolSmallLoop_Flipped_Apollo",
+            StartRed = 1.0,
+            StartGreen = 0.9,
+            StartBlue = 0.7,
+            EndRed = 0.999,
+            EndGreen = 0.85,
+            EndBlue = 0.05,
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "PoisonPoolSmallIn_Flipped_Aphrodite",
+            InheritFrom = "PoisonPoolSmallIn_Flipped_Zeus",
+            ChainTo = "PoisonPoolSmallLoop_Flipped_Aphrodite",
+            StartRed = 1.0,
+            StartGreen = 0.6,
+            StartBlue = 0.8,
+            EndRed = 0.99,
+            EndGreen = 0.05,
+            EndBlue = 0.99,
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "PoisonPoolSmallIn_Flipped_Hephaestus",
+            InheritFrom = "PoisonPoolSmallIn_Flipped_Zeus",
+            ChainTo = "PoisonPoolSmallLoop_Flipped_Hephaestus",
+            StartRed = 0.51,
+            StartGreen = 0.82,
+            StartBlue = 1.00,
+            EndRed = 1.00,
+            EndGreen = 0,
+            EndBlue = 0,
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "PoisonPoolSmallIn_Flipped_Hestia",
+            InheritFrom = "PoisonPoolSmallIn_Flipped_Zeus",
+            ChainTo = "PoisonPoolSmallLoop_Flipped_Hestia",
+            StartRed = 1.0,
+            StartGreen = 0.3,
+            StartBlue = 0.02,
+            EndRed = 0.999,
+            EndGreen = 0.15,
+            EndBlue = 0.0,
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "PoisonPoolSmallIn_Flipped_Ares",
+            InheritFrom = "PoisonPoolSmallIn_Flipped_Zeus",
+            ChainTo = "PoisonPoolSmallLoop_Flipped_Ares",
+            StartRed = 1.0,
+            StartGreen = 0.04,
+            StartBlue = 0.001,
+            EndRed = 0.999,
+            EndGreen = 0.0,
+            EndBlue = 0.0,
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "PoisonPoolSmall_Zeus",
+            ClearCreateAnimations = true,
+            Random = {
+                { Name = "PoisonPoolSmallIn_Zeus" },
+                { Name = "PoisonPoolSmallIn_Flipped_Zeus" },
+            },
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "PoisonPoolSmall_Hera",
+            ClearCreateAnimations = true,
+            Random = {
+                { Name = "PoisonPoolSmallIn_Hera" },
+                { Name = "PoisonPoolSmallIn_Flipped_Hera" },
+            },
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "PoisonPoolSmall_Poseidon",
+            InheritFrom = "PoisonPoolSmall",
+            ClearCreateAnimations = true,
+            Random = {
+                { Name = "PoisonPoolSmallIn_Poseidon" },
+                { Name = "PoisonPoolSmallIn_Flipped_Poseidon" },
+            },
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "PoisonPoolSmall_Demeter",
+            InheritFrom = "PoisonPoolSmall",
+            ClearCreateAnimations = true,
+            Random = {
+                { Name = "PoisonPoolSmallIn_Demeter" },
+                { Name = "PoisonPoolSmallIn_Flipped_Demeter" },
+            },
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "PoisonPoolSmall_Apollo",
+            InheritFrom = "PoisonPoolSmall",
+            ClearCreateAnimations = true,
+            Random = {
+                { Name = "PoisonPoolSmallIn_Apollo" },
+                { Name = "PoisonPoolSmallIn_Flipped_Apollo" },
+            },
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "PoisonPoolSmall_Aphrodite",
+            InheritFrom = "PoisonPoolSmall",
+            ClearCreateAnimations = true,
+            Random = {
+                { Name = "PoisonPoolSmallIn_Aphrodite" },
+                { Name = "PoisonPoolSmallIn_Flipped_Aphrodite" },
+            },
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "PoisonPoolSmall_Hephaestus",
+            InheritFrom = "PoisonPoolSmall",
+            ClearCreateAnimations = true,
+            Random = {
+                { Name = "PoisonPoolSmallIn_Hephaestus" },
+                { Name = "PoisonPoolSmallIn_Flipped_Hephaestus" },
+            },
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "PoisonPoolSmall_Hestia",
+            InheritFrom = "PoisonPoolSmall",
+            ClearCreateAnimations = true,
+            Random = {
+                { Name = "PoisonPoolSmallIn_Hestia" },
+                { Name = "PoisonPoolSmallIn_Flipped_Hestia" },
+            },
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "PoisonPoolSmall_Ares",
+            InheritFrom = "PoisonPoolSmall",
+            ClearCreateAnimations = true,
+            Random = {
+                { Name = "PoisonPoolSmallIn_Ares" },
+                { Name = "PoisonPoolSmallIn_Flipped_Ares" },
+            },
+        })
+
     end
 
 return data

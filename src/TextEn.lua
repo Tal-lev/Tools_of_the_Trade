@@ -1586,6 +1586,26 @@ sjson.hook(file, function(data)
 		TextOrder)
 		)
 
+		table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "SatyrRangedCopyDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Copy: Satyr Cultist",
+			Description = "Your Attack shoots a {#UpgradeFormat}Poisoned Dart{#Prev}.",
+		},
+		TextOrder)
+		)
+
+		table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "RatThugCopyDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Copy: Gigantic Vermin",
+			Description = "Your Attack Shakes {#UpgradeFormat}4 Poison Projectiles {#Prev}off.",
+		},
+		TextOrder)
+		)
+
 	end
 
 

@@ -1160,6 +1160,216 @@ local file = rom.path.combine(rom.paths.Content, 'Game/Projectiles/PlayerProject
 				},
 		})
 
+		table.insert(data.Projectiles,
+		{
+			Name = "SatyrRangedWeaponplayer",
+			InheritFrom = "1_BaseEnemyProjectileReflectable",
+			Type = "STRAIGHT",
+			AffectsEnemies = true,
+			AffectsFriends = false,
+			ImpactFx = "PoisonSprayRandom",
+			ImpactSound = "null",
+			CheckUnitImpact = true,
+			CheckObstacleImpact = true,
+			UnlimitedUnitPenetration = false,
+			Range = 1000,
+			Speed = 2000,
+			DamageLow = 1,
+			DamageHigh = 1,
+			CanHitWithoutDamage = true,
+			StartDelay = 0,
+			DangerDistance = 200,
+			Thing = {
+				Graphic = "SatyrDart",
+				AttachedAnim = "DefaultShadow",
+				OffsetZ = 55,
+				Grip = 999999,
+				Points = {
+					{
+						X = 0,
+						Y = 24,
+					},
+					{
+						X = 48,
+						Y = 0,
+					},
+					{
+						X = 0,
+						Y = -24,
+					},
+					{
+						X = -48,
+						Y = 0,
+					},
+				},
+			},
+			Effects =
+			{
+				{
+				Name = "HeroOnHitStun",
+				Duration = 0.2,
+				DisableMove = true,
+				DisableRotate = true,
+				DisableAttack = false,
+				Active = true,
+				CanAffectInvulnerable = false,
+				Cancelable = true,
+				},
+				{
+					Name = "StyxPoison",
+					Type = "DAMAGE_OVER_TIME",
+					Amount = 10,
+					Cooldown = 0.23,
+					InitialDelay = 1,
+					Duration = 8,
+					Stacks = true,
+					MaxStacks = 100,
+					ExtendDurationOnReapply = false,
+					SilentImpact = true,
+					FrontFx = "PoisonStatusFx",
+					Active = true,
+				},
+			},
+		})
+
+		table.insert(data.Projectiles,
+		{
+			Name = "HadesPoisonPuddleSmallplayer",
+			-- Can't inherit from PoisonPuddleSmall as that causes MedeaPoison to also be applied
+			InheritFrom = "1_BaseEnemyProjectileUndestroyable",
+			Type = "INSTANT",
+			GroupName = "FX_Terrain",
+			Range = 0,
+			CheckObstacleImpact = false,
+			UnlimitedUnitPenetration = true,
+			AffectsFriends = true,
+			DamageRadiusScaleX = 1.0,
+			DamageRadiusScaleY = 0.6,
+			TotalFuse = 5.0,
+			Fuse = 0.5,
+			InflictedDamageSound = "/SFX/BurnDamageSizzle",
+			InflictedDamageFx = "Immolation",
+			ImmunityKey = "PoisonPuddle",
+			CanHitWithoutDamage = true,
+			Damage = 0,
+			MoveInterval = 0.19,
+			MaxVictimZ = 1,
+			MultiDetonate = true,
+			CanBeReflected = true,
+			CanBeProjectileDefenseDestroyedByName = "ZombieHRFire",
+			DamageRadius = 80,
+			DissipateFx = "PoisonPoolSmallOut",
+			Thing = {
+				Graphic = "PoisonPoolSmall",
+			},
+			Effects = {
+				{
+					Name = "StyxPoison",
+					Type = "DAMAGE_OVER_TIME",
+					Amount = 10,
+					Cooldown = 0.16,
+					InitialDelay = 0.85,
+					Duration = 8,
+					Stacks = true,
+					MaxStacks = 100,
+					ExtendDurationOnReapply = false,
+					SilentImpact = true,
+					FrontFx = "PoisonStatusFx",
+					Active = true,
+				},
+			},
+	})
+
+	table.insert(data.Projectiles,
+		{
+			Name = "HadesPoisonPuddleSmallplayer_Zeus",
+			InheritFrom = "HadesPoisonPuddleSmallplayer",
+			Thing =
+			{
+				Graphic = "PoisonPoolSmall_Zeus",
+			},
+		})
+
+		table.insert(data.Projectiles,
+		{
+			Name = "HadesPoisonPuddleSmallplayer_Hera",
+			InheritFrom = "HadesPoisonPuddleSmallplayer",
+			Thing =
+			{
+				Graphic = "PoisonPoolSmall_Hera",
+			},
+		})
+
+		table.insert(data.Projectiles,
+		{
+			Name = "HadesPoisonPuddleSmallplayer_Poseidon",
+			InheritFrom = "HadesPoisonPuddleSmallplayer",
+			Thing = 
+				{
+					Graphic = "PoisonPoolSmall_Poseidon",
+				},
+		})
+
+		table.insert(data.Projectiles,
+		{
+			Name = "HadesPoisonPuddleSmallplayer_Demeter",
+			InheritFrom = "HadesPoisonPuddleSmallplayer",
+			Thing = 
+				{
+					Graphic = "PoisonPoolSmall_Demeter",
+				},
+		})
+
+		table.insert(data.Projectiles,
+		{
+			Name = "HadesPoisonPuddleSmallplayer_Apollo",
+			InheritFrom = "HadesPoisonPuddleSmallplayer",
+			Thing = 
+				{
+					Graphic = "PoisonPoolSmall_Apollo",
+				},
+		})
+
+		table.insert(data.Projectiles,
+		{
+			Name = "HadesPoisonPuddleSmallplayer_Aphrodite",
+			InheritFrom = "HadesPoisonPuddleSmallplayer",
+			Thing = 
+				{
+					Graphic = "PoisonPoolSmall_Aphrodite",
+				},
+		})
+
+		table.insert(data.Projectiles,
+		{
+			Name = "HadesPoisonPuddleSmallplayer_Hephaestus",
+			InheritFrom = "HadesPoisonPuddleSmallplayer",
+			Thing = 
+				{
+					Graphic = "PoisonPoolSmall_Hephaestus",
+				},
+		})
+
+		table.insert(data.Projectiles,
+		{
+			Name = "HadesPoisonPuddleSmallplayer_Hestia",
+			InheritFrom = "HadesPoisonPuddleSmallplayer",
+			Thing = 
+				{
+					Graphic = "PoisonPoolSmall_Hestia",
+				},
+		})
+
+		table.insert(data.Projectiles,
+		{
+			Name = "HadesPoisonPuddleSmallplayer_Ares",
+			InheritFrom = "HadesPoisonPuddleSmallplayer",
+			Thing = 
+				{
+					Graphic = "PoisonPoolSmall_Ares",
+				},
+		})
+
 	end
 
 			
