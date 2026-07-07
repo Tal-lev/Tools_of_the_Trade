@@ -199,3 +199,7 @@
 
 - Satyr Cultist
 - Gigantic Vermin
+- Snakestone
+- Dire Satyr Cultist
+- Dire Gigantic Vermin
+- Dire Snakestone
