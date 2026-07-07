@@ -12,7 +12,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - ThiefMineLayer
   - Lovesick
   - Treant2
-- 39 Implemented ZJ enemies for copy.
+- 43 Implemented ZJ enemies for copy.
   - HadesSwarmer
   - LightSpawner
   - PunchingBagUnit
@@ -55,6 +55,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
     - Spear Throw
   - SatyrRanged
   - RatThug
+  - HeavyRangedForked
+  - SatyrRangedMiniboss
+  - RatThugMiniboss
+  - HeavyRangedForkedMiniboss
 - 3 Implemented Boss Copy
   - Chronos - Time Stasis
   - Zagreus - Spear Spin
