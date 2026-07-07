@@ -1578,6 +1578,241 @@ sjson.hook(file, function(data)
 
     table.insert(data.Animations,
     {
+        Name = "TreantProjectile_Zeus",
+        InheritFrom = "TreantProjectile",
+        ColorFromOwner = "Ignore",
+        Color = {},
+        AddColor = true,
+        StartRed = 1.0,
+        StartGreen = 0.95,
+        StartBlue = 0.7,
+        EndRed = 0.9999,
+        EndGreen = 0.8,
+        EndBlue = 0.5,
+        Scale = 1,
+		ScaleX = 0.8,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "TreantProjectile_Hera",
+        InheritFrom = "TreantProjectile_Zeus",
+        StartRed = 0.0,
+        StartGreen = 1.0,
+        StartBlue = 0.1,
+        EndRed = 0.1,
+        EndGreen = 0.3,
+        EndBlue = 1.0,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "TreantProjectile_Poseidon",
+        InheritFrom = "TreantProjectile_Zeus",
+        StartRed = 0.1,
+        StartGreen = 1.0,
+        StartBlue = 0.8,
+        EndRed = 0,
+        EndGreen = 0.6,
+        EndBlue = 1.0,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "TreantProjectile_Demeter",
+        InheritFrom = "TreantProjectile_Zeus",
+        StartRed = 0.25,
+        StartGreen = 0.35,
+        StartBlue = 0.5,
+        EndRed = 0.35,
+        EndGreen = 0.25,
+        EndBlue = 0.4999,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "TreantProjectile_Apollo",
+        InheritFrom = "TreantProjectile_Zeus",
+        StartRed = 1.0,
+        StartGreen = 0.9,
+        StartBlue = 0.7,
+        EndRed = 0.999,
+        EndGreen = 0.85,
+        EndBlue = 0.05,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "TreantProjectile_Aphrodite",
+        InheritFrom = "TreantProjectile_Zeus",
+        StartRed = 1.0,
+        StartGreen = 0.6,
+        StartBlue = 0.8,
+        EndRed = 0.99,
+        EndGreen = 0.05,
+        EndBlue = 0.99,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "TreantProjectile_Hephaestus",
+        InheritFrom = "TreantProjectile_Zeus",
+        StartRed = 0.51,
+        StartGreen = 0.82,
+        StartBlue = 1.00,
+        EndRed = 1.00,
+        EndGreen = 0,
+        EndBlue = 0,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "TreantProjectile_Hestia",
+        InheritFrom = "TreantProjectile_Zeus",
+        StartRed = 1.0,
+        StartGreen = 0.3,
+        StartBlue = 0.02,
+        EndRed = 0.999,
+        EndGreen = 0.15,
+        EndBlue = 0.0,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "TreantProjectile_Ares",
+        InheritFrom = "TreantProjectile_Zeus",
+        StartRed = 1.0,
+        StartGreen = 0.04,
+        StartBlue = 0.001,
+        EndRed = 0.999,
+        EndGreen = 0.0,
+        EndBlue = 0.0,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "TreantProjectileIn_Zeus",
+        InheritFrom = "TreantProjectileIn",
+        ChainTo = "TreantProjectile_Zeus",
+        ColorFromOwner = "Ignore",
+        Color = {},
+        AddColor = true,
+        StartRed = 1.0,
+        StartGreen = 0.95,
+        StartBlue = 0.7,
+        EndRed = 0.9999,
+        EndGreen = 0.8,
+        EndBlue = 0.5,
+        StartScale = 0,
+		EndScale = 0.1,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "TreantProjectileIn_Hera",
+        InheritFrom = "TreantProjectileIn_Zeus",
+        ChainTo = "TreantProjectile_Hera",
+        StartRed = 0.0,
+        StartGreen = 1.0,
+        StartBlue = 0.1,
+        EndRed = 0.1,
+        EndGreen = 0.3,
+        EndBlue = 1.0,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "TreantProjectileIn_Poseidon",
+        InheritFrom = "TreantProjectileIn_Zeus",
+        ChainTo = "TreantProjectile_Poseidon",
+        StartRed = 0.1,
+        StartGreen = 1.0,
+        StartBlue = 0.8,
+        EndRed = 0,
+        EndGreen = 0.6,
+        EndBlue = 1.0,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "TreantProjectileIn_Demeter",
+        InheritFrom = "TreantProjectileIn_Zeus",
+        ChainTo = "TreantProjectile_Demeter",
+        StartRed = 0.25,
+        StartGreen = 0.35,
+        StartBlue = 0.5,
+        EndRed = 0.35,
+        EndGreen = 0.25,
+        EndBlue = 0.4999,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "TreantProjectileIn_Apollo",
+        InheritFrom = "TreantProjectileIn_Zeus",
+        ChainTo = "TreantProjectile_Apollo",
+        StartRed = 1.0,
+        StartGreen = 0.9,
+        StartBlue = 0.7,
+        EndRed = 0.999,
+        EndGreen = 0.85,
+        EndBlue = 0.05,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "TreantProjectileIn_Aphrodite",
+        InheritFrom = "TreantProjectileIn_Zeus",
+        ChainTo = "TreantProjectile_Aphrodite",
+        StartRed = 1.0,
+        StartGreen = 0.6,
+        StartBlue = 0.8,
+        EndRed = 0.99,
+        EndGreen = 0.05,
+        EndBlue = 0.99,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "TreantProjectileIn_Hephaestus",
+        InheritFrom = "TreantProjectileIn_Zeus",
+        ChainTo = "TreantProjectile_Hephaestus",
+        StartRed = 0.51,
+        StartGreen = 0.82,
+        StartBlue = 1.00,
+        EndRed = 1.00,
+        EndGreen = 0,
+        EndBlue = 0,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "TreantProjectileIn_Hestia",
+        InheritFrom = "TreantProjectileIn_Zeus",
+        ChainTo = "TreantProjectile_Hestia",
+        StartRed = 1.0,
+        StartGreen = 0.3,
+        StartBlue = 0.02,
+        EndRed = 0.999,
+        EndGreen = 0.15,
+        EndBlue = 0.0,
+    })
+
+    table.insert(data.Animations,
+    {
+        Name = "TreantProjectileIn_Ares",
+        InheritFrom = "TreantProjectileIn_Zeus",
+        ChainTo = "TreantProjectile_Ares",
+        StartRed = 1.0,
+        StartGreen = 0.04,
+        StartBlue = 0.001,
+        EndRed = 0.999,
+        EndGreen = 0.0,
+        EndBlue = 0.0,
+    })
+
+    table.insert(data.Animations,
+    {
         Name = "TurtleLobProjectile_Zeus",
         InheritFrom = "TurtleLobProjectile",
         ColorFromOwner = "Ignore",

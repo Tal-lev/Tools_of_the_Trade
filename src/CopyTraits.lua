@@ -559,12 +559,12 @@ OverwriteTableKeys( TraitData, {
 				WeaponProperties = 
                 {
                     Cooldown = 1.35,
-					NumProjectiles = 60,
-					ProjectileInterval = 0.0485,
+					NumProjectiles = 10,
+					ProjectileInterval = 0.15,
 					FireRotationDampening = 0.14,
 					CancelMovement = true,
 					RootOwnerWhileFiring = true,
-					--ProjectileAngleOffset = math.rad(0),
+					ProjectileAngleOffset = math.rad(1),
 					--ProjectileOffsetStart = "LEFT",
 					--ProjectileAngleOffsetMin = math.rad(-5),
 					--ProjectileAngleOffsetMax = math.rad(5),
@@ -585,6 +585,12 @@ OverwriteTableKeys( TraitData, {
 				},
 				ExcludeLinked = true,
             },
+			{
+				WeaponName = "WeaponLob",
+				WeaponProperty = "ProjectileScaleMultiplier",
+				ChangeValue = 0.6,
+				ChangeType = "Multiply",
+			},
         },
 		FlavorText = "CopyAbility_FlavorText",
 	},
@@ -2499,6 +2505,77 @@ OverwriteTableKeys( TraitData, {
 		{
 			DisplayType = "RoomValue",
 			Key = "Copy_TreantTailtwo2",
+			Text = "Copy_2nd"
+		},
+	},
+
+	--Doesn't Scatter
+	TreanttwoCopyDisplayBoon = 
+	{
+		Icon = "JarlUlsfark-Tools_of_the_Trade\\Treant2Icon",
+		ShowInHUD = true,
+		CustomLabel = 
+		{
+			DisplayType = "RoomValue",
+			Key = "Copy_Treant",
+			Text = "Copy_EmptyText"
+		},
+        PropertyChanges = 
+        {
+           {
+				WeaponName = "WeaponLob",
+				WeaponProperty = "Projectile",
+				ChangeValue = "TreantRanged",
+			},
+            {
+				WeaponName = "WeaponLob",
+				WeaponProperties = 
+                {
+                    Cooldown = 1.35,
+					NumProjectiles = 10,
+					ProjectileInterval = 0.15,
+					FireRotationDampening = 0.14,
+					CancelMovement = true,
+					RootOwnerWhileFiring = true,
+					ProjectileAngleOffset = math.rad(1),
+					--ProjectileOffsetStart = "LEFT",
+					--ProjectileAngleOffsetMin = math.rad(-5),
+					--ProjectileAngleOffsetMax = math.rad(5),
+					FizzleOldSpawns = false,
+					--Scatter = 15,
+					--ScatterCap = 30,
+					--ScatterSubside = 15,
+					--SetCompleteAngleOnFire = true,
+                },
+                ExcludeLinked = true,
+			},
+            {
+                WeaponName = "WeaponLob",
+                ProjectileName = "TreantRanged",
+                ProjectileProperties = 
+				{
+					Damage = 12,
+				},
+				ExcludeLinked = true,
+            },
+			{
+				WeaponName = "WeaponLob",
+				WeaponProperty = "ProjectileScaleMultiplier",
+				ChangeValue = 0.6,
+				ChangeType = "Multiply",
+			},
+        },
+		FlavorText = "CopyAbility_FlavorText",
+	},
+
+	TreantCopyTwoDisplayBoon = 
+	{
+		Icon = "JarlUlsfark-Tools_of_the_Trade\\Treant2Icon",
+		ShowInHUD = true,
+		CustomLabel = 
+		{
+			DisplayType = "RoomValue",
+			Key = "Copy_Treant2",
 			Text = "Copy_2nd"
 		},
 	},
@@ -6444,6 +6521,58 @@ if ZagreusJourney then
 			},
 		},
 
+		HadesThiefMineLayerCopyDisplayBoon = 
+		{
+		Icon = "JarlUlsfark-Tools_of_the_Trade_ZJcompat\\HadesThiefMineLayerIcon",
+		ShowInHUD = true,
+		CustomLabel = 
+		{
+			DisplayType = "RoomValue",
+			Key = "Copy_HadesThiefMineLayer",
+			Text = "Copy_EmptyText"
+		},
+        PropertyChanges = 
+        {
+           {
+				WeaponName = "WeaponLob",
+				WeaponProperty = "Projectile",
+				ChangeValue = "HadesBloodMineTossplayer",
+			},
+            {
+				WeaponName = "WeaponLob",
+				WeaponProperties = 
+                {
+                    Cooldown = 2,
+					FizzleOldSpawns = false,
+					WeaponRange = 900,
+                },
+                ExcludeLinked = true,
+			},
+            {
+                WeaponName = "WeaponLob",
+                ProjectileName = "HadesBloodMineTossplayer",
+                ProjectileProperties = 
+				{
+					Damage = 0,
+				},
+				ExcludeLinked = true,
+            },
+        },
+		FlavorText = "CopyAbility_FlavorText",
+	},
+
+	HadesThiefMineLayerCopyTwoDisplayBoon = 
+	{
+		Icon = "JarlUlsfark-Tools_of_the_Trade_ZJcompat\\HadesThiefMineLayerIcon",
+		ShowInHUD = true,
+		CustomLabel = 
+		{
+			DisplayType = "RoomValue",
+			Key = "Copy_HadesThiefMineLayer2",
+			Text = "Copy_2nd"
+		},
+	},
+
 		DisembodiedHandCopyDisplayBoon = 
 		{
 			Icon = "JarlUlsfark-Tools_of_the_Trade_ZJcompat\\DisembodiedHandIcon",
@@ -8001,6 +8130,46 @@ if ZagreusJourney then
 				Key = "Copy_RatThug2",
 				Text = "Copy_2nd"
 			},
+		},
+
+		HadesThiefImpulseMineLayerCopyDisplayBoon = 
+		{
+		Icon = "JarlUlsfark-Tools_of_the_Trade_ZJcompat\\HadesThiefImpulseMineLayerIcon",
+		ShowInHUD = true,
+		CustomLabel = 
+		{
+			DisplayType = "RoomValue",
+			Key = "Copy_HadesThiefImpulseMineLayer",
+			Text = "Copy_EmptyText"
+		},
+        PropertyChanges = 
+        {
+           {
+				WeaponName = "WeaponLob",
+				WeaponProperty = "Projectile",
+				ChangeValue = "HadesImpulseMineTossplayer",
+			},
+            {
+				WeaponName = "WeaponLob",
+				WeaponProperties = 
+                {
+                    Cooldown = 2,
+					FizzleOldSpawns = false,
+					WeaponRange = 900,
+                },
+                ExcludeLinked = true,
+			},
+            {
+                WeaponName = "WeaponLob",
+                ProjectileName = "HadesImpulseMineTossplayer",
+                ProjectileProperties = 
+				{
+					Damage = 50,
+				},
+				ExcludeLinked = true,
+            },
+        },
+		FlavorText = "CopyAbility_FlavorText",
 		},
 	})
 end

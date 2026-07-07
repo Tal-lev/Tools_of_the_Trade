@@ -39,6 +39,26 @@ WeaponSetData = {
 			AttackDistance = 9999999,
 		},
 	},
+
+	HadesMineBlastPlayer =
+	{
+		AIData =
+		{
+			DeepInheritance = true,
+
+			ProjectileName = "HadesMineBlastPlayer",
+
+			FireProjectileAtSelf = true,
+			FireFromTarget = true,
+
+			PreAttackDuration = 0.0,
+			FireDuration = 0.0,
+			PostAttackDuration = 0.0,
+
+			MoveWithinRange = false,
+			AttackDistance = 9999999,
+		},
+	},
 }
 OverwriteTableKeys( WeaponData, WeaponSetData )
 OverwriteTableKeys( WeaponDataEnemies, WeaponSetData )
@@ -78,6 +98,12 @@ local file = rom.path.combine(rom.paths.Content, 'Game/Units/Enemies.sjson')
 				{ X = -100, Y = 0, },
 			},
 		},
+	})
+
+	table.insert(data.Units,
+	{
+		Name = "HadesBloodMinePlayer",
+		InheritFrom = "BloodMinePlayer",
 	})
 
 	table.insert(data.Units,
@@ -137,6 +163,52 @@ OverwriteTableKeys( EnemyData, {
 		DissipateAnimation = "BloodMineDeactivated",
 		FuseAnimation = "BloodMineActivated",
 		FuseWarningProjectileName = "MineBlastPlayer",
+		FlashOnFuse = true,
+		FuseDuration = 1.0,
+		TriggerDistance = 225,
+		WakeUpDelay = 1.5,
+		ExpirationDuration = 15.0,
+		
+		DestroyDelay = 0.5,
+		AIOptions =
+		{
+			"MineAI",
+		},
+		AttackDistance = 150,
+
+		CleanupAnimation = "Blank",
+		OutgoingDamageModifiers =
+		{
+			{
+				IsMultiplier = true,
+				PlayerMultiplier = 0,
+			},
+			{
+				IsMultiplier = true,
+				NonPlayerMultiplier = 1,
+			},
+		},
+	},
+
+	HadesBloodMinePlayer =
+	{
+		InheritFrom = { "BaseTrap" },
+
+		ActivateFuseIfNoSpawner = false,
+		FuseWarningAnimation = "BlastWarningDecal",
+
+		DefaultAIData =
+		{
+			DeepInheritance = true,
+		},
+		TriggerGroups = { "EnemyTeam" },
+
+		OnDamagedFunctionNames = { "ActivateFuse" },
+		OnDeathFireWeapons = { "HadesMineBlastPlayer" },
+
+		DissipateAnimation = "BloodMineDeactivated",
+		FuseAnimation = "BloodMineActivated",
+		FuseWarningProjectileName = "HadesMineBlastPlayer",
 		FlashOnFuse = true,
 		FuseDuration = 1.0,
 		TriggerDistance = 225,

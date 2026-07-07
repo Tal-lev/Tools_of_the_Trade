@@ -717,7 +717,7 @@ local file = rom.path.combine(rom.paths.Content, 'Game/Projectiles/PlayerProject
 	{
 		Name = "BloodMineTossplayer",
 		InheritFrom = "BloodMineToss",
-		SpawnOnDeath = "BloodMinePlayer",
+		SpawnOnDetonate = "BloodMinePlayer",
 	})
 
 	table.insert(data.Projectiles,
@@ -725,6 +725,39 @@ local file = rom.path.combine(rom.paths.Content, 'Game/Projectiles/PlayerProject
 		Name = "MineBlastPlayer",
 		InheritFrom = "MineBlast",
 		Damage = 100,
+	})
+
+	table.insert(data.Projectiles,
+	{
+		Name = "HadesBloodMineTossplayer",
+		InheritFrom = "BloodMineTossplayer",
+		SpawnOnDetonate = "HadesBloodMinePlayer",
+	})
+
+	table.insert(data.Projectiles,
+	{
+		Name = "HadesMineBlastPlayer",
+		InheritFrom = "MineBlast",
+		Damage = 50,
+	})
+
+	table.insert(data.Projectiles,
+	{
+		Name = "HadesImpulseMineTossplayer",
+		InheritFrom = "MineToss",
+	    SpawnCap = 1,
+	    FizzleOldSpawnsOnDetonate = true,
+      	Speed = 1000,
+      	SpeedVariance = 30,
+      	LaunchAngle = 50,
+		SpawnOnDetonate = "HadesImpulseMineBlastPlayer",
+	})
+
+	table.insert(data.Projectiles,
+	{
+		Name = "HadesImpulseMineBlastPlayer",
+		InheritFrom = "MineBlast",
+		Damage = 150,
 	})
 
 	table.insert(data.Projectiles,
@@ -1432,6 +1465,11 @@ OverwriteTableKeys( ProjectileData, {
 
 	},
 
+	BloodMineTossplayer =
+	{
+
+	},
+
 	EarthElementalLaserplayer =
 	{
 		HitScreenshake = { Distance = 3, Speed = 1000, Duration = 0.12, FalloffSpeed = 3000 },
@@ -1479,6 +1517,16 @@ if ZagreusJourney then
 			SpawnBounceOffVictimVelocity = 0,
 			SpawnBounceOffVictimUpwardVelocity = 0,
 			SpawnsSkipActivatePresentation = true,
+		},
+
+		HadesBloodMineTossplayer =
+		{
+
+		},
+		
+		HadesImpulseMineTossplayer = 
+		{
+
 		},
 	})
 end

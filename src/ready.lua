@@ -761,9 +761,9 @@ function mod.CopyAbility (victim, functionArgs, triggerArgs)
 	elseif victim.Name == "TreantTail" or victim.Name == "TreantTail_Elite" then
 		Changed = "TreantTail"
 		Location = "BiomeF"
-	--elseif victim.Name == "Treant" then
-	--	Changed = "Treant"
-	--	Location = "BiomeF"
+	elseif victim.Name == "Treant" then
+		Changed = "Treant"
+		Location = "BiomeF"
 	elseif victim.Name == "FogEmitter" or victim.Name == "FogEmitter_Elite" then
 		Changed = "FogEmitter"
 		Location = "BiomeF"
@@ -865,6 +865,9 @@ function mod.CopyAbility (victim, functionArgs, triggerArgs)
 		Location = "BiomeH"
 	elseif victim.Name == "TreantTail2" or victim.Name == "TreantTail2_Elite" then
 		Changed = "TreantTailtwo"
+		Location = "BiomeH"
+	elseif victim.Name == "Treant2" or victim.Name == "Treant2_Elite" then
+		Changed = "Treanttwo"
 		Location = "BiomeH"
 	elseif victim.Name == "Lamia" or victim.Name == "Lamia_Elite" then
 		Changed = "Lamia"
@@ -1086,6 +1089,9 @@ function mod.CopyAbility (victim, functionArgs, triggerArgs)
 		elseif victim.Name == "HeavyMelee" or victim.Name == "HeavyMeleeElite" then
 			Changed = "HeavyMelee"
 			Location = "BiomeI"
+		elseif victim.Name == "HadesThiefMineLayer" or victim.Name == "HadesThiefMineLayerElite" then
+			Changed = "HadesThiefMineLayer"
+			Location = "BiomeG"
 		--elseif victim.Name == "DisembodiedHand" or victim.Name == "DisembodiedHand_Elite" then
 		--	Changed = "DisembodiedHand"
 		--	Location = "TartarusModsNikkelMHadesBiomes"

@@ -243,6 +243,15 @@ AddGodTraitProperty({
             ChangeType = "Absolute",
             ExcludeLinked = true,
         },  
+        -- Treant
+        {
+            WeaponName = "WeaponLob",
+            ProjectileName = "TreantRanged",
+            ProjectileProperty = "Graphic",
+            ValuePrefix = "TreantProjectileIn_",
+            ChangeType = "Absolute",
+            ExcludeLinked = true,
+        },
 		-- FogEmitter
         {
             WeaponName = "WeaponLob",
