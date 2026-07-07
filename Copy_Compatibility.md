@@ -29,6 +29,7 @@
 - Sop-Spindle
 - Jellyfish
 - Hellifish
+- Wretched Pest
 - King Vermin
 - Deep Serpent
 - Roxy
@@ -44,6 +45,7 @@
 - Sorrow-Spiller
 - Smacker
 - Dread-Wailer
+- Holeheart
 - Brush-Stalker Tail
 - Canine
 - Lycaon
