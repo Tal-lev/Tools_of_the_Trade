@@ -703,7 +703,28 @@ local file = rom.path.combine(rom.paths.Content, 'Game/Projectiles/PlayerProject
 	{
 		Name = "LovesickHeartLobplayer",
 		InheritFrom = "LovesickHeartLob",
-		SpawnOnDeath = "null",
+		SpawnOnDeath = "LovesickHeartPlayer",
+	})
+
+	table.insert(data.Projectiles,
+	{
+		Name = "LovesickHeartMineBlastPlayer",
+		InheritFrom = "LovesickHeartMineBlast",
+		Damage = 120,
+	})
+
+	table.insert(data.Projectiles,
+	{
+		Name = "BloodMineTossplayer",
+		InheritFrom = "BloodMineToss",
+		SpawnOnDeath = "BloodMinePlayer",
+	})
+
+	table.insert(data.Projectiles,
+	{
+		Name = "MineBlastPlayer",
+		InheritFrom = "MineBlast",
+		Damage = 100,
 	})
 
 	table.insert(data.Projectiles,
@@ -1408,12 +1429,7 @@ OverwriteTableKeys( ProjectileData, {
 
 	LovesickHeartLobplayer =
 	{
-		OnDeathFunctionName = _PLUGIN.guid .. "." .. "ProjectileSpawnUnitOnDeath",
-		SpawnName = "LovesickHeart",
-		SpawnBounceOffVictim = false,
-		SpawnBounceOffVictimVelocity = 0,
-		SpawnBounceOffVictimUpwardVelocity = 0,
-		SpawnsSkipActivatePresentation = false,
+
 	},
 
 	EarthElementalLaserplayer =

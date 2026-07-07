@@ -809,11 +809,9 @@ function mod.CopyAbility (victim, functionArgs, triggerArgs)
 	elseif victim.Name == "WaterUnitMiniboss" then
 		Changed = "WaterUnitMiniboss"
 		Location = "BiomeG"
-	--elseif victim.Name == "ThiefMineLayer" or victim.Name == "ThiefMineLayer_Elite" then
-	--	RemoveTrait(CurrentRun.Hero, CopyTrait)
-	--	wait(0.1)
-	--	AddTraitToHero({ TraitName = "ThiefMineLayerCopyDisplayBoon" })
-	--	Changed = 1
+	elseif victim.Name == "ThiefMineLayer" or victim.Name == "ThiefMineLayer_Elite" then
+		Changed = "ThiefMineLayer"
+		Location = "BiomeG"
 	elseif victim.Name == "SirenDrummer" then
 		Changed = "SirenDrummer"
 		Location = "BiomeG"
@@ -883,9 +881,9 @@ function mod.CopyAbility (victim, functionArgs, triggerArgs)
 	--elseif victim.Name == "Mourner" or victim.Name == "Mourner_Elite" then
 	--	Changed = "Mourner"	
 	--	Location = "BiomeH"
-	--elseif victim.Name == "Lovesick" then
-	--	Changed = "Lovesick"	
-	--	Location = "BiomeH"
+	elseif victim.Name == "Lovesick" then
+		Changed = "Lovesick"	
+		Location = "BiomeH"
 	elseif victim.Name == "SwarmerClockwork" or victim.Name == "SwarmerClockwork_Elite" then
 		Changed = "SwarmerClockwork"
 		Location = "BiomeI"
@@ -1829,6 +1827,7 @@ modutil.once_loaded.game(function()
 
 	import "CopyTraitGodVFX.lua"
 	import "CopyProjectiles.lua"
+	import "CopyUnits.lua"
 	import "CopyTraits.lua"
 
 	ShovelRaiseDeadNecroMel = {

@@ -1097,7 +1097,7 @@ OverwriteTableKeys( TraitData, {
            {
 				WeaponName = "WeaponLob",
 				WeaponProperty = "Projectile",
-				ChangeValue = "BloodMineToss",
+				ChangeValue = "BloodMineTossplayer",
 			},
             {
 				WeaponName = "WeaponLob",
@@ -1105,12 +1105,13 @@ OverwriteTableKeys( TraitData, {
                 {
                     Cooldown = 2,
 					FizzleOldSpawns = false,
+					WeaponRange = 900,
                 },
                 ExcludeLinked = true,
 			},
             {
                 WeaponName = "WeaponLob",
-                ProjectileName = "BloodMineToss",
+                ProjectileName = "BloodMineTossplayer",
                 ProjectileProperties = 
 				{
 					Damage = 0,
@@ -2330,7 +2331,6 @@ OverwriteTableKeys( TraitData, {
 		},
 	},
 
-	--INPROGRESS Has issues with modifying the trap created by the projectile
 	LovesickCopyDisplayBoon = 
 	{
 		Icon = "JarlUlsfark-Tools_of_the_Trade\\LovesickIcon",
@@ -2354,6 +2354,7 @@ OverwriteTableKeys( TraitData, {
                 {
                     Cooldown = 2,
 					FizzleOldSpawns = false,
+					WeaponRange = 900,
                 },
                 ExcludeLinked = true,
 			},
