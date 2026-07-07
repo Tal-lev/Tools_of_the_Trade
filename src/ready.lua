@@ -1173,12 +1173,24 @@ function mod.CopyAbility (victim, functionArgs, triggerArgs)
 		elseif victim.Name == "Theseus" then
 			Changed = "TheseusOne"
 			Location = "ElysiumModsNikkelMHadesBiomes"
-		elseif victim.Name == "SatyrRanged" then
+		elseif victim.Name == "SatyrRanged" or victim.Name == "SatyrRangedElite" then
 			Changed = "SatyrRanged"
 			Location = "StyxModsNikkelMHadesBiomes"
-		elseif victim.Name == "RatThug" then
+		elseif victim.Name == "RatThug" or victim.Name == "RatThugElite" then
 			Changed = "RatThug"
 			Location = "StyxModsNikkelMHadesBiomes"
+		elseif victim.Name == "HeavyRangedForked" or victim.Name == "HeavyRangedForkedElite" then
+			Changed = "HeavyRangedForked"
+			Location = "TartarusModsNikkelMHadesBiomes"
+		elseif victim.Name == "SatyrRangedMiniboss" then
+			Changed = "SatyrRangedMiniboss"
+			Location = "StyxModsNikkelMHadesBiomes"
+		elseif victim.Name == "RatThugMiniboss" then
+			Changed = "RatThugMiniboss"
+			Location = "StyxModsNikkelMHadesBiomes"
+		elseif victim.Name == "HeavyRangedForkedMiniboss" then
+			Changed = "HeavyRangedForkedMiniboss"
+			Location = "TartarusModsNikkelMHadesBiomes"
 		end
 	end
 	if Changed ~= "null" then

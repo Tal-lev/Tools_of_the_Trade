@@ -2707,7 +2707,6 @@ OverwriteTableKeys( TraitData, {
                     Cooldown = 2,
 					RootOwnerWhileFiring = true,
 					ChargeTime = 1,
-					ProjectileAngleOffset = math.rad(0),
 					NumProjectiles = 12,
 					ProjectileAngleOffset = math.rad(5),
 					ProjectileOffsetStart = "LEFT",
@@ -8170,6 +8169,246 @@ if ZagreusJourney then
             },
         },
 		FlavorText = "CopyAbility_FlavorText",
+		},
+
+		HeavyRangedForkedCopyDisplayBoon = 
+		{
+			Icon = "JarlUlsfark-Tools_of_the_Trade_ZJcompat\\HeavyRangedForkedIcon",
+			ShowInHUD = true,
+			CustomLabel = 
+			{
+				DisplayType = "RoomValue",
+				Key = "Copy_HeavyRangedForked",
+				Text = "Copy_EmptyText"
+			},
+			PropertyChanges = 
+			{
+			{
+					WeaponName = "WeaponLob",
+					WeaponProperty = "Projectile",
+					ChangeValue = "HeavyRangedWeapon",
+				},
+				{
+					WeaponName = "WeaponLob",
+					WeaponProperties = 
+					{
+						Cooldown = 3,
+						FizzleOldSpawns = false,
+						BarrelLength = 0,
+						AutoLock = true,
+						AutoLockRange = 1300,
+						AutoLockArcDistance = 240,
+						NumProjectiles = 3,
+						ProjectileOffsetStart = "CENTER",
+						ProjectileAngleOffset = math.rad(30),
+					},
+					ExcludeLinked = true,
+				},
+				{
+					WeaponName = "WeaponLob",
+					ProjectileName = "HeavyRangedWeapon",
+					ProjectileProperties = 
+					{
+						Damage = (20 * BiomeDScaling),
+						Range = 1300,
+      					MaxAdjustRate = 0.2,
+						--AdjustRateAcceleration = 1000,
+					},
+					ExcludeLinked = true,
+				},
+			},
+			FlavorText = "CopyAbility_FlavorText",
+		},
+
+		HeavyRangedForkedCopyTwoDisplayBoon = 
+		{
+			Icon = "JarlUlsfark-Tools_of_the_Trade_ZJcompat\\HeavyRangedForkedIcon",
+			ShowInHUD = true,
+			CustomLabel = 
+			{
+				DisplayType = "RoomValue",
+				Key = "Copy_HeavyRangedForked2",
+				Text = "Copy_2nd"
+			},
+		},
+
+		SatyrRangedMinibossCopyDisplayBoon = 
+		{
+			Icon = "JarlUlsfark-Tools_of_the_Trade_ZJcompat\\SatyrRangedMinibossIcon",
+			ShowInHUD = true,
+			CustomLabel = 
+			{
+				DisplayType = "RoomValue",
+				Key = "Copy_SatyrRangedMiniboss",
+				Text = "Copy_EmptyText"
+			},
+			PropertyChanges = 
+			{
+				{
+					WeaponName = "WeaponLob",
+					WeaponProperty = "Projectile",
+					ChangeValue = "SatyrRangedWeaponplayer",
+				},
+				{
+					WeaponName = "WeaponLob",
+					WeaponProperties = 
+					{
+						Cooldown = 0.4,
+						FizzleOldSpawns = false,
+						NumProjectiles = 6,
+						ProjectileOffsetStart = "LEFT",
+						ProjectileAngleOffset = math.rad(5),
+						ProjectileInterval = 0.1,
+					},
+					ExcludeLinked = true,
+				},
+				{
+					WeaponName = "WeaponLob",
+					ProjectileName = "SatyrRangedWeaponplayer",
+					ProjectileProperties = 
+					{
+						Damage = (10 * BiomeDScaling),
+					},
+					ExcludeLinked = true,
+				},
+			},
+			FlavorText = "CopyAbility_FlavorText",
+		},
+
+		SatyrRangedMinibossCopyTwoDisplayBoon = 
+		{
+			Icon = "JarlUlsfark-Tools_of_the_Trade_ZJcompat\\SatyrRangedMinibossIcon",
+			ShowInHUD = true,
+			CustomLabel = 
+			{
+				DisplayType = "RoomValue",
+				Key = "Copy_SatyrRangedMiniboss2",
+				Text = "Copy_2nd"
+			},
+		},
+
+		RatThugMinibossCopyDisplayBoon = 
+		{
+			Icon = "JarlUlsfark-Tools_of_the_Trade_ZJcompat\\RatThugMinibossIcon",
+			ShowInHUD = true,
+			CustomLabel = 
+			{
+				DisplayType = "RoomValue",
+				Key = "Copy_RatThugMiniboss",
+				Text = "Copy_EmptyText"
+			},
+			PropertyChanges = 
+			{
+				{
+					WeaponName = "WeaponLob",
+					WeaponProperty = "Projectile",
+					ChangeValue = "RatPoisonShake",
+				},
+				{
+					WeaponName = "WeaponLob",
+					WeaponProperties = 
+					{
+						Cooldown = 0.4,
+						FizzleOldSpawns = false,
+						WeaponRange = 200,
+						NumProjectiles = 20,
+						ProjectileAngleOffset = math.rad(18),
+
+					},
+					ExcludeLinked = true,
+				},
+				{
+					WeaponName = "WeaponLob",
+					ProjectileName = "RatPoisonShake",
+					ProjectileProperties = 
+					{
+						Damage = (10 * BiomeDScaling),
+						SpawnOnDetonate = "HadesPoisonPuddleSmallplayer",
+						SpeedVariance = 300.0,
+					},
+					ExcludeLinked = true,
+				},
+				{
+				WeaponName = "WeaponLob",
+				WeaponProperty = "ProjectileScaleMultiplier",
+				ChangeValue = 0.1,
+				ChangeType = "Multiply",
+				},	
+			},
+			FlavorText = "CopyAbility_FlavorText",
+		},
+
+		RatThugMinibossCopyTwoDisplayBoon = 
+		{
+			Icon = "JarlUlsfark-Tools_of_the_Trade_ZJcompat\\RatThugMinibossIcon",
+			ShowInHUD = true,
+			CustomLabel = 
+			{
+				DisplayType = "RoomValue",
+				Key = "Copy_RatThugMiniboss2",
+				Text = "Copy_2nd"
+			},
+		},
+
+		HeavyRangedForkedMinibossCopyDisplayBoon = 
+		{
+			Icon = "JarlUlsfark-Tools_of_the_Trade_ZJcompat\\HeavyRangedForkedMinibossIcon",
+			ShowInHUD = true,
+			CustomLabel = 
+			{
+				DisplayType = "RoomValue",
+				Key = "Copy_HeavyRangedForked",
+				Text = "Copy_EmptyText"
+			},
+			PropertyChanges = 
+			{
+			{
+					WeaponName = "WeaponLob",
+					WeaponProperty = "Projectile",
+					ChangeValue = "HeavyRangedWeapon",
+				},
+				{
+					WeaponName = "WeaponLob",
+					WeaponProperties = 
+					{
+						Cooldown = 3,
+						FizzleOldSpawns = false,
+						BarrelLength = 0,
+						AutoLock = true,
+						AutoLockRange = 1300,
+						AutoLockArcDistance = 240,
+						NumProjectiles = 12,
+						ProjectileOffsetStart = "CENTER",
+						ProjectileAngleOffset = math.rad(30),
+					},
+					ExcludeLinked = true,
+				},
+				{
+					WeaponName = "WeaponLob",
+					ProjectileName = "HeavyRangedWeapon",
+					ProjectileProperties = 
+					{
+						Damage = (20 * BiomeDScaling),
+						Range = 1300,
+      					MaxAdjustRate = 0.2,
+						--AdjustRateAcceleration = 1000,
+					},
+					ExcludeLinked = true,
+				},
+			},
+			FlavorText = "CopyAbility_FlavorText",
+		},
+
+		HeavyRangedForkedMinibossCopyTwoDisplayBoon = 
+		{
+			Icon = "JarlUlsfark-Tools_of_the_Trade_ZJcompat\\HeavyRangedForkedMinibossIcon",
+			ShowInHUD = true,
+			CustomLabel = 
+			{
+				DisplayType = "RoomValue",
+				Key = "Copy_HeavyRangedForkedMiniboss2",
+				Text = "Copy_2nd"
+			},
 		},
 	})
 end

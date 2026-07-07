@@ -1656,6 +1656,45 @@ sjson.hook(file, function(data)
 		TextOrder)
 		)
 
+		table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "HeavyRangedForkedCopyDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Copy: Snakestone",
+			Description = "Your Attack fires {#UpgradeFormat}3 Slowly Targeting Beams{#Prev}.",
+		},
+		TextOrder)
+		)
+
+		table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "SatyrRangedMinibossCopyDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Copy: Dire Satyr Cultist",
+			Description = "Your Attack shoots a {#UpgradeFormat}Barrage of Poisoned Darts{#Prev}.",
+		},
+		TextOrder)
+		)
+
+		table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "RatThugMinibossCopyDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Copy: Dire Gigantic Vermin",
+			Description = "Your Attack Shakes a {#UpgradeFormat}Multitude {#Prev}of {#UpgradeFormat}Poison Projectiles {#Prev}off.",
+		},
+		TextOrder)
+		)
+
+		table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "HeavyRangedForkedMinibossCopyDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Copy: Dire Snakestone",
+			Description = "Your Attack fires {#UpgradeFormat}12 Slowly Targeting Beams{#Prev}.",
+		},
+		TextOrder)
+		)
 	end
 
 
