@@ -11,6 +11,7 @@
 - Casket
 - Thorn-Weeper
 - Root-Stalker Tail
+- Root-Stalker
 - Shadow-Spiller
 - Lanthorn
 - Master-Slicer
@@ -47,6 +48,7 @@
 - Dread-Wailer
 - Holeheart
 - Brush-Stalker Tail
+- Brush-Stalker
 - Canine
 - Lycaon
 - Lamia
