@@ -150,6 +150,7 @@
 - Wretched Witch
 - Brimstone
 - Doomstone
+- Wretched Pest
 - Wretched Sneak
 - Megaera
   - Whip-Fury
