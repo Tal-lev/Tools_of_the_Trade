@@ -1092,9 +1092,9 @@ function mod.CopyAbility (victim, functionArgs, triggerArgs)
 		elseif victim.Name == "HadesThiefMineLayer" or victim.Name == "HadesThiefMineLayerElite" then
 			Changed = "HadesThiefMineLayer"
 			Location = "BiomeG"
-		--elseif victim.Name == "DisembodiedHand" or victim.Name == "DisembodiedHand_Elite" then
-		--	Changed = "DisembodiedHand"
-		--	Location = "TartarusModsNikkelMHadesBiomes"
+		elseif victim.Name == "DisembodiedHand" or victim.Name == "DisembodiedHand_Elite" then
+			Changed = "DisembodiedHand"
+			Location = "TartarusModsNikkelMHadesBiomes"
 		elseif victim.Name == "WretchAssassinMiniboss" then
 			Changed = "WretchAssassinMiniboss"
 			Location = "TartarusModsNikkelMHadesBiomes"
@@ -1222,7 +1222,7 @@ function mod.ReleaseCopyAbility ( triggerArgs, functionArgs )
 	ManaDelta( -20 )
 	local args = 
 	{
-		ProjectileName = "HammerAxeNova",
+		ProjectileName = "KirbyHammerAxeNova",
 		DamageMultiplier = functionArgs.DamageMultiplier or 1,
 	}
 	local trait = GetHeroTrait("TabletofPeaceKirbyMel")
@@ -1363,6 +1363,10 @@ function mod.ProjectileSpawnUnitOnDeath( projectileData, triggerArgs )
 	SetupUnit( newUnit )
 
 	Destroy({ Id = spawnPointId })
+end
+
+function mod.KirbyFireAura( weaponData, functionArgs, triggerArgs )
+	CreateProjectileFromUnit({ Name = functionArgs.ProjectileName, Id = CurrentRun.Hero.ObjectId, DamageMultiplier = functionArgs.DamageMultiplier })
 end
 
 function mod.HandleShadeNakedCopy()

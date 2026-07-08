@@ -177,6 +177,33 @@ OverwriteTableKeys( TraitData, {
 				ReportValues = { ReportedAmmoBonus = "ReduceMaxAmmo"},
 			},
 		},
+
+		TabletKirbyAuraShotTrait = 
+		{
+			InheritFrom = { "WeaponTrait", "LobHammerTrait" },
+			Icon = "JarlUlsfark-Tools_of_the_Trade\\MirrorBlastIcon",
+			GameStateRequirements =
+			{
+				{
+				Path = { "CurrentRun", "Hero", "Weapons", },
+				HasAll = { "WeaponLob", },
+				},
+				{
+				Path = { "GameState", "LastWeaponUpgradeName", "WeaponLob", },
+				IsAny = {"TabletofPeaceKirbyMel", }
+				},
+			},
+			OnWeaponFiredFunctions = 
+			{
+				ValidWeapons = {"WeaponLob"},
+				FunctionName = _PLUGIN.guid .. "." .. "KirbyFireAura",
+				FunctionArgs =
+				{
+					ProjectileName = "KirbyHammerAxeNova",
+					DamageMultiplier = 0.5,
+				},
+			},
+		},
 })
 
 
@@ -241,5 +268,6 @@ table.insert( LootSetData.Loot.WeaponUpgrade.Traits, "ShovelNecroMelBloodCostTra
 table.insert( LootSetData.Loot.WeaponUpgrade.Traits, "TabletKirbyInfiniteAmmoTrait")
 table.insert( LootSetData.Loot.WeaponUpgrade.Traits, "TabletKirbyDoubleAmmoTrait")
 table.insert( LootSetData.Loot.WeaponUpgrade.Traits, "TabletKirbyMegaAmmoTrait")
+table.insert( LootSetData.Loot.WeaponUpgrade.Traits, "TabletKirbyAuraShotTrait")
 
 

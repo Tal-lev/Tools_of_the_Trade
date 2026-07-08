@@ -6587,7 +6587,7 @@ if ZagreusJourney then
 			{
 					WeaponName = "WeaponLob",
 					WeaponProperty = "Projectile",
-					ChangeValue = "DisembodiedHandGrab",
+					ChangeValue = "DisembodiedHandGrabPlayer",
 				},
 				{
 					WeaponName = "WeaponLob",
@@ -6609,7 +6609,7 @@ if ZagreusJourney then
 				},
 				{
 					WeaponName = "WeaponLob",
-					ProjectileName = "DisembodiedHandGrab",
+					ProjectileName = "DisembodiedHandGrabPlayer",
 					ProjectileProperties = 
 					{
 						Damage = (50 * BiomeAScaling),

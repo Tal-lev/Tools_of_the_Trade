@@ -81,6 +81,50 @@ local file = rom.path.combine(rom.paths.Content, 'Game/Projectiles/PlayerProject
 
 	table.insert(data.Projectiles,
 	{
+		Name = "KirbyHammerAxeNova",
+		InheritFrom = "1_BaseProjectile",
+		DetonateFx = "AxeNova_Simple",
+		Type = "INSTANT",
+		Fuse = 0.0,
+		Range = 0,
+		Damage = 60,
+		DamageRadius = 300.0,
+		BlastSpeed = 3000,
+		DamageRadiusScaleY = 0.6,
+		DamageRadiusScaleX = 1.1,
+		AutoAdjustForTarget = false,
+		UseVulnerability = false,
+		NumPenetrations = 999,
+		IgnoreDodge = true,
+		SpawnRadius = 0,
+		Speed = -100,
+		UseStartLocation = true,
+		DetonateLineOfSight = true,
+		CanHitWithoutDamage = true,
+		SilentImpactOnInvulnerable = true,
+		Thing =
+		{
+		},
+		Effects =
+		{
+			{
+				Name = "OnHitStun",
+				Duration = 0.5,
+				DisableMove = true,
+				DisableRotate = true,
+				DisableAttack = true,
+				Active = true,
+				CanAffectInvulnerable = false,
+				FrontFx = "null",
+			},
+		},
+	})
+
+	
+
+
+	table.insert(data.Projectiles,
+	{
 		Name = "CopyBoltCharged",
 		InheritFrom = "CopyBolt",
 		Damage = 0,
@@ -1422,6 +1466,68 @@ local file = rom.path.combine(rom.paths.Content, 'Game/Projectiles/PlayerProject
 				{
 					Graphic = "PoisonPoolSmall_Ares",
 				},
+		})
+
+		table.insert(data.Projectiles,
+		{
+			Name = "DisembodiedHandGrabPlayer",
+			InheritFrom = "1_BaseEnemyProjectileReflectable",
+			DetonateGraphic = "null",
+			Type = "STRAIGHT",
+			AffectsEnemies = true,
+			AffectsFriends = false,
+			AffectsSelf = false,
+			CheckUnitImpact = true,
+			CheckObstacleImpact = false,
+			UnlimitedUnitPenetration = true,
+			AttachToOwner = true,
+			CanBeProjectileDefenseDestroyed = false,
+			StartDelay = 0.08,
+			Fuse = 0.3,
+			DamageLow = 5,
+			DamageHigh = 5,
+			ImpactVelocity = 0,
+			UseArmor = true,
+			UseVulnerability = true,
+			InflictedDamageFx = "SwarmerBiteFx",
+			ImmunityDuration = 2.5,
+			ImpactLineOfSightFromOwner = true,
+			Effect = {
+				Name = "OnHitStun",
+				Duration = 1.1,
+				DisableMove = true,
+				DisableRotate = true,
+				DisableAttack = true,
+				Active = true,
+				CanAffectInvulnerable = false,
+				Cancelable = false,
+				FrontFx = "EnemyWringerChainGrab",
+				BackFx = "EnemyWringerChainGrabBack",
+				ClearOnAttack = true,
+			},
+			Thing = {
+				Graphic = "null",
+				RotateGeometry = true,
+				Grip = 999999,
+				Points = {
+					{
+						X = 110,
+						Y = 40,
+					},
+					{
+						X = 110,
+						Y = -40,
+					},
+					{
+						X = -10,
+						Y = -60,
+					},
+					{
+						X = -10,
+						Y = 60,
+					},
+				}
+			}
 		})
 
 	end
