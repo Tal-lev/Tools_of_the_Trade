@@ -148,6 +148,7 @@
 - Wretched Lout
 - Wretched Thug
 - Wretched Witch
+- Wringer
 - Brimstone
 - Doomstone
 - Wretched Pest
