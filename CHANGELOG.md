@@ -65,7 +65,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Eris - Laser
 - 4 Minor Prophecies added
   - Clear with both tools
-  - Get the 7 new hammers
+  - Get the 8 new hammers
   - Get All Copy Abilities in Underworld route
   - Get All Copy Abilities in Surface route
 - 1 new Hammer
