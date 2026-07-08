@@ -12,12 +12,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - ThiefMineLayer
   - Lovesick
   - Treant2
-- 43 Implemented ZJ enemies for copy.
+- 44 Implemented ZJ enemies for copy.
   - HadesSwarmer
   - LightSpawner
   - PunchingBagUnit
   - HadesLightRanged
   - HeavyMelee
+  - DisembodiedHand
   - HeavyRanged
   - HeavyRangedSplitterMiniboss
   - WretchAssassinMiniboss
