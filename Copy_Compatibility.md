@@ -200,9 +200,11 @@
 
 - Satyr Cultist
 - Gigantic Vermin
+- Crawler
 - Snakestone
 - Dire Satyr Cultist
 - Dire Gigantic Vermin
+- King Vermin
 - Dire Snakestone
 - Hades
   - Cast
