@@ -1548,12 +1548,39 @@ if ZagreusJourney then
 				ChangeType = "Absolute",
 				ExcludeLinked = true,
 			},
+            --TheseusTwo
+            {
+				WeaponName = "WeaponLob",
+				ProjectileName = "TheseusSpearSpin",
+				ProjectileProperty = "DetonateFx",
+				ValuePrefix = "TheseusSpearSwipe",
+				ChangeType = "Absolute",
+				ExcludeLinked = true,
+			},
             --RatThug
             {
 				WeaponName = "WeaponLob",
 				ProjectileName = "RatPoisonShake",
 				ProjectileProperty = "SpawnOnDetonate",
 				ValuePrefix = "HadesPoisonPuddleSmallplayer_",
+				ChangeType = "Absolute",
+				ExcludeLinked = true,
+			},
+            --CharonOne
+            {
+				WeaponName = "WeaponLob",
+				TraitName = "CharonOneCopyDisplayBoon",
+				WeaponProperty = "FireFx",
+				ValuePrefix = "CharonArcRight_",
+				ChangeType = "Absolute",
+				ExcludeLinked = true,
+			},
+            --CharonTwo
+            {
+				WeaponName = "WeaponLob",
+				ProjectileName = "CharonWave",
+				ProjectileProperty = "Graphic",
+				ValuePrefix = "CharonWaveFx_",
 				ChangeType = "Absolute",
 				ExcludeLinked = true,
 			},

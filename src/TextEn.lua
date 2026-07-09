@@ -1,3 +1,9 @@
+--inserting Keywords
+local newKeywords = {
+	"KirbyBoilingBlood",
+}
+game.ConcatTableValuesIPairs(game.KeywordList, newKeywords)
+
 --Inserts text
 	local TextOrder = {
     "Id",
@@ -11,6 +17,15 @@ local ZagreusJourney = rom.mods['NikkelM-Zagreus_Journey']
 
 local file = rom.path.combine(rom.paths.Content, 'Game/Text/en/TraitText.en.sjson')
 sjson.hook(file, function(data)
+
+	table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "KirbyBoilingBlood",
+			DisplayName = "Boiling Blood",
+			Description = "Recipient receives Double Damage.",
+		},
+		TextOrder)
+	)
 
     table.insert(data.Texts, sjson.to_object(
 		{
@@ -219,7 +234,7 @@ sjson.hook(file, function(data)
 			Id = "DummyCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy Ability",
-			Description = "Upon hit Your Attacks {#UpgradeFormat}Copy {#Prev} the enemy's Attack.",
+			Description = "Upon hit Your Attacks Copy  the enemy's Attack.",
 		},
 		TextOrder)
 	)
@@ -227,7 +242,7 @@ sjson.hook(file, function(data)
 	table.insert(data.Texts, sjson.to_object(
 		{
 			Id = "GuardCopyDisplayBoon",
-			Description = "Your Attacks {#UpgradeFormat}Swings around you {#Prev}.",
+			Description = "Your Attacks Swings around you .",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: Whisper",
 		},
@@ -237,7 +252,7 @@ sjson.hook(file, function(data)
 	table.insert(data.Texts, sjson.to_object(
 		{
 			Id = "GuardtwoCopyDisplayBoon",
-			Description = "Your Attacks rapidly {#UpgradeFormat}Swings around you {#Prev}.",
+			Description = "Your Attacks rapidly Swings around you .",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: Wet-Whisper",
 		},
@@ -259,7 +274,7 @@ sjson.hook(file, function(data)
 			Id = "BrawlerCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: Wastrel",
-			Description = "Your Attacks {#UpgradeFormat}Charge and swipe forwards{#Prev}.",
+			Description = "Your Attacks Charge and swipe forwards.",
 		},
 		TextOrder)
 	)
@@ -269,7 +284,7 @@ sjson.hook(file, function(data)
 			Id = "SiegeVineCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: Thorn-Weeper",
-			Description = "Your Attacks fire a {#UpgradeFormat}slow homing {#Prev} projectile.",
+			Description = "Your Attacks fire a slow homing  projectile.",
 		},
 		TextOrder)
 	)
@@ -279,7 +294,7 @@ sjson.hook(file, function(data)
 			Id = "ScreamerCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: Wailer",
-			Description = "Your Attack fires a {#UpgradeFormat}prolonged short-range wave{#Prev}.",
+			Description = "Your Attack fires a prolonged short-range wave.",
 		},
 		TextOrder)
 	)
@@ -289,7 +304,7 @@ sjson.hook(file, function(data)
 			Id = "ScreamertwoCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: Dread-Wailer",
-			Description = "Your Attack fires a {#UpgradeFormat}prolonged wave{#Prev}.",
+			Description = "Your Attack fires a prolonged wave.",
 		},
 		TextOrder)
 	)
@@ -299,7 +314,7 @@ sjson.hook(file, function(data)
 			Id = "RadiatorCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: Spindle",
-			Description = "Your Attack fires a {#UpgradeFormat}rotating beam{#Prev}.",
+			Description = "Your Attack fires a rotating beam.",
 		},
 		TextOrder)
 	)
@@ -309,7 +324,7 @@ sjson.hook(file, function(data)
 			Id = "TreantTailCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: Root-Stalker Tail",
-			Description = "Your Attack {#UpgradeFormat}Swipes around you{#Prev}.",
+			Description = "Your Attack Swipes around you.",
 		},
 		TextOrder)
 	)
@@ -319,7 +334,7 @@ sjson.hook(file, function(data)
 			Id = "TreantCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: Root-Stalker",
-			Description = "Your Attack fires a{#UpgradeFormat}Barrage of Splinters{#Prev}.",
+			Description = "Your Attack fires aBarrage of Splinters.",
 		},
 		TextOrder)
 	)
@@ -329,7 +344,7 @@ sjson.hook(file, function(data)
 		Id = "TreantTailtwoCopyDisplayBoon",
 		InheritFrom = "BaseBoonMultiline",
 		DisplayName = "Copy: Brush-Stalker Tail",
-		Description = "Your Attack {#UpgradeFormat}Swipes around you{#Prev}.",
+		Description = "Your Attack Swipes around you.",
 	},
 	TextOrder)
 	)
@@ -339,7 +354,7 @@ sjson.hook(file, function(data)
 			Id = "TreanttwoCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: Brush-Stalker",
-			Description = "Your Attack fires a{#UpgradeFormat}Barrage of Splinters{#Prev}.",
+			Description = "Your Attack fires aBarrage of Splinters.",
 		},
 		TextOrder)
 	)
@@ -349,7 +364,7 @@ sjson.hook(file, function(data)
 			Id = "FogEmitterCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: Shadow-Spiller",
-			Description = "Your Attack {#UpgradeFormat}Slams the ground in front of you{#Prev}.",
+			Description = "Your Attack Slams the ground in front of you.",
 		},
 		TextOrder)
 	)
@@ -359,7 +374,7 @@ sjson.hook(file, function(data)
 			Id = "WispCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: Lanthorn",
-			Description = "Your Attack {#UpgradeFormat}Explodes {#Prev} Around you.",
+			Description = "Your Attack Explodes  Around you.",
 		},
 		TextOrder)
 	)
@@ -369,7 +384,7 @@ sjson.hook(file, function(data)
 			Id = "LightRangedCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: Sister of the Dead",
-			Description = "Your Attack fires a {#UpgradeFormat}Projectile{#Prev}.",
+			Description = "Your Attack fires a Projectile.",
 		},
 		TextOrder)
 	)
@@ -379,7 +394,7 @@ sjson.hook(file, function(data)
 			Id = "HecateOneCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: Hecate Torch-Cone",
-			Description = "Your Attack fires {#UpgradeFormat}Cones of Flame{#Prev} in both directions.",
+			Description = "Your Attack fires Cones of Flame in both directions.",
 		},
 		TextOrder)
 	)
@@ -389,7 +404,7 @@ sjson.hook(file, function(data)
 			Id = "FishmanMeleeCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: Lurker",
-			Description = "Your Attack {#UpgradeFormat}Stabs forwards{#Prev}.",
+			Description = "Your Attack Stabs forwards.",
 		},
 		TextOrder)
 	)
@@ -399,7 +414,7 @@ sjson.hook(file, function(data)
 			Id = "FishSwarmerCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: Pinhead",
-			Description = "Your Attack {#UpgradeFormat}Bites {#Prev}enemies in front.",
+			Description = "Your Attack Bites enemies in front.",
 		},
 		TextOrder)
 	)
@@ -409,7 +424,7 @@ sjson.hook(file, function(data)
 			Id = "TurtleCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: Shellback",
-			Description = "Your Attack fires a {#UpgradeFormat}Bouncing ball{#Prev}.",
+			Description = "Your Attack fires a Bouncing ball.",
 		},
 		TextOrder)
 	)
@@ -419,7 +434,7 @@ sjson.hook(file, function(data)
 			Id = "FishmanRangedCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: Hippo",
-			Description = "Your Attack fires a {#UpgradeFormat}Homing Explosive projectile{#Prev}.",
+			Description = "Your Attack fires a Homing Explosive projectile.",
 		},
 		TextOrder)
 	)
@@ -429,7 +444,7 @@ sjson.hook(file, function(data)
 			Id = "WaterUnitCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: Sea-Serpent",
-			Description = "Your Attack fires a {#UpgradeFormat}Spit projectile{#Prev}.",
+			Description = "Your Attack fires a Spit projectile.",
 		},
 		TextOrder)
 	)
@@ -439,7 +454,7 @@ sjson.hook(file, function(data)
 			Id = "WaterUnitMinibossCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: Deep Serpent",
-			Description = "Your Attack fires a {#UpgradeFormat}Splitting Spit projectile{#Prev}.",
+			Description = "Your Attack fires a Splitting Spit projectile.",
 		},
 		TextOrder)
 	)
@@ -449,7 +464,7 @@ sjson.hook(file, function(data)
 			Id = "RadiatortwoCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: Sop-Spindle",
-			Description = "Your Attack fires a {#UpgradeFormat}long rotating beam{#Prev}.",
+			Description = "Your Attack fires a long rotating beam.",
 		},
 		TextOrder)
 	)
@@ -459,7 +474,7 @@ sjson.hook(file, function(data)
 			Id = "JellyfishCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: Jelly-Fish",
-			Description = "Your Attack {#UpgradeFormat}stings lightning around you{#Prev}.",
+			Description = "Your Attack stings lightning around you.",
 		},
 		TextOrder)
 	)
@@ -469,7 +484,7 @@ sjson.hook(file, function(data)
 			Id = "OctofishCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: Hellifish",
-			Description = "Your Attack fires a {#UpgradeFormat}Splash of Ink{#Prev}.",
+			Description = "Your Attack fires a Splash of Ink.",
 		},
 		TextOrder)
 	)
@@ -479,7 +494,7 @@ sjson.hook(file, function(data)
 			Id = "ThiefMineLayerCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: Wretched Pest",
-			Description = "Your Attack {#UpgradeFormat}Throw Proximity Mines{#Prev}.",
+			Description = "Your Attack Throw Proximity Mines.",
 		},
 		TextOrder)
 	)
@@ -489,7 +504,7 @@ sjson.hook(file, function(data)
 			Id = "CrawlerMinibossCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: King Vermin",
-			Description = "Your Attack {#UpgradeFormat}Charges {#Prev}forward and {#UpgradeFormat}Bites {#Prev}enemies in front.",
+			Description = "Your Attack Charges forward and Bites enemies in front.",
 		},
 		TextOrder)
 	)
@@ -499,7 +514,7 @@ sjson.hook(file, function(data)
 			Id = "SirenDrummerCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: Roxy",
-			Description = "Your Attack fires a long cooldown {#UpgradeFormat}Beat Nova{#Prev}.",
+			Description = "Your Attack fires a long cooldown Beat Nova.",
 		},
 		TextOrder)
 	)
@@ -509,7 +524,7 @@ sjson.hook(file, function(data)
 			Id = "SirenKeytaristCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: Jetty",
-			Description = "Your Attack becomes a {#UpgradeFormat}Power Slide{#Prev}.",
+			Description = "Your Attack becomes a Power Slide.",
 		},
 		TextOrder)
 	)
@@ -519,7 +534,7 @@ sjson.hook(file, function(data)
 			Id = "ScyllaOneCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: Scylla Notes",
-			Description = "Your Attack fires  {#UpgradeFormat}Homing Musical Notes{#Prev}.",
+			Description = "Your Attack fires  Homing Musical Notes.",
 		},
 		TextOrder)
 	)
@@ -529,7 +544,7 @@ sjson.hook(file, function(data)
 			Id = "BloodlessNakedCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: Bloodless",
-			Description = "Your Attack {#UpgradeFormat}Charges {#Prev}forward.",
+			Description = "Your Attack Charges forward.",
 		},
 		TextOrder)
 		)
@@ -539,7 +554,7 @@ sjson.hook(file, function(data)
 			Id = "BloodlessGrenadierCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: Inferno-Bomber",
-			Description = "Your Attack lobs a {#UpgradeFormat}Grenade{#Prev}.",
+			Description = "Your Attack lobs a Grenade.",
 		},
 		TextOrder)
 		)
@@ -549,7 +564,7 @@ sjson.hook(file, function(data)
 			Id = "BloodlessSelfDestructCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: Slam-Dancer",
-			Description = "Your Attack {#UpgradeFormat}Explodes Underneath{#Prev}.",
+			Description = "Your Attack Explodes Underneath.",
 		},
 		TextOrder)
 		)
@@ -559,7 +574,7 @@ sjson.hook(file, function(data)
 			Id = "BloodlessPitcherCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: Burn-Flinger",
-			Description = "Your Attack {#UpgradeFormat}Flings{#Prev}a {#UpgradeFormat}Grenade{#Prev}.",
+			Description = "Your Attack Flingsa Grenade.",
 		},
 		TextOrder)
 		)
@@ -569,7 +584,7 @@ sjson.hook(file, function(data)
 			Id = "BloodlessWaveFistCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: Wave-Maker",
-			Description = "Your Attack fires a{#UpgradeFormat}Wave Projectile{#Prev}.",
+			Description = "Your Attack fires aWave Projectile.",
 		},
 		TextOrder)
 	)
@@ -579,7 +594,7 @@ sjson.hook(file, function(data)
 			Id = "SpreadShotUnitCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: Spreader",
-			Description = "Your Attack fires {#UpgradeFormat}5 Projectiles{#Prev} in a {#UpgradeFormat}Fan Formation{#Prev}.",
+			Description = "Your Attack fires {#UpgradeFormat}5 {#Prev}Projectiles in a Fan Formation.",
 		},
 		TextOrder)
 	)
@@ -589,7 +604,7 @@ sjson.hook(file, function(data)
 			Id = "CorruptedShadeSmallCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: Blight-Shade",
-			Description = "Your Attack fires a {#UpgradeFormat}Projectile{#Prev}.",
+			Description = "Your Attack fires a Projectile.",
 		},
 		TextOrder)
 	)
@@ -599,7 +614,7 @@ sjson.hook(file, function(data)
 			Id = "CorruptedShadeMediumCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: Blood-Shade",
-			Description = "Your Attack {#UpgradeFormat}Rams forwards{#Prev}.",
+			Description = "Your Attack Rams forwards.",
 		},
 		TextOrder)
 	)
@@ -609,7 +624,7 @@ sjson.hook(file, function(data)
 			Id = "CorruptedShadeLargeCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: Bloat-Shade",
-			Description = "Your Attack fires a {#UpgradeFormat}Spiky Nova{#Prev} around you.",
+			Description = "Your Attack fires a Spiky Nova around you.",
 		},
 		TextOrder)
 	)
@@ -619,7 +634,7 @@ sjson.hook(file, function(data)
 			Id = "FogEmittertwoCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: Sorrow-Spiller",
-			Description = "Your Attack {#UpgradeFormat}Sweeps in front of you{#Prev}.",
+			Description = "Your Attack Sweeps in front of you.",
 		},
 		TextOrder)
 	)
@@ -629,7 +644,7 @@ sjson.hook(file, function(data)
 			Id = "BrokenHeartedCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: Smacker",
-			Description = "Your Attack {#UpgradeFormat}Slams {#Prev}the ground.",
+			Description = "Your Attack Slams the ground.",
 		},
 		TextOrder)
 	)
@@ -639,7 +654,7 @@ sjson.hook(file, function(data)
 			Id = "LycanSwarmerCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: Canine",
-			Description = "Your Attack {#UpgradeFormat}Bites {#Prev}enemies in front.",
+			Description = "Your Attack Bites enemies in front.",
 		},
 		TextOrder)
 	)
@@ -649,7 +664,7 @@ sjson.hook(file, function(data)
 			Id = "LovesickCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: Holeheart",
-			Description = "Your Attack {#UpgradeFormat}Throw Heart Mines{#Prev}.",
+			Description = "Your Attack Throw Heart Mines.",
 		},
 		TextOrder)
 	)
@@ -659,7 +674,7 @@ sjson.hook(file, function(data)
 			Id = "LycanthropeCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: Lycaon",
-			Description = "Your Attack {#UpgradeFormat}Pounces  {#Prev} on enemies and Swipes down with {#UpgradeFormat}Claws{#Prev}.",
+			Description = "Your Attack Pounces   on enemies and Swipes down with Claws.",
 		},
 		TextOrder)
 	)
@@ -669,7 +684,7 @@ sjson.hook(file, function(data)
 			Id = "LamiaCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: Lamia",
-			Description = "Your Attack fires a {#UpgradeFormat}homing beam from the sky {#Prev}.",
+			Description = "Your Attack fires a homing beam from the sky .",
 		},
 		TextOrder)
 	)
@@ -679,7 +694,7 @@ sjson.hook(file, function(data)
 			Id = "Lamia_MinibossCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: Queen Lamia",
-			Description = "Your Attack fires {#UpgradeFormat}3 homing beam from the sky {#Prev}.",
+			Description = "Your Attack fires {#UpgradeFormat}3 {#Prev}homing beam from the sky.",
 		},
 		TextOrder)
 	)
@@ -689,7 +704,7 @@ sjson.hook(file, function(data)
 			Id = "VampireCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: Phantom",
-			Description = "Your Attacks {#UpgradeFormat}Claw forward {#Prev}and {#UpgradeFormat}Steals Life{#Prev}.",
+			Description = "Your Attacks Claw forward and Steals Life.",
 		},
 		TextOrder)
 	)
@@ -699,7 +714,7 @@ sjson.hook(file, function(data)
 			Id = "InfestedCerberusOneCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: Cerberus Fire-Breath",
-			Description = "Your Attack transforms into a {#UpgradeFormat}Fire Breath{#Prev}.",
+			Description = "Your Attack transforms into a Fire Breath.",
 		},
 		TextOrder)
 	)
@@ -709,7 +724,7 @@ sjson.hook(file, function(data)
 			Id = "SwarmerClockworkCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: Sandskull",
-			Description = "Your Attack {#UpgradeFormat}Bites {#Prev}enemies in front.",
+			Description = "Your Attack Bites enemies in front.",
 		},
 		TextOrder)
 	)
@@ -719,7 +734,7 @@ sjson.hook(file, function(data)
 			Id = "DisembodiedHandCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: Wringer",
-			Description = "Your Attack {#UpgradeFormat}Grabs {#Prev}enemies.",
+			Description = "Your Attack Grabs enemies.",
 		},
 		TextOrder)
 	)
@@ -729,7 +744,7 @@ sjson.hook(file, function(data)
 			Id = "ClockworkHeavyMeleeCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: Wretched Thug",
-			Description = "Your Attack {#UpgradeFormat}Shoves {#Prev}enemies away.",
+			Description = "Your Attack Shoves enemies away.",
 		},
 		TextOrder)
 	)
@@ -739,7 +754,7 @@ sjson.hook(file, function(data)
 			Id = "GoldElementalCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: Goldwraith",
-			Description = "Your Attack fires a {#UpgradeFormat}Penetrating Beam{#Prev}.",
+			Description = "Your Attack fires a Penetrating Beam.",
 		},
 		TextOrder)
 	)
@@ -749,7 +764,7 @@ sjson.hook(file, function(data)
 			Id = "GoldElemental_MiniBossCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: Goldwrath",
-			Description = "Your Attack fires {#UpgradeFormat}numerous coins in all directions{#Prev}.",
+			Description = "Your Attack fires numerous coins in all directions.",
 		},
 		TextOrder)
 	)
@@ -759,7 +774,7 @@ sjson.hook(file, function(data)
 			Id = "TimeElementalCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: Tempus",
-			Description = "Your Attack fires a projectile in a growing {#UpgradeFormat}Spiral Pattern{#Prev}.",
+			Description = "Your Attack fires a projectile in a growing Spiral Pattern.",
 		},
 		TextOrder)
 	)
@@ -769,7 +784,7 @@ sjson.hook(file, function(data)
 			Id = "SatyrLancerCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: Satyr Hoplite",
-			Description = "Your Attack throws a {#UpgradeFormat}Spear{#Prev}.",
+			Description = "Your Attack throws a Spear.",
 		},
 		TextOrder)
 	)
@@ -779,7 +794,7 @@ sjson.hook(file, function(data)
 			Id = "SatyrRatCatcherCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: Satyr Vierophant",
-			Description = "Your Attack fires a {#UpgradeFormat}Homing Flaming Projectile{#Prev}.",
+			Description = "Your Attack fires a Homing Flaming Projectile.",
 		},
 		TextOrder)
 	)
@@ -789,7 +804,7 @@ sjson.hook(file, function(data)
 			Id = "SatyrRatCatcher_MinibossCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: The Verminancer",
-			Description = "Your Attack {#UpgradeFormat}Tail Swipes while Dashing{#Prev}.",
+			Description = "Your Attack Tail Swipes while Dashing.",
 		},
 		TextOrder)
 	)
@@ -799,7 +814,7 @@ sjson.hook(file, function(data)
 			Id = "CrawlerCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: Crawler",
-			Description = "Your Attack {#UpgradeFormat}Bites {#Prev}enemies in front.",
+			Description = "Your Attack Bites enemies in front.",
 		},
 		TextOrder)
 	)
@@ -809,7 +824,7 @@ sjson.hook(file, function(data)
 			Id = "SatyrCultistCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: Satyr Supplicant",
-			Description = "Your Attack {#UpgradeFormat}Throws a Dagger{#Prev}.",
+			Description = "Your Attack Throws a Dagger.",
 		},
 		TextOrder)
 	)
@@ -819,7 +834,7 @@ sjson.hook(file, function(data)
 			Id = "ChronosOneCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: Chronos Scythe Throw",
-			Description = "Your Attack transforms into a {#UpgradeFormat}Large Spinning Scythe{#Prev}.",
+			Description = "Your Attack transforms into a Large Spinning Scythe.",
 		},
 		TextOrder)
 	)
@@ -829,7 +844,7 @@ sjson.hook(file, function(data)
 			Id = "ChronosTwoCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: Chronos Time Stasis",
-			Description = "Your Attack {#UpgradeFormat}Stops {#Prev}enemies in a {#UpgradeFormat}Moment in Time{#Prev}.",
+			Description = "Your Attack Stops enemies in a Moment in Time.",
 		},
 		TextOrder)
 	)
@@ -839,7 +854,7 @@ sjson.hook(file, function(data)
 			Id = "ZagreusOneCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: Zagreus - Blood Cast",
-			Description = "Your Attack fires a {#UpgradeFormat}Blood Projectile{#Prev}.",
+			Description = "Your Attack fires a Blood Projectile.",
 		},
 		TextOrder)
 	)
@@ -849,7 +864,7 @@ sjson.hook(file, function(data)
 			Id = "ZagreusTwoCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: Zagreus - Spear Spin",
-			Description = "Your Attack {#UpgradeFormat}Spins {#Prev}a {#UpgradeFormat}Spear {#Prev}around you.",
+			Description = "Your Attack Spins a Spear around you.",
 		},
 		TextOrder)
 	)
@@ -859,7 +874,7 @@ sjson.hook(file, function(data)
 			Id = "CarrionCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: Bronzebeak",
-			Description = "Your Attack {#UpgradeFormat}Swoops {#Prev}onto enemies.",
+			Description = "Your Attack Swoops onto enemies.",
 		},
 		TextOrder)
 	)
@@ -869,7 +884,7 @@ sjson.hook(file, function(data)
 			Id = "ZombieCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: Shambler",
-			Description = "Your Attack {#UpgradeFormat}Swipes{#Prev} down.",
+			Description = "Your Attack Swipes down.",
 		},
 		TextOrder)
 	)
@@ -879,7 +894,7 @@ sjson.hook(file, function(data)
 			Id = "ZombieCrewmanCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: Sea-Shambler",
-			Description = "Your Attack {#UpgradeFormat}Swipes{#Prev} down.",
+			Description = "Your Attack Swipes down.",
 		},
 		TextOrder)
 	)
@@ -889,7 +904,7 @@ sjson.hook(file, function(data)
 			Id = "ZombieOlympusCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: Snow-Shambler",
-			Description = "Your Attack {#UpgradeFormat}Swipes{#Prev} down.",
+			Description = "Your Attack Swipes down.",
 		},
 		TextOrder)
 	)
@@ -899,7 +914,7 @@ sjson.hook(file, function(data)
 			Id = "ZombieHeavyRangedCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: Lubber",
-			Description = "Your Attack throws a {#UpgradeFormat}Burning Barrel{#Prev}.",
+			Description = "Your Attack throws a Burning Barrel.",
 		},
 		TextOrder)
 	)
@@ -909,7 +924,7 @@ sjson.hook(file, function(data)
 			Id = "ZombieAssassinCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: Cutthroat",
-			Description = "Your Attack becomes a {#UpgradeFormat}Flurry of Stabs{#Prev}.",
+			Description = "Your Attack becomes a Flurry of Stabs.",
 		},
 		TextOrder)
 	)
@@ -919,7 +934,7 @@ sjson.hook(file, function(data)
 			Id = "ZombieAssassin_MinibossCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: Master-Slicer",
-			Description = "Your Attack becomes a {#UpgradeFormat}Flurry of Stabs{#Prev}.",
+			Description = "Your Attack becomes a Flurry of Stabs.",
 		},
 		TextOrder)
 	)
@@ -929,7 +944,7 @@ sjson.hook(file, function(data)
 			Id = "MudmanCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: Eidolon",
-			Description = "Your Attack throws a {#UpgradeFormat}Projectile {#Prev} which {#UpgradeFormat}spawns an Eye-dolon{#Prev}.",
+			Description = "Your Attack throws a Projectile  which spawns an Eye-dolon.",
 		},
 		TextOrder)
 	)
@@ -939,7 +954,7 @@ sjson.hook(file, function(data)
 			Id = "MudmanEyeCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: Eye-dolon",
-			Description = "Your Attack transforms into a {#UpgradeFormat}Small Explosion{#Prev}.",
+			Description = "Your Attack transforms into a Small Explosion.",
 		},
 		TextOrder)
 	)
@@ -949,7 +964,7 @@ sjson.hook(file, function(data)
 			Id = "ZombieSpawnerCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: Tombstone",
-			Description = "Your Attack throws a {#UpgradeFormat}Projectile {#Prev} which {#UpgradeFormat}spawns a Zombie{#Prev}.",
+			Description = "Your Attack throws a Projectile  which spawns a Zombie.",
 		},
 		TextOrder)
 	)
@@ -959,7 +974,7 @@ sjson.hook(file, function(data)
 			Id = "BoarCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: Erymanthian Boar",
-			Description = "Your Attack {#UpgradeFormat}Stomps {#Prev} the ground creating a {#UpgradeFormat}Shockwave {#Prev}in all directions.",
+			Description = "Your Attack Stomps  the ground creating a Shockwave in all directions.",
 		},
 		TextOrder)
 	)
@@ -969,7 +984,7 @@ sjson.hook(file, function(data)
 			Id = "SatyrCrossbowCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: Satyr Champion",
-			Description = "Your Attack fires {#UpgradeFormat}3 homing bolts {#Prev}.",
+			Description = "Your Attack fires {#UpgradeFormat}3 {#Prev}homing bolts .",
 		},
 		TextOrder)
 	)
@@ -979,7 +994,7 @@ sjson.hook(file, function(data)
 			Id = "Sheep_ExplosiveCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: Black Sheep",
-			Description = "Your Attack creates an{#UpgradeFormat}Explosion {#Prev}.",
+			Description = "Your Attack creates an Explosion .",
 		},
 		TextOrder)
 	)
@@ -989,7 +1004,7 @@ sjson.hook(file, function(data)
 			Id = "Sheep_ZombieCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: Shamble Sheep",
-			Description = "Your Attack {#UpgradeFormat}Rams {#Prev}forward dazing enemies.",
+			Description = "Your Attack Rams forward dazing enemies.",
 		},
 		TextOrder)
 	)
@@ -999,7 +1014,7 @@ sjson.hook(file, function(data)
 			Id = "PolyphemusOneCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: Polyphemus Kick",
-			Description = "Your Attack {#UpgradeFormat}Kicks {#Prev}forward creating a {#UpgradeFormat}Shockwave{#Prev}.",
+			Description = "Your Attack Kicks forward creating a Shockwave.",
 		},
 		TextOrder)
 	)
@@ -1009,7 +1024,7 @@ sjson.hook(file, function(data)
 			Id = "ScimiterrorCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: Seesword",
-			Description = "Your Attack {#UpgradeFormat}Slashes {#Prev}forward.",
+			Description = "Your Attack Slashes forward.",
 		},
 		TextOrder)
 	)
@@ -1019,7 +1034,7 @@ sjson.hook(file, function(data)
 			Id = "SticklerCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: Stickler",
-			Description = "Your Attack {#UpgradeFormat}Throws {#Prev} a {#UpgradeFormat}Spear{#Prev}.",
+			Description = "Your Attack Throws  a Spear.",
 		},
 		TextOrder)
 	)
@@ -1029,7 +1044,7 @@ sjson.hook(file, function(data)
 			Id = "SwabCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: Anchor",
-			Description = "Your Attack fires a {#UpgradeFormat}Powerful Blast {#Prev} with a {#UpgradeFormat}Long Cooldown{#Prev}.",
+			Description = "Your Attack fires a Powerful Blast  with a Long Cooldown.",
 		},
 		TextOrder)
 	)
@@ -1039,7 +1054,7 @@ sjson.hook(file, function(data)
 			Id = "DrunkCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: Boozer",
-			Description = "Your Attack {#UpgradeFormat}Slashes {#Prev}before you{#Prev}.",
+			Description = "Your Attack Slashes before you.",
 		},
 		TextOrder)
 	)
@@ -1049,7 +1064,7 @@ sjson.hook(file, function(data)
 			Id = "HarpyCutterCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: Harpy Talon",
-			Description = "Your Attack {#UpgradeFormat}Slices {#Prev}forward{#Prev}.",
+			Description = "Your Attack Slices forward.",
 		},
 		TextOrder)
 	)
@@ -1059,7 +1074,7 @@ sjson.hook(file, function(data)
 			Id = "WaterElementalCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: Droplet",
-			Description = "Your Attack {#UpgradeFormat}Bites {#Prev}enemies in front.",
+			Description = "Your Attack Bites enemies in front.",
 		},
 		TextOrder)
 	)
@@ -1079,7 +1094,7 @@ sjson.hook(file, function(data)
 			Id = "CaptainCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: The Yargonaut",
-			Description = "Your Attacks fires {#UpgradeFormat}3 Pistol Shots {#Prev}that {#UpgradeFormat}Bounce {#Prev}off walls.",
+			Description = "Your Attacks fires {#UpgradeFormat}3 {#Prev}Pistol Shots that Bounce off walls.",
 		},
 		TextOrder)
 	)
@@ -1089,7 +1104,7 @@ sjson.hook(file, function(data)
 			Id = "CharybdisTentacleCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: Charybdis Tentacle",
-			Description = "Your Attack shoots a {#UpgradeFormat}Homing Projectile{#Prev}.",
+			Description = "Your Attack shoots a Homing Projectile.",
 		},
 		TextOrder)
 	)
@@ -1099,7 +1114,7 @@ sjson.hook(file, function(data)
 			Id = "ErisOneCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: Eris Sniper-Shot",
-			Description = "Your Attack shoots a{#UpgradeFormat}long range sniper shot{#Prev}.",
+			Description = "Your Attack shoots along range sniper shot.",
 		},
 		TextOrder)
 	)
@@ -1109,7 +1124,7 @@ sjson.hook(file, function(data)
 			Id = "ErisTwoCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: Eris Laser",
-			Description = "Your Attack fires a {#UpgradeFormat}Laser Beam{#Prev}.",
+			Description = "Your Attack fires a Laser Beam.",
 		},
 		TextOrder)
 	)
@@ -1119,7 +1134,7 @@ sjson.hook(file, function(data)
 			Id = "SentryBotCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: Auto-Seeker",
-			Description = "Your Attack fire a {#UpgradeFormat}projectile{#Prev}.",
+			Description = "Your Attack fire a projectile.",
 		},
 		TextOrder)
 	)
@@ -1129,7 +1144,7 @@ sjson.hook(file, function(data)
 			Id = "AutomatonBeamerCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: Auto-Watcher",
-			Description = "Your Attack fires {#UpgradeFormat}10 Beams{#Prev}.",
+			Description = "Your Attack fires {#UpgradeFormat}10 {#Prev}Beams.",
 		},
 		TextOrder)
 	)
@@ -1139,7 +1154,7 @@ sjson.hook(file, function(data)
 			Id = "AutomatonEnforcerCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: Auto-Forcer",
-			Description = "Your Attack transforms into {#UpgradeFormat}Rotating blades{#Prev}.",
+			Description = "Your Attack transforms into Rotating blades.",
 		},
 		TextOrder)
 	)
@@ -1149,7 +1164,7 @@ sjson.hook(file, function(data)
 			Id = "HarpyDropperCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: Harpy Raptor",
-			Description = "Your Attack fires a {#UpgradeFormat}Tornado{#Prev}.",
+			Description = "Your Attack fires a Tornado.",
 		},
 		TextOrder)
 	)
@@ -1159,7 +1174,7 @@ sjson.hook(file, function(data)
 			Id = "SatyrCrossbowtwoCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: Satyr Raider",
-			Description = "Your Attack fires a {#UpgradeFormat}Crossbow Bolt{#Prev}.",
+			Description = "Your Attack fires a Crossbow Bolt.",
 		},
 		TextOrder)
 	)
@@ -1169,7 +1184,7 @@ sjson.hook(file, function(data)
 			Id = "SatyrLancertwoCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: Satyr Goldpike",
-			Description = "Your Attack throws a {#UpgradeFormat}Spear{#Prev}.",
+			Description = "Your Attack throws a Spear.",
 		},
 		TextOrder)
 	)
@@ -1179,7 +1194,7 @@ sjson.hook(file, function(data)
 			Id = "SatyrSapperCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: Satyr Sapper",
-			Description = "Your Attack fires a {#UpgradeFormat}Exploding Rocket{#Prev}.",
+			Description = "Your Attack fires a Exploding Rocket.",
 		},
 		TextOrder)
 	)
@@ -1189,7 +1204,7 @@ sjson.hook(file, function(data)
 			Id = "SatyrSapperCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: Talos",
-			Description = "Your Attack throws a {#UpgradeFormat}Spinning Shield{#Prev}.",
+			Description = "Your Attack throws a Spinning Shield.",
 		},
 		TextOrder)
 	)
@@ -1199,7 +1214,7 @@ sjson.hook(file, function(data)
 			Id = "HeraclesOneCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: Heracles Spin",
-			Description = "Your Attack {#UpgradeFormat}Spins {#Prev}around you in a {#UpgradeFormat}Barrage of Blows{#Prev}.",
+			Description = "Your Attack Spins around you in a Barrage of Blows.",
 		},
 		TextOrder)
 	)
@@ -1209,7 +1224,7 @@ sjson.hook(file, function(data)
 			Id = "PrometheusOneCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: Prometheus Fire-Pillar",
-			Description = "Your Attack fires a {#UpgradeFormat}Burning Pillar{#Prev}.",
+			Description = "Your Attack fires a Burning Pillar.",
 		},
 		TextOrder)
 	)
@@ -1219,7 +1234,7 @@ sjson.hook(file, function(data)
 			Id = "SimpleCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: Polyp",
-			Description = "Your Attack creates a {#UpgradeFormat}Small Damaging Aura{#Prev} infront.",
+			Description = "Your Attack creates a Small Damaging Aura infront.",
 		},
 		TextOrder)
 	)
@@ -1229,7 +1244,7 @@ sjson.hook(file, function(data)
 			Id = "StalkerCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: Stalker",
-			Description = "Your Attack fire {#UpgradeFormat}2 Linear Shockwaves{#Prev}.",
+			Description = "Your Attack fire {#UpgradeFormat}2 Linear Shockwaves.",
 		},
 		TextOrder)
 	)
@@ -1239,7 +1254,7 @@ sjson.hook(file, function(data)
 			Id = "Stalker_MinibossCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: Twins of Typhon",
-			Description = "Your Attack fire {#UpgradeFormat}2 Linear Shockwaves{#Prev}.",
+			Description = "Your Attack fire {#UpgradeFormat}2 {#Prev}Linear Shockwaves.",
 		},
 		TextOrder)
 	)
@@ -1249,7 +1264,7 @@ sjson.hook(file, function(data)
 			Id = "StalkerCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: Horror",
-			Description = "Your Attack transforms into a {#UpgradeFormat}Horn Charge{#Prev}.",
+			Description = "Your Attack transforms into a Horn Charge.",
 		},
 		TextOrder)
 	)
@@ -1259,7 +1274,7 @@ sjson.hook(file, function(data)
 			Id = "MatiCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: Eyesore",
-			Description = "Your Attack fire a {#UpgradeFormat}Homing Splitting Projectile{#Prev}.",
+			Description = "Your Attack fire a Homing Splitting Projectile.",
 		},
 		TextOrder)
 	)
@@ -1269,7 +1284,7 @@ sjson.hook(file, function(data)
 			Id = "DragonBurrowerCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: Land-Dracon",
-			Description = "Your Attack fires a {#UpgradeFormat}Projectile{#Prev}.",
+			Description = "Your Attack fires a Projectile.",
 		},
 		TextOrder)
 	)
@@ -1279,7 +1294,7 @@ sjson.hook(file, function(data)
 			Id = "EarthElementalCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: Headstone",
-			Description = "Your Attack fires a {#UpgradeFormat}Beam{#Prev}.",
+			Description = "Your Attack fires a Beam.",
 		},
 		TextOrder)
 	)
@@ -1289,7 +1304,7 @@ sjson.hook(file, function(data)
 			Id = "Brute_MinibossCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: Spawn of Typhon",
-			Description = "Your Attack {#UpgradeFormat}Swipes{#Prev} forward.",
+			Description = "Your Attack Swipes forward.",
 		},
 		TextOrder)
 	)
@@ -1299,7 +1314,7 @@ sjson.hook(file, function(data)
 			Id = "TyphonTailCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: Tail of Typhon",
-			Description = "Your Attack fires a {#UpgradeFormat}Rotating Drill{#Prev}.",
+			Description = "Your Attack fires a Rotating Drill.",
 		},
 		TextOrder)
 	)
@@ -1309,7 +1324,7 @@ sjson.hook(file, function(data)
 			Id = "TyphonEyeCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: Eye of Typhon",
-			Description = "Your Attack fires a {#UpgradeFormat}Lobbed Splitting Projectile{#Prev}.",
+			Description = "Your Attack fires a Lobbed Splitting Projectile.",
 		},
 		TextOrder)
 	)
@@ -1319,7 +1334,7 @@ sjson.hook(file, function(data)
 			Id = "TyphonHeadCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: Typhon Tongue-Lash",
-			Description = "Your Attack fires a {#UpgradeFormat}Lashing Tongue of Typhon{#Prev}.",
+			Description = "Your Attack fires a Lashing Tongue of Typhon.",
 		},
 		TextOrder)
 	)
@@ -1331,7 +1346,7 @@ sjson.hook(file, function(data)
 			Id = "HadesSwarmerCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: Numbskull",
-			Description = "Your Attack {#UpgradeFormat}Bites {#Prev}enemies in front.",
+			Description = "Your Attack Bites enemies in front.",
 		},
 		TextOrder)
 		)
@@ -1341,7 +1356,7 @@ sjson.hook(file, function(data)
 			Id = "LightSpawnerCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: Skullomat",
-			Description = "Your Attack {#UpgradeFormat}Spawns {#Prev}a {#UpgradeFormat}Numbskull{#Prev}.",
+			Description = "Your Attack Spawns a Numbskull.",
 		},
 		TextOrder)
 		)
@@ -1351,7 +1366,7 @@ sjson.hook(file, function(data)
 			Id = "PunchingBagUnitCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: Wretched Lout",
-			Description = "Your Attack {#UpgradeFormat}Dashes {#Prev}forward.",
+			Description = "Your Attack Dashes forward.",
 		},
 		TextOrder)
 		)
@@ -1361,7 +1376,7 @@ sjson.hook(file, function(data)
 			Id = "HadesLightRangedCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: Wretched Witch",
-			Description = "Your Attack fire a {#UpgradeFormat}Projectile{#Prev}.",
+			Description = "Your Attack fire a Projectile.",
 		},
 		TextOrder)
 		)
@@ -1371,7 +1386,7 @@ sjson.hook(file, function(data)
 			Id = "HeavyRangedCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: Brimstone",
-			Description = "Your Attack fire a {#UpgradeFormat}Non-Rotating Beam{#Prev}.",
+			Description = "Your Attack fire a Non-Rotating Beam.",
 		},
 		TextOrder)
 		)
@@ -1381,7 +1396,7 @@ sjson.hook(file, function(data)
 			Id = "HeavyMeleeCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: Wretched Thug",
-			Description = "Your Attack {#UpgradeFormat}Swipes{#Prev} before you.",
+			Description = "Your Attack Swipes before you.",
 		},
 		TextOrder)
 		)
@@ -1391,7 +1406,7 @@ sjson.hook(file, function(data)
 			Id = "HadesThiefMineLayerCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: Wretched Pest",
-			Description = "Your Attack {#UpgradeFormat}Throw Proximity Mines{#Prev}.",
+			Description = "Your Attack Throw Proximity Mines.",
 		},
 		TextOrder)
 	)
@@ -1401,7 +1416,7 @@ sjson.hook(file, function(data)
 			Id = "WretchAssassinMinibossCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: Wretched Sneak",
-			Description = "Your Attack throws{#UpgradeFormat}3 consecutive Projectiles{#Prev}.",
+			Description = "Your Attack throws{#UpgradeFormat}3 {#Prev}consecutive Projectiles.",
 		},
 		TextOrder)
 		)
@@ -1411,7 +1426,7 @@ sjson.hook(file, function(data)
 			Id = "HeavyRangedSplitterMinibossCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: Doomstone",
-			Description = "Your Attack fires {#UpgradeFormat}8 Non-Rotating Beams{#Prev}.",
+			Description = "Your Attack fires {#UpgradeFormat}8 {#Prev}Non-Rotating Beams.",
 		},
 		TextOrder)
 		)
@@ -1421,7 +1436,7 @@ sjson.hook(file, function(data)
 			Id = "HarpyOneCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: Megaera Whip-Fury",
-			Description = "Your Attack {#UpgradeFormat}Whips All-Around{#Prev}.",
+			Description = "Your Attack Whips All-Around.",
 		},
 		TextOrder)
 		)
@@ -1431,7 +1446,7 @@ sjson.hook(file, function(data)
 			Id = "HarpytwoOneCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: Alecto Saw-Shot",
-			Description = "Your Attack fires a{#UpgradeFormat}Spinning Saw{#Prev}.",
+			Description = "Your Attack fires a Spinning Saw.",
 		},
 		TextOrder)
 		)
@@ -1441,7 +1456,7 @@ sjson.hook(file, function(data)
 			Id = "HarpythreeOneCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: Tisiphone Hell-Fire Pillar",
-			Description = "Your Attack fires a {#UpgradeFormat}Hell-Fire Pillar{#Prev}.",
+			Description = "Your Attack fires a Hell-Fire Pillar.",
 		},
 		TextOrder)
 		)
@@ -1451,7 +1466,7 @@ sjson.hook(file, function(data)
 			Id = "RangedBurrowerCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: Dracon",
-			Description = "Your Attack fires a {#UpgradeFormat}Homing Darts{#Prev}.",
+			Description = "Your Attack fires a Homing Darts.",
 		},
 		TextOrder)
 		)
@@ -1461,7 +1476,7 @@ sjson.hook(file, function(data)
 			Id = "CrusherUnitCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: Skull-Crusher",
-			Description = "Your Attack {#UpgradeFormat}Slams Down {#Prev}.",
+			Description = "Your Attack Slams Down .",
 		},
 		TextOrder)
 		)
@@ -1471,7 +1486,7 @@ sjson.hook(file, function(data)
 			Id = "FreezeShotUnitCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: Gorgon",
-			Description = "Your Attack fires a {#UpgradeFormat}Homing Projectile {#Prev} that turns enemies to {#UpgradeFormat}Stone{#Prev}.",
+			Description = "Your Attack fires a Homing Projectile  that turns enemies to Stone.",
 		},
 		TextOrder)
 		)
@@ -1481,7 +1496,7 @@ sjson.hook(file, function(data)
 			Id = "HitAndRunUnitCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: MegaGorgon",
-			Description = "Your Attack fires a {#UpgradeFormat}6 Homing Projectile {#Prev}in a #{UpgradeFormat}Fan Pattern {#Prev} that turns enemies to {#UpgradeFormat}Stone{#Prev}.",
+			Description = "Your Attack fires a {#UpgradeFormat}6 {#Prev}Homing Projectile in a Fan Pattern that turns enemies to Stone.",
 		},
 		TextOrder)
 		)
@@ -1491,7 +1506,7 @@ sjson.hook(file, function(data)
 			Id = "SpreadShotUnitMinibossCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: Dire Spreader",
-			Description = "Your Attack fires a {#UpgradeFormat}Projectile Barrage {#Prev}in all directions.",
+			Description = "Your Attack fires a Projectile Barrage in all directions.",
 		},
 		TextOrder)
 		)
@@ -1501,7 +1516,7 @@ sjson.hook(file, function(data)
 			Id = "HydraHeadDartmakerCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: Hydra Darts",
-			Description = "Your Attack fires {#UpgradeFormat}5 Consecutive Homing Darts{#Prev}.",
+			Description = "Your Attack fires {#UpgradeFormat}5 {#Prev}Consecutive Homing Darts.",
 		},
 		TextOrder)
 		)
@@ -1511,7 +1526,7 @@ sjson.hook(file, function(data)
 			Id = "HydraHeadLavamakerCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: Hydra Lava",
-			Description = "Your Attack fires {#UpgradeFormat}4 Orbs {#Prev}that leave {#UpgradeFormat}Lava {#Prev}in their wake.",
+			Description = "Your Attack fires {#UpgradeFormat}4 {#Prev}Orbs that leave Lava in their wake.",
 		},
 		TextOrder)
 		)
@@ -1521,7 +1536,7 @@ sjson.hook(file, function(data)
 			Id = "HydraHeadSummonerCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: Hydra Summon",
-			Description = "Your Attack fires {#UpgradeFormat}2 Teeth {#Prev}that {#UpgradeFormat}Spawn Bloodless{#Prev}.",
+			Description = "Your Attack fires {#UpgradeFormat}2 {#Prev}Teeth that Spawn Bloodless.",
 		},
 		TextOrder)
 		)
@@ -1531,7 +1546,7 @@ sjson.hook(file, function(data)
 			Id = "HydraHeadSummonerCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: Hydra Wave",
-			Description = "Your Attack fires {#UpgradeFormat}3 Wave Projectile Side by Side{#Prev}.",
+			Description = "Your Attack fires {#UpgradeFormat}3 {#Prev}Wave Projectile Side by Side.",
 		},
 		TextOrder)
 		)
@@ -1541,7 +1556,7 @@ sjson.hook(file, function(data)
 			Id = "HydraHeadSlammerCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: Hydra Slam",
-			Description = "Your Attack {#UpgradeFormat}Slams Down {#Prev}in a large area.",
+			Description = "Your Attack Slams Down in a large area.",
 		},
 		TextOrder)
 		)
@@ -1551,7 +1566,7 @@ sjson.hook(file, function(data)
 			Id = "ShadeNakedCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: Naked Shade",
-			Description = "Each {#UpgradeFormat}Location {#Prev}your Attack transforms into one of the {#UpgradeFormat}Champions of Elysium{#Prev}.",
+			Description = "Each Location your Attack transforms into one of the Champions of Elysium.",
 		},
 		TextOrder)
 		)
@@ -1561,7 +1576,7 @@ sjson.hook(file, function(data)
 			Id = "ShadeSpearUnitCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: Longspear",
-			Description = "Your Attack transforms into a {#UpgradeFormat}Spear Thrust{#Prev}.",
+			Description = "Your Attack transforms into a Spear Thrust.",
 		},
 		TextOrder)
 		)
@@ -1571,7 +1586,7 @@ sjson.hook(file, function(data)
 			Id = "ShadeSwordUnitCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: Brightsword",
-			Description = "Your Attack stabs the ground shooting into a {#UpgradeFormat}Spiked Projectile{#Prev}.",
+			Description = "Your Attack stabs the ground shooting into a Spiked Projectile.",
 		},
 		TextOrder)
 		)
@@ -1581,7 +1596,7 @@ sjson.hook(file, function(data)
 			Id = "ShadeShieldUnitCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: Greatshield",
-			Description = "Your Attack slams the ground shooting into a {#UpgradeFormat}Shockwave{#Prev}.",
+			Description = "Your Attack slams the ground shooting into a Shockwave.",
 		},
 		TextOrder)
 		)
@@ -1591,7 +1606,7 @@ sjson.hook(file, function(data)
 			Id = "ShadeBowUnitCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: Strongbow",
-			Description = "Your Attack shoots a {#UpgradeFormat}Fast Arrow{#Prev}.",
+			Description = "Your Attack shoots a Fast Arrow.",
 		},
 		TextOrder)
 		)
@@ -1601,7 +1616,7 @@ sjson.hook(file, function(data)
 			Id = "FlurrySpawnerCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: Soul Catcher",
-			Description = "Your Attack fires a {#UpgradeFormat}Flurry of Butterflies{#Prev}.",
+			Description = "Your Attack fires a Flurry of Butterflies.",
 		},
 		TextOrder)
 		)
@@ -1611,7 +1626,7 @@ sjson.hook(file, function(data)
 			Id = "ChariotSuicideCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: Flame Wheel",
-			Description = "Your Attack {#UpgradeFormat}Rams {#Prev}forward and {#UpgradeFormat}Explodes{#Prev}.",
+			Description = "Your Attack Rams forward and Explodes.",
 		},
 		TextOrder)
 		)
@@ -1621,7 +1636,7 @@ sjson.hook(file, function(data)
 			Id = "ChariotCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: Nemean Chariot",
-			Description = "Your Attack {#UpgradeFormat}Rams {#Prev} into enemies.",
+			Description = "Your Attack Rams  into enemies.",
 		},
 		TextOrder)
 		)
@@ -1631,7 +1646,7 @@ sjson.hook(file, function(data)
 			Id = "SplitShotUnitCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: Splitter",
-			Description = "Your Attack fires a {#UpgradeFormat}Projectile {#Prev}which {#UpgradeFormat}Splits {#Prev}when {#UpgradeFormat}Dissipitates{#Prev}.",
+			Description = "Your Attack fires a Projectile which Splits when Dissipitates.",
 		},
 		TextOrder)
 		)
@@ -1641,7 +1656,7 @@ sjson.hook(file, function(data)
 			Id = "MinotaurOneCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: Asterius Crescent Strike",
-			Description = "Your Attack Slams down sending {#UpgradeFormat}3 Shockwaves{#Prev}.",
+			Description = "Your Attack Slams down sending {#UpgradeFormat}3 {#Prev}Shockwaves.",
 		},
 		TextOrder)
 		)
@@ -1651,7 +1666,17 @@ sjson.hook(file, function(data)
 			Id = "MinotaurOneCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: Theseus Spear Throw",
-			Description = "Your Attack {#UpgradeFormat}Throws {#Prev}a {#UpgradeFormat}Spear{#Prev}.",
+			Description = "Your Attack Throws a Spear.",
+		},
+		TextOrder)
+		)
+
+		table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "MinotaurOneCopyDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Copy: Theseus Spear Spin",
+			Description = "Your Attack Spins a Spear around you.",
 		},
 		TextOrder)
 		)
@@ -1661,7 +1686,7 @@ sjson.hook(file, function(data)
 			Id = "SatyrRangedCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: Satyr Cultist",
-			Description = "Your Attack shoots a {#UpgradeFormat}Poisoned Dart{#Prev}.",
+			Description = "Your Attack shoots a Poisoned Dart.",
 		},
 		TextOrder)
 		)
@@ -1671,7 +1696,7 @@ sjson.hook(file, function(data)
 			Id = "RatThugCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: Gigantic Vermin",
-			Description = "Your Attack Shakes {#UpgradeFormat}4 Poison Projectiles {#Prev}off.",
+			Description = "Your Attack Shakes {#UpgradeFormat}4 {#Prev}Poison Projectiles off.",
 		},
 		TextOrder)
 		)
@@ -1681,7 +1706,7 @@ sjson.hook(file, function(data)
 			Id = "HeavyRangedForkedCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: Snakestone",
-			Description = "Your Attack fires {#UpgradeFormat}3 Slowly Targeting Beams{#Prev}.",
+			Description = "Your Attack fires {#UpgradeFormat}3 {#Prev}Slowly Targeting Beams.",
 		},
 		TextOrder)
 		)
@@ -1691,7 +1716,7 @@ sjson.hook(file, function(data)
 			Id = "SatyrRangedMinibossCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: Dire Satyr Cultist",
-			Description = "Your Attack shoots a {#UpgradeFormat}Barrage of Poisoned Darts{#Prev}.",
+			Description = "Your Attack shoots a Barrage of Poisoned Darts.",
 		},
 		TextOrder)
 		)
@@ -1701,7 +1726,7 @@ sjson.hook(file, function(data)
 			Id = "RatThugMinibossCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: Dire Gigantic Vermin",
-			Description = "Your Attack Shakes a {#UpgradeFormat}Multitude {#Prev}of {#UpgradeFormat}Poison Projectiles {#Prev}off.",
+			Description = "Your Attack Shakes a Multitude of Poison Projectiles off.",
 		},
 		TextOrder)
 		)
@@ -1711,7 +1736,7 @@ sjson.hook(file, function(data)
 			Id = "HeavyRangedForkedMinibossCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: Dire Snakestone",
-			Description = "Your Attack fires {#UpgradeFormat}12 Slowly Targeting Beams{#Prev}.",
+			Description = "Your Attack fires {#UpgradeFormat}12 {#Prev}Slowly Targeting Beams.",
 		},
 		TextOrder)
 		)
@@ -1721,7 +1746,7 @@ sjson.hook(file, function(data)
 			Id = "HadesCrawlerCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: Crawler",
-			Description = "Your Attack {#UpgradeFormat}Bites {#Prev}enemies in front.",
+			Description = "Your Attack Bites enemies in front.",
 		},
 		TextOrder)
 		)
@@ -1731,7 +1756,7 @@ sjson.hook(file, function(data)
 			Id = "HadesCrawlerMiniBossCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: King Vermin",
-			Description = "Your Attack {#UpgradeFormat}Charges {#Prev}forward and {#UpgradeFormat}Bites {#Prev}enemies in front.",
+			Description = "Your Attack Charges forward and Bites enemies in front.",
 		},
 		TextOrder)
 		)
@@ -1741,7 +1766,7 @@ sjson.hook(file, function(data)
 			Id = "HadesOneCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: Hades Cast",
-			Description = "Your Attack fires a {#UpgradeFormat}Homing Skull {#Prev}that embeds into an enemy making it {#UpgradeFormat}Vulnerable{#Prev}. {#UpgradeFormat}Left Alone {#Prev}the Skull will {#UpgradeFormat}Explode {#Prev}causing a {#UpgradeFormat}Shockwave{#Prev}.",
+			Description = "Your Attack fires a Homing Skull. Foes embedded with skulls are afflicted with {$Keywords.KirbyBoilingBlood}. Left Alone, the skull will Explode, causing a Shockwave.",
 		},
 		TextOrder)
 		)
@@ -1751,12 +1776,1604 @@ sjson.hook(file, function(data)
 			Id = "HadesTwoCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: Hades Urns",
-			Description = "Your Attack fires a {#UpgradeFormat}Summons 6 Soul Urns {#Prev}that burst upon damage.",
+			Description = "Your Attack fires a Summons {#UpgradeFormat}6 {#Prev}Soul Urns that burst upon damage.",
+		},
+		TextOrder)
+		)
+
+		table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "CharonOneCopyDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Copy: Charon Oar Swipe",
+			Description = "Your Attack Swipes to the left.",
+		},
+		TextOrder)
+		)
+
+		table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "CharonOneCopyDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Copy: Charon Wave",
+			Description = "Your Attack fire a Wave Projectile.",
 		},
 		TextOrder)
 		)
 	end
 
+		table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "DummyCopyTwoDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Reserve Copy Ability",
+			Description = "Upon hit Your Attacks Copy  the enemy's Attack.",
+		},
+		TextOrder)
+	)
+
+	table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "GuardCopyTwoDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Reserve Copy: Whisper",
+			Description = "Your Attacks Swings around you .",
+		},
+		TextOrder)
+	)
+
+	table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "GuardtwoCopyTwoDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Reserve Copy: Wet-Whisper",
+			Description = "Your Attacks rapidly Swings around you .",
+		},
+		TextOrder)
+	)
+	
+	table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "MageCopyTwoDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Reserve Copy: Casket",
+			Description = "Your Attacks fires {#UpgradeFormat}3 {#Prev}projectiles in rapid succession.",
+		},
+		TextOrder)
+	)
+
+	table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "BrawlerCopyTwoDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Reserve Copy: Wastrel",
+			Description = "Your Attacks Charge and swipe forwards.",
+		},
+		TextOrder)
+	)
+
+	table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "SiegeVineCopyTwoDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Reserve Copy: Thorn-Weeper",
+			Description = "Your Attacks fire a slow homing  projectile.",
+		},
+		TextOrder)
+	)
+
+	table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "ScreamerCopyTwoDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Reserve Copy: Wailer",
+			Description = "Your Attack fires a prolonged short-range wave.",
+		},
+		TextOrder)
+	)
+
+	table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "ScreamertwoCopyTwoDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Reserve Copy: Dread-Wailer",
+			Description = "Your Attack fires a prolonged wave.",
+		},
+		TextOrder)
+	)
+
+	table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "RadiatorCopyTwoDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Reserve Copy: Spindle",
+			Description = "Your Attack fires a rotating beam.",
+		},
+		TextOrder)
+	)
+
+	table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "TreantTailCopyTwoDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Reserve Copy: Root-Stalker Tail",
+			Description = "Your Attack Swipes around you.",
+		},
+		TextOrder)
+	)
+
+	table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "TreantCopyTwoDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Reserve Copy: Root-Stalker",
+			Description = "Your Attack fires aBarrage of Splinters.",
+		},
+		TextOrder)
+	)
+
+	table.insert(data.Texts, sjson.to_object(
+	{
+		Id = "TreantTailtwoCopyTwoDisplayBoon",
+		InheritFrom = "BaseBoonMultiline",
+		DisplayName = "Reserve Copy: Brush-Stalker Tail",
+		Description = "Your Attack Swipes around you.",
+	},
+	TextOrder)
+	)
+
+	table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "TreanttwoCopyTwoDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Reserve Copy: Brush-Stalker",
+			Description = "Your Attack fires aBarrage of Splinters.",
+		},
+		TextOrder)
+	)
+
+	table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "FogEmitterCopyTwoDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Reserve Copy: Shadow-Spiller",
+			Description = "Your Attack Slams the ground in front of you.",
+		},
+		TextOrder)
+	)
+
+	table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "WispCopyTwoDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Reserve Copy: Lanthorn",
+			Description = "Your Attack Explodes  Around you.",
+		},
+		TextOrder)
+	)
+
+	table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "LightRangedCopyTwoDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Reserve Copy: Sister of the Dead",
+			Description = "Your Attack fires a Projectile.",
+		},
+		TextOrder)
+	)
+
+	table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "HecateOneCopyTwoDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Reserve Copy: Hecate Torch-Cone",
+			Description = "Your Attack fires Cones of Flame in both directions.",
+		},
+		TextOrder)
+	)
+
+	table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "FishmanMeleeCopyTwoDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Reserve Copy: Lurker",
+			Description = "Your Attack Stabs forwards.",
+		},
+		TextOrder)
+	)
+
+	table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "FishSwarmerCopyTwoDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Reserve Copy: Pinhead",
+			Description = "Your Attack Bites enemies in front.",
+		},
+		TextOrder)
+	)
+
+	table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "TurtleCopyTwoDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Reserve Copy: Shellback",
+			Description = "Your Attack fires a Bouncing ball.",
+		},
+		TextOrder)
+	)
+
+	table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "FishmanRangedCopyTwoDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Reserve Copy: Hippo",
+			Description = "Your Attack fires a Homing Explosive projectile.",
+		},
+		TextOrder)
+	)
+
+	table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "WaterUnitCopyTwoDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Reserve Copy: Sea-Serpent",
+			Description = "Your Attack fires a Spit projectile.",
+		},
+		TextOrder)
+	)
+
+	table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "WaterUnitMinibossCopyTwoDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Reserve Copy: Deep Serpent",
+			Description = "Your Attack fires a Splitting Spit projectile.",
+		},
+		TextOrder)
+	)
+
+	table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "RadiatortwoCopyTwoDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Reserve Copy: Sop-Spindle",
+			Description = "Your Attack fires a long rotating beam.",
+		},
+		TextOrder)
+	)
+
+	table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "JellyfishCopyTwoDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Reserve Copy: Jelly-Fish",
+			Description = "Your Attack stings lightning around you.",
+		},
+		TextOrder)
+	)
+
+	table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "OctofishCopyTwoDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Reserve Copy: Hellifish",
+			Description = "Your Attack fires a Splash of Ink.",
+		},
+		TextOrder)
+	)
+
+	table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "ThiefMineLayerCopyTwoDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Reserve Copy: Wretched Pest",
+			Description = "Your Attack Throw Proximity Mines.",
+		},
+		TextOrder)
+	)
+
+	table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "CrawlerMinibossCopyTwoDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Reserve Copy: King Vermin",
+			Description = "Your Attack Charges forward and Bites enemies in front.",
+		},
+		TextOrder)
+	)
+
+	table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "SirenDrummerCopyTwoDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Reserve Copy: Roxy",
+			Description = "Your Attack fires a long cooldown Beat Nova.",
+		},
+		TextOrder)
+	)
+
+	table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "SirenKeytaristCopyTwoDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Reserve Copy: Jetty",
+			Description = "Your Attack becomes a Power Slide.",
+		},
+		TextOrder)
+	)
+
+	table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "ScyllaOneCopyTwoDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Reserve Copy: Scylla Notes",
+			Description = "Your Attack fires  Homing Musical Notes.",
+		},
+		TextOrder)
+	)
+
+	table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "BloodlessNakedCopyTwoDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Reserve Copy: Bloodless",
+			Description = "Your Attack Charges forward.",
+		},
+		TextOrder)
+		)
+
+	table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "BloodlessGrenadierCopyTwoDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Reserve Copy: Inferno-Bomber",
+			Description = "Your Attack lobs a Grenade.",
+		},
+		TextOrder)
+		)
+
+	table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "BloodlessSelfDestructCopyTwoDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Reserve Copy: Slam-Dancer",
+			Description = "Your Attack Explodes Underneath.",
+		},
+		TextOrder)
+		)
+
+	table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "BloodlessPitcherCopyTwoDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Reserve Copy: Burn-Flinger",
+			Description = "Your Attack Flingsa Grenade.",
+		},
+		TextOrder)
+		)
+
+	table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "BloodlessWaveFistCopyTwoDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Reserve Copy: Wave-Maker",
+			Description = "Your Attack fires aWave Projectile.",
+		},
+		TextOrder)
+	)
+
+	table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "SpreadShotUnitCopyTwoDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Reserve Copy: Spreader",
+			Description = "Your Attack fires {#UpgradeFormat}5 {#Prev}Projectiles in a Fan Formation.",
+		},
+		TextOrder)
+	)
+
+	table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "CorruptedShadeSmallCopyTwoDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Reserve Copy: Blight-Shade",
+			Description = "Your Attack fires a Projectile.",
+		},
+		TextOrder)
+	)
+
+	table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "CorruptedShadeMediumCopyTwoDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Reserve Copy: Blood-Shade",
+			Description = "Your Attack Rams forwards.",
+		},
+		TextOrder)
+	)
+
+	table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "CorruptedShadeLargeCopyTwoDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Reserve Copy: Bloat-Shade",
+			Description = "Your Attack fires a Spiky Nova around you.",
+		},
+		TextOrder)
+	)
+
+	table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "FogEmittertwoCopyTwoDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Reserve Copy: Sorrow-Spiller",
+			Description = "Your Attack Sweeps in front of you.",
+		},
+		TextOrder)
+	)
+
+	table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "BrokenHeartedCopyTwoDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Reserve Copy: Smacker",
+			Description = "Your Attack Slams the ground.",
+		},
+		TextOrder)
+	)
+
+	table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "LycanSwarmerCopyTwoDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Reserve Copy: Canine",
+			Description = "Your Attack Bites enemies in front.",
+		},
+		TextOrder)
+	)
+
+	table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "LovesickCopyTwoDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Reserve Copy: Holeheart",
+			Description = "Your Attack Throw Heart Mines.",
+		},
+		TextOrder)
+	)
+
+	table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "LycanthropeCopyTwoDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Reserve Copy: Lycaon",
+			Description = "Your Attack Pounces   on enemies and Swipes down with Claws.",
+		},
+		TextOrder)
+	)
+
+	table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "LamiaCopyTwoDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Reserve Copy: Lamia",
+			Description = "Your Attack fires a homing beam from the sky .",
+		},
+		TextOrder)
+	)
+
+	table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "Lamia_MinibossCopyTwoDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Reserve Copy: Queen Lamia",
+			Description = "Your Attack fires {#UpgradeFormat}3 {#Prev}homing beam from the sky.",
+		},
+		TextOrder)
+	)
+
+		table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "VampireCopyTwoDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Reserve Copy: Phantom",
+			Description = "Your Attacks Claw forward and Steals Life.",
+		},
+		TextOrder)
+	)
+
+	table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "InfestedCerberusOneCopyTwoDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Reserve Copy: Cerberus Fire-Breath",
+			Description = "Your Attack transforms into a Fire Breath.",
+		},
+		TextOrder)
+	)
+
+	table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "SwarmerClockworkCopyTwoDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Reserve Copy: Sandskull",
+			Description = "Your Attack Bites enemies in front.",
+		},
+		TextOrder)
+	)
+
+	table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "DisembodiedHandCopyTwoDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Reserve Copy: Wringer",
+			Description = "Your Attack Grabs enemies.",
+		},
+		TextOrder)
+	)
+
+	table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "ClockworkHeavyMeleeCopyTwoDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Reserve Copy: Wretched Thug",
+			Description = "Your Attack Shoves enemies away.",
+		},
+		TextOrder)
+	)
+
+	table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "GoldElementalCopyTwoDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Reserve Copy: Goldwraith",
+			Description = "Your Attack fires a Penetrating Beam.",
+		},
+		TextOrder)
+	)
+
+	table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "GoldElemental_MiniBossCopyTwoDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Reserve Copy: Goldwrath",
+			Description = "Your Attack fires numerous coins in all directions.",
+		},
+		TextOrder)
+	)
+
+	table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "TimeElementalCopyTwoDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Reserve Copy: Tempus",
+			Description = "Your Attack fires a projectile in a growing Spiral Pattern.",
+		},
+		TextOrder)
+	)
+
+	table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "SatyrLancerCopyTwoDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Reserve Copy: Satyr Hoplite",
+			Description = "Your Attack throws a Spear.",
+		},
+		TextOrder)
+	)
+
+	table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "SatyrRatCatcherCopyTwoDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Reserve Copy: Satyr Vierophant",
+			Description = "Your Attack fires a Homing Flaming Projectile.",
+		},
+		TextOrder)
+	)
+
+	table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "SatyrRatCatcher_MinibossCopyTwoDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Reserve Copy: The Verminancer",
+			Description = "Your Attack Tail Swipes while Dashing.",
+		},
+		TextOrder)
+	)
+
+	table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "CrawlerCopyTwoDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Reserve Copy: Crawler",
+			Description = "Your Attack Bites enemies in front.",
+		},
+		TextOrder)
+	)
+
+	table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "SatyrCultistCopyTwoDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Reserve Copy: Satyr Supplicant",
+			Description = "Your Attack Throws a Dagger.",
+		},
+		TextOrder)
+	)
+
+	table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "ChronosOneCopyTwoDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Reserve Copy: Chronos Scythe Throw",
+			Description = "Your Attack transforms into a Large Spinning Scythe.",
+		},
+		TextOrder)
+	)
+
+	table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "ChronosTwoCopyTwoDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Reserve Copy: Chronos Time Stasis",
+			Description = "Your Attack Stops enemies in a Moment in Time.",
+		},
+		TextOrder)
+	)
+
+	table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "ZagreusOneCopyTwoDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Reserve Copy: Zagreus - Blood Cast",
+			Description = "Your Attack fires a Blood Projectile.",
+		},
+		TextOrder)
+	)
+
+	table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "ZagreusTwoCopyTwoDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Reserve Copy: Zagreus - Spear Spin",
+			Description = "Your Attack Spins a Spear around you.",
+		},
+		TextOrder)
+	)
+
+	table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "CarrionCopyTwoDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Reserve Copy: Bronzebeak",
+			Description = "Your Attack Swoops onto enemies.",
+		},
+		TextOrder)
+	)
+
+	table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "ZombieCopyTwoDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Reserve Copy: Shambler",
+			Description = "Your Attack Swipes down.",
+		},
+		TextOrder)
+	)
+
+	table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "ZombieCrewmanCopyTwoDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Reserve Copy: Sea-Shambler",
+			Description = "Your Attack Swipes down.",
+		},
+		TextOrder)
+	)
+
+	table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "ZombieOlympusCopyTwoDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Reserve Copy: Snow-Shambler",
+			Description = "Your Attack Swipes down.",
+		},
+		TextOrder)
+	)
+
+	table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "ZombieHeavyRangedCopyTwoDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Reserve Copy: Lubber",
+			Description = "Your Attack throws a Burning Barrel.",
+		},
+		TextOrder)
+	)
+
+	table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "ZombieAssassinCopyTwoDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Reserve Copy: Cutthroat",
+			Description = "Your Attack becomes a Flurry of Stabs.",
+		},
+		TextOrder)
+	)
+
+	table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "ZombieAssassin_MinibossCopyTwoDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Reserve Copy: Master-Slicer",
+			Description = "Your Attack becomes a Flurry of Stabs.",
+		},
+		TextOrder)
+	)
+
+	table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "MudmanCopyTwoDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Reserve Copy: Eidolon",
+			Description = "Your Attack throws a Projectile  which spawns an Eye-dolon.",
+		},
+		TextOrder)
+	)
+
+	table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "MudmanEyeCopyTwoDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Reserve Copy: Eye-dolon",
+			Description = "Your Attack transforms into a Small Explosion.",
+		},
+		TextOrder)
+	)
+
+	table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "ZombieSpawnerCopyTwoDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Reserve Copy: Tombstone",
+			Description = "Your Attack throws a Projectile  which spawns a Zombie.",
+		},
+		TextOrder)
+	)
+
+	table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "BoarCopyTwoDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Reserve Copy: Erymanthian Boar",
+			Description = "Your Attack Stomps  the ground creating a Shockwave in all directions.",
+		},
+		TextOrder)
+	)
+
+	table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "SatyrCrossbowCopyTwoDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Reserve Copy: Satyr Champion",
+			Description = "Your Attack fires {#UpgradeFormat}3 {#Prev}homing bolts .",
+		},
+		TextOrder)
+	)
+
+	table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "Sheep_ExplosiveCopyTwoDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Reserve Copy: Black Sheep",
+			Description = "Your Attack creates an Explosion .",
+		},
+		TextOrder)
+	)
+
+	table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "Sheep_ZombieCopyTwoDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Reserve Copy: Shamble Sheep",
+			Description = "Your Attack Rams forward dazing enemies.",
+		},
+		TextOrder)
+	)
+
+	table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "PolyphemusOneCopyTwoDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Reserve Copy: Polyphemus Kick",
+			Description = "Your Attack Kicks forward creating a Shockwave.",
+		},
+		TextOrder)
+	)
+
+	table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "ScimiterrorCopyTwoDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Reserve Copy: Seesword",
+			Description = "Your Attack Slashes forward.",
+		},
+		TextOrder)
+	)
+
+	table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "SticklerCopyTwoDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Reserve Copy: Stickler",
+			Description = "Your Attack Throws  a Spear.",
+		},
+		TextOrder)
+	)
+
+	table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "SwabCopyTwoDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Reserve Copy: Anchor",
+			Description = "Your Attack fires a Powerful Blast  with a Long Cooldown.",
+		},
+		TextOrder)
+	)
+
+	table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "DrunkCopyTwoDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Reserve Copy: Boozer",
+			Description = "Your Attack Slashes before you.",
+		},
+		TextOrder)
+	)
+
+	table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "HarpyCutterCopyTwoDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Reserve Copy: Harpy Talon",
+			Description = "Your Attack Slices forward.",
+		},
+		TextOrder)
+	)
+
+	table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "WaterElementalCopyTwoDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Reserve Copy: Droplet",
+			Description = "Your Attack Bites enemies in front.",
+		},
+		TextOrder)
+	)
+
+	table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "MagetwoCopyTwoDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Reserve Copy: Blasket",
+			Description = "Your Attacks fires {#UpgradeFormat}3 trios {#Prev}of projectiles in rapid succession.",
+		},
+		TextOrder)
+	)
+
+	table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "CaptainCopyTwoDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Reserve Copy: The Yargonaut",
+			Description = "Your Attacks fires {#UpgradeFormat}3 {#Prev}Pistol Shots that Bounce off walls.",
+		},
+		TextOrder)
+	)
+
+	table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "CharybdisTentacleCopyTwoDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Reserve Copy: Charybdis Tentacle",
+			Description = "Your Attack shoots a Homing Projectile.",
+		},
+		TextOrder)
+	)
+
+	table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "ErisOneCopyTwoDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Reserve Copy: Eris Sniper-Shot",
+			Description = "Your Attack shoots along range sniper shot.",
+		},
+		TextOrder)
+	)
+
+	table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "ErisTwoCopyTwoDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Reserve Copy: Eris Laser",
+			Description = "Your Attack fires a Laser Beam.",
+		},
+		TextOrder)
+	)
+
+	table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "SentryBotCopyTwoDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Reserve Copy: Auto-Seeker",
+			Description = "Your Attack fire a projectile.",
+		},
+		TextOrder)
+	)
+
+	table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "AutomatonBeamerCopyTwoDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Reserve Copy: Auto-Watcher",
+			Description = "Your Attack fires {#UpgradeFormat}10 {#Prev}Beams.",
+		},
+		TextOrder)
+	)
+
+	table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "AutomatonEnforcerCopyTwoDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Reserve Copy: Auto-Forcer",
+			Description = "Your Attack transforms into Rotating blades.",
+		},
+		TextOrder)
+	)
+
+	table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "HarpyDropperCopyTwoDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Reserve Copy: Harpy Raptor",
+			Description = "Your Attack fires a Tornado.",
+		},
+		TextOrder)
+	)
+
+	table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "SatyrCrossbowtwoCopyTwoDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Reserve Copy: Satyr Raider",
+			Description = "Your Attack fires a Crossbow Bolt.",
+		},
+		TextOrder)
+	)
+
+	table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "SatyrLancertwoCopyTwoDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Reserve Copy: Satyr Goldpike",
+			Description = "Your Attack throws a Spear.",
+		},
+		TextOrder)
+	)
+
+	table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "SatyrSapperCopyTwoDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Reserve Copy: Satyr Sapper",
+			Description = "Your Attack fires a Exploding Rocket.",
+		},
+		TextOrder)
+	)
+
+	table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "SatyrSapperCopyTwoDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Reserve Copy: Talos",
+			Description = "Your Attack throws a Spinning Shield.",
+		},
+		TextOrder)
+	)
+
+	table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "HeraclesOneCopyTwoDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Reserve Copy: Heracles Spin",
+			Description = "Your Attack Spins around you in a Barrage of Blows.",
+		},
+		TextOrder)
+	)
+
+	table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "PrometheusOneCopyTwoDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Reserve Copy: Prometheus Fire-Pillar",
+			Description = "Your Attack fires a Burning Pillar.",
+		},
+		TextOrder)
+	)
+
+	table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "SimpleCopyTwoDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Reserve Copy: Polyp",
+			Description = "Your Attack creates a Small Damaging Aura infront.",
+		},
+		TextOrder)
+	)
+
+	table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "StalkerCopyTwoDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Reserve Copy: Stalker",
+			Description = "Your Attack fire {#UpgradeFormat}2 Linear Shockwaves.",
+		},
+		TextOrder)
+	)
+
+	table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "Stalker_MinibossCopyTwoDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Reserve Copy: Twins of Typhon",
+			Description = "Your Attack fire {#UpgradeFormat}2 {#Prev}Linear Shockwaves.",
+		},
+		TextOrder)
+	)
+
+	table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "StalkerCopyTwoDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Reserve Copy: Horror",
+			Description = "Your Attack transforms into a Horn Charge.",
+		},
+		TextOrder)
+	)
+
+	table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "MatiCopyTwoDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Reserve Copy: Eyesore",
+			Description = "Your Attack fire a Homing Splitting Projectile.",
+		},
+		TextOrder)
+	)
+
+	table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "DragonBurrowerCopyTwoDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Reserve Copy: Land-Dracon",
+			Description = "Your Attack fires a Projectile.",
+		},
+		TextOrder)
+	)
+
+	table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "EarthElementalCopyTwoDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Reserve Copy: Headstone",
+			Description = "Your Attack fires a Beam.",
+		},
+		TextOrder)
+	)
+
+	table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "Brute_MinibossCopyTwoDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Reserve Copy: Spawn of Typhon",
+			Description = "Your Attack Swipes forward.",
+		},
+		TextOrder)
+	)
+
+	table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "TyphonTailCopyTwoDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Reserve Copy: Tail of Typhon",
+			Description = "Your Attack fires a Rotating Drill.",
+		},
+		TextOrder)
+	)
+
+	table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "TyphonEyeCopyTwoDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Reserve Copy: Eye of Typhon",
+			Description = "Your Attack fires a Lobbed Splitting Projectile.",
+		},
+		TextOrder)
+	)
+
+	table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "TyphonHeadCopyTwoDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Reserve Copy: Typhon Tongue-Lash",
+			Description = "Your Attack fires a Lashing Tongue of Typhon.",
+		},
+		TextOrder)
+	)
+
+	if ZagreusJourney then
+		
+		table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "HadesSwarmerCopyTwoDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Reserve Copy: Numbskull",
+			Description = "Your Attack Bites enemies in front.",
+		},
+		TextOrder)
+		)
+
+		table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "LightSpawnerCopyTwoDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Reserve Copy: Skullomat",
+			Description = "Your Attack Spawns a Numbskull.",
+		},
+		TextOrder)
+		)
+
+		table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "PunchingBagUnitCopyTwoDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Reserve Copy: Wretched Lout",
+			Description = "Your Attack Dashes forward.",
+		},
+		TextOrder)
+		)
+
+		table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "HadesLightRangedCopyTwoDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Reserve Copy: Wretched Witch",
+			Description = "Your Attack fire a Projectile.",
+		},
+		TextOrder)
+		)
+
+		table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "HeavyRangedCopyTwoDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Reserve Copy: Brimstone",
+			Description = "Your Attack fire a Non-Rotating Beam.",
+		},
+		TextOrder)
+		)
+
+		table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "HeavyMeleeCopyTwoDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Reserve Copy: Wretched Thug",
+			Description = "Your Attack Swipes before you.",
+		},
+		TextOrder)
+		)
+
+		table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "HadesThiefMineLayerCopyTwoDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Reserve Copy: Wretched Pest",
+			Description = "Your Attack Throw Proximity Mines.",
+		},
+		TextOrder)
+	)
+
+		table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "WretchAssassinMinibossCopyTwoDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Reserve Copy: Wretched Sneak",
+			Description = "Your Attack throws{#UpgradeFormat}3 {#Prev}consecutive Projectiles.",
+		},
+		TextOrder)
+		)
+
+		table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "HeavyRangedSplitterMinibossCopyTwoDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Reserve Copy: Doomstone",
+			Description = "Your Attack fires {#UpgradeFormat}8 {#Prev}Non-Rotating Beams.",
+		},
+		TextOrder)
+		)
+
+		table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "HarpyOneCopyTwoDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Reserve Copy: Megaera Whip-Fury",
+			Description = "Your Attack Whips All-Around.",
+		},
+		TextOrder)
+		)
+
+		table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "HarpytwoOneCopyTwoDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Reserve Copy: Alecto Saw-Shot",
+			Description = "Your Attack fires a Spinning Saw.",
+		},
+		TextOrder)
+		)
+
+		table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "HarpythreeOneCopyTwoDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Reserve Copy: Tisiphone Hell-Fire Pillar",
+			Description = "Your Attack fires a Hell-Fire Pillar.",
+		},
+		TextOrder)
+		)
+
+		table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "RangedBurrowerCopyTwoDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Reserve Copy: Dracon",
+			Description = "Your Attack fires a Homing Darts.",
+		},
+		TextOrder)
+		)
+
+		table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "CrusherUnitCopyTwoDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Reserve Copy: Skull-Crusher",
+			Description = "Your Attack Slams Down .",
+		},
+		TextOrder)
+		)
+
+		table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "FreezeShotUnitCopyTwoDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Reserve Copy: Gorgon",
+			Description = "Your Attack fires a Homing Projectile  that turns enemies to Stone.",
+		},
+		TextOrder)
+		)
+
+		table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "HitAndRunUnitCopyTwoDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Reserve Copy: MegaGorgon",
+			Description = "Your Attack fires a {#UpgradeFormat}6 {#Prev}Homing Projectile in a Fan Pattern that turns enemies to Stone.",
+		},
+		TextOrder)
+		)
+
+		table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "SpreadShotUnitMinibossCopyTwoDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Reserve Copy: Dire Spreader",
+			Description = "Your Attack fires a Projectile Barrage in all directions.",
+		},
+		TextOrder)
+		)
+
+		table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "HydraHeadDartmakerCopyTwoDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Reserve Copy: Hydra Darts",
+			Description = "Your Attack fires {#UpgradeFormat}5 {#Prev}Consecutive Homing Darts.",
+		},
+		TextOrder)
+		)
+
+		table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "HydraHeadLavamakerCopyTwoDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Reserve Copy: Hydra Lava",
+			Description = "Your Attack fires {#UpgradeFormat}4 {#Prev}Orbs that leave Lava in their wake.",
+		},
+		TextOrder)
+		)
+
+		table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "HydraHeadSummonerCopyTwoDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Reserve Copy: Hydra Summon",
+			Description = "Your Attack fires {#UpgradeFormat}2 {#Prev}Teeth that Spawn Bloodless.",
+		},
+		TextOrder)
+		)
+
+		table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "HydraHeadSummonerCopyTwoDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Reserve Copy: Hydra Wave",
+			Description = "Your Attack fires {#UpgradeFormat}3 {#Prev}Wave Projectile Side by Side.",
+		},
+		TextOrder)
+		)
+
+		table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "HydraHeadSlammerCopyTwoDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Reserve Copy: Hydra Slam",
+			Description = "Your Attack Slams Down in a large area.",
+		},
+		TextOrder)
+		)
+
+		table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "ShadeNakedCopyTwoDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Reserve Copy: Naked Shade",
+			Description = "Each Location your Attack transforms into one of the Champions of Elysium.",
+		},
+		TextOrder)
+		)
+
+		table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "ShadeSpearUnitCopyTwoDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Reserve Copy: Longspear",
+			Description = "Your Attack transforms into a Spear Thrust.",
+		},
+		TextOrder)
+		)
+
+		table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "ShadeSwordUnitCopyTwoDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Reserve Copy: Brightsword",
+			Description = "Your Attack stabs the ground shooting into a Spiked Projectile.",
+		},
+		TextOrder)
+		)
+
+		table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "ShadeShieldUnitCopyTwoDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Reserve Copy: Greatshield",
+			Description = "Your Attack slams the ground shooting into a Shockwave.",
+		},
+		TextOrder)
+		)
+
+		table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "ShadeBowUnitCopyTwoDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Reserve Copy: Strongbow",
+			Description = "Your Attack shoots a Fast Arrow.",
+		},
+		TextOrder)
+		)
+
+		table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "FlurrySpawnerCopyTwoDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Reserve Copy: Soul Catcher",
+			Description = "Your Attack fires a Flurry of Butterflies.",
+		},
+		TextOrder)
+		)
+
+		table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "ChariotSuicideCopyTwoDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Reserve Copy: Flame Wheel",
+			Description = "Your Attack Rams forward and Explodes.",
+		},
+		TextOrder)
+		)
+
+		table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "ChariotCopyTwoDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Reserve Copy: Nemean Chariot",
+			Description = "Your Attack Rams  into enemies.",
+		},
+		TextOrder)
+		)
+
+		table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "SplitShotUnitCopyTwoDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Reserve Copy: Splitter",
+			Description = "Your Attack fires a Projectile which Splits when Dissipitates.",
+		},
+		TextOrder)
+		)
+
+		table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "MinotaurOneCopyTwoDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Reserve Copy: Asterius Crescent Strike",
+			Description = "Your Attack Slams down sending {#UpgradeFormat}3 {#Prev}Shockwaves.",
+		},
+		TextOrder)
+		)
+
+		table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "MinotaurOneCopyTwoDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Reserve Copy: Theseus Spear Throw",
+			Description = "Your Attack Throws a Spear.",
+		},
+		TextOrder)
+		)
+
+		table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "MinotaurOneCopyTwoDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Reserve Copy: Theseus Spear Spin",
+			Description = "Your Attack Spins a Spear around you.",
+		},
+		TextOrder)
+		)
+
+		table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "SatyrRangedCopyTwoDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Reserve Copy: Satyr Cultist",
+			Description = "Your Attack shoots a Poisoned Dart.",
+		},
+		TextOrder)
+		)
+
+		table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "RatThugCopyTwoDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Reserve Copy: Gigantic Vermin",
+			Description = "Your Attack Shakes {#UpgradeFormat}4 {#Prev}Poison Projectiles off.",
+		},
+		TextOrder)
+		)
+
+		table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "HeavyRangedForkedCopyTwoDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Reserve Copy: Snakestone",
+			Description = "Your Attack fires {#UpgradeFormat}3 {#Prev}Slowly Targeting Beams.",
+		},
+		TextOrder)
+		)
+
+		table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "SatyrRangedMinibossCopyTwoDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Reserve Copy: Dire Satyr Cultist",
+			Description = "Your Attack shoots a Barrage of Poisoned Darts.",
+		},
+		TextOrder)
+		)
+
+		table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "RatThugMinibossCopyTwoDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Reserve Copy: Dire Gigantic Vermin",
+			Description = "Your Attack Shakes a Multitude of Poison Projectiles off.",
+		},
+		TextOrder)
+		)
+
+		table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "HeavyRangedForkedMinibossCopyTwoDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Reserve Copy: Dire Snakestone",
+			Description = "Your Attack fires {#UpgradeFormat}12 {#Prev}Slowly Targeting Beams.",
+		},
+		TextOrder)
+		)
+
+		table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "HadesCrawlerCopyTwoDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Reserve Copy: Crawler",
+			Description = "Your Attack Bites enemies in front.",
+		},
+		TextOrder)
+		)
+
+		table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "HadesCrawlerMiniBossCopyTwoDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Reserve Copy: King Vermin",
+			Description = "Your Attack Charges forward and Bites enemies in front.",
+		},
+		TextOrder)
+		)
+		
+		table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "HadesOneCopyTwoDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Reserve Copy: Hades Cast",
+			Description = "Your Attack fires a Homing Skull. Foes embedded with skulls are afflicted with {$Keywords.KirbyBoilingBlood}. Left Alone, the skull will Explode, causing a Shockwave.",
+		},
+		TextOrder)
+		)
+
+		table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "HadesTwoCopyTwoDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Reserve Copy: Hades Urns",
+			Description = "Your Attack fires a Summons {#UpgradeFormat}6 {#Prev}Soul Urns that burst upon damage.",
+		},
+		TextOrder)
+		)
+
+		table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "CharonOneCopyTwoDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Reserve Copy: Charon Oar Swipe",
+			Description = "Your Attack Swipes to the left.",
+		},
+		TextOrder)
+		)
+
+		table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "CharonOneCopyTwoDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Reserve Copy: Charon Wave",
+			Description = "Your Attack fire a Wave Projectile.",
+		},
+		TextOrder)
+		)
+	end
 
 	--Quests
 	table.insert(data.Texts, sjson.to_object(
@@ -1797,9 +3414,9 @@ sjson.hook(file, function(data)
 
 	table.insert(data.Texts, sjson.to_object(
 	{
-      Id = "Quest_Kirby_above",
+      Id = "Quest_Kirby_behind",
       DisplayName = "Seen All Behind",
-      Description = "The daughter of the god of the dead shall dream witnessing the {#Emph}Abilities {#Prev}of all {#Emph}Subjects in her Father's Domain{#Prev}."
+      Description = "The daughter of the god of the dead shall dream of {#Emph}Imitating {#Prev} the {#Emph}Abilities {#Prev}of all {#Emph}Subjects in her Father's Domain{#Prev}."
 	},
 	TextOrder)
 	)

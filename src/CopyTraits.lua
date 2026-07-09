@@ -8018,6 +8018,60 @@ if ZagreusJourney then
 			},
 		},
 
+		TheseusTwoCopyDisplayBoon = 
+		{
+			Icon = "JarlUlsfark-Tools_of_the_Trade_ZJcompat\\Theseus2Icon",
+			ShowInHUD = true,
+			CustomLabel = 
+			{
+				DisplayType = "RoomValue",
+				Key = "Copy_TheseusTwo",
+				Text = "Copy_EmptyText"
+			},
+			PropertyChanges = 
+			{
+				{
+					WeaponName = "WeaponLob",
+					WeaponProperty = "Projectile",
+					ChangeValue = "TheseusSpearSpin",
+				},
+				{
+					WeaponName = "WeaponLob",
+					WeaponProperties = 
+					{
+						Cooldown = 1.0,
+						FizzleOldSpawns = false,
+						SelfVelocity = 400,
+						BlockMoveInput = true,
+						CancelMovement = true,
+					},
+					ExcludeLinked = true,
+				},
+				{
+					WeaponName = "WeaponLob",
+					ProjectileName = "TheseusSpearSpin",
+					ProjectileProperties = 
+					{
+						Damage = (170 * BiomeCScaling),
+					},
+					ExcludeLinked = true,
+				},
+			},
+			FlavorText = "CopyAbility_FlavorText",
+		},
+
+		TheseusTwoCopyTwoDisplayBoon = 
+		{
+			Icon = "JarlUlsfark-Tools_of_the_Trade_ZJcompat\\Theseus2Icon",
+			ShowInHUD = true,
+			CustomLabel = 
+			{
+				DisplayType = "RoomValue",
+				Key = "Copy_TheseusTwo2",
+				Text = "Copy_2nd"
+			},
+		},
+
 		SatyrRangedCopyDisplayBoon = 
 		{
 			Icon = "JarlUlsfark-Tools_of_the_Trade_ZJcompat\\SatyrRangedIcon",
@@ -8413,7 +8467,7 @@ if ZagreusJourney then
 
 		HadesCrawlerCopyDisplayBoon = 
 		{
-			Icon = "JarlUlsfark-Tools_of_the_Trade\\HadesCrawlerIcon",
+			Icon = "JarlUlsfark-Tools_of_the_Trade_ZJcompat\\HadesCrawlerIcon",
 			ShowInHUD = true,
 			CustomLabel = 
 			{
@@ -8458,7 +8512,7 @@ if ZagreusJourney then
 
 		HadesCrawlerCopyTwoDisplayBoon = 
 		{
-			Icon = "JarlUlsfark-Tools_of_the_Trade\\HadesCrawlerIcon",
+			Icon = "JarlUlsfark-Tools_of_the_Trade_ZJcompat\\HadesCrawlerIcon",
 			ShowInHUD = true,
 			CustomLabel = 
 			{
@@ -8468,9 +8522,9 @@ if ZagreusJourney then
 			},
 		},
 
-		HadesCrawlerMinibossCopyDisplayBoon = 
+		HadesCrawlerMiniBossCopyDisplayBoon = 
 		{
-			Icon = "JarlUlsfark-Tools_of_the_Trade\\HadesCrawlerMinibossIcon",
+			Icon = "JarlUlsfark-Tools_of_the_Trade_ZJcompat\\HadesCrawlerMinibossIcon",
 			ShowInHUD = true,
 			CustomLabel = 
 			{
@@ -8513,9 +8567,9 @@ if ZagreusJourney then
 			FlavorText = "CopyAbility_FlavorText",
 		},
 
-		HadesCrawlerMinibossCopyTwoDisplayBoon = 
+		HadesCrawlerMiniBossCopyTwoDisplayBoon = 
 		{
-			Icon = "JarlUlsfark-Tools_of_the_Trade\\HadesCrawlerMinibossIcon",
+			Icon = "JarlUlsfark-Tools_of_the_Trade_ZJcompat\\HadesCrawlerMinibossIcon",
 			ShowInHUD = true,
 			CustomLabel = 
 			{
@@ -8623,7 +8677,7 @@ if ZagreusJourney then
 				},	
 				{
 					WeaponName = "WeaponLob",
-					ProjectileName = "HadesCastPlayer",
+					ProjectileName = "FishSwarmerBite",
 					ProjectileProperties = 
 					{
 						Damage = (0 * BiomeDScaling),
@@ -8657,6 +8711,109 @@ if ZagreusJourney then
 			{
 				DisplayType = "RoomValue",
 				Key = "Copy_HadesTwo2",
+				Text = "Copy_2nd"
+			},
+		},
+
+		CharonOneCopyDisplayBoon = 
+		{
+			Icon = "JarlUlsfark-Tools_of_the_Trade_ZJcompat\\CharonIcon",
+			ShowInHUD = true,
+			CustomLabel = 
+			{
+				DisplayType = "RoomValue",
+				Key = "Copy_CharonOne",
+				Text = "Copy_EmptyText"
+			},
+			PropertyChanges = 
+			{
+			{
+					WeaponName = "WeaponLob",
+					WeaponProperty = "Projectile",
+					ChangeValue = "CharonMeleeArcRight",
+				},
+				{
+					WeaponName = "WeaponLob",
+					WeaponProperties = 
+					{
+						Cooldown = 1.5,
+						FizzleOldSpawns = false,
+						FireFx = "CharonArcRight",
+					},
+					ExcludeLinked = true,
+				},	
+				{
+					WeaponName = "WeaponLob",
+					ProjectileName = "CharonMeleeArcRight",
+					ProjectileProperties = 
+					{
+						Damage = (500 * BiomeDScaling),
+					},
+					ExcludeLinked = true,
+				},		
+			},
+			FlavorText = "CopyAbility_FlavorText",
+		},
+
+		CharonOneCopyTwoDisplayBoon = 
+		{
+			Icon = "JarlUlsfark-Tools_of_the_Trade_ZJcompat\\CharonIcon",
+			ShowInHUD = true,
+			CustomLabel = 
+			{
+				DisplayType = "RoomValue",
+				Key = "Copy_Charon2",
+				Text = "Copy_2nd"
+			},
+		},
+
+		CharonTwoCopyDisplayBoon = 
+		{
+			Icon = "JarlUlsfark-Tools_of_the_Trade_ZJcompat\\Charon2Icon",
+			ShowInHUD = true,
+			CustomLabel = 
+			{
+				DisplayType = "RoomValue",
+				Key = "Copy_CharonOne",
+				Text = "Copy_EmptyText"
+			},
+			PropertyChanges = 
+			{
+			{
+					WeaponName = "WeaponLob",
+					WeaponProperty = "Projectile",
+					ChangeValue = "CharonWave",
+				},
+				{
+					WeaponName = "WeaponLob",
+					WeaponProperties = 
+					{
+						Cooldown = 1,
+						FizzleOldSpawns = false,
+					},
+					ExcludeLinked = true,
+				},	
+				{
+					WeaponName = "WeaponLob",
+					ProjectileName = "CharonWave",
+					ProjectileProperties = 
+					{
+						Damage = (250 * BiomeDScaling),
+					},
+					ExcludeLinked = true,
+				},		
+			},
+			FlavorText = "CopyAbility_FlavorText",
+		},
+
+		CharonTwoCopyTwoDisplayBoon = 
+		{
+			Icon = "JarlUlsfark-Tools_of_the_Trade_ZJcompat\\Charon2Icon",
+			ShowInHUD = true,
+			CustomLabel = 
+			{
+				DisplayType = "RoomValue",
+				Key = "Copy_Charon2",
 				Text = "Copy_2nd"
 			},
 		},

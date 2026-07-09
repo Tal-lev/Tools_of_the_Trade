@@ -4,9 +4,9 @@ table.insert( QuestOrderData, "Quest_Tools_Trade_Clear")
 table.insert( QuestOrderData, "Quest_Tools_Trade_HammersTaken")
 table.insert( QuestOrderData, "Quest_Kirby_below")
 table.insert( QuestOrderData, "Quest_Kirby_above")
---if ZagreusJourney then
---    table.insert( QuestOrderData, "Quest_Kirby_behind")
---end
+if ZagreusJourney then
+    table.insert( QuestOrderData, "Quest_Kirby_behind")
+end
 
 OverwriteTableKeys( QuestData, {
     Quest_Tools_Trade_Clear =
@@ -440,6 +440,177 @@ OverwriteTableKeys( QuestData, {
                     "TyphonTailCopyDisplayBoon",
                     "TyphonEyeCopyDisplayBoon",
                     "TyphonHeadOneCopyDisplayBoon",
+				},
+			},
+		},
+
+		CashedOutVoiceLines =
+		{
+			{
+				PreLineWait = 0.4,
+				GameStateRequirements =
+				{
+					{
+					},
+				},
+				Cooldowns =
+				{
+					{ Name = "MorosProphecyFulfilledSpeech", Time = 3 },
+				},
+				SkipAnim = true,
+				RequiredSourceValueFalse = "InPartnerConversation",
+				ObjectType = "NPC_Moros_01",
+
+				{ Cue = "/VO/Moros_0216", Text = "A necessary step along your path." },
+			},
+		},
+	},
+
+     Quest_Kirby_behind =
+	{
+		InheritFrom = { "DefaultQuestItem", "DefaultUnseenQuest" },
+		RewardResourceName = "MetaCurrency",
+		RewardResourceAmount = 2500,
+		UnlockGameStateRequirements =
+		{
+			{
+				Path = { "GameState", "TraitsTaken" },
+				CountOf =
+				{
+                         --Tartarus H1
+                         "HadesSwarmerCopyDisplayBoon",
+                         "LightSpawnerCopyDisplayBoon",
+                         "PunchingBagUnitCopyDisplayBoon",
+                         "HadesLightRangedCopyDisplayBoon",
+                         "HeavyRangedCopyDisplayBoon",
+                         "HeavyMeleeCopyDisplayBoon",
+                         "HadesThiefMineLayerCopyDisplayBoon",
+                         "DisembodiedHandCopyDisplayBoon",
+                         "HeavyRangedSplitterMinibossCopyDisplayBoon",
+                         "WretchAssassinMinibossCopyDisplayBoon",
+                         "HarpyOneCopyDisplayBoon",
+                         "HarpytwoOneCopyDisplayBoon",
+                         "HarpythreeOneCopyDisplayBoon",
+                         
+                         --Asphodel
+                         "BloodlessNakedCopyDisplayBoon",
+                         "BloodlessGrenadierCopyDisplayBoon",
+                         "BloodlessSelfDestructCopyDisplayBoon",
+                         "BloodlessPitcherCopyDisplayBoon",
+                         "BloodlessWaveFistCopyDisplayBoon",
+                         "SpreadShotUnitCopyDisplayBoon",
+                         "RangedBurrowerCopyDisplayBoon",
+                         "CrusherUnitCopyDisplayBoon",
+                         "FreezeShotUnitCopyDisplayBoon",
+                         "HitAndRunUnitCopyDisplayBoon",
+                         "SpreadShotUnitMinibossCopyDisplayBoon",
+                         "HydraHeadDartmakerCopyDisplayBoon",
+                         "HydraHeadLavamakerCopyDisplayBoon",
+                         "HydraHeadSummonerCopyDisplayBoon",
+                         "HydraHeadWavemakerCopyDisplayBoon",
+                         "HydraHeadSlammerCopyDisplayBoon",
+
+                         --Elysium
+                         "ShadeNakedCopyDisplayBoon",
+                         "ShadeSpearUnitCopyDisplayBoon",
+                         "ShadeSwordUnitCopyDisplayBoon",
+                         "ShadeShieldUnitCopyDisplayBoon",
+                         "ShadeBowUnitCopyDisplayBoon",
+                         "FlurrySpawnerCopyDisplayBoon",
+                         "ChariotSuicideCopyDisplayBoon",
+                         "ChariotCopyDisplayBoon",
+                         "SplitShotUnitCopyDisplayBoon",
+                         "MinotaurOneCopyDisplayBoon",
+                         "TheseusOneCopyDisplayBoon",
+                         "TheseusTwoCopyDisplayBoon",
+                         
+                         --Styx
+                         "SatyrRangedCopyDisplayBoon",
+                         "RatThugCopyDisplayBoon",
+                         "HadesCrawlerCopyDisplayBoon",
+                         --"HadesThiefImpulseMineLayerCopyDisplayBoon",
+                         "HeavyRangedForkedCopyDisplayBoon",
+                         "SatyrRangedMinibossCopyDisplayBoon",
+                         "RatThugMinibossCopyDisplayBoon",
+                         "HadesCrawlerMiniBossCopyDisplayBoon",
+                         "HeavyRangedForkedMinibossCopyDisplayBoon",
+                         "HadesOneCopyDisplayBoon",
+                         "HadesTwoCopyDisplayBoon",
+                         "CharonOneCopyDisplayBoon",
+                         "CharonTwoCopyDisplayBoon",
+
+				},
+				Comparison = ">=",
+				Value = 2,
+			},
+		},
+		CompleteGameStateRequirements =
+		{
+			{
+				Path = { "GameState", "TraitsTaken" },
+				HasAll =
+				{
+                         --Tartarus H1
+                         "HadesSwarmerCopyDisplayBoon",
+                         "LightSpawnerCopyDisplayBoon",
+                         "PunchingBagUnitCopyDisplayBoon",
+                         "HadesLightRangedCopyDisplayBoon",
+                         "HeavyRangedCopyDisplayBoon",
+                         "HeavyMeleeCopyDisplayBoon",
+                         "HadesThiefMineLayerCopyDisplayBoon",
+                         "DisembodiedHandCopyDisplayBoon",
+                         "HeavyRangedSplitterMinibossCopyDisplayBoon",
+                         "WretchAssassinMinibossCopyDisplayBoon",
+                         "HarpyOneCopyDisplayBoon",
+                         "HarpytwoOneCopyDisplayBoon",
+                         "HarpythreeOneCopyDisplayBoon",
+                         
+                         --Asphodel
+                         "BloodlessNakedCopyDisplayBoon",
+                         "BloodlessGrenadierCopyDisplayBoon",
+                         "BloodlessSelfDestructCopyDisplayBoon",
+                         "BloodlessPitcherCopyDisplayBoon",
+                         "BloodlessWaveFistCopyDisplayBoon",
+                         "SpreadShotUnitCopyDisplayBoon",
+                         "RangedBurrowerCopyDisplayBoon",
+                         "CrusherUnitCopyDisplayBoon",
+                         "FreezeShotUnitCopyDisplayBoon",
+                         "HitAndRunUnitCopyDisplayBoon",
+                         "SpreadShotUnitMinibossCopyDisplayBoon",
+                         "HydraHeadDartmakerCopyDisplayBoon",
+                         "HydraHeadLavamakerCopyDisplayBoon",
+                         "HydraHeadSummonerCopyDisplayBoon",
+                         "HydraHeadWavemakerCopyDisplayBoon",
+                         "HydraHeadSlammerCopyDisplayBoon",
+
+                         --Elysium
+                         "ShadeNakedCopyDisplayBoon",
+                         "ShadeSpearUnitCopyDisplayBoon",
+                         "ShadeSwordUnitCopyDisplayBoon",
+                         "ShadeShieldUnitCopyDisplayBoon",
+                         "ShadeBowUnitCopyDisplayBoon",
+                         "FlurrySpawnerCopyDisplayBoon",
+                         "ChariotSuicideCopyDisplayBoon",
+                         "ChariotCopyDisplayBoon",
+                         "SplitShotUnitCopyDisplayBoon",
+                         "MinotaurOneCopyDisplayBoon",
+                         "TheseusOneCopyDisplayBoon",
+                         "TheseusTwoCopyDisplayBoon",
+                         
+                         --Styx
+                         "SatyrRangedCopyDisplayBoon",
+                         "RatThugCopyDisplayBoon",
+                         "HadesCrawlerCopyDisplayBoon",
+                         --"HadesThiefImpulseMineLayerCopyDisplayBoon",
+                         "HeavyRangedForkedCopyDisplayBoon",
+                         "SatyrRangedMinibossCopyDisplayBoon",
+                         "RatThugMinibossCopyDisplayBoon",
+                         "HadesCrawlerMiniBossCopyDisplayBoon",
+                         "HeavyRangedForkedMinibossCopyDisplayBoon",
+                         "HadesOneCopyDisplayBoon",
+                         "HadesTwoCopyDisplayBoon",
+                         "CharonOneCopyDisplayBoon",
+                         "CharonTwoCopyDisplayBoon",
 				},
 			},
 		},

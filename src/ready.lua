@@ -1171,7 +1171,11 @@ function mod.CopyAbility (victim, functionArgs, triggerArgs)
 			Changed = "MinotaurOne"
 			Location = "ElysiumModsNikkelMHadesBiomes"
 		elseif victim.Name == "Theseus" then
-			Changed = "TheseusOne"
+			if math.random() < 0.5 then
+				Changed = "TheseusOne"
+			else
+				Changed = "TheseusTwo"
+			end
 			Location = "ElysiumModsNikkelMHadesBiomes"
 		elseif victim.Name == "SatyrRanged" or victim.Name == "SatyrRangedElite" then
 			Changed = "SatyrRanged"
@@ -1191,6 +1195,9 @@ function mod.CopyAbility (victim, functionArgs, triggerArgs)
 		elseif victim.Name == "RatThugMiniboss" then
 			Changed = "RatThugMiniboss"
 			Location = "StyxModsNikkelMHadesBiomes"
+		elseif victim.Name == "HadesCrawlerMiniBoss" then
+			Changed = "HadesCrawlerMiniBoss"
+			Location = "BiomeG"
 		elseif victim.Name == "HeavyRangedForkedMiniboss" then
 			Changed = "HeavyRangedForkedMiniboss"
 			Location = "TartarusModsNikkelMHadesBiomes"
@@ -1201,6 +1208,14 @@ function mod.CopyAbility (victim, functionArgs, triggerArgs)
 			else
 				Changed = "HadesTwo"
 				Location = "BiomeI"
+			end
+		elseif victim.Name == "Charon" then
+			if math.random() < 0.5 then
+				Changed = "CharonOne"
+				Location = "CharonModsNikkelMHadesBiomes"
+			else
+				Changed = "CharonTwo"
+				Location = "CharonModsNikkelMHadesBiomes"
 			end
 		end
 	end
