@@ -204,3 +204,5 @@
 - Dire Satyr Cultist
 - Dire Gigantic Vermin
 - Dire Snakestone
+- Hades
+  - Cast
