@@ -209,3 +209,5 @@
 - Hades
   - Cast
   - Urns
+- Charon
+  - Oar Swipe
