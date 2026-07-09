@@ -8461,5 +8461,90 @@ if ZagreusJourney then
 				Text = "Copy_2nd"
 			},
 		},
+
+		HadesTwoCopyDisplayBoon = 
+		{
+			Icon = "JarlUlsfark-Tools_of_the_Trade_ZJcompat\\Hades2Icon",
+			ShowInHUD = true,
+			RarityLevels =
+			{
+				Common =
+				{
+					Multiplier = 1.00,
+				},
+				Rare =
+				{
+					Multiplier = 1.5,
+				},
+				Epic =
+				{
+					Multiplier = 2.0,
+				},
+				Heroic =
+				{
+					Multiplier = 2.5,
+				},
+			},
+			CustomLabel = 
+			{
+				DisplayType = "RoomValue",
+				Key = "Copy_HadesOne",
+				Text = "Copy_EmptyText"
+			},
+			PropertyChanges = 
+			{
+			{
+					WeaponName = "WeaponLob",
+					WeaponProperty = "Projectile",
+					ChangeValue = "FishSwarmerBite",
+				},
+				{
+					WeaponName = "WeaponLob",
+					WeaponProperties = 
+					{
+						Cooldown = 1,
+						FizzleOldSpawns = false,
+					},
+					ExcludeLinked = true,
+				},	
+				{
+					WeaponName = "WeaponLob",
+					ProjectileName = "HadesCastPlayer",
+					ProjectileProperties = 
+					{
+						Damage = (0 * BiomeDScaling),
+					},
+					ExcludeLinked = true,
+				},		
+			},
+			OnWeaponFiredFunctions = 
+			{
+				ValidWeapons = { "WeaponLob" },
+				FunctionName = _PLUGIN.guid .. "." .. "CheckManaUrn",
+				FunctionArgs = 
+				{
+					ManaCost = 1,
+					EnemyName = "HadesTombstone",
+					Count = 6,
+				}
+			},
+		TombstoneMultiplier = 
+		{
+			BaseValue = 1,
+		},
+			FlavorText = "CopyAbility_FlavorText",
+		},
+
+		HadesTwoCopyTwoDisplayBoon = 
+		{
+			Icon = "JarlUlsfark-Tools_of_the_Trade_ZJcompat\\Hades2Icon",
+			ShowInHUD = true,
+			CustomLabel = 
+			{
+				DisplayType = "RoomValue",
+				Key = "Copy_HadesTwo2",
+				Text = "Copy_2nd"
+			},
+		},
 	})
 end

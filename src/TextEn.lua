@@ -1721,7 +1721,17 @@ sjson.hook(file, function(data)
 			Id = "HadesOneCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: Hades Cast",
-			Description = "Your Attack fires a {#UpgradeFormat}Homing Skull {#Prev}that embedds into an enemy making it {#UpgradeFormat}Vulnerable{#Prev}. {#UpgradeFormat}Left Alone {#Prev}the Skull will {#UpgradeFormat}Explode {#Prev}causing a {#UpgradeFormat}Shockwave{#Prev}.",
+			Description = "Your Attack fires a {#UpgradeFormat}Homing Skull {#Prev}that embeds into an enemy making it {#UpgradeFormat}Vulnerable{#Prev}. {#UpgradeFormat}Left Alone {#Prev}the Skull will {#UpgradeFormat}Explode {#Prev}causing a {#UpgradeFormat}Shockwave{#Prev}.",
+		},
+		TextOrder)
+		)
+
+		table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "HadesTwoCopyDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Copy: Hades Urns",
+			Description = "Your Attack fires a {#UpgradeFormat}Summons 6 Soul Urns {#Prev}that burst upon damage.",
 		},
 		TextOrder)
 		)

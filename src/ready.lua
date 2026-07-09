@@ -1192,8 +1192,13 @@ function mod.CopyAbility (victim, functionArgs, triggerArgs)
 			Changed = "HeavyRangedForkedMiniboss"
 			Location = "TartarusModsNikkelMHadesBiomes"
 		elseif victim.Name == "Hades" then
+			if math.random() < 0.5 then
 			Changed = "HadesOne"
 			Location = "StyxModsNikkelMHadesBiomes"
+			else
+				Changed = "HadesTwo"
+				Location = "BiomeI"
+			end
 		end
 	end
 	if Changed ~= "null" then

@@ -175,3 +175,23 @@ function mod.CastEmbeddedPresentationStart( victim )
 	thread( InCombatText, victim.ObjectId, "HitByHadesAmmo", 0.8, {OffsetY = -60} )
 
 end
+
+--For urns
+function mod.CheckManaUrn( weaponData, functionArgs, triggerArgs )
+	IncrementTableValue( SessionMapState, "UrnCounter", math.abs(functionArgs.Count))
+	if SessionMapState.UrnCounter >= functionArgs.ManaCost then
+		if SessionMapState.ManaUrnIds ~= nil then
+			for id in pairs(SessionMapState.ManaUrnIds) do
+				if ActiveEnemies[id] then
+					thread( Kill, ActiveEnemies[id] )
+				end
+			end
+		end
+		SessionMapState.ManaUrnIds = {}
+		local count = functionArgs.Count or 6
+		for i=1, count do
+			thread( CreateManaUrn, functionArgs, i )
+		end
+		SessionMapState.UrnCounter = 0
+	end
+end
