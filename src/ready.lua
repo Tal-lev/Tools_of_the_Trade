@@ -1179,6 +1179,9 @@ function mod.CopyAbility (victim, functionArgs, triggerArgs)
 		elseif victim.Name == "RatThug" or victim.Name == "RatThugElite" then
 			Changed = "RatThug"
 			Location = "StyxModsNikkelMHadesBiomes"
+		elseif victim.Name == "HadesCrawler" or victim.Name == "HadesCrawlerElite" then
+			Changed = "HadesCrawler"
+			Location = "BiomeI"
 		elseif victim.Name == "HeavyRangedForked" or victim.Name == "HeavyRangedForkedElite" then
 			Changed = "HeavyRangedForked"
 			Location = "TartarusModsNikkelMHadesBiomes"

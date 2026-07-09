@@ -1718,6 +1718,26 @@ sjson.hook(file, function(data)
 
 		table.insert(data.Texts, sjson.to_object(
 		{
+			Id = "HadesCrawlerCopyDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Copy: Crawler",
+			Description = "Your Attack {#UpgradeFormat}Bites {#Prev}enemies in front.",
+		},
+		TextOrder)
+		)
+
+		table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "HadesCrawlerMiniBossCopyDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Copy: King Vermin",
+			Description = "Your Attack {#UpgradeFormat}Charges {#Prev}forward and {#UpgradeFormat}Bites {#Prev}enemies in front.",
+		},
+		TextOrder)
+		)
+		
+		table.insert(data.Texts, sjson.to_object(
+		{
 			Id = "HadesOneCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: Hades Cast",

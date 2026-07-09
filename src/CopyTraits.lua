@@ -6,7 +6,7 @@ local BiomeCScaling = 0.7
 
 local BiomeAScaling = 1
 local BiomeBScaling = 1
-local BiomeDScaling = 1
+local BiomeDScaling = 0.6
 
 local ZagreusJourney = rom.mods['NikkelM-Zagreus_Journey']
 
@@ -8407,6 +8407,120 @@ if ZagreusJourney then
 			{
 				DisplayType = "RoomValue",
 				Key = "Copy_HeavyRangedForkedMiniboss2",
+				Text = "Copy_2nd"
+			},
+		},
+
+		HadesCrawlerCopyDisplayBoon = 
+		{
+			Icon = "JarlUlsfark-Tools_of_the_Trade\\HadesCrawlerIcon",
+			ShowInHUD = true,
+			CustomLabel = 
+			{
+				DisplayType = "RoomValue",
+				Key = "Copy_HadesCrawler",
+				Text = "Copy_EmptyText"
+			},
+			PropertyChanges = 
+			{
+			{
+					WeaponName = "WeaponLob",
+					WeaponProperty = "Projectile",
+					ChangeValue = "CrawlerRush",
+				},
+				{
+					WeaponName = "WeaponLob",
+					WeaponProperties = 
+					{
+						Cooldown = 0.2,
+						BlockMoveInput = true,
+						CancelMovement = true,
+						FizzleOldSpawns = true,
+						AutoLock = true,
+						BarrelLength = 150,
+						AutoLockRange = 300,
+						SelfVelocity = 900,
+					},
+					ExcludeLinked = true,
+				},
+				{
+					WeaponName = "WeaponLob",
+					ProjectileName = "CrawlerRush",
+					ProjectileProperties = 
+					{
+						Damage = (30 * BiomeDScaling),
+					},
+					ExcludeLinked = true,
+				},
+			},
+			FlavorText = "CopyAbility_FlavorText",
+		},
+
+		HadesCrawlerCopyTwoDisplayBoon = 
+		{
+			Icon = "JarlUlsfark-Tools_of_the_Trade\\HadesCrawlerIcon",
+			ShowInHUD = true,
+			CustomLabel = 
+			{
+				DisplayType = "RoomValue",
+				Key = "Copy_HadesCrawler2",
+				Text = "Copy_2nd"
+			},
+		},
+
+		HadesCrawlerMinibossCopyDisplayBoon = 
+		{
+			Icon = "JarlUlsfark-Tools_of_the_Trade\\HadesCrawlerMinibossIcon",
+			ShowInHUD = true,
+			CustomLabel = 
+			{
+				DisplayType = "RoomValue",
+				Key = "Copy_HadesCrawlerMiniboss",
+				Text = "Copy_EmptyText"
+			},
+			PropertyChanges = 
+			{
+			{
+					WeaponName = "WeaponLob",
+					WeaponProperty = "Projectile",
+					ChangeValue = "CrawlerMinibossRush",
+				},
+				{
+					WeaponName = "WeaponLob",
+					WeaponProperties = 
+					{
+						Cooldown = 0.4,
+						BlockMoveInput = true,
+						CancelMovement = true,
+						FizzleOldSpawns = true,
+						AutoLock = true,
+						BarrelLength = 150,
+						AutoLockRange = 300,
+						SelfVelocity = 1400,
+					},
+					ExcludeLinked = true,
+				},
+				{
+					WeaponName = "WeaponLob",
+					ProjectileName = "CrawlerMinibossRush",
+					ProjectileProperties = 
+					{
+						Damage = (220 * BiomeDScaling),
+					},
+					ExcludeLinked = true,
+				},
+			},
+			FlavorText = "CopyAbility_FlavorText",
+		},
+
+		HadesCrawlerMinibossCopyTwoDisplayBoon = 
+		{
+			Icon = "JarlUlsfark-Tools_of_the_Trade\\HadesCrawlerMinibossIcon",
+			ShowInHUD = true,
+			CustomLabel = 
+			{
+				DisplayType = "RoomValue",
+				Key = "Copy_HadesCrawlerMiniboss2",
 				Text = "Copy_2nd"
 			},
 		},
