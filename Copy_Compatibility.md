@@ -195,6 +195,7 @@
   - Crescent Strike
 - Theseus
   - Spear Throw
+  - Spear Spin
 
 ### Styx (Unreleased)
 
