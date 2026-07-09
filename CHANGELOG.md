@@ -12,7 +12,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - ThiefMineLayer
   - Lovesick
   - Treant2
-- 50 Implemented ZJ copy abilities.
+- 51 Implemented ZJ copy abilities.
   - HadesSwarmer
   - LightSpawner
   - PunchingBagUnit
@@ -54,6 +54,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
     - Cresent Strike
   - Theseus
     - Spear Throw
+    - Spear Spin
   - SatyrRanged
   - RatThug
   - HadesCrawler
