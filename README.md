@@ -31,7 +31,7 @@ Adding 2 new Weapon Aspects themed around the Gathering Tools
 - Your Omega Attack creates a nova and places the copied weapon in Reserve until Omega Attack is used again.
 - Trait Increase Omega Attack damage.
 - Introduces four new hammers
-- 150 Implemented Copy Abilities.
+- 151 Implemented Copy Abilities.
 
 [Full Copy Compatibility list](https://github.com/Tal-lev/Tools_of_the_Trade/blob/main/Copy_Compatibility.md)
 
