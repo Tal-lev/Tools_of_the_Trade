@@ -1530,6 +1530,180 @@ local file = rom.path.combine(rom.paths.Content, 'Game/Projectiles/PlayerProject
 			}
 		})
 
+		table.insert(data.Projectiles,
+		{
+		Name = "HadesCastPlayer",
+		InheritFrom = "1_BaseEnemyProjectileReflectable",
+		DetonateGraphic = "null",
+		Type = "HOMING",
+		StartDelay = 0.1,
+		MaxAdjustRate = 70,
+		AffectsEnemies = true,
+		AffectsFriends = false,
+		AffectsSelf = false,
+		CheckUnitImpact = true,
+		CheckObstacleImpact = true,
+		NumPenetrations = 0,
+		Range = 2000.0,
+		Speed = 1250.0,
+		DamageRadius = 0,
+		Damage = 250,
+		CriticalFx = "CriticalHit",
+		HitVulnerabilityFx = "Backstab",
+		CanBeProjectileDefenseDestroyed = false,
+		CanBeProjectileDefenseDestroyedByName = "DionysusField",
+		UseArmor = true,
+		UseVulnerability = false,
+		DissipateFx = "BloodstoneHitFxHades",
+		StartFx = "ProjectileFireRing-Bloodstone",
+		ObstacleCollisionCheck = "PolygonContainsPoint",
+		DangerDistance = 200,
+		Thing = {
+			Graphic = "BloodstoneProjectileHades",
+			OffsetZ = 112,
+			AttachedAnim = "LootShadowPetrifyProjectile",
+			Grip = 999999,
+			RotateGeometry = true,
+			Tallness = 20,
+			Points = {
+				{
+					X = 76,
+					Y = 20,
+				},
+				{
+					X = 76,
+					Y = -20,
+				},
+				{
+					X = -32,
+					Y = -20,
+				},
+				{
+					X = -32,
+					Y = 20,
+				},
+			},	
+		},
+		Effect = {
+			Name = "OnHitStun",
+			Duration = 0.2,
+			DisableMove = true,
+			DisableRotate = true,
+			DisableAttack = false,
+			Active = true,
+			CanAffectInvulnerable = false,
+			Cancelable = true,
+		},
+		})
+
+		table.insert(data.Projectiles,
+		{
+			Name = "HadesAmmoDropPlayer",
+			InheritFrom = "1_BaseEnemyProjectile",
+			ReflectFx = null,
+			DetonateFx = "HadesFootstepSnowSpray",
+			DetonateSound = "null",
+			Type = "LOB",
+			Damage = 0,
+			DamageRadius = 0.0,
+			AutoAdjustForTarget = false,
+			Speed = 650,
+			SpeedVariance = 150,
+			MaxSpeed = 1575.0,
+			LaunchAngle = 50,
+			SpinRate = 0,
+			MinRange = 0.0,
+			ImpactVelocity = 0.0,
+			AffectsFriends = false,
+			AffectsSelf = false,
+			CheckUnitImpact = false,
+			CheckObstacleImpact = true,
+			SpawnOnDetonate = "HadesAmmoPlayer",
+			CanBeReflected = false,
+			SpawnType = "UNIT",
+			DangerDistance = 0,
+			Thing = {
+				Graphic = "HadesAmmo",
+				Scale = 1,
+				OffsetZ = 101,
+				AttachedAnim = "LootShadowHydraTooth",
+				Points = {
+					{
+						X = 0,
+						Y = 24,
+					},
+					{
+						X = 24,
+						Y = 0,
+					},
+					{
+						X = 0,
+						Y = -24,
+					},
+					{
+						X = -24,
+						Y = 0,
+					},
+				},
+			},
+		})
+    
+		table.insert(data.Projectiles,
+		{
+			Name = "HadesAmmoWeaponPlayer",
+			InheritFrom = "1_BaseEnemyProjectile",
+			DetonateFx = "HadesCastNovaHit",
+			Type = "STRAIGHT",
+			DetonateSound = "null",
+			Fuse = 0.0,
+			CanBeReflected = false,
+			CanBeProjectileDefenseDestroyed = false,
+			AffectsEnemies = true,
+			AffectsFriends = true,
+			Range = 1.0,
+			DamageRadius = 1600,
+			DamageRadiusScaleY = 0.5,
+			BlastSpeed = 875,
+			NumPenetrations = 9999,
+			AffectsSelf = false,
+			CheckUnitImpact = true,
+			CheckObstacleImpact = false,
+			UnlimitedUnitPenetration = true,
+			ResetCollisionOutsideDetonation = true,
+			HollowBlastRadiusBand = 40,
+			DangerDistance = 200,
+			Damage = 200,
+			ImpactVelocity = 0,
+			CriticalFx = "CriticalHit",
+			HitVulnerabilityFx = "Backstab",
+			UseArmor = false,
+			UseVulnerability = false,
+			Thing = {
+				Graphic = "HadesAmmoPushRing",
+				Grip = 999999,
+			},
+			Effects = {
+				{
+				Name = "RushGrip",
+				Type = "GRIP",
+				Duration = 0.3,
+				Modifier = 0.9,
+				HaltOnEnd = true,
+				Active = true,
+				},
+				{
+				Name = "OnHitStun",
+				Duration = 0.3,
+				DisableMove = true,
+				DisableRotate = true,
+				DisableAttack = false,
+				Active = true,
+				CanAffectInvulnerable = true,
+				Cancelable = true,
+				},
+			},
+    	})
+
 	end
 
 			
@@ -1633,6 +1807,30 @@ if ZagreusJourney then
 		HadesImpulseMineTossplayer = 
 		{
 
+		},
+
+		HadesCastPlayer = 
+		{
+			CarriesSpawns = true,
+			SpawnName = "HadesAmmoPlayer",
+			AmmoDropProjectile = "HadesAmmoDropPlayer",
+			StoredAmmoIcon = "AmmoEmbeddedInPlayerIcon",
+			--OnDeathFunctionName = "NikkelM-Zagreus_Journey.ModsNikkelMHadesBiomesHandleHadesCastDeath",
+			OnDeathFunctionName = "JarlUlsfark-Tools_of_the_Trade.ModsNikkelMHadesBiomesHandleHadesCastDeath_Kirbymod",
+			AmmoDropDelay = 2.5,
+			StoredAmmoVulnerabilityMultiplier = 2
+		},
+
+		HadesAmmoWeaponPlayer =
+		{
+			ImpactReactionHitsOverride = 1,
+
+			HitScreenshake = { Distance = 3, Speed = 1000, Duration = 0.08, FalloffSpeed = 3000 },
+			HitSimSlowParameters =
+			{
+				{ ScreenPreWait = 0.02, Fraction = 0.01, LerpTime = 0 },
+				{ ScreenPreWait = 0.08, Fraction = 1.0,  LerpTime = 0 },
+			},
 		},
 	})
 end

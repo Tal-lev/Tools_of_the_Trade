@@ -1191,6 +1191,9 @@ function mod.CopyAbility (victim, functionArgs, triggerArgs)
 		elseif victim.Name == "HeavyRangedForkedMiniboss" then
 			Changed = "HeavyRangedForkedMiniboss"
 			Location = "TartarusModsNikkelMHadesBiomes"
+		elseif victim.Name == "Hades" then
+			Changed = "HadesOne"
+			Location = "StyxModsNikkelMHadesBiomes"
 		end
 	end
 	if Changed ~= "null" then
@@ -1846,7 +1849,9 @@ import "TextEn.lua"
 
 modutil.once_loaded.game(function()
 	
-
+	if ZagreusJourney then
+		import "hadescast_function.lua"
+	end
 	import "CopyTraitGodVFX.lua"
 	import "CopyProjectiles.lua"
 	import "CopyUnits.lua"

@@ -8410,5 +8410,56 @@ if ZagreusJourney then
 				Text = "Copy_2nd"
 			},
 		},
+
+		HadesOneCopyDisplayBoon = 
+		{
+			Icon = "JarlUlsfark-Tools_of_the_Trade_ZJcompat\\HadesIcon",
+			ShowInHUD = true,
+			CustomLabel = 
+			{
+				DisplayType = "RoomValue",
+				Key = "Copy_HadesOne",
+				Text = "Copy_EmptyText"
+			},
+			PropertyChanges = 
+			{
+			{
+					WeaponName = "WeaponLob",
+					WeaponProperty = "Projectile",
+					ChangeValue = "HadesCastPlayer",
+				},
+				{
+					WeaponName = "WeaponLob",
+					WeaponProperties = 
+					{
+						Cooldown = 1,
+						FizzleOldSpawns = false,
+					},
+					ExcludeLinked = true,
+				},
+				{
+					WeaponName = "WeaponLob",
+					ProjectileName = "HadesCastPlayer",
+					ProjectileProperties = 
+					{
+						Damage = (250 * BiomeDScaling),
+					},
+					ExcludeLinked = true,
+				},				
+			},
+			FlavorText = "CopyAbility_FlavorText",
+		},
+
+		HadesOneCopyTwoDisplayBoon = 
+		{
+			Icon = "JarlUlsfark-Tools_of_the_Trade_ZJcompat\\HadesIcon",
+			ShowInHUD = true,
+			CustomLabel = 
+			{
+				DisplayType = "RoomValue",
+				Key = "Copy_HadesOne2",
+				Text = "Copy_2nd"
+			},
+		},
 	})
 end

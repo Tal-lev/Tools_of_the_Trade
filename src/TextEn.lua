@@ -1715,6 +1715,16 @@ sjson.hook(file, function(data)
 		},
 		TextOrder)
 		)
+
+		table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "HadesOneCopyDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Copy: Hades Cast",
+			Description = "Your Attack fires a {#UpgradeFormat}Homing Skull {#Prev}that embedds into an enemy making it {#UpgradeFormat}Vulnerable{#Prev}. {#UpgradeFormat}Left Alone {#Prev}the Skull will {#UpgradeFormat}Explode {#Prev}causing a {#UpgradeFormat}Shockwave{#Prev}.",
+		},
+		TextOrder)
+		)
 	end
 
 
