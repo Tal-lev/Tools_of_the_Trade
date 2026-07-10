@@ -80,7 +80,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Get All Copy Abilities in Surface route
 - 1 new Hammer
   - Mirror Blast
-- 1 Cosmetic
+- 2 Cosmetics
 - Balance Changes
   - KirbyMel Max Ammo to 20 -> 10
   - Mage-copy
