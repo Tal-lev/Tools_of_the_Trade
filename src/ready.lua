@@ -821,22 +821,22 @@ function mod.CopyAbility (victim, functionArgs, triggerArgs)
 	elseif victim.Name == "Scylla" then
 		Changed = "ScyllaOne"
 		Location = "BiomeG"
-	elseif victim.Name == "BloodlessNaked" or victim.Name == "BloodlessNaked_Elite" or victim.Name =="HadesBloodlessNaked" or victim.Name == "HadesBloodlessNaked_Elite" then
+	elseif victim.Name == "BloodlessNaked" or victim.Name == "BloodlessNaked_Elite" or victim.Name =="HadesBloodlessNaked" or victim.Name == "HadesBloodlessNakedElite" then
 		Changed = "BloodlessNaked"
 		Location = "BiomeB"
-	elseif victim.Name == "BloodlessGrenadier" or victim.Name == "BloodlessGrenadier_Elite" or victim.Name =="HadesBloodlessGrenadier" or victim.Name == "HadesBloodlessGrenadier_Elite" then
+	elseif victim.Name == "BloodlessGrenadier" or victim.Name == "BloodlessGrenadier_Elite" or victim.Name =="HadesBloodlessGrenadier" or victim.Name == "HadesBloodlessGrenadierElite" then
 		Changed = "BloodlessGrenadier"
 		Location = "BiomeB"
-	elseif victim.Name == "BloodlessSelfDestruct" or victim.Name == "BloodlessSelfDestruct_Elite" or victim.Name =="HadesBloodlessSelfDestruct" or victim.Name == "HadesBloodlessSelfDestruct_Elite" then
+	elseif victim.Name == "BloodlessSelfDestruct" or victim.Name == "BloodlessSelfDestruct_Elite" or victim.Name =="HadesBloodlessSelfDestruct" or victim.Name == "HadesBloodlessSelfDestructElite" then
 		Changed = "BloodlessSelfDestruct"
 		Location = "BiomeB"
-	elseif victim.Name == "BloodlessPitcher" or victim.Name == "BloodlessPitcher_Elite" or victim.Name =="HadesBloodlessPitcher" or victim.Name == "HadesBloodlessPitcher_Elite" then
+	elseif victim.Name == "BloodlessPitcher" or victim.Name == "BloodlessPitcher_Elite" or victim.Name =="HadesBloodlessPitcher" or victim.Name == "HadesBloodlessPitcherElite" then
 		Changed = "BloodlessPitcher"
 		Location = "BiomeB"
-	elseif victim.Name == "BloodlessWaveFist" or victim.Name == "BloodlessWaveFist_Elite" or victim.Name =="HadesBloodlessWaveFist" or victim.Name == "HadesBloodlessWaveFist_Elite" then
+	elseif victim.Name == "BloodlessWaveFist" or victim.Name == "BloodlessWaveFist_Elite" or victim.Name =="HadesBloodlessWaveFist" or victim.Name == "HadesBloodlessWaveFistElite" then
 		Changed = "BloodlessWaveFist"
 		Location = "BiomeB"
-	elseif victim.Name == "SpreadShotUnit" or victim.Name == "SpreadShotUnit_Elite" or victim.Name =="HadesSpreadShotUnit" or victim.Name == "HadesSpreadShotUnit_Elite" then
+	elseif victim.Name == "SpreadShotUnit" or victim.Name == "SpreadShotUnit_Elite" or victim.Name =="HadesSpreadShotUnit" or victim.Name == "HadesSpreadShotUnitElite" then
 		Changed = "SpreadShotUnit"
 		Location = "BiomeB"
 	elseif victim.Name == "CorruptedShadeSmall" or victim.Name == "CorruptedShadeSmall_Elite" then
@@ -1092,7 +1092,7 @@ function mod.CopyAbility (victim, functionArgs, triggerArgs)
 		elseif victim.Name == "HadesThiefMineLayer" or victim.Name == "HadesThiefMineLayerElite" then
 			Changed = "HadesThiefMineLayer"
 			Location = "BiomeG"
-		elseif victim.Name == "DisembodiedHand" or victim.Name == "DisembodiedHand_Elite" then
+		elseif victim.Name == "DisembodiedHand" or victim.Name == "DisembodiedHandElite" then
 			Changed = "DisembodiedHand"
 			Location = "TartarusModsNikkelMHadesBiomes"
 		elseif victim.Name == "WretchAssassinMiniboss" then
@@ -1396,9 +1396,11 @@ function mod.KirbyFireAura( weaponData, functionArgs, triggerArgs )
 end
 
 function mod.HandleShadeNakedCopy()
+	local TraitsToRemove = {}
 	if HeroHasTrait("ShadeNakedCopyDisplayBoon") then
 		if HeroHasTrait("ShadeSpearUnitCopyDisplayBoon") or HeroHasTrait("ShadeSwordUnitCopyDisplayBoon") or HeroHasTrait("ShadeShieldUnitCopyDisplayBoon") or HeroHasTrait("ShadeBowUnitCopyDisplayBoon") then
 			for key,value in pairs(CurrentRun.Hero.TraitDictionary) do
+				print("In key,value of traitdictionary")
 				if string.find(key, "CopyDisplayBoon") then
 					if key == "ShadeSpearUnitCopyDisplayBoon" or key == "ShadeSwordUnitCopyDisplayBoon" or key == "ShadeShieldUnitCopyDisplayBoon" or key == "ShadeBowUnitCopyDisplayBoon" then
 						table.insert(TraitsToRemove, 1, key)

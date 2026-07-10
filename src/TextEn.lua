@@ -167,7 +167,7 @@ sjson.hook(file, function(data)
 		Id = "TabletKirbyDoubleAmmoTrait",
 		InheritFrom = "BaseBoonMultiline",
 		DisplayName = "Extended Reflection",
-		Description = "Your {$Keywords.Attack} have {#UpgradeFormat}double {#Prev}{$Keywords.AmmoSupply}.",
+		Description = "Your {$Keywords.Attack} have {#UpgradeFormat}+30 {#Prev}Ammo.",
 	},
 	TextOrder)
 	)
@@ -1201,7 +1201,7 @@ sjson.hook(file, function(data)
 
 	table.insert(data.Texts, sjson.to_object(
 		{
-			Id = "SatyrSapperCopyDisplayBoon",
+			Id = "TalosCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: Talos",
 			Description = "Your Attack throws a Spinning Shield.",
@@ -1261,7 +1261,7 @@ sjson.hook(file, function(data)
 
 	table.insert(data.Texts, sjson.to_object(
 		{
-			Id = "StalkerCopyDisplayBoon",
+			Id = "BruteCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: Horror",
 			Description = "Your Attack transforms into a Horn Charge.",
@@ -1331,7 +1331,7 @@ sjson.hook(file, function(data)
 
 	table.insert(data.Texts, sjson.to_object(
 		{
-			Id = "TyphonHeadCopyDisplayBoon",
+			Id = "TyphonHeadOneCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: Typhon Tongue-Lash",
 			Description = "Your Attack fires a Lashing Tongue of Typhon.",
@@ -1543,7 +1543,7 @@ sjson.hook(file, function(data)
 
 		table.insert(data.Texts, sjson.to_object(
 		{
-			Id = "HydraHeadSummonerCopyDisplayBoon",
+			Id = "HydraHeadWavemakerCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: Hydra Wave",
 			Description = "Your Attack fires {#UpgradeFormat}3 {#Prev}Wave Projectile Side by Side.",
@@ -1663,7 +1663,7 @@ sjson.hook(file, function(data)
 
 		table.insert(data.Texts, sjson.to_object(
 		{
-			Id = "MinotaurOneCopyDisplayBoon",
+			Id = "TheseusOneCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: Theseus Spear Throw",
 			Description = "Your Attack Throws a Spear.",
@@ -1673,7 +1673,7 @@ sjson.hook(file, function(data)
 
 		table.insert(data.Texts, sjson.to_object(
 		{
-			Id = "MinotaurOneCopyDisplayBoon",
+			Id = "TheseusTwoCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: Theseus Spear Spin",
 			Description = "Your Attack Spins a Spear around you.",
@@ -1793,7 +1793,7 @@ sjson.hook(file, function(data)
 
 		table.insert(data.Texts, sjson.to_object(
 		{
-			Id = "CharonOneCopyDisplayBoon",
+			Id = "CharonTwoCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: Charon Wave",
 			Description = "Your Attack fire a Wave Projectile.",
@@ -2774,7 +2774,7 @@ sjson.hook(file, function(data)
 
 	table.insert(data.Texts, sjson.to_object(
 		{
-			Id = "SatyrSapperCopyTwoDisplayBoon",
+			Id = "TalosCopyTwoDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Reserve Copy: Talos",
 			Description = "Your Attack throws a Spinning Shield.",
@@ -2834,7 +2834,7 @@ sjson.hook(file, function(data)
 
 	table.insert(data.Texts, sjson.to_object(
 		{
-			Id = "StalkerCopyTwoDisplayBoon",
+			Id = "BruteCopyTwoDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Reserve Copy: Horror",
 			Description = "Your Attack transforms into a Horn Charge.",
@@ -2904,7 +2904,7 @@ sjson.hook(file, function(data)
 
 	table.insert(data.Texts, sjson.to_object(
 		{
-			Id = "TyphonHeadCopyTwoDisplayBoon",
+			Id = "TyphonHeadOneCopyTwoDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Reserve Copy: Typhon Tongue-Lash",
 			Description = "Your Attack fires a Lashing Tongue of Typhon.",
@@ -3116,7 +3116,7 @@ sjson.hook(file, function(data)
 
 		table.insert(data.Texts, sjson.to_object(
 		{
-			Id = "HydraHeadSummonerCopyTwoDisplayBoon",
+			Id = "HydraHeadWavemakerCopyTwoDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Reserve Copy: Hydra Wave",
 			Description = "Your Attack fires {#UpgradeFormat}3 {#Prev}Wave Projectile Side by Side.",
@@ -3236,7 +3236,7 @@ sjson.hook(file, function(data)
 
 		table.insert(data.Texts, sjson.to_object(
 		{
-			Id = "MinotaurOneCopyTwoDisplayBoon",
+			Id = "TheseusOneCopyTwoDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Reserve Copy: Theseus Spear Throw",
 			Description = "Your Attack Throws a Spear.",
@@ -3246,7 +3246,7 @@ sjson.hook(file, function(data)
 
 		table.insert(data.Texts, sjson.to_object(
 		{
-			Id = "MinotaurOneCopyTwoDisplayBoon",
+			Id = "TheseusTwoCopyTwoDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Reserve Copy: Theseus Spear Spin",
 			Description = "Your Attack Spins a Spear around you.",
@@ -3366,7 +3366,7 @@ sjson.hook(file, function(data)
 
 		table.insert(data.Texts, sjson.to_object(
 		{
-			Id = "CharonOneCopyTwoDisplayBoon",
+			Id = "CharonTwoCopyTwoDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Reserve Copy: Charon Wave",
 			Description = "Your Attack fire a Wave Projectile.",
