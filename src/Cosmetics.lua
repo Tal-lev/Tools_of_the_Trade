@@ -59,3 +59,82 @@ for _, cosmeticData in ipairs(mainHubAreaCosmetics) do
 
 	CosmeticsAPI.RegisterCosmetic(cosmeticData)
 end
+
+-- #YM Aspect Pack
+CosmeticsAPI.RegisterCardBackPack({
+	Id = _PLUGIN.guid .. "." .. "Cosmetic_Arcana_TotTAspects",
+	Name = {
+		en = "Arcana, Gathering Tools",
+	},
+	Description = {
+		en =
+		"{$Keywords.CosmeticDeck}: Set of {#UpgradeFormatDark}4 {#Prev}alternate themes, featuring the Gathering Tools.",
+	},
+	FlavorText = {
+		en =
+		"Humble Tools in the right hands can topple titans and fell mountains.",
+	},
+	IconPath = "JarlUlsfark-Tools_of_the_Trade_Cosmetics\\ArcanaBackSet",
+	Cost = {
+		CosmeticsPoints = 2500,
+		--ModsNikkelMHadesBiomes_PlantAsphodel = 2,
+		--ModsNikkelMHadesBiomes_CropElysium = 2,
+		--ModsNikkelMHadesBiomes_OreStyx = 4,
+
+	},
+	GameStateRequirements = {
+		{
+			PathTrue = { "GameState", "WorldUpgradesAdded", "Cosmetic_CardDeck01" },
+		},
+		{
+				Path = { "GameState", "WeaponsUnlocked", },
+				HasAll = { 
+                    "WeaponAxe", "ShovelRaiseDeadNecroMel", 
+                    "WeaponLob", "TabletofPeaceKirbyMel",
+                },
+        },
+	},
+	InsertAfterCosmetic = "Cosmetic_CardDeck02",
+	PreRevealVoiceLines = {
+		Queue = "Interrupt",
+		{
+			PreLineWait = 0.35,
+			UsePlayerSource = true,
+			{ Cue = "/VO/Melinoe_5281", Text = "Time to retrace my steps..." },
+		},
+		{ GlobalVoiceLines = "DoraCosmeticReactionVoiceLines" },
+	},
+})
+
+CosmeticsAPI.RegisterCardBack({
+	Id = _PLUGIN.guid .. "." .. "Cosmetic_Arcana_TotT_Tablet",
+	PackId = _PLUGIN.guid .. "." .. "Cosmetic_Arcana_TotTAspects",
+	DeckArtPath = "JarlUlsfark-Tools_of_the_Trade_Cosmetics\\ArcanaBackTabletNotSel",
+	DeckArtMouseoverPath = "JarlUlsfark-Tools_of_the_Trade_Cosmetics\\ArcanaBackTabletYesSel",
+	CardBackPath = "JarlUlsfark-Tools_of_the_Trade_Cosmetics\\ArcanaBackTablet",
+})
+
+CosmeticsAPI.RegisterCardBack({
+	Id = _PLUGIN.guid .. "." .. "Cosmetic_Arcana_TotT_Shovel",
+	PackId = _PLUGIN.guid .. "." .. "Cosmetic_Arcana_TotTAspects",
+	DeckArtPath = "JarlUlsfark-Tools_of_the_Trade_Cosmetics\\ArcanaBackShovelNotSel",
+	DeckArtMouseoverPath = "JarlUlsfark-Tools_of_the_Trade_Cosmetics\\ArcanaBackShovelYesSel",
+	CardBackPath = "JarlUlsfark-Tools_of_the_Trade_Cosmetics\\ArcanaBackShovel",
+})
+
+CosmeticsAPI.RegisterCardBack({
+	Id = _PLUGIN.guid .. "." .. "Cosmetic_Arcana_TotT_Copies",
+	PackId = _PLUGIN.guid .. "." .. "Cosmetic_Arcana_TotTAspects",
+	DeckArtPath = "JarlUlsfark-Tools_of_the_Trade_Cosmetics\\ArcanaBackCopiesNotSel",
+	DeckArtMouseoverPath = "JarlUlsfark-Tools_of_the_Trade_Cosmetics\\ArcanaBackCopiesYesSel",
+	CardBackPath = "JarlUlsfark-Tools_of_the_Trade_Cosmetics\\ArcanaBackCopies",
+})
+
+
+CosmeticsAPI.RegisterCardBack({
+	Id = _PLUGIN.guid .. "." .. "Cosmetic_Arcana_TotT_Zombie",
+	PackId = _PLUGIN.guid .. "." .. "Cosmetic_Arcana_TotTAspects",
+	DeckArtPath = "JarlUlsfark-Tools_of_the_Trade_Cosmetics\\ArcanaBackZombieNotSel",
+	DeckArtMouseoverPath = "JarlUlsfark-Tools_of_the_Trade_Cosmetics\\ArcanaBackZombieYesSel",
+	CardBackPath = "JarlUlsfark-Tools_of_the_Trade_Cosmetics\\ArcanaBackZombie",
+})
