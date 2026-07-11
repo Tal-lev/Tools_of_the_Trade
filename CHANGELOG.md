@@ -75,11 +75,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Chronos - Time Stasis
   - Zagreus - Spear Spin
   - Eris - Laser
-- 4 Minor Prophecies added
+- 5 Minor Prophecies added
   - Clear with both tools
   - Get the 8 new hammers
   - Get All Copy Abilities in Underworld route
   - Get All Copy Abilities in Surface route
+  - Get All Copy Abilities in the Zagreus Journey route
 - 1 new Hammer
   - Mirror Blast
 - 2 Cosmetics
