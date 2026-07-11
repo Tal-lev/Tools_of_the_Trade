@@ -949,6 +949,9 @@ function mod.CopyAbility (victim, functionArgs, triggerArgs)
 	elseif victim.Name == "Mudman" or victim.Name == "Mudman_Elite" or victim.Name == "Mudman2" then
 		Changed = "Mudman"
 		Location = "BiomeN"
+	elseif victim.Name == "SoulPylon" then
+		Changed = "SoulPylon"
+		Location = "BiomeN"
 	elseif victim.Name == "ZombieSpawner" or victim.Name == "ZombieSpawner_Elite" then
 		Changed = "ZombieSpawner"
 		Location = "BiomeN"
@@ -1535,6 +1538,9 @@ modutil.mod.Path.Wrap("Kill", function(base, victim, triggerArgs)
 end)
 
 ModUtil.Path.Wrap("Damage", function(baseFunc, victim, triggerArgs)
+	print("!!!!!!!!!!!!!!!")
+	print("victim.Name")
+	print(victim.Name)
 	--For Apollo Double attack boon, which is buggy
 	--local originaltriggerArgs = triggerArgs
 	--For Stupid Sheep!

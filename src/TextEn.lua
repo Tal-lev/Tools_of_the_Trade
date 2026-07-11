@@ -981,10 +981,20 @@ sjson.hook(file, function(data)
 
 	table.insert(data.Texts, sjson.to_object(
 		{
+			Id = "SoulPylonCopyDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Copy: Soul Pylon",
+			Description = "Your Attack Summons {#UpgradeFormat}3 {#Prev} Shades.",
+		},
+		TextOrder)
+	)
+
+	table.insert(data.Texts, sjson.to_object(
+		{
 			Id = "BoarCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: Erymanthian Boar",
-			Description = "Your Attack Stomps  the ground creating a Shockwave in all directions.",
+			Description = "Your Attack Stomps the ground creating a Shockwave in all directions.",
 		},
 		TextOrder)
 	)
@@ -2574,10 +2584,20 @@ sjson.hook(file, function(data)
 
 	table.insert(data.Texts, sjson.to_object(
 		{
+			Id = "SoulPylonCopyTwoDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Reserve Copy: Soul Pylon",
+			Description = "Your Attack Summons {#UpgradeFormat}3 {#Prev} Shades.",
+		},
+		TextOrder)
+	)
+
+	table.insert(data.Texts, sjson.to_object(
+		{
 			Id = "BoarCopyTwoDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Reserve Copy: Erymanthian Boar",
-			Description = "Your Attack Stomps  the ground creating a Shockwave in all directions.",
+			Description = "Your Attack Stomps the ground creating a Shockwave in all directions.",
 		},
 		TextOrder)
 	)

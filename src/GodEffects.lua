@@ -928,6 +928,15 @@ AddGodTraitProperty({
             ChangeType = "Absolute",
             ExcludeLinked = true,
         }, 
+        --SoulPylon
+		{
+            WeaponName = "WeaponLob",
+            ProjectileName = "SoulPylonSpiritball",
+            ProjectileProperty = "Graphic",
+            ValuePrefix = "GhostProjectileAnim_",
+            ChangeType = "Absolute",
+            ExcludeLinked = true,
+        }, 
 		--Boar
 		{
             WeaponName = "WeaponLob",

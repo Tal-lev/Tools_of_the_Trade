@@ -4148,6 +4148,66 @@ OverwriteTableKeys( TraitData, {
 		},
 	},
 
+	SoulPylonCopyDisplayBoon = 
+	{
+		Icon = "JarlUlsfark-Tools_of_the_Trade\\SoulPylonIcon",
+		ShowInHUD = true,
+		CustomLabel = 
+		{
+			DisplayType = "RoomValue",
+			Key = "Copy_SoulPylon",
+			Text = "Copy_EmptyText"
+		},
+        PropertyChanges = 
+        {
+           {
+				WeaponName = "WeaponLob",
+				WeaponProperty = "Projectile",
+				ChangeValue = "SoulPylonSpiritball",
+			},
+            {
+				WeaponName = "WeaponLob",
+				WeaponProperties = 
+                {
+                    Cooldown = 1.5,
+					FizzleOldSpawns = false,
+					NumProjectiles = 3,
+					FireInterval = 0.01,
+					ProjectileAngleOffset = math.rad(120),
+
+                },
+                ExcludeLinked = true,
+			},
+            {
+                WeaponName = "WeaponLob",
+                ProjectileName = "SoulPylonSpiritball",
+                ProjectileProperties = 
+				{
+					Damage = 50,
+					AffectsEnemies = true,
+					TargetRequiredKillEnemy = true,
+					IgnoreInvulnerable = true,		
+					FireAlliedToPlayer = true,
+					TargetGroups = { "GroundEnemies", "FlyingEnemies" },
+				},
+				ExcludeLinked = true,
+            },
+        },
+		FlavorText = "CopyAbility_FlavorText",
+	},
+
+	SoulPylonTwoDisplayBoon = 
+	{
+		Icon = "JarlUlsfark-Tools_of_the_Trade\\SoulPylonIcon",
+		ShowInHUD = true,
+		CustomLabel = 
+		{
+			DisplayType = "RoomValue",
+			Key = "Copy_SoulPylon2",
+			Text = "Copy_2nd"
+		},
+	},
+
 	BoarCopyDisplayBoon = 
 	{
 		Icon = "JarlUlsfark-Tools_of_the_Trade\\BoarIcon",
@@ -6185,7 +6245,6 @@ OverwriteTableKeys( TraitData, {
                     Cooldown = 1.1,
 					FizzleOldSpawns = true,
 					BarrelLength = 0,
-
                 },
                 ExcludeLinked = true,
 			},
