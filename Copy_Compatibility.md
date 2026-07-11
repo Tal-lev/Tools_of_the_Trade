@@ -86,6 +86,7 @@
 - Eidolon
 - Eye-dolon
 - Tombstone
+- Soul Pylon
 - Erymanthian Boar
 - Satyr Champion
 - Black Sheep
