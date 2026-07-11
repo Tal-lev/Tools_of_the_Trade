@@ -7,10 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-- 5 implemented enemies for copy
+- 6 implemented enemies for copy
   - Treant
   - ThiefMineLayer
   - Lovesick
+  - Mourner
   - Treant2
   - TyphonEgg
 - 51 Implemented ZJ copy abilities.
