@@ -136,6 +136,7 @@
 - Twins of Typhon
 - Tail of Typhon
 - Eye of Typhon
+- Egg of Typhon
 - Typhon
   - Tongue-Lash
  
