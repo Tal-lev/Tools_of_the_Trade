@@ -47,6 +47,7 @@
 - Smacker
 - Dread-Wailer
 - Holeheart
+- Mourner
 - Brush-Stalker Tail
 - Brush-Stalker
 - Canine
