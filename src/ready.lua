@@ -785,7 +785,7 @@ function mod.CopyAbility (victim, functionArgs, triggerArgs)
 	elseif victim.Name == "FishSwarmer" or victim.Name == "FishSwarmer_Elite" then
 		Changed = "FishSwarmer"
 		Location = "BiomeG"
-	elseif victim.Name == "FishmanMelee" or victim.Name == "FishmanMelee_Elite" then	
+	elseif victim.Name == "FishmanMelee" or victim.Name == "FishmanMelee_Elite" or victim.Name == "FishmanMelee2" then	
 		Changed = "FishmanMelee"
 		Location = "BiomeG"
 	elseif victim.Name == "FishmanRanged" or victim.Name == "FishmanRanged_Elite" then
@@ -800,7 +800,7 @@ function mod.CopyAbility (victim, functionArgs, triggerArgs)
 	elseif victim.Name == "Jellyfish" or victim.Name == "Jellyfish_Elite" then
 		Changed = "Jellyfish"
 		Location = "BiomeG"
-	elseif victim.Name == "Octofish" or victim.Name == "Octofish_Elite" then
+	elseif victim.Name == "Octofish" or victim.Name == "Octofish_Elite" or victim.Name == "Octofish_SuperElite" then
 		Changed = "Octofish"
 		Location = "BiomeG"
 	elseif victim.Name == "CrawlerMiniboss" then
@@ -854,46 +854,46 @@ function mod.CopyAbility (victim, functionArgs, triggerArgs)
 	elseif victim.Name == "BrokenHearted" or victim.Name == "BrokenHearted_Elite" then
 		Changed = "BrokenHearted"
 		Location = "BiomeH"
-	elseif victim.Name == "LycanSwarmer" or victim.Name == "LycanSwarmer_Elite" then
+	elseif victim.Name == "LycanSwarmer" or victim.Name == "LycanSwarmer_Elite" or victim.Name == "LycanSwarmer2" then
 		Changed = "LycanSwarmer"
 		Location = "BiomeH"
 	elseif victim.Name == "Lycanthrope" or victim.Name == "Lycanthrope_Elite" then
 		Changed = "Lycanthrope"
 		Location = "BiomeH"
-	elseif victim.Name == "Screamer2" or victim.Name == "Screamer2_Elite" then	
+	elseif victim.Name == "Screamer2" or victim.Name == "Screamer2_Elite" or victim.Name == "Screamer2_SuperElite" then	
 		Changed = "Screamertwo"
 		Location = "BiomeH"
-	elseif victim.Name == "TreantTail2" or victim.Name == "TreantTail2_Elite" then
+	elseif victim.Name == "TreantTail2" or victim.Name == "TreantTail2_Elite" or victim.Name == "Treant2Tail_SuperElite" then
 		Changed = "TreantTailtwo"
 		Location = "BiomeH"
-	elseif victim.Name == "Treant2" or victim.Name == "Treant2_Elite" then
+	elseif victim.Name == "Treant2" or victim.Name == "Treant2_Elite" or victim.Name == "Treant2_SuperElite" then
 		Changed = "Treanttwo"
 		Location = "BiomeH"
-	elseif victim.Name == "Lamia" or victim.Name == "Lamia_Elite" then
+	elseif victim.Name == "Lamia" or victim.Name == "Lamia_Elite" or victim.Name == "Lamia_SuperElite" then
 		Changed = "Lamia"
 		Location = "BiomeH"
 	elseif victim.Name == "Lamia_Miniboss"then
 		Changed = "Lamia_Miniboss"
 		Location = "BiomeH"
-	elseif victim.Name == "Vampire" or victim.Name == "Vampire_Elite" then
+	elseif victim.Name == "Vampire" or victim.Name == "Vampire_Elite" or victim.Name == "Vampire_SuperElite" then
 		Changed = "Vampire"
 		Location = "BiomeH"
 	elseif victim.Name == "InfestedCerberus" then
 		Changed = "InfestedCerberusOne"
 		Location = "BiomeH"
-	--elseif victim.Name == "Mourner" or victim.Name == "Mourner_Elite" then
-	--	Changed = "Mourner"	
-	--	Location = "BiomeH"
+	elseif victim.Name == "Mourner" or victim.Name == "Mourner_Elite" then
+		Changed = "Mourner"	
+		Location = "BiomeH"
 	elseif victim.Name == "Lovesick" then
 		Changed = "Lovesick"	
 		Location = "BiomeH"
 	elseif victim.Name == "SwarmerClockwork" or victim.Name == "SwarmerClockwork_Elite" then
 		Changed = "SwarmerClockwork"
 		Location = "BiomeI"
-	elseif victim.Name == "ClockworkHeavyMelee" or victim.Name == "ClockworkHeavyMelee_Elite" then
+	elseif victim.Name == "ClockworkHeavyMelee" or victim.Name == "ClockworkHeavyMelee_Elite" or victim.Name == "ClockworkHeavyMelee_SuperElite" then
 		Changed = "ClockworkHeavyMelee"
 		Location = "BiomeI"
-	elseif victim.Name == "GoldElemental" or victim.Name == "GoldElemental_Elite" then
+	elseif victim.Name == "GoldElemental" or victim.Name == "GoldElemental_Elite" or victim.Name == "GoldElemental_SuperElite" then
 		Changed = "GoldElemental"
 		Location = "BiomeI"
 	elseif victim.Name == "GoldElemental_MiniBoss" then
@@ -905,7 +905,7 @@ function mod.CopyAbility (victim, functionArgs, triggerArgs)
 	elseif victim.Name == "SatyrLancer" or victim.Name == "SatyrLancer_Elite" then
 		Changed = "SatyrLancer"
 		Location = "BiomeI"
-	elseif victim.Name == "SatyrRatCatcher" or victim.Name == "SatyrRatCatcher_Elite" then
+	elseif victim.Name == "SatyrRatCatcher" or victim.Name == "SatyrRatCatcher_Elite" or victim.Name == "SatyrRatCatcher_SuperElite" then
 		Changed = "SatyrRatCatcher"
 		Location = "BiomeI"
 	elseif victim.Name == "SatyrRatCatcher_Miniboss" then
@@ -943,16 +943,16 @@ function mod.CopyAbility (victim, functionArgs, triggerArgs)
 	elseif victim.Name == "ZombieAssassin" or victim.Name == "ZombieAssassin_Elite" then
 		Changed = "ZombieAssassin"
 		Location = "BiomeN"
-	elseif victim.Name == "MudmanEye" or victim.Name == "MudmanEye_Elite" then
+	elseif victim.Name == "MudmanEye" or victim.Name == "MudmanEye_Elite" or victim.Name == "MudmanEye2" then
 		Changed = "MudmanEye"
 		Location = "BiomeN"
-	elseif victim.Name == "Mudman" or victim.Name == "Mudman_Elite" then
+	elseif victim.Name == "Mudman" or victim.Name == "Mudman_Elite" or victim.Name == "Mudman2" then
 		Changed = "Mudman"
 		Location = "BiomeN"
 	elseif victim.Name == "ZombieSpawner" or victim.Name == "ZombieSpawner_Elite" then
 		Changed = "ZombieSpawner"
 		Location = "BiomeN"
-	elseif victim.Name == "Boar" or victim.Name == "MiniBossBoar" then
+	elseif victim.Name == "Boar" or victim.Name == "MiniBossBoar" or victim.Name == "Boar_SuperElite" then
 		Changed = "Boar"
 		Location = "BiomeN"
 	elseif victim.Name == "SatyrCrossbow" then
@@ -991,7 +991,7 @@ function mod.CopyAbility (victim, functionArgs, triggerArgs)
 	elseif victim.Name == "Mage2" or victim.Name == "Mage2_Elite" then
 		Changed = "Magetwo"
 		Location = "BiomeO"
-	elseif victim.Name == "Captain" or victim.Name == "MiniBossCaptain" then
+	elseif victim.Name == "Captain" or victim.Name == "MiniBossCaptain" or victim.Name == "Captain_SuperElite" then
 		Changed = "Captain"
 		Location = "BiomeO"
 	elseif victim.Name == "CharybdisTentacle" or victim.Name == "CharybdisTentacle_Elite" then
@@ -1037,13 +1037,13 @@ function mod.CopyAbility (victim, functionArgs, triggerArgs)
 	elseif victim.Name == "Prometheus" then
 		Changed = "PrometheusOne"
 		Location = "BiomeP"
-	elseif victim.Name == "Simple" or victim.Name == "Simple_Elite" then
+	elseif victim.Name == "Simple" or victim.Name == "Simple_Elite" or victim.Name == "Simple2" then
 		Changed = "Simple"
 		Location = "BiomeQ"
 	elseif victim.Name == "Stalker" or victim.Name == "Stalker_Elite" then
 		Changed = "Stalker"
 		Location = "BiomeQ"
-	elseif victim.Name == "Brute" or victim.Name == "Brute_Elite" then
+	elseif victim.Name == "Brute" or victim.Name == "Brute_Elite" or victim.Name == "Brute2" then
 		Changed = "Brute"
 		Location = "BiomeQ"
 	elseif victim.Name == "Mati" or victim.Name == "Mati_Elite" then
@@ -1067,6 +1067,9 @@ function mod.CopyAbility (victim, functionArgs, triggerArgs)
 	elseif victim.Name == "TyphonEye" then
 		Changed = "TyphonEye"
 		Location = "BiomeQ"
+	elseif victim.Name == "TyphonHeadEgg01" or victim.Name == "TyphonHeadEgg02" or victim.Name == "TyphonHeadEgg03" or victim.Name == "TyphonHeadEgg04" or victim.Name == "TyphonHeadEgg05" then
+			Changed = "TyphonEgg"
+			Location = "BiomeQ"
 	elseif victim.Name == "TyphonHead" then
 		Changed = "TyphonHeadOne"
 		Location = "BiomeQEnding"
@@ -1240,6 +1243,8 @@ function mod.CopyAbility (victim, functionArgs, triggerArgs)
 		wait(0.1)
 		if HeroHasTrait("ShadeNakedCopyDisplayBoon") then
 			mod.HandleShadeNakedCopy()
+		elseif HeroHasTrait("TyphonEggCopyDisplayBoon") then
+			mod.HandleTyphonEggCopy()
 		end
 	end
 end
@@ -1298,6 +1303,8 @@ function mod.ReleaseCopyAbility ( triggerArgs, functionArgs )
 	wait(0.1)
 	if HeroHasTrait("ShadeNakedCopyDisplayBoon") then
 		mod.HandleShadeNakedCopy()
+	elseif HeroHasTrait("TyphonEggCopyDisplayBoon") then
+		mod.HandleTyphonEggCopy()
 	end
 end
 
@@ -1412,6 +1419,29 @@ function mod.HandleShadeNakedCopy()
 			end
 		end
 		local ShadeOptions = {"ShadeSpearUnitCopyDisplayBoon", "ShadeSwordUnitCopyDisplayBoon", "ShadeShieldUnitCopyDisplayBoon", "ShadeBowUnitCopyDisplayBoon"}
+		local RandomIndex = math.random(#ShadeOptions)
+		local ChosenOption = ShadeOptions[RandomIndex]
+		AddTraitToHero({TraitName = ChosenOption})
+	end
+end
+
+function mod.HandleTyphonEggCopy()
+	local TraitsToRemove = {}
+	if HeroHasTrait("TyphonEggCopyDisplayBoon") then
+		if HeroHasTrait("SimpleCopyDisplayBoon") or HeroHasTrait("StalkerCopyDisplayBoon") or HeroHasTrait("BruteCopyDisplayBoon") then
+			for key,value in pairs(CurrentRun.Hero.TraitDictionary) do
+				print("In key,value of traitdictionary")
+				if string.find(key, "CopyDisplayBoon") then
+					if key == "SimpleCopyDisplayBoon" or key == "StalkerCopyDisplayBoon" or key == "BruteCopyDisplayBoon" then
+						table.insert(TraitsToRemove, 1, key)
+					end
+				end
+			end
+			for key,value in pairs(TraitsToRemove) do
+				RemoveTrait(CurrentRun.Hero, value)
+			end
+		end
+		local ShadeOptions = {"SimpleCopyDisplayBoon", "StalkerCopyDisplayBoon", "BruteCopyDisplayBoon"}
 		local RandomIndex = math.random(#ShadeOptions)
 		local ChosenOption = ShadeOptions[RandomIndex]
 		AddTraitToHero({TraitName = ChosenOption})

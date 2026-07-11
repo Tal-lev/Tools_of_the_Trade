@@ -607,6 +607,15 @@ AddGodTraitProperty({
             ChangeType = "Absolute",
             ExcludeLinked = true,
         }, 
+        --Mourner
+		{
+            WeaponName = "WeaponLob",
+            ProjectileName = "MournerRampage",
+            ProjectileProperty = "Graphic",
+            ValuePrefix = "MournerPunchFx_",
+            ChangeType = "Absolute",
+            ExcludeLinked = true,
+        }, 
 		--Screamer2
 		{
             WeaponName = "WeaponLob",

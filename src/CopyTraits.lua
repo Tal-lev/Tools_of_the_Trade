@@ -395,7 +395,13 @@ OverwriteTableKeys( TraitData, {
 		},
         PropertyChanges = 
         {
-           {
+        	{
+				UnitProperty = "Speed",
+				BaseValue = 1.2,
+				SourceIsMultiplier = true,
+				ChangeType = "Multiply",
+			},
+			{
 				WeaponName = "WeaponLob",
 				WeaponProperty = "Projectile",
 				ChangeValue = "ScreamerCone",
@@ -2237,6 +2243,12 @@ OverwriteTableKeys( TraitData, {
         PropertyChanges = 
         {
            {
+				UnitProperty = "Speed",
+				BaseValue = 1.2,
+				SourceIsMultiplier = true,
+				ChangeType = "Multiply",
+			},
+			{
 				WeaponName = "WeaponLob",
 				WeaponProperty = "Projectile",
 				ChangeValue = "ScreamerConeLarge",
@@ -2413,11 +2425,10 @@ OverwriteTableKeys( TraitData, {
                     Cooldown = 2,
 					AttachToOwner = true,
 					Type = "GUN",
-					ChargeSelfVelocity = -2000,
 					RootOwnerWhileFiring = false,
-					SelfVelocity = 1200,
+					SelfVelocity = 400,
 					BarrelLength = -30,
-					NumProjectiles = 20,
+					NumProjectiles = 10,
 					ProjectileInterval = 0.11,
 					Spread = 0,
 					FireProjectileStartDelay = 0.03,
@@ -5587,6 +5598,12 @@ OverwriteTableKeys( TraitData, {
         PropertyChanges = 
         {
            {
+				UnitProperty = "Speed",
+				BaseValue = 1.2,
+				SourceIsMultiplier = true,
+				ChangeType = "Multiply",
+			},
+			{
 				WeaponName = "WeaponLob",
 				WeaponProperty = "Projectile",
 				ChangeValue = "SimpleLocust",
@@ -6118,6 +6135,31 @@ OverwriteTableKeys( TraitData, {
 			Text = "Copy_2nd"
 		},
 	},
+
+	TyphonEggCopyDisplayBoon = 
+		{
+			Icon = "JarlUlsfark-Tools_of_the_Trade\\TyphonEggIcon",
+			ShowInHUD = true,
+			CustomLabel = 
+			{
+				DisplayType = "RoomValue",
+				Key = "Copy_ShadeNaked",
+				Text = "Copy_EmptyText"
+			},
+			FlavorText = "CopyAbility_FlavorText",
+		},
+
+	TyphonEggCopyTwoDisplayBoon = 
+		{
+			Icon = "JarlUlsfark-Tools_of_the_Trade\\TyphonEggIcon",
+			ShowInHUD = true,
+			CustomLabel = 
+			{
+				DisplayType = "RoomValue",
+				Key = "Copy_TyphonEgg2",
+				Text = "Copy_2nd"
+			},
+		},
 
 	TyphonHeadOneCopyDisplayBoon = 
 	{
