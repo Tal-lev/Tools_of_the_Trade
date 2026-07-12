@@ -7831,6 +7831,65 @@ if ZagreusJourney then
 			},
 		},
 
+		ShieldRangedCopyDisplayBoon = 
+		{
+			Icon = "JarlUlsfark-Tools_of_the_Trade_ZJcompat\\ShieldRangedIcon",
+			ShowInHUD = true,
+			CustomLabel = 
+			{
+				DisplayType = "RoomValue",
+				Key = "Copy_ShieldRanged",
+				Text = "Copy_EmptyText"
+			},
+			PropertyChanges = 
+			{
+			{
+					WeaponName = "WeaponLob",
+					WeaponProperty = "Projectile",
+					ChangeValue = "FishSwarmerBite",
+				},
+				{
+					WeaponName = "WeaponLob",
+					WeaponProperties = 
+					{
+						Cooldown = 0.5,
+						FizzleOldSpawns = false,
+					},
+					ExcludeLinked = true,
+				},
+				{
+					WeaponName = "WeaponLob",
+					ProjectileName = "FishSwarmerBite",
+					ProjectileProperties = 
+					{
+						Damage = (0 * BiomeCScaling),
+					},
+					ExcludeLinked = true,
+				},
+			},
+			OnWeaponFiredFunctions = {
+					ValidWeapons = { "WeaponLob" },
+					FunctionName = _PLUGIN.guid .. "." .. "KirbyAddArmor",
+					FunctionArgs = 
+					{
+						armorGained = 2,
+					},
+			},
+			FlavorText = "CopyAbility_FlavorText",
+		},
+
+		ShieldRangedCopyTwoDisplayBoon = 
+		{
+			Icon = "JarlUlsfark-Tools_of_the_Trade_ZJcompat\\ShieldRangedIcon",
+			ShowInHUD = true,
+			CustomLabel = 
+			{
+				DisplayType = "RoomValue",
+				Key = "Copy_ShieldRanged2",
+				Text = "Copy_2nd"
+			},
+		},
+
 		FlurrySpawnerCopyDisplayBoon = 
 		{
 			Icon = "JarlUlsfark-Tools_of_the_Trade_ZJcompat\\FlurrySpawnerIcon",

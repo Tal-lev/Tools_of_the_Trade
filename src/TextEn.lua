@@ -1653,6 +1653,16 @@ sjson.hook(file, function(data)
 
 		table.insert(data.Texts, sjson.to_object(
 		{
+			Id = "ShieldRangedCopyDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Copy: Voidstone",
+			Description = "Your Attack adds {#UpgradeFormat}2 {#Prev} {$Keywords.Armor}. Up to {#UpgradeFormat}20 {#Prev} per Location.",
+		},
+		TextOrder)
+		)
+
+		table.insert(data.Texts, sjson.to_object(
+		{
 			Id = "FlurrySpawnerCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: Soul Catcher",
@@ -3260,6 +3270,16 @@ sjson.hook(file, function(data)
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Reserve Copy: Strongbow",
 			Description = "Your Attack shoots a Fast Arrow.",
+		},
+		TextOrder)
+		)
+
+		table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "ShieldRangedCopyTwoDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Reserve Copy: Voidstone",
+			Description = "Your Attack adds {#UpgradeFormat}2 {#Prev} {$Keywords.Armor}. Up to {#UpgradeFormat}20 {#Prev} per Location.",
 		},
 		TextOrder)
 		)

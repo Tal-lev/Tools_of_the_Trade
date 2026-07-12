@@ -1165,6 +1165,9 @@ function mod.CopyAbility (victim, functionArgs, triggerArgs)
 		elseif victim.Name == "ShadeBowUnit" or victim.Name == "ShadeBowUnitElite" then
 			Changed = "ShadeBowUnit"
 			Location = "ElysiumModsNikkelMHadesBiomes"
+		elseif victim.Name == "ShieldRanged" or victim.Name == "ShieldRangedElite" then
+			Changed = "ShieldRanged"
+			Location = "ElysiumModsNikkelMHadesBiomes"
 		elseif victim.Name == "FlurrySpawner" or victim.Name == "FlurrySpawnerElite" then
 			Changed = "FlurrySpawner"
 			Location = "ElysiumModsNikkelMHadesBiomes"
@@ -1459,6 +1462,14 @@ function mod.HandleTyphonEggCopy()
 	end
 end
 
+function mod.KirbyAddArmor(weaponData, functionArgs, triggerArgs)
+	local trait = GetHeroTrait("TabletofPeaceKirbyMel")
+	if trait.CopyArmorLocation < 20 then
+		trait.CopyArmorLocation = trait.CopyArmorLocation + functionArgs.armorGained
+		AddArmor(functionArgs.armorGained)
+	end
+end
+
 modutil.mod.Path.Wrap("LeaveRoom", function(base, currentRun, exitDoor)
 	if HeroHasTrait("ShovelRaiseDeadNecroMel") then
 		local trait = GetHeroTrait("ShovelRaiseDeadNecroMel")
@@ -1467,6 +1478,9 @@ modutil.mod.Path.Wrap("LeaveRoom", function(base, currentRun, exitDoor)
 		end
 		trait.AttackSummons = 0
 		trait.CurrentlyReserved = 0
+	elseif HeroHasTrait("TabletofPeaceKirbyMel") then
+		local trait = GetHeroTrait("TabletofPeaceKirbyMel")
+		trait.CopyArmorLocation = 0
 	end
 	return base(currentRun, exitDoor)
 end)
@@ -2132,6 +2146,7 @@ modutil.once_loaded.game(function()
 		SecondAmmo = 10,
 		SecondCopy = "DummyCopyDisplayBoon",
 		SecondLocation = "null",
+		CopyArmorLocation = 0,
 		OnEnemyDamagedAction = 
 		{
 			ValidWeapons = {"WeaponLob"},
