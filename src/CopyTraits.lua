@@ -6273,6 +6273,58 @@ OverwriteTableKeys( TraitData, {
 		},
 	},
 
+	TyphonHeadTwoCopyDisplayBoon = 
+	{
+		Icon = "JarlUlsfark-Tools_of_the_Trade\\TyphonHead2Icon",
+		ShowInHUD = true,
+		CustomLabel = 
+		{
+			DisplayType = "RoomValue",
+			Key = "Copy_TyphonHeadtwo",
+			Text = "Copy_EmptyText"
+		},
+        PropertyChanges = 
+        {
+           {
+				WeaponName = "WeaponLob",
+				WeaponProperty = "Projectile",
+				ChangeValue = "TyphonRamHorn",
+			},
+            {
+				WeaponName = "WeaponLob",
+				WeaponProperties = 
+                {
+                    Cooldown = 1.5,
+					FizzleOldSpawns = true,
+					BarrelLength = -100,
+                },
+                ExcludeLinked = true,
+			},
+			{
+                WeaponName = "WeaponLob",
+                ProjectileName = "TyphonRamHorn",
+                ProjectileProperties = 
+				{
+					Damage = (600 * BiomeQScaling),
+				},
+				ExcludeLinked = true,
+            },
+        },
+		FlavorText = "CopyAbility_FlavorText",
+	},
+
+	TyphonHeadTwoCopyTwoDisplayBoon = 
+	{
+		Icon = "JarlUlsfark-Tools_of_the_Trade\\TyphonHead2Icon",
+		ShowInHUD = true,
+		CustomLabel = 
+		{
+			DisplayType = "RoomValue",
+			Key = "Copy_TyphonHeadtwo2",
+			Text = "Copy_2nd"
+		},
+	},
+
 })
 
 if ZagreusJourney then

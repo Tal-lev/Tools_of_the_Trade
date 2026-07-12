@@ -1369,6 +1369,16 @@ sjson.hook(file, function(data)
 		TextOrder)
 	)
 
+	table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "TyphonHeadTwoCopyDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Copy: Typhon Headbutt",
+			Description = "Your Attack Headbutts the ground before you.",
+		},
+		TextOrder)
+	)
+
 	if ZagreusJourney then
 		
 		table.insert(data.Texts, sjson.to_object(
@@ -2968,6 +2978,16 @@ sjson.hook(file, function(data)
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Reserve Copy: Typhon Tongue-Lash",
 			Description = "Your Attack fires a Lashing Tongue of Typhon.",
+		},
+		TextOrder)
+	)
+
+	table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "TyphonHeadTwoCopyTwoDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Reserve Copy: Typhon Headbutt",
+			Description = "Your Attack Headbutts the ground before you.",
 		},
 		TextOrder)
 	)

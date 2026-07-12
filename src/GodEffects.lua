@@ -1283,12 +1283,21 @@ AddGodTraitProperty({
             ChangeType = "Absolute",
             ExcludeLinked = true,
         },
-		--TyphonHead
+		--TyphonHeadOne
 		{
             WeaponName = "WeaponLob",
             ProjectileName = "TyphonHeadTongueMelee",
             ProjectileProperty = "Graphic",
             ValuePrefix = "TyphonHeadTongueBeamIn_",
+            ChangeType = "Absolute",
+            ExcludeLinked = true,
+        },
+        --TyphonHeadTwo
+		{
+            WeaponName = "WeaponLob",
+            ProjectileName = "TyphonRamHorn",
+            ProjectileProperty = "Graphic",
+            ValuePrefix = "TyphonRamHornFx_",
             ChangeType = "Absolute",
             ExcludeLinked = true,
         },

@@ -1074,7 +1074,11 @@ function mod.CopyAbility (victim, functionArgs, triggerArgs)
 			Changed = "TyphonEgg"
 			Location = "BiomeQ"
 	elseif victim.Name == "TyphonHead" then
-		Changed = "TyphonHeadOne"
+		if math.random() < 0.5 then
+			Changed = "TyphonHeadOne"
+		else
+			Changed = "TyphonHeadTwo"
+		end
 		Location = "BiomeQEnding"
 	elseif ZagreusJourney then
 		if victim.Name == "HadesSwarmer" or victim.Name == "HadesSwarmerElite" then
