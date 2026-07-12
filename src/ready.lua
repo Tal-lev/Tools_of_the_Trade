@@ -1237,7 +1237,7 @@ function mod.CopyAbility (victim, functionArgs, triggerArgs)
 			end
 		end
 		for key,value in pairs(TraitsToRemove) do
-			RemoveTrait(CurrentRun.Hero, value)
+			RemoveTrait(CurrentRun.Hero, value, {SkipNewTraitHighlight = true})
 		end
 		local trait = GetHeroTrait("TabletofPeaceKirbyMel")
 		trait.Location = Location
@@ -1281,19 +1281,19 @@ function mod.ReleaseCopyAbility ( triggerArgs, functionArgs )
 		end
 	end
 	for key,value in pairs(TraitsToRemove) do
-		RemoveTrait(CurrentRun.Hero, value)
+		RemoveTrait(CurrentRun.Hero, value, {SkipNewTraitHighlight = true})
 	end	
 	wait(0.1)
 	local StartPos, EndPos = string.find(TempSecondCopy, "CopyDisplayBoon")
 	local StartTrait = string.sub(TempSecondCopy, 1, StartPos - 1)
 	if not HeroHasTrait("TabletKirbyInfiniteAmmoTrait") then
-		AddTraitToHero({ TraitName = StartTrait .. "CopyTwoDisplayBoon" })
+		AddTraitToHero({ TraitName = StartTrait .. "CopyTwoDisplayBoon", SkipNewTraitHighlight = true })
 	else
-		AddTraitToHero({ TraitName = "DummyCopyTwoDisplayBoon" })
+		AddTraitToHero({ TraitName = "DummyCopyTwoDisplayBoon", SkipNewTraitHighlight = true })
 		TempSecondCopy = "DummyCopyDisplayBoon"
 	end
 	wait(0.1)
-	AddTraitToHero({ TraitName = trait.SecondCopy })
+	AddTraitToHero({ TraitName = trait.SecondCopy, SkipNewTraitHighlight = true })
 	trait.Location = trait.SecondLocation
 	trait.SecondLocation = TempSecondLocation
 	if not HeroHasTrait("TabletKirbyMegaAmmoTrait") then
@@ -1325,13 +1325,13 @@ function mod.CopyNoAmmo()
 		end
 	end
 	for key,value in pairs(TraitsToRemove) do
-		RemoveTrait(CurrentRun.Hero, value)
+		RemoveTrait(CurrentRun.Hero, value, {SkipNewTraitHighlight = true})
 	end	
 	wait(0.1)
 	if not HeroHasTrait("TabletKirbyInfiniteAmmoTrait") then
-		AddTraitToHero({ TraitName = "DummyCopyDisplayBoon" })
+		AddTraitToHero({ TraitName = "DummyCopyDisplayBoon", SkipNewTraitHighlight = true })
 	else
-		AddTraitToHero({ TraitName = CopyTrait })
+		AddTraitToHero({ TraitName = CopyTrait, SkipNewTraitHighlight = true })
 	end
 	UpdateWeaponAmmo("WeaponLob", 1, {} )
 	wait(0.1)
@@ -1422,7 +1422,7 @@ function mod.HandleShadeNakedCopy()
 				end
 			end
 			for key,value in pairs(TraitsToRemove) do
-				RemoveTrait(CurrentRun.Hero, value)
+				RemoveTrait(CurrentRun.Hero, value, {SkipNewTraitHighlight = true})
 			end
 		end
 		local ShadeOptions = {"ShadeSpearUnitCopyDisplayBoon", "ShadeSwordUnitCopyDisplayBoon", "ShadeShieldUnitCopyDisplayBoon", "ShadeBowUnitCopyDisplayBoon"}
@@ -1445,7 +1445,7 @@ function mod.HandleTyphonEggCopy()
 				end
 			end
 			for key,value in pairs(TraitsToRemove) do
-				RemoveTrait(CurrentRun.Hero, value)
+				RemoveTrait(CurrentRun.Hero, value, {SkipNewTraitHighlight = true})
 			end
 		end
 		local ShadeOptions = {"SimpleCopyDisplayBoon", "StalkerCopyDisplayBoon", "BruteCopyDisplayBoon"}
@@ -1542,9 +1542,6 @@ modutil.mod.Path.Wrap("Kill", function(base, victim, triggerArgs)
 end)
 
 ModUtil.Path.Wrap("Damage", function(baseFunc, victim, triggerArgs)
-	print("!!!!!!!!!!!!!!!")
-	print("victim.Name")
-	print(victim.Name)
 	--For Apollo Double attack boon, which is buggy
 	--local originaltriggerArgs = triggerArgs
 	--For Stupid Sheep!
