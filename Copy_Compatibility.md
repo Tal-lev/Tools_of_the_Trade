@@ -120,6 +120,8 @@
 - Satyr Raider
 - Satyr Goldpike
 - Satyr Sapper
+- Sky-Dracon
+- Mega-Dracon
 - Talos
 - Heracles
   - Spin-Attack
