@@ -15,7 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Treant2
   - SoulPylon
   - TyphonEgg
-- 51 Implemented ZJ copy abilities.
+- 52 Implemented ZJ copy abilities.
   - HadesSwarmer
   - LightSpawner
   - PunchingBagUnit
@@ -49,6 +49,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - ShadeSwordUnit
   - ShadeShieldUnit
   - ShadeBowUnit
+  - ShieldRanged
   - FlurrySpawner
   - ChariotSuicide
   - Chariot
