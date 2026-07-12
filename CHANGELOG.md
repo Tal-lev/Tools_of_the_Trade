@@ -72,10 +72,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Charon
     - Oar Swipe
     - Wave
-- 3 Implemented Boss Copy
+- 4 Implemented Boss Copy
   - Chronos - Time Stasis
   - Zagreus - Spear Spin
   - Eris - Laser
+  - Typhon - Headbutt
 - 5 Minor Prophecies added
   - Clear with both tools
   - Get the 8 new hammers
