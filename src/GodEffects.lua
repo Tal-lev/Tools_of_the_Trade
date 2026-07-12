@@ -1160,6 +1160,24 @@ AddGodTraitProperty({
             ChangeType = "Absolute",
             ExcludeLinked = true,
         },
+        --Dragon
+		{
+            WeaponName = "WeaponLob",
+            ProjectileName = "DragonTailWhip",
+            ProjectileProperty = "DetonateFx",
+            ValuePrefix = "DragonTailWhip_",
+            ChangeType = "Absolute",
+            ExcludeLinked = true,
+        },
+        --Dragon_MiniBoss
+		--{
+        --    WeaponName = "WeaponLob",
+        --    ProjectileName = "DragonBreathGround",
+        --    ProjectileProperty = "DetonateFx",
+        --    ValuePrefix = "DragonFireNoLinger_",
+        --    ChangeType = "Absolute",
+        --    ExcludeLinked = true,
+        --},
 		--Heracles
 		{
             WeaponName = "WeaponLob",

@@ -5479,6 +5479,112 @@ OverwriteTableKeys( TraitData, {
 		},
 	},
 
+	DragonCopyDisplayBoon = 
+	{
+		Icon = "JarlUlsfark-Tools_of_the_Trade\\DragonIcon",
+		ShowInHUD = true,
+		CustomLabel = 
+		{
+			DisplayType = "RoomValue",
+			Key = "Copy_Dragon",
+			Text = "Copy_EmptyText"
+		},
+        PropertyChanges = 
+        {
+           {
+				WeaponName = "WeaponLob",
+				WeaponProperty = "Projectile",
+				ChangeValue = "DragonTailWhip",
+			},
+            {
+				WeaponName = "WeaponLob",
+				WeaponProperties = 
+                {
+                    Cooldown = 1,
+					FizzleOldSpawns = false,
+                },
+                ExcludeLinked = true,
+			},
+            {
+                WeaponName = "WeaponLob",
+                ProjectileName = "DragonTailWhip",
+                ProjectileProperties = 
+				{
+					Damage = (240 * BiomePScaling),
+				},
+				ExcludeLinked = true,
+            },
+        },
+		FlavorText = "CopyAbility_FlavorText",
+	},
+
+	DragonCopyTwoDisplayBoon = 
+	{
+		Icon = "JarlUlsfark-Tools_of_the_Trade\\DragonIcon",
+		ShowInHUD = true,
+		CustomLabel = 
+		{
+			DisplayType = "RoomValue",
+			Key = "Copy_Dragon2",
+			Text = "Copy_2nd"
+		},
+	},
+
+	Dragon_MiniBossCopyDisplayBoon = 
+	{
+		Icon = "JarlUlsfark-Tools_of_the_Trade\\Dragon_MiniBossIcon",
+		ShowInHUD = true,
+		CustomLabel = 
+		{
+			DisplayType = "RoomValue",
+			Key = "Copy_Dragon_MiniBoss",
+			Text = "Copy_EmptyText"
+		},
+        PropertyChanges = 
+        {
+           {
+				WeaponName = "WeaponLob",
+				WeaponProperty = "Projectile",
+				ChangeValue = "DragonBreathGround",
+			},
+            {
+				WeaponName = "WeaponLob",
+				WeaponProperties = 
+                {
+                    Cooldown = 0.7,
+					FizzleOldSpawns = false,
+					NumProjectiles = 8,
+					ProjectileIntervalStart = 0.1,
+					ProjectileInterval = 0.2,
+                },
+                ExcludeLinked = true,
+			},
+            {
+                WeaponName = "WeaponLob",
+                ProjectileName = "DragonBreathGround",
+                ProjectileProperties = 
+				{
+					Damage = (50 * BiomePScaling),
+					DamageRadius = 320,
+				},
+				ExcludeLinked = true,
+            },
+        },
+		FlavorText = "CopyAbility_FlavorText",
+	},
+
+	Dragon_MiniBossCopyTwoDisplayBoon = 
+	{
+		Icon = "JarlUlsfark-Tools_of_the_Trade\\Dragon_MiniBossIcon",
+		ShowInHUD = true,
+		CustomLabel = 
+		{
+			DisplayType = "RoomValue",
+			Key = "Copy_Dragon_MiniBoss2",
+			Text = "Copy_2nd"
+		},
+	},
+
 	TalosCopyDisplayBoon = 
 	{
 		Icon = "JarlUlsfark-Tools_of_the_Trade\\TalosIcon",
@@ -6578,7 +6684,6 @@ if ZagreusJourney then
 						AutoLock = true,
 						AutoLockRange = 400,
 						AutoLockArcDistance = 90,
-
 					},
 					ExcludeLinked = true,
 				},

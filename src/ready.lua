@@ -1031,6 +1031,12 @@ function mod.CopyAbility (victim, functionArgs, triggerArgs)
 	elseif victim.Name == "SatyrSapper" or victim.Name == "SatyrSapper_Elite" then
 		Changed = "SatyrSapper"
 		Location = "BiomeP"
+	elseif victim.Name == "Dragon" or victim.Name == "Dragon_Elite" or victim.Name == "Dragon_SuperElite" then
+		Changed = "Dragon"
+		Location = "BiomeP"
+	elseif victim.Name == "Dragon_MiniBoss" or victim.Name == "Dragon_SuperElite" then
+		Changed = "Dragon_MiniBoss"
+		Location = "BiomeP"
 	elseif victim.Name == "Talos" then
 		Changed = "Talos"
 		Location = "BiomeP"
