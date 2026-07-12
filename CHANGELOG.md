@@ -94,6 +94,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
     - ClipSize removed
   - Explosive Reflection Hammer damage +100% -> 50%
 - Added Text for Reserve Copy
+- Remove HUD notification when replacing Copy Abilities
 
 ## [0.3.1] - 2026-07-01
 
