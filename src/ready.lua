@@ -1242,7 +1242,11 @@ function mod.CopyAbility (victim, functionArgs, triggerArgs)
 		local trait = GetHeroTrait("TabletofPeaceKirbyMel")
 		trait.Location = Location
 		wait(0.1)
-		AddTraitToHero({ TraitName = Changed .. "CopyDisplayBoon" })	
+		if HeroHasTrait("TabletKirbyMegaAmmoTrait") then
+			AddTraitToHero({ TraitName = Changed .. "CopyDisplayBoon", SkipNewTraitHighlight = true })	
+		else
+			AddTraitToHero({ TraitName = Changed .. "CopyDisplayBoon" })	
+		end
 		LoadPackages({Name = Location})
 		ResetAmmo( CurrentRun.Hero, GetWeaponData( CurrentRun.Hero, "WeaponLob" ))
 		CurrentRun.Hero.Ammo.WeaponLob = GetMaxAmmo("WeaponLob")
