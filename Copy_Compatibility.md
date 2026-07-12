@@ -141,6 +141,7 @@
 - Egg of Typhon
 - Typhon
   - Tongue-Lash
+  - Headbutt
  
 ## Zagreus Journey
 
