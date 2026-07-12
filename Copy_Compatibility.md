@@ -191,6 +191,7 @@
 - Brightsword
 - Greatshield
 - Strongbow
+- Voidstone
 - Soul Catcher
 - Flame Wheel
 - Nemean Chariot
