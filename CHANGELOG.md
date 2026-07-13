@@ -75,10 +75,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Charon
     - Oar Swipe
     - Wave
-- 4 Implemented Boss Copy
+- 5 Implemented Boss Copy
   - Chronos - Time Stasis
   - Zagreus - Spear Spin
   - Eris - Laser
+  - Prometheus - Eagle Sweep
   - Typhon - Headbutt
 - 5 Minor Prophecies added
   - Clear with both tools
