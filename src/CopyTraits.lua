@@ -5751,6 +5751,68 @@ OverwriteTableKeys( TraitData, {
 		},
 	},
 
+	PrometheusTwoCopyDisplayBoon = 
+	{
+		Icon = "JarlUlsfark-Tools_of_the_Trade\\Prometheus2Icon",
+		ShowInHUD = true,
+		CustomLabel = 
+		{
+			DisplayType = "RoomValue",
+			Key = "Copy_Prometheustwo",
+			Text = "Copy_EmptyText"
+		},
+        PropertyChanges = 
+        {
+           {
+				WeaponName = "WeaponLob",
+				WeaponProperty = "Projectile",
+				ChangeValue = "EagleSweep",
+			},
+            {
+				WeaponName = "WeaponLob",
+				WeaponProperties = 
+                {
+                    Cooldown = 1,
+					FizzleOldSpawns = false,
+					FireOnRelease = true,
+					BlockMoveInput = true,
+					CancelMovement = true,
+					SelfVelocity = 1400,
+					AutoLock = true,
+					AutoLockRange = 600,
+					AutoLockArcDistance = 90,
+					RootOwnerWhileFiring = true,
+					CancelChargeOnRelease = true,
+					FizzleOldSpawns = true,
+                },
+                ExcludeLinked = true,
+			},
+            {
+                WeaponName = "WeaponLob",
+                ProjectileName = "EagleSweep",
+                ProjectileProperties = 
+				{
+					Damage = (190 * BiomePScaling),
+					StartDelay = 0.3,
+				},
+				ExcludeLinked = true,
+            },
+        },
+		FlavorText = "CopyAbility_FlavorText",
+	},
+
+	PrometheusTwoCopyTwoDisplayBoon = 
+	{
+		Icon = "JarlUlsfark-Tools_of_the_Trade\\Prometheus2Icon",
+		ShowInHUD = true,
+		CustomLabel = 
+		{
+			DisplayType = "RoomValue",
+			Key = "Copy_Prometheustwo2",
+			Text = "Copy_2nd"
+		},
+	},
+
 	SimpleCopyDisplayBoon = 
 	{
 		Icon = "JarlUlsfark-Tools_of_the_Trade\\SimpleIcon",

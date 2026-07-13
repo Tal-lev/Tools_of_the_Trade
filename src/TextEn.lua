@@ -1271,6 +1271,16 @@ sjson.hook(file, function(data)
 
 	table.insert(data.Texts, sjson.to_object(
 		{
+			Id = "PrometheusTwoCopyDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Copy: Prometheus Eagle Sweep",
+			Description = "Your Attack Sweeps across the field with sharp Talons.",
+		},
+		TextOrder)
+	)
+
+	table.insert(data.Texts, sjson.to_object(
+		{
 			Id = "SimpleCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: Polyp",
@@ -2908,6 +2918,16 @@ sjson.hook(file, function(data)
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Reserve Copy: Prometheus Fire-Pillar",
 			Description = "Your Attack fires a Burning Pillar.",
+		},
+		TextOrder)
+	)
+
+	table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "PrometheusTwoCopyTwoDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Reserve Copy: Prometheus Eagle Sweep",
+			Description = "Your Attack Sweeps across the field with sharp Talons.",
 		},
 		TextOrder)
 	)

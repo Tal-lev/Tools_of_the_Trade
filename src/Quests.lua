@@ -367,6 +367,7 @@ OverwriteTableKeys( QuestData, {
                     "TalosCopyDisplayBoon",
                     "HeraclesOneCopyDisplayBoon",
                     "PrometheusOneCopyDisplayBoon",
+                    "PrometheusTwoCopyDisplayBoon",
                    
                     --The Summit
                     "SimpleCopyDisplayBoon",
@@ -437,6 +438,7 @@ OverwriteTableKeys( QuestData, {
                     "TalosCopyDisplayBoon",
                     "HeraclesOneCopyDisplayBoon",
                     "PrometheusOneCopyDisplayBoon",
+                    "PrometheusTwoCopyDisplayBoon",
                    
                     --The Summit
                     "SimpleCopyDisplayBoon",

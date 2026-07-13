@@ -1044,7 +1044,11 @@ function mod.CopyAbility (victim, functionArgs, triggerArgs)
 		Changed = "HeraclesOne"
 		Location = "BiomeP"
 	elseif victim.Name == "Prometheus" then
-		Changed = "PrometheusOne"
+		if math.random() < 0.5 then
+			Changed = "PrometheusOne"
+		else
+			Changed = "PrometheusTwo"
+		end
 		Location = "BiomeP"
 	elseif victim.Name == "Simple" or victim.Name == "Simple_Elite" or victim.Name == "Simple2" then
 		Changed = "Simple"
