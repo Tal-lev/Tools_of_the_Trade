@@ -127,6 +127,7 @@
   - Spin-Attack
 - Prometheus
   - Fire-Pillar
+  - Eagle Sweep
 
 ### The Summit
 
