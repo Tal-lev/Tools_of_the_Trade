@@ -87,3 +87,6 @@
 - The Strategist
 - Beauty
 - Famine
+- The Muses
+- The Tides
+- The Beasts
