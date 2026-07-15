@@ -91,3 +91,7 @@
 - The Muses
 - The Tides
 - The Beasts
+- The Trapper
+- The Sirens
+- The Titaness
+- Victory
