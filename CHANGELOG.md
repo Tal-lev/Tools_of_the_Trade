@@ -99,10 +99,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Explosive Reflection Hammer damage +100% -> 50%
 - Added Text for Reserve Copy
 - Remove HUD notification when replacing Copy Abilities
-- These Flip the Arcana now impact your attack summons
+- These 6 Flip the Arcana now impact your attack summons
   - The Muses
   - The Tides
   - The Beasts
+  - The Trapper
+  - The Sirens
+  - Victory
 - Fix Modifier boons affecting summons can apply stack on themselves when hitting multiple enemies with one attack
 
 ## [0.3.1] - 2026-07-01
