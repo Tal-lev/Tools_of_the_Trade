@@ -99,7 +99,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Explosive Reflection Hammer damage +100% -> 50%
 - Added Text for Reserve Copy
 - Remove HUD notification when replacing Copy Abilities
-- These 7 Flip the Arcana now impact your attack summons
+- These 8 Flip the Arcana now impact your attack summons
+  - Doom
   - The Muses
   - The Tides
   - The Beasts
