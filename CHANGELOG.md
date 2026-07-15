@@ -103,6 +103,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - The Muses
   - The Tides
   - The Beasts
+- Fix Modifier boons affecting summons can apply stack on themselves when hitting multiple enemies with one attack
 
 ## [0.3.1] - 2026-07-01
 
