@@ -87,6 +87,7 @@
 - The Strategist
 - Beauty
 - Famine
+- Doom
 - The Muses
 - The Tides
 - The Beasts
