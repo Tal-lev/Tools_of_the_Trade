@@ -17,7 +17,7 @@ Adding 2 new Weapon Aspects themed around the Gathering Tools
 - Traits that were altered to work with Summons
   - 48 Boons
   - 5 Keepsakes + (3 SharedKeepsakePort)
-  - 5 Arcana + (10 Flip the Arcana)
+  - 5 Arcana + (13 Flip the Arcana)
 
 [Full Summon Compatibility list](https://github.com/Tal-lev/Tools_of_the_Trade/blob/main/Summon_Compatibility.md)
 
