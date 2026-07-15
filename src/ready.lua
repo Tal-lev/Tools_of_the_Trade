@@ -209,6 +209,7 @@ function mod.SummonEnemy( triggerArgs, functionArgs )
 		SpeedMultiplier = functionArgs.SpeedMultiplier or 1, 
 		ScaleMultiplier = functionArgs.ScaleMultiplier or 1, 
 		DamageMultiplier = functionArgs.DamageMultiplier or 1,
+		DoubleDamageMultiplier = functionArgs.DoubleDamageMultiplier or 0, --Flip the Arcana Doom
 		CritMultiplier = functionArgs.CritMultiplier or 0,
 		DodgeMultiplier = functionArgs.DodgeMultiplier or 0,
 		HeraclesCombatMoneyValue = functionArgs.HeraclesCombatMoneyValue or 2, --used in deathminisummon trait
@@ -360,6 +361,26 @@ function mod.SummonEnemy( triggerArgs, functionArgs )
 			trait = GetHeroTrait("ReversedChanneledBlockMetaUpgrade")
 			summonArgs.DodgeMultiplier = summonArgs.DodgeMultiplier + (trait.ReportedDodgeChance or 0.04) 
 		end
+		--Flip the Arcana: The Muses
+		if HeroHasTrait("ReversedUniqueGodMetaUpgrade") then
+			trait = GetHeroTrait("ReversedUniqueGodMetaUpgrade")
+			summonArgs.DamageMultiplier = summonArgs.DamageMultiplier + (((trait.ReportedMultiplier or 1.03) -1) * (CurrentRun.Hero.UniqueGodCount or 0)) 
+		end
+		--Flip the Arcana: The Tides
+		if HeroHasTrait("ReversedPerfectClearBoostMetaUpgrade") then
+			trait = GetHeroTrait("ReversedPerfectClearBoostMetaUpgrade")
+			summonArgs.DamageMultiplier = summonArgs.DamageMultiplier + (trait.AccumulatedDamageBonus or 1) -1 
+		end
+		--Flip the Arcana: The Beasts
+		if HeroHasTrait("ReversedArtemisKeepsakeMetaUpgrade") then
+			trait = GetHeroTrait("ReversedArtemisKeepsakeMetaUpgrade")
+			summonArgs.CritMultiplier = summonArgs.CritMultiplier + (trait.ReportedCritBonus or 0.1) 
+		end
+		--Flip the Arcana: Doom
+		if HeroHasTrait("ReversedTradeOffMetaUpgrade") and GameState.FatedStatus == "Fated" then
+			trait = GetHeroTrait("ReversedTradeOffMetaUpgrade")	
+			summonArgs.DoubleDamageMultiplier = summonArgs.DoubleDamageMultiplier + (trait.FatedDDChance or 0.1 )
+		end
 	end
 	if ZagreusJourney then
 		--Zagreus Journey Keepsake: Skull Earring
@@ -465,6 +486,7 @@ function mod.CreateEnemy( enemyName, args )
 		SpeedMultiplier = args.SpeedMultiplier or 1,
 		ScaleMultiplier = args.ScaleMultiplier or 1,
 		DamageMultiplier = args.DamageMultiplier or 1,
+		DoubleDamageMultiplier = args.DoubleDamageMultiplier or 0,
 		CritMultiplier = args.CritMultiplier or 0,
 		DodgeMultiplier = args.DodgeMultiplier or 0,
 		HeraclesCombatMoneyValue = args.HeraclesCombatMoneyValue or 2, --used in deathminisummon trait
@@ -543,6 +565,7 @@ function mod.CreateEnemy( enemyName, args )
 	SetThingProperty({ Property = "ElapsedTimeMultiplier", Value = GetGameplayElapsedTimeMultiplier(), ValueChangeType = "Absolute", DataValue = false, DestinationId = newEnemy.ObjectId })
 	AddOutgoingDamageModifier( newEnemy, { NonPlayerMultiplier = weaponDataMultipliers.DamageMultiplier })
 	AddOutgoingCritModifier( newEnemy, { Chance = weaponDataMultipliers.CritMultiplier })
+	AddOutgoingDoubleDamageModifier(newEnemy, {Chance = weaponDataMultipliers.DoubleDamageMultiplier})
 	newEnemy.SpeedMultiplier = ( newEnemy.SpeedMultiplier or 1 ) + (weaponDataMultipliers.SpeedMultiplier - 1)
 	ApplyUnitPropertyChanges( newEnemy, { {
 				LifeProperty = "DodgeChance",
@@ -1580,6 +1603,7 @@ ModUtil.Path.Wrap("Damage", function(baseFunc, victim, triggerArgs)
 	end
 	local trait = {}
 	local DamageAmount = triggerArgs.DamageAmount
+	local ModifiedNow = 0
 	--For adding base damage directly into the hit
 	if victim ~= CurrentRun.Hero and HeroHasTrait("ShovelRaiseDeadNecroMel") and triggerArgs.AttackerTable and triggerArgs.AttackerTable.AlwaysTraitor == true and (triggerArgs.AttackerTable.Name == "Zombie" or triggerArgs.AttackerTable.Name == "Mourner" or triggerArgs.AttackerTable.Name == "SentryBot" or triggerArgs.AttackerTable.Name == "AutomatonBeamer") then	
 		--Ares: Vicious Strike
@@ -1609,34 +1633,6 @@ ModUtil.Path.Wrap("Damage", function(baseFunc, victim, triggerArgs)
 				end
 			end
 		end
-		--Ares: Grievous Blow
-		if HeroHasTrait("AresStatusDoubleDamageBoon") and victim.ActiveEffects and victim.ActiveEffects.AresStatus then
-			trait = GetHeroTrait("AresStatusDoubleDamageBoon")
-			if not triggerArgs.AttackerTable.OutgoingDoubleDamageModifiers then
-				triggerArgs.AttackerTable.OutgoingDoubleDamageModifiers = {}
-			end
-			funtionArgs = 
-			{
-				Name = "Del",
-				ValidActiveEffects = {"AresStatus"},
-				Multiplicative = true,
-				Chance = trait.ReportedChance
-			}
-			table.insert( triggerArgs.AttackerTable.OutgoingDoubleDamageModifiers, funtionArgs )
-		end
-		--Ares: Mutual Destruction
-		if HeroHasTrait("MissingHealthCritBoon") then
-			trait = GetHeroTrait("MissingHealthCritBoon")
-			if not triggerArgs.AttackerTable.OutgoingDoubleDamageModifiers then
-				triggerArgs.AttackerTable.OutgoingDoubleDamageModifiers = {}
-			end
-			funtionArgs = 
-			{
-				Name = "Del",
-				Chance = trait.ReportedMultiplier * (GetHeroMaxAvailableHealth() - CurrentRun.Hero.Health)
-			}
-			table.insert( triggerArgs.AttackerTable.OutgoingDoubleDamageModifiers, funtionArgs )
-		end
 		--Aphrodite: Secret Crush
 		if HeroHasTrait("FocusRawDamageBoon") then
 			trait = GetHeroTrait("FocusRawDamageBoon")
@@ -1647,51 +1643,82 @@ ModUtil.Path.Wrap("Damage", function(baseFunc, victim, triggerArgs)
 			trait = GetHeroTrait("ElementalBaseDamageBoon")
 			triggerArgs.DamageAmount = triggerArgs.DamageAmount + ((trait.ReportedTotalDamageChange or 2) * (CurrentRun.Hero.Elements.Fire or 0) / 10 )
 		end	
-		--Artemis: Lethal Snare
-		if HeroHasTrait("InsideCastCritBoon") and victim.ActiveEffects and victim.ActiveEffects.ImpactSlow then
-			trait = GetHeroTrait("InsideCastCritBoon")
-			table.insert(triggerArgs.AttackerTable.OutgoingCritModifiers, {Name = "Del", Chance = trait.ReportedCritBonus or 0.1})
-		end
-		--Aphrodite: Sweet Surrender
-		if HeroHasTrait("WeakVulnerabilityBoon") and victim.ActiveEffects and HasVulnerabilityGenusEffect( victim, "Weak") then
-			trait = GetHeroTrait("WeakVulnerabilityBoon")
-			table.insert(triggerArgs.AttackerTable.OutgoingDamageModifiers, {Name = "Del", NonPlayerMultiplier = ( trait.ReportedModifier or 1.1 ) })
-		end
-		--Hephaestus: Heavy Metal
-		if HeroHasTrait("HeavyArmorBoon") and CurrentRun.Hero.HealthBuffer then
-			trait = GetHeroTrait("HeavyArmorBoon")
-			table.insert(triggerArgs.AttackerTable.OutgoingDamageModifiers, {Name = "Del", NonPlayerMultiplier = ((trait.ReportedBonus or 0.2) * ((CurrentRun.Hero.HealthBuffer or 0)/100)  + 1)})
-		end
-		--Hephaestus: Molten Touch
-		if HeroHasTrait("AntiArmorBoon") and victim.HealthBuffer and victim.HealthBuffer > 0 then
-			trait = GetHeroTrait("AntiArmorBoon")
-			table.insert(triggerArgs.AttackerTable.OutgoingDamageModifiers, {Name = "Del", NonPlayerMultiplier = (trait.ReportedWeaponMultiplier or 1.4 )})
-		end
-		--Arcana: The Furies
-		if HeroHasTrait("InsideCastBuffMetaUpgrade") and victim.ActiveEffects and victim.ActiveEffects.ImpactSlow then
-			trait = GetHeroTrait("InsideCastBuffMetaUpgrade")
-			table.insert(triggerArgs.AttackerTable.OutgoingDamageModifiers, {Name = "Del", NonPlayerMultiplier = (trait.ReportedModifier or 1.2) })
-		end
-		--Arcana: Origination
-		if HeroHasTrait("EffectVulnerabilityMetaUpgrade") and victim.VulnerabilityEffects and TableLength( victim.VulnerabilityEffects ) >= 2 then
-			trait = GetHeroTrait("EffectVulnerabilityMetaUpgrade")	
-			table.insert(triggerArgs.AttackerTable.OutgoingDamageModifiers, {Name = "Del", NonPlayerMultiplier = (trait.ReportedDamageBoost or 1.25 )})
-		end
-		--Keepsake: Evil Eye
-		if HeroHasTrait("DeathVengeanceKeepsake") and victim and GetGenusName(victim) == GameState.CauseOfDeath then
-			trait = GetHeroTrait("DeathVengeanceKeepsake")	
-			table.insert(triggerArgs.AttackerTable.OutgoingDamageModifiers, {Name = "Del", NonPlayerMultiplier = (trait.ReportedWeaponMultiplier or 1.2 )})
+		if not triggerArgs.AttackerTable.TotTModified then
+			triggerArgs.AttackerTable.TotTModified = 1
+			ModifiedNow = 1
+			--Ares: Grievous Blow
+			if HeroHasTrait("AresStatusDoubleDamageBoon") and victim.ActiveEffects and victim.ActiveEffects.AresStatus then
+				trait = GetHeroTrait("AresStatusDoubleDamageBoon")
+				if not triggerArgs.AttackerTable.OutgoingDoubleDamageModifiers then
+					triggerArgs.AttackerTable.OutgoingDoubleDamageModifiers = {}
+				end
+				funtionArgs = 
+				{
+					Name = "Del",
+					ValidActiveEffects = {"AresStatus"},
+					Multiplicative = true,
+					Chance = trait.ReportedChance
+				}
+				table.insert( triggerArgs.AttackerTable.OutgoingDoubleDamageModifiers, funtionArgs )
+			end
+			--Ares: Mutual Destruction
+			if HeroHasTrait("MissingHealthCritBoon") then
+				trait = GetHeroTrait("MissingHealthCritBoon")
+				if not triggerArgs.AttackerTable.OutgoingDoubleDamageModifiers then
+					triggerArgs.AttackerTable.OutgoingDoubleDamageModifiers = {}
+				end
+				funtionArgs = 
+				{
+					Name = "Del",
+					Chance = trait.ReportedMultiplier * (GetHeroMaxAvailableHealth() - CurrentRun.Hero.Health)
+				}
+				table.insert( triggerArgs.AttackerTable.OutgoingDoubleDamageModifiers, funtionArgs )
+			end
+			--Artemis: Lethal Snare
+			if HeroHasTrait("InsideCastCritBoon") and victim.ActiveEffects and victim.ActiveEffects.ImpactSlow then
+				trait = GetHeroTrait("InsideCastCritBoon")
+				table.insert(triggerArgs.AttackerTable.OutgoingCritModifiers, {Name = "Del", Chance = trait.ReportedCritBonus or 0.1})
+			end
+			--Aphrodite: Sweet Surrender
+			if HeroHasTrait("WeakVulnerabilityBoon") and victim.ActiveEffects and HasVulnerabilityGenusEffect( victim, "Weak") then
+				trait = GetHeroTrait("WeakVulnerabilityBoon")
+				table.insert(triggerArgs.AttackerTable.OutgoingDamageModifiers, {Name = "Del", NonPlayerMultiplier = ( trait.ReportedModifier or 1.1 ) })
+			end
+			--Hephaestus: Heavy Metal
+			if HeroHasTrait("HeavyArmorBoon") and CurrentRun.Hero.HealthBuffer then
+				trait = GetHeroTrait("HeavyArmorBoon")
+				table.insert(triggerArgs.AttackerTable.OutgoingDamageModifiers, {Name = "Del", NonPlayerMultiplier = ((trait.ReportedBonus or 0.2) * ((CurrentRun.Hero.HealthBuffer or 0)/100)  + 1)})
+			end
+			--Hephaestus: Molten Touch
+			if HeroHasTrait("AntiArmorBoon") and victim.HealthBuffer and victim.HealthBuffer > 0 then
+				trait = GetHeroTrait("AntiArmorBoon")
+				table.insert(triggerArgs.AttackerTable.OutgoingDamageModifiers, {Name = "Del", NonPlayerMultiplier = (trait.ReportedWeaponMultiplier or 1.4 )})
+			end
+			--Arcana: The Furies
+			if HeroHasTrait("InsideCastBuffMetaUpgrade") and victim.ActiveEffects and victim.ActiveEffects.ImpactSlow then
+				trait = GetHeroTrait("InsideCastBuffMetaUpgrade")
+				table.insert(triggerArgs.AttackerTable.OutgoingDamageModifiers, {Name = "Del", NonPlayerMultiplier = (trait.ReportedModifier or 1.2) })
+			end
+			--Arcana: Origination
+			if HeroHasTrait("EffectVulnerabilityMetaUpgrade") and victim.VulnerabilityEffects and TableLength( victim.VulnerabilityEffects ) >= 2 then
+				trait = GetHeroTrait("EffectVulnerabilityMetaUpgrade")	
+				table.insert(triggerArgs.AttackerTable.OutgoingDamageModifiers, {Name = "Del", NonPlayerMultiplier = (trait.ReportedDamageBoost or 1.25 )})
+			end
+			--Keepsake: Evil Eye
+			if HeroHasTrait("DeathVengeanceKeepsake") and victim and GetGenusName(victim) == GameState.CauseOfDeath then
+				trait = GetHeroTrait("DeathVengeanceKeepsake")	
+				table.insert(triggerArgs.AttackerTable.OutgoingDamageModifiers, {Name = "Del", NonPlayerMultiplier = (trait.ReportedWeaponMultiplier or 1.2 )})
+			end
 		end
 		if FliptheArcana then
-			--Flip the Arcana: The Strategist
-			if HeroHasTrait("ReversedStatusVulnerabilityMetaUpgrade") then
-				trait = GetHeroTrait("ReversedStatusVulnerabilityMetaUpgrade")	
-				if not victim.VulnerabilityEffects or (victim.VulnerabilityEffects and TableLength( victim.VulnerabilityEffects ) < 1) then
-					table.insert(triggerArgs.AttackerTable.OutgoingDamageModifiers, {Name = "Del", NonPlayerMultiplier = ((trait.NoStatusBonusDamage or 0.38 ) + 1)})
-				elseif TableLength( victim.VulnerabilityEffects ) == 1 then
-					table.insert(triggerArgs.AttackerTable.OutgoingDamageModifiers, {Name = "Del", NonPlayerMultiplier = (((trait.NoStatusBonusDamage or 0.38 ) / 2 ) + 1)})
+			--Flip the Arcana: Victory 
+			if HeroHasTrait("ReversedPerfectPowerMetaUpgrade") then
+				trait = GetHeroTrait("ReversedPerfectPowerMetaUpgrade")
+				if triggerArgs.AttackerTable.Name == "Mourner" or triggerArgs.AttackerTable.Name == "AutomatonBeamer" then
+					triggerArgs.DamageAmount = triggerArgs.DamageAmount + ((trait.FlipTheArcanaPowerPerStack or 1) * (trait.FlipTheArcanaCurrentBonusStacks or 0) / 10)
 				end
-			end	
+				game.CallFunctionName("ReadEmAndWeep-Flip_the_Arcana_Mod.CheckPerfectPower", victim, {}, triggerArgs)
+			end
 			--Flip the Arcana: Famine
 			if HeroHasTrait("ReversedRarityBoostMetaUpgrade") then
 				trait = GetHeroTrait("ReversedRarityBoostMetaUpgrade")
@@ -1705,10 +1732,40 @@ ModUtil.Path.Wrap("Damage", function(baseFunc, victim, triggerArgs)
 				}
 				CheckSpawnZeusDamage( victim , functionArgs, triggerArgs )
 			end
-			--Flip the Arcana: The Cyclops
-			if HeroHasTrait("ReversedSprintShieldMetaUpgrade") and victim.Health == victim.MaxHealth then
-				trait = GetHeroTrait("ReversedSprintShieldMetaUpgrade")
-				table.insert(triggerArgs.AttackerTable.OutgoingDamageModifiers, {Name = "Del", NonPlayerMultiplier = ((trait.FirstHitMultiplier or 0.25 ) + 1)})
+			if ModifiedNow == 1 then
+				--Flip the Arcana: The Strategist
+				if HeroHasTrait("ReversedStatusVulnerabilityMetaUpgrade") then
+					trait = GetHeroTrait("ReversedStatusVulnerabilityMetaUpgrade")	
+					if not victim.VulnerabilityEffects or (victim.VulnerabilityEffects and TableLength( victim.VulnerabilityEffects ) < 1) then
+						table.insert(triggerArgs.AttackerTable.OutgoingDamageModifiers, {Name = "Del", NonPlayerMultiplier = ((trait.NoStatusBonusDamage or 0.38 ) + 1)})
+					elseif TableLength( victim.VulnerabilityEffects ) == 1 then
+						table.insert(triggerArgs.AttackerTable.OutgoingDamageModifiers, {Name = "Del", NonPlayerMultiplier = (((trait.NoStatusBonusDamage or 0.38 ) / 2 ) + 1)})
+					end
+				end	
+				--Flip the Arcana: The Cyclops
+				if HeroHasTrait("ReversedSprintShieldMetaUpgrade") and victim.Health == victim.MaxHealth then
+					trait = GetHeroTrait("ReversedSprintShieldMetaUpgrade")
+					table.insert(triggerArgs.AttackerTable.OutgoingDamageModifiers, {Name = "Del", NonPlayerMultiplier = ((trait.FirstHitMultiplier or 0.25 ) + 1)})
+				end
+				--Flip the Arcana: The Sirens
+				if HeroHasTrait("ReversedCrowdDamageMetaUpgrade") then
+					local trait = GetHeroTrait("ReversedCrowdDamageMetaUpgrade")
+					if game.CallFunctionName("ReadEmAndWeep-Flip_the_Arcana_Mod.GetNumberofEnemies") >= trait.FlipTheArcanaCrowdThreshold then
+						table.insert(triggerArgs.AttackerTable.OutgoingDamageModifiers, {Name = "Del", NonPlayerMultiplier = ((trait.FlipTheArcanaCrowdDamage or 0.15 ) + 1)})
+					end
+				end
+				--Flip the Arcana: The Trapper
+				if HeroHasTrait("ReversedLowHealthCritMetaUpgrade") then
+					local trait = GetHeroTrait("ReversedCrowdDamageMetaUpgrade")
+					if CurrentRun.Hero.Health < (GetHeroMaxAvailableHealth() * (trait.ReportedThreshold or 0.1)) then
+						table.insert(triggerArgs.AttackerTable.OutgoingCritModifiers, {Name = "Del", Chance = trait.ReportedCritChance or 0.15})
+					end
+				end
+				--Flip the Arcana: The Titaness
+				if HeroHasTrait("ReversedStatusCritMetaUpgrade") and victim.VulnerabilityEffects and (TableLength( victim.VulnerabilityEffects ) > 3) then	
+					local trait = GetHeroTrait("ReversedStatusCritMetaUpgrade")
+					table.insert(triggerArgs.AttackerTable.OutgoingCritModifiers, {Name = "Del", NonPlayerMultiplier = (trait.ReportedChance or 0.1 )})
+				end	
 			end
 		end
 	end
@@ -1718,44 +1775,48 @@ ModUtil.Path.Wrap("Damage", function(baseFunc, victim, triggerArgs)
 	local KeystoRemove = {}
 	
 	if victim ~= CurrentRun.Hero and HeroHasTrait("ShovelRaiseDeadNecroMel") and triggerArgs.AttackerTable and triggerArgs.AttackerTable.AlwaysTraitor == true and (triggerArgs.AttackerTable.Name == "Zombie" or triggerArgs.AttackerTable.Name == "Mourner" or triggerArgs.AttackerTable.Name == "SentryBot" or triggerArgs.AttackerTable.Name == "AutomatonBeamer") then	
-		--After the damage remove all the temp additions from the Attacker
-		if triggerArgs.AttackerTable.OutgoingCritModifiers then
-			for key,value in pairs(triggerArgs.AttackerTable.OutgoingCritModifiers) do
-				if value.Name == "Del" then
-					table.insert(KeystoRemove, key)	
+		if ModifiedNow == 1 then
+			wait(0.1)
+			--After the damage remove all the temp additions from the Attacker
+			if triggerArgs.AttackerTable.OutgoingCritModifiers then
+				for key,value in pairs(triggerArgs.AttackerTable.OutgoingCritModifiers) do
+					if value.Name == "Del" then
+						table.insert(KeystoRemove, key)	
+					end
+				end
+				for key,value in pairs(KeystoRemove) do
+					if triggerArgs.AttackerTable.OutgoingCritModifiers[value] then
+						table.remove(triggerArgs.AttackerTable.OutgoingCritModifiers, value)
+					end
 				end
 			end
-			for key,value in pairs(KeystoRemove) do
-				if triggerArgs.AttackerTable.OutgoingCritModifiers[value] then
-					table.remove(triggerArgs.AttackerTable.OutgoingCritModifiers, value)
+			KeystoRemove = {}
+			if triggerArgs.AttackerTable.OutgoingDamageModifiers then
+				for key,value in pairs(triggerArgs.AttackerTable.OutgoingDamageModifiers) do
+					if value.Name == "Del" then
+						table.insert(KeystoRemove, key)	
+					end
+				end
+				for key,value in pairs(KeystoRemove) do
+					if triggerArgs.AttackerTable.OutgoingDamageModifiers[value] then
+						table.remove(triggerArgs.AttackerTable.OutgoingDamageModifiers, value)
+					end
 				end
 			end
-		end
-		KeystoRemove = {}
-		if triggerArgs.AttackerTable.OutgoingDamageModifiers then
-			for key,value in pairs(triggerArgs.AttackerTable.OutgoingDamageModifiers) do
-				if value.Name == "Del" then
-					table.insert(KeystoRemove, key)	
+			KeystoRemove = {}
+			if triggerArgs.AttackerTable.OutgoingDoubleDamageModifiers then
+				for key,value in pairs(triggerArgs.AttackerTable.OutgoingDoubleDamageModifiers) do
+					if value.Name == "Del" then
+						table.insert(KeystoRemove, key)	
+					end
+				end
+				for key,value in pairs(KeystoRemove) do
+					if triggerArgs.AttackerTable.OutgoingDoubleDamageModifiers[value] then
+						table.remove(triggerArgs.AttackerTable.OutgoingDoubleDamageModifiers, value)
+					end
 				end
 			end
-			for key,value in pairs(KeystoRemove) do
-				if triggerArgs.AttackerTable.OutgoingDamageModifiers[value] then
-					table.remove(triggerArgs.AttackerTable.OutgoingDamageModifiers, value)
-				end
-			end
-		end
-		KeystoRemove = {}
-		if triggerArgs.AttackerTable.OutgoingDoubleDamageModifiers then
-			for key,value in pairs(triggerArgs.AttackerTable.OutgoingDoubleDamageModifiers) do
-				if value.Name == "Del" then
-					table.insert(KeystoRemove, key)	
-				end
-			end
-			for key,value in pairs(KeystoRemove) do
-				if triggerArgs.AttackerTable.OutgoingDoubleDamageModifiers[value] then
-					table.remove(triggerArgs.AttackerTable.OutgoingDoubleDamageModifiers, value)
-				end
-			end
+			triggerArgs.AttackerTable.TotTModified = nil
 		end
 			
 		-- Effect of weapon boons

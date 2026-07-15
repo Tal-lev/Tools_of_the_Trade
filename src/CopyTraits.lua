@@ -5794,6 +5794,27 @@ OverwriteTableKeys( TraitData, {
 				{
 					Damage = (190 * BiomePScaling),
 					StartDelay = 0.3,
+					Effects = {
+
+						{
+							Name = "MeleeAttackVictimGrip",
+							Type = "GRIP",
+							Duration = 0.3,
+							Modifier = 0.05,
+							HaltOnEnd = true,
+							Active = true,
+						},
+						{
+							Name = "OnHitStun",
+							Duration = 0.2,
+							DisableMove = true,
+							DisableRotate = true,
+							DisableAttack = false,
+							Active = true,
+							CanAffectInvulnerable = false,
+							Cancelable = true,
+						},
+					}
 				},
 				ExcludeLinked = true,
             },
