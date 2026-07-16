@@ -162,6 +162,7 @@
 - Wretched Pest
 - Wretched Sneak
 - Megaera
+  - Bolts
   - Whip-Fury
 - Alecto
   - Saw-Shot
