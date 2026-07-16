@@ -1408,6 +1408,16 @@ if ZagreusJourney then
 				ChangeType = "Absolute",
 				ExcludeLinked = true,
 			},
+            --Harpy Meg two
+			{
+				WeaponName = "WeaponLob",
+				ProjectileName = "HarpyBeam",
+				ProjectileProperty = "Graphic",
+				ValuePrefix = "FuryBeamEmitter_",
+				ChangeType = "Absolute",
+				ExcludeLinked = true,
+			},
+
 			--Harpy2 Alecto
 			{
 				WeaponName = "WeaponLob",

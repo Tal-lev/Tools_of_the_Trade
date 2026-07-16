@@ -16978,6 +16978,299 @@ table.insert(data.Animations,
 
         table.insert(data.Animations,
         {
+            Name = "KirbyFuryBeamFire",
+            FilePath = "Fx\\FuryBeamFire\\FuryBeamFire",
+            GroupName = "FX_Standing_Add",
+            Type = "Book",
+            AngleFromOwner = "Take",
+            EndFrame = 38,
+            NumFrames = 38,
+            RandomPlaySpeedMax = 70.0,
+            RandomPlaySpeedMin = 60.0,
+            StartFrame = 1,
+            RandomFlipVertical = true,
+            LocationFromOwner = "Ignore",
+            LocationZFromOwner = "Take",
+            SortMode = "Id",
+            Velocity = 400.0,
+            ScaleMax = 1.0,
+            ScaleMin = 0.8,
+            ScaleX = 1.3,
+            ScaleY = 0.3,
+            Ambient = 0.0,
+            RandomAccelerationMax = -300.0,
+            RandomAccelerationMin = -700.0,
+            VisualFxManagerCap = 400,
+            CreateAnimations = {
+                { Name = "FuryBeamFireDark" },
+                { Name = "BatMaybe" },
+            },
+        })
+
+         table.insert(data.Animations,
+        {
+            Name = "FuryBeamFire_Zeus",
+            InheritFrom = "KirbyFuryBeamFire",
+            Color = {},
+            ColorFromOwner = "Ignore",
+            AddColor = true,
+            StartRed = 1.0,
+            StartGreen = 0.95,
+            StartBlue = 0.7,
+            EndRed = 0.9999,
+            EndGreen = 0.8,
+            EndBlue = 0.5,
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "FuryBeamFire_Hera",
+            InheritFrom = "FuryBeamFire_Zeus",
+            StartRed = 0.0,
+            StartGreen = 1.0,
+            StartBlue = 0.1,
+            EndRed = 0.1,
+            EndGreen = 0.3,
+            EndBlue = 1.0,
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "FuryBeamFire_Poseidon",
+            InheritFrom = "FuryBeamFire_Zeus",
+            StartRed = 0.1,
+            StartGreen = 1.0,
+            StartBlue = 0.8,
+            EndRed = 0,
+            EndGreen = 0.6,
+            EndBlue = 1.0,
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "FuryBeamFire_Demeter",
+            InheritFrom = "FuryBeamFire_Zeus",
+            StartRed = 0.25,
+            StartGreen = 0.35,
+            StartBlue = 0.5,
+            EndRed = 0.35,
+            EndGreen = 0.25,
+            EndBlue = 0.4999,
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "FuryBeamFire_Apollo",
+            InheritFrom = "FuryBeamFire_Zeus",
+            StartRed = 1.0,
+            StartGreen = 0.9,
+            StartBlue = 0.7,
+            EndRed = 0.999,
+            EndGreen = 0.85,
+            EndBlue = 0.05,
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "FuryBeamFire_Aphrodite",
+            InheritFrom = "FuryBeamFire_Zeus",
+            StartRed = 1.0,
+            StartGreen = 0.6,
+            StartBlue = 0.8,
+            EndRed = 0.99,
+            EndGreen = 0.05,
+            EndBlue = 0.99,
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "FuryBeamFire_Hephaestus",
+            InheritFrom = "FuryBeamFire_Zeus",
+            StartRed = 0.51,
+            StartGreen = 0.82,
+            StartBlue = 1.00,
+            EndRed = 1.00,
+            EndGreen = 0,
+            EndBlue = 0,
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "FuryBeamFire_Hestia",
+            InheritFrom = "FuryBeamFire_Zeus",
+            StartRed = 1.0,
+            StartGreen = 0.3,
+            StartBlue = 0.02,
+            EndRed = 0.999,
+            EndGreen = 0.15,
+            EndBlue = 0.0,
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "FuryBeamFire_Ares",
+            InheritFrom = "FuryBeamFire_Zeus",
+            StartRed = 1.0,
+            StartGreen = 0.04,
+            StartBlue = 0.001,
+            EndRed = 0.999,
+            EndGreen = 0.0,
+            EndBlue = 0.0,
+        })
+
+         table.insert(data.Animations,
+        {
+            Name = "KirbyFuryBeamEmitter",
+            FilePath = "Fx\\ProjectileFire\\ProjectileFire",
+            GroupName = "FX_Standing_Add",
+            Type = "Book",
+            VisualFx = "FuryBeamFire",
+            VisualFxManagerCap = 400,
+            AngleFromOwner = "Ignore",
+            AddColor = true,
+            EndFrame = 60,
+            Loop = true,
+            NumFrames = 60,
+            RandomPlaySpeedMax = 120.0,
+            RandomPlaySpeedMin = 90.0,
+            ReRandomizeOnLoop = false,
+            StartFrame = 1,
+            RandomRotation = true,
+            EndScale = 0.25,
+            PingPongScale = true,
+            ScaleMax = 1.0,
+            ScaleMin = 0.5,
+            VisualFxDistanceMax = 200.0,
+            VisualFxDistanceMin = 180.0,
+            Sound = "/SFX/Enemy Sounds/Megaera/MegaeraRapidEnergyBlastFire",
+            CreateAnimations = {
+                { Name = "FuryBeamEmitterDark" },
+            },
+            Color = { Red = 1.0, Green = 0.0, Blue = 0.6, },
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "FuryBeamEmitter_Zeus",
+            InheritFrom = "KirbyFuryBeamEmitter",
+            VisualFx = "FuryBeamFire_Zeus",
+            Color = {},
+            ColorFromOwner = "Ignore",
+            AddColor = true,
+            StartRed = 1.0,
+            StartGreen = 0.95,
+            StartBlue = 0.7,
+            EndRed = 0.9999,
+            EndGreen = 0.8,
+            EndBlue = 0.5,
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "FuryBeamEmitter_Hera",
+            InheritFrom = "FuryBeamEmitter_Zeus",
+            VisualFx = "FuryBeamFire_Hera",
+            StartRed = 0.0,
+            StartGreen = 1.0,
+            StartBlue = 0.1,
+            EndRed = 0.1,
+            EndGreen = 0.3,
+            EndBlue = 1.0,
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "FuryBeamEmitter_Poseidon",
+            InheritFrom = "FuryBeamEmitter_Zeus",
+            VisualFx = "FuryBeamFire_Poseidon",
+            StartRed = 0.1,
+            StartGreen = 1.0,
+            StartBlue = 0.8,
+            EndRed = 0,
+            EndGreen = 0.6,
+            EndBlue = 1.0,
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "FuryBeamEmitter_Demeter",
+            InheritFrom = "FuryBeamEmitter_Zeus",
+            VisualFx = "FuryBeamFire_Demeter",
+            StartRed = 0.25,
+            StartGreen = 0.35,
+            StartBlue = 0.5,
+            EndRed = 0.35,
+            EndGreen = 0.25,
+            EndBlue = 0.4999,
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "FuryBeamEmitter_Apollo",
+            InheritFrom = "FuryBeamEmitter_Zeus",
+            VisualFx = "FuryBeamFire_Apollo",
+            StartRed = 1.0,
+            StartGreen = 0.9,
+            StartBlue = 0.7,
+            EndRed = 0.999,
+            EndGreen = 0.85,
+            EndBlue = 0.05,
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "FuryBeamEmitter_Aphrodite",
+            InheritFrom = "FuryBeamEmitter_Zeus",
+            VisualFx = "FuryBeamFire_Aphrodite",
+            StartRed = 1.0,
+            StartGreen = 0.6,
+            StartBlue = 0.8,
+            EndRed = 0.99,
+            EndGreen = 0.05,
+            EndBlue = 0.99,
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "FuryBeamEmitter_Hephaestus",
+            InheritFrom = "FuryBeamEmitter_Zeus",
+            VisualFx = "FuryBeamFire_Hephaestus",
+            StartRed = 0.51,
+            StartGreen = 0.82,
+            StartBlue = 1.00,
+            EndRed = 1.00,
+            EndGreen = 0,
+            EndBlue = 0,
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "FuryBeamEmitter_Hestia",
+            InheritFrom = "FuryBeamEmitter_Zeus",
+            VisualFx = "FuryBeamFire_Hestia",
+            StartRed = 1.0,
+            StartGreen = 0.3,
+            StartBlue = 0.02,
+            EndRed = 0.999,
+            EndGreen = 0.15,
+            EndBlue = 0.0,
+        })
+
+        table.insert(data.Animations,
+        {
+            Name = "FuryBeamEmitter_Ares",
+            InheritFrom = "FuryBeamEmitter_Zeus",
+            VisualFx = "FuryBeamFire_Ares",
+            StartRed = 1.0,
+            StartGreen = 0.04,
+            StartBlue = 0.001,
+            EndRed = 0.999,
+            EndGreen = 0.0,
+            EndBlue = 0.0,
+        })
+
+        table.insert(data.Animations,
+        {
             Name = "KirbyFuryAlectoThrow",
             ChainTo = "FuryAlectoThrowEnd",
             CreateAnimation = "QuickFlashRedLarge",

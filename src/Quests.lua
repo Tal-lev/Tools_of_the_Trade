@@ -504,9 +504,11 @@ OverwriteTableKeys( QuestData, {
                          "DisembodiedHandCopyDisplayBoon",
                          "HeavyRangedSplitterMinibossCopyDisplayBoon",
                          "WretchAssassinMinibossCopyDisplayBoon",
-                         "HarpyOneCopyDisplayBoon",
+                         "HarpyOneOneCopyDisplayBoon",
+                         "HarpyOneTwoCopyDisplayBoon",
                          "HarpytwoOneCopyDisplayBoon",
                          "HarpythreeOneCopyDisplayBoon",
+                         "HarpythreeTwoCopyDisplayBoon",
                          
                          --Asphodel
                          "BloodlessNakedCopyDisplayBoon",
@@ -578,9 +580,11 @@ OverwriteTableKeys( QuestData, {
                          "DisembodiedHandCopyDisplayBoon",
                          "HeavyRangedSplitterMinibossCopyDisplayBoon",
                          "WretchAssassinMinibossCopyDisplayBoon",
-                         "HarpyOneCopyDisplayBoon",
+                         "HarpyOneOneCopyDisplayBoon",
+                         "HarpyOneTwoCopyDisplayBoon",
                          "HarpytwoOneCopyDisplayBoon",
                          "HarpythreeOneCopyDisplayBoon",
+                         "HarpythreeTwoCopyDisplayBoon",
                          
                          --Asphodel
                          "BloodlessNakedCopyDisplayBoon",

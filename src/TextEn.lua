@@ -1513,7 +1513,17 @@ sjson.hook(file, function(data)
 
 		table.insert(data.Texts, sjson.to_object(
 		{
-			Id = "HarpyOneCopyDisplayBoon",
+			Id = "HarpyOneOneCopyDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Copy: Megaera Bolts",
+			Description = "Your Attack Whips Bolts in all directions.",
+		},
+		TextOrder)
+		)
+
+		table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "HarpyOneTwoCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: Megaera Whip-Fury",
 			Description = "Your Attack Whips All-Around.",
@@ -1537,6 +1547,16 @@ sjson.hook(file, function(data)
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: Tisiphone Hell-Fire Pillar",
 			Description = "Your Attack fires a Hell-Fire Pillar.",
+		},
+		TextOrder)
+		)
+		
+		table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "HarpythreeTwoCopyDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Copy: Tisiphone Lunge",
+			Description = "Your Attack Lunges forward.",
 		},
 		TextOrder)
 		)
@@ -3176,7 +3196,17 @@ sjson.hook(file, function(data)
 
 		table.insert(data.Texts, sjson.to_object(
 		{
-			Id = "HarpyOneCopyTwoDisplayBoon",
+			Id = "HarpyOneOneCopyTwoDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Reserve Copy: Megaera Bolts",
+			Description = "Your Attack Whips Bolts in all directions.",
+		},
+		TextOrder)
+		)
+
+		table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "HarpyOneTwoCopyTwoDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Reserve Copy: Megaera Whip-Fury",
 			Description = "Your Attack Whips All-Around.",
@@ -3200,6 +3230,16 @@ sjson.hook(file, function(data)
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Reserve Copy: Tisiphone Hell-Fire Pillar",
 			Description = "Your Attack fires a Hell-Fire Pillar.",
+		},
+		TextOrder)
+		)
+
+		table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "HarpythreeTwoCopyTwoDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Reserve Copy: Tisiphone Lunge",
+			Description = "Your Attack Lunges forward.",
 		},
 		TextOrder)
 		)

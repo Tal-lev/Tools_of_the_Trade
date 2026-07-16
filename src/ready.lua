@@ -1149,13 +1149,21 @@ function mod.CopyAbility (victim, functionArgs, triggerArgs)
 			Changed = "HeavyRangedSplitterMiniboss"
 			Location = "TartarusModsNikkelMHadesBiomes"
 		elseif victim.Name == "Harpy" then
-			Changed = "HarpyOne"
+			if math.random() < 0.5 then
+				Changed = "HarpyOneOne"
+			else
+				Changed = "HarpyOneTwo"
+			end
 			Location = "TartarusModsNikkelMHadesBiomes"
 		elseif victim.Name == "Harpy2" then
 			Changed = "HarpytwoOne"
 			Location = "TartarusModsNikkelMHadesBiomes"
 		elseif victim.Name == "Harpy3" then
-			Changed = "HarpythreeOne"
+			if math.random() < 0.5 then
+				Changed = "HarpythreeOne"
+			else
+				Changed = "HarpythreeTwo"
+			end
 			Location = "TartarusModsNikkelMHadesBiomes"
 		elseif victim.Name == "RangedBurrower" or victim.Name == "RangedBurrowerElite" then
 			Changed = "RangedBurrower"

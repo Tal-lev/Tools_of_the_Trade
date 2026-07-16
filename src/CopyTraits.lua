@@ -37,6 +37,8 @@ OverwriteTableKeys( TraitData, {
 					ChargeSoundFadeTime = 0.25,
 					FullyAutomatic = false,
 					Cooldown = 0.4,
+					Scatter = 0,
+
 				},
 				ExcludeLinked = true,
 			}
@@ -7146,9 +7148,63 @@ if ZagreusJourney then
 			},
 		},
 
-		HarpyOneCopyDisplayBoon = 
+		HarpyOneOneCopyDisplayBoon = 
 		{
-			Icon = "JarlUlsfark-Tools_of_the_Trade_ZJcompat\\HarpyIcon",
+			Icon = "JarlUlsfark-Tools_of_the_Trade_ZJcompat\\Harpy1Icon",
+			ShowInHUD = true,
+			CustomLabel = 
+			{
+				DisplayType = "RoomValue",
+				Key = "Copy_Harpy",
+				Text = "Copy_EmptyText"
+			},
+			PropertyChanges = 
+			{
+			{
+					WeaponName = "WeaponLob",
+					WeaponProperty = "Projectile",
+					ChangeValue = "HarpyBeam",
+				},
+				{
+					WeaponName = "WeaponLob",
+					WeaponProperties = 
+					{
+						Cooldown = 0.6,
+						FizzleOldSpawns = false,
+						NumProjectiles = 12,
+						ProjectileAngleOffset = math.rad(30),
+						--Scatter = 15,
+					},
+					ExcludeLinked = true,
+				},
+				{
+					WeaponName = "WeaponLob",
+					ProjectileName = "HarpyBeam",
+					ProjectileProperties = 
+					{
+						Damage = (40 * BiomeAScaling),
+					},
+					ExcludeLinked = true,
+				},
+			},
+			FlavorText = "CopyAbility_FlavorText",
+		},
+
+		HarpyOneOneCopyTwoDisplayBoon = 
+		{
+			Icon = "JarlUlsfark-Tools_of_the_Trade_ZJcompat\\Harpy1Icon",
+			ShowInHUD = true,
+			CustomLabel = 
+			{
+				DisplayType = "RoomValue",
+				Key = "Copy_Harpy2",
+				Text = "Copy_2nd"
+			},
+		},
+
+		HarpyOneTwoCopyDisplayBoon = 
+		{
+			Icon = "JarlUlsfark-Tools_of_the_Trade_ZJcompat\\Harpy12Icon",
 			ShowInHUD = true,
 			CustomLabel = 
 			{
@@ -7185,14 +7241,14 @@ if ZagreusJourney then
 			FlavorText = "CopyAbility_FlavorText",
 		},
 
-		HarpyOneCopyTwoDisplayBoon = 
+		HarpyOneTwoCopyTwoDisplayBoon = 
 		{
-			Icon = "JarlUlsfark-Tools_of_the_Trade_ZJcompat\\HarpyIcon",
+			Icon = "JarlUlsfark-Tools_of_the_Trade_ZJcompat\\Harpy12Icon",
 			ShowInHUD = true,
 			CustomLabel = 
 			{
 				DisplayType = "RoomValue",
-				Key = "Copy_Harpy2",
+				Key = "Copy_HarpyOneTwo2",
 				Text = "Copy_2nd"
 			},
 		},
@@ -7290,6 +7346,67 @@ if ZagreusJourney then
 		HarpythreeOneCopyTwoDisplayBoon = 
 		{
 			Icon = "JarlUlsfark-Tools_of_the_Trade_ZJcompat\\Harpy3Icon",
+			ShowInHUD = true,
+			CustomLabel = 
+			{
+				DisplayType = "RoomValue",
+				Key = "Copy_Harpythree2",
+				Text = "Copy_2nd"
+			},
+		},
+
+		HarpythreeTwoCopyDisplayBoon = 
+		{
+			Icon = "JarlUlsfark-Tools_of_the_Trade_ZJcompat\\Harpy32Icon",
+			ShowInHUD = true,
+			CustomLabel = 
+			{
+				DisplayType = "RoomValue",
+				Key = "Copy_Harpythreetwo",
+				Text = "Copy_EmptyText"
+			},
+			PropertyChanges = 
+			{
+			{
+					WeaponName = "WeaponLob",
+					WeaponProperty = "Projectile",
+					ChangeValue = "HarpyLassoLunge",
+				},
+				{
+					WeaponName = "WeaponLob",
+					WeaponProperties = 
+					{
+						Cooldown = 1.2,
+						FizzleOldSpawns = false,
+						BlockMoveInput = true,
+						CancelMovement = true,
+						SelfVelocity = 1200,
+						AttachToOwner =true,
+						AutoLock = true,
+						AutoLockRange = 100,
+						AutoLockArcDistance = 90,
+						RootOwnerWhileFiring = true,
+						CancelChargeOnRelease = true,
+					},
+					ExcludeLinked = true,
+				},
+				{
+					WeaponName = "WeaponLob",
+					ProjectileName = "HarpyLassoLunge",
+					ProjectileProperties = 
+					{
+						Damage = (130 * BiomeAScaling),
+						StartDelay = 0.3,
+					},
+					ExcludeLinked = true,
+				},
+			},
+			FlavorText = "CopyAbility_FlavorText",
+		},
+
+		HarpythreeTwoCopyTwoDisplayBoon = 
+		{
+			Icon = "JarlUlsfark-Tools_of_the_Trade_ZJcompat\\Harpy32Icon",
 			ShowInHUD = true,
 			CustomLabel = 
 			{
