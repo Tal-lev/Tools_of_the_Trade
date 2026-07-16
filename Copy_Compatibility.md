@@ -167,6 +167,7 @@
   - Saw-Shot
 - Tisiphone
   - Hell-Fire Pillar
+  - Lunge
 
 ### Asphodel (Unreleased)
 
