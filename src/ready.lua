@@ -800,7 +800,11 @@ function mod.CopyAbility (victim, functionArgs, triggerArgs)
 		Changed = "LightRanged"
 		Location = "BiomeF"
 	elseif victim.Name == "Hecate" then
-		Changed = "HecateOne"
+		if math.random() < 0.5 then
+			Changed = "HecateOne"
+		else
+			Changed = "HecateTwo"
+		end
 		Location = "BiomeF"
 	elseif victim.Name == "Turtle" or victim.Name == "Turtle_Elite" then
 		Changed = "Turtle"

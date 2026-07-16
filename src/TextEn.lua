@@ -401,6 +401,16 @@ sjson.hook(file, function(data)
 
 	table.insert(data.Texts, sjson.to_object(
 		{
+			Id = "HecateTwoCopyDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Copy: Hecate Magic Circle",
+			Description = "Your Attack Summons a Magic Circle that explodes.",
+		},
+		TextOrder)
+	)
+
+	table.insert(data.Texts, sjson.to_object(
+		{
 			Id = "FishmanMeleeCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: Lurker",
@@ -2048,6 +2058,16 @@ sjson.hook(file, function(data)
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Reserve Copy: Hecate Torch-Cone",
 			Description = "Your Attack fires Cones of Flame in both directions.",
+		},
+		TextOrder)
+	)
+
+	table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "HecateTwoCopyTwoDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Reserve Copy: Hecate Magic Circle",
+			Description = "Your Attack Summons a Magic Circle that explodes.",
 		},
 		TextOrder)
 	)

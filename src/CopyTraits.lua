@@ -718,7 +718,59 @@ OverwriteTableKeys( TraitData, {
 		CustomLabel = 
 		{
 			DisplayType = "RoomValue",
-			Key = "Copy_Radiator2",
+			Key = "Copy_HecateOne2",
+			Text = "Copy_2nd"
+		},
+	},
+
+	HecateTwoCopyDisplayBoon = 
+	{
+		Icon = "JarlUlsfark-Tools_of_the_Trade\\Hecate2Icon",
+		ShowInHUD = true,
+		CustomLabel = 
+		{
+			DisplayType = "RoomValue",
+			Key = "Copy_Hecatetwo",
+			Text = "Copy_EmptyText"
+		},
+        PropertyChanges = 
+        {
+           {
+				WeaponName = "WeaponLob",
+				WeaponProperty = "Projectile",
+				ChangeValue = "HecateMeteor",
+			},
+            {
+				WeaponName = "WeaponLob",
+				WeaponProperties = 
+                {
+                    Cooldown = 2,
+					RootOwnerWhileFiring = true,
+					FizzleOldSpawns = true,
+                },
+                ExcludeLinked = true,
+			},
+            {
+                WeaponName = "WeaponLob",
+                ProjectileName = "HecateMeteor",
+                ProjectileProperties = 
+				{
+					Damage = 120,
+				},
+				ExcludeLinked = true,
+            },
+        },
+		FlavorText = "CopyAbility_FlavorText",
+	},
+
+	HecateTwoCopyTwoDisplayBoon = 
+	{
+		Icon = "JarlUlsfark-Tools_of_the_Trade\\Hecate2Icon",
+		ShowInHUD = true,
+		CustomLabel = 
+		{
+			DisplayType = "RoomValue",
+			Key = "Copy_HecateTwo2",
 			Text = "Copy_2nd"
 		},
 	},

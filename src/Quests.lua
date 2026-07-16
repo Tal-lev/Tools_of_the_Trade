@@ -158,6 +158,7 @@ OverwriteTableKeys( QuestData, {
                     "ZombieAssassin_MinibossCopyDisplayBoon",
                     "LightRangedCopyDisplayBoon",
                     "HecateOneCopyDisplayBoon",
+                    "HecateTwoCopyDisplayBoon",
                     
                     --Oceanus
                     "GuardtwoCopyDisplayBoon",
@@ -235,6 +236,7 @@ OverwriteTableKeys( QuestData, {
                     "ZombieAssassin_MinibossCopyDisplayBoon",
                     "LightRangedCopyDisplayBoon",
                     "HecateOneCopyDisplayBoon",
+                    "HecateTwoCopyDisplayBoon",
                     
                     --Oceanus
                     "GuardtwoCopyDisplayBoon",
