@@ -27,7 +27,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - HeavyRanged
   - HeavyRangedSplitterMiniboss
   - WretchAssassinMiniboss
-  - Harpy
+  - Harpy1
+  - Harpy1Two
   - Harpy2
   - Harpy3
   - Harpy3Two
