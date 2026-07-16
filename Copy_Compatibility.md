@@ -18,6 +18,7 @@
 - Sister of the Dead
 - Hecate
   - Torch-Cones
+  - Magic Circle
 
 ### Oceanus
 
