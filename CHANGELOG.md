@@ -17,7 +17,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Dragon
   - Dragon_MiniBoss
   - TyphonEgg
-- 52 Implemented ZJ copy abilities.
+- 53 Implemented ZJ copy abilities.
   - HadesSwarmer
   - LightSpawner
   - PunchingBagUnit
@@ -30,6 +30,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Harpy
   - Harpy2
   - Harpy3
+  - Harpy3Two
   - BloodlessNaked
   - BloodlessGrenadier
   - BloodlessSelfDestruct
