@@ -911,6 +911,7 @@ function mod.CopyAbility (victim, functionArgs, triggerArgs)
 		else
 			Changed = "InfestedCerberusTwo"
 		Location = "BiomeH"
+		end
 	elseif victim.Name == "Mourner" or victim.Name == "Mourner_Elite" then
 		Changed = "Mourner"	
 		Location = "BiomeH"
@@ -1770,6 +1771,11 @@ ModUtil.Path.Wrap("Damage", function(baseFunc, victim, triggerArgs)
 					if game.CallFunctionName("ReadEmAndWeep-Flip_the_Arcana_Mod.GetNumberofEnemies") >= trait.FlipTheArcanaCrowdThreshold then
 						table.insert(triggerArgs.AttackerTable.OutgoingDamageModifiers, {Name = "Del", NonPlayerMultiplier = ((trait.FlipTheArcanaCrowdDamage or 0.15 ) + 1)})
 					end
+				end
+				--Flip the Arcana: The Final Farewell
+				if HeroHasTrait("ReversedFullDefianceMetaUpgrade") and CurrentRun.Hero.LastStands and CurrentRun.Hero.MaxLastStands and (CurrentRun.Hero.MaxLastStands) > 0 and (TableLength( CurrentRun.Hero.LastStands ) >= CurrentRun.Hero.MaxLastStands) then
+					local trait = GetHeroTrait("ReversedFullDefianceMetaUpgrade")
+					table.insert(triggerArgs.AttackerTable.OutgoingDamageModifiers, {Name = "Del", NonPlayerMultiplier = ((trait.FlipTheArcanaFullLastStandDamageMultiplier or 0.2 ) + 1)})
 				end
 				--Flip the Arcana: The Trapper
 				if HeroHasTrait("ReversedLowHealthCritMetaUpgrade") then
