@@ -669,6 +669,15 @@ AddGodTraitProperty({
             ChangeType = "Absolute",
             ExcludeLinked = true,
         }, 
+        --InfestedCerberusTwo
+		{
+            WeaponName = "WeaponLob",
+            ProjectileName = "CerberusTurnSlam",
+            ProjectileProperty = "Graphic",
+            ValuePrefix = "CerberusTurnSlamNova_",
+            ChangeType = "Absolute",
+            ExcludeLinked = true,
+        }, 
 		-- ClockworkHeavyMelee
 		{
             WeaponName = "WeaponLob",

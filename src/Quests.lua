@@ -193,6 +193,7 @@ OverwriteTableKeys( QuestData, {
                     "LamiaCopyDisplayBoon",
                     "Lamia_MinibossCopyDisplayBoon",
                     "InfestedCerberusOneCopyDisplayBoon",
+                    "InfestedCerberusTwoCopyDisplayBoon",
 
                     --Tartarus
                     "SwarmerClockworkCopyDisplayBoon",
@@ -272,6 +273,7 @@ OverwriteTableKeys( QuestData, {
                     "LamiaCopyDisplayBoon",
                     "Lamia_MinibossCopyDisplayBoon",
                     "InfestedCerberusOneCopyDisplayBoon",
+                    "InfestedCerberusTwoCopyDisplayBoon",
 
                     --Tartarus
                     "SwarmerClockworkCopyDisplayBoon",

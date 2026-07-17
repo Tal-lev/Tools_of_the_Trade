@@ -906,7 +906,10 @@ function mod.CopyAbility (victim, functionArgs, triggerArgs)
 		Changed = "Vampire"
 		Location = "BiomeH"
 	elseif victim.Name == "InfestedCerberus" then
-		Changed = "InfestedCerberusOne"
+		if math.random() < 0.5 then
+			Changed = "InfestedCerberusOne"
+		else
+			Changed = "InfestedCerberusTwo"
 		Location = "BiomeH"
 	elseif victim.Name == "Mourner" or victim.Name == "Mourner_Elite" then
 		Changed = "Mourner"	
