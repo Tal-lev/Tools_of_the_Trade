@@ -93,5 +93,6 @@
 - The Beasts
 - The Trapper
 - The Sirens
+- The Final Farewell
 - The Titaness
 - Victory
