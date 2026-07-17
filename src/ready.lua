@@ -1544,7 +1544,9 @@ modutil.mod.Path.Wrap("SetupMap", function(base, source, args)
 		if trait.SecondLocation ~= "null" then
 			LoadPackages({Name = trait.SecondLocation})
 		end
-		if ZagreusJourney and HeroHasTrait("ShadeNakedCopyDisplayBoon") then
+		if HeroHasTrait("TyphonEggCopyDisplayBoon") then
+			mod.HandleTyphonEggCopy()
+		elseif ZagreusJourney and HeroHasTrait("ShadeNakedCopyDisplayBoon") then
 			mod.HandleShadeNakedCopy()
 		end
 	end
@@ -1590,7 +1592,7 @@ modutil.mod.Path.Wrap("Kill", function(base, victim, triggerArgs)
 	
 		--if victim.ScaleMultiplier > 0.5 then
 	end
-	if HeroHasTrait("ShovelRaiseDeadNecroMel") and HeroHasTrait("TimedKillBuffBoon") and (triggerArgs.SourceProjectile == "ZombieMelee" or triggerArgs.SourceProjectile == "MournerRampage" or triggerArgs.SourceProjectile == "SentryBotBolt" or triggerArgs.SourceProjectile == "SentryBotVent" or triggerArgs.SourceProjectile == "AutomatonBeamBolt" or triggerArgs.SourceProjectile == "AutomatonOrbit") and triggerArgs.AttackerTable.AlwaysTraitor == true and triggerArgs.Killed == true then
+	if HeroHasTrait("ShovelRaiseDeadNecroMel") and HeroHasTrait("TimedKillBuffBoon") and triggerArgs.SourceProjectile and triggerArgs.AttackerTable and (triggerArgs.SourceProjectile == "ZombieMelee" or triggerArgs.SourceProjectile == "MournerRampage" or triggerArgs.SourceProjectile == "SentryBotBolt" or triggerArgs.SourceProjectile == "SentryBotVent" or triggerArgs.SourceProjectile == "AutomatonBeamBolt" or triggerArgs.SourceProjectile == "AutomatonOrbit") and triggerArgs.AttackerTable.AlwaysTraitor == true and triggerArgs.Killed == true then
 		SessionMapState.TimedBuff = SessionMapState.TimedBuff + 1
 		table.insert( SessionMapState.TimedBuffStartTimes, _worldTime )
 		local FunctionArgs = 
