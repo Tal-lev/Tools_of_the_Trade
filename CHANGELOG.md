@@ -77,8 +77,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Charon
     - Oar Swipe
     - Wave
-- 6 Implemented Boss Copy
+- 7 Implemented Boss Copy
   - Hecate - Magic Circle
+  - Cerberus - Ground Pound
   - Chronos - Time Stasis
   - Zagreus - Spear Spin
   - Eris - Laser
