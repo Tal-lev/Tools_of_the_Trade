@@ -58,6 +58,7 @@
 - Phantom
 - Infernal Cerberus
   - Fire-Breath
+  - Ground Pound
 
 ### Tartarus
 
