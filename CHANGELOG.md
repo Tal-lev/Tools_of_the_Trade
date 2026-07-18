@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.0.1] - 2026-07-18
+
 - Fix crash when starting a fresh save
 - Dev: removing duplicate animations
 
@@ -407,7 +409,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - First version of the mod!
 
-[unreleased]: https://github.com/Tal-lev/Tools_of_the_Trade/compare/1.0.0...HEAD
+[unreleased]: https://github.com/Tal-lev/Tools_of_the_Trade/compare/1.0.1...HEAD
+[1.0.1]: https://github.com/Tal-lev/Tools_of_the_Trade/compare/1.0.0...1.0.1
 [1.0.0]: https://github.com/Tal-lev/Tools_of_the_Trade/compare/0.3.1...1.0.0
 [0.3.1]: https://github.com/Tal-lev/Tools_of_the_Trade/compare/0.3.0...0.3.1
 [0.3.0]: https://github.com/Tal-lev/Tools_of_the_Trade/compare/0.2.1...0.3.0
