@@ -143,6 +143,7 @@
 - Spawn of Typhon
 - Twins of Typhon
 - Tail of Typhon
+- Typhon Eyeball
 - Eye of Typhon
 - Egg of Typhon
 - Typhon
