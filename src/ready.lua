@@ -1546,18 +1546,20 @@ modutil.mod.Path.Wrap("SetupMap", function(base, source, args)
 	if ZagreusJourney then
 		LoadPackages({ Name ="JarlUlsfark-Tools_of_the_Trade_ZJcompat"})
 	end
-	if HeroHasTrait("TabletofPeaceKirbyMel") then
-		local trait = GetHeroTrait("TabletofPeaceKirbyMel")
-		if trait.location ~= "null" then
-			LoadPackages({Name = trait.Location})
-		end
-		if trait.SecondLocation ~= "null" then
-			LoadPackages({Name = trait.SecondLocation})
-		end
-		if HeroHasTrait("TyphonEggCopyDisplayBoon") then
-			mod.HandleTyphonEggCopy()
-		elseif ZagreusJourney and HeroHasTrait("ShadeNakedCopyDisplayBoon") then
-			mod.HandleShadeNakedCopy()
+	if CurrentRun and CurrentRun.Hero then
+		if HeroHasTrait("TabletofPeaceKirbyMel") then
+			local trait = GetHeroTrait("TabletofPeaceKirbyMel")
+			if trait.location ~= "null" then
+				LoadPackages({Name = trait.Location})
+			end
+			if trait.SecondLocation ~= "null" then
+				LoadPackages({Name = trait.SecondLocation})
+			end
+			if HeroHasTrait("TyphonEggCopyDisplayBoon") then
+				mod.HandleTyphonEggCopy()
+			elseif ZagreusJourney and HeroHasTrait("ShadeNakedCopyDisplayBoon") then
+				mod.HandleShadeNakedCopy()
+			end
 		end
 	end
 	return base(source, args)
