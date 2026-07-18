@@ -2341,6 +2341,58 @@ OverwriteTableKeys( TraitData, {
 		},
 	},
 
+	DespairElementalCopyDisplayBoon = 
+	{
+		Icon = "JarlUlsfark-Tools_of_the_Trade\\DespairElementalIcon",
+		ShowInHUD = true,
+		CustomLabel = 
+		{
+			DisplayType = "RoomValue",
+			Key = "Copy_DespairElemental",
+			Text = "Copy_EmptyText"
+		},
+        PropertyChanges = 
+        {
+			{
+				WeaponName = "WeaponLob",
+				WeaponProperty = "Projectile",
+				ChangeValue = "DespairElementalRamPlayer",
+			},
+            {
+				WeaponName = "WeaponLob",
+				WeaponProperties = 
+                {
+                    Cooldown = 0.6,
+					FizzleOldSpawns = true,
+					AttachToOwner = true,
+                },
+                ExcludeLinked = true,
+			},
+            {
+                WeaponName = "WeaponLob",
+                ProjectileName = "DespairElementalRamPlayer",
+                ProjectileProperties = 
+				{
+					Damage = 100,
+				},
+				ExcludeLinked = true,
+            },
+        },
+		FlavorText = "CopyAbility_FlavorText",
+	},
+
+	DespairElementalCopyTwoDisplayBoon = 
+	{
+		Icon = "JarlUlsfark-Tools_of_the_Trade\\DespairElementalIcon",
+		ShowInHUD = true,
+		CustomLabel = 
+		{
+			DisplayType = "RoomValue",
+			Key = "Copy_DespairElemental2",
+			Text = "Copy_2nd"
+		},
+	},
+
 	VampireCopyDisplayBoon = 
 	{
 		Icon = "JarlUlsfark-Tools_of_the_Trade\\VampireIcon",
@@ -6433,6 +6485,58 @@ OverwriteTableKeys( TraitData, {
 		{
 			DisplayType = "RoomValue",
 			Key = "Copy_TyphonTail2",
+			Text = "Copy_2nd"
+		},
+	},
+
+	EyeballCopyDisplayBoon = 
+	{
+		Icon = "JarlUlsfark-Tools_of_the_Trade\\EyeballIcon",
+		ShowInHUD = true,
+		CustomLabel = 
+		{
+			DisplayType = "RoomValue",
+			Key = "Copy_Eyeball",
+			Text = "Copy_EmptyText"
+		},
+        PropertyChanges = 
+        {
+			{
+				WeaponName = "WeaponLob",
+				WeaponProperty = "Projectile",
+				ChangeValue = "DespairElementalRamPlayer",
+			},
+            {
+				WeaponName = "WeaponLob",
+				WeaponProperties = 
+                {
+                    Cooldown = 0.6,
+					FizzleOldSpawns = true,
+					AttachToOwner = true,
+                },
+                ExcludeLinked = true,
+			},
+            {
+                WeaponName = "WeaponLob",
+                ProjectileName = "DespairElementalRamPlayer",
+                ProjectileProperties = 
+				{
+					Damage = 200,
+				},
+				ExcludeLinked = true,
+            },
+        },
+		FlavorText = "CopyAbility_FlavorText",
+	},
+
+	EyeballCopyTwoDisplayBoon = 
+	{
+		Icon = "JarlUlsfark-Tools_of_the_Trade\\EyeballIcon",
+		ShowInHUD = true,
+		CustomLabel = 
+		{
+			DisplayType = "RoomValue",
+			Key = "Copy_Eyeball2",
 			Text = "Copy_2nd"
 		},
 	},

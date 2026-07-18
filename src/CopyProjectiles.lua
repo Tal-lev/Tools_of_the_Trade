@@ -119,10 +119,7 @@ local file = rom.path.combine(rom.paths.Content, 'Game/Projectiles/PlayerProject
 			},
 		},
 	})
-
 	
-
-
 	table.insert(data.Projectiles,
 	{
 		Name = "CopyBoltCharged",
@@ -152,6 +149,68 @@ local file = rom.path.combine(rom.paths.Content, 'Game/Projectiles/PlayerProject
 					X = -5,
 					Y = 25,
 				},
+			},
+		},
+	})
+
+	table.insert(data.Projectiles,
+	{
+		Name = "DespairElementalRamPlayer",
+		InheritFrom = "1_BaseEnemyProjectile",
+		Type = "STRAIGHT",
+		DetonateSound = "/Leftovers/SFX/BeaconTeleportSFX",
+		AttachToOwner = true,
+		RotateWithOwner = true,
+		ImpactVelocity = 2100,
+		NumPenetrations = 9999,
+		CheckUnitImpact = true,
+		CheckObstacleImpact = true,
+		UnlimitedUnitPenetration = true,
+		MultipleUnitCollisions = true,
+		MultipleObstacleCollisions = true,
+		Damage = 200,
+		ImpactLineOfSight = true,
+		TotalFuse = 10.0,
+		ImmunityDuration = 1.0,
+		DieWithOwner = true,
+		Thing =
+		{
+			Graphic = "AxeNova_Simple",
+			OffsetZ = 58,
+			Grip = 999999,
+			ExtentScale = 1.1,
+			Points =
+			{
+				{ X = 32, Y = 44, },
+				{ X = 96, Y = 12, },
+				{ X = 96, Y = -20, },
+				{ X = 32, Y = -52, },
+				{ X = -32, Y = -52, },
+				{ X = -96, Y = -20, },
+				{ X = -96, Y = 12, },
+				{ X = -32, Y = 44, },
+			},
+		},
+		Effects =
+		{
+			{
+				Name = "OnHitStun",
+				Duration = 0.2,
+				DisableMove = true,
+				DisableRotate = true,
+				DisableAttack = true,
+				Active = true,
+				CanAffectInvulnerable = false,
+				Cancelable = true,
+			},
+			{
+				Name = "KnockbackGrip",
+				Type = "GRIP",
+				Duration = 0.1,
+				Modifier = 0.01,
+				HaltOnEnd = true,
+				Active = true,
+				CanAffectInvulnerable = true,
 			},
 		},
 	})
@@ -1589,7 +1648,7 @@ local file = rom.path.combine(rom.paths.Content, 'Game/Projectiles/PlayerProject
 			Duration = 0.2,
 			DisableMove = true,
 			DisableRotate = true,
-			DisableAttack = false,
+			DisableAttack = true,
 			Active = true,
 			CanAffectInvulnerable = false,
 			Cancelable = true,
@@ -1696,7 +1755,7 @@ local file = rom.path.combine(rom.paths.Content, 'Game/Projectiles/PlayerProject
 				Duration = 0.3,
 				DisableMove = true,
 				DisableRotate = true,
-				DisableAttack = false,
+				DisableAttack = true,
 				Active = true,
 				CanAffectInvulnerable = true,
 				Cancelable = true,

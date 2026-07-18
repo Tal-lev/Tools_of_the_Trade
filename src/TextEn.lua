@@ -681,6 +681,16 @@ sjson.hook(file, function(data)
 
 	table.insert(data.Texts, sjson.to_object(
 		{
+			Id = "DespairElementalCopyDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Copy: Bawlder",
+			Description = "Your Attack Tramples enemies.",
+		},
+		TextOrder)
+	)
+
+	table.insert(data.Texts, sjson.to_object(
+		{
 			Id = "LycanthropeCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: Lycaon",
@@ -1385,6 +1395,16 @@ sjson.hook(file, function(data)
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: Tail of Typhon",
 			Description = "Your Attack fires a Rotating Drill.",
+		},
+		TextOrder)
+	)
+
+	table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "EyeballCopyDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Copy: Typhon Eye Ball",
+			Description = "Your Attack Tramples enemies.",
 		},
 		TextOrder)
 	)
@@ -2374,6 +2394,16 @@ sjson.hook(file, function(data)
 
 	table.insert(data.Texts, sjson.to_object(
 		{
+			Id = "DespairElementalCopyTwoDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Reserve Copy: Bawlder",
+			Description = "Your Attack Tramples enemies.",
+		},
+		TextOrder)
+	)
+
+	table.insert(data.Texts, sjson.to_object(
+		{
 			Id = "LycanthropeCopyTwoDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Reserve Copy: Lycaon",
@@ -3078,6 +3108,16 @@ sjson.hook(file, function(data)
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Reserve Copy: Tail of Typhon",
 			Description = "Your Attack fires a Rotating Drill.",
+		},
+		TextOrder)
+	)
+
+	table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "EyeballCopyTwoDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Reserve Copy: Typhon Eye Ball",
+			Description = "Your Attack Tramples enemies.",
 		},
 		TextOrder)
 	)
