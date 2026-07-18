@@ -7,7 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-- 10 implemented enemies for copy
+- 11 implemented enemies for copy
   - Treant
   - ThiefMineLayer
   - Lovesick
@@ -18,6 +18,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Dragon
   - Dragon_MiniBoss
   - TyphonEgg
+  - Eyeball
 - 53 Implemented ZJ copy abilities.
   - HadesSwarmer
   - LightSpawner
