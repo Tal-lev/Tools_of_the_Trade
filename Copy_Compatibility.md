@@ -53,6 +53,7 @@
 - Brush-Stalker
 - Canine
 - Lycaon
+- Bawldy
 - Lamia
 - Lamia Queen
 - Phantom
