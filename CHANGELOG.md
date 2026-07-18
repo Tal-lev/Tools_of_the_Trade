@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+- Fix crash when starting a fresh save
+
 ## [1.0.0] - 2026-07-18
 
 - 11 implemented enemies for copy
