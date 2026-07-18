@@ -7,11 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-- 9 implemented enemies for copy
+- 10 implemented enemies for copy
   - Treant
   - ThiefMineLayer
   - Lovesick
   - Mourner
+  - Despair Elemental
   - Treant2
   - SoulPylon
   - Dragon
