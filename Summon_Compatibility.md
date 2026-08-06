@@ -41,6 +41,7 @@
 - Ares - Profuse Bleeding
 - Ares - Mutual Destruction
 - Ares - Grievous Blow
+- Ares - Visceral Impact
 - Hermes - Nimble limbs
 - Hermes - Tall order
 - Hermes - Mean Streak
@@ -71,6 +72,14 @@
 - The Furies
 - Origination
 - Strength
+
+## Wrath of Olympus boons affecting Summons
+
+- Ares - Ferocious Ichor 
+
+## Hermes Duo boons affecting Summons
+
+- Poseidon - Gilded Hook
 
 ## SharedKeepsakePort Keepsakes affecting Summons
 
