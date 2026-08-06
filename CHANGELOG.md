@@ -10,6 +10,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Enemies killed by Summons when hero has Visceral Impact now drop plasma.
 - Add Compatibility with Hermes Duos
   - Poseidon: Gilded Hook
+- Add Compatibility with Wrath of Olympus
+  - Ares: Ferocious Ichor
 
 ## [1.0.1] - 2026-07-18
 
