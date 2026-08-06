@@ -15,7 +15,7 @@ Adding 2 new Weapon Aspects themed around the Gathering Tools
 - Trait reduces the amount of health reserved
 - Introduces four new hammers
 - Traits that were altered to work with Summons
-  - 48 Boons
+  - 49 Boons + ( 1 Wrath of Olympus, 1 Hermes Duos)
   - 5 Keepsakes + (3 SharedKeepsakePort)
   - 5 Arcana + (16 Flip the Arcana)
 
