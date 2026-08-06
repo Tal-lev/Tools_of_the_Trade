@@ -22,7 +22,8 @@ import_as_fallback(game)
 
 local ZagreusJourney = rom.mods['NikkelM-Zagreus_Journey']
 local FliptheArcana = rom.mods['ReadEmAndWeep-Flip_the_Arcana_Mod']
-local WrathofOlympus =  rom.mods['Wistiti-WrathOfOlympus']
+local WrathofOlympus = rom.mods['Wistiti-WrathOfOlympus']
+local HermesDuos = rom.mods['Wistiti-HermesDuos']
 
 function mod.ReleaseHealthReserve( amount, source )
 	local previousMaxHealth = GetHeroMaxAvailableHealth()
@@ -1604,17 +1605,28 @@ modutil.mod.Path.Wrap("Kill", function(base, victim, triggerArgs)
 	
 		--if victim.ScaleMultiplier > 0.5 then
 	end
-	if HeroHasTrait("ShovelRaiseDeadNecroMel") and HeroHasTrait("TimedKillBuffBoon") and triggerArgs.SourceProjectile and triggerArgs.AttackerTable and (triggerArgs.SourceProjectile == "ZombieMelee" or triggerArgs.SourceProjectile == "MournerRampage" or triggerArgs.SourceProjectile == "SentryBotBolt" or triggerArgs.SourceProjectile == "SentryBotVent" or triggerArgs.SourceProjectile == "AutomatonBeamBolt" or triggerArgs.SourceProjectile == "AutomatonOrbit") and triggerArgs.AttackerTable.AlwaysTraitor == true and triggerArgs.Killed == true then
-		SessionMapState.TimedBuff = SessionMapState.TimedBuff + 1
-		table.insert( SessionMapState.TimedBuffStartTimes, _worldTime )
-		local FunctionArgs = 
-		{
-			Duration = 45,
-			ReportValues = { ReportedDuration = "Duration" },
-			Fx = "HermesWingsBuff",
-		}
-		thread(ReduceKillBuff, FunctionArgs )	
-		UIScriptsDeferred.KillBuffDirty = true
+	if HeroHasTrait("ShovelRaiseDeadNecroMel") and triggerArgs and triggerArgs.SourceProjectile and triggerArgs.AttackerTable and (triggerArgs.SourceProjectile == "ZombieMelee" or triggerArgs.SourceProjectile == "MournerRampage" or triggerArgs.SourceProjectile == "SentryBotBolt" or triggerArgs.SourceProjectile == "SentryBotVent" or triggerArgs.SourceProjectile == "AutomatonBeamBolt" or triggerArgs.SourceProjectile == "AutomatonOrbit") and triggerArgs.AttackerTable.AlwaysTraitor == true and triggerArgs.Killed == true then
+		if HeroHasTrait("TimedKillBuffBoon") then
+			SessionMapState.TimedBuff = SessionMapState.TimedBuff + 1
+			table.insert( SessionMapState.TimedBuffStartTimes, _worldTime )
+			local FunctionArgs = 
+			{
+				Duration = 45,
+				ReportValues = { ReportedDuration = "Duration" },
+				Fx = "HermesWingsBuff",
+			}
+			thread(ReduceKillBuff, FunctionArgs )	
+			UIScriptsDeferred.KillBuffDirty = true
+		end
+		if HeroHasTrait("BloodDropRevengeBoon") then
+			local trait = GetHeroTrait("BloodDropRevengeBoon")
+			local functionArgs = 
+			{
+				Name = "BloodDrop",
+				DoubleChance = (trait.DoubleChance or 0.25)
+			}
+			CreateBloodDrop( victim, functionArgs )
+		end
 	end
 end)
 
@@ -1799,6 +1811,22 @@ ModUtil.Path.Wrap("Damage", function(baseFunc, victim, triggerArgs)
 				end	
 			end
 		end
+		--if WrathOfOlympus then
+			-- Wrath of Olympus: Ares - Ferocious Ichor
+			if HeroHasTrait("Wistiti-WrathOfOlympus-AresWrathBoon") then
+				local trait = GetHeroTrait("Wistiti-WrathOfOlympus-AresWrathBoon")
+				print("CurrentRun.CurrentRoom.BloodDropBonus")
+				print(CurrentRun.CurrentRoom.BloodDropBonus)
+				table.insert( triggerArgs.AttackerTable.OutgoingDoubleDamageModifiers, {Name = "Del", Chance = (0.005 * (CurrentRun.CurrentRoom.BloodDropBonus or 0)) } )
+			end
+		--end
+		if HermesDuos then
+			--Hermes Duos: Poseidon - Gilded Hook
+			if HeroHasTrait("Wistiti-HermesDuos-MoneyMoreDamageBoon") then
+				local trait = GetHeroTrait("Wistiti-HermesDuos-MoneyMoreDamageBoon")
+				table.insert(triggerArgs.AttackerTable.OutgoingDamageModifiers, {Name = "Del", NonPlayerMultiplier = (((trait.ReportedMultiplier or 0.05) * ((GameState.Resources["Money"] / 100) or 0)) + 1 )})
+			end
+		end
 	end
 	baseFunc(victim, triggerArgs)
 
@@ -1907,6 +1935,7 @@ ModUtil.Path.Wrap("Damage", function(baseFunc, victim, triggerArgs)
 			}
 			CheckMassiveAttack( victim, functionArgs, triggerArgs )
 		end
+		-- Ares : Grisly Gain
 		if HeroHasTrait("AresManaBoon") then
 			functionArgs = 
 			{
