@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+- Enemies killed by Summons when hero has Visceral Impact now drop plasma.
+- Add Compatibility with Hermes Duos
+  - Poseidon: Gilded Hook
+
 ## [1.0.1] - 2026-07-18
 
 - Fix crash when starting a fresh save
