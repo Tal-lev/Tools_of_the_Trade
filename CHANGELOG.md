@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+- Fix crash when using hammer for summoning two summons
+
 ## [1.0.2] - 2026-08-06
 
 - Enemies killed by Summons when hero has Visceral Impact now drop plasma.
