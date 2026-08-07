@@ -159,13 +159,11 @@ function mod.SummonEnemy( triggerArgs, functionArgs )
 	--Part1 of Double summon trait, double the cost
 	if HeroHasTrait("ShovelNecroMelDoubleSummonTrait") then
 		ChangeAttackSummonCount = ChangeAttackSummonCount * 2
-		ChangeOmegaAttackSummonCount = ChangeOmegaAttackSummonCount * 2
 		Reserve = Reserve * 2
 	end
 	--Part1 of Double summon trait, double the cost
 	if HeroHasTrait("DoubleExManaBoon") and triggerArgs.Name == "WeaponAxeSpin" then
 		ChangeAttackSummonCount = ChangeAttackSummonCount * 2
-		ChangeOmegaAttackSummonCount = ChangeOmegaAttackSummonCount * 2
 		Reserve = Reserve * 2
 	end
 	trait.AttackSummons = trait.AttackSummons + ChangeAttackSummonCount
