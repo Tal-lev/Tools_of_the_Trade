@@ -152,7 +152,7 @@
  
 ## Zagreus Journey
 
-### Tartarus (H1) (Unreleased)
+### Tartarus (H1)
 
 - Numbskull
 - Skullomat
@@ -173,7 +173,7 @@
   - Hell-Fire Pillar
   - Lunge
 
-### Asphodel (Unreleased)
+### Asphodel
 
 - Bloodless
 - Inferno-Bomber
@@ -193,7 +193,7 @@
   - Waves
   - Slam
 
-### Elysium (Unreleased)
+### Elysium
 
 - Exalted Shade
 - Longspear
@@ -211,7 +211,7 @@
   - Spear Throw
   - Spear Spin
 
-### Styx (Unreleased)
+### Styx
 
 - Satyr Cultist
 - Gigantic Vermin
@@ -227,3 +227,10 @@
 - Charon
   - Oar Swipe
   - Wave
+
+## UnderworldRites
+
+  - Cur
+  - Nomad
+  - Demon
+  - Crone 
