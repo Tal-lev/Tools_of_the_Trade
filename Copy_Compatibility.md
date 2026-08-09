@@ -233,4 +233,6 @@
   - Cur
   - Nomad
   - Demon
-  - Crone 
+  - Crone
+  - Sap
+  - The Blackwagon 
