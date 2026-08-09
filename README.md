@@ -16,7 +16,7 @@ Adding 2 new Weapon Aspects themed around the Gathering Tools
 - Introduces four new hammers
 - Traits that were altered to work with Summons
   - 49 Boons + ( 1 Wrath of Olympus, 1 Hermes Duos)
-  - 5 Keepsakes + (3 SharedKeepsakePort)
+  - 5 Keepsakes + (3 SharedKeepsakePort, 1 UnderworldRites)
   - 5 Arcana + (16 Flip the Arcana)
 
 [Full Summon Compatibility list](https://github.com/Tal-lev/Tools_of_the_Trade/blob/main/Summon_Compatibility.md)
@@ -31,7 +31,7 @@ Adding 2 new Weapon Aspects themed around the Gathering Tools
 - Your Omega Attack creates a nova and places the copied weapon in Reserve until Omega Attack is used again.
 - Trait Increase Omega Attack damage.
 - Introduces four new hammers
-- 170 Implemented Copy Abilities.
+- 174 Implemented Copy Abilities.
 
 [Full Copy Compatibility list](https://github.com/Tal-lev/Tools_of_the_Trade/blob/main/Copy_Compatibility.md)
 
