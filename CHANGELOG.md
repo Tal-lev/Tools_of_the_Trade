@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+- Compatibility with UnderworldRites
+  - Summons affected by Keepsake Living Flame
+  - Added Copy Abilities for
+    - PyreSmall
+    - PyreMedium
+    - PyreLarge
+    - PyreMonster
+
 ## [1.0.3] - 2026-08-07
 
 - Fix crash when using hammer for summoning two summons
