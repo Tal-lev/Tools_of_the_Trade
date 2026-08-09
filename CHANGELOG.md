@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.0.4] - 2026-08-09
+
 - Compatibility with UnderworldRites
   - Summons affected by Keepsake Living Flame
   - Added Copy Abilities for
@@ -431,7 +433,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - First version of the mod!
 
-[unreleased]: https://github.com/Tal-lev/Tools_of_the_Trade/compare/1.0.3...HEAD
+[unreleased]: https://github.com/Tal-lev/Tools_of_the_Trade/compare/1.0.4...HEAD
+[1.0.4]: https://github.com/Tal-lev/Tools_of_the_Trade/compare/1.0.3...1.0.4
 [1.0.3]: https://github.com/Tal-lev/Tools_of_the_Trade/compare/1.0.2...1.0.3
 [1.0.2]: https://github.com/Tal-lev/Tools_of_the_Trade/compare/1.0.1...1.0.2
 [1.0.1]: https://github.com/Tal-lev/Tools_of_the_Trade/compare/1.0.0...1.0.1
