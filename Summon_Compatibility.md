@@ -87,6 +87,10 @@
 - Pierced Butterfly
 - Skull Earring
 
+## UnderworldRites Keepsakes affecting Summons
+
+- Living Flame
+
 ## Flip the Arcana affecting Summons
 
 - Bloodlust
