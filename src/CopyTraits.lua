@@ -9,6 +9,7 @@ local BiomeBScaling = 1
 local BiomeDScaling = 0.6
 
 local ZagreusJourney = rom.mods['NikkelM-Zagreus_Journey']
+local UnderworldRites = rom.mods['JarlUlsfark-UnderworldRites']
 
 OverwriteTableKeys( TraitData, {
     DummyCopyDisplayBoon = 
@@ -9538,6 +9539,226 @@ if ZagreusJourney then
 			{
 				DisplayType = "RoomValue",
 				Key = "Copy_Charon2",
+				Text = "Copy_2nd"
+			},
+		},
+	})
+end
+
+if UnderworldRites then
+	OverwriteTableKeys( TraitData, {
+		PyreSmallCopyDisplayBoon = 
+		{
+			Icon = "JarlUlsfark-Tools_of_the_Trade_URcompat\\PyreSmallIcon",
+			ShowInHUD = true,
+			CustomLabel = 
+			{
+				DisplayType = "RoomValue",
+				Key = "Copy_PyreSmall",
+				Text = "Copy_EmptyText"
+			},
+			PropertyChanges = 
+			{
+			{
+					WeaponName = "WeaponLob",
+					WeaponProperty = "Projectile",
+					ChangeValue = "PyreAuraSmall",
+				},
+				{
+					WeaponName = "WeaponLob",
+					WeaponProperties = 
+					{
+						Cooldown = 1,
+						BarrelLength = -480,
+						FizzleOldSpawns = false,
+					},
+					ExcludeLinked = true,
+				},	
+				{
+					WeaponName = "WeaponLob",
+					ProjectileName = "PyreAuraSmall",
+					ProjectileProperties = 
+					{
+						Damage = 110,
+					},
+					ExcludeLinked = true,
+				},		
+			},
+			FlavorText = "CopyAbility_FlavorText",
+		},
+
+		PyreSmallCopyTwoDisplayBoon = 
+		{
+			Icon = "JarlUlsfark-Tools_of_the_Trade_URcompat\\PyreSmallIcon",
+			ShowInHUD = true,
+			CustomLabel = 
+			{
+				DisplayType = "RoomValue",
+				Key = "Copy_PyreSmall2",
+				Text = "Copy_2nd"
+			},
+		},
+
+		PyreMediumCopyDisplayBoon = 
+		{
+			Icon = "JarlUlsfark-Tools_of_the_Trade_URcompat\\PyreMediumIcon",
+			ShowInHUD = true,
+			CustomLabel = 
+			{
+				DisplayType = "RoomValue",
+				Key = "Copy_PyreMedium",
+				Text = "Copy_EmptyText"
+			},
+			PropertyChanges = 
+			{
+			{
+					WeaponName = "WeaponLob",
+					WeaponProperty = "Projectile",
+					ChangeValue = "PyreAuraMedium",
+				},
+				{
+					WeaponName = "WeaponLob",
+					WeaponProperties = 
+					{
+						Cooldown = 1,
+						BarrelLength = -480,
+						FizzleOldSpawns = false,
+					},
+					ExcludeLinked = true,
+				},	
+				{
+					WeaponName = "WeaponLob",
+					ProjectileName = "PyreAuraMedium",
+					ProjectileProperties = 
+					{
+						Damage = 110,
+					},
+					ExcludeLinked = true,
+				},		
+			},
+			FlavorText = "CopyAbility_FlavorText",
+		},
+
+		PyreMediumCopyTwoDisplayBoon = 
+		{
+			Icon = "JarlUlsfark-Tools_of_the_Trade_URcompat\\PyreMediumIcon",
+			ShowInHUD = true,
+			CustomLabel = 
+			{
+				DisplayType = "RoomValue",
+				Key = "Copy_PyreMedium2",
+				Text = "Copy_2nd"
+			},
+		},
+
+		PyreLargeCopyDisplayBoon = 
+		{
+			Icon = "JarlUlsfark-Tools_of_the_Trade_URcompat\\PyreLargeIcon",
+			ShowInHUD = true,
+			CustomLabel = 
+			{
+				DisplayType = "RoomValue",
+				Key = "Copy_PyreLarge",
+				Text = "Copy_EmptyText"
+			},
+			PropertyChanges = 
+			{
+			{
+					WeaponName = "WeaponLob",
+					WeaponProperty = "Projectile",
+					ChangeValue = "PyreAuraSphereLarge",
+				},
+				{
+					WeaponName = "WeaponLob",
+					WeaponProperties = 
+					{
+						Cooldown = 1,
+						FizzleOldSpawns = true,
+						AttachToOwner = true,
+					},
+					ExcludeLinked = true,
+				},	
+				{
+					WeaponName = "WeaponLob",
+					ProjectileName = "PyreAuraSphereLarge",
+					ProjectileProperties = 
+					{
+						Damage = 110,
+					},
+					ExcludeLinked = true,
+				},		
+			},
+			FlavorText = "CopyAbility_FlavorText",
+		},
+
+		PyreLargeCopyTwoDisplayBoon = 
+		{
+			Icon = "JarlUlsfark-Tools_of_the_Trade_URcompat\\PyreLargeIcon",
+			ShowInHUD = true,
+			CustomLabel = 
+			{
+				DisplayType = "RoomValue",
+				Key = "Copy_PyreLarge2",
+				Text = "Copy_2nd"
+			},
+		},
+
+		PyreMonsterCopyDisplayBoon = 
+		{
+			Icon = "JarlUlsfark-Tools_of_the_Trade_URcompat\\PyreMonsterIcon",
+			ShowInHUD = true,
+			CustomLabel = 
+			{
+				DisplayType = "RoomValue",
+				Key = "Copy_PyreMonster",
+				Text = "Copy_EmptyText"
+			},
+			PropertyChanges = 
+			{
+			{
+					WeaponName = "WeaponLob",
+					WeaponProperty = "Projectile",
+					ChangeValue = "PyreAuraMedium",
+				},
+				{
+					WeaponName = "WeaponLob",
+					WeaponProperties = 
+					{
+						Cooldown = 1,
+						BarrelLength = -520,
+						FizzleOldSpawns = false,
+						NumProjectiles = 9,
+						ProjectileAngleInterval = 15,
+					},
+					ExcludeLinked = true,
+				},	
+				{
+					WeaponName = "WeaponLob",
+					ProjectileName = "PyreAuraMedium",
+					ProjectileProperties = 
+					{
+						Damage = 110,
+					},
+					ExcludeLinked = true,
+				},	
+				{
+					WeaponName = "WeaponLob",
+					WeaponProperty = "ProjectileScaleMultiplier",
+					ChangeValue = 0.6,
+					ChangeType = "Multiply",
+				},	
+			},
+			FlavorText = "CopyAbility_FlavorText",
+		},
+
+		PyreMonsterCopyTwoDisplayBoon = 
+		{
+			Icon = "JarlUlsfark-Tools_of_the_Trade_URcompat\\PyreMonsterIcon",
+			ShowInHUD = true,
+			CustomLabel = 
+			{
+				DisplayType = "RoomValue",
+				Key = "Copy_PyreMonster2",
 				Text = "Copy_2nd"
 			},
 		},

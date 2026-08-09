@@ -24,6 +24,7 @@ local ZagreusJourney = rom.mods['NikkelM-Zagreus_Journey']
 local FliptheArcana = rom.mods['ReadEmAndWeep-Flip_the_Arcana_Mod']
 local WrathofOlympus = rom.mods['Wistiti-WrathOfOlympus']
 local HermesDuos = rom.mods['Wistiti-HermesDuos']
+local UnderworldRites = rom.mods['JarlUlsfark-UnderworldRites']
 
 function mod.ReleaseHealthReserve( amount, source )
 	local previousMaxHealth = GetHeroMaxAvailableHealth()
@@ -1286,6 +1287,30 @@ function mod.CopyAbility (victim, functionArgs, triggerArgs)
 			end
 		end
 	end
+	if UnderworldRites and Changed == "null" then 
+		if victim.Name == "PyreSmall" then
+			Changed = "PyreSmall"
+			Location = "JarlUlsfark-PyreAuraFxinHades2"
+		elseif victim.Name == "PyreMedium" then
+			Changed = "PyreMedium"
+			Location = "JarlUlsfark-PyreAuraFxinHades2"
+		elseif victim.Name == "PyreLarge" then
+			Changed = "PyreLarge"
+			Location = "JarlUlsfark-PyreAuraFxinHades2"
+		elseif victim.Name == "PyreMonster" then
+			Changed = "PyreMonster"
+			Location = "JarlUlsfark-PyreAuraFxinHades2"
+		elseif victim.Name == "PyreTree" then
+			Changed = "PyreTree"
+			Location = "JarlUlsfark-PyreAuraFxinHades2"
+		elseif victim.Name == "PyreTreeDefender" then
+			Changed = "PyreTreeDefender"
+			Location = "JarlUlsfark-PyreAuraFxinHades2"
+		elseif victim.Name == "PyreCaravan" then
+			Changed = "PyreCaravan"
+			Location = "JarlUlsfark-PyreAuraFxinHades2"
+		end
+	end
 	if Changed ~= "null" then
 		for key,value in pairs(CurrentRun.Hero.TraitDictionary) do
 			if string.find(key, "CopyDisplayBoon") then
@@ -1544,6 +1569,9 @@ modutil.mod.Path.Wrap("SetupMap", function(base, source, args)
 	LoadPackages({ Name ="JarlUlsfark-Tools_of_the_Trade"})
 	if ZagreusJourney then
 		LoadPackages({ Name ="JarlUlsfark-Tools_of_the_Trade_ZJcompat"})
+	end
+	if UnderworldRites then
+		LoadPackages({ Name ="JarlUlsfark-Tools_of_the_Trade_URcompat"})
 	end
 	if CurrentRun and CurrentRun.Hero then
 		if HeroHasTrait("TabletofPeaceKirbyMel") then
@@ -1823,6 +1851,13 @@ ModUtil.Path.Wrap("Damage", function(baseFunc, victim, triggerArgs)
 			if HeroHasTrait("Wistiti-HermesDuos-MoneyMoreDamageBoon") then
 				local trait = GetHeroTrait("Wistiti-HermesDuos-MoneyMoreDamageBoon")
 				table.insert(triggerArgs.AttackerTable.OutgoingDamageModifiers, {Name = "Del", NonPlayerMultiplier = (((trait.ReportedMultiplier or 0.05) * ((GameState.Resources["Money"] / 100) or 0)) + 1 )})
+			end
+		end
+		if UnderworldRites then
+			--UnderworldRites: Living Flame Keepsake
+			if HeroHasTrait("JarlUlsfark-UnderworldRites-HigherHealthDamage") and CurrentRun.Hero.Health >= victim.Health then
+				local trait = GetHeroTrait("JarlUlsfark-UnderworldRites-HigherHealthDamage")
+				triggerArgs.DamageAmount = triggerArgs.DamageAmount * (trait.DamageMultiplier or 1.1)
 			end
 		end
 	end

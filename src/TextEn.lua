@@ -14,6 +14,7 @@ game.ConcatTableValuesIPairs(game.KeywordList, newKeywords)
 	}
 
 local ZagreusJourney = rom.mods['NikkelM-Zagreus_Journey']
+local UnderworldRites = rom.mods['JarlUlsfark-UnderworldRites']
 
 local file = rom.path.combine(rom.paths.Content, 'Game/Text/en/TraitText.en.sjson')
 sjson.hook(file, function(data)
@@ -3653,6 +3654,91 @@ sjson.hook(file, function(data)
 		},
 		TextOrder)
 		)
+	end
+
+	if UnderworldRites then
+		
+		table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "PyreSmallCopyDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Copy: Cur",
+			Description = "Your Attack fires a thin Wave Projectile that leaves a trail behind.",
+		},
+		TextOrder)
+		)
+
+		table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "PyreMediumCopyDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Copy: Nomad",
+			Description = "Your Attack fire a Wave Projectile that leaves a trail behind.",
+		},
+		TextOrder)
+		)
+
+		table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "PyreLargeCopyDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Copy: Demon",
+			Description = "Your Attack fire a large Aura around you.",
+		},
+		TextOrder)
+		)
+
+		table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "PyreMediumCopyDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Copy: Crone",
+			Description = "Your Attack fires multiple small Wave Projectile that leave trails behind.",
+		},
+		TextOrder)
+		)
+
+		table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "PyreSmallCopyTwoDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Reserve Copy: Cur",
+			Description = "Your Attack fires a thin Wave Projectile that leaves a trail behind.",
+		},
+		TextOrder)
+		)
+
+		table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "PyreMediumCopyTwoDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Reserve Copy: Nomad",
+			Description = "Your Attack fire a Wave Projectile that leaves a trail behind.",
+		},
+		TextOrder)
+		)
+
+		table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "PyreLargeCopyTwoDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Reserve Copy: Demon",
+			Description = "Your Attack fire a large Aura around you.",
+		},
+		TextOrder)
+		)
+
+		table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "PyreMediumCopyTwoDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Reserve Copy: Crone",
+			Description = "Your Attack fires multiple small Wave Projectile that leave trails behind.",
+		},
+		TextOrder)
+		)
+
+
 	end
 
 	--Quests
