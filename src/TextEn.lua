@@ -3690,10 +3690,30 @@ sjson.hook(file, function(data)
 
 		table.insert(data.Texts, sjson.to_object(
 		{
-			Id = "PyreMediumCopyDisplayBoon",
+			Id = "PyreMonsterCopyDisplayBoon",
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Copy: Crone",
 			Description = "Your Attack fires multiple small Wave Projectile that leave trails behind.",
+		},
+		TextOrder)
+		)
+
+		table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "PyreTreeCopyDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Copy: Sap",
+			Description = "Your Attack Summons a Flower which fires an aura around it.",
+		},
+		TextOrder)
+		)
+
+		table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "PyreCaravanCopyDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Copy: The Blackwagon",
+			Description = "Your Attack Summons a Cur.",
 		},
 		TextOrder)
 		)
@@ -3734,6 +3754,26 @@ sjson.hook(file, function(data)
 			InheritFrom = "BaseBoonMultiline",
 			DisplayName = "Reserve Copy: Crone",
 			Description = "Your Attack fires multiple small Wave Projectile that leave trails behind.",
+		},
+		TextOrder)
+		)
+
+		table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "PyreTreeCopyTwoDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Reserve Copy: Sap",
+			Description = "Your Attack Summons a Flower which fires an aura around it.",
+		},
+		TextOrder)
+		)
+
+		table.insert(data.Texts, sjson.to_object(
+		{
+			Id = "PyreCaravanCopyTwoDisplayBoon",
+			InheritFrom = "BaseBoonMultiline",
+			DisplayName = "Reserve Copy: The Blackwagon",
+			Description = "Your Attack Summons a Cur.",
 		},
 		TextOrder)
 		)

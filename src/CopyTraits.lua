@@ -9762,5 +9762,107 @@ if UnderworldRites then
 				Text = "Copy_2nd"
 			},
 		},
+
+		PyreTreeCopyDisplayBoon = 
+		{
+			Icon = "JarlUlsfark-Tools_of_the_Trade_URcompat\\PyreTreeIcon",
+			ShowInHUD = true,
+			CustomLabel = 
+			{
+				DisplayType = "RoomValue",
+				Key = "Copy_PyreTree",
+				Text = "Copy_EmptyText"
+			},
+			PropertyChanges = 
+			{
+			{
+					WeaponName = "WeaponLob",
+					WeaponProperty = "Projectile",
+					ChangeValue = "PyreAuraTreePlayer",
+				},
+				{
+					WeaponName = "WeaponLob",
+					WeaponProperties = 
+					{
+						Cooldown = 1,
+						FizzleOldSpawns = false,
+					},
+					ExcludeLinked = true,
+				},	
+				{
+					WeaponName = "WeaponLob",
+					ProjectileName = "PyreAuraTreePlayer",
+					ProjectileProperties = 
+					{
+						Damage = 0,
+					},
+					ExcludeLinked = true,
+				},	
+			},
+			FlavorText = "CopyAbility_FlavorText",
+		},
+
+		PyreTreeCopyTwoDisplayBoon = 
+		{
+			Icon = "JarlUlsfark-Tools_of_the_Trade_URcompat\\PyreTreeIcon",
+			ShowInHUD = true,
+			CustomLabel = 
+			{
+				DisplayType = "RoomValue",
+				Key = "Copy_PyreTree2",
+				Text = "Copy_2nd"
+			},
+		},
+
+		PyreCaravanCopyDisplayBoon = 
+		{
+			Icon = "JarlUlsfark-Tools_of_the_Trade_URcompat\\PyreCaravanIcon",
+			ShowInHUD = true,
+			CustomLabel = 
+			{
+				DisplayType = "RoomValue",
+				Key = "Copy_PyreCaravan",
+				Text = "Copy_EmptyText"
+			},
+			PropertyChanges = 
+			{
+			{
+					WeaponName = "WeaponLob",
+					WeaponProperty = "Projectile",
+					ChangeValue = "PyreAuraCaravanSmallPlayer",
+				},
+				{
+					WeaponName = "WeaponLob",
+					WeaponProperties = 
+					{
+						Cooldown = 1,
+						FizzleOldSpawns = false,
+					},
+					ExcludeLinked = true,
+				},	
+				{
+					WeaponName = "WeaponLob",
+					ProjectileName = "PyreAuraCaravanSmallPlayer",
+					ProjectileProperties = 
+					{
+						Damage = 0,
+					},
+					ExcludeLinked = true,
+				},	
+			},
+			FlavorText = "CopyAbility_FlavorText",
+		},
+
+		PyreCaravanCopyTwoDisplayBoon = 
+		{
+			Icon = "JarlUlsfark-Tools_of_the_Trade_URcompat\\PyreCaravanIcon",
+			ShowInHUD = true,
+			CustomLabel = 
+			{
+				DisplayType = "RoomValue",
+				Key = "Copy_PyreCaravan2",
+				Text = "Copy_2nd"
+			},
+		},
 	})
 end

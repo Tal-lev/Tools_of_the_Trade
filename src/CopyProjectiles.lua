@@ -7,6 +7,7 @@ local BiomeCScaling = 0.7
 local BiomeAScaling = 1
 
 local ZagreusJourney = rom.mods['NikkelM-Zagreus_Journey']
+local UnderworldRites = rom.mods['JarlUlsfark-UnderworldRites']
 
 local file = rom.path.combine(rom.paths.Content, 'Game/Projectiles/PlayerProjectiles.sjson')
 	sjson.hook(file, function(data)
@@ -1765,6 +1766,20 @@ local file = rom.path.combine(rom.paths.Content, 'Game/Projectiles/PlayerProject
 
 	end
 
+	if UnderworldRites then
+		table.insert(data.Projectiles,
+		{
+			Name = "PyreAuraTreePlayer",
+			InheritFrom = "PyreAuraTree",
+		})
+
+		table.insert(data.Projectiles,
+		{
+			Name = "PyreAuraCaravanSmallPlayer",
+			InheritFrom = "PyreAuraCaravanSmall",
+		})
+
+	end
 			
 return data
 end)
@@ -1890,6 +1905,31 @@ if ZagreusJourney then
 				{ ScreenPreWait = 0.02, Fraction = 0.01, LerpTime = 0 },
 				{ ScreenPreWait = 0.08, Fraction = 1.0,  LerpTime = 0 },
 			},
+		},
+	})
+end
+
+if UnderworldRites then
+	OverwriteTableKeys( ProjectileData, {
+		
+		PyreAuraTreePlayer =
+		{
+			OnDeathFunctionName = _PLUGIN.guid .. "." .. "ProjectileSpawnUnitOnDeath",
+			SpawnName = "PyreTreeDefender",
+			SpawnBounceOffVictim = false,
+			SpawnBounceOffVictimVelocity = 0,
+			SpawnBounceOffVictimUpwardVelocity = 0,
+			SpawnsSkipActivatePresentation = false,
+		},
+
+		PyreAuraCaravanSmallPlayer =
+		{
+			OnDeathFunctionName = _PLUGIN.guid .. "." .. "ProjectileSpawnUnitOnDeath",
+			SpawnName = "PyreSmall",
+			SpawnBounceOffVictim = false,
+			SpawnBounceOffVictimVelocity = 0,
+			SpawnBounceOffVictimUpwardVelocity = 0,
+			SpawnsSkipActivatePresentation = false,
 		},
 	})
 end

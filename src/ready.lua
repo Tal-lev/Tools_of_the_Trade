@@ -1288,25 +1288,25 @@ function mod.CopyAbility (victim, functionArgs, triggerArgs)
 		end
 	end
 	if UnderworldRites and Changed == "null" then 
-		if victim.Name == "PyreSmall" then
+		if victim.Name == "PyreSmall" or victim.Name == "PyreSmall_Elite" then
 			Changed = "PyreSmall"
 			Location = "JarlUlsfark-PyreAuraFxinHades2"
-		elseif victim.Name == "PyreMedium" then
+		elseif victim.Name == "PyreMedium" or victim.Name == "PyreMedium_Elite" then
 			Changed = "PyreMedium"
 			Location = "JarlUlsfark-PyreAuraFxinHades2"
-		elseif victim.Name == "PyreLarge" then
+		elseif victim.Name == "PyreLarge" or victim.Name == "PyreLarge_Elite" then
 			Changed = "PyreLarge"
 			Location = "JarlUlsfark-PyreAuraFxinHades2"
-		elseif victim.Name == "PyreMonster" then
+		elseif victim.Name == "PyreMonster" or victim.Name == "PyreMonster_Elite" then
 			Changed = "PyreMonster"
 			Location = "JarlUlsfark-PyreAuraFxinHades2"
-		elseif victim.Name == "PyreTree" then
+		elseif victim.Name == "PyreTree" or victim.Name == "PyreTree_Elite" then
 			Changed = "PyreTree"
 			Location = "JarlUlsfark-PyreAuraFxinHades2"
-		elseif victim.Name == "PyreTreeDefender" then
-			Changed = "PyreTreeDefender"
-			Location = "JarlUlsfark-PyreAuraFxinHades2"
-		elseif victim.Name == "PyreCaravan" then
+		--elseif victim.Name == "PyreTreeDefender" or victim.Name == "PyreTreeDefender_Elite" then
+		--	Changed = "PyreTreeDefender"
+		--	Location = "JarlUlsfark-PyreAuraFxinHades2"
+		elseif victim.Name == "PyreCaravan" or victim.Name == "PyreCaravan_Elite" then
 			Changed = "PyreCaravan"
 			Location = "JarlUlsfark-PyreAuraFxinHades2"
 		end
