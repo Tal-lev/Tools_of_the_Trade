@@ -21,10 +21,6 @@ zerp-AspectExtender = "0.0.1"
 NikkelM-Cosmetics_API = "1.1.4"
 
 [package.rom_soft_deps]
-# NikkelM-Zagreus_Journey = "1.2.0"
-# ReadEmAndWeep-Flip_the_Arcana_Mod = "3.0.8"
-# Wistiti-WrathOfOlympus = "2.3.1"
-# Wistiti-HermesDuos = "1.0.1"
 JarlUlsfark-UnderworldRites = "0.1.1"
 
 
