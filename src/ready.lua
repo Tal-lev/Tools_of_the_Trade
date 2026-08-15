@@ -1594,7 +1594,7 @@ end)
 
 modutil.mod.Path.Wrap("Kill", function(base, victim, triggerArgs)
 	base(victim, triggerArgs)
-	if victim.AlwaysTraitor == true and HeroHasTrait("ShovelRaiseDeadNecroMel") and (victim.Name == "Zombie" or victim.Name == "Mourner" or victim.Name == "SentryBot" or victim.Name == "AutomatonBeamer") and triggerArgs.Killed == true then
+	if victim and victim.AlwaysTraitor == true and HeroHasTrait("ShovelRaiseDeadNecroMel") and (victim.Name == "Zombie" or victim.Name == "Mourner" or victim.Name == "SentryBot" or victim.Name == "AutomatonBeamer") and triggerArgs.Killed == true then
 		local trait = GetHeroTrait("ShovelRaiseDeadNecroMel")
 		local Reserve = trait.Reserve
 		if victim.HeraclesCombatMoneyValue > 0 then --to ensure death mini summons don't release health
@@ -1669,7 +1669,7 @@ ModUtil.Path.Wrap("Damage", function(baseFunc, victim, triggerArgs)
 	local DamageAmount = triggerArgs.DamageAmount
 	local ModifiedNow = 0
 	--For adding base damage directly into the hit
-	if victim ~= CurrentRun.Hero and HeroHasTrait("ShovelRaiseDeadNecroMel") and triggerArgs.AttackerTable and triggerArgs.AttackerTable.AlwaysTraitor == true and (triggerArgs.AttackerTable.Name == "Zombie" or triggerArgs.AttackerTable.Name == "Mourner" or triggerArgs.AttackerTable.Name == "SentryBot" or triggerArgs.AttackerTable.Name == "AutomatonBeamer") then	
+	if victim ~= CurrentRun.Hero and HeroHasTrait("ShovelRaiseDeadNecroMel") and triggerArgs and triggerArgs.AttackerTable and triggerArgs.AttackerTable.AlwaysTraitor == true and (triggerArgs.AttackerTable.Name == "Zombie" or triggerArgs.AttackerTable.Name == "Mourner" or triggerArgs.AttackerTable.Name == "SentryBot" or triggerArgs.AttackerTable.Name == "AutomatonBeamer") then	
 		--Ares: Vicious Strike
 		if HeroHasTrait("AresWeaponBoon") then
 			if (not victim.ActiveEffects) or (not victim.ActiveEffects.AresStatus) then
