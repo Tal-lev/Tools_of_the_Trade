@@ -2370,8 +2370,8 @@ modutil.once_loaded.game(function()
 	--import "WeaponData.lua"
 
 	-- Crucial, leads to crashes if this doesn't run in the end by another mod
-	if not rom.mods['NikkelM-Zagreus_Journey'] then
-		SetupRunData()
-	end
+	--if not rom.mods['NikkelM-Zagreus_Journey'] then
+	SetupRunData()
+	--end
 
 end)
