@@ -7,8 +7,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-## [1.0.6] - 2026-09-04
-
 - Fix rare crash related to mod load order
 
 ## [1.0.5] - 2026-08-15
