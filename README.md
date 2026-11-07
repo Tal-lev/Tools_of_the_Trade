@@ -5,7 +5,7 @@ Adding 2 new Weapon Aspects themed around the Gathering Tools
 ## Features
 
 <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
-  <img src="https://media.githubusercontent.com/media/Tal-lev/Tools_of_the_Trade/refs/heads/main/images/NecroMelTitle.png" alt="PonyDressList" width="70%">
+  <img src="https://media.githubusercontent.com/media/Tal-lev/Tools_of_the_Trade/refs/heads/main/images/NecroMelTitle.png" alt="PonyDressList" width="80%">
 </div>
 
 - Your Attack summons Zombies and Omega Attack summons Mourners.
@@ -25,7 +25,7 @@ Adding 2 new Weapon Aspects themed around the Gathering Tools
 </div>
 
 <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
-  <img src="https://media.githubusercontent.com/media/Tal-lev/Tools_of_the_Trade/refs/heads/main/images/KirbyMelTitle.png" alt="PonyDressList" width="70%">
+  <img src="https://media.githubusercontent.com/media/Tal-lev/Tools_of_the_Trade/refs/heads/main/images/KirbyMelTitle.png" alt="PonyDressList" width="80%">
 </div>
 
 - Your Attack Copies the enemy's weapon.
