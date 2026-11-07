@@ -4,9 +4,6 @@ Adding 2 new Weapon Aspects themed around the Gathering Tools
 
 ## Features
 
-- Adds Silver Spade (AKA NecroMel) as a new Axe aspect
-- Adds Tabet of Peace (AKA KirbyMel) as a new Skull aspect
-
 <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
   <img src="https://media.githubusercontent.com/media/Tal-lev/Tools_of_the_Trade/refs/heads/main/images/NecroMelTitle.png" alt="PonyDressList" width="70%">
 </div>
