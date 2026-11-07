@@ -7,7 +7,9 @@ Adding 2 new Weapon Aspects themed around the Gathering Tools
 - Adds Silver Spade (AKA NecroMel) as a new Axe aspect
 - Adds Tabet of Peace (AKA KirbyMel) as a new Skull aspect
 
-### The Silver Spade (AKA NecroMel)
+<div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+  <img src="https://media.githubusercontent.com/media/Tal-lev/Tools_of_the_Trade/refs/heads/main/images/NecroMelTitle.png" alt="PonyDressList" width="70%">
+</div>
 
 - Your Attack summons Zombies and Omega Attack summons Mourners.
 - Your Cast teleports the summons to Melinoe's location.
@@ -25,7 +27,9 @@ Adding 2 new Weapon Aspects themed around the Gathering Tools
   <img src="https://media.githubusercontent.com/media/Tal-lev/Tools_of_the_Trade/refs/heads/main/images/NecroMel.png" alt="PonyDressList" width="70%">
 </div>
 
-### The Tablet of Peace (AKA KirbyMel)
+<div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+  <img src="https://media.githubusercontent.com/media/Tal-lev/Tools_of_the_Trade/refs/heads/main/images/KirbyMelTitle.png" alt="PonyDressList" width="70%">
+</div>
 
 - Your Attack Copies the enemy's weapon.
 - Your Omega Attack creates a nova and places the copied weapon in Reserve until Omega Attack is used again.
