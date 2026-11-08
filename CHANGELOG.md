@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.0.8] - 2026-11-08
+
 ## [1.0.7] - 2026-11-08
 
 - Balance: Summons are now teleported to the cast location.
@@ -446,7 +448,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - First version of the mod!
 
-[unreleased]: https://github.com/Tal-lev/Tools_of_the_Trade/compare/1.0.7...HEAD
+[unreleased]: https://github.com/Tal-lev/Tools_of_the_Trade/compare/1.0.8...HEAD
+[1.0.8]: https://github.com/Tal-lev/Tools_of_the_Trade/compare/1.0.7...1.0.8
 [1.0.7]: https://github.com/Tal-lev/Tools_of_the_Trade/compare/1.0.6...1.0.7
 [1.0.6]: https://github.com/Tal-lev/Tools_of_the_Trade/compare/1.0.6...1.0.6
 [1.0.6]: https://github.com/Tal-lev/Tools_of_the_Trade/compare/1.0.5...1.0.6
