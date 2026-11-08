@@ -63,16 +63,19 @@ end
 function mod.SummonOrCast ( triggerArgs, functionArgs )
 	if triggerArgs.Name == "WeaponAxe" or triggerArgs.Name == "WeaponAxeSpin" then
 		mod.SummonEnemy( triggerArgs, functionArgs )
-	elseif triggerArgs.Name == "WeaponCast" then
-		mod.SummonCastTeleport( triggerArgs )
+	--elseif triggerArgs.Name == "WeaponCast" then
+	--	mod.SummonCastTeleport( triggerArgs )
 	end
 end
 
-function mod.SummonCastTeleport( triggerArgs )
-
+function mod.SummonCastTeleport( triggerArgs, functionArgs )
 	local heroLocation = GetLocation({ Id = CurrentRun.Hero.ObjectId })
 	if not heroLocation.X or not heroLocation.Y then
 		return
+	end
+	if triggerArgs.LocationX and triggerArgs.LocationY then
+		heroLocation.X = triggerArgs.LocationX
+		heroLocation.Y = triggerArgs.LocationY
 	end
 	if triggerArgs.UnitIdOverride then
 		return
@@ -2148,7 +2151,7 @@ modutil.once_loaded.game(function()
 			},
 		},
 		OnWeaponFiredFunctions = {
-			ValidWeapons = { "WeaponAxe", "WeaponCast", "WeaponAxeSpin" },
+			ValidWeapons = { "WeaponAxe", "WeaponAxeSpin" },
 			FunctionName = _PLUGIN.guid .. "." .. "SummonOrCast",
 			FunctionArgs = 
 			{
@@ -2162,6 +2165,14 @@ modutil.once_loaded.game(function()
 					PrimedHealth = "Reserve",
 				}
 			},
+		},
+		OnProjectileCreationFunction =
+		{
+			ValidProjectiles =  { "ProjectileCast" },
+			Name = _PLUGIN.guid .. "." .. "SummonCastTeleport",
+			Args = 
+			{
+			}
 		},
 		AttackSummons = 0,
 		CurrentlyReserved = 0,
