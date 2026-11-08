@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+- Balance: Summons are now teleported to the cast location.
+- Added Readme Banners.
+
 ## [1.0.6] - 2026-09-04
 
 - Fix rare crash related to mod load order
